@@ -58,7 +58,7 @@ namespace NFSRaider
             if (RdbLoadFile.Checked)
             {
                 var file = FormMethods.FormFile.Open(TxtFileStartOffset.Text, TxtFileEndOffset.Text, TxtFileReadHashes.Text, TxtFileSkipHashes.Text, FilePath);
-                var data = FormMethods.FormFile.UnhashFromFile(UnhashingEndianness, ListEndianness, HashFactory, file);
+                var data = FormMethods.FormFile.UnhashFromFile(UnhashingEndianness, HashFactory, file);
                 ListBoxDataSource = data.listBox;
                 ChangedListBoxDataSource();
                 LblKnownHashes.Text = data.knownHashes.ToString();
@@ -70,7 +70,7 @@ namespace NFSRaider
             {
                 DisableComponentsDuringBruteforce();
 
-                var bruteForce = new FormMethods.FormBruteforce(this, HashFactory, ChkUseHashesFile.Checked, ChkTryToBruteforce.Checked, TxtPrefixes.Text, TxtSufixes.Text,
+                var bruteForce = new FormMethods.FormBruteforce(this, HashFactory, ChkUseHashesFile.Checked, ChkTryToBruteforce.Checked, TxtPrefixes.Text, TxtSuffixes.Text,
                     TxtVariations.Text, TxtWordsBetweenVariations.Text, TxtMinVariations.Text, TxtMaxVariations.Text, GenerateOption, UnhashingEndianness);
                 bruteForce.Unhash(TxtLoadFromText.Text);
                 BruteforceProcessStarted = true;
@@ -151,7 +151,7 @@ namespace NFSRaider
 
         private void BtnGenerateListOfHashes_Click(object sender, EventArgs e)
         {
-            var getAllParts = new AllParts();
+            var getAllParts = new AllStrings();
             getAllParts.GetStrings();
             GC.Collect();
         }
@@ -311,7 +311,7 @@ namespace NFSRaider
                 TxtLoadFromText.Enabled = false;
                 TxtPrefixes.Enabled = false;
                 TxtVariations.Enabled = false;
-                TxtSufixes.Enabled = false;
+                TxtSuffixes.Enabled = false;
                 TxtMinVariations.Enabled = false;
                 TxtMaxVariations.Enabled = false;
                 TxtWordsBetweenVariations.Enabled = false;
@@ -347,7 +347,7 @@ namespace NFSRaider
             {
                 TxtPrefixes.Enabled = true;
                 TxtVariations.Enabled = true;
-                TxtSufixes.Enabled = true;
+                TxtSuffixes.Enabled = true;
                 TxtMinVariations.Enabled = true;
                 TxtMaxVariations.Enabled = true;
                 TxtWordsBetweenVariations.Enabled = true;
@@ -357,7 +357,7 @@ namespace NFSRaider
             {
                 TxtPrefixes.Enabled = false;
                 TxtVariations.Enabled = false;
-                TxtSufixes.Enabled = false;
+                TxtSuffixes.Enabled = false;
                 TxtMinVariations.Enabled = false;
                 TxtMaxVariations.Enabled = false;
                 TxtWordsBetweenVariations.Enabled = false;
@@ -373,7 +373,7 @@ namespace NFSRaider
             BtnClear.Enabled = true;
             TxtPrefixes.Enabled = true;
             TxtVariations.Enabled = true;
-            TxtSufixes.Enabled = true;
+            TxtSuffixes.Enabled = true;
             TxtMinVariations.Enabled = true;
             TxtMaxVariations.Enabled = true;
             TxtWordsBetweenVariations.Enabled = true;
@@ -397,7 +397,7 @@ namespace NFSRaider
             BtnClear.Enabled = false;
             TxtPrefixes.Enabled = false;
             TxtVariations.Enabled = false;
-            TxtSufixes.Enabled = false;
+            TxtSuffixes.Enabled = false;
             TxtMinVariations.Enabled = false;
             TxtMaxVariations.Enabled = false;
             TxtWordsBetweenVariations.Enabled = false;

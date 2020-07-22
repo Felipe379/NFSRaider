@@ -2,13 +2,8 @@
 using NFSRaider.Enum;
 using NFSRaider.GeneratedStrings;
 using NFSRaider.Hash;
-using NFSRaider.Helpers;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace NFSRaider.FormMethods
 {
@@ -18,7 +13,7 @@ namespace NFSRaider.FormMethods
         private int MaxVariations { get; set; }
         private HashSet<uint> Hashes { get; set; }
         private HashSet<string> Prefixes { get; set; }
-        private HashSet<string> Sufixes { get; set; }
+        private HashSet<string> Suffixes { get; set; }
         private HashSet<string> Variations { get; set; }
         private HashSet<string> WordsBetweenVariations { get; set; }
         private GenerateOption GenerateOption { get; set; }
@@ -30,14 +25,14 @@ namespace NFSRaider.FormMethods
 
         private NFSRaiderForm Sender { get; set; }
 
-        public FormBruteforce(NFSRaiderForm sender, HashFactory hashFactory, bool checkForHashesInFile, bool tryToBruteForce, string txtPrefixes, string txtSufixes, string txtVariations, string txtWordsBetweenVariations, string txtMinVariations, string txtMaxVariations, GenerateOption generateOption, Endianness unhashingEndianness)
+        public FormBruteforce(NFSRaiderForm sender, HashFactory hashFactory, bool checkForHashesInFile, bool tryToBruteForce, string txtPrefixes, string txtSuffixes, string txtVariations, string txtWordsBetweenVariations, string txtMinVariations, string txtMaxVariations, GenerateOption generateOption, Endianness unhashingEndianness)
         {
             Sender = sender;
             HashFactory = hashFactory;
 
             Hashes = new HashSet<uint>();
             Prefixes = new HashSet<string>(txtPrefixes.Split(new[] { ',' }));
-            Sufixes = new HashSet<string>(txtSufixes.Split(new[] { ',' }));
+            Suffixes = new HashSet<string>(txtSuffixes.Split(new[] { ',' }));
             Variations = new HashSet<string>(txtVariations.Split(new[] { ',' }));
             WordsBetweenVariations = new HashSet<string>(txtWordsBetweenVariations.Split(new[] { ',' }));
             MinVariations = Convert.ToInt32(txtMinVariations);
@@ -82,7 +77,7 @@ namespace NFSRaider.FormMethods
 
         private void CheckFile()
         {
-            var allParts = new AllParts().ReadHashesFile(HashFactory);
+            var allParts = new AllStrings().ReadHashesFile(HashFactory);
 
             foreach (var hash in Hashes)
             {
@@ -127,7 +122,7 @@ namespace NFSRaider.FormMethods
         {
             foreach (var prefix in Prefixes)
             {
-                foreach (var sufix in Sufixes)
+                foreach (var sufix in Suffixes)
                 {
                     yield return $"{prefix}{currentString}{sufix}";
                 }
