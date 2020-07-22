@@ -660,7 +660,7 @@
             this.TxtMaxVariations.Name = "TxtMaxVariations";
             this.TxtMaxVariations.Size = new System.Drawing.Size(52, 20);
             this.TxtMaxVariations.TabIndex = 23;
-            this.TxtMaxVariations.Text = "10";
+            this.TxtMaxVariations.Text = "6";
             this.TxtMaxVariations.Leave += new System.EventHandler(this.TxtMaxVariations_Leave);
             // 
             // TxtSearch
