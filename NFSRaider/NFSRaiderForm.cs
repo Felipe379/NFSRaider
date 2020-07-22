@@ -25,7 +25,7 @@ namespace NFSRaider
             LoadOptionChanged();
         }
 
-        private List<(uint HashValue, string StringValue)> ListBoxDataSource { get; set; } = new List<(uint HashValue, string StringValue)>();
+        private List<RaiderResults> ListBoxDataSource { get; set; } = new List<RaiderResults>();
         private string FilePath { get; set; }
         private GenerateOption GenerateOption { get; set; } = GenerateOption.WithRepetition;
         private Endianness UnhashingEndianness { get; set; } = Endianness.BigEndian;
@@ -38,8 +38,7 @@ namespace NFSRaider
 
         public void UpdateFormDuringBruteforce(uint hash, string generatedString)
         {
-            ListBoxDataSource.Add((hash, generatedString));
-            ThreadHelperClass.SetText(this, LblTotalHashes, ListBoxDataSource.Count.ToString());
+            ListBoxDataSource.Add(new RaiderResults() { Hash = hash, Value = generatedString, IsKnown = true });
             Invoke((MethodInvoker)(() => ChangedListBoxDataSource()));
         }
 
@@ -58,12 +57,9 @@ namespace NFSRaider
             if (RdbLoadFile.Checked)
             {
                 var file = FormMethods.FormFile.Open(TxtFileStartOffset.Text, TxtFileEndOffset.Text, TxtFileReadHashes.Text, TxtFileSkipHashes.Text, FilePath);
-                var data = FormMethods.FormFile.UnhashFromFile(UnhashingEndianness, HashFactory, file);
-                ListBoxDataSource = data.listBox;
+                var listBox = FormMethods.FormFile.UnhashFromFile(UnhashingEndianness, HashFactory, file);
+                ListBoxDataSource = listBox;
                 ChangedListBoxDataSource();
-                LblKnownHashes.Text = data.knownHashes.ToString();
-                LblUnknownHashes.Text = data.unknownHashes.ToString();
-                LblTotalHashes.Text = (data.knownHashes + data.unknownHashes).ToString();
                 GC.Collect();
             }
             else if (RdbLoadFromText.Checked && !BruteforceProcessStarted)
@@ -108,7 +104,7 @@ namespace NFSRaider
             LblKnownHashes.Text = "0";
             LblUnknownHashes.Text = "0";
             LblTotalHashes.Text = "0";
-            ListBoxDataSource = new List<(uint HashValue, string StringValue)>();
+            ListBoxDataSource = new List<RaiderResults>();
         }
 
         private void ChangedListBoxDataSource()
@@ -118,7 +114,7 @@ namespace NFSRaider
             if (ChkIgnoreRepeatedStrings.Checked)
             {
                 listBoxDataSource = listBoxDataSource
-                    .GroupBy(c => c.StringValue)
+                    .GroupBy(c => c.Value)
                     .Select(c => c.First())
                     .ToList();
             }
@@ -126,17 +122,32 @@ namespace NFSRaider
             if (ChkIgnoreRepeatedHashes.Checked)
             {
                 listBoxDataSource = listBoxDataSource
-                    .GroupBy(c => c.HashValue)
+                    .GroupBy(c => c.Hash)
                     .Select(c => c.First())
                     .ToList();
             }
 
+            var currentSelectedItem = LstUnhashed.SelectedIndex;
+
+            if (listBoxDataSource.Count <= currentSelectedItem && listBoxDataSource.Count > 0)
+            {
+                currentSelectedItem = listBoxDataSource.Count - 1;
+            }
+            else if (listBoxDataSource.Count == 0)
+            {
+                currentSelectedItem = -1;
+            }
+
             var format = TxtExportFormat.Text;
             var dataSource = ListEndianness == Endianness.BigEndian
-                ? listBoxDataSource.Select(c => format.Replace("(HASH)", Hashes.Reverse(c.HashValue).ToString("X8")).Replace("(STRING)", c.StringValue))
-                : listBoxDataSource.Select(c => format.Replace("(HASH)", c.HashValue.ToString("X8")).Replace("(STRING)", c.StringValue));
+                ? listBoxDataSource.Select(c => format.Replace("(HASH)", Hashes.Reverse(c.Hash).ToString("X8")).Replace("(STRING)", c.Value))
+                : listBoxDataSource.Select(c => format.Replace("(HASH)", c.Hash.ToString("X8")).Replace("(STRING)", c.Value));
 
+            LblKnownHashes.Text = listBoxDataSource.Where(c => c.IsKnown).Count().ToString();
+            LblUnknownHashes.Text = listBoxDataSource.Where(c => !c.IsKnown).Count().ToString();
+            LblTotalHashes.Text = listBoxDataSource.Count().ToString();
             LstUnhashed.DataSource = dataSource.ToArray();
+            LstUnhashed.SelectedIndex = currentSelectedItem;
         }
 
         private void RdbLoadFile_CheckedChanged(object sender, EventArgs e)

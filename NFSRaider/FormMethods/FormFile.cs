@@ -42,68 +42,51 @@ namespace NFSRaider.FormMethods
             return arrayFromFileWithHashesSkipped.ToArray();
         }
 
-        public static (List<(uint, string)> listBox, int knownHashes, int unknownHashes) UnhashFromFile(Endianness unhashingEndianness, HashFactory hashFactory, uint[] arrayFromFile)
+        public static List<RaiderResults> UnhashFromFile(Endianness unhashingEndianness, HashFactory hashFactory, uint[] arrayFromFile)
         {
-            var allParts = new AllStrings().ReadHashesFile(hashFactory);
-            var listBox = new List<(uint, string)>();
-            var knownHashes = 0;
-            var unknownHashes = 0;
+            var allStrings = new AllStrings().ReadHashesFile(hashFactory);
+            var listBox = new List<RaiderResults>();
+            var isKnown = false;
+
+            void AddResult(uint hash)
+            {
+                if (allStrings.TryGetValue(hash, out var result))
+                {
+                    isKnown = true;
+                }
+                else
+                {
+                    if (hash == 0 || hash == uint.MaxValue)
+                    {
+                        result = "--------";
+                        isKnown = true;
+                    }
+                    else
+                    {
+                        result = "HASH_UNKNOWN";
+                        isKnown = false;
+                    }
+                }
+
+                listBox.Add(new RaiderResults() { Hash = hash, Value = result, IsKnown = isKnown });
+            }
 
             if (unhashingEndianness == Endianness.BigEndian)
             {
                 foreach (var hash in arrayFromFile)
                 {
-                    if (allParts.TryGetValue(hash, out var result))
-                    {
-                        knownHashes += 1;
-                    }
-                    else
-                    {
-                        if (hash == 0 || hash == uint.MaxValue)
-                        {
-                            knownHashes += 1;
-                            result = "--------";
-                        }
-                        else
-                        {
-                            result = "HASH_UNKNOWN";
-                            unknownHashes += 1;
-                        }
-                    }
-
-                    listBox.Add((hash, result));
+                    AddResult(hash);
                 }
             }
             else
             {
-                uint hashReversed;
                 foreach (var hash in arrayFromFile)
                 {
-                    hashReversed = hash.Reverse();
-
-                    if (allParts.TryGetValue(hashReversed, out var result))
-                    {
-                        knownHashes += 1;
-                    }
-                    else
-                    {
-                        if (hashReversed == 0 || hashReversed == uint.MaxValue)
-                        {
-                            knownHashes += 1;
-                            result = "--------";
-                        }
-                        else
-                        {
-                            result = "HASH_UNKNOWN";
-                            unknownHashes += 1;
-                        }
-                    }
-
-                    listBox.Add((hash, result));
+                    AddResult(hash.Reverse());
                 }
             }
 
-            return (listBox, knownHashes, unknownHashes);
+            return listBox;
         }
     }
 }

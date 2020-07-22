@@ -265,6 +265,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaiderResults.cs" />
     <EmbeddedResource Include="NFSRaiderForm.resx">
       <DependentUpon>NFSRaiderForm.cs</DependentUpon>
     </EmbeddedResource>
