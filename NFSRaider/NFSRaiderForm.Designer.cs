@@ -49,15 +49,17 @@
             this.RdbUnhashBigEndian = new System.Windows.Forms.RadioButton();
             this.TxtPrefixes = new System.Windows.Forms.TextBox();
             this.TxtVariations = new System.Windows.Forms.TextBox();
-            this.TxtSufixes = new System.Windows.Forms.TextBox();
+            this.TxtSuffixes = new System.Windows.Forms.TextBox();
             this.LblPrefixes = new System.Windows.Forms.Label();
-            this.LblSufixes = new System.Windows.Forms.Label();
+            this.LblSuffixes = new System.Windows.Forms.Label();
             this.LblCombinationsAndPermutations = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.TxtExportFormat = new System.Windows.Forms.TextBox();
             this.GrpExportOptions = new System.Windows.Forms.GroupBox();
+            this.ChkIgnoreRepeatedStrings = new System.Windows.Forms.CheckBox();
             this.BtnUpdateList = new System.Windows.Forms.Button();
             this.BtnExportHashes = new System.Windows.Forms.Button();
+            this.ChkIgnoreRepeatedHashes = new System.Windows.Forms.CheckBox();
             this.RdbExportLittleEndian = new System.Windows.Forms.RadioButton();
             this.RdbExportBigEndian = new System.Windows.Forms.RadioButton();
             this.TxtFileStartOffset = new System.Windows.Forms.TextBox();
@@ -87,8 +89,6 @@
             this.LblStatus = new System.Windows.Forms.Label();
             this.ChkTryToBruteforce = new System.Windows.Forms.CheckBox();
             this.ChkBruteforceWithRepetition = new System.Windows.Forms.CheckBox();
-            this.ChkIgnoreRepeatedHashes = new System.Windows.Forms.CheckBox();
-            this.ChkIgnoreRepeatedStrings = new System.Windows.Forms.CheckBox();
             this.GrpLoadOptions.SuspendLayout();
             this.GrpHashType.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -325,14 +325,14 @@
             this.TxtVariations.Text = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o" +
     ",p,q,r,s,t,u,v,w,x,y,z,0,1,2,3,4,5,6,7,8,9,_";
             // 
-            // TxtSufixes
+            // TxtSuffixes
             // 
-            this.TxtSufixes.Location = new System.Drawing.Point(722, 36);
-            this.TxtSufixes.Multiline = true;
-            this.TxtSufixes.Name = "TxtSufixes";
-            this.TxtSufixes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TxtSufixes.Size = new System.Drawing.Size(150, 190);
-            this.TxtSufixes.TabIndex = 8;
+            this.TxtSuffixes.Location = new System.Drawing.Point(722, 36);
+            this.TxtSuffixes.Multiline = true;
+            this.TxtSuffixes.Name = "TxtSuffixes";
+            this.TxtSuffixes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TxtSuffixes.Size = new System.Drawing.Size(150, 190);
+            this.TxtSuffixes.TabIndex = 8;
             // 
             // LblPrefixes
             // 
@@ -343,14 +343,14 @@
             this.LblPrefixes.TabIndex = 9;
             this.LblPrefixes.Text = "Prefixes";
             // 
-            // LblSufixes
+            // LblSuffixes
             // 
-            this.LblSufixes.AutoSize = true;
-            this.LblSufixes.Location = new System.Drawing.Point(719, 20);
-            this.LblSufixes.Name = "LblSufixes";
-            this.LblSufixes.Size = new System.Drawing.Size(41, 13);
-            this.LblSufixes.TabIndex = 10;
-            this.LblSufixes.Text = "Sufixes";
+            this.LblSuffixes.AutoSize = true;
+            this.LblSuffixes.Location = new System.Drawing.Point(719, 20);
+            this.LblSuffixes.Name = "LblSuffixes";
+            this.LblSuffixes.Size = new System.Drawing.Size(44, 13);
+            this.LblSuffixes.TabIndex = 10;
+            this.LblSuffixes.Text = "Suffixes";
             // 
             // LblCombinationsAndPermutations
             // 
@@ -395,6 +395,16 @@
             this.GrpExportOptions.TabStop = false;
             this.GrpExportOptions.Text = "Export options";
             // 
+            // ChkIgnoreRepeatedStrings
+            // 
+            this.ChkIgnoreRepeatedStrings.AutoSize = true;
+            this.ChkIgnoreRepeatedStrings.Location = new System.Drawing.Point(153, 17);
+            this.ChkIgnoreRepeatedStrings.Name = "ChkIgnoreRepeatedStrings";
+            this.ChkIgnoreRepeatedStrings.Size = new System.Drawing.Size(134, 17);
+            this.ChkIgnoreRepeatedStrings.TabIndex = 28;
+            this.ChkIgnoreRepeatedStrings.Text = "Ignore repeated strings";
+            this.ChkIgnoreRepeatedStrings.UseVisualStyleBackColor = true;
+            // 
             // BtnUpdateList
             // 
             this.BtnUpdateList.Location = new System.Drawing.Point(213, 63);
@@ -414,6 +424,16 @@
             this.BtnExportHashes.Text = "Export hashes";
             this.BtnExportHashes.UseVisualStyleBackColor = true;
             this.BtnExportHashes.Click += new System.EventHandler(this.BtnExportHashes_Click);
+            // 
+            // ChkIgnoreRepeatedHashes
+            // 
+            this.ChkIgnoreRepeatedHashes.AutoSize = true;
+            this.ChkIgnoreRepeatedHashes.Location = new System.Drawing.Point(9, 19);
+            this.ChkIgnoreRepeatedHashes.Name = "ChkIgnoreRepeatedHashes";
+            this.ChkIgnoreRepeatedHashes.Size = new System.Drawing.Size(138, 17);
+            this.ChkIgnoreRepeatedHashes.TabIndex = 27;
+            this.ChkIgnoreRepeatedHashes.Text = "Ignore repeated hashes";
+            this.ChkIgnoreRepeatedHashes.UseVisualStyleBackColor = true;
             // 
             // RdbExportLittleEndian
             // 
@@ -701,26 +721,6 @@
             this.ChkBruteforceWithRepetition.UseVisualStyleBackColor = true;
             this.ChkBruteforceWithRepetition.CheckedChanged += new System.EventHandler(this.ChkBruteforceWithRepetition_CheckedChanged);
             // 
-            // ChkIgnoreRepeatedHashes
-            // 
-            this.ChkIgnoreRepeatedHashes.AutoSize = true;
-            this.ChkIgnoreRepeatedHashes.Location = new System.Drawing.Point(9, 19);
-            this.ChkIgnoreRepeatedHashes.Name = "ChkIgnoreRepeatedHashes";
-            this.ChkIgnoreRepeatedHashes.Size = new System.Drawing.Size(138, 17);
-            this.ChkIgnoreRepeatedHashes.TabIndex = 27;
-            this.ChkIgnoreRepeatedHashes.Text = "Ignore repeated hashes";
-            this.ChkIgnoreRepeatedHashes.UseVisualStyleBackColor = true;
-            // 
-            // ChkIgnoreRepeatedStrings
-            // 
-            this.ChkIgnoreRepeatedStrings.AutoSize = true;
-            this.ChkIgnoreRepeatedStrings.Location = new System.Drawing.Point(153, 17);
-            this.ChkIgnoreRepeatedStrings.Name = "ChkIgnoreRepeatedStrings";
-            this.ChkIgnoreRepeatedStrings.Size = new System.Drawing.Size(134, 17);
-            this.ChkIgnoreRepeatedStrings.TabIndex = 28;
-            this.ChkIgnoreRepeatedStrings.Text = "Ignore repeated strings";
-            this.ChkIgnoreRepeatedStrings.UseVisualStyleBackColor = true;
-            // 
             // NFSRaiderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -743,9 +743,9 @@
             this.Controls.Add(this.TxtFileStartOffset);
             this.Controls.Add(this.GrpExportOptions);
             this.Controls.Add(this.LblCombinationsAndPermutations);
-            this.Controls.Add(this.LblSufixes);
+            this.Controls.Add(this.LblSuffixes);
             this.Controls.Add(this.LblPrefixes);
-            this.Controls.Add(this.TxtSufixes);
+            this.Controls.Add(this.TxtSuffixes);
             this.Controls.Add(this.TxtVariations);
             this.Controls.Add(this.TxtPrefixes);
             this.Controls.Add(this.groupBox1);
@@ -792,9 +792,9 @@
         private System.Windows.Forms.RadioButton RdbUnhashBigEndian;
         private System.Windows.Forms.TextBox TxtPrefixes;
         private System.Windows.Forms.TextBox TxtVariations;
-        private System.Windows.Forms.TextBox TxtSufixes;
+        private System.Windows.Forms.TextBox TxtSuffixes;
         private System.Windows.Forms.Label LblPrefixes;
-        private System.Windows.Forms.Label LblSufixes;
+        private System.Windows.Forms.Label LblSuffixes;
         private System.Windows.Forms.Label LblCombinationsAndPermutations;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TxtExportFormat;

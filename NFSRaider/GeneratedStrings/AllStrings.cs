@@ -1,21 +1,25 @@
-﻿using NFSRaider.Enum;
+﻿using NFSRaider.GeneratedStrings.Fng;
 using NFSRaider.GeneratedStrings.Global;
 using NFSRaider.GeneratedStrings.LanguageLabels;
 using NFSRaider.GeneratedStrings.Materials;
 using NFSRaider.GeneratedStrings.PartsLists;
+using NFSRaider.GeneratedStrings.Presets;
+using NFSRaider.GeneratedStrings.PresetSkins;
 using NFSRaider.GeneratedStrings.Textures;
+using NFSRaider.GeneratedStrings.TruncatedStrings;
 using NFSRaider.GeneratedStrings.VltList;
 using NFSRaider.Hash;
 using NFSRaider.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
 namespace NFSRaider.GeneratedStrings
 {
-    public class AllParts
+    public class AllStrings
     {
         public string FileName { get; set; } = "Hashes.txt";
 
@@ -32,6 +36,8 @@ namespace NFSRaider.GeneratedStrings
             }
 
             hashSet.UnionWith(new BuildPartsList().GetAllParts()); // TODO: Rework this
+            hashSet.UnionWith(new BuildPresets().GetAllPresets());
+            hashSet.UnionWith(new BuildPresetSkins().GetAllPresetSkins());
             hashSet.UnionWith(new BuildLanguageLabels().GetAllLabels());
             hashSet.UnionWith(new BuildMaterials().GetAllMaterials());
             hashSet.UnionWith(new BuildGlobal().GetAllGlobal());
@@ -57,14 +63,20 @@ namespace NFSRaider.GeneratedStrings
 
         public Dictionary<uint, string> ReadHashesFile(HashFactory hashFactory)
         {
-            var hashes = new Dictionary<uint, string>();
-            var collisions = new List<string>();
+            var hashes = new BuildTruncatedStrings().GetAllTruncatedStrings();
+            var collisions = new HashSet<string>();
+            uint currentHexValue;
+
+            if (!File.Exists(FileName))
+            {
+                GetStrings();
+                GC.Collect();
+            }
 
             using (var fileStream = File.OpenRead(FileName))
             using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true))
             {
                 var line = string.Empty;
-                uint currentHexValue;
 
                 while ((line = streamReader.ReadLine()) != null)
                 {
@@ -82,15 +94,15 @@ namespace NFSRaider.GeneratedStrings
                         hashes.Add(currentHexValue, line);
                     }
                 }
-
-                foreach (var collision in collisions)
-                {
-                    currentHexValue = hashFactory.Hash(collision);
-                    hashes[currentHexValue] += " / " + collision;
-                }
-
-                return hashes;
             }
+
+            foreach (var collision in collisions)
+            {
+                currentHexValue = hashFactory.Hash(collision);
+                hashes[currentHexValue] += " / " + collision;
+            }
+
+            return hashes;
         }
     }
 }

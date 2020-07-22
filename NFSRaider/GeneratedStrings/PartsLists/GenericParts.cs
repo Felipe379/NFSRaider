@@ -6,6 +6,11 @@ namespace NFSRaider.GeneratedStrings.PartsLists
     {
         public static readonly List<string> List = new List<string>()
         {
+            "CE",
+            "CS",
+            "SE",
+            "ST",
+            "DSL",
 "01RAZORCALLAHAN",
 "02TORUSATO",
 "02TUROSATO",

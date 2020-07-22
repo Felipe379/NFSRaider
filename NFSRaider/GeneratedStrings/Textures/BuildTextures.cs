@@ -9,8 +9,10 @@ namespace NFSRaider.GeneratedStrings.Textures
         public HashSet<string> GetAllTextures()
         {
             var textures = new HashSet<string>(
-                MostWanted.GenericTextures.List
+                Underground2.GenericTextures.List
+                .Concat(MostWanted.GenericTextures.List)
                 .Concat(Carbon.GenericTextures.List)
+                .Concat(ProStreet.GenericTextures.List)
                 );
 
             foreach (var car in Cars.List)
