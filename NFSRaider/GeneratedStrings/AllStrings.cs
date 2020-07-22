@@ -1,4 +1,5 @@
-﻿using NFSRaider.GeneratedStrings.Fng;
+﻿using NFSRaider.GeneratedStrings.Brands;
+using NFSRaider.GeneratedStrings.Fng;
 using NFSRaider.GeneratedStrings.Global;
 using NFSRaider.GeneratedStrings.LanguageLabels;
 using NFSRaider.GeneratedStrings.Materials;
@@ -36,6 +37,7 @@ namespace NFSRaider.GeneratedStrings
             }
 
             hashSet.UnionWith(new BuildPartsList().GetAllParts()); // TODO: Rework this
+            hashSet.UnionWith(new BuildBrands().GetAllBrands());
             hashSet.UnionWith(new BuildPresets().GetAllPresets());
             hashSet.UnionWith(new BuildPresetSkins().GetAllPresetSkins());
             hashSet.UnionWith(new BuildLanguageLabels().GetAllLabels());
