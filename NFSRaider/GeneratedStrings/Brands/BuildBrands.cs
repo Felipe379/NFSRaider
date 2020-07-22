@@ -7,7 +7,7 @@ namespace NFSRaider.GeneratedStrings.Brands
     {
         public HashSet<string> GetAllBrands()
         {
-            var materials = new HashSet<string>(
+            var brands = new HashSet<string>(
                 HotPursuit2.List
                 .Concat(Underground1.List)
                 .Concat(Underground2.List)
@@ -16,7 +16,7 @@ namespace NFSRaider.GeneratedStrings.Brands
                 .Concat(World.List)
                 );
 
-            return materials;
+            return brands;
         }
     }
 }
