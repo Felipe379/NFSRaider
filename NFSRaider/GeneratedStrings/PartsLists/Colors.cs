@@ -63,11 +63,12 @@ namespace NFSRaider.GeneratedStrings.PartsLists
             "SWATCH",
             "VINYL",
             "TRAFFIC",
+            "TINT",
         };
 
         public static readonly List<string> Prefix = new List<string>()
         {
-            "_COLOR01",
+"_COLOR01",
 "_COLOR02",
 "_COLOR03",
 "_COLOR04",

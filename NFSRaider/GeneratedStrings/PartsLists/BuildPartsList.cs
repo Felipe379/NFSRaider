@@ -1,5 +1,7 @@
-﻿using NFSRaider.GeneratedStrings.Shared;
+﻿using NFSRaider.GeneratedStrings.PartsLists.ProStreet;
+using NFSRaider.GeneratedStrings.Shared;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace NFSRaider.GeneratedStrings.PartsLists
 {
@@ -19,7 +21,9 @@ namespace NFSRaider.GeneratedStrings.PartsLists
 
         public HashSet<string> GetAllParts()
         {
-            var parts = new HashSet<string>();
+            var parts = new HashSet<string>(
+                new BuildProStreetPartsList().GetAllProStreetParts()
+                );
 
             foreach (var lod in Lods.List)
             {
@@ -52,9 +56,10 @@ namespace NFSRaider.GeneratedStrings.PartsLists
                         {
                             parts.Add(manufacturer + style + wheel + lod);
                             parts.Add(manufacturer + style + wheel + "_SPIN" + lod);
-                            parts.Add(manufacturer + style + wheel + "WHEEL");
-                            parts.Add(manufacturer + style + wheel + "WHEEL_INNER_MASK");
                         }
+                        parts.Add(manufacturer + style);
+                        parts.Add(manufacturer + style + "_WHEEL");
+                        parts.Add(manufacturer + style + "_WHEEL_INNER_MASK");
                     }
 
                     if (lod == "")
