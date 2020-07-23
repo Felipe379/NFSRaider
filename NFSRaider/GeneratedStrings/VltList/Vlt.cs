@@ -47318,6 +47318,7 @@ namespace NFSRaider.GeneratedStrings.VltList
 "corolla_top",
 "eclipse_top",
 "mr2_top",
+"RaceWarsRace",
         };
     }
 }

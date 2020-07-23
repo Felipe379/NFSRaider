@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NFSRaider.GeneratedStrings.PartsLists
+namespace NFSRaider.GeneratedStrings.Shared
 {
     public static class Lods
     {
