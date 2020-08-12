@@ -83,7 +83,11 @@ namespace NFSRaider.FormMethods
             {
                 if (allParts.TryGetValue(hash, out var result))
                 {
-                    Sender.UpdateFormDuringBruteforce(hash, result);
+                    Sender.UpdateFormDuringBruteforce(hash, result, true);
+                }
+                else
+                {
+                    Sender.UpdateFormDuringBruteforce(hash, "HASH_UNKNOWN", false);
                 }
             }
         }
@@ -110,7 +114,7 @@ namespace NFSRaider.FormMethods
                             currentHash = HashFactory.Hash(generatedString);
                             if (Hashes.Contains(currentHash))
                             {
-                                Sender.UpdateFormDuringBruteforce(currentHash, generatedString);
+                                Sender.UpdateFormDuringBruteforce(currentHash, generatedString, true);
                             }
                         }
                     }
