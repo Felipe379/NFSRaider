@@ -23,6 +23,7 @@ namespace NFSRaider
         {
             InitializeComponent();
             LoadOptionChanged();
+            CboOrderBy.SelectedIndex = 0;
         }
 
         private List<RaiderResults> ListBoxDataSource { get; set; } = new List<RaiderResults>();
@@ -36,9 +37,9 @@ namespace NFSRaider
         private Thread BruteForceThread { get; set; }
         private bool BruteforceProcessStarted { get; set; } = false;
 
-        public void UpdateFormDuringBruteforce(uint hash, string generatedString)
+        public void UpdateFormDuringBruteforce(uint hash, string generatedString, bool isKnown)
         {
-            ListBoxDataSource.Add(new RaiderResults() { Hash = hash, Value = generatedString, IsKnown = true });
+            ListBoxDataSource.Add(new RaiderResults() { Hash = hash, Value = generatedString, IsKnown = isKnown });
             Invoke((MethodInvoker)(() => ChangedListBoxDataSource()));
         }
 
@@ -111,6 +112,26 @@ namespace NFSRaider
         {
             var listBoxDataSource = ListBoxDataSource;
 
+            if (ListEndianness == Endianness.BigEndian)
+            {
+                listBoxDataSource = listBoxDataSource
+                    .Select(c => new RaiderResults { Hash = Hashes.Reverse(c.Hash), IsKnown = c.IsKnown, Value = c.Value })
+                    .ToList();
+            }
+
+            if (CboOrderBy.SelectedIndex == 1)
+            {
+                listBoxDataSource = listBoxDataSource
+                    .OrderBy(c => c.Hash)
+                    .ToList();
+            }
+            else if (CboOrderBy.SelectedIndex == 2)
+            {
+                listBoxDataSource = listBoxDataSource
+                    .OrderBy(c => c.Value)
+                    .ToList();
+            }
+
             if (ChkIgnoreRepeatedStrings.Checked)
             {
                 listBoxDataSource = listBoxDataSource
@@ -139,14 +160,11 @@ namespace NFSRaider
             }
 
             var format = TxtExportFormat.Text;
-            var dataSource = ListEndianness == Endianness.BigEndian
-                ? listBoxDataSource.Select(c => format.Replace("(HASH)", Hashes.Reverse(c.Hash).ToString("X8")).Replace("(STRING)", c.Value))
-                : listBoxDataSource.Select(c => format.Replace("(HASH)", c.Hash.ToString("X8")).Replace("(STRING)", c.Value));
 
             LblKnownHashes.Text = listBoxDataSource.Where(c => c.IsKnown).Count().ToString();
             LblUnknownHashes.Text = listBoxDataSource.Where(c => !c.IsKnown).Count().ToString();
             LblTotalHashes.Text = listBoxDataSource.Count().ToString();
-            LstUnhashed.DataSource = dataSource.ToArray();
+            LstUnhashed.DataSource = listBoxDataSource.Select(c => format.Replace("(HASH)", c.Hash.ToString("X8")).Replace("(STRING)", c.Value)).ToArray();
             LstUnhashed.SelectedIndex = currentSelectedItem;
         }
 

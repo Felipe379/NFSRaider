@@ -21,6 +21,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists
             "MEDIUM",
             "SMALL",
             "MW",
+            "LICENSE",
 "01RAZORCALLAHAN",
 "02TORUSATO",
 "02TUROSATO",
