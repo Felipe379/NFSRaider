@@ -47322,6 +47322,12 @@ namespace NFSRaider.GeneratedStrings.VltList
 "RaceWarsRace",
 "generic_wheel_vollk",
 "generic_wheel_rear_vollk",
+"NoPostRaceScreen",
+"CashRewardForRepeatRace",
+"CrewBioMovie",
+"FirstBossTrack",
+"SecondBossTrack",
+"PostRaceScreenTexture",
         };
     }
 }
