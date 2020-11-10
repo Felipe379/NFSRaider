@@ -156,10 +156,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists
 
             }
 
-            foreach (var genericPart in GenericParts.List)
-            {
-                parts.Add(genericPart);
-            }
+            parts = parts.Concat(GenericParts.List).ToHashSet();
 
             return parts;
         }
