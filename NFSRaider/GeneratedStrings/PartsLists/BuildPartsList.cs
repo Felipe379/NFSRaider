@@ -22,7 +22,8 @@ namespace NFSRaider.GeneratedStrings.PartsLists
         public HashSet<string> GetAllParts()
         {
             var parts = new HashSet<string>(
-                new BuildProStreetPartsList().GetAllProStreetParts()
+                GenericParts.List
+                .Concat(new BuildProStreetPartsList().GetAllProStreetParts())
                 );
 
             foreach (var lod in Lods.List)
@@ -155,8 +156,6 @@ namespace NFSRaider.GeneratedStrings.PartsLists
                 parts.Add(Neon + "_PULSE" + "_" + color);
 
             }
-
-            parts = parts.Concat(GenericParts.List).ToHashSet();
 
             return parts;
         }

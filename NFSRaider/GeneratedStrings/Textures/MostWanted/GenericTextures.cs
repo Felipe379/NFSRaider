@@ -1,10 +1,5 @@
 ﻿using System.Collections.Generic;
 
-// Unknown generic textures to figure out:
-//T -> 0x189F4EF0 -> MARKER_ICON_MISC_IMPOUN
-//T -> 0x4316B9B5 -> CARD_EXTERNAL_REINFORCE
-//T -> 0x6B5489AC -> SKY_MIDDAY_A_ENVIRONMEN
-
 namespace NFSRaider.GeneratedStrings.Textures.MostWanted
 {
     public static class GenericTextures
@@ -5237,6 +5232,11 @@ namespace NFSRaider.GeneratedStrings.Textures.MostWanted
 "TRNS_ALL_LZ_PAVEMENTB_PED_01_SPEC",
 "TRNS_ALL_LZ_PAVEMENTB_WD_01_SPEC",
 "TRNS_DIRTPATHA_GRASSA_02_NORMAL",
+"CARD_EXTERNAL_REINFORCEBUMPERS",
+"ARC_METALPLATESDBOTTOM_NORMALS",
+"SGN_FWY_PETERSBURGINTERCHANGE",
+"MARKER_ICON_MISC_IMPOUNDRELEASE",
+"SHD_CP_FISHINGVILLAGE_SHORTCUTA",
         };
     }
 }
