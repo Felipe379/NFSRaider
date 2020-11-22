@@ -8,7 +8,7 @@ namespace NFSRaider.GeneratedStrings.Global
         {
             "LIGHT_MATERIAL_NAME",
             "OUTER_RADIUS",
-            "OUTER_RADIUS",
+            "INNER_RADIUS",
             "SPOKE_COUNT",
             "RED",
             "RED2",
@@ -105,6 +105,7 @@ namespace NFSRaider.GeneratedStrings.Global
             "COLOR1LANGUAGEHASH",
             "COLOR0LANGUAGEHASH",
             "EXCLUDEDECAL",
+			"PART",
         };
     }
 }

@@ -6,6 +6,7 @@ using NFSRaider.GeneratedStrings.Materials;
 using NFSRaider.GeneratedStrings.PartsLists;
 using NFSRaider.GeneratedStrings.Presets;
 using NFSRaider.GeneratedStrings.PresetSkins;
+using NFSRaider.GeneratedStrings.SunInfos;
 using NFSRaider.GeneratedStrings.Textures;
 using NFSRaider.GeneratedStrings.TruncatedStrings;
 using NFSRaider.GeneratedStrings.VltList;
@@ -43,6 +44,7 @@ namespace NFSRaider.GeneratedStrings
             hashSet.UnionWith(new BuildLanguageLabels().GetAllLabels());
             hashSet.UnionWith(new BuildMaterials().GetAllMaterials());
             hashSet.UnionWith(new BuildGlobal().GetAllGlobal());
+            hashSet.UnionWith(new BuildSunInfos().GetSunInfos());
             hashSet.UnionWith(new BuildVlt().GetAllVlt());
             hashSet.UnionWith(new BuildTextures().GetAllTextures());
             hashSet.UnionWith(new BuildFng().GetAllFng());

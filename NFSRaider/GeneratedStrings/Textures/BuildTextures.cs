@@ -9,7 +9,8 @@ namespace NFSRaider.GeneratedStrings.Textures
         public HashSet<string> GetAllTextures()
         {
             var textures = new HashSet<string>(
-                Underground2.GenericTextures.List
+                Underground1.GenericTextures.List
+                .Concat(Underground2.GenericTextures.List)
                 .Concat(MostWanted.GenericTextures.List)
                 .Concat(Carbon.GenericTextures.List)
                 .Concat(ProStreet.GenericTextures.List)
@@ -20,6 +21,11 @@ namespace NFSRaider.GeneratedStrings.Textures
                 foreach (var carTexture in Shared.Cars.List)
                 {
                     textures.Add(car + carTexture);
+                }
+
+                foreach (var vinyl in Underground1.Vinyls.List)
+                {
+                    textures.Add(car + vinyl);
                 }
 
                 foreach (var vinyl in Underground2.Vinyls.List)

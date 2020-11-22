@@ -179,6 +179,14 @@
     <Compile Include="FormMethods\FormBruteforce.cs" />
     <Compile Include="FormMethods\FormFile.cs" />
     <Compile Include="GeneratedStrings\AllStrings.cs" />
+    <Compile Include="GeneratedStrings\SunInfos\BuildSunInfos.cs" />
+    <Compile Include="GeneratedStrings\SunInfos\World.cs" />
+    <Compile Include="GeneratedStrings\SunInfos\Undercover.cs" />
+    <Compile Include="GeneratedStrings\SunInfos\UndercoverOldGen.cs" />
+    <Compile Include="GeneratedStrings\SunInfos\Carbon.cs" />
+    <Compile Include="GeneratedStrings\SunInfos\MostWanted.cs" />
+    <Compile Include="GeneratedStrings\SunInfos\Underground2.cs" />
+    <Compile Include="GeneratedStrings\SunInfos\Underground1.cs" />
     <Compile Include="GeneratedStrings\Brands\BuildBrands.cs" />
     <Compile Include="GeneratedStrings\Brands\World.cs" />
     <Compile Include="GeneratedStrings\Brands\HotPursuit2.cs" />
@@ -187,6 +195,7 @@
     <Compile Include="GeneratedStrings\Brands\MostWanted.cs" />
     <Compile Include="GeneratedStrings\Brands\Carbon.cs" />
     <Compile Include="GeneratedStrings\Fng\ProStreet.cs" />
+    <Compile Include="GeneratedStrings\Fng\Underground1.cs" />
     <Compile Include="GeneratedStrings\Fng\Underground2.cs" />
     <Compile Include="GeneratedStrings\Global\Attributes.cs" />
     <Compile Include="GeneratedStrings\Global\BuildGlobal.cs" />
@@ -231,6 +240,7 @@
     <Compile Include="GeneratedStrings\PresetSkins\UndercoverOldGen.cs" />
     <Compile Include="GeneratedStrings\Presets\BuildPresets.cs" />
     <Compile Include="GeneratedStrings\Presets\CarbonArcade.cs" />
+    <Compile Include="GeneratedStrings\Presets\Underground1.cs" />
     <Compile Include="GeneratedStrings\Presets\Underground2.cs" />
     <Compile Include="GeneratedStrings\Presets\UndercoverOldGen.cs" />
     <Compile Include="GeneratedStrings\Presets\Carbon.cs" />
@@ -252,6 +262,8 @@
     <Compile Include="GeneratedStrings\PartsLists\Wheels.cs" />
     <Compile Include="GeneratedStrings\Textures\BuildTextures.cs" />
     <Compile Include="GeneratedStrings\Textures\ProStreet\GenericTextures.cs" />
+    <Compile Include="GeneratedStrings\Textures\Underground1\GenericTextures.cs" />
+    <Compile Include="GeneratedStrings\Textures\Underground1\Vinyls.cs" />
     <Compile Include="GeneratedStrings\Textures\Underground2\GenericTextures.cs" />
     <Compile Include="GeneratedStrings\Textures\Underground2\Vinyls.cs" />
     <Compile Include="GeneratedStrings\Textures\Carbon\GenericTextures.cs" />
