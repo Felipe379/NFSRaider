@@ -2,7 +2,7 @@
 
 namespace NFSRaider.GeneratedStrings.Materials
 {
-    public static class Underground2
+    public static class Underground1
     {
         public static readonly List<string> List = new List<string>
         {

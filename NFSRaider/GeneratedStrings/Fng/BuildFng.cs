@@ -8,7 +8,8 @@ namespace NFSRaider.GeneratedStrings.Fng
         public HashSet<string> GetAllFng()
         {
             var fngs = new HashSet<string>(
-                Underground2.List
+                Underground1.List
+                .Concat(Underground2.List)
                 .Concat(MostWanted.List)
                 .Concat(Carbon.List)
                 .Concat(ProStreet.List)
