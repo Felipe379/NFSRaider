@@ -390,7 +390,6 @@ namespace NFSRaider.GeneratedStrings.Textures.Shared
 "_STYLE15_HEADLIGHT_OFF",
 "_STYLE15_HEADLIGHT_ON",
 "_STYLE15_HEADLIGHT_RIGHT",
-
 "_TIRE",
 "_TIRE_N",
 "_TREAD",
