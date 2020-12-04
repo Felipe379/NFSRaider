@@ -1,4 +1,5 @@
 ﻿using NFSRaider.GeneratedStrings.Brands;
+using NFSRaider.GeneratedStrings.Files;
 using NFSRaider.GeneratedStrings.Fng;
 using NFSRaider.GeneratedStrings.Global;
 using NFSRaider.GeneratedStrings.LanguageLabels;
@@ -15,7 +16,6 @@ using NFSRaider.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -48,6 +48,7 @@ namespace NFSRaider.GeneratedStrings
             hashSet.UnionWith(new BuildVlt().GetAllVlt());
             hashSet.UnionWith(new BuildTextures().GetAllTextures());
             hashSet.UnionWith(new BuildFng().GetAllFng());
+            hashSet.UnionWith(new BuildFiles().GetAllFiles());
 
             try
             {

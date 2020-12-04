@@ -14,6 +14,7 @@ namespace NFSRaider.GeneratedStrings.Textures
                 .Concat(MostWanted.GenericTextures.List)
                 .Concat(Carbon.GenericTextures.List)
                 .Concat(ProStreet.GenericTextures.List)
+                .Concat(Shared.Typos.List)
                 );
 
             foreach (var car in Cars.List)

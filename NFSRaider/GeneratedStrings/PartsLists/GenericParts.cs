@@ -5669,6 +5669,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists
 "SPLASH306",
 "SPLASH307",
 "SPOILER",
+"SPOILER_AS",
 "SPOILER_AS2",
 "SPOILER_CARRERA",
 "SPOILER_CARRERA_AS2",
@@ -7480,6 +7481,8 @@ namespace NFSRaider.GeneratedStrings.PartsLists
 "LOGO_ATOM2",
 "ANY",
 "WINDOW_TINTS",
+"RIDE_HEIGHT_DROP",
+"LICENSE_TEXTURE",
         };
     }
 }

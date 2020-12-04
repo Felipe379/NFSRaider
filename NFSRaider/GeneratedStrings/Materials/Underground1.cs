@@ -105,6 +105,8 @@ namespace NFSRaider.GeneratedStrings.Materials
 "RUBBER",
 "SHINYPLASTIC",
 "SKIN",
+"TRAFFIC",
+"TRAFFICWINDOWS",
 "USER_CALIPERS",
 "USER_EXHAUST",
 "USER_EXHAUST2",

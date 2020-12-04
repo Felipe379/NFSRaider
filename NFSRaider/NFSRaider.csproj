@@ -179,6 +179,8 @@
     <Compile Include="FormMethods\FormBruteforce.cs" />
     <Compile Include="FormMethods\FormFile.cs" />
     <Compile Include="GeneratedStrings\AllStrings.cs" />
+    <Compile Include="GeneratedStrings\Files\BuildFiles.cs" />
+    <Compile Include="GeneratedStrings\Files\Files.cs" />
     <Compile Include="GeneratedStrings\SunInfos\BuildSunInfos.cs" />
     <Compile Include="GeneratedStrings\SunInfos\World.cs" />
     <Compile Include="GeneratedStrings\SunInfos\Undercover.cs" />
@@ -262,6 +264,7 @@
     <Compile Include="GeneratedStrings\PartsLists\Wheels.cs" />
     <Compile Include="GeneratedStrings\Textures\BuildTextures.cs" />
     <Compile Include="GeneratedStrings\Textures\ProStreet\GenericTextures.cs" />
+    <Compile Include="GeneratedStrings\Textures\Shared\Typos.cs" />
     <Compile Include="GeneratedStrings\Textures\Underground1\GenericTextures.cs" />
     <Compile Include="GeneratedStrings\Textures\Underground1\Vinyls.cs" />
     <Compile Include="GeneratedStrings\Textures\Underground2\GenericTextures.cs" />
