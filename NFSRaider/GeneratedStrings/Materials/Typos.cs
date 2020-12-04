@@ -20,7 +20,10 @@ namespace NFSRaider.GeneratedStrings.Materials
 "CROME",
 "HEALIGHT",
 "MAGCHORME",
+"MAGCRHOME",
 "MAGSILVER3",
+"MOLDNGS",
+"MUGCHROME",
 "PLASTIC",
 "SHIELD",
         };

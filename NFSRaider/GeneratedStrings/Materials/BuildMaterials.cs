@@ -14,6 +14,7 @@ namespace NFSRaider.GeneratedStrings.Materials
                 .Concat(Carbon.List)
                 .Concat(ProStreet.List)
                 .Concat(World.List)
+                .Concat(Typos.List)
                 );
 
             return materials;
