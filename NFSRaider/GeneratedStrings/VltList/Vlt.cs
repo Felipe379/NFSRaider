@@ -47473,6 +47473,8 @@ namespace NFSRaider.GeneratedStrings.VltList
 "mazda3sport_hood",
 "plrpassrvl",
 "rvlpassplr",
+"4.cans",
+"qr.4.5",
 "cs.10.4",
 "cs.10.3",
 "cs.10.2",
@@ -47488,6 +47490,8 @@ namespace NFSRaider.GeneratedStrings.VltList
 "CameraInfo_Drift",
 "CameraInfo_Bumper",
 "CameraInfo_Pursuit",
+"brick",
+"InitialZoneHeat",
         };
     }
 }
