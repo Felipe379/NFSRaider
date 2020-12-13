@@ -106,6 +106,7 @@ namespace NFSRaider.GeneratedStrings.Global
             "COLOR0LANGUAGEHASH",
             "EXCLUDEDECAL",
             "PART",
+            "SPEECHCOLOUR",
         };
     }
 }
