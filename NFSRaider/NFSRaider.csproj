@@ -180,7 +180,11 @@
     <Compile Include="FormMethods\FormFile.cs" />
     <Compile Include="GeneratedStrings\AllStrings.cs" />
     <Compile Include="GeneratedStrings\Files\BuildFiles.cs" />
+    <Compile Include="GeneratedStrings\Files\Cars\Files.cs" />
     <Compile Include="GeneratedStrings\Files\Files.cs" />
+    <Compile Include="GeneratedStrings\Files\Localized\Files.cs" />
+    <Compile Include="GeneratedStrings\Files\Localized\Language.cs" />
+    <Compile Include="GeneratedStrings\Files\Localized\Languages.cs" />
     <Compile Include="GeneratedStrings\SunInfos\BuildSunInfos.cs" />
     <Compile Include="GeneratedStrings\SunInfos\World.cs" />
     <Compile Include="GeneratedStrings\SunInfos\Undercover.cs" />
