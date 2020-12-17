@@ -26,11 +26,6 @@ namespace NFSRaider.GeneratedStrings.TruncatedStrings
                 AddHashes(hash.Key, hash.Value);
             }
 
-            foreach (var hash in MostWanted.BinHashesTextures)
-            {
-                AddHashes(hash.Key, hash.Value);
-            }
-
             return _hashes.ToDictionary(c => c.Key, c => string.Join(" / ", c.Value));
         }
     }

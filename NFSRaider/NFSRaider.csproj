@@ -280,7 +280,6 @@
     <Compile Include="GeneratedStrings\Textures\Shared\Cars.cs" />
     <Compile Include="GeneratedStrings\TruncatedStrings\BuildTruncatedStrings.cs" />
     <Compile Include="GeneratedStrings\TruncatedStrings\Underground2.cs" />
-    <Compile Include="GeneratedStrings\TruncatedStrings\MostWanted.cs" />
     <Compile Include="GeneratedStrings\VltList\BuildVlt.cs" />
     <Compile Include="GeneratedStrings\VltList\Vlt.cs" />
     <Compile Include="Hash\Bin.cs" />
