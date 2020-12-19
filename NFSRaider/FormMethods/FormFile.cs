@@ -42,9 +42,9 @@ namespace NFSRaider.FormMethods
             return arrayFromFileWithHashesSkipped.ToArray();
         }
 
-        public static List<RaiderResults> UnhashFromFile(Endianness unhashingEndianness, HashFactory hashFactory, uint[] arrayFromFile)
+        public static List<RaiderResults> UnhashFromFile(Endianness unhashingEndianness, HashFactory hashFactory, uint[] arrayFromFile, CaseOptions caseOption)
         {
-            var allStrings = new AllStrings().ReadHashesFile(hashFactory);
+            var allStrings = new AllStrings().ReadHashesFile(hashFactory, caseOption);
             var listBox = new List<RaiderResults>();
             var isKnown = false;
 

@@ -1,4 +1,5 @@
-﻿using NFSRaider.GeneratedStrings.Brands;
+﻿using NFSRaider.Enum;
+using NFSRaider.GeneratedStrings.Brands;
 using NFSRaider.GeneratedStrings.Files;
 using NFSRaider.GeneratedStrings.Fng;
 using NFSRaider.GeneratedStrings.Global;
@@ -24,6 +25,7 @@ namespace NFSRaider.GeneratedStrings
     public class AllStrings
     {
         public string FileName { get; set; } = "Hashes.txt";
+        public string UserFileName { get; set; } = "UserHashes.txt";
 
         public void GetStrings()
         {
@@ -66,11 +68,14 @@ namespace NFSRaider.GeneratedStrings
             }
         }
 
-        public Dictionary<uint, string> ReadHashesFile(HashFactory hashFactory)
+        public Dictionary<uint, string> ReadHashesFile(HashFactory hashFactory, CaseOptions caseOption)
         {
             var hashes = new BuildTruncatedStrings().GetAllTruncatedStrings();
-            var collisions = new HashSet<string>();
-            uint currentHexValue;
+
+            if (!File.Exists(UserFileName))
+            {
+                File.Create(UserFileName);
+            }
 
             if (!File.Exists(FileName))
             {
@@ -78,25 +83,126 @@ namespace NFSRaider.GeneratedStrings
                 GC.Collect();
             }
 
-            using (var fileStream = File.OpenRead(FileName))
-            using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true))
+            var files = new List<string>() { UserFileName, FileName };
+            if (caseOption == CaseOptions.Uppercase)
+                hashes = HashUppercase(hashFactory, files, hashes);
+            else if (caseOption == CaseOptions.Lowercase)
+                hashes = HashLowercase(hashFactory, files, hashes);
+            else
+                hashes = HashNone(hashFactory, files, hashes);
+
+            return hashes;
+        }
+
+        private Dictionary<uint, string> HashNone(HashFactory hashFactory, IEnumerable<string> files, Dictionary<uint, string> hashes)
+        {
+            var collisions = new HashSet<string>();
+            uint currentHexValue;
+
+            foreach (var file in files)
             {
-                var line = string.Empty;
-
-                while ((line = streamReader.ReadLine()) != null)
+                using (var fileStream = File.OpenRead(file))
+                using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true))
                 {
-                    currentHexValue = hashFactory.Hash(line);
+                    var line = string.Empty;
 
-                    if (hashes.ContainsKey(currentHexValue))
+                    while ((line = streamReader.ReadLine()) != null)
                     {
-                        if (hashes[currentHexValue] != line)
+                        currentHexValue = hashFactory.Hash(line);
+
+                        if (hashes.ContainsKey(currentHexValue))
                         {
-                            collisions.Add(line);
+                            if (hashes[currentHexValue] != line)
+                            {
+                                collisions.Add(line);
+                            }
+                        }
+                        else
+                        {
+                            hashes.Add(currentHexValue, line);
                         }
                     }
-                    else
+                }
+            }
+
+            foreach (var collision in collisions)
+            {
+                currentHexValue = hashFactory.Hash(collision);
+                hashes[currentHexValue] += " / " + collision;
+            }
+
+            return hashes;
+        }
+
+        private Dictionary<uint, string> HashUppercase(HashFactory hashFactory, IEnumerable<string> files, Dictionary<uint, string> hashes)
+        {
+            var collisions = new HashSet<string>();
+            uint currentHexValue;
+
+            foreach (var file in files)
+            {
+                using (var fileStream = File.OpenRead(file))
+                using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true))
+                {
+                    var line = string.Empty;
+
+                    while ((line = streamReader.ReadLine()) != null)
                     {
-                        hashes.Add(currentHexValue, line);
+                        line = line.ToUpperInvariant();
+                        currentHexValue = hashFactory.Hash(line);
+
+                        if (hashes.ContainsKey(currentHexValue))
+                        {
+                            if (hashes[currentHexValue] != line)
+                            {
+                                collisions.Add(line);
+                            }
+                        }
+                        else
+                        {
+                            hashes.Add(currentHexValue, line);
+                        }
+                    }
+                }
+            }
+
+            foreach (var collision in collisions)
+            {
+                currentHexValue = hashFactory.Hash(collision);
+                hashes[currentHexValue] += " / " + collision;
+            }
+
+            return hashes;
+        }
+
+        private Dictionary<uint, string> HashLowercase(HashFactory hashFactory, IEnumerable<string> files, Dictionary<uint, string> hashes)
+        {
+            var collisions = new HashSet<string>();
+            uint currentHexValue;
+
+            foreach (var file in files)
+            {
+                using (var fileStream = File.OpenRead(file))
+                using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true))
+                {
+                    var line = string.Empty;
+
+                    while ((line = streamReader.ReadLine()) != null)
+                    {
+                        line = line.ToLowerInvariant();
+                        currentHexValue = hashFactory.Hash(line);
+
+                        if (hashes.ContainsKey(currentHexValue))
+                        {
+                            if (hashes[currentHexValue] != line)
+                            {
+                                collisions.Add(line);
+                            }
+                        }
+                        else
+                        {
+                            hashes.Add(currentHexValue, line);
+                        }
                     }
                 }
             }

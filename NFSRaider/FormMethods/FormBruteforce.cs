@@ -4,6 +4,7 @@ using NFSRaider.GeneratedStrings;
 using NFSRaider.Hash;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace NFSRaider.FormMethods
 {
@@ -18,6 +19,7 @@ namespace NFSRaider.FormMethods
         private HashSet<string> WordsBetweenVariations { get; set; }
         private GenerateOption GenerateOption { get; set; }
         private Endianness UnhashingEndianness { get; set; }
+        private CaseOptions CaseOption { get; set; }
         private HashFactory HashFactory { get; set; }
 
         private bool CheckForHashesInFile { get; set; }
@@ -25,10 +27,13 @@ namespace NFSRaider.FormMethods
 
         private NFSRaiderForm Sender { get; set; }
 
-        public FormBruteforce(NFSRaiderForm sender, HashFactory hashFactory, bool checkForHashesInFile, bool tryToBruteForce, string txtPrefixes, string txtSuffixes, string txtVariations, string txtWordsBetweenVariations, string txtMinVariations, string txtMaxVariations, GenerateOption generateOption, Endianness unhashingEndianness)
+        public FormBruteforce(
+            NFSRaiderForm sender, HashFactory hashFactory, bool checkForHashesInFile, bool tryToBruteForce, string txtPrefixes, string txtSuffixes, string txtVariations, 
+            string txtWordsBetweenVariations, string txtMinVariations, string txtMaxVariations, GenerateOption generateOption, Endianness unhashingEndianness, CaseOptions caseOption)
         {
             Sender = sender;
             HashFactory = hashFactory;
+            CaseOption = caseOption;
 
             Hashes = new HashSet<uint>();
             Prefixes = new HashSet<string>(txtPrefixes.Split(new[] { ',' }));
@@ -47,18 +52,22 @@ namespace NFSRaider.FormMethods
 
         public void Unhash(string txtHashes)
         {
+            var hashes = txtHashes.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).Select(c => c.Trim()).ToList();
+
             if (UnhashingEndianness == Endianness.BigEndian)
             {
-                foreach (var hash in txtHashes.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries))
+                foreach (var hash in hashes)
                 {
-                    Hashes.Add(Helpers.Hashes.Reverse(Convert.ToUInt32(hash, 16)));
+                    if (Helpers.Hashes.IsHash(hash))
+                        Hashes.Add(Helpers.Hashes.Reverse(Convert.ToUInt32(hash, 16)));
                 }
             }
             else
             {
-                foreach (var hash in txtHashes.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries))
+                foreach (var hash in hashes)
                 {
-                    Hashes.Add(Convert.ToUInt32(hash, 16));
+                    if (Helpers.Hashes.IsHash(hash))
+                        Hashes.Add(Convert.ToUInt32(hash, 16));
                 }
             }
         }
@@ -77,7 +86,7 @@ namespace NFSRaider.FormMethods
 
         private void CheckFile()
         {
-            var allParts = new AllStrings().ReadHashesFile(HashFactory);
+            var allParts = new AllStrings().ReadHashesFile(HashFactory, CaseOption);
 
             foreach (var hash in Hashes)
             {

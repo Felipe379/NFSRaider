@@ -24,6 +24,7 @@ namespace NFSRaider
             InitializeComponent();
             LoadOptionChanged();
             CboOrderBy.SelectedIndex = 0;
+            CboForceHashListCase.SelectedIndex = 0;
         }
 
         private List<RaiderResults> ListBoxDataSource { get; set; } = new List<RaiderResults>();
@@ -32,6 +33,8 @@ namespace NFSRaider
         private Endianness UnhashingEndianness { get; set; } = Endianness.BigEndian;
         private Endianness ListEndianness { get; set; } = Endianness.BigEndian;
         private HashType HashType { get; set; } = HashType.BIN;
+        private OrderOptions OrderOption { get; set; } = OrderOptions.None;
+        private CaseOptions CaseOption { get; set; } = CaseOptions.None;
         private HashFactory HashFactory { get; set; } = HashFactory.GetHashType(HashType.BIN);
 
         private Thread BruteForceThread { get; set; }
@@ -57,26 +60,49 @@ namespace NFSRaider
         {
             if (RdbLoadFile.Checked)
             {
-                var file = FormMethods.FormFile.Open(TxtFileStartOffset.Text, TxtFileEndOffset.Text, TxtFileReadHashes.Text, TxtFileSkipHashes.Text, FilePath);
-                var listBox = FormMethods.FormFile.UnhashFromFile(UnhashingEndianness, HashFactory, file);
-                ListBoxDataSource = listBox;
-                ChangedListBoxDataSource();
-                GC.Collect();
+                if (!string.IsNullOrWhiteSpace(FilePath) && File.Exists(FilePath))
+                {
+                    var file = FormMethods.FormFile.Open(TxtFileStartOffset.Text, TxtFileEndOffset.Text, TxtFileReadHashes.Text, TxtFileSkipHashes.Text, FilePath);
+                    var listBox = FormMethods.FormFile.UnhashFromFile(UnhashingEndianness, HashFactory, file, CaseOption);
+                    ListBoxDataSource = listBox;
+                    ChangedListBoxDataSource();
+                    GC.Collect();
+                }
+                else
+                {
+                    MessageBox.Show("File not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else if (RdbLoadFromText.Checked && !BruteforceProcessStarted)
             {
-                DisableComponentsDuringBruteforce();
-
-                var bruteForce = new FormMethods.FormBruteforce(this, HashFactory, ChkUseHashesFile.Checked, ChkTryToBruteforce.Checked, TxtPrefixes.Text, TxtSuffixes.Text,
-                    TxtVariations.Text, TxtWordsBetweenVariations.Text, TxtMinVariations.Text, TxtMaxVariations.Text, GenerateOption, UnhashingEndianness);
-                bruteForce.Unhash(TxtLoadFromText.Text);
-                BruteforceProcessStarted = true;
-
-                BruteForceThread = new Thread(() => { bruteForce.BruteForceThread(); Invoke((MethodInvoker)(() => BruteforceFinished())); })
+                if (!string.IsNullOrWhiteSpace(TxtLoadFromText.Text) && 
+                    Convert.ToInt32(NumericMinVariations.Text) <= Convert.ToInt32(NumericMaxVariations.Text) &&
+                    (!string.IsNullOrWhiteSpace(TxtPrefixes.Text) || !string.IsNullOrWhiteSpace(TxtVariations.Text) || !string.IsNullOrWhiteSpace(TxtSuffixes.Text)))
                 {
-                    IsBackground = true
-                };
-                BruteForceThread.Start();
+                    DisableComponentsDuringBruteforce();
+
+                    var bruteForce = new FormMethods.FormBruteforce(this, HashFactory, ChkUseHashesFile.Checked, ChkTryToBruteforce.Checked, TxtPrefixes.Text, TxtSuffixes.Text,
+                        TxtVariations.Text, TxtWordsBetweenVariations.Text, NumericMinVariations.Text, NumericMaxVariations.Text, GenerateOption, UnhashingEndianness, CaseOption);
+                    bruteForce.Unhash(TxtLoadFromText.Text);
+                    BruteforceProcessStarted = true;
+
+                    BruteForceThread = new Thread(() => { bruteForce.BruteForceThread(); Invoke((MethodInvoker)(() => BruteforceFinished())); })
+                    {
+                        IsBackground = true
+                    };
+                    BruteForceThread.Start();
+                }
+                else
+                {
+                    var message = "Failed to raid:\r\n";
+                    if (string.IsNullOrWhiteSpace(TxtLoadFromText.Text))
+                        message += "- You must include hashes on the list.\r\n";
+                    if (Convert.ToInt32(NumericMinVariations.Text) > Convert.ToInt32(NumericMaxVariations.Text))
+                        message += "- Minimum amount of variations cannot be bigger than the maximum amount of variations.\r\n";
+                    if (string.IsNullOrWhiteSpace(TxtPrefixes.Text) && string.IsNullOrWhiteSpace(TxtVariations.Text) && string.IsNullOrWhiteSpace(TxtSuffixes.Text))
+                        message += "- You must fill at least one of those: Prefixes, Variations or Suffixes.";
+                    MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -95,7 +121,7 @@ namespace NFSRaider
             BruteforceProcessStarted = false;
             EnableComponentsAfterBruteforce();
             GC.Collect();
-            MessageBox.Show("Raid completed!");
+            MessageBox.Show("Raid completed!", "Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
@@ -119,13 +145,13 @@ namespace NFSRaider
                     .ToList();
             }
 
-            if (CboOrderBy.SelectedIndex == 1)
+            if (OrderOption == OrderOptions.Hash)
             {
                 listBoxDataSource = listBoxDataSource
                     .OrderBy(c => c.Hash)
                     .ToList();
             }
-            else if (CboOrderBy.SelectedIndex == 2)
+            else if (OrderOption == OrderOptions.String)
             {
                 listBoxDataSource = listBoxDataSource
                     .OrderBy(c => c.Value)
@@ -236,16 +262,16 @@ namespace NFSRaider
                 TxtFileSkipHashes.Text = "0";
         }
 
-        private void TxtMinVariations_Leave(object sender, EventArgs e)
+        private void NumericMinVariations_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(TxtMinVariations.Text))
-                TxtMinVariations.Text = "0";
+            if (string.IsNullOrWhiteSpace(NumericMinVariations.Text))
+                NumericMinVariations.Text = "0";
         }
 
-        private void TxtMaxVariations_Leave(object sender, EventArgs e)
+        private void NumericMaxVariations_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(TxtMaxVariations.Text))
-                TxtMaxVariations.Text = "0";
+            if (string.IsNullOrWhiteSpace(NumericMaxVariations.Text))
+                NumericMaxVariations.Text = "0";
         }
 
         private void RdbUnhashBigEndian_CheckedChanged(object sender, EventArgs e)
@@ -280,6 +306,34 @@ namespace NFSRaider
                 GenerateOption = GenerateOption.WithoutRepetition;
         }
 
+        private void ChkUseHashesFile_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChkUseHashesFile.Checked)
+                CboForceHashListCase.Enabled = true;
+            else
+                CboForceHashListCase.Enabled = false;
+        }
+
+        private void CboOrderBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CboOrderBy.SelectedIndex == 1)
+                OrderOption = OrderOptions.Hash;
+            else if (CboOrderBy.SelectedIndex == 2)
+                OrderOption = OrderOptions.String;
+            else
+                OrderOption = OrderOptions.None;
+        }
+
+        private void CboForceHashListCase_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CboForceHashListCase.SelectedIndex == 1)
+                CaseOption = CaseOptions.Uppercase;
+            else if (CboForceHashListCase.SelectedIndex == 2)
+                CaseOption = CaseOptions.Lowercase;
+            else
+                CaseOption = CaseOptions.None;
+        }
+
         private void BtnSearchPrevious_Click(object sender, EventArgs e)
         {
             for (int i = LstUnhashed.SelectedIndex - 1; i >= 0; i--)
@@ -310,16 +364,23 @@ namespace NFSRaider
 
         private void BtnExportHashes_Click(object sender, EventArgs e)
         {
-            var saveFileDialog = new SaveFileDialog()
+            if (LstUnhashed.DataSource != null && ((IList<string>)LstUnhashed.DataSource).Count > 0)
             {
-                Filter = "Text Files (*.txt)|*.txt",
-                DefaultExt = "txt",
-                AddExtension = true
-            };
+                var saveFileDialog = new SaveFileDialog()
+                {
+                    Filter = "Text Files (*.txt)|*.txt",
+                    DefaultExt = "txt",
+                    AddExtension = true
+                };
 
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    File.WriteAllLines(saveFileDialog.FileName, (IList<string>)LstUnhashed.DataSource);
+                }
+            }
+            else
             {
-                File.WriteAllLines(saveFileDialog.FileName, (IList<string>)LstUnhashed.DataSource);
+                MessageBox.Show("No hashes to export.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -341,8 +402,8 @@ namespace NFSRaider
                 TxtPrefixes.Enabled = false;
                 TxtVariations.Enabled = false;
                 TxtSuffixes.Enabled = false;
-                TxtMinVariations.Enabled = false;
-                TxtMaxVariations.Enabled = false;
+                NumericMinVariations.Enabled = false;
+                NumericMaxVariations.Enabled = false;
                 TxtWordsBetweenVariations.Enabled = false;
                 ChkUseHashesFile.Enabled = false;
                 ChkTryToBruteforce.Enabled = false;
@@ -377,8 +438,8 @@ namespace NFSRaider
                 TxtPrefixes.Enabled = true;
                 TxtVariations.Enabled = true;
                 TxtSuffixes.Enabled = true;
-                TxtMinVariations.Enabled = true;
-                TxtMaxVariations.Enabled = true;
+                NumericMinVariations.Enabled = true;
+                NumericMaxVariations.Enabled = true;
                 TxtWordsBetweenVariations.Enabled = true;
                 ChkBruteforceWithRepetition.Enabled = true;
             }
@@ -387,8 +448,8 @@ namespace NFSRaider
                 TxtPrefixes.Enabled = false;
                 TxtVariations.Enabled = false;
                 TxtSuffixes.Enabled = false;
-                TxtMinVariations.Enabled = false;
-                TxtMaxVariations.Enabled = false;
+                NumericMinVariations.Enabled = false;
+                NumericMaxVariations.Enabled = false;
                 TxtWordsBetweenVariations.Enabled = false;
                 ChkBruteforceWithRepetition.Enabled = false;
             }
@@ -403,8 +464,8 @@ namespace NFSRaider
             TxtPrefixes.Enabled = true;
             TxtVariations.Enabled = true;
             TxtSuffixes.Enabled = true;
-            TxtMinVariations.Enabled = true;
-            TxtMaxVariations.Enabled = true;
+            NumericMinVariations.Enabled = true;
+            NumericMaxVariations.Enabled = true;
             TxtWordsBetweenVariations.Enabled = true;
             BtnGenerateListOfHashes.Enabled = true;
             ChkUseHashesFile.Enabled = true;
@@ -414,6 +475,7 @@ namespace NFSRaider
             RdbVltHash.Enabled = true;
             RdbUnhashBigEndian.Enabled = true;
             RdbUnhashLittleEndian.Enabled = true;
+            CboForceHashListCase.Enabled = true;
 
             BruteForceChecked();
         }
@@ -427,8 +489,8 @@ namespace NFSRaider
             TxtPrefixes.Enabled = false;
             TxtVariations.Enabled = false;
             TxtSuffixes.Enabled = false;
-            TxtMinVariations.Enabled = false;
-            TxtMaxVariations.Enabled = false;
+            NumericMinVariations.Enabled = false;
+            NumericMaxVariations.Enabled = false;
             TxtWordsBetweenVariations.Enabled = false;
             BtnGenerateListOfHashes.Enabled = false;
             ChkUseHashesFile.Enabled = false;
@@ -438,6 +500,7 @@ namespace NFSRaider
             RdbVltHash.Enabled = false;
             RdbUnhashBigEndian.Enabled = false;
             RdbUnhashLittleEndian.Enabled = false;
+            CboForceHashListCase.Enabled = false;
         }
     }
 }
