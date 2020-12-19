@@ -78,25 +78,28 @@
             this.LblTextKnownHashes = new System.Windows.Forms.Label();
             this.LblTextUnknownHashes = new System.Windows.Forms.Label();
             this.LblTextTotalHashes = new System.Windows.Forms.Label();
-            this.GrpVariationsOptions = new System.Windows.Forms.GroupBox();
-            this.TxtMinVariations = new System.Windows.Forms.TextBox();
+            this.GrpBruteforceOptions = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtWordsBetweenVariations = new System.Windows.Forms.TextBox();
-            this.TxtMaxVariations = new System.Windows.Forms.TextBox();
             this.TxtSearch = new System.Windows.Forms.TextBox();
             this.BtnSearchPrevious = new System.Windows.Forms.Button();
             this.BtnSearchNext = new System.Windows.Forms.Button();
             this.LblStatus = new System.Windows.Forms.Label();
             this.ChkTryToBruteforce = new System.Windows.Forms.CheckBox();
             this.ChkBruteforceWithRepetition = new System.Windows.Forms.CheckBox();
+            this.CboForceHashListCase = new System.Windows.Forms.ComboBox();
+            this.NumericMinVariations = new System.Windows.Forms.NumericUpDown();
+            this.NumericMaxVariations = new System.Windows.Forms.NumericUpDown();
             this.GrpLoadOptions.SuspendLayout();
             this.GrpHashType.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.GrpExportOptions.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.GrpVariationsOptions.SuspendLayout();
+            this.GrpBruteforceOptions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericMinVariations)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericMaxVariations)).BeginInit();
             this.SuspendLayout();
             // 
             // LstUnhashed
@@ -229,9 +232,9 @@
             this.GrpHashType.Controls.Add(this.RdbVlt64Hash);
             this.GrpHashType.Controls.Add(this.RdbVltHash);
             this.GrpHashType.Controls.Add(this.RdbBinHash);
-            this.GrpHashType.Location = new System.Drawing.Point(609, 350);
+            this.GrpHashType.Location = new System.Drawing.Point(772, 351);
             this.GrpHashType.Name = "GrpHashType";
-            this.GrpHashType.Size = new System.Drawing.Size(268, 57);
+            this.GrpHashType.Size = new System.Drawing.Size(100, 109);
             this.GrpHashType.TabIndex = 38;
             this.GrpHashType.TabStop = false;
             this.GrpHashType.Text = "Hash type";
@@ -240,7 +243,7 @@
             // 
             this.RdbVlt64Hash.AutoSize = true;
             this.RdbVlt64Hash.Enabled = false;
-            this.RdbVlt64Hash.Location = new System.Drawing.Point(145, 22);
+            this.RdbVlt64Hash.Location = new System.Drawing.Point(12, 80);
             this.RdbVlt64Hash.Name = "RdbVlt64Hash";
             this.RdbVlt64Hash.Size = new System.Drawing.Size(74, 17);
             this.RdbVlt64Hash.TabIndex = 41;
@@ -251,7 +254,7 @@
             // RdbVltHash
             // 
             this.RdbVltHash.AutoSize = true;
-            this.RdbVltHash.Location = new System.Drawing.Point(77, 22);
+            this.RdbVltHash.Location = new System.Drawing.Point(12, 51);
             this.RdbVltHash.Name = "RdbVltHash";
             this.RdbVltHash.Size = new System.Drawing.Size(62, 17);
             this.RdbVltHash.TabIndex = 40;
@@ -263,7 +266,7 @@
             // 
             this.RdbBinHash.AutoSize = true;
             this.RdbBinHash.Checked = true;
-            this.RdbBinHash.Location = new System.Drawing.Point(6, 22);
+            this.RdbBinHash.Location = new System.Drawing.Point(12, 19);
             this.RdbBinHash.Name = "RdbBinHash";
             this.RdbBinHash.Size = new System.Drawing.Size(65, 17);
             this.RdbBinHash.TabIndex = 39;
@@ -276,9 +279,9 @@
             // 
             this.groupBox1.Controls.Add(this.RdbUnhashLittleEndian);
             this.groupBox1.Controls.Add(this.RdbUnhashBigEndian);
-            this.groupBox1.Location = new System.Drawing.Point(609, 413);
+            this.groupBox1.Location = new System.Drawing.Point(609, 375);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(268, 57);
+            this.groupBox1.Size = new System.Drawing.Size(154, 85);
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Endianness";
@@ -286,7 +289,7 @@
             // RdbUnhashLittleEndian
             // 
             this.RdbUnhashLittleEndian.AutoSize = true;
-            this.RdbUnhashLittleEndian.Location = new System.Drawing.Point(137, 22);
+            this.RdbUnhashLittleEndian.Location = new System.Drawing.Point(10, 56);
             this.RdbUnhashLittleEndian.Name = "RdbUnhashLittleEndian";
             this.RdbUnhashLittleEndian.Size = new System.Drawing.Size(127, 17);
             this.RdbUnhashLittleEndian.TabIndex = 44;
@@ -298,7 +301,7 @@
             // 
             this.RdbUnhashBigEndian.AutoSize = true;
             this.RdbUnhashBigEndian.Checked = true;
-            this.RdbUnhashBigEndian.Location = new System.Drawing.Point(6, 22);
+            this.RdbUnhashBigEndian.Location = new System.Drawing.Point(10, 27);
             this.RdbUnhashBigEndian.Name = "RdbUnhashBigEndian";
             this.RdbUnhashBigEndian.Size = new System.Drawing.Size(97, 17);
             this.RdbUnhashBigEndian.TabIndex = 43;
@@ -420,6 +423,7 @@
             this.CboOrderBy.Name = "CboOrderBy";
             this.CboOrderBy.Size = new System.Drawing.Size(228, 21);
             this.CboOrderBy.TabIndex = 54;
+            this.CboOrderBy.SelectedIndexChanged += new System.EventHandler(this.CboOrderBy_SelectedIndexChanged);
             // 
             // ChkIgnoreRepeatedStrings
             // 
@@ -536,18 +540,19 @@
             // ChkUseHashesFile
             // 
             this.ChkUseHashesFile.AutoSize = true;
-            this.ChkUseHashesFile.Location = new System.Drawing.Point(738, 299);
+            this.ChkUseHashesFile.Location = new System.Drawing.Point(769, 323);
             this.ChkUseHashesFile.Name = "ChkUseHashesFile";
-            this.ChkUseHashesFile.Size = new System.Drawing.Size(112, 17);
+            this.ChkUseHashesFile.Size = new System.Drawing.Size(103, 17);
             this.ChkUseHashesFile.TabIndex = 35;
-            this.ChkUseHashesFile.Text = "Use hashes.txt file";
+            this.ChkUseHashesFile.Text = "Use hashes files";
             this.ChkUseHashesFile.UseVisualStyleBackColor = true;
+            this.ChkUseHashesFile.CheckedChanged += new System.EventHandler(this.ChkUseHashesFile_CheckedChanged);
             // 
             // BtnGenerateListOfHashes
             // 
-            this.BtnGenerateListOfHashes.Location = new System.Drawing.Point(609, 295);
+            this.BtnGenerateListOfHashes.Location = new System.Drawing.Point(610, 319);
             this.BtnGenerateListOfHashes.Name = "BtnGenerateListOfHashes";
-            this.BtnGenerateListOfHashes.Size = new System.Drawing.Size(123, 23);
+            this.BtnGenerateListOfHashes.Size = new System.Drawing.Size(153, 23);
             this.BtnGenerateListOfHashes.TabIndex = 34;
             this.BtnGenerateListOfHashes.Text = "Generate list of hashes";
             this.BtnGenerateListOfHashes.UseVisualStyleBackColor = true;
@@ -561,9 +566,9 @@
             this.groupBox2.Controls.Add(this.LblTextKnownHashes);
             this.groupBox2.Controls.Add(this.LblTextUnknownHashes);
             this.groupBox2.Controls.Add(this.LblTextTotalHashes);
-            this.groupBox2.Location = new System.Drawing.Point(609, 475);
+            this.groupBox2.Location = new System.Drawing.Point(610, 469);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(263, 68);
+            this.groupBox2.Size = new System.Drawing.Size(262, 74);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Stats";
@@ -622,29 +627,22 @@
             this.LblTextTotalHashes.TabIndex = 50;
             this.LblTextTotalHashes.Text = "Total of hashes:";
             // 
-            // GrpVariationsOptions
+            // GrpBruteforceOptions
             // 
-            this.GrpVariationsOptions.Controls.Add(this.TxtMinVariations);
-            this.GrpVariationsOptions.Controls.Add(this.label5);
-            this.GrpVariationsOptions.Controls.Add(this.label3);
-            this.GrpVariationsOptions.Controls.Add(this.label2);
-            this.GrpVariationsOptions.Controls.Add(this.TxtWordsBetweenVariations);
-            this.GrpVariationsOptions.Controls.Add(this.TxtMaxVariations);
-            this.GrpVariationsOptions.Location = new System.Drawing.Point(604, 232);
-            this.GrpVariationsOptions.Name = "GrpVariationsOptions";
-            this.GrpVariationsOptions.Size = new System.Drawing.Size(268, 57);
-            this.GrpVariationsOptions.TabIndex = 27;
-            this.GrpVariationsOptions.TabStop = false;
-            this.GrpVariationsOptions.Text = "Variations options";
-            // 
-            // TxtMinVariations
-            // 
-            this.TxtMinVariations.Location = new System.Drawing.Point(6, 32);
-            this.TxtMinVariations.Name = "TxtMinVariations";
-            this.TxtMinVariations.Size = new System.Drawing.Size(52, 20);
-            this.TxtMinVariations.TabIndex = 29;
-            this.TxtMinVariations.Text = "1";
-            this.TxtMinVariations.Leave += new System.EventHandler(this.TxtMinVariations_Leave);
+            this.GrpBruteforceOptions.Controls.Add(this.NumericMaxVariations);
+            this.GrpBruteforceOptions.Controls.Add(this.NumericMinVariations);
+            this.GrpBruteforceOptions.Controls.Add(this.ChkBruteforceWithRepetition);
+            this.GrpBruteforceOptions.Controls.Add(this.ChkTryToBruteforce);
+            this.GrpBruteforceOptions.Controls.Add(this.label5);
+            this.GrpBruteforceOptions.Controls.Add(this.label3);
+            this.GrpBruteforceOptions.Controls.Add(this.label2);
+            this.GrpBruteforceOptions.Controls.Add(this.TxtWordsBetweenVariations);
+            this.GrpBruteforceOptions.Location = new System.Drawing.Point(604, 232);
+            this.GrpBruteforceOptions.Name = "GrpBruteforceOptions";
+            this.GrpBruteforceOptions.Size = new System.Drawing.Size(268, 81);
+            this.GrpBruteforceOptions.TabIndex = 27;
+            this.GrpBruteforceOptions.TabStop = false;
+            this.GrpBruteforceOptions.Text = "Bruteforce options";
             // 
             // label5
             // 
@@ -679,15 +677,6 @@
             this.TxtWordsBetweenVariations.Name = "TxtWordsBetweenVariations";
             this.TxtWordsBetweenVariations.Size = new System.Drawing.Size(140, 20);
             this.TxtWordsBetweenVariations.TabIndex = 33;
-            // 
-            // TxtMaxVariations
-            // 
-            this.TxtMaxVariations.Location = new System.Drawing.Point(64, 31);
-            this.TxtMaxVariations.Name = "TxtMaxVariations";
-            this.TxtMaxVariations.Size = new System.Drawing.Size(52, 20);
-            this.TxtMaxVariations.TabIndex = 31;
-            this.TxtMaxVariations.Text = "6";
-            this.TxtMaxVariations.Leave += new System.EventHandler(this.TxtMaxVariations_Leave);
             // 
             // TxtSearch
             // 
@@ -728,7 +717,7 @@
             // ChkTryToBruteforce
             // 
             this.ChkTryToBruteforce.AutoSize = true;
-            this.ChkTryToBruteforce.Location = new System.Drawing.Point(612, 324);
+            this.ChkTryToBruteforce.Location = new System.Drawing.Point(5, 57);
             this.ChkTryToBruteforce.Name = "ChkTryToBruteforce";
             this.ChkTryToBruteforce.Size = new System.Drawing.Size(104, 17);
             this.ChkTryToBruteforce.TabIndex = 26;
@@ -739,7 +728,7 @@
             // ChkBruteforceWithRepetition
             // 
             this.ChkBruteforceWithRepetition.AutoSize = true;
-            this.ChkBruteforceWithRepetition.Location = new System.Drawing.Point(738, 324);
+            this.ChkBruteforceWithRepetition.Location = new System.Drawing.Point(122, 58);
             this.ChkBruteforceWithRepetition.Name = "ChkBruteforceWithRepetition";
             this.ChkBruteforceWithRepetition.Size = new System.Drawing.Size(140, 17);
             this.ChkBruteforceWithRepetition.TabIndex = 37;
@@ -747,18 +736,67 @@
             this.ChkBruteforceWithRepetition.UseVisualStyleBackColor = true;
             this.ChkBruteforceWithRepetition.CheckedChanged += new System.EventHandler(this.ChkBruteforceWithRepetition_CheckedChanged);
             // 
+            // CboForceHashListCase
+            // 
+            this.CboForceHashListCase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CboForceHashListCase.FormattingEnabled = true;
+            this.CboForceHashListCase.Items.AddRange(new object[] {
+            "None",
+            "Uppercase",
+            "Lowercase"});
+            this.CboForceHashListCase.Location = new System.Drawing.Point(610, 348);
+            this.CboForceHashListCase.Name = "CboForceHashListCase";
+            this.CboForceHashListCase.Size = new System.Drawing.Size(153, 21);
+            this.CboForceHashListCase.TabIndex = 64;
+            this.CboForceHashListCase.SelectedIndexChanged += new System.EventHandler(this.CboForceHashListCase_SelectedIndexChanged);
+            // 
+            // NumericMinVariations
+            // 
+            this.NumericMinVariations.Location = new System.Drawing.Point(6, 31);
+            this.NumericMinVariations.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NumericMinVariations.Name = "NumericMinVariations";
+            this.NumericMinVariations.Size = new System.Drawing.Size(52, 20);
+            this.NumericMinVariations.TabIndex = 27;
+            this.NumericMinVariations.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NumericMinVariations.Leave += new System.EventHandler(this.NumericMinVariations_Leave);
+            // 
+            // NumericMaxVariations
+            // 
+            this.NumericMaxVariations.Location = new System.Drawing.Point(64, 31);
+            this.NumericMaxVariations.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NumericMaxVariations.Name = "NumericMaxVariations";
+            this.NumericMaxVariations.Size = new System.Drawing.Size(52, 20);
+            this.NumericMaxVariations.TabIndex = 38;
+            this.NumericMaxVariations.Value = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            this.NumericMaxVariations.Leave += new System.EventHandler(this.NumericMaxVariations_Leave);
+            // 
             // NFSRaiderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 561);
-            this.Controls.Add(this.ChkBruteforceWithRepetition);
-            this.Controls.Add(this.ChkTryToBruteforce);
+            this.Controls.Add(this.CboForceHashListCase);
             this.Controls.Add(this.LblStatus);
             this.Controls.Add(this.BtnSearchNext);
             this.Controls.Add(this.BtnSearchPrevious);
             this.Controls.Add(this.TxtSearch);
-            this.Controls.Add(this.GrpVariationsOptions);
+            this.Controls.Add(this.GrpBruteforceOptions);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.BtnGenerateListOfHashes);
             this.Controls.Add(this.ChkUseHashesFile);
@@ -792,8 +830,10 @@
             this.GrpExportOptions.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.GrpVariationsOptions.ResumeLayout(false);
-            this.GrpVariationsOptions.PerformLayout();
+            this.GrpBruteforceOptions.ResumeLayout(false);
+            this.GrpBruteforceOptions.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericMinVariations)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericMaxVariations)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -810,7 +850,6 @@
         private System.Windows.Forms.RadioButton RdbLoadFromText;
         private System.Windows.Forms.RadioButton RdbLoadFile;
         private System.Windows.Forms.GroupBox GrpHashType;
-        private System.Windows.Forms.RadioButton RdbVlt64Hash;
         private System.Windows.Forms.RadioButton RdbVltHash;
         private System.Windows.Forms.RadioButton RdbBinHash;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -844,13 +883,11 @@
         private System.Windows.Forms.Label LblTextTotalHashes;
         private System.Windows.Forms.TextBox TxtFileSkipHashes;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox GrpVariationsOptions;
-        private System.Windows.Forms.TextBox TxtMinVariations;
+        private System.Windows.Forms.GroupBox GrpBruteforceOptions;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtWordsBetweenVariations;
-        private System.Windows.Forms.TextBox TxtMaxVariations;
         private System.Windows.Forms.TextBox TxtSearch;
         private System.Windows.Forms.Button BtnSearchPrevious;
         private System.Windows.Forms.Button BtnSearchNext;
@@ -864,6 +901,10 @@
         private System.Windows.Forms.CheckBox ChkIgnoreRepeatedHashes;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox CboOrderBy;
+        private System.Windows.Forms.RadioButton RdbVlt64Hash;
+        private System.Windows.Forms.ComboBox CboForceHashListCase;
+        private System.Windows.Forms.NumericUpDown NumericMinVariations;
+        private System.Windows.Forms.NumericUpDown NumericMaxVariations;
     }
 }
 

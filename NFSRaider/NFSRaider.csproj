@@ -175,6 +175,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enum\Endianess.cs" />
+    <Compile Include="Enum\CaseOptions.cs" />
+    <Compile Include="Enum\OrderOptions.cs" />
     <Compile Include="Enum\HashType.cs" />
     <Compile Include="FormMethods\FormBruteforce.cs" />
     <Compile Include="FormMethods\FormFile.cs" />
