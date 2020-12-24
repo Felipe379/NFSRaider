@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace NFSRaider.GeneratedStrings.Files
 {
@@ -8,23 +9,17 @@ namespace NFSRaider.GeneratedStrings.Files
         {
             var files = new HashSet<string>(Files.List);
 
-            foreach (var language in Localized.Languages.List)
-            {
-                foreach (var file in Localized.Files.List)
-                {
-                    files.Add(file.Replace("(EnglishName)", language.EnglishName)
-                                  .Replace("(ThreeLettersCode)", language.ThreeLettersCode)
-                                  .Replace("(TwoLettersCode)", language.TwoLettersCode));
-                }
-            }
+            files.UnionWith(new HashSet<string>(Localized.Languages.List
+                .SelectMany(c => Localized.Files.List
+                    .Select(d => d.Replace("(EnglishName)", c.EnglishName)
+                    .Replace("(ThreeLettersCode)", c.ThreeLettersCode)
+                    .Replace("(TwoLettersCode)", c.TwoLettersCode)))
+                ));
 
-            foreach (var car in Shared.Cars.List)
-            {
-                foreach (var file in Cars.Files.List)
-                {
-                    files.Add(file.Replace("(Car)", car));
-                }
-            }
+            files.UnionWith(new HashSet<string>(Shared.Cars.List
+                .SelectMany(c => Cars.Files.List
+                    .Select(d => d.Replace("(Car)", c)))
+                ));
 
             return files;
         }

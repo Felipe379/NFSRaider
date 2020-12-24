@@ -18,12 +18,7 @@ namespace NFSRaider.GeneratedStrings.LanguageLabels
                 .Concat(World.List)
                 );
 
-            var languageLabelsCount = languageLabels.Count();
-
-            for (int i = 0; i < languageLabelsCount; i++)
-            {
-                languageLabels.Add(languageLabels.ElementAt(i).ToUpperInvariant());
-            }
+            languageLabels.UnionWith(new HashSet<string>(languageLabels.Select(c => c.ToUpperInvariant())));
 
             return languageLabels;
         }
