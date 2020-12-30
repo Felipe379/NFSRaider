@@ -107,6 +107,14 @@ namespace NFSRaider.GeneratedStrings.Global
             "EXCLUDEDECAL",
             "PART",
             "SPEECHCOLOUR",
+            "KITNOTPAINT01",
+            "KITNOTPAINT03",
+            "KITNOTPAINT04",
+            "KITNOTPAINT06",
+            "KITNOTPAINT07",
+            "KITNOTPAINT10",
+            "KITNOTPAINT18",
+            "WARNONDELETE",
         };
     }
 }
