@@ -31,7 +31,6 @@ namespace NFSRaider
         private string FilePath { get; set; }
         private GenerateOption GenerateOption { get; set; } = GenerateOption.WithRepetition;
         private Endianness UnhashingEndianness { get; set; } = Endianness.BigEndian;
-        private Endianness ListEndianness { get; set; } = Endianness.BigEndian;
         private HashType HashType { get; set; } = HashType.BIN;
         private OrderOptions OrderOption { get; set; } = OrderOptions.None;
         private CaseOptions CaseOption { get; set; } = CaseOptions.None;
@@ -138,7 +137,7 @@ namespace NFSRaider
         {
             var listBoxDataSource = ListBoxDataSource;
 
-            if (ListEndianness == Endianness.BigEndian)
+            if (ChkReverseHashes.Checked)
             {
                 listBoxDataSource = listBoxDataSource
                     .Select(c => new RaiderResults { Hash = Hashes.Reverse(c.Hash), IsKnown = c.IsKnown, Value = c.Value })
@@ -284,18 +283,6 @@ namespace NFSRaider
         {
             if (RdbUnhashLittleEndian.Checked)
                 UnhashingEndianness = Endianness.LittleEndian;
-        }
-
-        private void RdbExportBigEndian_CheckedChanged(object sender, EventArgs e)
-        {
-            if (RdbExportBigEndian.Checked)
-                ListEndianness = Endianness.BigEndian;
-        }
-
-        private void RdbExportLittleEndian_CheckedChanged(object sender, EventArgs e)
-        {
-            if (RdbExportLittleEndian.Checked)
-                ListEndianness = Endianness.LittleEndian;
         }
 
         private void ChkBruteforceWithRepetition_CheckedChanged(object sender, EventArgs e)

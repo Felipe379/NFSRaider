@@ -74,7 +74,7 @@ namespace NFSRaider.GeneratedStrings
 
             if (!File.Exists(UserFileName))
             {
-                File.Create(UserFileName);
+                File.Create(UserFileName).Close();
             }
 
             if (!File.Exists(FileName))

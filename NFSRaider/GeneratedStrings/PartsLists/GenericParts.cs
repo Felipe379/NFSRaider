@@ -8,6 +8,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists
         {
 "CARFX_NOSBO_B_HOOD",
 "CARFX_NOSBO_B_WHEEL",
+"NOHATCHBACK",
 "CE",
 "CS",
 "SE",
