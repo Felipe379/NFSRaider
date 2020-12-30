@@ -17,11 +17,11 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                 },
                 ThreeLettersCode = new List<string>
                 {
-                    "BRL",
+                    "BRL", //PLACEHOLDER
                 },
                 TwoLettersCode = new List<string>
                 {
-                    "BR",
+                    "BR", //PLACEHOLDER
                 }
             },
             new Language
@@ -43,7 +43,6 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                 TwoLettersCode = new List<string>
                 {
                     "CH",
-                    "ZH",
                 }
             },
             new Language
@@ -54,11 +53,11 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                 },
                 ThreeLettersCode = new List<string>
                 {
-                    "CZE",
+                    "CZE", //PLACEHOLDER
                 },
                 TwoLettersCode = new List<string>
                 {
-                    "CS",
+                    "CS", //PLACEHOLDER
                 }
             },
             new Language
@@ -69,11 +68,11 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                 },
                 ThreeLettersCode = new List<string>
                 {
-                    "DAN",
+                    "DAN", //PLACEHOLDER
                 },
                 TwoLettersCode = new List<string>
                 {
-                    "DN",
+                    "DN", //PLACEHOLDER
                 }
             },
             new Language
@@ -89,7 +88,7 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                 },
                 TwoLettersCode = new List<string>
                 {
-                    "DU",
+                    "DU", //PLACEHOLDER
                 }
             },
             new Language
@@ -116,11 +115,11 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                 },
                 ThreeLettersCode = new List<string>
                 {
-                    "FIN",
+                    "FIN", //PLACEHOLDER
                 },
                 TwoLettersCode = new List<string>
                 {
-                    "FI",
+                    "FI", //PLACEHOLDER
                 }
             },
             new Language
@@ -163,11 +162,11 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                 },
                 ThreeLettersCode = new List<string>
                 {
-                    "HUN",
+                    "HUN", //PLACEHOLDER
                 },
                 TwoLettersCode = new List<string>
                 {
-                    "HU",
+                    "HU", //PLACEHOLDER
                 }
             },
             new Language
@@ -214,7 +213,7 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                 },
                 TwoLettersCode = new List<string>
                 {
-                    "KO",
+                    "KO", //PLACEHOLDER
                 }
             },
             new Language
@@ -225,11 +224,11 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                 },
                 ThreeLettersCode = new List<string>
                 {
-                    "MAL",
+                    "MAL", //PLACEHOLDER
                 },
                 TwoLettersCode = new List<string>
                 {
-                    "MA",
+                    "MA", //PLACEHOLDER
                 }
             },
             new Language
@@ -241,11 +240,11 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                 },
                 ThreeLettersCode = new List<string>
                 {
-                    "MEX",
+                    "MEX", //PLACEHOLDER
                 },
                 TwoLettersCode = new List<string>
                 {
-                    "ME",
+                    "ME", //PLACEHOLDER
                 }
             },
             new Language
@@ -257,11 +256,11 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                 },
                 ThreeLettersCode = new List<string>
                 {
-                    "NOR",
+                    "NOR", //PLACEHOLDER
                 },
                 TwoLettersCode = new List<string>
                 {
-                    "NO",
+                    "NO", //PLACEHOLDER
                 }
             },
             new Language
@@ -272,11 +271,11 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                 },
                 ThreeLettersCode = new List<string>
                 {
-                    "POL",
+                    "POL", //PLACEHOLDER
                 },
                 TwoLettersCode = new List<string>
                 {
-                    "PL",
+                    "PL", //PLACEHOLDER
                 }
             },
             new Language
@@ -287,11 +286,11 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                 },
                 ThreeLettersCode = new List<string>
                 {
-                    "POR",
+                    "POR", //PLACEHOLDER
                 },
                 TwoLettersCode = new List<string>
                 {
-                    "PT",
+                    "PT", //PLACEHOLDER
                 }
             },
             new Language
@@ -349,7 +348,7 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                 },
                 ThreeLettersCode = new List<string>
                 {
-                    "TAI",
+                    "TAI", //PLACEHOLDER
                 },
                 TwoLettersCode = new List<string>
                 {
@@ -365,11 +364,11 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                 },
                 ThreeLettersCode = new List<string>
                 {
-                    "THA",
+                    "THA", //PLACEHOLDER
                 },
                 TwoLettersCode = new List<string>
                 {
-                    "TH",
+                    "TH", //PLACEHOLDER
                 }
             },
             new Language
@@ -380,11 +379,11 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                 },
                 ThreeLettersCode = new List<string>
                 {
-                    "TUR",
+                    "TUR", //PLACEHOLDER
                 },
                 TwoLettersCode = new List<string>
                 {
-                    "TK",
+                    "TK", //PLACEHOLDER
                 }
             },
             new Language
@@ -410,11 +409,11 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                 },
                 ThreeLettersCode = new List<string>
                 {
-                    "GRE",
+                    "GRE", //PLACEHOLDER
                 },
                 TwoLettersCode = new List<string>
                 {
-                    "GR",
+                    "GR", //PLACEHOLDER
                 }
             },
         };
