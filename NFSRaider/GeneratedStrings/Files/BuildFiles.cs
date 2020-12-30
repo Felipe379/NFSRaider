@@ -10,10 +10,12 @@ namespace NFSRaider.GeneratedStrings.Files
             var files = new HashSet<string>(Files.List);
 
             files.UnionWith(new HashSet<string>(Localized.Languages.List
-                .SelectMany(c => Localized.Files.List
-                    .Select(d => d.Replace("(EnglishName)", c.EnglishName)
-                    .Replace("(ThreeLettersCode)", c.ThreeLettersCode)
-                    .Replace("(TwoLettersCode)", c.TwoLettersCode)))
+                .SelectMany(languages => languages.EnglishName
+                    .SelectMany(englishName => languages.ThreeLettersCode
+                    .SelectMany(threeLettersCode => languages.TwoLettersCode
+                    .SelectMany(twoLettersCode => Localized.Files.List
+                    .Select(g => g.Replace("(EnglishName)", englishName).Replace("(ThreeLettersCode)", threeLettersCode).Replace("(TwoLettersCode)", twoLettersCode)
+                    )))))
                 ));
 
             files.UnionWith(new HashSet<string>(Shared.Cars.List

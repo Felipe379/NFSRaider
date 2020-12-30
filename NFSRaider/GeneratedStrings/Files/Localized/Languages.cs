@@ -6,49 +6,417 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
     {
         public static readonly List<Language> List = new List<Language>
         {
-            new Language { EnglishName = "BRAZILIAN_PORTUGUESE", ThreeLettersCode = "BRL", TwoLettersCode = "BR" },
-            new Language { EnglishName = "BRAZILIAN_PORTGUESE", ThreeLettersCode = "BRL", TwoLettersCode = "BR" },
-            new Language { EnglishName = "BRAZILIAN", ThreeLettersCode = "BRL", TwoLettersCode = "BR" },
-            new Language { EnglishName = "CHINESE", ThreeLettersCode = "CHI", TwoLettersCode = "ZH" },
-            new Language { EnglishName = "CHINESE_SIMP", ThreeLettersCode = "CHI", TwoLettersCode = "CH" },
-            new Language { EnglishName = "CHINESE_TRAD", ThreeLettersCode = "CHN", TwoLettersCode = "CH" },
-            new Language { EnglishName = "SIMPLIFIED_CHINESE", ThreeLettersCode = "CHI", TwoLettersCode = "CH" },
-            new Language { EnglishName = "TRADITIONAL_CHINESE", ThreeLettersCode = "CHI", TwoLettersCode = "CH" },
-            new Language { EnglishName = "CZECH", ThreeLettersCode = "CZE", TwoLettersCode = "CS" },
-            new Language { EnglishName = "DANISH", ThreeLettersCode = "DAN", TwoLettersCode = "DN" },
-            new Language { EnglishName = "DUTCH", ThreeLettersCode = "NED", TwoLettersCode = "DU" },
-            new Language { EnglishName = "DUTCH", ThreeLettersCode = "DUT", TwoLettersCode = "DU" },
-            new Language { EnglishName = "ENGLISH", ThreeLettersCode = "ENG", TwoLettersCode = "EN" },
-            new Language { EnglishName = "ENGLISH", ThreeLettersCode = "USA", TwoLettersCode = "EN" },
-            new Language { EnglishName = "FINNISH", ThreeLettersCode = "FIN", TwoLettersCode = "FI" },
-            new Language { EnglishName = "FRENCH", ThreeLettersCode = "FRE", TwoLettersCode = "FR" },
-            new Language { EnglishName = "FRENCH", ThreeLettersCode = "FRA", TwoLettersCode = "FR" },
-            new Language { EnglishName = "GERMAN", ThreeLettersCode = "GER", TwoLettersCode = "GE" },
-            new Language { EnglishName = "GERMAN", ThreeLettersCode = "GER", TwoLettersCode = "DE" },
-            new Language { EnglishName = "GERMAN", ThreeLettersCode = "GER", TwoLettersCode = "GR" },
-            new Language { EnglishName = "HUNGARIAN", ThreeLettersCode = "HUN", TwoLettersCode = "HU" },
-            new Language { EnglishName = "ITALIAN", ThreeLettersCode = "ITA", TwoLettersCode = "IT" },
-            new Language { EnglishName = "JAPANESE", ThreeLettersCode = "JPN", TwoLettersCode = "JP" },
-            new Language { EnglishName = "JAPANESE", ThreeLettersCode = "JAP", TwoLettersCode = "JA" },
-            new Language { EnglishName = "KOREAN", ThreeLettersCode = "KOR", TwoLettersCode = "KO" },
-            new Language { EnglishName = "MALAGASSIAN", ThreeLettersCode = "MAL", TwoLettersCode = "MA" },
-            new Language { EnglishName = "MEXICAN", ThreeLettersCode = "MEX", TwoLettersCode = "ME" },
-            new Language { EnglishName = "MEXICAN_SPANISH", ThreeLettersCode = "MEX", TwoLettersCode = "ME" },
-            new Language { EnglishName = "NORWAY", ThreeLettersCode = "NOR", TwoLettersCode = "NO" },
-            new Language { EnglishName = "NORWEGIAN", ThreeLettersCode = "NOR", TwoLettersCode = "NO" },
-            new Language { EnglishName = "POLISH", ThreeLettersCode = "POL", TwoLettersCode = "PL" },
-            new Language { EnglishName = "PORTUGUESE", ThreeLettersCode = "POR", TwoLettersCode = "PT" },
-            new Language { EnglishName = "RUSSIAN", ThreeLettersCode = "RUS", TwoLettersCode = "RU" },
-            new Language { EnglishName = "SPANISH", ThreeLettersCode = "SPA", TwoLettersCode = "SP" },
-            new Language { EnglishName = "SPANISH", ThreeLettersCode = "SPA", TwoLettersCode = "ES" },
-            new Language { EnglishName = "SWEDISH", ThreeLettersCode = "SWE", TwoLettersCode = "SW" },
-            new Language { EnglishName = "TCHINESE", ThreeLettersCode = "CHI", TwoLettersCode = "ZH" },
-            new Language { EnglishName = "TAIWAN", ThreeLettersCode = "TAI", TwoLettersCode = "TW" },
-            new Language { EnglishName = "THAI", ThreeLettersCode = "THA", TwoLettersCode = "TH" },
-            new Language { EnglishName = "THAILAND", ThreeLettersCode = "THA", TwoLettersCode = "TH" },
-            new Language { EnglishName = "TURKISH", ThreeLettersCode = "TUR", TwoLettersCode = "TK" },
-            new Language { EnglishName = "UK_ENGLISH", ThreeLettersCode = "ENG", TwoLettersCode = "UK" },
-            new Language { EnglishName = "GREEK", ThreeLettersCode = "GREE", TwoLettersCode = "GR" },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "BRAZILIAN_PORTUGUESE",
+                    "BRAZILIAN_PORTGUESE",
+                    "BRAZILIAN",
+                    "BRAZIL",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "BRL",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "BR",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "CHINESE",
+                    "CHINESE_SIMP",
+                    "CHINESE_TRAD",
+                    "SIMPLIFIED_CHINESE",
+                    "TRADITIONAL_CHINESE",
+                    "TCHINESE",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "CHI",
+                    "CHN",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "CH",
+                    "ZH",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "CZECH",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "CZE",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "CS",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "DANISH",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "DAN",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "DN",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "DUTCH",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "NED",
+                    "DUT",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "DU",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "ENGLISH",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "ENG",
+                    "USA",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "EN",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "FINNISH",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "FIN",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "FI",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "FRENCH",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "FRE",
+                    "FRA",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "FR",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "GERMAN",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "GER",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "DE",
+                    "GE",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "HUNGARIAN",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "HUN",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "HU",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "ITALIAN",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "ITA",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "IT",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "JAPANESE",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "JAP",
+                    "JPN",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "JA",
+                    "JP",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "KOREAN",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "KOR",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "KO",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "MALAGASSIAN",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "MAL",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "MA",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "MEXICAN",
+                    "MEXICAN_SPANISH",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "MEX",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "ME",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "NORWAY",
+                    "NORWEGIAN",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "NOR",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "NO",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "POLISH",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "POL",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "PL",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "PORTUGUESE",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "POR",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "PT",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "RUSSIAN",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "RUS",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "RU",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "SPANISH",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "SPA",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "ES",
+                    "SP",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "SWEDISH",
+                    "SWEDEN",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "SWE",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "SW",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "TAIWAN",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "TAI",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "TW",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "THAI",
+                    "THAILAND",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "THA",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "TH",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "TURKISH",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "TUR",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "TK",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "UK_ENGLISH",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "ENG",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "UK",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "GREEK",
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "GRE",
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "GR",
+                }
+            },
         };
     }
 }
