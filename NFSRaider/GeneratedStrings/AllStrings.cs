@@ -29,7 +29,10 @@ namespace NFSRaider.GeneratedStrings
 
         public void GetStrings()
         {
-            FileDelete.DestroyFile(FileName);
+            if (File.Exists(FileName))
+            {
+                FileDelete.DestroyFile(FileName);
+            }
 
             var hashSet = new HashSet<string>(20000000);
 
