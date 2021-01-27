@@ -45545,6 +45545,7 @@ namespace NFSRaider.GeneratedStrings.VltList
 "dragrace_headbanger",
 "freeroam_04_loopable",
 "race_00",
+"Race_00.snr",
 "rewards/performance/nos/upgrade_nos1",
 "Morph_level_curves",
 "isLicensed",
@@ -47492,6 +47493,8 @@ namespace NFSRaider.GeneratedStrings.VltList
 "CameraInfo_Pursuit",
 "brick",
 "InitialZoneHeat",
+"CrewCommentable",
+"meetingplace_vday",
         };
     }
 }
