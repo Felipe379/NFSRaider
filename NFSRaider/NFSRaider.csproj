@@ -187,6 +187,8 @@
     <Compile Include="GeneratedStrings\Files\Localized\Files.cs" />
     <Compile Include="GeneratedStrings\Files\Localized\Language.cs" />
     <Compile Include="GeneratedStrings\Files\Localized\Languages.cs" />
+    <Compile Include="GeneratedStrings\GCareers\BuildgCareers.cs" />
+    <Compile Include="GeneratedStrings\GCareers\Underground2.cs" />
     <Compile Include="GeneratedStrings\SunInfos\BuildSunInfos.cs" />
     <Compile Include="GeneratedStrings\SunInfos\World.cs" />
     <Compile Include="GeneratedStrings\SunInfos\Undercover.cs" />

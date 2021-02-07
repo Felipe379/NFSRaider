@@ -2,6 +2,7 @@
 using NFSRaider.GeneratedStrings.Brands;
 using NFSRaider.GeneratedStrings.Files;
 using NFSRaider.GeneratedStrings.Fng;
+using NFSRaider.GeneratedStrings.GCareers;
 using NFSRaider.GeneratedStrings.Global;
 using NFSRaider.GeneratedStrings.LanguageLabels;
 using NFSRaider.GeneratedStrings.Materials;
@@ -47,6 +48,7 @@ namespace NFSRaider.GeneratedStrings
             hashSet.UnionWith(new BuildPresets().GetAllPresets());
             hashSet.UnionWith(new BuildPresetSkins().GetAllPresetSkins());
             hashSet.UnionWith(new BuildLanguageLabels().GetAllLabels());
+            hashSet.UnionWith(new BuildGCareers().GetAllGCarrers());
             hashSet.UnionWith(new BuildMaterials().GetAllMaterials());
             hashSet.UnionWith(new BuildGlobal().GetAllGlobal());
             hashSet.UnionWith(new BuildSunInfos().GetSunInfos());
@@ -57,7 +59,7 @@ namespace NFSRaider.GeneratedStrings
 
             try
             {
-                using (StreamWriter writer = new StreamWriter(FileName))
+                using (var writer = new StreamWriter(FileName))
                 {
                     foreach (var hashString in hashSet)
                     {
