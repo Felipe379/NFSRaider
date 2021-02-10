@@ -47,11 +47,13 @@ namespace NFSRaider
 
         private void BtnLoadFile_Click(object sender, EventArgs e)
         {
-            var fileDialog = new OpenFileDialog();
-            if (fileDialog.ShowDialog() == DialogResult.OK)
+            using (var fileDialog = new OpenFileDialog())
             {
-                FilePath = fileDialog.FileName.ToString();
-                LblStatus.Text = $"File loaded in {FilePath}";
+                if (fileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    FilePath = fileDialog.FileName.ToString();
+                    LblStatus.Text = $"File loaded in {FilePath}";
+                }
             }
         }
 
@@ -353,16 +355,16 @@ namespace NFSRaider
         {
             if (LstUnhashed.DataSource != null && ((IList<string>)LstUnhashed.DataSource).Count > 0)
             {
-                var saveFileDialog = new SaveFileDialog()
+                using (var saveFileDialog = new SaveFileDialog())
                 {
-                    Filter = "Text Files (*.txt)|*.txt",
-                    DefaultExt = "txt",
-                    AddExtension = true
-                };
+                    saveFileDialog.Filter = "Text Files (*.txt)|*.txt";
+                    saveFileDialog.DefaultExt = "txt";
+                    saveFileDialog.AddExtension = true;
 
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    File.WriteAllLines(saveFileDialog.FileName, (IList<string>)LstUnhashed.DataSource);
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        File.WriteAllLines(saveFileDialog.FileName, (IList<string>)LstUnhashed.DataSource);
+                    }
                 }
             }
             else
