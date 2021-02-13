@@ -2197,6 +2197,7 @@ namespace NFSRaider.GeneratedStrings.Textures.Carbon
 "CUSCO_BLACK",
 "CUSCO_WHITE",
 "DAMAGE0",
+"DAMAGE0_N",
 "DARIUS_BODY_COLOR",
 "DARIUS_BODY_SPEC",
 "DARIUS_COMPONENTS",
@@ -5966,6 +5967,8 @@ namespace NFSRaider.GeneratedStrings.Textures.Carbon
 "SGN_BACK_01_D",
 "SGN_CLUCKINBUCKET",
 "SGN_TNSTONEWALLTUNNEL_01_D",
+"SPOILER_SKIN1",
+"GLOBAL_SKIN1",
         };
     }
 }

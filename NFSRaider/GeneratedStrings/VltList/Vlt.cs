@@ -47495,6 +47495,7 @@ namespace NFSRaider.GeneratedStrings.VltList
 "CrewCommentable",
 "meetingplace_vday",
 "QuickRaceNIS2",
+"PlayerCarTypeLowMem",
 "6_10_4",
 "6_5_1",
 "6_5_2",
