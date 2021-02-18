@@ -3,8 +3,10 @@ using NFSRaider.Enum;
 using NFSRaider.GeneratedStrings;
 using NFSRaider.Hash;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace NFSRaider.FormMethods
 {
@@ -12,6 +14,7 @@ namespace NFSRaider.FormMethods
     {
         private int MinVariations { get; set; }
         private int MaxVariations { get; set; }
+        private int ProcessorCount { get; set; }
         private HashSet<uint> Hashes { get; set; }
         private HashSet<string> Prefixes { get; set; }
         private HashSet<string> Suffixes { get; set; }
@@ -29,7 +32,7 @@ namespace NFSRaider.FormMethods
 
         public FormBruteforce(
             NFSRaiderForm sender, HashFactory hashFactory, bool checkForHashesInFile, bool tryToBruteForce, string txtPrefixes, string txtSuffixes, string txtVariations, 
-            string txtWordsBetweenVariations, string txtMinVariations, string txtMaxVariations, GenerateOption generateOption, Endianness unhashingEndianness, CaseOptions caseOption)
+            string txtWordsBetweenVariations, string txtMinVariations, string txtMaxVariations, string processorCount, GenerateOption generateOption, Endianness unhashingEndianness, CaseOptions caseOption)
         {
             Sender = sender;
             HashFactory = hashFactory;
@@ -42,6 +45,7 @@ namespace NFSRaider.FormMethods
             WordsBetweenVariations = new HashSet<string>(txtWordsBetweenVariations.Split(new[] { ',' }));
             MinVariations = Convert.ToInt32(txtMinVariations);
             MaxVariations = Convert.ToInt32(txtMaxVariations);
+            ProcessorCount = Convert.ToInt32(processorCount);
 
             GenerateOption = generateOption;
             UnhashingEndianness = unhashingEndianness;
@@ -103,29 +107,36 @@ namespace NFSRaider.FormMethods
 
         private void TryBruteforce()
         {
-            var currentVariation = string.Empty;
-            IEnumerable<string> generatedStrings;
-            uint currentHash;
-
             for (int variationsCount = MinVariations; variationsCount <= MaxVariations; variationsCount++)
             {
                 var variations = new Variations<string>(Variations, variationsCount, GenerateOption);
 
-                foreach (var variation in variations)
-                {
-                    foreach (var word in WordsBetweenVariations)
-                    {
-                        currentVariation = string.Join(word, variation);
-                        generatedStrings = GenerateStringsToCheck(currentVariation);
+                var rangePartitioner = Partitioner.Create(variations);
 
-                        foreach (var generatedString in generatedStrings)
-                        {
-                            currentHash = HashFactory.Hash(generatedString);
-                            if (Hashes.Contains(currentHash))
-                            {
-                                Sender.UpdateFormDuringBruteforce(currentHash, generatedString, true);
-                            }
-                        }
+                Parallel.ForEach(rangePartitioner, new ParallelOptions 
+                {
+                    MaxDegreeOfParallelism = ProcessorCount
+                }, variation => CheckVariations(variation));
+            }
+        }
+
+        private void CheckVariations(IList<string> variation)
+        {
+            var currentVariation = string.Empty;
+            IEnumerable<string> generatedStrings;
+            uint currentHash;
+
+            foreach (var word in WordsBetweenVariations)
+            {
+                currentVariation = string.Join(word, variation);
+                generatedStrings = GenerateStringsToCheck(currentVariation);
+
+                foreach (var generatedString in generatedStrings)
+                {
+                    currentHash = HashFactory.Hash(generatedString);
+                    if (Hashes.Contains(currentHash))
+                    {
+                        Sender.UpdateFormDuringBruteforce(currentHash, generatedString, true);
                     }
                 }
             }
