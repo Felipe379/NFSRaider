@@ -40,13 +40,9 @@
             this.LblStartOffset = new System.Windows.Forms.Label();
             this.RdbLoadFromText = new System.Windows.Forms.RadioButton();
             this.RdbLoadFile = new System.Windows.Forms.RadioButton();
-            this.GrpHashType = new System.Windows.Forms.GroupBox();
-            this.RdbVlt64Hash = new System.Windows.Forms.RadioButton();
-            this.RdbVltHash = new System.Windows.Forms.RadioButton();
-            this.RdbBinHash = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.RdbUnhashLittleEndian = new System.Windows.Forms.RadioButton();
-            this.RdbUnhashBigEndian = new System.Windows.Forms.RadioButton();
+            this.CboHashTypes = new System.Windows.Forms.ComboBox();
+            this.CboEndianness = new System.Windows.Forms.ComboBox();
             this.TxtPrefixes = new System.Windows.Forms.TextBox();
             this.TxtVariations = new System.Windows.Forms.TextBox();
             this.TxtSuffixes = new System.Windows.Forms.TextBox();
@@ -56,6 +52,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.TxtExportFormat = new System.Windows.Forms.TextBox();
             this.GrpExportOptions = new System.Windows.Forms.GroupBox();
+            this.ChkReverseHashes = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.CboOrderBy = new System.Windows.Forms.ComboBox();
             this.ChkIgnoreRepeatedStrings = new System.Windows.Forms.CheckBox();
@@ -77,6 +74,8 @@
             this.LblTextUnknownHashes = new System.Windows.Forms.Label();
             this.LblTextTotalHashes = new System.Windows.Forms.Label();
             this.GrpBruteforceOptions = new System.Windows.Forms.GroupBox();
+            this.NumericProcessorsCount = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
             this.NumericMaxVariations = new System.Windows.Forms.NumericUpDown();
             this.NumericMinVariations = new System.Windows.Forms.NumericUpDown();
             this.ChkBruteforceWithRepetition = new System.Windows.Forms.CheckBox();
@@ -90,13 +89,13 @@
             this.BtnSearchNext = new System.Windows.Forms.Button();
             this.LblStatus = new System.Windows.Forms.Label();
             this.CboForceHashListCase = new System.Windows.Forms.ComboBox();
-            this.ChkReverseHashes = new System.Windows.Forms.CheckBox();
+            this.LblTimeTaken = new System.Windows.Forms.Label();
             this.GrpLoadOptions.SuspendLayout();
-            this.GrpHashType.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.GrpExportOptions.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.GrpBruteforceOptions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericProcessorsCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericMaxVariations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericMinVariations)).BeginInit();
             this.SuspendLayout();
@@ -226,88 +225,42 @@
             this.RdbLoadFile.UseVisualStyleBackColor = true;
             this.RdbLoadFile.CheckedChanged += new System.EventHandler(this.RdbLoadFile_CheckedChanged);
             // 
-            // GrpHashType
-            // 
-            this.GrpHashType.Controls.Add(this.RdbVlt64Hash);
-            this.GrpHashType.Controls.Add(this.RdbVltHash);
-            this.GrpHashType.Controls.Add(this.RdbBinHash);
-            this.GrpHashType.Location = new System.Drawing.Point(772, 351);
-            this.GrpHashType.Name = "GrpHashType";
-            this.GrpHashType.Size = new System.Drawing.Size(100, 109);
-            this.GrpHashType.TabIndex = 38;
-            this.GrpHashType.TabStop = false;
-            this.GrpHashType.Text = "Hash type";
-            // 
-            // RdbVlt64Hash
-            // 
-            this.RdbVlt64Hash.AutoSize = true;
-            this.RdbVlt64Hash.Enabled = false;
-            this.RdbVlt64Hash.Location = new System.Drawing.Point(12, 80);
-            this.RdbVlt64Hash.Name = "RdbVlt64Hash";
-            this.RdbVlt64Hash.Size = new System.Drawing.Size(74, 17);
-            this.RdbVlt64Hash.TabIndex = 41;
-            this.RdbVlt64Hash.Text = "Vlt64Hash";
-            this.RdbVlt64Hash.UseVisualStyleBackColor = true;
-            this.RdbVlt64Hash.CheckedChanged += new System.EventHandler(this.RdbVlt64Hash_CheckedChanged);
-            // 
-            // RdbVltHash
-            // 
-            this.RdbVltHash.AutoSize = true;
-            this.RdbVltHash.Location = new System.Drawing.Point(12, 51);
-            this.RdbVltHash.Name = "RdbVltHash";
-            this.RdbVltHash.Size = new System.Drawing.Size(62, 17);
-            this.RdbVltHash.TabIndex = 40;
-            this.RdbVltHash.Text = "VltHash";
-            this.RdbVltHash.UseVisualStyleBackColor = true;
-            this.RdbVltHash.CheckedChanged += new System.EventHandler(this.RdbVltHash_CheckedChanged);
-            // 
-            // RdbBinHash
-            // 
-            this.RdbBinHash.AutoSize = true;
-            this.RdbBinHash.Checked = true;
-            this.RdbBinHash.Location = new System.Drawing.Point(12, 19);
-            this.RdbBinHash.Name = "RdbBinHash";
-            this.RdbBinHash.Size = new System.Drawing.Size(65, 17);
-            this.RdbBinHash.TabIndex = 39;
-            this.RdbBinHash.TabStop = true;
-            this.RdbBinHash.Text = "BinHash";
-            this.RdbBinHash.UseVisualStyleBackColor = true;
-            this.RdbBinHash.CheckedChanged += new System.EventHandler(this.RdbBinHash_CheckedChanged);
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.RdbUnhashLittleEndian);
-            this.groupBox1.Controls.Add(this.RdbUnhashBigEndian);
-            this.groupBox1.Location = new System.Drawing.Point(609, 375);
+            this.groupBox1.Controls.Add(this.CboHashTypes);
+            this.groupBox1.Controls.Add(this.CboEndianness);
+            this.groupBox1.Location = new System.Drawing.Point(609, 406);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(154, 85);
+            this.groupBox1.Size = new System.Drawing.Size(263, 54);
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Endianness";
+            this.groupBox1.Text = "Hashing options";
             // 
-            // RdbUnhashLittleEndian
+            // CboHashTypes
             // 
-            this.RdbUnhashLittleEndian.AutoSize = true;
-            this.RdbUnhashLittleEndian.Location = new System.Drawing.Point(10, 56);
-            this.RdbUnhashLittleEndian.Name = "RdbUnhashLittleEndian";
-            this.RdbUnhashLittleEndian.Size = new System.Drawing.Size(127, 17);
-            this.RdbUnhashLittleEndian.TabIndex = 44;
-            this.RdbUnhashLittleEndian.Text = "Little-endian (memory)";
-            this.RdbUnhashLittleEndian.UseVisualStyleBackColor = true;
-            this.RdbUnhashLittleEndian.CheckedChanged += new System.EventHandler(this.RdbUnhashLittleEndian_CheckedChanged);
+            this.CboHashTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CboHashTypes.FormattingEnabled = true;
+            this.CboHashTypes.Items.AddRange(new object[] {
+            "BinHash",
+            "VltHash"});
+            this.CboHashTypes.Location = new System.Drawing.Point(160, 19);
+            this.CboHashTypes.Name = "CboHashTypes";
+            this.CboHashTypes.Size = new System.Drawing.Size(97, 21);
+            this.CboHashTypes.TabIndex = 65;
+            this.CboHashTypes.SelectedIndexChanged += new System.EventHandler(this.CboHashTypes_SelectedIndexChanged);
             // 
-            // RdbUnhashBigEndian
+            // CboEndianness
             // 
-            this.RdbUnhashBigEndian.AutoSize = true;
-            this.RdbUnhashBigEndian.Checked = true;
-            this.RdbUnhashBigEndian.Location = new System.Drawing.Point(10, 27);
-            this.RdbUnhashBigEndian.Name = "RdbUnhashBigEndian";
-            this.RdbUnhashBigEndian.Size = new System.Drawing.Size(97, 17);
-            this.RdbUnhashBigEndian.TabIndex = 43;
-            this.RdbUnhashBigEndian.TabStop = true;
-            this.RdbUnhashBigEndian.Text = "Big-endian (file)";
-            this.RdbUnhashBigEndian.UseVisualStyleBackColor = true;
-            this.RdbUnhashBigEndian.CheckedChanged += new System.EventHandler(this.RdbUnhashBigEndian_CheckedChanged);
+            this.CboEndianness.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CboEndianness.FormattingEnabled = true;
+            this.CboEndianness.Items.AddRange(new object[] {
+            "Big-endian (file)",
+            "Little-endian (memory)"});
+            this.CboEndianness.Location = new System.Drawing.Point(7, 19);
+            this.CboEndianness.Name = "CboEndianness";
+            this.CboEndianness.Size = new System.Drawing.Size(147, 21);
+            this.CboEndianness.TabIndex = 64;
+            this.CboEndianness.SelectedIndexChanged += new System.EventHandler(this.CboEndianness_SelectedIndexChanged);
             // 
             // TxtPrefixes
             // 
@@ -399,6 +352,16 @@
             this.GrpExportOptions.TabIndex = 52;
             this.GrpExportOptions.TabStop = false;
             this.GrpExportOptions.Text = "Export options";
+            // 
+            // ChkReverseHashes
+            // 
+            this.ChkReverseHashes.AutoSize = true;
+            this.ChkReverseHashes.Location = new System.Drawing.Point(6, 67);
+            this.ChkReverseHashes.Name = "ChkReverseHashes";
+            this.ChkReverseHashes.Size = new System.Drawing.Size(103, 17);
+            this.ChkReverseHashes.TabIndex = 63;
+            this.ChkReverseHashes.Text = "Reverse hashes";
+            this.ChkReverseHashes.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -514,7 +477,7 @@
             // ChkUseHashesFile
             // 
             this.ChkUseHashesFile.AutoSize = true;
-            this.ChkUseHashesFile.Location = new System.Drawing.Point(769, 323);
+            this.ChkUseHashesFile.Location = new System.Drawing.Point(769, 355);
             this.ChkUseHashesFile.Name = "ChkUseHashesFile";
             this.ChkUseHashesFile.Size = new System.Drawing.Size(103, 17);
             this.ChkUseHashesFile.TabIndex = 35;
@@ -524,7 +487,7 @@
             // 
             // BtnGenerateListOfHashes
             // 
-            this.BtnGenerateListOfHashes.Location = new System.Drawing.Point(610, 319);
+            this.BtnGenerateListOfHashes.Location = new System.Drawing.Point(609, 351);
             this.BtnGenerateListOfHashes.Name = "BtnGenerateListOfHashes";
             this.BtnGenerateListOfHashes.Size = new System.Drawing.Size(153, 23);
             this.BtnGenerateListOfHashes.TabIndex = 34;
@@ -603,6 +566,8 @@
             // 
             // GrpBruteforceOptions
             // 
+            this.GrpBruteforceOptions.Controls.Add(this.NumericProcessorsCount);
+            this.GrpBruteforceOptions.Controls.Add(this.label8);
             this.GrpBruteforceOptions.Controls.Add(this.NumericMaxVariations);
             this.GrpBruteforceOptions.Controls.Add(this.NumericMinVariations);
             this.GrpBruteforceOptions.Controls.Add(this.ChkBruteforceWithRepetition);
@@ -613,21 +578,53 @@
             this.GrpBruteforceOptions.Controls.Add(this.TxtWordsBetweenVariations);
             this.GrpBruteforceOptions.Location = new System.Drawing.Point(604, 232);
             this.GrpBruteforceOptions.Name = "GrpBruteforceOptions";
-            this.GrpBruteforceOptions.Size = new System.Drawing.Size(268, 81);
+            this.GrpBruteforceOptions.Size = new System.Drawing.Size(268, 113);
             this.GrpBruteforceOptions.TabIndex = 27;
             this.GrpBruteforceOptions.TabStop = false;
             this.GrpBruteforceOptions.Text = "Bruteforce options";
             // 
+            // NumericProcessorsCount
+            // 
+            this.NumericProcessorsCount.Location = new System.Drawing.Point(218, 64);
+            this.NumericProcessorsCount.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NumericProcessorsCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NumericProcessorsCount.Name = "NumericProcessorsCount";
+            this.NumericProcessorsCount.Size = new System.Drawing.Size(41, 20);
+            this.NumericProcessorsCount.TabIndex = 40;
+            this.NumericProcessorsCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NumericProcessorsCount.Leave += new System.EventHandler(this.NumericProcessorsCount_Leave);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(159, 66);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 13);
+            this.label8.TabIndex = 39;
+            this.label8.Text = "Processors";
+            // 
             // NumericMaxVariations
             // 
-            this.NumericMaxVariations.Location = new System.Drawing.Point(64, 31);
+            this.NumericMaxVariations.Location = new System.Drawing.Point(112, 64);
             this.NumericMaxVariations.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.NumericMaxVariations.Name = "NumericMaxVariations";
-            this.NumericMaxVariations.Size = new System.Drawing.Size(52, 20);
+            this.NumericMaxVariations.Size = new System.Drawing.Size(41, 20);
             this.NumericMaxVariations.TabIndex = 38;
             this.NumericMaxVariations.Value = new decimal(new int[] {
             6,
@@ -638,14 +635,14 @@
             // 
             // NumericMinVariations
             // 
-            this.NumericMinVariations.Location = new System.Drawing.Point(6, 31);
+            this.NumericMinVariations.Location = new System.Drawing.Point(32, 64);
             this.NumericMinVariations.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.NumericMinVariations.Name = "NumericMinVariations";
-            this.NumericMinVariations.Size = new System.Drawing.Size(52, 20);
+            this.NumericMinVariations.Size = new System.Drawing.Size(41, 20);
             this.NumericMinVariations.TabIndex = 27;
             this.NumericMinVariations.Value = new decimal(new int[] {
             1,
@@ -657,7 +654,7 @@
             // ChkBruteforceWithRepetition
             // 
             this.ChkBruteforceWithRepetition.AutoSize = true;
-            this.ChkBruteforceWithRepetition.Location = new System.Drawing.Point(122, 58);
+            this.ChkBruteforceWithRepetition.Location = new System.Drawing.Point(122, 90);
             this.ChkBruteforceWithRepetition.Name = "ChkBruteforceWithRepetition";
             this.ChkBruteforceWithRepetition.Size = new System.Drawing.Size(140, 17);
             this.ChkBruteforceWithRepetition.TabIndex = 37;
@@ -668,7 +665,7 @@
             // ChkTryToBruteforce
             // 
             this.ChkTryToBruteforce.AutoSize = true;
-            this.ChkTryToBruteforce.Location = new System.Drawing.Point(5, 57);
+            this.ChkTryToBruteforce.Location = new System.Drawing.Point(8, 90);
             this.ChkTryToBruteforce.Name = "ChkTryToBruteforce";
             this.ChkTryToBruteforce.Size = new System.Drawing.Size(104, 17);
             this.ChkTryToBruteforce.TabIndex = 26;
@@ -679,7 +676,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(119, 16);
+            this.label5.Location = new System.Drawing.Point(5, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(130, 13);
             this.label5.TabIndex = 32;
@@ -688,7 +685,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(64, 16);
+            this.label3.Location = new System.Drawing.Point(82, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(27, 13);
             this.label3.TabIndex = 30;
@@ -697,7 +694,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 16);
+            this.label2.Location = new System.Drawing.Point(6, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(24, 13);
             this.label2.TabIndex = 28;
@@ -705,9 +702,9 @@
             // 
             // TxtWordsBetweenVariations
             // 
-            this.TxtWordsBetweenVariations.Location = new System.Drawing.Point(122, 31);
+            this.TxtWordsBetweenVariations.Location = new System.Drawing.Point(6, 32);
             this.TxtWordsBetweenVariations.Name = "TxtWordsBetweenVariations";
-            this.TxtWordsBetweenVariations.Size = new System.Drawing.Size(140, 20);
+            this.TxtWordsBetweenVariations.Size = new System.Drawing.Size(253, 20);
             this.TxtWordsBetweenVariations.TabIndex = 33;
             // 
             // TxtSearch
@@ -754,27 +751,27 @@
             "None",
             "Uppercase",
             "Lowercase"});
-            this.CboForceHashListCase.Location = new System.Drawing.Point(610, 348);
+            this.CboForceHashListCase.Location = new System.Drawing.Point(610, 382);
             this.CboForceHashListCase.Name = "CboForceHashListCase";
-            this.CboForceHashListCase.Size = new System.Drawing.Size(153, 21);
+            this.CboForceHashListCase.Size = new System.Drawing.Size(152, 21);
             this.CboForceHashListCase.TabIndex = 64;
             this.CboForceHashListCase.SelectedIndexChanged += new System.EventHandler(this.CboForceHashListCase_SelectedIndexChanged);
             // 
-            // ChkReverseHashes
+            // LblTimeTaken
             // 
-            this.ChkReverseHashes.AutoSize = true;
-            this.ChkReverseHashes.Location = new System.Drawing.Point(6, 67);
-            this.ChkReverseHashes.Name = "ChkReverseHashes";
-            this.ChkReverseHashes.Size = new System.Drawing.Size(103, 17);
-            this.ChkReverseHashes.TabIndex = 63;
-            this.ChkReverseHashes.Text = "Reverse hashes";
-            this.ChkReverseHashes.UseVisualStyleBackColor = true;
+            this.LblTimeTaken.AutoSize = true;
+            this.LblTimeTaken.Location = new System.Drawing.Point(730, 546);
+            this.LblTimeTaken.Name = "LblTimeTaken";
+            this.LblTimeTaken.Size = new System.Drawing.Size(142, 13);
+            this.LblTimeTaken.TabIndex = 65;
+            this.LblTimeTaken.Text = "Time taken: HHHH:mm:ss.fff";
             // 
             // NFSRaiderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.LblTimeTaken);
             this.Controls.Add(this.CboForceHashListCase);
             this.Controls.Add(this.LblStatus);
             this.Controls.Add(this.BtnSearchNext);
@@ -797,7 +794,6 @@
             this.Controls.Add(this.TxtVariations);
             this.Controls.Add(this.TxtPrefixes);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.GrpHashType);
             this.Controls.Add(this.LstUnhashed);
             this.Controls.Add(this.GrpLoadOptions);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -806,16 +802,14 @@
             this.Text = "NFS-Raider";
             this.GrpLoadOptions.ResumeLayout(false);
             this.GrpLoadOptions.PerformLayout();
-            this.GrpHashType.ResumeLayout(false);
-            this.GrpHashType.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.GrpExportOptions.ResumeLayout(false);
             this.GrpExportOptions.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.GrpBruteforceOptions.ResumeLayout(false);
             this.GrpBruteforceOptions.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericProcessorsCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericMaxVariations)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericMinVariations)).EndInit();
             this.ResumeLayout(false);
@@ -833,12 +827,7 @@
         private System.Windows.Forms.Label LblStartOffset;
         private System.Windows.Forms.RadioButton RdbLoadFromText;
         private System.Windows.Forms.RadioButton RdbLoadFile;
-        private System.Windows.Forms.GroupBox GrpHashType;
-        private System.Windows.Forms.RadioButton RdbVltHash;
-        private System.Windows.Forms.RadioButton RdbBinHash;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton RdbUnhashLittleEndian;
-        private System.Windows.Forms.RadioButton RdbUnhashBigEndian;
         private System.Windows.Forms.TextBox TxtPrefixes;
         private System.Windows.Forms.TextBox TxtVariations;
         private System.Windows.Forms.TextBox TxtSuffixes;
@@ -883,11 +872,15 @@
         private System.Windows.Forms.CheckBox ChkIgnoreRepeatedHashes;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox CboOrderBy;
-        private System.Windows.Forms.RadioButton RdbVlt64Hash;
         private System.Windows.Forms.ComboBox CboForceHashListCase;
         private System.Windows.Forms.NumericUpDown NumericMinVariations;
         private System.Windows.Forms.NumericUpDown NumericMaxVariations;
         private System.Windows.Forms.CheckBox ChkReverseHashes;
+        private System.Windows.Forms.Label LblTimeTaken;
+        private System.Windows.Forms.ComboBox CboHashTypes;
+        private System.Windows.Forms.ComboBox CboEndianness;
+        private System.Windows.Forms.NumericUpDown NumericProcessorsCount;
+        private System.Windows.Forms.Label label8;
     }
 }
 
