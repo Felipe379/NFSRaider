@@ -5,19 +5,23 @@ namespace NFSRaider.Hash
 {
     public abstract class HashFactory
     {
-        public abstract uint Hash(string StringToHash);
-        public abstract UInt64 Hash64(string StringToHash);
+        public abstract uint Hash(string stringToHash);
+        public abstract ulong Hash64(string stringToHash);
 
         public static HashFactory GetHashType(HashType hashType)
         {
             switch (hashType)
             {
-                case HashType.BIN:
+                case HashType.Bin:
                     return new Bin();
-                case HashType.VLT:
+                case HashType.Vlt:
                     return new Vlt();
-                case HashType.VLT64:
+                case HashType.Vlt64:
                     throw new NotImplementedException();
+                case HashType.VltBin:
+                    return new VltBin();
+                case HashType.VltVlt:
+                    return new VltVlt();
                 default:
                     throw new NotImplementedException();
             }

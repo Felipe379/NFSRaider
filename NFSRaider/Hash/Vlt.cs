@@ -68,7 +68,7 @@ namespace NFSRaider.Hash
             return Mix32_2(a, b, c);
         }
 
-        public override UInt64 Hash64(string str)
+        public override ulong Hash64(string str)
         {
             var arr = Encoding.ASCII.GetBytes(str);
             UInt64 a = 0x9E3779B97F4A7C13;

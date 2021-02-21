@@ -5,26 +5,26 @@ namespace NFSRaider.Hash
 {
     public class Bin : HashFactory
     {
-        public override uint Hash(string StringToHash)
+        public override uint Hash(string stringToHash)
         {
-            byte[] ByteArrayToHash = Encoding.GetEncoding(1252).GetBytes(StringToHash);
+            var ByteArrayToHash = Encoding.GetEncoding(1252).GetBytes(stringToHash);
 
             return Hash(ByteArrayToHash);
         }
 
-        public override UInt64 Hash64(string StringToHash)
+        public override ulong Hash64(string stringToHash)
         {
             throw new NotImplementedException();
         }
 
-        private uint Hash(byte[] ByteArrayToHash)
+        private uint Hash(byte[] byteArrayToHash)
         {
-            int v1 = 0;
-            int i = -1;
+            var v1 = 0;
+            var i = -1;
 
-            while (v1 < ByteArrayToHash.Length)
+            while (v1 < byteArrayToHash.Length)
             {
-                i = ByteArrayToHash[v1] + 33 * i;
+                i = byteArrayToHash[v1] + 33 * i;
                 v1++;
             }
 

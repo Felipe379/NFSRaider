@@ -2,8 +2,10 @@
 {
     public enum HashType
     {
-        BIN,
-        VLT,
-        VLT64,
+        Bin,
+        Vlt,
+        Vlt64,
+        VltBin,
+        VltVlt,
     }
 }

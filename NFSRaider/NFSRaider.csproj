@@ -174,6 +174,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Case\CaseFactory.cs" />
+    <Compile Include="Case\LowerCase.cs" />
+    <Compile Include="Case\KeepCase.cs" />
+    <Compile Include="Case\UpperCase.cs" />
     <Compile Include="Enum\Endianess.cs" />
     <Compile Include="Enum\CaseOptions.cs" />
     <Compile Include="Enum\OrderOptions.cs" />
@@ -286,6 +290,8 @@
     <Compile Include="GeneratedStrings\TruncatedStrings\Underground2.cs" />
     <Compile Include="GeneratedStrings\VltList\BuildVlt.cs" />
     <Compile Include="GeneratedStrings\VltList\Vlt.cs" />
+    <Compile Include="Hash\VltVlt.cs" />
+    <Compile Include="Hash\VltBin.cs" />
     <Compile Include="Hash\Bin.cs" />
     <Compile Include="Hash\HashFactory.cs" />
     <Compile Include="Hash\Vlt.cs" />

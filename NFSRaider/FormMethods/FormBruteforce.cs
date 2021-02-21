@@ -6,6 +6,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace NFSRaider.FormMethods
@@ -18,7 +19,7 @@ namespace NFSRaider.FormMethods
         private HashSet<uint> Hashes { get; set; }
         private HashSet<string> Prefixes { get; set; }
         private HashSet<string> Suffixes { get; set; }
-        private HashSet<string> Variations { get; set; }
+        private IEnumerable<string> Variations { get; set; }
         private HashSet<string> WordsBetweenVariations { get; set; }
         private GenerateOption GenerateOption { get; set; }
         private Endianness UnhashingEndianness { get; set; }
@@ -41,7 +42,7 @@ namespace NFSRaider.FormMethods
             Hashes = new HashSet<uint>();
             Prefixes = new HashSet<string>(txtPrefixes.Split(new[] { ',' }));
             Suffixes = new HashSet<string>(txtSuffixes.Split(new[] { ',' }));
-            Variations = new HashSet<string>(txtVariations.Split(new[] { ',' }));
+            Variations = new List<string>(txtVariations.Split(new[] { ',' }));
             WordsBetweenVariations = new HashSet<string>(txtWordsBetweenVariations.Split(new[] { ',' }));
             MinVariations = Convert.ToInt32(txtMinVariations);
             MaxVariations = Convert.ToInt32(txtMaxVariations);
@@ -56,7 +57,7 @@ namespace NFSRaider.FormMethods
 
         public void Unhash(string txtHashes)
         {
-            var hashes = txtHashes.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).Select(c => c.Trim()).ToList();
+            var hashes = txtHashes.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).Select(c => Regex.Replace(c, @"[^0-9A-Za-z]", "")).ToList();
 
             if (UnhashingEndianness == Endianness.BigEndian)
             {
@@ -78,13 +79,16 @@ namespace NFSRaider.FormMethods
 
         public void BruteForceThread()
         {
-            if (CheckForHashesInFile)
+            if (Hashes.Any())
             {
-                CheckFile();
-            }
-            if (TryToBruteForce)
-            {
-                TryBruteforce();
+                if (CheckForHashesInFile)
+                {
+                    CheckFile();
+                }
+                if (TryToBruteForce)
+                {
+                    TryBruteforce();
+                }
             }
         }
 
@@ -110,7 +114,6 @@ namespace NFSRaider.FormMethods
             for (int variationsCount = MinVariations; variationsCount <= MaxVariations; variationsCount++)
             {
                 var variations = new Variations<string>(Variations, variationsCount, GenerateOption);
-
                 var rangePartitioner = Partitioner.Create(variations);
 
                 Parallel.ForEach(rangePartitioner, new ParallelOptions 
@@ -122,7 +125,7 @@ namespace NFSRaider.FormMethods
 
         private void CheckVariations(IList<string> variation)
         {
-            var currentVariation = string.Empty;
+            string currentVariation;
             IEnumerable<string> generatedStrings;
             uint currentHash;
 
