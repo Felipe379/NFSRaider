@@ -30,17 +30,17 @@ namespace NFSRaider
             CboHashTypes.SelectedIndex = 0;
             LblTimeTaken.Text = string.Empty;
             NumericProcessorsCount.Maximum = Environment.ProcessorCount;
-            NumericProcessorsCount.Value = Environment.ProcessorCount;
+            NumericProcessorsCount.Value = Environment.ProcessorCount / 2;
         }
 
         private List<RaiderResults> ListBoxDataSource { get; set; } = new List<RaiderResults>();
         private string FilePath { get; set; }
         private GenerateOption GenerateOption { get; set; } = GenerateOption.WithRepetition;
         private Endianness UnhashingEndianness { get; set; } = Endianness.BigEndian;
-        private HashType HashType { get; set; } = HashType.BIN;
+        private HashType HashType { get; set; } = HashType.Bin;
         private OrderOptions OrderOption { get; set; } = OrderOptions.None;
         private CaseOptions CaseOption { get; set; } = CaseOptions.None;
-        private HashFactory HashFactory { get; set; } = HashFactory.GetHashType(HashType.BIN);
+        private HashFactory HashFactory { get; set; } = HashFactory.GetHashType(HashType.Bin);
 
         private readonly Stopwatch Timer = new Stopwatch();
 
@@ -317,9 +317,13 @@ namespace NFSRaider
         private void CboHashTypes_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (CboHashTypes.SelectedIndex == 1)
-                HashType = HashType.VLT;
+                HashType = HashType.Vlt;
+            else if (CboHashTypes.SelectedIndex == 2)
+                HashType = HashType.VltBin;
+            else if (CboHashTypes.SelectedIndex == 3)
+                HashType = HashType.VltVlt;
             else
-                HashType = HashType.BIN;
+                HashType = HashType.Bin;
 
             HashFactory = HashFactory.GetHashType(HashType);
         }
@@ -385,6 +389,12 @@ namespace NFSRaider
                     if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         File.WriteAllLines(saveFileDialog.FileName, (IList<string>)LstUnhashed.DataSource);
+
+                        if (MessageBox.Show($"List exported to file:\r\n{Path.GetFileName(saveFileDialog.FileName)}\r\nDo you want to open it?", "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                        {
+                            Process.Start(saveFileDialog.FileName);
+                        }
+
                     }
                 }
             }

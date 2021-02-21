@@ -40,7 +40,7 @@
             this.LblStartOffset = new System.Windows.Forms.Label();
             this.RdbLoadFromText = new System.Windows.Forms.RadioButton();
             this.RdbLoadFile = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GrpHashingOptions = new System.Windows.Forms.GroupBox();
             this.CboHashTypes = new System.Windows.Forms.ComboBox();
             this.CboEndianness = new System.Windows.Forms.ComboBox();
             this.TxtPrefixes = new System.Windows.Forms.TextBox();
@@ -91,7 +91,7 @@
             this.CboForceHashListCase = new System.Windows.Forms.ComboBox();
             this.LblTimeTaken = new System.Windows.Forms.Label();
             this.GrpLoadOptions.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.GrpHashingOptions.SuspendLayout();
             this.GrpExportOptions.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.GrpBruteforceOptions.SuspendLayout();
@@ -122,6 +122,7 @@
             // TxtLoadFromText
             // 
             this.TxtLoadFromText.Location = new System.Drawing.Point(6, 41);
+            this.TxtLoadFromText.MaxLength = 2147483647;
             this.TxtLoadFromText.Multiline = true;
             this.TxtLoadFromText.Name = "TxtLoadFromText";
             this.TxtLoadFromText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -225,16 +226,16 @@
             this.RdbLoadFile.UseVisualStyleBackColor = true;
             this.RdbLoadFile.CheckedChanged += new System.EventHandler(this.RdbLoadFile_CheckedChanged);
             // 
-            // groupBox1
+            // GrpHashingOptions
             // 
-            this.groupBox1.Controls.Add(this.CboHashTypes);
-            this.groupBox1.Controls.Add(this.CboEndianness);
-            this.groupBox1.Location = new System.Drawing.Point(609, 406);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(263, 54);
-            this.groupBox1.TabIndex = 42;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Hashing options";
+            this.GrpHashingOptions.Controls.Add(this.CboHashTypes);
+            this.GrpHashingOptions.Controls.Add(this.CboEndianness);
+            this.GrpHashingOptions.Location = new System.Drawing.Point(609, 406);
+            this.GrpHashingOptions.Name = "GrpHashingOptions";
+            this.GrpHashingOptions.Size = new System.Drawing.Size(263, 54);
+            this.GrpHashingOptions.TabIndex = 42;
+            this.GrpHashingOptions.TabStop = false;
+            this.GrpHashingOptions.Text = "Hashing options";
             // 
             // CboHashTypes
             // 
@@ -242,7 +243,9 @@
             this.CboHashTypes.FormattingEnabled = true;
             this.CboHashTypes.Items.AddRange(new object[] {
             "BinHash",
-            "VltHash"});
+            "VltHash",
+            "VltBinHash",
+            "VltVltHash"});
             this.CboHashTypes.Location = new System.Drawing.Point(160, 19);
             this.CboHashTypes.Name = "CboHashTypes";
             this.CboHashTypes.Size = new System.Drawing.Size(97, 21);
@@ -265,6 +268,7 @@
             // TxtPrefixes
             // 
             this.TxtPrefixes.Location = new System.Drawing.Point(410, 36);
+            this.TxtPrefixes.MaxLength = 2147483647;
             this.TxtPrefixes.Multiline = true;
             this.TxtPrefixes.Name = "TxtPrefixes";
             this.TxtPrefixes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -274,6 +278,7 @@
             // TxtVariations
             // 
             this.TxtVariations.Location = new System.Drawing.Point(566, 36);
+            this.TxtVariations.MaxLength = 2147483647;
             this.TxtVariations.Multiline = true;
             this.TxtVariations.Name = "TxtVariations";
             this.TxtVariations.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -285,6 +290,7 @@
             // TxtSuffixes
             // 
             this.TxtSuffixes.Location = new System.Drawing.Point(722, 36);
+            this.TxtSuffixes.MaxLength = 2147483647;
             this.TxtSuffixes.Multiline = true;
             this.TxtSuffixes.Name = "TxtSuffixes";
             this.TxtSuffixes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -333,7 +339,7 @@
             this.TxtExportFormat.Name = "TxtExportFormat";
             this.TxtExportFormat.Size = new System.Drawing.Size(126, 20);
             this.TxtExportFormat.TabIndex = 61;
-            this.TxtExportFormat.Text = "(HASH) - (STRING)";
+            this.TxtExportFormat.Text = "0x(HASH) - (STRING)";
             // 
             // GrpExportOptions
             // 
@@ -703,6 +709,7 @@
             // TxtWordsBetweenVariations
             // 
             this.TxtWordsBetweenVariations.Location = new System.Drawing.Point(6, 32);
+            this.TxtWordsBetweenVariations.MaxLength = 2147483647;
             this.TxtWordsBetweenVariations.Name = "TxtWordsBetweenVariations";
             this.TxtWordsBetweenVariations.Size = new System.Drawing.Size(253, 20);
             this.TxtWordsBetweenVariations.TabIndex = 33;
@@ -793,7 +800,7 @@
             this.Controls.Add(this.TxtSuffixes);
             this.Controls.Add(this.TxtVariations);
             this.Controls.Add(this.TxtPrefixes);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.GrpHashingOptions);
             this.Controls.Add(this.LstUnhashed);
             this.Controls.Add(this.GrpLoadOptions);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -802,7 +809,7 @@
             this.Text = "NFS-Raider";
             this.GrpLoadOptions.ResumeLayout(false);
             this.GrpLoadOptions.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.GrpHashingOptions.ResumeLayout(false);
             this.GrpExportOptions.ResumeLayout(false);
             this.GrpExportOptions.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -827,7 +834,7 @@
         private System.Windows.Forms.Label LblStartOffset;
         private System.Windows.Forms.RadioButton RdbLoadFromText;
         private System.Windows.Forms.RadioButton RdbLoadFile;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox GrpHashingOptions;
         private System.Windows.Forms.TextBox TxtPrefixes;
         private System.Windows.Forms.TextBox TxtVariations;
         private System.Windows.Forms.TextBox TxtSuffixes;
