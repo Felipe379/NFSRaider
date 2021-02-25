@@ -3,7 +3,9 @@
     public enum OrderOptions
     {
         None,
-        Hash,
-        String
+        HashAsc,
+        HashDesc,
+        StringAsc,
+        StringDesc
     }
 }

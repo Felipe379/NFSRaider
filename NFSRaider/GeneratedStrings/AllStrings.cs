@@ -10,6 +10,7 @@ using NFSRaider.GeneratedStrings.Materials;
 using NFSRaider.GeneratedStrings.PartsLists;
 using NFSRaider.GeneratedStrings.Presets;
 using NFSRaider.GeneratedStrings.PresetSkins;
+using NFSRaider.GeneratedStrings.StreamFiles;
 using NFSRaider.GeneratedStrings.SunInfos;
 using NFSRaider.GeneratedStrings.Textures;
 using NFSRaider.GeneratedStrings.TruncatedStrings;
@@ -56,6 +57,7 @@ namespace NFSRaider.GeneratedStrings
             hashSet.UnionWith(new BuildVlt().GetAllVlt());
             hashSet.UnionWith(new BuildTextures().GetAllTextures());
             hashSet.UnionWith(new BuildFng().GetAllFng());
+            hashSet.UnionWith(new BuildStreamFiles().GetAllStreamFiles());
             hashSet.UnionWith(new BuildFiles().GetAllFiles());
 
             try
@@ -127,8 +129,6 @@ namespace NFSRaider.GeneratedStrings
                 currentHexValue = hashFactory.Hash(collision);
                 hashes[currentHexValue] += " / " + collision;
             }
-
-            return hashes;
 
             return hashes;
         }

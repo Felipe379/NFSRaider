@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="ToolTipNFSRaider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="LblVariations.ToolTip" xml:space="preserve">
+    <value>Use comma (,) to separate each variation.
+You can use the following format to generate variations of specific words:
+{C;A;R;[1-3-0]}
+Where:
+1: Stands for Minimum amount of variations.
+3: Stands for Maximum amount of variations.
+0: Stands for the current GenerateOption (0 = WithoutRepetition, 1 = WithRepetition)</value>
+  </data>
 </root>
