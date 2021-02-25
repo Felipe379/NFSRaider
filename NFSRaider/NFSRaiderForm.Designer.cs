@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NFSRaiderForm));
             this.LstUnhashed = new System.Windows.Forms.ListBox();
             this.BtnLoadFile = new System.Windows.Forms.Button();
             this.TxtLoadFromText = new System.Windows.Forms.TextBox();
             this.GrpLoadOptions = new System.Windows.Forms.GroupBox();
             this.TxtFileReadHashes = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.LblReadHashes = new System.Windows.Forms.Label();
             this.TxtFileSkipHashes = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LblSkipHashes = new System.Windows.Forms.Label();
             this.LblEndOffset = new System.Windows.Forms.Label();
             this.LblStartOffset = new System.Windows.Forms.Label();
             this.RdbLoadFromText = new System.Windows.Forms.RadioButton();
@@ -48,12 +50,12 @@
             this.TxtSuffixes = new System.Windows.Forms.TextBox();
             this.LblPrefixes = new System.Windows.Forms.Label();
             this.LblSuffixes = new System.Windows.Forms.Label();
-            this.LblCombinationsAndPermutations = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.LblVariations = new System.Windows.Forms.Label();
+            this.LblExportOptionsExportFormat = new System.Windows.Forms.Label();
             this.TxtExportFormat = new System.Windows.Forms.TextBox();
             this.GrpExportOptions = new System.Windows.Forms.GroupBox();
             this.ChkReverseHashes = new System.Windows.Forms.CheckBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.LblExportOptionsOrderBy = new System.Windows.Forms.Label();
             this.CboOrderBy = new System.Windows.Forms.ComboBox();
             this.ChkIgnoreRepeatedStrings = new System.Windows.Forms.CheckBox();
             this.BtnUpdateList = new System.Windows.Forms.Button();
@@ -80,7 +82,7 @@
             this.NumericMinVariations = new System.Windows.Forms.NumericUpDown();
             this.ChkBruteforceWithRepetition = new System.Windows.Forms.CheckBox();
             this.ChkTryToBruteforce = new System.Windows.Forms.CheckBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.LblWordsBetweenVariations = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtWordsBetweenVariations = new System.Windows.Forms.TextBox();
@@ -90,6 +92,7 @@
             this.LblStatus = new System.Windows.Forms.Label();
             this.CboForceHashListCase = new System.Windows.Forms.ComboBox();
             this.LblTimeTaken = new System.Windows.Forms.Label();
+            this.ToolTipNFSRaider = new System.Windows.Forms.ToolTip(this.components);
             this.GrpLoadOptions.SuspendLayout();
             this.GrpHashingOptions.SuspendLayout();
             this.GrpExportOptions.SuspendLayout();
@@ -132,9 +135,9 @@
             // GrpLoadOptions
             // 
             this.GrpLoadOptions.Controls.Add(this.TxtFileReadHashes);
-            this.GrpLoadOptions.Controls.Add(this.label6);
+            this.GrpLoadOptions.Controls.Add(this.LblReadHashes);
             this.GrpLoadOptions.Controls.Add(this.TxtFileSkipHashes);
-            this.GrpLoadOptions.Controls.Add(this.label1);
+            this.GrpLoadOptions.Controls.Add(this.LblSkipHashes);
             this.GrpLoadOptions.Controls.Add(this.LblEndOffset);
             this.GrpLoadOptions.Controls.Add(this.LblStartOffset);
             this.GrpLoadOptions.Controls.Add(this.BtnLoadFile);
@@ -157,14 +160,14 @@
             this.TxtFileReadHashes.Text = "0";
             this.TxtFileReadHashes.Leave += new System.EventHandler(this.TxtFileReadHashes_Leave);
             // 
-            // label6
+            // LblReadHashes
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(154, 158);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 13);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Read hashes";
+            this.LblReadHashes.AutoSize = true;
+            this.LblReadHashes.Location = new System.Drawing.Point(154, 158);
+            this.LblReadHashes.Name = "LblReadHashes";
+            this.LblReadHashes.Size = new System.Drawing.Size(70, 13);
+            this.LblReadHashes.TabIndex = 23;
+            this.LblReadHashes.Text = "Read hashes";
             // 
             // TxtFileSkipHashes
             // 
@@ -175,14 +178,14 @@
             this.TxtFileSkipHashes.Text = "0";
             this.TxtFileSkipHashes.TextChanged += new System.EventHandler(this.TxtFileSkipHashes_TextChanged);
             // 
-            // label1
+            // LblSkipHashes
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(154, 199);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Skip hashes";
+            this.LblSkipHashes.AutoSize = true;
+            this.LblSkipHashes.Location = new System.Drawing.Point(154, 199);
+            this.LblSkipHashes.Name = "LblSkipHashes";
+            this.LblSkipHashes.Size = new System.Drawing.Size(65, 13);
+            this.LblSkipHashes.TabIndex = 25;
+            this.LblSkipHashes.Text = "Skip hashes";
             // 
             // LblEndOffset
             // 
@@ -210,6 +213,8 @@
             this.RdbLoadFromText.Size = new System.Drawing.Size(92, 17);
             this.RdbLoadFromText.TabIndex = 15;
             this.RdbLoadFromText.Text = "Load from text";
+            this.ToolTipNFSRaider.SetToolTip(this.RdbLoadFromText, "Load the set of hashes from the textbox.\r\nHashes must be separated by a new line." +
+        "");
             this.RdbLoadFromText.UseVisualStyleBackColor = true;
             this.RdbLoadFromText.CheckedChanged += new System.EventHandler(this.RdbLoadFromText_CheckedChanged);
             // 
@@ -223,6 +228,7 @@
             this.RdbLoadFile.TabIndex = 16;
             this.RdbLoadFile.TabStop = true;
             this.RdbLoadFile.Text = "Load from file";
+            this.ToolTipNFSRaider.SetToolTip(this.RdbLoadFile, "Load the set of hashes from binary files.");
             this.RdbLoadFile.UseVisualStyleBackColor = true;
             this.RdbLoadFile.CheckedChanged += new System.EventHandler(this.RdbLoadFile_CheckedChanged);
             // 
@@ -267,6 +273,8 @@
             // 
             // TxtPrefixes
             // 
+            this.TxtPrefixes.AccessibleDescription = "";
+            this.TxtPrefixes.AccessibleName = "";
             this.TxtPrefixes.Location = new System.Drawing.Point(410, 36);
             this.TxtPrefixes.MaxLength = 2147483647;
             this.TxtPrefixes.Multiline = true;
@@ -305,6 +313,7 @@
             this.LblPrefixes.Size = new System.Drawing.Size(44, 13);
             this.LblPrefixes.TabIndex = 8;
             this.LblPrefixes.Text = "Prefixes";
+            this.ToolTipNFSRaider.SetToolTip(this.LblPrefixes, "Use comma (,) to separate each prefix.");
             // 
             // LblSuffixes
             // 
@@ -314,24 +323,26 @@
             this.LblSuffixes.Size = new System.Drawing.Size(44, 13);
             this.LblSuffixes.TabIndex = 12;
             this.LblSuffixes.Text = "Suffixes";
+            this.ToolTipNFSRaider.SetToolTip(this.LblSuffixes, "Use comma (,) to separate each suffix.");
             // 
-            // LblCombinationsAndPermutations
+            // LblVariations
             // 
-            this.LblCombinationsAndPermutations.AutoSize = true;
-            this.LblCombinationsAndPermutations.Location = new System.Drawing.Point(563, 20);
-            this.LblCombinationsAndPermutations.Name = "LblCombinationsAndPermutations";
-            this.LblCombinationsAndPermutations.Size = new System.Drawing.Size(53, 13);
-            this.LblCombinationsAndPermutations.TabIndex = 10;
-            this.LblCombinationsAndPermutations.Text = "Variations";
+            this.LblVariations.AutoSize = true;
+            this.LblVariations.Location = new System.Drawing.Point(563, 20);
+            this.LblVariations.Name = "LblVariations";
+            this.LblVariations.Size = new System.Drawing.Size(53, 13);
+            this.LblVariations.TabIndex = 10;
+            this.LblVariations.Text = "Variations";
+            this.ToolTipNFSRaider.SetToolTip(this.LblVariations, resources.GetString("LblVariations.ToolTip"));
             // 
-            // label4
+            // LblExportOptionsExportFormat
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 95);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
-            this.label4.TabIndex = 60;
-            this.label4.Text = "Export format";
+            this.LblExportOptionsExportFormat.AutoSize = true;
+            this.LblExportOptionsExportFormat.Location = new System.Drawing.Point(6, 95);
+            this.LblExportOptionsExportFormat.Name = "LblExportOptionsExportFormat";
+            this.LblExportOptionsExportFormat.Size = new System.Drawing.Size(69, 13);
+            this.LblExportOptionsExportFormat.TabIndex = 60;
+            this.LblExportOptionsExportFormat.Text = "Export format";
             // 
             // TxtExportFormat
             // 
@@ -344,14 +355,14 @@
             // GrpExportOptions
             // 
             this.GrpExportOptions.Controls.Add(this.ChkReverseHashes);
-            this.GrpExportOptions.Controls.Add(this.label7);
+            this.GrpExportOptions.Controls.Add(this.LblExportOptionsOrderBy);
             this.GrpExportOptions.Controls.Add(this.CboOrderBy);
             this.GrpExportOptions.Controls.Add(this.ChkIgnoreRepeatedStrings);
             this.GrpExportOptions.Controls.Add(this.BtnUpdateList);
             this.GrpExportOptions.Controls.Add(this.BtnExportHashes);
             this.GrpExportOptions.Controls.Add(this.ChkIgnoreRepeatedHashes);
             this.GrpExportOptions.Controls.Add(this.TxtExportFormat);
-            this.GrpExportOptions.Controls.Add(this.label4);
+            this.GrpExportOptions.Controls.Add(this.LblExportOptionsExportFormat);
             this.GrpExportOptions.Location = new System.Drawing.Point(12, 425);
             this.GrpExportOptions.Name = "GrpExportOptions";
             this.GrpExportOptions.Size = new System.Drawing.Size(294, 118);
@@ -369,14 +380,14 @@
             this.ChkReverseHashes.Text = "Reverse hashes";
             this.ChkReverseHashes.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // LblExportOptionsOrderBy
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 13);
-            this.label7.TabIndex = 53;
-            this.label7.Text = "Order by";
+            this.LblExportOptionsOrderBy.AutoSize = true;
+            this.LblExportOptionsOrderBy.Location = new System.Drawing.Point(6, 22);
+            this.LblExportOptionsOrderBy.Name = "LblExportOptionsOrderBy";
+            this.LblExportOptionsOrderBy.Size = new System.Drawing.Size(47, 13);
+            this.LblExportOptionsOrderBy.TabIndex = 53;
+            this.LblExportOptionsOrderBy.Text = "Order by";
             // 
             // CboOrderBy
             // 
@@ -384,8 +395,10 @@
             this.CboOrderBy.FormattingEnabled = true;
             this.CboOrderBy.Items.AddRange(new object[] {
             "None",
-            "Hash",
-            "String"});
+            "Hash ascending",
+            "Hash descending",
+            "String ascending",
+            "String descending"});
             this.CboOrderBy.Location = new System.Drawing.Point(59, 19);
             this.CboOrderBy.Name = "CboOrderBy";
             this.CboOrderBy.Size = new System.Drawing.Size(228, 21);
@@ -578,7 +591,7 @@
             this.GrpBruteforceOptions.Controls.Add(this.NumericMinVariations);
             this.GrpBruteforceOptions.Controls.Add(this.ChkBruteforceWithRepetition);
             this.GrpBruteforceOptions.Controls.Add(this.ChkTryToBruteforce);
-            this.GrpBruteforceOptions.Controls.Add(this.label5);
+            this.GrpBruteforceOptions.Controls.Add(this.LblWordsBetweenVariations);
             this.GrpBruteforceOptions.Controls.Add(this.label3);
             this.GrpBruteforceOptions.Controls.Add(this.label2);
             this.GrpBruteforceOptions.Controls.Add(this.TxtWordsBetweenVariations);
@@ -679,14 +692,15 @@
             this.ChkTryToBruteforce.UseVisualStyleBackColor = true;
             this.ChkTryToBruteforce.CheckedChanged += new System.EventHandler(this.ChkTryToBruteforce_CheckedChanged);
             // 
-            // label5
+            // LblWordsBetweenVariations
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 13);
-            this.label5.TabIndex = 32;
-            this.label5.Text = "Words between variations";
+            this.LblWordsBetweenVariations.AutoSize = true;
+            this.LblWordsBetweenVariations.Location = new System.Drawing.Point(5, 16);
+            this.LblWordsBetweenVariations.Name = "LblWordsBetweenVariations";
+            this.LblWordsBetweenVariations.Size = new System.Drawing.Size(130, 13);
+            this.LblWordsBetweenVariations.TabIndex = 32;
+            this.LblWordsBetweenVariations.Text = "Words between variations";
+            this.ToolTipNFSRaider.SetToolTip(this.LblWordsBetweenVariations, "Use comma (,) to separate each word between variations.");
             // 
             // label3
             // 
@@ -773,6 +787,13 @@
             this.LblTimeTaken.TabIndex = 65;
             this.LblTimeTaken.Text = "Time taken: HHHH:mm:ss.fff";
             // 
+            // ToolTipNFSRaider
+            // 
+            this.ToolTipNFSRaider.AutoPopDelay = 15000;
+            this.ToolTipNFSRaider.InitialDelay = 500;
+            this.ToolTipNFSRaider.ReshowDelay = 100;
+            this.ToolTipNFSRaider.ToolTipTitle = "Info";
+            // 
             // NFSRaiderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -794,7 +815,7 @@
             this.Controls.Add(this.TxtFileEndOffset);
             this.Controls.Add(this.TxtFileStartOffset);
             this.Controls.Add(this.GrpExportOptions);
-            this.Controls.Add(this.LblCombinationsAndPermutations);
+            this.Controls.Add(this.LblVariations);
             this.Controls.Add(this.LblSuffixes);
             this.Controls.Add(this.LblPrefixes);
             this.Controls.Add(this.TxtSuffixes);
@@ -840,8 +861,8 @@
         private System.Windows.Forms.TextBox TxtSuffixes;
         private System.Windows.Forms.Label LblPrefixes;
         private System.Windows.Forms.Label LblSuffixes;
-        private System.Windows.Forms.Label LblCombinationsAndPermutations;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label LblVariations;
+        private System.Windows.Forms.Label LblExportOptionsExportFormat;
         private System.Windows.Forms.TextBox TxtExportFormat;
         private System.Windows.Forms.GroupBox GrpExportOptions;
         private System.Windows.Forms.Button BtnExportHashes;
@@ -860,9 +881,9 @@
         private System.Windows.Forms.Label LblTextUnknownHashes;
         private System.Windows.Forms.Label LblTextTotalHashes;
         private System.Windows.Forms.TextBox TxtFileSkipHashes;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblSkipHashes;
         private System.Windows.Forms.GroupBox GrpBruteforceOptions;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label LblWordsBetweenVariations;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtWordsBetweenVariations;
@@ -870,14 +891,14 @@
         private System.Windows.Forms.Button BtnSearchPrevious;
         private System.Windows.Forms.Button BtnSearchNext;
         private System.Windows.Forms.TextBox TxtFileReadHashes;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label LblReadHashes;
         private System.Windows.Forms.Button BtnUpdateList;
         private System.Windows.Forms.Label LblStatus;
         private System.Windows.Forms.CheckBox ChkTryToBruteforce;
         private System.Windows.Forms.CheckBox ChkBruteforceWithRepetition;
         private System.Windows.Forms.CheckBox ChkIgnoreRepeatedStrings;
         private System.Windows.Forms.CheckBox ChkIgnoreRepeatedHashes;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label LblExportOptionsOrderBy;
         private System.Windows.Forms.ComboBox CboOrderBy;
         private System.Windows.Forms.ComboBox CboForceHashListCase;
         private System.Windows.Forms.NumericUpDown NumericMinVariations;
@@ -888,6 +909,7 @@
         private System.Windows.Forms.ComboBox CboEndianness;
         private System.Windows.Forms.NumericUpDown NumericProcessorsCount;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ToolTip ToolTipNFSRaider;
     }
 }
 

@@ -58,6 +58,16 @@ namespace NFSRaider
             }
         }
 
+        public void GenericMessageBoxDuringBruteForce(string title, string text)
+        {
+            Invoke((MethodInvoker)(() => 
+            {
+                MessageBox.Show(text, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TimerStop();
+                TimerStart();
+            }));
+        }
+
         private void BtnLoadFile_Click(object sender, EventArgs e)
         {
             using (var fileDialog = new OpenFileDialog())
@@ -77,7 +87,7 @@ namespace NFSRaider
             {
                 if (!string.IsNullOrWhiteSpace(FilePath) && File.Exists(FilePath))
                 {
-                    TimerStart();
+                    TimerRestart();
 
                     var file = FormMethods.FormFile.Open(TxtFileStartOffset.Text, TxtFileEndOffset.Text, TxtFileReadHashes.Text, TxtFileSkipHashes.Text, FilePath);
                     var listBox = FormMethods.FormFile.UnhashFromFile(UnhashingEndianness, HashFactory, file, CaseOption);
@@ -105,7 +115,7 @@ namespace NFSRaider
                     bruteForce.Unhash(TxtLoadFromText.Text);
                     BruteforceProcessStarted = true;
 
-                    TimerStart();
+                    TimerRestart();
 
                     BruteForceThread = new Thread(() => { bruteForce.BruteForceThread(); Invoke((MethodInvoker)(() => BruteforceFinished())); })
                     {
@@ -148,6 +158,11 @@ namespace NFSRaider
 
         private void TimerStart()
         {
+            Timer.Start();
+        }
+
+        private void TimerRestart()
+        {
             Timer.Restart();
         }
 
@@ -178,17 +193,30 @@ namespace NFSRaider
                     .ToList();
             }
 
-            if (OrderOption == OrderOptions.Hash)
+            switch (OrderOption)
             {
-                listBoxDataSource = listBoxDataSource
-                    .OrderBy(c => c.Hash)
-                    .ToList();
-            }
-            else if (OrderOption == OrderOptions.String)
-            {
-                listBoxDataSource = listBoxDataSource
-                    .OrderBy(c => c.Value)
-                    .ToList();
+                case OrderOptions.HashAsc:
+                    listBoxDataSource = listBoxDataSource
+                        .OrderBy(c => c.Hash)
+                        .ToList();
+                    break;
+                case OrderOptions.HashDesc:
+                    listBoxDataSource = listBoxDataSource
+                        .OrderByDescending(c => c.Hash)
+                        .ToList();
+                    break;
+                case OrderOptions.StringAsc:
+                    listBoxDataSource = listBoxDataSource
+                        .OrderBy(c => c.Value)
+                        .ToList();
+                    break;
+                case OrderOptions.StringDesc:
+                    listBoxDataSource = listBoxDataSource
+                        .OrderByDescending(c => c.Value)
+                        .ToList();
+                    break;
+                default:
+                    break;
             }
 
             if (ChkIgnoreRepeatedStrings.Checked)
@@ -308,10 +336,10 @@ namespace NFSRaider
 
         private void CboEndianness_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CboEndianness.SelectedIndex == 1)
-                UnhashingEndianness = Endianness.LittleEndian;
+            if (CboEndianness.SelectedIndex >= 0 && CboEndianness.SelectedIndex <= 1)
+                UnhashingEndianness = (Endianness)CboEndianness.SelectedIndex;
             else
-                UnhashingEndianness = Endianness.BigEndian;
+                UnhashingEndianness = Endianness.LittleEndian;
         }
 
         private void CboHashTypes_SelectedIndexChanged(object sender, EventArgs e)
@@ -330,20 +358,16 @@ namespace NFSRaider
 
         private void CboOrderBy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CboOrderBy.SelectedIndex == 1)
-                OrderOption = OrderOptions.Hash;
-            else if (CboOrderBy.SelectedIndex == 2)
-                OrderOption = OrderOptions.String;
+            if (CboOrderBy.SelectedIndex >= 0 && CboOrderBy.SelectedIndex <= 4)
+                OrderOption = (OrderOptions)CboOrderBy.SelectedIndex;
             else
                 OrderOption = OrderOptions.None;
         }
 
         private void CboForceHashListCase_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CboForceHashListCase.SelectedIndex == 1)
-                CaseOption = CaseOptions.Uppercase;
-            else if (CboForceHashListCase.SelectedIndex == 2)
-                CaseOption = CaseOptions.Lowercase;
+            if (CboForceHashListCase.SelectedIndex >= 0 && CboOrderBy.SelectedIndex <= 2)
+                CaseOption = (CaseOptions)CboForceHashListCase.SelectedIndex;
             else
                 CaseOption = CaseOptions.None;
         }
