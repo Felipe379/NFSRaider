@@ -30,7 +30,7 @@ namespace NFSRaider.FormMethods
         private CaseOptions CaseOption { get; set; }
         private HashFactory HashFactory { get; set; }
         private VariationModel VariationModel { get; set; }
-        private List<VariationModel> WordsVariations { get; set; }
+        private List<VariationModel> VariationsGroups { get; set; }
 
         private bool CheckForHashesInFile { get; set; }
         private bool TryToBruteForce { get; set; }
@@ -50,10 +50,11 @@ namespace NFSRaider.FormMethods
             Suffixes = new HashSet<string>(txtSuffixes.Split(new[] { ',' }));
             WordsBetweenVariations = new HashSet<string>(txtWordsBetweenVariations.Split(new[] { ',' }));
             ProcessorCount = Convert.ToInt32(processorCount);
+            VariationsGroups = new List<VariationModel>();
 
             var variations = txtVariations.Split(new[] { ',' }).ToList();
+            var variationsGroups = new List<string>();
 
-            WordsVariations = new List<VariationModel>();
 
             var regexPattern = @"^\[" +                                            // Start
                                @"(?<min>([\d]*))" +                                // MinVariations
@@ -65,16 +66,16 @@ namespace NFSRaider.FormMethods
 
             foreach (var variation in variations.Where(c => c.StartsWith("{") && c.EndsWith("}")))
             {
-                variations = variation.Trim(new[] { '{', '}' }).Split(new[] { ';' }).ToList();
+                variationsGroups = variation.Trim(new[] { '{', '}' }).Split(new[] { ';' }).ToList();
 
-                var regex = Regex.Match(variations.Last(), regexPattern);
+                var regex = Regex.Match(variationsGroups.Last(), regexPattern);
 
-                if (variations.Any() && regex.Success)
+                if (variationsGroups.Any() && regex.Success)
                 {
-                    variations.RemoveAt(variations.Count - 1);
-                    WordsVariations.Add(new VariationModel
+                    variationsGroups.RemoveAt(variationsGroups.Count - 1);
+                    VariationsGroups.Add(new VariationModel
                     {
-                        Variations = variations,
+                        Variations = variationsGroups,
                         MinVariations = Convert.ToInt32(regex.Groups["min"].ToString()),
                         MaxVariations = Convert.ToInt32(regex.Groups["max"].ToString()),
                         GenerateOption = (GenerateOption)Convert.ToInt32(regex.Groups["generateOption"].ToString()),
@@ -89,10 +90,9 @@ namespace NFSRaider.FormMethods
                 GenerateOption = generateOption,
             };
 
-            if (WordsVariations.Any())
+            if (VariationsGroups.Any())
             {
-                VariationModel.Variations = variations.Where(c => !c.StartsWith("{") && !c.EndsWith("}")).ToHashSet();
-                Sender.GenericMessageBoxDuringBruteForce("Bruteforce info", $"Found {WordsVariations.Count} words to generate variations!");
+                VariationModel.Variations = variations.Where(c => !c.StartsWith("{") && !c.EndsWith("}")).Concat(VariationsGroups.Select(s => string.Join("", s.Variations))).ToHashSet();
             }
             else
             {
@@ -138,8 +138,8 @@ namespace NFSRaider.FormMethods
                 }
                 if (TryToBruteForce)
                 {
-                    GenerateAllWordsVariations();
-                    TryBruteforce();
+                    var variationModel = GenerateAllWordsVariations();
+                    TryBruteforce(variationModel);
                 }
             }
         }
@@ -161,32 +161,71 @@ namespace NFSRaider.FormMethods
             }
         }
 
-        private void GenerateAllWordsVariations()
+        private VariationModel GenerateAllWordsVariations()
         {
-            if (WordsVariations.Any())
+            var variationModel = new VariationModel()
             {
-                foreach (var wordVariation in WordsVariations)
+                MaxVariations = VariationModel.MaxVariations,
+                MinVariations = VariationModel.MinVariations,
+                GenerateOption = VariationModel.GenerateOption,
+            };
+
+            if (VariationsGroups.Any())
+            {
+                variationModel.Variations = new HashSet<string>(VariationModel.Variations);
+                Sender.GenericMessageBoxDuringBruteForce("Bruteforce info", $"Found {VariationsGroups.Count} groups to generate variations!");
+                var forceBreakPreventOutMemory = false;
+                Variations<string> variations;
+                var lastWordGenerated = string.Empty;
+                foreach (var wordVariation in VariationsGroups)
                 {
                     for (int variationsCount = wordVariation.MinVariations; variationsCount <= wordVariation.MaxVariations; variationsCount++)
                     {
-                        var variations = new Variations<string>(wordVariation.Variations, variationsCount, wordVariation.GenerateOption);
+                        variations = new Variations<string>(wordVariation.Variations, variationsCount, wordVariation.GenerateOption);
                         foreach (var variation in variations)
                         {
-                            VariationModel.Variations.Add(string.Join("", variation));
+                            if (GC.GetTotalMemory(false) >= 1_500_000_000)
+                            {
+                                lastWordGenerated = string.Join("", variation);
+                                variationModel.Variations.Add(lastWordGenerated);
+                                forceBreakPreventOutMemory = true;
+                                break;
+                            }
+                            variationModel.Variations.Add(string.Join("", variation));
                         }
+
+                        if (forceBreakPreventOutMemory)
+                            break;
                     }
+
+                    if (forceBreakPreventOutMemory)
+                        break;
                 }
 
-                Sender.GenericMessageBoxDuringBruteForce("Bruteforce info", $"Generated all variations from the words!\r\nTotal of strings to choose from: {VariationModel.Variations.Count}");
+                if (forceBreakPreventOutMemory)
+                    Sender.GenericMessageBoxDuringBruteForce("Bruteforce info", $"Not all variations were generated. Generations stopped to prevent out of memory exception." +
+                        $"\r\nLast word generated: {lastWordGenerated}" +
+                        $"\r\nTotal of strings to choose from: {variationModel.Variations.Count}");
+                else
+                    Sender.GenericMessageBoxDuringBruteForce("Bruteforce info", $"Generated all variations from groups!\r\nTotal of strings to choose from: {variationModel.Variations.Count}");
             }
+            else
+            {
+                variationModel.Variations = new List<string>(VariationModel.Variations);
+                Sender.GenericMessageBoxDuringBruteForce("Bruteforce info", $"No groups found to generate variations!\r\nTotal of strings to choose from: {variationModel.Variations.Count}");
+            }
+
+            return variationModel;
         }
 
-        private void TryBruteforce()
+        private void TryBruteforce(VariationModel variationsModel)
         {
-            for (int variationsCount = VariationModel.MinVariations; variationsCount <= VariationModel.MaxVariations; variationsCount++)
+            Variations<string> variations;
+            OrderablePartitioner<IList<string>> rangePartitioner;
+            for (int variationsCount = variationsModel.MinVariations; variationsCount <= variationsModel.MaxVariations; variationsCount++)
             {
-                var variations = new Variations<string>(VariationModel.Variations, variationsCount, VariationModel.GenerateOption);
-                var rangePartitioner = Partitioner.Create(variations);
+                variations = new Variations<string>(variationsModel.Variations, variationsCount, VariationModel.GenerateOption);
+                rangePartitioner = Partitioner.Create(variations);
 
                 Parallel.ForEach(rangePartitioner, new ParallelOptions 
                 {

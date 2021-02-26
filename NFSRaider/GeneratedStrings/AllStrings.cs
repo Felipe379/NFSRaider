@@ -37,7 +37,7 @@ namespace NFSRaider.GeneratedStrings
                 FileDelete.DestroyFile(FileName);
             }
 
-            var hashSet = new HashSet<string>(20000000);
+            var hashSet = new HashSet<string>(20_000_000);
 
             for (int i = 0; i < 256; i++)
             {

@@ -28,7 +28,7 @@ namespace NFSRaider
             CboForceHashListCase.SelectedIndex = 0;
             CboEndianness.SelectedIndex = 0;
             CboHashTypes.SelectedIndex = 0;
-            LblTimeTaken.Text = string.Empty;
+            LblTimeElapsed.Text = string.Empty;
             NumericProcessorsCount.Maximum = Environment.ProcessorCount;
             NumericProcessorsCount.Value = Environment.ProcessorCount / 2;
         }
@@ -83,56 +83,68 @@ namespace NFSRaider
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            if (RdbLoadFile.Checked)
+            try
             {
-                if (!string.IsNullOrWhiteSpace(FilePath) && File.Exists(FilePath))
+                if (RdbLoadFile.Checked)
                 {
-                    TimerRestart();
+                    if (!string.IsNullOrWhiteSpace(FilePath) && File.Exists(FilePath))
+                    {
+                        TimerRestart();
 
-                    var file = FormMethods.FormFile.Open(TxtFileStartOffset.Text, TxtFileEndOffset.Text, TxtFileReadHashes.Text, TxtFileSkipHashes.Text, FilePath);
-                    var listBox = FormMethods.FormFile.UnhashFromFile(UnhashingEndianness, HashFactory, file, CaseOption);
-                    ListBoxDataSource = listBox;
-                    ChangedListBoxDataSource();
-                    GC.Collect();
+                        var file = FormMethods.FormFile.Open(TxtFileStartOffset.Text, TxtFileEndOffset.Text, TxtFileReadHashes.Text, TxtFileSkipHashes.Text, FilePath);
+                        var listBox = FormMethods.FormFile.UnhashFromFile(UnhashingEndianness, HashFactory, file, CaseOption);
+                        ListBoxDataSource = listBox;
+                        ChangedListBoxDataSource();
+                        GC.Collect();
 
-                    TimerStop();
+                        TimerStop();
+                    }
+                    else
+                    {
+                        MessageBox.Show("File not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
+                else if (RdbLoadFromText.Checked && !BruteforceProcessStarted)
                 {
-                    MessageBox.Show("File not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (!string.IsNullOrWhiteSpace(TxtLoadFromText.Text) &&
+                        Convert.ToInt32(NumericMinVariations.Text) <= Convert.ToInt32(NumericMaxVariations.Text) &&
+                        (!string.IsNullOrWhiteSpace(TxtPrefixes.Text) || !string.IsNullOrWhiteSpace(TxtVariations.Text) || !string.IsNullOrWhiteSpace(TxtSuffixes.Text)))
+                    {
+                        DisableComponentsDuringBruteforce();
+
+                        var bruteForce = new FormMethods.FormBruteforce(this, HashFactory, ChkUseHashesFile.Checked, ChkTryToBruteforce.Checked, TxtPrefixes.Text, TxtSuffixes.Text,
+                            TxtVariations.Text, TxtWordsBetweenVariations.Text, NumericMinVariations.Text, NumericMaxVariations.Text, NumericProcessorsCount.Text, GenerateOption, UnhashingEndianness, CaseOption);
+                        bruteForce.Unhash(TxtLoadFromText.Text);
+                        BruteforceProcessStarted = true;
+
+                        TimerRestart();
+
+                        BruteForceThread = new Thread(() => { bruteForce.BruteForceThread(); Invoke((MethodInvoker)(() => BruteforceFinished())); })
+                        {
+                            IsBackground = true
+                        };
+                        BruteForceThread.Start();
+                    }
+                    else
+                    {
+                        var message = "Failed to raid:\r\n";
+                        if (string.IsNullOrWhiteSpace(TxtLoadFromText.Text))
+                            message += "- You must include hashes on the list.\r\n";
+                        if (Convert.ToInt32(NumericMinVariations.Text) > Convert.ToInt32(NumericMaxVariations.Text))
+                            message += "- Minimum amount of variations cannot be bigger than the maximum amount of variations.\r\n";
+                        if (string.IsNullOrWhiteSpace(TxtPrefixes.Text) && string.IsNullOrWhiteSpace(TxtVariations.Text) && string.IsNullOrWhiteSpace(TxtSuffixes.Text))
+                            message += "- You must fill at least one of those: Prefixes, Variations or Suffixes.";
+                        MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
-            else if (RdbLoadFromText.Checked && !BruteforceProcessStarted)
+            catch (Exception ex)
             {
-                if (!string.IsNullOrWhiteSpace(TxtLoadFromText.Text) && 
-                    Convert.ToInt32(NumericMinVariations.Text) <= Convert.ToInt32(NumericMaxVariations.Text) &&
-                    (!string.IsNullOrWhiteSpace(TxtPrefixes.Text) || !string.IsNullOrWhiteSpace(TxtVariations.Text) || !string.IsNullOrWhiteSpace(TxtSuffixes.Text)))
+                if (MessageBox.Show("An exception has occurred! You can check the details below:\r\n\r\n" + 
+                    ex.ToString() +
+                    "\r\n\r\nDo you want to continue anyway? The application may not work properly.", "Exception", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.No)
                 {
-                    DisableComponentsDuringBruteforce();
-
-                    var bruteForce = new FormMethods.FormBruteforce(this, HashFactory, ChkUseHashesFile.Checked, ChkTryToBruteforce.Checked, TxtPrefixes.Text, TxtSuffixes.Text,
-                        TxtVariations.Text, TxtWordsBetweenVariations.Text, NumericMinVariations.Text, NumericMaxVariations.Text, NumericProcessorsCount.Text, GenerateOption, UnhashingEndianness, CaseOption);
-                    bruteForce.Unhash(TxtLoadFromText.Text);
-                    BruteforceProcessStarted = true;
-
-                    TimerRestart();
-
-                    BruteForceThread = new Thread(() => { bruteForce.BruteForceThread(); Invoke((MethodInvoker)(() => BruteforceFinished())); })
-                    {
-                        IsBackground = true
-                    };
-                    BruteForceThread.Start();
-                }
-                else
-                {
-                    var message = "Failed to raid:\r\n";
-                    if (string.IsNullOrWhiteSpace(TxtLoadFromText.Text))
-                        message += "- You must include hashes on the list.\r\n";
-                    if (Convert.ToInt32(NumericMinVariations.Text) > Convert.ToInt32(NumericMaxVariations.Text))
-                        message += "- Minimum amount of variations cannot be bigger than the maximum amount of variations.\r\n";
-                    if (string.IsNullOrWhiteSpace(TxtPrefixes.Text) && string.IsNullOrWhiteSpace(TxtVariations.Text) && string.IsNullOrWhiteSpace(TxtSuffixes.Text))
-                        message += "- You must fill at least one of those: Prefixes, Variations or Suffixes.";
-                    MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Application.Exit();
                 }
             }
         }
@@ -169,7 +181,7 @@ namespace NFSRaider
         private void TimerStop()
         {
             Timer.Stop();
-            LblTimeTaken.Text = $"Time taken: {(int)Math.Floor(Timer.Elapsed.TotalHours):D2}{Timer.Elapsed:\\:mm\\:ss\\.fff}";
+            LblTimeElapsed.Text = $"Time elapsed: {(int)Math.Floor(Timer.Elapsed.TotalHours):D2}{Timer.Elapsed:\\:mm\\:ss\\.fff}";
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
