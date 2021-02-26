@@ -91,7 +91,7 @@
             this.BtnSearchNext = new System.Windows.Forms.Button();
             this.LblStatus = new System.Windows.Forms.Label();
             this.CboForceHashListCase = new System.Windows.Forms.ComboBox();
-            this.LblTimeTaken = new System.Windows.Forms.Label();
+            this.LblTimeElapsed = new System.Windows.Forms.Label();
             this.ToolTipNFSRaider = new System.Windows.Forms.ToolTip(this.components);
             this.GrpLoadOptions.SuspendLayout();
             this.GrpHashingOptions.SuspendLayout();
@@ -125,7 +125,7 @@
             // TxtLoadFromText
             // 
             this.TxtLoadFromText.Location = new System.Drawing.Point(6, 41);
-            this.TxtLoadFromText.MaxLength = 2147483647;
+            this.TxtLoadFromText.MaxLength = 65535;
             this.TxtLoadFromText.Multiline = true;
             this.TxtLoadFromText.Name = "TxtLoadFromText";
             this.TxtLoadFromText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -276,7 +276,7 @@
             this.TxtPrefixes.AccessibleDescription = "";
             this.TxtPrefixes.AccessibleName = "";
             this.TxtPrefixes.Location = new System.Drawing.Point(410, 36);
-            this.TxtPrefixes.MaxLength = 2147483647;
+            this.TxtPrefixes.MaxLength = 65535;
             this.TxtPrefixes.Multiline = true;
             this.TxtPrefixes.Name = "TxtPrefixes";
             this.TxtPrefixes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -286,7 +286,7 @@
             // TxtVariations
             // 
             this.TxtVariations.Location = new System.Drawing.Point(566, 36);
-            this.TxtVariations.MaxLength = 2147483647;
+            this.TxtVariations.MaxLength = 65535;
             this.TxtVariations.Multiline = true;
             this.TxtVariations.Name = "TxtVariations";
             this.TxtVariations.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -298,7 +298,7 @@
             // TxtSuffixes
             // 
             this.TxtSuffixes.Location = new System.Drawing.Point(722, 36);
-            this.TxtSuffixes.MaxLength = 2147483647;
+            this.TxtSuffixes.MaxLength = 65535;
             this.TxtSuffixes.Multiline = true;
             this.TxtSuffixes.Name = "TxtSuffixes";
             this.TxtSuffixes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -723,7 +723,6 @@
             // TxtWordsBetweenVariations
             // 
             this.TxtWordsBetweenVariations.Location = new System.Drawing.Point(6, 32);
-            this.TxtWordsBetweenVariations.MaxLength = 2147483647;
             this.TxtWordsBetweenVariations.Name = "TxtWordsBetweenVariations";
             this.TxtWordsBetweenVariations.Size = new System.Drawing.Size(253, 20);
             this.TxtWordsBetweenVariations.TabIndex = 33;
@@ -778,14 +777,14 @@
             this.CboForceHashListCase.TabIndex = 64;
             this.CboForceHashListCase.SelectedIndexChanged += new System.EventHandler(this.CboForceHashListCase_SelectedIndexChanged);
             // 
-            // LblTimeTaken
+            // LblTimeElapsed
             // 
-            this.LblTimeTaken.AutoSize = true;
-            this.LblTimeTaken.Location = new System.Drawing.Point(730, 546);
-            this.LblTimeTaken.Name = "LblTimeTaken";
-            this.LblTimeTaken.Size = new System.Drawing.Size(142, 13);
-            this.LblTimeTaken.TabIndex = 65;
-            this.LblTimeTaken.Text = "Time taken: HHHH:mm:ss.fff";
+            this.LblTimeElapsed.Location = new System.Drawing.Point(675, 546);
+            this.LblTimeElapsed.Name = "LblTimeElapsed";
+            this.LblTimeElapsed.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.LblTimeElapsed.Size = new System.Drawing.Size(200, 13);
+            this.LblTimeElapsed.TabIndex = 65;
+            this.LblTimeElapsed.Text = "Time elapsed: HHHH:mm:ss.fff";
             // 
             // ToolTipNFSRaider
             // 
@@ -799,7 +798,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 561);
-            this.Controls.Add(this.LblTimeTaken);
+            this.Controls.Add(this.LblTimeElapsed);
             this.Controls.Add(this.CboForceHashListCase);
             this.Controls.Add(this.LblStatus);
             this.Controls.Add(this.BtnSearchNext);
@@ -904,7 +903,7 @@
         private System.Windows.Forms.NumericUpDown NumericMinVariations;
         private System.Windows.Forms.NumericUpDown NumericMaxVariations;
         private System.Windows.Forms.CheckBox ChkReverseHashes;
-        private System.Windows.Forms.Label LblTimeTaken;
+        private System.Windows.Forms.Label LblTimeElapsed;
         private System.Windows.Forms.ComboBox CboHashTypes;
         private System.Windows.Forms.ComboBox CboEndianness;
         private System.Windows.Forms.NumericUpDown NumericProcessorsCount;
