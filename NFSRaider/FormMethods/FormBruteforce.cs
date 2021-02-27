@@ -51,11 +51,23 @@ namespace NFSRaider.FormMethods
             WordsBetweenVariations = new HashSet<string>(txtWordsBetweenVariations.Split(new[] { ',' }));
             ProcessorCount = Convert.ToInt32(processorCount);
             VariationsGroups = new List<VariationModel>();
+            VariationModel = new VariationModel
+            {
+                MinVariations = Convert.ToInt32(txtMinVariations),
+                MaxVariations = Convert.ToInt32(txtMaxVariations),
+                GenerateOption = generateOption,
+            };
 
-            var variations = txtVariations.Split(new[] { ',' }).ToList();
-            var variationsGroups = new List<string>();
+            UnhashingEndianness = unhashingEndianness;
 
+            CheckForHashesInFile = checkForHashesInFile;
+            TryToBruteForce = tryToBruteForce;
 
+            InitializeVariatons(txtVariations.Split(new[] { ',' }).ToList());
+        }
+
+        private void InitializeVariatons(IEnumerable<string> variations)
+        {
             var regexPattern = @"^\[" +                                            // Start
                                @"(?<min>([\d]*))" +                                // MinVariations
                                @"(?<separator1>\-)" +                              // Separator
@@ -64,46 +76,65 @@ namespace NFSRaider.FormMethods
                                @"(?<generateOption>([0-1]))" +                     // GenerateOption
                                @"\]$";                                             // End
 
-            foreach (var variation in variations.Where(c => c.StartsWith("{") && c.EndsWith("}")))
+            var variationsGroups = variations.Where(c => c.StartsWith("{") && c.EndsWith("}"));
+            var simpleVariations = variations.Where(c => !c.StartsWith("{") && !c.EndsWith("}") && !c.StartsWith("[") && !c.EndsWith("]"));
+
+            if (variationsGroups.Any())
             {
-                variationsGroups = variation.Trim(new[] { '{', '}' }).Split(new[] { ';' }).ToList();
+                var variation = new List<string>();
+                Match regex;
+                var min = 0;
+                var max = 0;
 
-                var regex = Regex.Match(variationsGroups.Last(), regexPattern);
-
-                if (variationsGroups.Any() && regex.Success)
+                foreach (var variationGroup in variationsGroups)
                 {
-                    variationsGroups.RemoveAt(variationsGroups.Count - 1);
-                    VariationsGroups.Add(new VariationModel
+                    variation = variationGroup.Trim(new[] { '{', '}' }).Split(new[] { ';' }).ToList();
+
+                    regex = Regex.Match(variation.Last(), regexPattern);
+
+                    if (variation.Any() && regex.Success)
                     {
-                        Variations = variationsGroups,
-                        MinVariations = Convert.ToInt32(regex.Groups["min"].ToString()),
-                        MaxVariations = Convert.ToInt32(regex.Groups["max"].ToString()),
-                        GenerateOption = (GenerateOption)Convert.ToInt32(regex.Groups["generateOption"].ToString()),
-                    });
+                        min = Convert.ToInt32(regex.Groups["min"].ToString());
+                        max = Convert.ToInt32(regex.Groups["max"].ToString());
+                        if (min > 0 && max > 0 && min <= max)
+                        {
+                            variation.RemoveAt(variation.Count - 1);
+                            VariationsGroups.Add(new VariationModel
+                            {
+                                Variations = variation,
+                                MinVariations = min,
+                                MaxVariations = max,
+                                GenerateOption = (GenerateOption)Convert.ToInt32(regex.Groups["generateOption"].ToString()),
+                            });
+                        }
+                    }
                 }
             }
 
-            VariationModel = new VariationModel
-            {
-                MinVariations = Convert.ToInt32(txtMinVariations),
-                MaxVariations = Convert.ToInt32(txtMaxVariations),
-                GenerateOption = generateOption,
-            };
+            var simpleVariationsWithSubstring = variations.Where(c => c.StartsWith("[") && c.EndsWith("]")).Select(c => c.Trim(new[] { '[', ']' }))
+                .Concat(VariationsGroups.Select(s => string.Join("", s.Variations)));
+            var allSimpleVariationsWithSubstring = new HashSet<string>();
 
-            if (VariationsGroups.Any())
+            foreach (var simpleVariation in simpleVariationsWithSubstring)
+            { 
+                for (int i = 0; i < simpleVariation.Length; i++)
+                {
+                    for (int j = i; j < simpleVariation.Length; j++)
+                    {
+                        allSimpleVariationsWithSubstring.Add(simpleVariation.Substring(i, j - i + 1));
+                    }
+                }
+            }
+
+            if (VariationsGroups.Any() || allSimpleVariationsWithSubstring.Any())
             {
-                VariationModel.Variations = variations.Where(c => !c.StartsWith("{") && !c.EndsWith("}")).Concat(VariationsGroups.Select(s => string.Join("", s.Variations))).ToHashSet();
+                VariationModel.Variations = simpleVariations.Concat(allSimpleVariationsWithSubstring).ToHashSet();
             }
             else
             {
-                VariationModel.Variations = variations.Where(c => !c.StartsWith("{") && !c.EndsWith("}")).ToList();
+                VariationModel.Variations = simpleVariations.ToList();
             }
 
-
-            UnhashingEndianness = unhashingEndianness;
-
-            CheckForHashesInFile = checkForHashesInFile;
-            TryToBruteForce = tryToBruteForce;
         }
 
         public void Unhash(string txtHashes)
@@ -116,6 +147,10 @@ namespace NFSRaider.FormMethods
                 {
                     if (Helpers.Hashes.IsHash(hash))
                         Hashes.Add(Helpers.Hashes.Reverse(Convert.ToUInt32(hash, 16)));
+                    else
+                    {
+
+                    }
                 }
             }
             else
@@ -124,6 +159,10 @@ namespace NFSRaider.FormMethods
                 {
                     if (Helpers.Hashes.IsHash(hash))
                         Hashes.Add(Convert.ToUInt32(hash, 16));
+                    else
+                    {
+
+                    }
                 }
             }
         }
@@ -146,6 +185,7 @@ namespace NFSRaider.FormMethods
 
         private void CheckFile()
         {
+            Sender.GenericMessageBoxDuringBruteForce("Raid info", $"Hashes identified: {Hashes.Count}");
             var allParts = new AllStrings().ReadHashesFile(HashFactory, CaseOption);
 
             foreach (var hash in Hashes)
@@ -204,15 +244,20 @@ namespace NFSRaider.FormMethods
 
                 if (forceBreakPreventOutMemory)
                     Sender.GenericMessageBoxDuringBruteForce("Bruteforce info", $"Not all variations were generated. Generations stopped to prevent out of memory exception." +
+                        $"\r\nHashes identified: {Hashes.Count}" +
                         $"\r\nLast word generated: {lastWordGenerated}" +
                         $"\r\nTotal of strings to choose from: {variationModel.Variations.Count}");
                 else
-                    Sender.GenericMessageBoxDuringBruteForce("Bruteforce info", $"Generated all variations from groups!\r\nTotal of strings to choose from: {variationModel.Variations.Count}");
+                    Sender.GenericMessageBoxDuringBruteForce("Bruteforce info", $"Generated all variations from groups!" +
+                        $"\r\nHashes identified: {Hashes.Count}" +
+                        $"\r\nTotal of strings to choose from: {variationModel.Variations.Count}");
             }
             else
             {
                 variationModel.Variations = new List<string>(VariationModel.Variations);
-                Sender.GenericMessageBoxDuringBruteForce("Bruteforce info", $"No groups found to generate variations!\r\nTotal of strings to choose from: {variationModel.Variations.Count}");
+                Sender.GenericMessageBoxDuringBruteForce("Bruteforce info", $"No groups found to generate variations!" +
+                    $"\r\nHashes identified: {Hashes.Count}" +
+                    $"\r\nTotal of strings to choose from: {variationModel.Variations.Count}");
             }
 
             return variationModel;
