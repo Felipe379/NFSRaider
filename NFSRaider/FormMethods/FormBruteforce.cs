@@ -2,6 +2,7 @@
 using NFSRaider.Enum;
 using NFSRaider.GeneratedStrings;
 using NFSRaider.Hash;
+using NFSRaider.Helpers;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -46,9 +47,9 @@ namespace NFSRaider.FormMethods
             CaseOption = caseOption;
 
             Hashes = new HashSet<uint>();
-            Prefixes = new HashSet<string>(txtPrefixes.Split(new[] { ',' }));
-            Suffixes = new HashSet<string>(txtSuffixes.Split(new[] { ',' }));
-            WordsBetweenVariations = new HashSet<string>(txtWordsBetweenVariations.Split(new[] { ',' }));
+            Prefixes = new HashSet<string>(txtPrefixes.SplitBy(new[] { ',' }, '\\'));
+            Suffixes = new HashSet<string>(txtSuffixes.SplitBy(new[] { ',' }, '\\'));
+            WordsBetweenVariations = new HashSet<string>(txtWordsBetweenVariations.SplitBy(new[] { ',' }, '\\'));
             ProcessorCount = Convert.ToInt32(processorCount);
             VariationsGroups = new List<VariationModel>();
             VariationModel = new VariationModel
@@ -63,7 +64,7 @@ namespace NFSRaider.FormMethods
             CheckForHashesInFile = checkForHashesInFile;
             TryToBruteForce = tryToBruteForce;
 
-            InitializeVariatons(txtVariations.Split(new[] { ',' }).ToList());
+            InitializeVariatons(txtVariations.SplitBy(new[] { ',' }, '\\'));
         }
 
         private void InitializeVariatons(IEnumerable<string> variations)
@@ -77,7 +78,7 @@ namespace NFSRaider.FormMethods
                                @"\]$";                                             // End
 
             var variationsGroups = variations.Where(c => c.StartsWith("{") && c.EndsWith("}"));
-            var simpleVariations = variations.Where(c => !c.StartsWith("{") && !c.EndsWith("}") && !c.StartsWith("[") && !c.EndsWith("]"));
+            var simpleVariations = variations.Where(c => !(c.StartsWith("{") && c.EndsWith("}")) && !(c.StartsWith("[") && c.EndsWith("]")));
 
             if (variationsGroups.Any())
             {
@@ -88,7 +89,7 @@ namespace NFSRaider.FormMethods
 
                 foreach (var variationGroup in variationsGroups)
                 {
-                    variation = variationGroup.Trim(new[] { '{', '}' }).Split(new[] { ';' }).ToList();
+                    variation = variationGroup.Trim(new[] { '{', '}' }).SplitBy(new[] { ';' }, '\\').ToList();
 
                     regex = Regex.Match(variation.Last(), regexPattern);
 
@@ -147,10 +148,6 @@ namespace NFSRaider.FormMethods
                 {
                     if (Helpers.Hashes.IsHash(hash))
                         Hashes.Add(Helpers.Hashes.Reverse(Convert.ToUInt32(hash, 16)));
-                    else
-                    {
-
-                    }
                 }
             }
             else
@@ -159,10 +156,6 @@ namespace NFSRaider.FormMethods
                 {
                     if (Helpers.Hashes.IsHash(hash))
                         Hashes.Add(Convert.ToUInt32(hash, 16));
-                    else
-                    {
-
-                    }
                 }
             }
         }

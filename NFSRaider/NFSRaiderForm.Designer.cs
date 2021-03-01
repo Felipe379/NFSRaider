@@ -293,7 +293,8 @@
             this.TxtVariations.Size = new System.Drawing.Size(150, 190);
             this.TxtVariations.TabIndex = 11;
             this.TxtVariations.Text = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o" +
-    ",p,q,r,s,t,u,v,w,x,y,z,0,1,2,3,4,5,6,7,8,9,_";
+    ",p,q,r,s,t,u,v,w,x,y,z,0,1,2,3,4,5,6,7,8,9,_, ,!,\",#,$,%,&,\',(,),*,+,-,.,/,:,;,<" +
+    ",=,>,?,@,[,\\\\,],^,`,{,|,},~,\\,";
             // 
             // TxtSuffixes
             // 
@@ -313,7 +314,8 @@
             this.LblPrefixes.Size = new System.Drawing.Size(44, 13);
             this.LblPrefixes.TabIndex = 8;
             this.LblPrefixes.Text = "Prefixes";
-            this.ToolTipNFSRaider.SetToolTip(this.LblPrefixes, "Use comma (,) to separate each prefix.");
+            this.ToolTipNFSRaider.SetToolTip(this.LblPrefixes, "Use comma (,) to separate each prefix.\r\nIf you want to use comma (,) you must esc" +
+        "ape it (\\,). Same goes for backslash (\\), you must escape it (\\\\).");
             // 
             // LblSuffixes
             // 
@@ -323,7 +325,8 @@
             this.LblSuffixes.Size = new System.Drawing.Size(44, 13);
             this.LblSuffixes.TabIndex = 12;
             this.LblSuffixes.Text = "Suffixes";
-            this.ToolTipNFSRaider.SetToolTip(this.LblSuffixes, "Use comma (,) to separate each suffix.");
+            this.ToolTipNFSRaider.SetToolTip(this.LblSuffixes, "Use comma (,) to separate each suffix.\r\nIf you want to use comma (,) you must esc" +
+        "ape it (\\,). Same goes for backslash (\\), you must escape it (\\\\).");
             // 
             // LblVariations
             // 
@@ -700,7 +703,9 @@
             this.LblWordsBetweenVariations.Size = new System.Drawing.Size(130, 13);
             this.LblWordsBetweenVariations.TabIndex = 32;
             this.LblWordsBetweenVariations.Text = "Words between variations";
-            this.ToolTipNFSRaider.SetToolTip(this.LblWordsBetweenVariations, "Use comma (,) to separate each word between variations.");
+            this.ToolTipNFSRaider.SetToolTip(this.LblWordsBetweenVariations, "Use comma (,) to separate each word between variations.\r\nIf you want to use comma" +
+        " (,) you must escape it (\\,). Same goes for backslash (\\), you must escape it (\\" +
+        "\\).");
             // 
             // label3
             // 

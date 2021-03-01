@@ -300,6 +300,7 @@
     <Compile Include="Hash\Bin.cs" />
     <Compile Include="Hash\HashFactory.cs" />
     <Compile Include="Hash\Vlt.cs" />
+    <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Helpers\FileDelete.cs" />
     <Compile Include="Helpers\FileRead.cs" />
     <Compile Include="Helpers\Hashes.cs" />
