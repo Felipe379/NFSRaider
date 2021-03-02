@@ -195,6 +195,8 @@
     <Compile Include="GeneratedStrings\Fng\UndercoverOldGen.cs" />
     <Compile Include="GeneratedStrings\GCareers\BuildgCareers.cs" />
     <Compile Include="GeneratedStrings\GCareers\Underground2.cs" />
+    <Compile Include="GeneratedStrings\Materials\UndercoverOldGen.cs" />
+    <Compile Include="GeneratedStrings\PresetSkins\World.cs" />
     <Compile Include="GeneratedStrings\StreamFiles\BuildStreamFiles.cs" />
     <Compile Include="GeneratedStrings\StreamFiles\ParameterSets\BuildParameterSets.cs" />
     <Compile Include="GeneratedStrings\StreamFiles\ParameterSets\ParameterSets.cs" />

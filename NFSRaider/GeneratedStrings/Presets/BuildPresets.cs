@@ -11,7 +11,9 @@ namespace NFSRaider.GeneratedStrings.Presets
                 Underground1.List
                 .Concat(Underground2.List)
                 .Concat(MostWanted.List)
+                .Concat(MostWanted.ListPrerelease)
                 .Concat(Carbon.List)
+                .Concat(Carbon.ListPrerelease)
                 .Concat(CarbonArcade.List)
                 .Concat(UndercoverOldGen.List)
                 );

@@ -36,9 +36,6 @@ namespace NFSRaider.GeneratedStrings.Presets
 "COPGTOPURSUIT",
 "COP_CROSS",
 "CS_CAR_01",
-"CS_CAR_NEWS",
-"LOLLEY",
-"OPM_M3_version2",
 "CS_CAR_02",
 "CS_CAR_03",
 "CS_CAR_04",
@@ -117,6 +114,15 @@ namespace NFSRaider.GeneratedStrings.Presets
 "OPM_WRX_VERSION2",
 "RAZORMUSTANG",
 "STARKY_HUTCH_EVO_ROG",
+        };
+
+        public static readonly List<string> ListPrerelease = new List<string>
+        {
+"CS_CAR_NEWS",
+"LOLLEY",
+"OPM_M3_version2",
+"OPM_M3_version3",
+"OPM_WRX_VERSION1",
         };
     }
 }

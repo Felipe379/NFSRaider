@@ -445,6 +445,15 @@ namespace NFSRaider
             ChangedListBoxDataSource();
         }
 
+        private void LstUnhashed_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control == true && e.KeyCode == Keys.C && LstUnhashed.SelectedItems.Count > 0)
+            {
+                var items = string.Join("\r\n", LstUnhashed.SelectedItems.Cast<string>());
+                Clipboard.SetData(DataFormats.StringFormat, items);
+            }
+        }
+
         private void LoadOptionChanged()
         {
             if (RdbLoadFile.Checked)

@@ -2,7 +2,7 @@
 
 namespace NFSRaider.GeneratedStrings.Materials
 {
-    public static class Carbon
+    public static class UndercoverOldGen
     {
         public static readonly List<string> List = new List<string>
         {
@@ -22,7 +22,6 @@ namespace NFSRaider.GeneratedStrings.Materials
 "CANDYPAINTYELLOW",
 "CARBONFIBER",
 "CHAR_CLOTH",
-"CHAR_CLOTH_UCAP",
 "CHAR_HAIR",
 "CHAR_HAIR_ANGIE",
 "CHAR_HAIR_KENJI",
@@ -34,9 +33,7 @@ namespace NFSRaider.GeneratedStrings.Materials
 "CHAR_RUBBER",
 "CHAR_SKIN",
 "CHAR_SKIN_ANGIE",
-"CHAR_SKIN_ANGIEBODY",
 "CHAR_SKIN_DARIUS",
-"CHAR_SKIN_FLAG",
 "CHAR_SKIN_KENJI",
 "CHAR_SKIN_NEVILLE",
 "CHAR_SKIN_WOLF",
@@ -113,7 +110,6 @@ namespace NFSRaider.GeneratedStrings.Materials
 "METPAINTGREEN",
 "METPAINTINDIGO",
 "METPAINTRED",
-"METPAINTSILVER",
 "METPAINTVIOLET",
 "METPAINTWHITE",
 "METPAINTYELLOW",
@@ -134,7 +130,6 @@ namespace NFSRaider.GeneratedStrings.Materials
 "REGPAINTGREEN",
 "REGPAINTINDIGO",
 "REGPAINTRED",
-"REGPAINTSILVER",
 "REGPAINTVIOLET",
 "REGPAINTWHITE",
 "REGPAINTYELLOW",
@@ -168,13 +163,6 @@ namespace NFSRaider.GeneratedStrings.Materials
 "WINDSHIELD_TINT_L3_SILVER",
 "WINDSHIELD_TINT_L3_VIOLET",
 "WINDSHIELD_TINT_L3_YELLOW",
-"HEADLIGHT_TINT_L1_BLUE",
-"HEADLIGHT_TINT_L1_GREEN",
-"HEADLIGHT_TINT_L1_INDIGO",
-"HEADLIGHT_TINT_L1_ORANGE",
-"HEADLIGHT_TINT_L1_RED",
-"HEADLIGHT_TINT_L1_VIOLET",
-"HEADLIGHT_TINT_L1_YELLOW",
         };
     }
 }

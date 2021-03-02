@@ -109,8 +109,10 @@
             this.LstUnhashed.HorizontalScrollbar = true;
             this.LstUnhashed.Location = new System.Drawing.Point(12, 38);
             this.LstUnhashed.Name = "LstUnhashed";
+            this.LstUnhashed.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.LstUnhashed.Size = new System.Drawing.Size(294, 381);
             this.LstUnhashed.TabIndex = 4;
+            this.LstUnhashed.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LstUnhashed_KeyDown);
             // 
             // BtnLoadFile
             // 

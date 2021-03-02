@@ -6,7 +6,7 @@ namespace NFSRaider.GeneratedStrings.Materials
     {
         public static readonly List<string> List = new List<string>
         {
-            "ALUMINUM",
+"ALUMINUM",
 "ALUMINUM_2",
 "BOTTOM",
 "BRAKEDISC",
@@ -61,12 +61,21 @@ namespace NFSRaider.GeneratedStrings.Materials
 "HEADLIGHTREFLECTOR",
 "HOSES",
 "INTERIOR",
+"LICENSEPLATE",
 "MAGCHROME",
 "MAGGUNMETAL",
 "MAGSILVER",
 "MAGSILVERGLOSS",
 "MATTEPLASTIC",
 "MESH",
+"METPAINTBLACK",
+"METPAINTBLUE",
+"METPAINTGOLD",
+"METPAINTGRAY",
+"METPAINTGREEN",
+"METPAINTRED",
+"METPAINTSILVER",
+"METPAINTYELLOW",
 "METPAINT_1",
 "METPAINT_10",
 "METPAINT_11",
@@ -97,14 +106,6 @@ namespace NFSRaider.GeneratedStrings.Materials
 "METPAINT_7",
 "METPAINT_8",
 "METPAINT_9",
-"METPAINTBLACK",
-"METPAINTBLUE",
-"METPAINTGOLD",
-"METPAINTGRAY",
-"METPAINTGREEN",
-"METPAINTRED",
-"METPAINTSILVER",
-"METPAINTYELLOW",
 "MIRROR",
 "MOLDINGS",
 "PEARL",
@@ -191,6 +192,12 @@ namespace NFSRaider.GeneratedStrings.Materials
 "WINDSHIELD_TINT_L3_PINK",
 "WINDSHIELD_TINT_L3_RED",
 "WINDSHIELD_TINT_L3_YELLOW",
+        };
+
+        public static readonly List<string> ListRuntime = new List<string>
+        {
+"AUDIOCARSKIN",
+"CARSKIN_CARBONFIBRE",
         };
     }
 }

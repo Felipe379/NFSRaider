@@ -6,7 +6,8 @@ namespace NFSRaider.GeneratedStrings.Textures.Shared
     {
         public static readonly List<string> List = new List<string>
         {
-"TIRE_STYLE_03",
+"TIRE_STYLE03",
+"TIRE_STYLE03_N",
         };
     }
 }
