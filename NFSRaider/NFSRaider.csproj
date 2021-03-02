@@ -315,7 +315,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RaiderResults.cs" />
+    <Compile Include="RaiderResult.cs" />
     <EmbeddedResource Include="NFSRaiderForm.resx">
       <DependentUpon>NFSRaiderForm.cs</DependentUpon>
       <SubType>Designer</SubType>

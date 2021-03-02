@@ -42,10 +42,10 @@ namespace NFSRaider.FormMethods
             return arrayFromFileWithHashesSkipped.ToArray();
         }
 
-        public static List<RaiderResults> UnhashFromFile(Endianness unhashingEndianness, HashFactory hashFactory, uint[] arrayFromFile, CaseOptions caseOption)
+        public static List<RaiderResult> UnhashFromFile(Endianness unhashingEndianness, HashFactory hashFactory, uint[] arrayFromFile, CaseOptions caseOption)
         {
             var allStrings = new AllStrings().ReadHashesFile(hashFactory, caseOption);
-            var listBox = new List<RaiderResults>();
+            var listBox = new List<RaiderResult>();
             var isKnown = false;
 
             void AddResult(uint hash)
@@ -68,7 +68,7 @@ namespace NFSRaider.FormMethods
                     }
                 }
 
-                listBox.Add(new RaiderResults() { Hash = hash, Value = result, IsKnown = isKnown });
+                listBox.Add(new RaiderResult() { Hash = hash, Value = result, IsKnown = isKnown });
             }
 
             if (unhashingEndianness == Endianness.BigEndian)

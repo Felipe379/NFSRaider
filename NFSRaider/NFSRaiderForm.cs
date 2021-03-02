@@ -33,7 +33,7 @@ namespace NFSRaider
             NumericProcessorsCount.Value = Environment.ProcessorCount / 2;
         }
 
-        private List<RaiderResults> ListBoxDataSource { get; set; } = new List<RaiderResults>();
+        private List<RaiderResult> ListBoxDataSource { get; set; } = new List<RaiderResult>();
         private string FilePath { get; set; }
         private GenerateOption GenerateOption { get; set; } = GenerateOption.WithRepetition;
         private Endianness UnhashingEndianness { get; set; } = Endianness.BigEndian;
@@ -49,11 +49,21 @@ namespace NFSRaider
 
         private object LockObject { get; } = new object();
 
-        public void UpdateFormDuringBruteforce(uint hash, string generatedString, bool isKnown)
+        public void UpdateFormDuringBruteforce(RaiderResult result)
         {
             lock (LockObject)
             {
-                ListBoxDataSource.Add(new RaiderResults() { Hash = hash, Value = generatedString, IsKnown = isKnown });
+                ListBoxDataSource.Add(result);
+                Invoke((MethodInvoker)(() => ChangedListBoxDataSource()));
+            }
+        }
+
+
+        public void UpdateFormDuringBruteforce(IEnumerable<RaiderResult> results)
+        {
+            lock (LockObject)
+            {
+                ListBoxDataSource.AddRange(results);
                 Invoke((MethodInvoker)(() => ChangedListBoxDataSource()));
             }
         }
@@ -191,41 +201,36 @@ namespace NFSRaider
             LblKnownHashes.Text = "0";
             LblUnknownHashes.Text = "0";
             LblTotalHashes.Text = "0";
-            ListBoxDataSource = new List<RaiderResults>();
+            ListBoxDataSource = new List<RaiderResult>();
         }
 
         private void ChangedListBoxDataSource()
         {
-            var listBoxDataSource = ListBoxDataSource;
+            IEnumerable<RaiderResult> listBoxDataSource = ListBoxDataSource;
 
             if (ChkReverseHashes.Checked)
             {
                 listBoxDataSource = listBoxDataSource
-                    .Select(c => new RaiderResults { Hash = Hashes.Reverse(c.Hash), IsKnown = c.IsKnown, Value = c.Value })
-                    .ToList();
+                    .Select(c => new RaiderResult { Hash = Hashes.Reverse(c.Hash), IsKnown = c.IsKnown, Value = c.Value });
             }
 
             switch (OrderOption)
             {
                 case OrderOptions.HashAsc:
                     listBoxDataSource = listBoxDataSource
-                        .OrderBy(c => c.Hash)
-                        .ToList();
+                        .OrderBy(c => c.Hash);
                     break;
                 case OrderOptions.HashDesc:
                     listBoxDataSource = listBoxDataSource
-                        .OrderByDescending(c => c.Hash)
-                        .ToList();
+                        .OrderByDescending(c => c.Hash);
                     break;
                 case OrderOptions.StringAsc:
                     listBoxDataSource = listBoxDataSource
-                        .OrderBy(c => c.Value)
-                        .ToList();
+                        .OrderBy(c => c.Value);
                     break;
                 case OrderOptions.StringDesc:
                     listBoxDataSource = listBoxDataSource
-                        .OrderByDescending(c => c.Value)
-                        .ToList();
+                        .OrderByDescending(c => c.Value);
                     break;
                 default:
                     break;
@@ -235,30 +240,30 @@ namespace NFSRaider
             {
                 listBoxDataSource = listBoxDataSource
                     .GroupBy(c => c.Value)
-                    .Select(c => c.First())
-                    .ToList();
+                    .Select(c => c.First());
             }
 
             if (ChkIgnoreRepeatedHashes.Checked)
             {
                 listBoxDataSource = listBoxDataSource
                     .GroupBy(c => c.Hash)
-                    .Select(c => c.First())
-                    .ToList();
+                    .Select(c => c.First());
             }
 
             var currentSelectedItem = LstUnhashed.SelectedIndex;
 
-            if (listBoxDataSource.Count <= currentSelectedItem && listBoxDataSource.Count > 0)
+            var format = TxtExportFormat.Text;
+
+            var listBoxDataSourceCount = listBoxDataSource.Count();
+
+            if (listBoxDataSourceCount <= currentSelectedItem && listBoxDataSourceCount > 0)
             {
-                currentSelectedItem = listBoxDataSource.Count - 1;
+                currentSelectedItem = listBoxDataSourceCount - 1;
             }
-            else if (listBoxDataSource.Count == 0)
+            else if (listBoxDataSourceCount == 0)
             {
                 currentSelectedItem = -1;
             }
-
-            var format = TxtExportFormat.Text;
 
             LblKnownHashes.Text = listBoxDataSource.Where(c => c.IsKnown).Count().ToString();
             LblUnknownHashes.Text = listBoxDataSource.Where(c => !c.IsKnown).Count().ToString();
@@ -389,7 +394,11 @@ namespace NFSRaider
             for (int i = LstUnhashed.SelectedIndex - 1; i >= 0; i--)
             {
                 if (ItemFound(i))
+                {
+                    LstUnhashed.ClearSelected();
+                    LstUnhashed.SetSelected(i, true);
                     break;
+                }
             }
         }
 
@@ -398,18 +407,36 @@ namespace NFSRaider
             for (int i = LstUnhashed.SelectedIndex + 1; i <= LstUnhashed.Items.Count - 1; i++)
             {
                 if (ItemFound(i))
+                {
+                    LstUnhashed.ClearSelected();
+                    LstUnhashed.SetSelected(i, true);
                     break;
+                }
+            }
+        }
+
+
+        private void BtnSearchAll_Click(object sender, EventArgs e)
+        {
+            var cleared = false;
+            for (int i = 0; i <= LstUnhashed.Items.Count - 1; i++)
+            {
+                if (ItemFound(i))
+                {
+                    if (!cleared)
+                    {
+                        LstUnhashed.ClearSelected();
+                        cleared = true;
+                    }
+
+                    LstUnhashed.SetSelected(i, true);
+                }
             }
         }
 
         private bool ItemFound(int i)
         {
-            if (LstUnhashed.Items[i].ToString().ToUpper().Contains(TxtSearch.Text.ToUpper()))
-            {
-                LstUnhashed.SetSelected(i, true);
-                return true;
-            }
-            return false;
+            return LstUnhashed.Items[i].ToString().ToUpperInvariant().Contains(TxtSearch.Text.ToUpperInvariant());
         }
 
         private void BtnExportHashes_Click(object sender, EventArgs e)
@@ -442,7 +469,10 @@ namespace NFSRaider
 
         private void BtnUpdateList_Click(object sender, EventArgs e)
         {
-            ChangedListBoxDataSource();
+            lock (LockObject)
+            {
+                ChangedListBoxDataSource();
+            }
         }
 
         private void LstUnhashed_KeyDown(object sender, KeyEventArgs e)
