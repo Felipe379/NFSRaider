@@ -93,6 +93,7 @@
             this.CboForceHashListCase = new System.Windows.Forms.ComboBox();
             this.LblTimeElapsed = new System.Windows.Forms.Label();
             this.ToolTipNFSRaider = new System.Windows.Forms.ToolTip(this.components);
+            this.BtnSearchAll = new System.Windows.Forms.Button();
             this.GrpLoadOptions.SuspendLayout();
             this.GrpHashingOptions.SuspendLayout();
             this.GrpExportOptions.SuspendLayout();
@@ -107,10 +108,10 @@
             // 
             this.LstUnhashed.FormattingEnabled = true;
             this.LstUnhashed.HorizontalScrollbar = true;
-            this.LstUnhashed.Location = new System.Drawing.Point(12, 38);
+            this.LstUnhashed.Location = new System.Drawing.Point(12, 64);
             this.LstUnhashed.Name = "LstUnhashed";
             this.LstUnhashed.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.LstUnhashed.Size = new System.Drawing.Size(294, 381);
+            this.LstUnhashed.Size = new System.Drawing.Size(294, 355);
             this.LstUnhashed.TabIndex = 4;
             this.LstUnhashed.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LstUnhashed_KeyDown);
             // 
@@ -736,16 +737,16 @@
             // 
             // TxtSearch
             // 
-            this.TxtSearch.Location = new System.Drawing.Point(12, 12);
+            this.TxtSearch.Location = new System.Drawing.Point(12, 8);
             this.TxtSearch.Name = "TxtSearch";
-            this.TxtSearch.Size = new System.Drawing.Size(162, 20);
+            this.TxtSearch.Size = new System.Drawing.Size(294, 20);
             this.TxtSearch.TabIndex = 1;
             // 
             // BtnSearchPrevious
             // 
-            this.BtnSearchPrevious.Location = new System.Drawing.Point(180, 12);
+            this.BtnSearchPrevious.Location = new System.Drawing.Point(12, 36);
             this.BtnSearchPrevious.Name = "BtnSearchPrevious";
-            this.BtnSearchPrevious.Size = new System.Drawing.Size(60, 20);
+            this.BtnSearchPrevious.Size = new System.Drawing.Size(94, 23);
             this.BtnSearchPrevious.TabIndex = 2;
             this.BtnSearchPrevious.Text = "Previous";
             this.BtnSearchPrevious.UseVisualStyleBackColor = true;
@@ -753,9 +754,9 @@
             // 
             // BtnSearchNext
             // 
-            this.BtnSearchNext.Location = new System.Drawing.Point(246, 13);
+            this.BtnSearchNext.Location = new System.Drawing.Point(111, 36);
             this.BtnSearchNext.Name = "BtnSearchNext";
-            this.BtnSearchNext.Size = new System.Drawing.Size(60, 20);
+            this.BtnSearchNext.Size = new System.Drawing.Size(96, 23);
             this.BtnSearchNext.TabIndex = 3;
             this.BtnSearchNext.Text = "Next";
             this.BtnSearchNext.UseVisualStyleBackColor = true;
@@ -800,11 +801,22 @@
             this.ToolTipNFSRaider.ReshowDelay = 100;
             this.ToolTipNFSRaider.ToolTipTitle = "Info";
             // 
+            // BtnSearchAll
+            // 
+            this.BtnSearchAll.Location = new System.Drawing.Point(212, 36);
+            this.BtnSearchAll.Name = "BtnSearchAll";
+            this.BtnSearchAll.Size = new System.Drawing.Size(94, 23);
+            this.BtnSearchAll.TabIndex = 66;
+            this.BtnSearchAll.Text = "All";
+            this.BtnSearchAll.UseVisualStyleBackColor = true;
+            this.BtnSearchAll.Click += new System.EventHandler(this.BtnSearchAll_Click);
+            // 
             // NFSRaiderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.BtnSearchAll);
             this.Controls.Add(this.LblTimeElapsed);
             this.Controls.Add(this.CboForceHashListCase);
             this.Controls.Add(this.LblStatus);
@@ -916,6 +928,7 @@
         private System.Windows.Forms.NumericUpDown NumericProcessorsCount;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ToolTip ToolTipNFSRaider;
+        private System.Windows.Forms.Button BtnSearchAll;
     }
 }
 

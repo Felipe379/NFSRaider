@@ -180,18 +180,20 @@ namespace NFSRaider.FormMethods
         {
             Sender.GenericMessageBoxDuringBruteForce("Raid info", $"Hashes identified: {Hashes.Count}");
             var allParts = new AllStrings().ReadHashesFile(HashFactory, CaseOption);
-
+            var results = new List<RaiderResult>();
             foreach (var hash in Hashes)
             {
                 if (allParts.TryGetValue(hash, out var result))
                 {
-                    Sender.UpdateFormDuringBruteforce(hash, result, true);
+                    results.Add(new RaiderResult { Hash = hash, Value = result, IsKnown = true });
                 }
                 else
                 {
-                    Sender.UpdateFormDuringBruteforce(hash, "HASH_UNKNOWN", false);
+                    results.Add(new RaiderResult { Hash = hash, Value = "HASH_UNKNOWN", IsKnown = true });
                 }
             }
+
+            Sender.UpdateFormDuringBruteforce(results);
         }
 
         private VariationModel GenerateAllWordsVariations()
@@ -288,7 +290,7 @@ namespace NFSRaider.FormMethods
                     currentHash = HashFactory.Hash(generatedString);
                     if (Hashes.Contains(currentHash))
                     {
-                        Sender.UpdateFormDuringBruteforce(currentHash, generatedString, true);
+                        Sender.UpdateFormDuringBruteforce(new RaiderResult { Hash = currentHash, Value = generatedString, IsKnown = true });
                     }
                 }
             }
