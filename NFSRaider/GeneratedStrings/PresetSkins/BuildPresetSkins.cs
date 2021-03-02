@@ -10,6 +10,7 @@ namespace NFSRaider.GeneratedStrings.PresetSkins
             var presetSkins = new HashSet<string>(
                 Carbon.List
                 .Concat(UndercoverOldGen.List)
+                .Concat(World.List)
                 );
 
             return presetSkins;
