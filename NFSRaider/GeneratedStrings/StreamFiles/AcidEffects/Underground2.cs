@@ -1,0 +1,59 @@
+﻿using System.Collections.Generic;
+
+namespace NFSRaider.GeneratedStrings.StreamFiles.AcidEffects
+{
+    public static class Underground2
+    {
+        public static readonly List<string> List = new List<string>
+        {
+"XEE_Event_GARAGE_IconA_01",
+"XEE_Event_CARLOT_SmokeA_01",
+"XEE_Event_CARLOT_SmokeB_01",
+"XEE_Event_CARLOT_RingA_01",
+"XEE_Event_BODYSHOP_RingA_01",
+"XEE_Event_BODYSHOP_RingA_02",
+"XEE_Event_PERFORMANCE_IconA_01",
+"XEE_Event_PERFORMANCE_IconA_02",
+"XEE_Event_GARAGE_RingA_01",
+"XEE_Event_SPECIALTIES_IconA_01",
+"XEE_Event_SPECIALTIES_IconA_02",
+"XE_IP_Smelt_SmokeA_01",
+"XE_IP_Smelt_SmokeA_02",
+"XE_IP_Smelt_SmokeA_03",
+"XE_IP_Smelt_SmokeA_04",
+"XE_IP_Smelt_SmokeA_05",
+"XE_IP_Smelt_SmokeA_06",
+"XE_IP_Smelt_SmokeA_07",
+"XE_IP_Smelt_SmokeA_09",
+"XE_IP_NuclearPlant_SmokeA_01",
+"XE_IP_NuclearPlant_SmokeA_02",
+"XE_IP_NuclearPlant_SmokeA_03",
+"XE_IP_NuclearPlant_SmokeA_04",
+"XEE_Event_PERFORMANCE_RingA_01",
+"XEE_Event_PERFORMANCE_RingA_02",
+"XEE_Event_SPECIALTIES_RingA_01",
+"XEE_Event_SPECIALTIES_RingA_02",
+"XEE_Event_PERFORMANCE_SmokeA_01",
+"XEE_Event_PERFORMANCE_SmokeA_02",
+"XEE_Event_PERFORMANCE_SmokeB_01",
+"XEE_Event_PERFORMANCE_SmokeB_02",
+"XEE_Event_BODYSHOP_SmokeA_01",
+"XEE_Event_BODYSHOP_SmokeA_02",
+"XEE_Event_BODYSHOP_SmokeB_01",
+"XEE_Event_BODYSHOP_SmokeB_02",
+"XEE_Event_GARAGE_SmokeA_01",
+"XEE_Event_GARAGE_SmokeB_01",
+"XEE_Event_GRAPHICS_IconA_01",
+"XEE_Event_GRAPHICS_RingA_01",
+"XEE_Event_SPECIALTIES_SmokeA_01",
+"XEE_Event_SPECIALTIES_SmokeA_02",
+"XEE_Event_SPECIALTIES_SmokeB_01",
+"XEE_Event_SPECIALTIES_SmokeB_02",
+"XEE_Event_GRAPHICS_SmokeA_01",
+"XEE_Event_GRAPHICS_SmokeB_01",
+"XEE_Event_CARLOT_IconA_01",
+"XEE_Event_BODYSHOP_IconA_01",
+"XEE_Event_BODYSHOP_IconA_02",
+        };
+    }
+}

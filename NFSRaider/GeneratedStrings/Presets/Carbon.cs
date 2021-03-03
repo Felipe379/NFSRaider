@@ -166,7 +166,6 @@ namespace NFSRaider.GeneratedStrings.Presets
 "COROLLA_BG",
 "DEMO_VID_CARRERA",
 "DEMO_VID_LANCER2",
-"E?q?",
 "ECLIPSE_BG",
 "EXOTIC",
 "FOOTMAN",

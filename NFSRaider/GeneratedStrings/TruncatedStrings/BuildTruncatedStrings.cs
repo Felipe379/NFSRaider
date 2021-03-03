@@ -26,6 +26,11 @@ namespace NFSRaider.GeneratedStrings.TruncatedStrings
                 AddHashes(hash.Key, hash.Value);
             }
 
+            foreach (var hash in Underground2.SolidInfos)
+            {
+                AddHashes(hash.Key, hash.Value);
+            }
+
             return _hashes.ToDictionary(c => c.Key, c => string.Join(" / ", c.Value));
         }
     }
