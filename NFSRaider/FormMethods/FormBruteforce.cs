@@ -278,6 +278,7 @@ namespace NFSRaider.FormMethods
         {
             string currentVariation;
             IEnumerable<string> generatedStrings;
+            var results = new List<RaiderResult>();
             uint currentHash;
 
             foreach (var word in WordsBetweenVariations)
@@ -290,9 +291,14 @@ namespace NFSRaider.FormMethods
                     currentHash = HashFactory.Hash(generatedString);
                     if (Hashes.Contains(currentHash))
                     {
-                        Sender.UpdateFormDuringBruteforce(new RaiderResult { Hash = currentHash, Value = generatedString, IsKnown = true });
+                        results.Add(new RaiderResult { Hash = currentHash, Value = generatedString, IsKnown = true });
                     }
                 }
+            }
+
+            if (results.Any())
+            {
+                Sender.UpdateFormDuringBruteforce(results);
             }
         }
 
