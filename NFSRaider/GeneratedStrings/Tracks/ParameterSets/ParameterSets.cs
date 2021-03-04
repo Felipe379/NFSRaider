@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NFSRaider.GeneratedStrings.StreamFiles.ParameterSets
+namespace NFSRaider.GeneratedStrings.Tracks.ParameterSets
 {
     public static class ParameterSets
     {

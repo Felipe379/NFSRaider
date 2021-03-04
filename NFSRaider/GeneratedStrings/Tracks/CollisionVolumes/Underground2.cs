@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NFSRaider.GeneratedStrings.StreamFiles.SmokeableInfos
+namespace NFSRaider.GeneratedStrings.Tracks.CollisionVolumes
 {
     public static class Underground2
     {
@@ -9,6 +9,8 @@ namespace NFSRaider.GeneratedStrings.StreamFiles.SmokeableInfos
 "ZCS_XO_GreenHDoor_00",
 "ZCS_RoadsignA",
 "ZCS_RoadsignB",
+"ZCV_XO_Train_Box_Engine",
+"ZCV_SemiTiresA",
 "ZCS_BarrelFireA",
 "ZCS_BusSignPostA",
 "ZCS_OilBarrel",
@@ -18,6 +20,7 @@ namespace NFSRaider.GeneratedStrings.StreamFiles.SmokeableInfos
 "ZCS_FenceF",
 "ZCS_FenceH",
 "ZCS_XO_BoxesAC",
+"ZCV_TrolleyA",
 "ZCS_OrangeBumper",
 "ZCS_LuggageCart",
 "ZCS_PedstrnGateA",
@@ -33,9 +36,11 @@ namespace NFSRaider.GeneratedStrings.StreamFiles.SmokeableInfos
 "ZCV_WarehouseDoorL",
 "ZCV_WarehouseDoorR",
 "ZCS_ParkgateA",
+"ZCV_StreetSweeperA",
 "ZCS_TableRest",
 "ZCS_BulletSS",
 "ZCS_Barrel_A",
+"ZCV_SemiAMain",
 "ZCS_WaterBarrel",
 "ZCS_BridgeBarrierA",
 "ZCS_Tire",
@@ -62,11 +67,15 @@ namespace NFSRaider.GeneratedStrings.StreamFiles.SmokeableInfos
 "ZCS_WoodePlankB",
 "ZCS_SmokeGate2",
 "ZCS_SmokeGate3",
+"ZCV_DrawBridgeA",
+"ZCV_DrawBridgeB",
 "ZCS_SubwaySDdoorAB",
 "ZCS_RoadBarrierB",
+"ZCV_TrainFlatbedA",
 "ZCS_GardenGate",
 "ZCS_ChairRest",
 "ZCS_StopSign",
+"ZCV_TrainEngineA",
 "XO_BulletSS_00",
 "XO_BulletSS_10",
 "XO_BulletSS_11",
@@ -83,6 +92,7 @@ namespace NFSRaider.GeneratedStrings.StreamFiles.SmokeableInfos
 "ZCS_BridgeGateB",
 "ZCS_RWPilonA",
 "ZCS_Shopping_CartA",
+"ZCV_SemiATires",
 "ZCS_LadderA",
 "XO_TableSS_00",
         };

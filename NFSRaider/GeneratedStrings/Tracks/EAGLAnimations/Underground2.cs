@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NFSRaider.GeneratedStrings.StreamFiles.EAGLAnimations
+namespace NFSRaider.GeneratedStrings.Tracks.EAGLAnimations
 {
     public static class Underground2
     {

@@ -1,15 +1,15 @@
-﻿using NFSRaider.GeneratedStrings.StreamFiles.AcidEffects;
-using NFSRaider.GeneratedStrings.StreamFiles.AcidEmitters;
-using NFSRaider.GeneratedStrings.StreamFiles.CollisionVolumes;
-using NFSRaider.GeneratedStrings.StreamFiles.EAGLAnimations;
-using NFSRaider.GeneratedStrings.StreamFiles.LightSourcesPack;
-using NFSRaider.GeneratedStrings.StreamFiles.ParameterSets;
-using NFSRaider.GeneratedStrings.StreamFiles.BarrierGroups;
-using NFSRaider.GeneratedStrings.StreamFiles.SmokeableInfos;
+﻿using NFSRaider.GeneratedStrings.Tracks.AcidEffects;
+using NFSRaider.GeneratedStrings.Tracks.AcidEmitters;
+using NFSRaider.GeneratedStrings.Tracks.CollisionVolumes;
+using NFSRaider.GeneratedStrings.Tracks.EAGLAnimations;
+using NFSRaider.GeneratedStrings.Tracks.LightSourcesPack;
+using NFSRaider.GeneratedStrings.Tracks.ParameterSets;
+using NFSRaider.GeneratedStrings.Tracks.BarrierGroups;
+using NFSRaider.GeneratedStrings.Tracks.SmokeableInfos;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NFSRaider.GeneratedStrings.StreamFiles
+namespace NFSRaider.GeneratedStrings.Tracks
 {
     public class BuildStreamFiles
     {
