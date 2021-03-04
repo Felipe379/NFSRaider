@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NFSRaider.GeneratedStrings.StreamFiles.SolidInfos
+namespace NFSRaider.GeneratedStrings.Tracks.SolidInfos
 {
     public static class Underground2
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NFSRaider.GeneratedStrings.StreamFiles.BarrierGroups
+namespace NFSRaider.GeneratedStrings.Tracks.BarrierGroups
 {
     public class BuildBarrierGroups
     {

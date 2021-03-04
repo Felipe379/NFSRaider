@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NFSRaider.GeneratedStrings.StreamFiles.SmokeableInfos
+namespace NFSRaider.GeneratedStrings.Tracks.SmokeableInfos
 {
     public class BuildSmokeableInfos
     {

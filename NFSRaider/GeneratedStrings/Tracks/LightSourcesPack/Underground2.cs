@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NFSRaider.GeneratedStrings.StreamFiles.LightSourcesPack
+namespace NFSRaider.GeneratedStrings.Tracks.LightSourcesPack
 {
     public static class Underground2
     {

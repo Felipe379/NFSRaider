@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NFSRaider.GeneratedStrings.StreamFiles.CollisionVolumes
+namespace NFSRaider.GeneratedStrings.Tracks.CollisionVolumes
 {
     public class BuildCollisionVolumes
     {

@@ -86,6 +86,8 @@ namespace NFSRaider.FormMethods
                 Match regex;
                 var min = 0;
                 var max = 0;
+                var generateOption = GenerateOption.WithoutRepetition;
+                VariationModel variationModel;
 
                 foreach (var variationGroup in variationsGroups)
                 {
@@ -97,16 +99,21 @@ namespace NFSRaider.FormMethods
                     {
                         min = Convert.ToInt32(regex.Groups["min"].ToString());
                         max = Convert.ToInt32(regex.Groups["max"].ToString());
+                        generateOption = (GenerateOption)Convert.ToInt32(regex.Groups["generateOption"].ToString());
                         if (min > 0 && max > 0 && min <= max)
                         {
                             variation.RemoveAt(variation.Count - 1);
-                            VariationsGroups.Add(new VariationModel
+                            variationModel = new VariationModel
                             {
-                                Variations = variation,
                                 MinVariations = min,
                                 MaxVariations = max,
-                                GenerateOption = (GenerateOption)Convert.ToInt32(regex.Groups["generateOption"].ToString()),
-                            });
+                                GenerateOption = generateOption,
+                            };
+                            if (generateOption == GenerateOption.WithoutRepetition)
+                                variationModel.Variations = variation;
+                            else
+                                variationModel.Variations = variation.ToHashSet();
+                            VariationsGroups.Add(variationModel);
                         }
                     }
                 }
@@ -127,7 +134,7 @@ namespace NFSRaider.FormMethods
                 }
             }
 
-            if (VariationsGroups.Any() || allSimpleVariationsWithSubstring.Any())
+            if (allSimpleVariationsWithSubstring.Any() || VariationModel.GenerateOption == GenerateOption.WithRepetition)
             {
                 VariationModel.Variations = simpleVariations.Concat(allSimpleVariationsWithSubstring).ToHashSet();
             }
