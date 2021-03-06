@@ -63,12 +63,12 @@
             this.ChkIgnoreRepeatedHashes = new System.Windows.Forms.CheckBox();
             this.TxtFileStartOffset = new System.Windows.Forms.TextBox();
             this.TxtFileEndOffset = new System.Windows.Forms.TextBox();
-            this.btnStart = new System.Windows.Forms.Button();
+            this.BtnStart = new System.Windows.Forms.Button();
             this.BtnStop = new System.Windows.Forms.Button();
             this.BtnClear = new System.Windows.Forms.Button();
             this.ChkUseHashesFile = new System.Windows.Forms.CheckBox();
             this.BtnGenerateListOfHashes = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.GrpStats = new System.Windows.Forms.GroupBox();
             this.LblTotalHashes = new System.Windows.Forms.Label();
             this.LblUnknownHashes = new System.Windows.Forms.Label();
             this.LblKnownHashes = new System.Windows.Forms.Label();
@@ -77,14 +77,14 @@
             this.LblTextTotalHashes = new System.Windows.Forms.Label();
             this.GrpBruteforceOptions = new System.Windows.Forms.GroupBox();
             this.NumericProcessorsCount = new System.Windows.Forms.NumericUpDown();
-            this.label8 = new System.Windows.Forms.Label();
+            this.LblBruteforceOptionsProcessors = new System.Windows.Forms.Label();
             this.NumericMaxVariations = new System.Windows.Forms.NumericUpDown();
             this.NumericMinVariations = new System.Windows.Forms.NumericUpDown();
             this.ChkBruteforceWithRepetition = new System.Windows.Forms.CheckBox();
             this.ChkTryToBruteforce = new System.Windows.Forms.CheckBox();
             this.LblWordsBetweenVariations = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LblBruteforceOptionsMax = new System.Windows.Forms.Label();
+            this.LblBruteforceOptionsMin = new System.Windows.Forms.Label();
             this.TxtWordsBetweenVariations = new System.Windows.Forms.TextBox();
             this.TxtSearch = new System.Windows.Forms.TextBox();
             this.BtnSearchPrevious = new System.Windows.Forms.Button();
@@ -97,7 +97,7 @@
             this.GrpLoadOptions.SuspendLayout();
             this.GrpHashingOptions.SuspendLayout();
             this.GrpExportOptions.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.GrpStats.SuspendLayout();
             this.GrpBruteforceOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumericProcessorsCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericMaxVariations)).BeginInit();
@@ -469,15 +469,15 @@
             this.TxtFileEndOffset.Text = "0";
             this.TxtFileEndOffset.Leave += new System.EventHandler(this.TxtFileEndOffset_Leave);
             // 
-            // btnStart
+            // BtnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(312, 36);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(92, 23);
-            this.btnStart.TabIndex = 5;
-            this.btnStart.Text = "Start";
-            this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            this.BtnStart.Location = new System.Drawing.Point(312, 36);
+            this.BtnStart.Name = "BtnStart";
+            this.BtnStart.Size = new System.Drawing.Size(92, 23);
+            this.BtnStart.TabIndex = 5;
+            this.BtnStart.Text = "Start";
+            this.BtnStart.UseVisualStyleBackColor = true;
+            this.BtnStart.Click += new System.EventHandler(this.BtnStart_Click);
             // 
             // BtnStop
             // 
@@ -520,20 +520,20 @@
             this.BtnGenerateListOfHashes.UseVisualStyleBackColor = true;
             this.BtnGenerateListOfHashes.Click += new System.EventHandler(this.BtnGenerateListOfHashes_Click);
             // 
-            // groupBox2
+            // GrpStats
             // 
-            this.groupBox2.Controls.Add(this.LblTotalHashes);
-            this.groupBox2.Controls.Add(this.LblUnknownHashes);
-            this.groupBox2.Controls.Add(this.LblKnownHashes);
-            this.groupBox2.Controls.Add(this.LblTextKnownHashes);
-            this.groupBox2.Controls.Add(this.LblTextUnknownHashes);
-            this.groupBox2.Controls.Add(this.LblTextTotalHashes);
-            this.groupBox2.Location = new System.Drawing.Point(610, 469);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(262, 74);
-            this.groupBox2.TabIndex = 45;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Stats";
+            this.GrpStats.Controls.Add(this.LblTotalHashes);
+            this.GrpStats.Controls.Add(this.LblUnknownHashes);
+            this.GrpStats.Controls.Add(this.LblKnownHashes);
+            this.GrpStats.Controls.Add(this.LblTextKnownHashes);
+            this.GrpStats.Controls.Add(this.LblTextUnknownHashes);
+            this.GrpStats.Controls.Add(this.LblTextTotalHashes);
+            this.GrpStats.Location = new System.Drawing.Point(610, 469);
+            this.GrpStats.Name = "GrpStats";
+            this.GrpStats.Size = new System.Drawing.Size(262, 74);
+            this.GrpStats.TabIndex = 45;
+            this.GrpStats.TabStop = false;
+            this.GrpStats.Text = "Stats";
             // 
             // LblTotalHashes
             // 
@@ -592,14 +592,14 @@
             // GrpBruteforceOptions
             // 
             this.GrpBruteforceOptions.Controls.Add(this.NumericProcessorsCount);
-            this.GrpBruteforceOptions.Controls.Add(this.label8);
+            this.GrpBruteforceOptions.Controls.Add(this.LblBruteforceOptionsProcessors);
             this.GrpBruteforceOptions.Controls.Add(this.NumericMaxVariations);
             this.GrpBruteforceOptions.Controls.Add(this.NumericMinVariations);
             this.GrpBruteforceOptions.Controls.Add(this.ChkBruteforceWithRepetition);
             this.GrpBruteforceOptions.Controls.Add(this.ChkTryToBruteforce);
             this.GrpBruteforceOptions.Controls.Add(this.LblWordsBetweenVariations);
-            this.GrpBruteforceOptions.Controls.Add(this.label3);
-            this.GrpBruteforceOptions.Controls.Add(this.label2);
+            this.GrpBruteforceOptions.Controls.Add(this.LblBruteforceOptionsMax);
+            this.GrpBruteforceOptions.Controls.Add(this.LblBruteforceOptionsMin);
             this.GrpBruteforceOptions.Controls.Add(this.TxtWordsBetweenVariations);
             this.GrpBruteforceOptions.Location = new System.Drawing.Point(604, 232);
             this.GrpBruteforceOptions.Name = "GrpBruteforceOptions";
@@ -631,14 +631,14 @@
             0});
             this.NumericProcessorsCount.Leave += new System.EventHandler(this.NumericProcessorsCount_Leave);
             // 
-            // label8
+            // LblBruteforceOptionsProcessors
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(159, 66);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 13);
-            this.label8.TabIndex = 39;
-            this.label8.Text = "Processors";
+            this.LblBruteforceOptionsProcessors.AutoSize = true;
+            this.LblBruteforceOptionsProcessors.Location = new System.Drawing.Point(159, 66);
+            this.LblBruteforceOptionsProcessors.Name = "LblBruteforceOptionsProcessors";
+            this.LblBruteforceOptionsProcessors.Size = new System.Drawing.Size(59, 13);
+            this.LblBruteforceOptionsProcessors.TabIndex = 39;
+            this.LblBruteforceOptionsProcessors.Text = "Processors";
             // 
             // NumericMaxVariations
             // 
@@ -710,23 +710,23 @@
         " (,) you must escape it (\\,). Same goes for backslash (\\), you must escape it (\\" +
         "\\).");
             // 
-            // label3
+            // LblBruteforceOptionsMax
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(82, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 13);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "Max";
+            this.LblBruteforceOptionsMax.AutoSize = true;
+            this.LblBruteforceOptionsMax.Location = new System.Drawing.Point(82, 66);
+            this.LblBruteforceOptionsMax.Name = "LblBruteforceOptionsMax";
+            this.LblBruteforceOptionsMax.Size = new System.Drawing.Size(27, 13);
+            this.LblBruteforceOptionsMax.TabIndex = 30;
+            this.LblBruteforceOptionsMax.Text = "Max";
             // 
-            // label2
+            // LblBruteforceOptionsMin
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 13);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Min";
+            this.LblBruteforceOptionsMin.AutoSize = true;
+            this.LblBruteforceOptionsMin.Location = new System.Drawing.Point(6, 66);
+            this.LblBruteforceOptionsMin.Name = "LblBruteforceOptionsMin";
+            this.LblBruteforceOptionsMin.Size = new System.Drawing.Size(24, 13);
+            this.LblBruteforceOptionsMin.TabIndex = 28;
+            this.LblBruteforceOptionsMin.Text = "Min";
             // 
             // TxtWordsBetweenVariations
             // 
@@ -824,12 +824,12 @@
             this.Controls.Add(this.BtnSearchPrevious);
             this.Controls.Add(this.TxtSearch);
             this.Controls.Add(this.GrpBruteforceOptions);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.GrpStats);
             this.Controls.Add(this.BtnGenerateListOfHashes);
             this.Controls.Add(this.ChkUseHashesFile);
             this.Controls.Add(this.BtnClear);
             this.Controls.Add(this.BtnStop);
-            this.Controls.Add(this.btnStart);
+            this.Controls.Add(this.BtnStart);
             this.Controls.Add(this.TxtFileEndOffset);
             this.Controls.Add(this.TxtFileStartOffset);
             this.Controls.Add(this.GrpExportOptions);
@@ -851,8 +851,8 @@
             this.GrpHashingOptions.ResumeLayout(false);
             this.GrpExportOptions.ResumeLayout(false);
             this.GrpExportOptions.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.GrpStats.ResumeLayout(false);
+            this.GrpStats.PerformLayout();
             this.GrpBruteforceOptions.ResumeLayout(false);
             this.GrpBruteforceOptions.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumericProcessorsCount)).EndInit();
@@ -886,12 +886,12 @@
         private System.Windows.Forms.Button BtnExportHashes;
         private System.Windows.Forms.TextBox TxtFileStartOffset;
         private System.Windows.Forms.TextBox TxtFileEndOffset;
-        private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.Button BtnStart;
         private System.Windows.Forms.Button BtnStop;
         private System.Windows.Forms.Button BtnClear;
         private System.Windows.Forms.CheckBox ChkUseHashesFile;
         private System.Windows.Forms.Button BtnGenerateListOfHashes;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox GrpStats;
         private System.Windows.Forms.Label LblTotalHashes;
         private System.Windows.Forms.Label LblUnknownHashes;
         private System.Windows.Forms.Label LblKnownHashes;
@@ -902,8 +902,8 @@
         private System.Windows.Forms.Label LblSkipHashes;
         private System.Windows.Forms.GroupBox GrpBruteforceOptions;
         private System.Windows.Forms.Label LblWordsBetweenVariations;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LblBruteforceOptionsMax;
+        private System.Windows.Forms.Label LblBruteforceOptionsMin;
         private System.Windows.Forms.TextBox TxtWordsBetweenVariations;
         private System.Windows.Forms.TextBox TxtSearch;
         private System.Windows.Forms.Button BtnSearchPrevious;
@@ -926,7 +926,7 @@
         private System.Windows.Forms.ComboBox CboHashTypes;
         private System.Windows.Forms.ComboBox CboEndianness;
         private System.Windows.Forms.NumericUpDown NumericProcessorsCount;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label LblBruteforceOptionsProcessors;
         private System.Windows.Forms.ToolTip ToolTipNFSRaider;
         private System.Windows.Forms.Button BtnSearchAll;
     }
