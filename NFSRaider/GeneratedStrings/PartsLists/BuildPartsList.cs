@@ -1,4 +1,5 @@
 ﻿using NFSRaider.GeneratedStrings.PartsLists.ProStreet;
+using NFSRaider.GeneratedStrings.PartsLists.Undercover;
 using NFSRaider.GeneratedStrings.Shared;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists
             var parts = new HashSet<string>(
                 GenericParts.List
                 .Concat(new BuildProStreetPartsList().GetAllProStreetParts())
+                .Concat(new BuildUndercoverPartsList().GetAllUndercoverParts())
                 );
 
             foreach (var lod in Lods.List)

@@ -1,5 +1,7 @@
 ﻿using NFSRaider.Case;
 using NFSRaider.Enum;
+using NFSRaider.GeneratedStrings.AcidEffects;
+using NFSRaider.GeneratedStrings.AcidEmitters;
 using NFSRaider.GeneratedStrings.Brands;
 using NFSRaider.GeneratedStrings.Files;
 using NFSRaider.GeneratedStrings.Fng;
@@ -46,6 +48,9 @@ namespace NFSRaider.GeneratedStrings
             }
 
             hashSet.UnionWith(new BuildPartsList().GetAllParts()); // TODO: Rework this
+            hashSet.UnionWith(new BuildAcidEffects().GetAllAcidEffects());
+            hashSet.UnionWith(new BuildAcidEmitters().GetAllAcidEmitters());
+            hashSet.UnionWith(new BuildBrands().GetAllBrands());
             hashSet.UnionWith(new BuildBrands().GetAllBrands());
             hashSet.UnionWith(new BuildPresets().GetAllPresets());
             hashSet.UnionWith(new BuildPresetSkins().GetAllPresetSkins());

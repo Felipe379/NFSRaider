@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NFSRaider.GeneratedStrings.Tracks.AcidEffects
+namespace NFSRaider.GeneratedStrings.AcidEffects
 {
     public class BuildAcidEffects
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NFSRaider.GeneratedStrings.Tracks.AcidEmitters
+namespace NFSRaider.GeneratedStrings.AcidEmitters
 {
     public class BuildAcidEmitters
     {

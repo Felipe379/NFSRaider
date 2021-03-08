@@ -128,7 +128,7 @@
             // TxtLoadFromText
             // 
             this.TxtLoadFromText.Location = new System.Drawing.Point(6, 41);
-            this.TxtLoadFromText.MaxLength = 65535;
+            this.TxtLoadFromText.MaxLength = 2147483647;
             this.TxtLoadFromText.Multiline = true;
             this.TxtLoadFromText.Name = "TxtLoadFromText";
             this.TxtLoadFromText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -279,7 +279,7 @@
             this.TxtPrefixes.AccessibleDescription = "";
             this.TxtPrefixes.AccessibleName = "";
             this.TxtPrefixes.Location = new System.Drawing.Point(410, 36);
-            this.TxtPrefixes.MaxLength = 65535;
+            this.TxtPrefixes.MaxLength = 2147483647;
             this.TxtPrefixes.Multiline = true;
             this.TxtPrefixes.Name = "TxtPrefixes";
             this.TxtPrefixes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -289,7 +289,7 @@
             // TxtVariations
             // 
             this.TxtVariations.Location = new System.Drawing.Point(566, 36);
-            this.TxtVariations.MaxLength = 65535;
+            this.TxtVariations.MaxLength = 2147483647;
             this.TxtVariations.Multiline = true;
             this.TxtVariations.Name = "TxtVariations";
             this.TxtVariations.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -302,7 +302,7 @@
             // TxtSuffixes
             // 
             this.TxtSuffixes.Location = new System.Drawing.Point(722, 36);
-            this.TxtSuffixes.MaxLength = 65535;
+            this.TxtSuffixes.MaxLength = 2147483647;
             this.TxtSuffixes.Multiline = true;
             this.TxtSuffixes.Name = "TxtSuffixes";
             this.TxtSuffixes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -731,6 +731,7 @@
             // TxtWordsBetweenVariations
             // 
             this.TxtWordsBetweenVariations.Location = new System.Drawing.Point(6, 32);
+            this.TxtWordsBetweenVariations.MaxLength = 2147483647;
             this.TxtWordsBetweenVariations.Name = "TxtWordsBetweenVariations";
             this.TxtWordsBetweenVariations.Size = new System.Drawing.Size(253, 20);
             this.TxtWordsBetweenVariations.TabIndex = 33;
