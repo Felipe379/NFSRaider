@@ -196,6 +196,15 @@
     <Compile Include="GeneratedStrings\GCareers\BuildgCareers.cs" />
     <Compile Include="GeneratedStrings\GCareers\Underground2.cs" />
     <Compile Include="GeneratedStrings\Materials\UndercoverOldGen.cs" />
+    <Compile Include="GeneratedStrings\PartsLists\Undercover\BrakeRotor.cs" />
+    <Compile Include="GeneratedStrings\PartsLists\Undercover\Brakes.cs" />
+    <Compile Include="GeneratedStrings\PartsLists\Undercover\BuildUndercoverPartsList.cs" />
+    <Compile Include="GeneratedStrings\PartsLists\Undercover\ConcatenatedStrings.cs" />
+    <Compile Include="GeneratedStrings\PartsLists\Undercover\Seat.cs" />
+    <Compile Include="GeneratedStrings\PartsLists\Undercover\Spoilers.cs" />
+    <Compile Include="GeneratedStrings\PartsLists\Undercover\SpoilersType.cs" />
+    <Compile Include="GeneratedStrings\PartsLists\Undercover\Vinyls.cs" />
+    <Compile Include="GeneratedStrings\PartsLists\Undercover\Wheels.cs" />
     <Compile Include="GeneratedStrings\PresetSkins\World.cs" />
     <Compile Include="GeneratedStrings\Tracks\SolidInfos\BuildSolidInfos.cs" />
     <Compile Include="GeneratedStrings\Tracks\SolidInfos\Underground2.cs" />
@@ -207,10 +216,10 @@
     <Compile Include="GeneratedStrings\Tracks\EAGLAnimations\Underground2.cs" />
     <Compile Include="GeneratedStrings\Tracks\CollisionVolumes\BuildCollisionVolumes.cs" />
     <Compile Include="GeneratedStrings\Tracks\CollisionVolumes\Underground2.cs" />
-    <Compile Include="GeneratedStrings\Tracks\AcidEmitters\BuildAcidEmitters.cs" />
-    <Compile Include="GeneratedStrings\Tracks\AcidEmitters\Underground2.cs" />
-    <Compile Include="GeneratedStrings\Tracks\AcidEffects\BuildAcidEffects.cs" />
-    <Compile Include="GeneratedStrings\Tracks\AcidEffects\Underground2.cs" />
+    <Compile Include="GeneratedStrings\AcidEmitters\BuildAcidEmitters.cs" />
+    <Compile Include="GeneratedStrings\AcidEmitters\Underground2.cs" />
+    <Compile Include="GeneratedStrings\AcidEffects\BuildAcidEffects.cs" />
+    <Compile Include="GeneratedStrings\AcidEffects\Underground2.cs" />
     <Compile Include="GeneratedStrings\Tracks\BuildStreamFiles.cs" />
     <Compile Include="GeneratedStrings\Tracks\ParameterSets\BuildParameterSets.cs" />
     <Compile Include="GeneratedStrings\Tracks\ParameterSets\ParameterSets.cs" />
@@ -322,6 +331,7 @@
     <Compile Include="Helpers\FileDelete.cs" />
     <Compile Include="Helpers\FileRead.cs" />
     <Compile Include="Helpers\Hashes.cs" />
+    <Compile Include="Helpers\HashesListsMerge.cs" />
     <Compile Include="Helpers\ThreadHelperClass.cs" />
     <Compile Include="NFSRaiderForm.cs">
       <SubType>Form</SubType>

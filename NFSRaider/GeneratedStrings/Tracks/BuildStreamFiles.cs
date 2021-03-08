@@ -1,6 +1,4 @@
-﻿using NFSRaider.GeneratedStrings.Tracks.AcidEffects;
-using NFSRaider.GeneratedStrings.Tracks.AcidEmitters;
-using NFSRaider.GeneratedStrings.Tracks.CollisionVolumes;
+﻿using NFSRaider.GeneratedStrings.Tracks.CollisionVolumes;
 using NFSRaider.GeneratedStrings.Tracks.EAGLAnimations;
 using NFSRaider.GeneratedStrings.Tracks.LightSourcesPack;
 using NFSRaider.GeneratedStrings.Tracks.ParameterSets;
@@ -17,8 +15,6 @@ namespace NFSRaider.GeneratedStrings.Tracks
         {
             var streamFiles = new HashSet<string>(
                 new BuildParameterSets().GetAllParameterSets()
-                .Concat(new BuildAcidEffects().GetAllAcidEffects())
-                .Concat(new BuildAcidEmitters().GetAllAcidEmitters())
                 .Concat(new BuildCollisionVolumes().GetAllCollisionVolumes())
                 .Concat(new BuildEAGLAnimations().GetAllEAGLAnimations())
                 .Concat(new BuildLightSourcesPack().GetAllLightSourcesPack())

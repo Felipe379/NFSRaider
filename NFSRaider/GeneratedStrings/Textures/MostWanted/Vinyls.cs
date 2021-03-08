@@ -315,6 +315,12 @@ namespace NFSRaider.GeneratedStrings.Textures.MostWanted
 "_02TUROSATO_MASK",
 "_01RAZORCALLAHAN",
 "_01RAZORCALLAHAN_MASK",
+"_COPGTO",
+"_COPGTO_MASK",
+"_CROSS",
+"_CROSS_MASK",
+"_CROSS_HENCHMEN",
+"_CROSS_HENCHMEN_MASK",
         };
     }
 }

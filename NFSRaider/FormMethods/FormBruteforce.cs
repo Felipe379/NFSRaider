@@ -119,8 +119,7 @@ namespace NFSRaider.FormMethods
                 }
             }
 
-            var simpleVariationsWithSubstring = variations.Where(c => c.StartsWith("[") && c.EndsWith("]")).Select(c => c.Trim(new[] { '[', ']' }))
-                .Concat(VariationsGroups.Select(s => string.Join("", s.Variations)));
+            var simpleVariationsWithSubstring = variations.Where(c => c.StartsWith("[") && c.EndsWith("]")).Select(c => c.Trim(new[] { '[', ']' }));
             var allSimpleVariationsWithSubstring = new HashSet<string>();
 
             foreach (var simpleVariation in simpleVariationsWithSubstring)
@@ -134,7 +133,7 @@ namespace NFSRaider.FormMethods
                 }
             }
 
-            if (allSimpleVariationsWithSubstring.Any() || VariationModel.GenerateOption == GenerateOption.WithRepetition)
+            if (VariationsGroups.Any() || allSimpleVariationsWithSubstring.Any() || VariationModel.GenerateOption == GenerateOption.WithRepetition)
             {
                 VariationModel.Variations = simpleVariations.Concat(allSimpleVariationsWithSubstring).ToHashSet();
             }

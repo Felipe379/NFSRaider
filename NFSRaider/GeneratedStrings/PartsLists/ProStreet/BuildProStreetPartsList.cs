@@ -26,6 +26,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.ProStreet
                 foreach (var wheel in Wheels.List)
                 {
                     parts.Add(wheel + "_TIRE_FRONT" + lod);
+                    parts.Add(wheel + "_TIRE_REAR" + lod);
                     parts.Add(wheel + "_WHEEL");
                 }
 
@@ -63,7 +64,6 @@ namespace NFSRaider.GeneratedStrings.PartsLists.ProStreet
 
 
             return parts;
-
         }
     }
 }
