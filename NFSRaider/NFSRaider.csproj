@@ -200,6 +200,7 @@
     <Compile Include="GeneratedStrings\PartsLists\Undercover\Brakes.cs" />
     <Compile Include="GeneratedStrings\PartsLists\Undercover\BuildUndercoverPartsList.cs" />
     <Compile Include="GeneratedStrings\PartsLists\Undercover\ConcatenatedStrings.cs" />
+    <Compile Include="GeneratedStrings\PartsLists\Undercover\RoofScoop.cs" />
     <Compile Include="GeneratedStrings\PartsLists\Undercover\Seat.cs" />
     <Compile Include="GeneratedStrings\PartsLists\Undercover\Spoilers.cs" />
     <Compile Include="GeneratedStrings\PartsLists\Undercover\SpoilersType.cs" />

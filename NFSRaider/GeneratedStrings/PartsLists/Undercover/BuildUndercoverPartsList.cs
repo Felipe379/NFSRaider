@@ -12,6 +12,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Undercover
                 BrakeRotor.List
                 .Concat(Brakes.List)
                 .Concat(ConcatenatedStrings.List)
+                .Concat(RoofScoop.List)
                 .Concat(Seat.List)
                 .Concat(Wheels.List)
                 .Concat(Vinyls.List)
