@@ -4859,6 +4859,7 @@ namespace NFSRaider.GeneratedStrings.Textures.Carbon
 "TRACK_MAP_4_CANS",
 "TRACK_MAP_4_DUEL",
 "TRACK_MAP_4_WAR",
+"TRACK_MAP_5_BOSS",
 "TRACK_MAP_5_CANS",
 "TRACK_MAP_5_DUEL",
 "TRACK_MAP_5_WAR",
