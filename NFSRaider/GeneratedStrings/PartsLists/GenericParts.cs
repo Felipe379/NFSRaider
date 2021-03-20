@@ -6,8 +6,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists
     {
         public static readonly List<string> List = new List<string>()
         {
-"CARFX_NOSBO_B_HOOD",
-"CARFX_NOSBO_B_WHEEL",
+"ANYCARTYPE",
 "NOHATCHBACK",
 "CE",
 "CS",

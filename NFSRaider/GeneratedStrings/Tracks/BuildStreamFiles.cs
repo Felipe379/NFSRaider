@@ -3,9 +3,10 @@ using NFSRaider.GeneratedStrings.Tracks.EAGLAnimations;
 using NFSRaider.GeneratedStrings.Tracks.LightSourcesPack;
 using NFSRaider.GeneratedStrings.Tracks.ParameterSets;
 using NFSRaider.GeneratedStrings.Tracks.BarrierGroups;
-using NFSRaider.GeneratedStrings.Tracks.SmokeableInfos;
+using NFSRaider.GeneratedStrings.Tracks.Smokeable;
 using System.Collections.Generic;
 using System.Linq;
+using NFSRaider.GeneratedStrings.Tracks.EventTriggers;
 
 namespace NFSRaider.GeneratedStrings.Tracks
 {
@@ -17,9 +18,10 @@ namespace NFSRaider.GeneratedStrings.Tracks
                 new BuildParameterSets().GetAllParameterSets()
                 .Concat(new BuildCollisionVolumes().GetAllCollisionVolumes())
                 .Concat(new BuildEAGLAnimations().GetAllEAGLAnimations())
+                .Concat(new BuildEventTriggers().GetAllEventTriggers())
                 .Concat(new BuildLightSourcesPack().GetAllLightSourcesPack())
                 .Concat(new BuildBarrierGroups().GetAllSceneryBarrierGroups())
-                .Concat(new BuildSmokeableInfos().GetAllSmokeableInfos())
+                .Concat(new BuildSmokeable().GetAllSmokeable())
                 );
 
             return streamFiles;
