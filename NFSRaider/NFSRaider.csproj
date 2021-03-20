@@ -207,10 +207,12 @@
     <Compile Include="GeneratedStrings\PartsLists\Undercover\Vinyls.cs" />
     <Compile Include="GeneratedStrings\PartsLists\Undercover\Wheels.cs" />
     <Compile Include="GeneratedStrings\PresetSkins\World.cs" />
+    <Compile Include="GeneratedStrings\Tracks\EventTriggers\BuildEventTrigers.cs" />
+    <Compile Include="GeneratedStrings\Tracks\EventTriggers\Underground2.cs" />
     <Compile Include="GeneratedStrings\Tracks\SolidInfos\BuildSolidInfos.cs" />
     <Compile Include="GeneratedStrings\Tracks\SolidInfos\Underground2.cs" />
-    <Compile Include="GeneratedStrings\Tracks\SmokeableInfos\BuildSmokeableInfos.cs" />
-    <Compile Include="GeneratedStrings\Tracks\SmokeableInfos\Underground2.cs" />
+    <Compile Include="GeneratedStrings\Tracks\Smokeable\BuildSmokeable.cs" />
+    <Compile Include="GeneratedStrings\Tracks\Smokeable\Underground2.cs" />
     <Compile Include="GeneratedStrings\Tracks\LightSourcesPack\BuildLightSourcesPack.cs" />
     <Compile Include="GeneratedStrings\Tracks\LightSourcesPack\Underground2.cs" />
     <Compile Include="GeneratedStrings\Tracks\EAGLAnimations\BuildEAGLAnimations.cs" />
