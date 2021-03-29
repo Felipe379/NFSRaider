@@ -1,0 +1,63 @@
+﻿using System.Collections.Generic;
+
+namespace NFSRaider.GeneratedStrings.Cars
+{
+    public static class Underground2
+    {
+        public static readonly List<string> List = new List<string> 
+        {
+"240SX",
+"3000GT",
+"350Z",
+"4DR_SEDAN",
+"4DR_SEDAN02",
+"A3",
+"AMBULANCE",
+"BUS",
+"CELICA",
+"CIVIC",
+"COROLLA",
+"CORSA",
+"COUPE",
+"ECLIPSE",
+"ESCALADE",
+"FIRETRUCK",
+"FOCUS",
+"G35",
+"GOLF",
+"GTO",
+"HATCHBACK",
+"HATCHBACK02",
+"HUMMER",
+"IMPREZA",
+"IMPREZAWRX",
+"INTEGRA",
+"IS300",
+"LANCER",
+"LANCEREVO8",
+"MIATA",
+"MINIVAN",
+"MUSTANGGT",
+"NAVIGATOR",
+"NEON",
+"NSX",
+"PANELVAN",
+"PARCELVAN",
+"PEUGOT",
+"PEUGOT106",
+"PICKUP",
+"RSX",
+"RX7",
+"RX8",
+"S2000",
+"SENTRA",
+"SKYLINE",
+"SUPRA",
+"SUV",
+"TAXI",
+"TAXI02",
+"TIBURON",
+"TT",
+        };
+    }
+}

@@ -1,4 +1,5 @@
-﻿using NFSRaider.GeneratedStrings.PartsLists.ProStreet;
+﻿using NFSRaider.GeneratedStrings.Cars;
+using NFSRaider.GeneratedStrings.PartsLists.ProStreet;
 using NFSRaider.GeneratedStrings.PartsLists.Undercover;
 using NFSRaider.GeneratedStrings.Shared;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists
         private static readonly string Headlight = "HEADLIGHT_TINT";
         private static readonly string Neon = "NEON";
         private static readonly string Decal = "DECAL";
+        private static readonly HashSet<string> CarList = new HashSet<string>(new BuildCars().GetAllCars());
 
         public HashSet<string> GetAllParts()
         {
@@ -30,7 +32,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists
 
             foreach (var lod in Lods.List)
             {
-                foreach (var car in Cars.List)
+                foreach (var car in CarList)
                 {
                     parts.Add(car + lod);
                     foreach (var part in Parts.List)

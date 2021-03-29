@@ -1,4 +1,4 @@
-﻿using NFSRaider.GeneratedStrings.Shared;
+﻿using NFSRaider.GeneratedStrings.Cars;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,6 +6,8 @@ namespace NFSRaider.GeneratedStrings.Textures
 {
     public class BuildTextures
     {
+        private static readonly HashSet<string> CarList = new HashSet<string>(new BuildCars().GetAllCars());
+
         public HashSet<string> GetAllTextures()
         {
             var textures = new HashSet<string>(
@@ -14,10 +16,11 @@ namespace NFSRaider.GeneratedStrings.Textures
                 .Concat(MostWanted.GenericTextures.List)
                 .Concat(Carbon.GenericTextures.List)
                 .Concat(ProStreet.GenericTextures.List)
+                .Concat(Undercover.GenericTextures.List)
                 .Concat(Shared.Typos.List)
                 );
 
-            foreach (var car in Cars.List)
+            foreach (var car in CarList)
             {
                 foreach (var carTexture in Shared.Cars.List)
                 {

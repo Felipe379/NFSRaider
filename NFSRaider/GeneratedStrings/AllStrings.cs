@@ -3,6 +3,7 @@ using NFSRaider.Enum;
 using NFSRaider.GeneratedStrings.AcidEffects;
 using NFSRaider.GeneratedStrings.AcidEmitters;
 using NFSRaider.GeneratedStrings.Brands;
+using NFSRaider.GeneratedStrings.Cars;
 using NFSRaider.GeneratedStrings.Files;
 using NFSRaider.GeneratedStrings.Fng;
 using NFSRaider.GeneratedStrings.GCareers;
@@ -48,21 +49,23 @@ namespace NFSRaider.GeneratedStrings
             }
 
             hashSet.UnionWith(new BuildPartsList().GetAllParts()); // TODO: Rework this
+
             hashSet.UnionWith(new BuildAcidEffects().GetAllAcidEffects());
             hashSet.UnionWith(new BuildAcidEmitters().GetAllAcidEmitters());
             hashSet.UnionWith(new BuildBrands().GetAllBrands());
-            hashSet.UnionWith(new BuildBrands().GetAllBrands());
-            hashSet.UnionWith(new BuildPresets().GetAllPresets());
-            hashSet.UnionWith(new BuildPresetSkins().GetAllPresetSkins());
-            hashSet.UnionWith(new BuildLanguageLabels().GetAllLabels());
-            hashSet.UnionWith(new BuildGCareers().GetAllGCarrers());
-            hashSet.UnionWith(new BuildMaterials().GetAllMaterials());
-            hashSet.UnionWith(new BuildGlobal().GetAllGlobal());
-            hashSet.UnionWith(new BuildSunInfos().GetSunInfos());
-            hashSet.UnionWith(new BuildVlt().GetAllVlt());
-            hashSet.UnionWith(new BuildTextures().GetAllTextures());
+            hashSet.UnionWith(new BuildCars().GetAllCars());
             hashSet.UnionWith(new BuildFng().GetAllFng());
+            hashSet.UnionWith(new BuildGCareers().GetAllGCarrers());
+            hashSet.UnionWith(new BuildGlobal().GetAllGlobal());
+            hashSet.UnionWith(new BuildLanguageLabels().GetAllLabels());
+            hashSet.UnionWith(new BuildMaterials().GetAllMaterials());
+            hashSet.UnionWith(new BuildPresetSkins().GetAllPresetSkins());
+            hashSet.UnionWith(new BuildPresets().GetAllPresets());
             hashSet.UnionWith(new BuildStreamFiles().GetAllStreamFiles());
+            hashSet.UnionWith(new BuildSunInfos().GetSunInfos());
+            hashSet.UnionWith(new BuildTextures().GetAllTextures());
+            hashSet.UnionWith(new BuildVlt().GetAllVlt());
+
             hashSet.UnionWith(new BuildFiles().GetAllFiles());
 
             try
