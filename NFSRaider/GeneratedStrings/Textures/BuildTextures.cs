@@ -17,6 +17,7 @@ namespace NFSRaider.GeneratedStrings.Textures
                 .Concat(Carbon.GenericTextures.List)
                 .Concat(ProStreet.GenericTextures.List)
                 .Concat(Undercover.GenericTextures.List)
+                .Concat(World.GenericTextures.List)
                 .Concat(Shared.Typos.List)
                 );
 

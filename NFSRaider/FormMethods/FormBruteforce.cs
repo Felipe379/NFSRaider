@@ -195,7 +195,7 @@ namespace NFSRaider.FormMethods
                 }
                 else
                 {
-                    results.Add(new RaiderResult { Hash = hash, Value = "HASH_UNKNOWN", IsKnown = true });
+                    results.Add(new RaiderResult { Hash = hash, Value = "HASH_UNKNOWN", IsKnown = false });
                 }
             }
 

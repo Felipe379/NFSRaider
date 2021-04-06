@@ -218,6 +218,7 @@
     <Compile Include="GeneratedStrings\PartsLists\Undercover\Wheels.cs" />
     <Compile Include="GeneratedStrings\PresetSkins\World.cs" />
     <Compile Include="GeneratedStrings\Textures\Undercover\GenericTextures.cs" />
+    <Compile Include="GeneratedStrings\Textures\World\GenericTextures.cs" />
     <Compile Include="GeneratedStrings\Tracks\EventTriggers\BuildEventTrigers.cs" />
     <Compile Include="GeneratedStrings\Tracks\EventTriggers\Underground2.cs" />
     <Compile Include="GeneratedStrings\Tracks\SolidInfos\BuildSolidInfos.cs" />
