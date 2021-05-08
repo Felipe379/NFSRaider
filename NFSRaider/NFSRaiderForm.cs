@@ -101,8 +101,8 @@ namespace NFSRaider
                     {
                         TimerRestart();
 
-                        var file = FormMethods.FormFile.Open(TxtFileStartOffset.Text, TxtFileEndOffset.Text, TxtFileReadHashes.Text, TxtFileSkipHashes.Text, FilePath);
-                        var listBox = FormMethods.FormFile.UnhashFromFile(UnhashingEndianness, HashFactory, file, CaseOption);
+                        var file = Raider.File.Open(TxtFileStartOffset.Text, TxtFileEndOffset.Text, TxtFileReadHashes.Text, TxtFileSkipHashes.Text, FilePath);
+                        var listBox = Raider.File.UnhashFromFile(UnhashingEndianness, HashFactory, file, CaseOption);
                         ListBoxDataSource = listBox;
                         ChangedListBoxDataSource();
                         GC.Collect();
@@ -122,9 +122,9 @@ namespace NFSRaider
                     {
                         DisableComponentsDuringBruteforce();
 
-                        var bruteForce = new FormMethods.FormBruteforce(this, HashFactory, ChkUseHashesFile.Checked, ChkTryToBruteforce.Checked, TxtPrefixes.Text, TxtSuffixes.Text,
+                        var bruteForce = new Raider.Unhash(this, HashFactory, ChkUseHashesFile.Checked, ChkTryToBruteforce.Checked, TxtPrefixes.Text, TxtSuffixes.Text,
                             TxtVariations.Text, TxtWordsBetweenVariations.Text, NumericMinVariations.Text, NumericMaxVariations.Text, NumericProcessorsCount.Text, GenerateOption, UnhashingEndianness, CaseOption);
-                        bruteForce.Unhash(TxtLoadFromText.Text);
+                        bruteForce.SplitHashes(TxtLoadFromText.Text);
                         BruteforceProcessStarted = true;
 
                         TimerRestart();

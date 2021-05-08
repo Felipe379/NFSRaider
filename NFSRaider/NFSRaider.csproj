@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Combinatorics, Version=1.1.0.19, Culture=neutral, PublicKeyToken=d5738f21cd5d2f66, processorArchitecture=MSIL">
-      <HintPath>..\packages\Combinatorics.1.1.0.19\lib\netstandard1.2\Combinatorics.dll</HintPath>
+    <Reference Include="Combinatorics, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Combinatorics.2.0.0\lib\net461\Combinatorics.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Primitives.4.0.1\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
@@ -182,8 +182,9 @@
     <Compile Include="Enum\CaseOptions.cs" />
     <Compile Include="Enum\OrderOptions.cs" />
     <Compile Include="Enum\HashType.cs" />
-    <Compile Include="FormMethods\FormBruteforce.cs" />
-    <Compile Include="FormMethods\FormFile.cs" />
+    <Compile Include="Raider\Unhash.cs" />
+    <Compile Include="Raider\File.cs" />
+    <Compile Include="Raider\Model\Variation.cs" />
     <Compile Include="GeneratedStrings\AllStrings.cs" />
     <Compile Include="GeneratedStrings\Cars\BuildCars.cs" />
     <Compile Include="GeneratedStrings\Cars\ProStreet.cs" />

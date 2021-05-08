@@ -1,5 +1,6 @@
 ﻿using Combinatorics.Collections;
 using NFSRaider.Enum;
+using NFSRaider.Raider.Model;
 using NFSRaider.GeneratedStrings;
 using NFSRaider.Hash;
 using NFSRaider.Helpers;
@@ -10,17 +11,9 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace NFSRaider.FormMethods
+namespace NFSRaider.Raider
 {
-    public class VariationModel
-    {
-        public int MinVariations { get; set; }
-        public int MaxVariations { get; set; }
-        public ICollection<string> Variations { get; set; }
-        public GenerateOption GenerateOption { get; set; }
-    }
-
-    public class FormBruteforce
+    public class Unhash
     {
         private int ProcessorCount { get; set; }
         private HashSet<uint> Hashes { get; set; }
@@ -30,15 +23,15 @@ namespace NFSRaider.FormMethods
         private Endianness UnhashingEndianness { get; set; }
         private CaseOptions CaseOption { get; set; }
         private HashFactory HashFactory { get; set; }
-        private VariationModel VariationModel { get; set; }
-        private List<VariationModel> VariationsGroups { get; set; }
+        private Variation VariationModel { get; set; }
+        private List<Variation> VariationsGroups { get; set; }
 
         private bool CheckForHashesInFile { get; set; }
         private bool TryToBruteForce { get; set; }
 
         private NFSRaiderForm Sender { get; set; }
 
-        public FormBruteforce(
+        public Unhash(
             NFSRaiderForm sender, HashFactory hashFactory, bool checkForHashesInFile, bool tryToBruteForce, string txtPrefixes, string txtSuffixes, string txtVariations, 
             string txtWordsBetweenVariations, string txtMinVariations, string txtMaxVariations, string processorCount, GenerateOption generateOption, Endianness unhashingEndianness, CaseOptions caseOption)
         {
@@ -51,8 +44,8 @@ namespace NFSRaider.FormMethods
             Suffixes = new HashSet<string>(txtSuffixes.SplitBy(new[] { ',' }, '\\'));
             WordsBetweenVariations = new HashSet<string>(txtWordsBetweenVariations.SplitBy(new[] { ',' }, '\\'));
             ProcessorCount = Convert.ToInt32(processorCount);
-            VariationsGroups = new List<VariationModel>();
-            VariationModel = new VariationModel
+            VariationsGroups = new List<Variation>();
+            VariationModel = new Variation
             {
                 MinVariations = Convert.ToInt32(txtMinVariations),
                 MaxVariations = Convert.ToInt32(txtMaxVariations),
@@ -87,7 +80,7 @@ namespace NFSRaider.FormMethods
                 var min = 0;
                 var max = 0;
                 var generateOption = GenerateOption.WithoutRepetition;
-                VariationModel variationModel;
+                Variation variationModel;
 
                 foreach (var variationGroup in variationsGroups)
                 {
@@ -103,7 +96,7 @@ namespace NFSRaider.FormMethods
                         if (min > 0 && max > 0 && min <= max)
                         {
                             variation.RemoveAt(variation.Count - 1);
-                            variationModel = new VariationModel
+                            variationModel = new Variation
                             {
                                 MinVariations = min,
                                 MaxVariations = max,
@@ -144,7 +137,7 @@ namespace NFSRaider.FormMethods
 
         }
 
-        public void Unhash(string txtHashes)
+        public void SplitHashes(string txtHashes)
         {
             var hashes = txtHashes.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).Select(c => Regex.Replace(c, @"[^0-9A-Za-z]", "")).ToList();
 
@@ -202,9 +195,9 @@ namespace NFSRaider.FormMethods
             Sender.UpdateFormDuringBruteforce(results);
         }
 
-        private VariationModel GenerateAllWordsVariations()
+        private Variation GenerateAllWordsVariations()
         {
-            var variationModel = new VariationModel()
+            var variationModel = new Variation()
             {
                 MaxVariations = VariationModel.MaxVariations,
                 MinVariations = VariationModel.MinVariations,
@@ -264,10 +257,10 @@ namespace NFSRaider.FormMethods
             return variationModel;
         }
 
-        private void TryBruteforce(VariationModel variationsModel)
+        private void TryBruteforce(Variation variationsModel)
         {
             Variations<string> variations;
-            OrderablePartitioner<IList<string>> rangePartitioner;
+            OrderablePartitioner<IReadOnlyList<string>> rangePartitioner;
             for (int variationsCount = variationsModel.MinVariations; variationsCount <= variationsModel.MaxVariations; variationsCount++)
             {
                 variations = new Variations<string>(variationsModel.Variations, variationsCount, VariationModel.GenerateOption);
@@ -280,7 +273,7 @@ namespace NFSRaider.FormMethods
             }
         }
 
-        private void CheckVariations(IList<string> variation)
+        private void CheckVariations(IReadOnlyList<string> variation)
         {
             string currentVariation;
             IEnumerable<string> generatedStrings;
