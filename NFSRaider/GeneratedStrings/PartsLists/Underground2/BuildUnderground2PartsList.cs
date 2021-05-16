@@ -2,21 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NFSRaider.GeneratedStrings.PartsLists.MostWanted
+namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
 {
-    public class BuildMostWantedPartsList
+    public class BuildUnderground2PartsList
     {
-        public HashSet<string> GetAllMostWantedParts()
+        public HashSet<string> GetAllUnderground2Parts()
         {
             var parts = new HashSet<string>(
-                Brakes.List
+                Audio.List
+                .Concat(Brakes.List)
+                .Concat(CarbonFibre.List)
+                .Concat(CabinNeonFrame.List)
                 .Concat(ConcatenatedStrings.List)
                 .Concat(Decals.List)
-                .Concat(Numbers.List)
+                .Concat(DoorStyle.List)
+                .Concat(Exhausts.List)
+                .Concat(HeadlightBulb.List)
                 .Concat(Huds.List)
                 .Concat(HudsPaint.List)
+                .Concat(Hydraulics.List)
+                .Concat(Mirrors.List)
+                .Concat(Neons.List)
+                .Concat(NosPurge.List)
                 .Concat(Paints.List)
-                .Concat(Paints.ListDemo)
                 .Concat(Plates.List)
                 .Concat(RoofScoops.List)
                 .Concat(Spoilers.List)
@@ -31,6 +39,17 @@ namespace NFSRaider.GeneratedStrings.PartsLists.MostWanted
                 foreach (var brake in Brakes.List)
                 {
                     parts.Add(brake + lod);
+                }
+
+                foreach (var mirror in Mirrors.List)
+                {
+                    parts.Add(mirror + lod);
+                    parts.Add(mirror + "_CF" + lod);
+                    foreach (var mirrorType in MirrorsType.List)
+                    {
+                        parts.Add(mirror + "_" + mirrorType + lod);
+                        parts.Add(mirror + "_" + mirrorType + "_CF" + lod);
+                    }
                 }
 
                 foreach (var roofscoop in RoofScoops.List)

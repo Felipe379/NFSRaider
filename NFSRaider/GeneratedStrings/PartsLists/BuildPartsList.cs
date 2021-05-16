@@ -2,6 +2,7 @@
 using NFSRaider.GeneratedStrings.PartsLists.MostWanted;
 using NFSRaider.GeneratedStrings.PartsLists.ProStreet;
 using NFSRaider.GeneratedStrings.PartsLists.Undercover;
+using NFSRaider.GeneratedStrings.PartsLists.Underground2;
 using NFSRaider.GeneratedStrings.Shared;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists
         {
             var parts = new HashSet<string>(
                 GenericParts.List
+                .Concat(new BuildUnderground2PartsList().GetAllUnderground2Parts())
                 .Concat(new BuildMostWantedPartsList().GetAllMostWantedParts())
                 .Concat(new BuildProStreetPartsList().GetAllProStreetParts())
                 .Concat(new BuildUndercoverPartsList().GetAllUndercoverParts())
