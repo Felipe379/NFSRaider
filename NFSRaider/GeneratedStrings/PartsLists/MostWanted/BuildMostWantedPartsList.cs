@@ -1,0 +1,81 @@
+﻿using NFSRaider.GeneratedStrings.Shared;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace NFSRaider.GeneratedStrings.PartsLists.MostWanted
+{
+    public class BuildMostWantedPartsList
+    {
+        public HashSet<string> GetAllMostWantedParts()
+        {
+            var parts = new HashSet<string>(
+                Brakes.List
+                .Concat(ConcatenatedStrings.List)
+                .Concat(Decals.List)
+                .Concat(Numbers.List)
+                .Concat(Huds.List)
+                .Concat(HudsPaint.List)
+                .Concat(Paints.List)
+                .Concat(Paints.ListDemo)
+                .Concat(Plates.List)
+                .Concat(RoofScoops.List)
+                .Concat(Spoilers.List)
+                .Concat(Vinyls.List)
+                .Concat(Wheels.List)
+                .Concat(WheelsManufacturers.List)
+                .Concat(WindowTint.List)
+                );
+
+            foreach (var lod in Lods.List)
+            {
+                foreach (var brake in Brakes.List)
+                {
+                    parts.Add(brake + lod);
+                }
+
+                foreach (var roofscoop in RoofScoops.List)
+                {
+                    foreach (var roofscoopType in RoofScoopsType.List)
+                    {
+                        parts.Add(roofscoop + "_" + roofscoopType + lod);
+                        parts.Add(roofscoop + "_" + roofscoopType + "_CF" + lod);
+                    }
+                }
+
+                foreach (var spoiler in Spoilers.List)
+                {
+                    foreach (var spoilerType in SpoilersType.List)
+                    {
+                        parts.Add(spoiler + "_" + spoilerType + lod);
+                        parts.Add(spoiler + "_" + spoilerType + "_CF" + lod);
+                    }
+                }
+            }
+
+
+            foreach (var decal in Decals.List)
+            {
+                foreach (var decalType in DecalsType.List)
+                {
+                    parts.Add(decal + "_" + decalType);
+                }
+            }
+
+            foreach (var wheel in Wheels.List)
+            {
+                foreach (var lod in Lods.List)
+                {
+                    foreach (var wheelType in WheelsType.List)
+                    {
+                        parts.Add(wheel + "_" + wheelType + lod);
+                    }
+                }
+
+                parts.Add(wheel + "_WHEEL");
+                parts.Add(wheel + "_WHEEL_INNER_MASK");
+            }
+
+            return parts;
+        }
+    }
+}

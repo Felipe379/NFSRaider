@@ -1,4 +1,5 @@
 ﻿using NFSRaider.GeneratedStrings.Cars;
+using NFSRaider.GeneratedStrings.PartsLists.MostWanted;
 using NFSRaider.GeneratedStrings.PartsLists.ProStreet;
 using NFSRaider.GeneratedStrings.PartsLists.Undercover;
 using NFSRaider.GeneratedStrings.Shared;
@@ -26,6 +27,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists
         {
             var parts = new HashSet<string>(
                 GenericParts.List
+                .Concat(new BuildMostWantedPartsList().GetAllMostWantedParts())
                 .Concat(new BuildProStreetPartsList().GetAllProStreetParts())
                 .Concat(new BuildUndercoverPartsList().GetAllUndercoverParts())
                 );
@@ -38,17 +40,6 @@ namespace NFSRaider.GeneratedStrings.PartsLists
                     foreach (var part in Parts.List)
                     {
                         parts.Add(car + part + lod);
-                    }
-
-                    foreach (var cf in CarbonFiber.List)
-                    {
-                        foreach (var hood in Hoods.List)
-                        {
-                            foreach (var style in Styles.List)
-                            {
-                                parts.Add(car + style + hood + cf + lod);
-                            }
-                        }
                     }
                 }
 

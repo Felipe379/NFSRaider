@@ -27,7 +27,7 @@ namespace NFSRaider.Helpers
 
         public static bool IsHash64(string hash)
         {
-            return new Regex(@"^(((0x)|(0X)){0,1}[0-9a-f-F]{1,16})$").Match(hash).Success;
+            return new Regex(@"^(((0x)|(0X)){0,1}[0-9a-fA-F]{1,16})$").Match(hash).Success;
         }
     }
 }

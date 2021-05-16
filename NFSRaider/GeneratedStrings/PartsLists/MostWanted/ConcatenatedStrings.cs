@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 
-namespace NFSRaider.GeneratedStrings.PartsLists
+namespace NFSRaider.GeneratedStrings.PartsLists.MostWanted
 {
-    public static class Hoods
+    public static class ConcatenatedStrings
     {
         public static readonly List<string> List = new List<string>()
         {
-            "_HOOD",
-            "_HOOD_AS",
+"MW",
+"CEO",
         };
     }
 }
