@@ -43,12 +43,16 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
 
                 foreach (var mirror in Mirrors.List)
                 {
-                    parts.Add(mirror + lod);
-                    parts.Add(mirror + "_CF" + lod);
+                    parts.Add(mirror + "_" + "MIRROR" + lod);
+                    parts.Add(mirror + "_" + "MIRROR" + "_CF" + lod);
                     foreach (var mirrorType in MirrorsType.List)
                     {
-                        parts.Add(mirror + "_" + mirrorType + lod);
-                        parts.Add(mirror + "_" + mirrorType + "_CF" + lod);
+                        parts.Add("MIRROR" + "_" + mirrorType + "_" + "LEFT" + "_" + mirror + lod);
+                        parts.Add("MIRROR" + "_" + mirrorType + "_" + "LEFT" + "_" + mirror + "_CF" + lod);
+                        parts.Add("MIRROR" + "_" + mirrorType + "_" + "RIGHT" + "_" + mirror + lod);
+                        parts.Add("MIRROR" + "_" + mirrorType + "_" + "RIGHT" + "_" + mirror + "_CF" + lod);
+                        parts.Add(mirror + "_" + "MIRROR" + "_" + mirrorType + lod);
+                        parts.Add(mirror + "_" + "MIRROR" + "_" + mirrorType + "_CF" + lod);
                     }
                 }
 
