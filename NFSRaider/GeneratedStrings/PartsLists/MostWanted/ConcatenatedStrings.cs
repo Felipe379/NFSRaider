@@ -22,6 +22,15 @@ namespace NFSRaider.GeneratedStrings.PartsLists.MostWanted
 "SPOILER",
 "CUSTOM_HUD",
 "SPOILER_HATCH",
+"RIM",
+"GLOSS",
+"METAL",
+"PEARL",
+"TRAFFIC",
+"COP",
+"CALIPER",
+"MUFFLER",
+"HOSE",
         };
     }
 }

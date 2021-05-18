@@ -17,5 +17,33 @@ namespace NFSRaider.GeneratedStrings.PartsLists.MostWanted
             "INDIGO",
             "PURPLE",
         };
+
+        public static readonly List<string> ListDemo = new List<string>()
+        {
+            "LAVENDER",
+            "PURPLE",
+            "RED",
+            "ORANGE",
+            "YELLOW",
+            "LIME",
+            "GREEN",
+            "OCEAN",
+            "BLUE",
+            "WHITE",
+        };
+
+        public static readonly List<string> ListA124 = new List<string>()
+        {
+            "VIOLET",
+            "DARKBLUE",
+            "GREEN",
+            "LIME",
+            "CYAN",
+            "PINK",
+            "RED",
+            "ORANGE",
+            "YELLOW",
+            "WHITE",
+        };
     }
 }

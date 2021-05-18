@@ -2,6 +2,7 @@
 using NFSRaider.GeneratedStrings.PartsLists.MostWanted;
 using NFSRaider.GeneratedStrings.PartsLists.ProStreet;
 using NFSRaider.GeneratedStrings.PartsLists.Undercover;
+using NFSRaider.GeneratedStrings.PartsLists.Underground1;
 using NFSRaider.GeneratedStrings.PartsLists.Underground2;
 using NFSRaider.GeneratedStrings.Shared;
 using System.Collections.Generic;
@@ -28,6 +29,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists
         {
             var parts = new HashSet<string>(
                 GenericParts.List
+                .Concat(new BuildUnderground1PartsList().GetAllUnderground1Parts())
                 .Concat(new BuildUnderground2PartsList().GetAllUnderground2Parts())
                 .Concat(new BuildMostWantedPartsList().GetAllMostWantedParts())
                 .Concat(new BuildProStreetPartsList().GetAllProStreetParts())
@@ -150,7 +152,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists
                     }
                 }
                 parts.Add(Neon + "_" + color);
-                parts.Add(Neon + "_PULSE" + "_" + color);
+                parts.Add(Neon + "_" + color + "_PULSE");
 
             }
 

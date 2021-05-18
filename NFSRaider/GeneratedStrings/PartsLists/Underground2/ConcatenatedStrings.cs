@@ -37,6 +37,13 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
 "CARBON_FIBRE",
 "DOOR_STYLE",
 "DUMMY_WHEEL",
+"RIM",
+"SPINNER",
+"GLOSS",
+"METAL",
+"PEARL",
+"HOSE",
+"MUFFLER",
         };
     }
 }

@@ -2,26 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NFSRaider.GeneratedStrings.PartsLists.MostWanted
+namespace NFSRaider.GeneratedStrings.PartsLists.Underground1
 {
-    public class BuildMostWantedPartsList
+    public class BuildUnderground1PartsList
     {
-        public HashSet<string> GetAllMostWantedParts()
+        public HashSet<string> GetAllUnderground1Parts()
         {
             var parts = new HashSet<string>(
                 Brakes.List
                 .Concat(ConcatenatedStrings.List)
                 .Concat(Decals.List)
-                .Concat(Numbers.List)
-                .Concat(Huds.List)
-                .Concat(HudsPaint.List)
-                .Concat(HudsPaint.ListDemo)
-                .Concat(HudsPaint.ListA124)
+                .Concat(Exhausts.List)
+                .Concat(Neons.List)
                 .Concat(Paints.List)
-                .Concat(Paints.ListDemo)
                 .Concat(Plates.List)
-                .Concat(RoofScoops.List)
-                .Concat(Spoilers.List)
                 .Concat(Vinyls.List)
                 .Concat(Wheels.List)
                 .Concat(WheelsManufacturers.List)
@@ -34,30 +28,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.MostWanted
                 {
                     parts.Add(brake + lod);
                 }
-
-                foreach (var roofscoop in RoofScoops.List)
-                {
-                    parts.Add(roofscoop + lod);
-                    parts.Add(roofscoop + "_CF" + lod);
-                    foreach (var roofscoopType in RoofScoopsType.List)
-                    {
-                        parts.Add(roofscoop + "_" + roofscoopType + lod);
-                        parts.Add(roofscoop + "_" + roofscoopType + "_CF" + lod);
-                    }
-                }
-
-                foreach (var spoiler in Spoilers.List)
-                {
-                    parts.Add(spoiler + lod);
-                    parts.Add(spoiler + "_CF" + lod);
-                    foreach (var spoilerType in SpoilersType.List)
-                    {
-                        parts.Add(spoiler + "_" + spoilerType + lod);
-                        parts.Add(spoiler + "_" + spoilerType + "_CF" + lod);
-                    }
-                }
             }
-
 
             foreach (var decal in Decals.List)
             {
