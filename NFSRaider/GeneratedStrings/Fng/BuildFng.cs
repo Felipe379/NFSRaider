@@ -19,6 +19,7 @@ namespace NFSRaider.GeneratedStrings.Fng
                 .Concat(ProStreet.List)
                 .Concat(UndercoverOldGen.List)
                 .Concat(Undercover.List)
+                .Concat(Undercover.ListPrerelease)
                 );
 
             fngs.UnionWith(new HashSet<string>(fngs.Select(c => c.ToUpperInvariant())));

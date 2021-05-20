@@ -22,6 +22,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.MostWanted
 "SPOILER",
 "CUSTOM_HUD",
 "SPOILER_HATCH",
+"PLATES",
 "RIM",
 "GLOSS",
 "METAL",

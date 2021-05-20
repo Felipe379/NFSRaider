@@ -24,11 +24,24 @@ namespace NFSRaider.GeneratedStrings.PartsLists.ProStreet
 
             foreach (var lod in Lods.List)
             {
-                foreach (var wheel in Wheels.List)
+                foreach (var brakeRotor in BrakeRotor.List)
                 {
-                    parts.Add(wheel + "_TIRE_FRONT" + lod);
-                    parts.Add(wheel + "_TIRE_REAR" + lod);
-                    parts.Add(wheel + "_WHEEL");
+                    parts.Add(brakeRotor + lod);
+                }
+
+                foreach (var brake in Brakes.List)
+                {
+                    parts.Add(brake + lod);
+                }
+
+                foreach (var exhaust in Exhausts.List)
+                {
+                    parts.Add(exhaust + lod);
+                }
+
+                foreach (var plate in Plates.List)
+                {
+                    parts.Add(plate + lod);
                 }
 
                 foreach (var roofscoop in RoofScoop.List)
@@ -36,9 +49,16 @@ namespace NFSRaider.GeneratedStrings.PartsLists.ProStreet
                     parts.Add(roofscoop + lod);
                 }
 
-                foreach (var exhaust in Exhausts.List)
+                foreach (var seat in Seat.List)
                 {
-                    parts.Add(exhaust + lod);
+                    parts.Add(seat + lod);
+                }
+
+                foreach (var wheel in Wheels.List)
+                {
+                    parts.Add(wheel + "_TIRE_FRONT" + lod);
+                    parts.Add(wheel + "_TIRE_REAR" + lod);
+                    parts.Add(wheel + "_WHEEL");
                 }
             }
 

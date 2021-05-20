@@ -19,6 +19,29 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Undercover
                 .Concat(Vinyls.List)
                 );
 
+            foreach (var lod in Lods.List)
+            {
+                foreach (var brakeRotor in BrakeRotor.List)
+                {
+                    parts.Add(brakeRotor + lod);
+                }
+
+                foreach (var brake in Brakes.List)
+                {
+                    parts.Add(brake + lod);
+                }
+
+                foreach (var plate in Plates.List)
+                {
+                    parts.Add(plate + lod);
+                }
+
+                foreach (var seat in Seat.List)
+                {
+                    parts.Add(seat + lod);
+                }
+            }
+
             foreach (var wheel in Wheels.List)
             {
                 foreach (var lod in Lods.List)
@@ -40,7 +63,6 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Undercover
                     }
                 }
             }
-
 
             return parts;
         }

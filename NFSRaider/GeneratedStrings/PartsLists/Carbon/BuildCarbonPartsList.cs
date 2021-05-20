@@ -2,32 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
+namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
 {
-    public class BuildUnderground2PartsList
+    public class BuildCarbonPartsList
     {
-        public HashSet<string> GetAllUnderground2Parts()
+        public HashSet<string> GetAllCarbonParts()
         {
             var parts = new HashSet<string>(
-                Audio.List
+                Beacons.List
                 .Concat(Brakes.List)
-                .Concat(CarbonFibre.List)
-                .Concat(CabinNeonFrame.List)
                 .Concat(ConcatenatedStrings.List)
                 .Concat(Decals.List)
-                .Concat(DoorStyle.List)
-                .Concat(Exhausts.List)
-                .Concat(HeadlightBulb.List)
-                .Concat(Huds.List)
-                .Concat(HudsPaint.List)
-                .Concat(Hydraulics.List)
-                .Concat(Neons.List)
-                .Concat(NosPurge.List)
+                .Concat(Decals.ListDemo)
+                .Concat(Headlights.ListDemo)
+                .Concat(Huds.ListDemo)
+                .Concat(HudsPaint.ListDemo)
                 .Concat(Paints.List)
+                .Concat(Paints.ListDemo)
                 .Concat(Plates.List)
                 .Concat(RoofScoops.List)
-                .Concat(Spoilers.List)
-                .Concat(Vinyls.List)
+                .Concat(VectorVinyls.List)
+                .Concat(VectorVinyls.ListDemo)
+                .Concat(VectorVinyls.ListPrerelease)
+                .Concat(Vinyls.ListDemo)
                 .Concat(Wheels.List)
                 .Concat(WheelsManufacturers.List)
                 .Concat(WindowTint.List)
@@ -35,14 +32,14 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
 
             foreach (var lod in Lods.List)
             {
+                foreach (var beacon in Beacons.List)
+                {
+                    parts.Add(beacon + lod);
+                }
+
                 foreach (var brake in Brakes.List)
                 {
                     parts.Add(brake + lod);
-                }
-
-                foreach (var exhaust in Exhausts.List)
-                {
-                    parts.Add(exhaust + lod);
                 }
 
                 foreach (var plate in Plates.List)
@@ -50,18 +47,11 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
                     parts.Add(plate + lod);
                 }
 
-                foreach (var mirror in Mirrors.List)
+                foreach (var exhaust in Exhausts.List)
                 {
-                    parts.Add(mirror + "_" + "MIRROR" + lod);
-                    parts.Add(mirror + "_" + "MIRROR" + "_CF" + lod);
-                    foreach (var mirrorType in MirrorsType.List)
+                    foreach (var exhaustType in ExhaustsType.List)
                     {
-                        parts.Add("MIRROR" + "_" + mirrorType + "_" + "LEFT" + "_" + mirror + lod);
-                        parts.Add("MIRROR" + "_" + mirrorType + "_" + "LEFT" + "_" + mirror + "_CF" + lod);
-                        parts.Add("MIRROR" + "_" + mirrorType + "_" + "RIGHT" + "_" + mirror + lod);
-                        parts.Add("MIRROR" + "_" + mirrorType + "_" + "RIGHT" + "_" + mirror + "_CF" + lod);
-                        parts.Add(mirror + "_" + "MIRROR" + "_" + mirrorType + lod);
-                        parts.Add(mirror + "_" + "MIRROR" + "_" + mirrorType + "_CF" + lod);
+                        parts.Add(exhaust + "_" + exhaustType + lod);
                     }
                 }
 
@@ -78,12 +68,16 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
 
                 foreach (var spoiler in Spoilers.List)
                 {
-                    parts.Add(spoiler + lod);
-                    parts.Add(spoiler + "_CF" + lod);
+                    parts.Add("SPOILER" + "_" + spoiler + lod);
+                    parts.Add("SPOILER" + "_" + spoiler + "_CF" + lod);
+                    parts.Add("AUTOSCULPTSPOILER" + "_" + spoiler + lod);
+                    parts.Add("AUTOSCULPTSPOILER" + "_" + spoiler + "_CF" + lod);
                     foreach (var spoilerType in SpoilersType.List)
                     {
-                        parts.Add(spoiler + "_" + spoilerType + lod);
-                        parts.Add(spoiler + "_" + spoilerType + "_CF" + lod);
+                        parts.Add("SPOILER" + "_" + spoiler + "_" + spoilerType + lod);
+                        parts.Add("SPOILER" + "_" + spoiler + "_" + spoilerType + "_CF" + lod);
+                        parts.Add("AUTOSCULPTSPOILER" + "_" + spoiler + "_" + spoilerType + lod);
+                        parts.Add("AUTOSCULPTSPOILER" + "_" + spoiler + "_" + spoilerType + "_CF" + lod);
                     }
                 }
             }
