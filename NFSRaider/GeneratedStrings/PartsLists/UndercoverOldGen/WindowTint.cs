@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
+namespace NFSRaider.GeneratedStrings.PartsLists.UndercoverOldGen
 {
     public static class WindowTint
     {
@@ -31,18 +31,6 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
             "WINDSHIELD_TINT_L3_PEARL_BLUE",
             "WINDSHIELD_TINT_L3_PEARL_INDIGO",
             "WINDSHIELD_TINT_L3_PEARL_VIOLET",
-        };
-
-        public static readonly List<string> ListDemo = new List<string>()
-        {
-            "WINDSHIELD_TINT_L3_PEARL BLACK",
-            "WINDSHIELD_TINT_L3_PEARL SILVER",
-            "WINDSHIELD_TINT_L3_PEARL RED",
-            "WINDSHIELD_TINT_L3_PEARL YELLOW",
-            "WINDSHIELD_TINT_L3_PEARL GREEN",
-            "WINDSHIELD_TINT_L3_PEARL BLUE",
-            "WINDSHIELD_TINT_L3_PEARL INDIGO",
-            "WINDSHIELD_TINT_L3_PEARL VIOLET",
         };
     }
 }

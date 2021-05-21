@@ -3,6 +3,7 @@ using NFSRaider.GeneratedStrings.PartsLists.Carbon;
 using NFSRaider.GeneratedStrings.PartsLists.MostWanted;
 using NFSRaider.GeneratedStrings.PartsLists.ProStreet;
 using NFSRaider.GeneratedStrings.PartsLists.Undercover;
+using NFSRaider.GeneratedStrings.PartsLists.UndercoverOldGen;
 using NFSRaider.GeneratedStrings.PartsLists.Underground1;
 using NFSRaider.GeneratedStrings.PartsLists.Underground2;
 using NFSRaider.GeneratedStrings.Shared;
@@ -35,6 +36,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists
                 .Concat(new BuildMostWantedPartsList().GetAllMostWantedParts())
                 .Concat(new BuildCarbonPartsList().GetAllCarbonParts())
                 .Concat(new BuildProStreetPartsList().GetAllProStreetParts())
+                .Concat(new BuildUndercoverOldGenPartsList().GetAllUndercoverOldGenParts())
                 .Concat(new BuildUndercoverPartsList().GetAllUndercoverParts())
                 );
 

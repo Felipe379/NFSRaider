@@ -165,7 +165,6 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
 "COPGTO",
 "CROSS",
 "CROSS_HENCHMEN",
-"DEBUG",
 "BUSHIDO_WINGMAN",
 "BOSS_BUSHIDO",
 "DEMO_CAMARO",

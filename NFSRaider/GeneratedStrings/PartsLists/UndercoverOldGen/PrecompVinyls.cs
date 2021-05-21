@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
+namespace NFSRaider.GeneratedStrings.PartsLists.UndercoverOldGen
 {
     public static class PrecompVinyls
     {
@@ -20,9 +20,6 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
 "COLIBRISGENERIC",
 "COLIN",
 "COROLLA",
-"CREW03",
-"CREW04",
-"CREW05",
 "CROSS",
 "CS_300C",
 "CS_350Z",

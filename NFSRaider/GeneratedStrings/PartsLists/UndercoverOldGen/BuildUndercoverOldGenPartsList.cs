@@ -2,42 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
+namespace NFSRaider.GeneratedStrings.PartsLists.UndercoverOldGen
 {
-    public class BuildCarbonPartsList
+    public class BuildUndercoverOldGenPartsList
     {
-        public HashSet<string> GetAllCarbonParts()
+        public HashSet<string> GetAllUndercoverOldGenParts()
         {
             var parts = new HashSet<string>(
-                Beacons.List
-                .Concat(Brakes.List)
+                Brakes.List
                 .Concat(ConcatenatedStrings.List)
                 .Concat(Decals.List)
-                .Concat(Decals.ListDemo)
-                .Concat(Headlights.ListDemo)
-                .Concat(Huds.ListDemo)
-                .Concat(HudsPaint.ListDemo)
                 .Concat(Paints.List)
-                .Concat(Paints.ListDemo)
                 .Concat(Plates.List)
                 .Concat(RoofScoops.List)
                 .Concat(VectorVinyls.List)
-                .Concat(VectorVinyls.ListDemo)
-                .Concat(VectorVinyls.ListPrerelease)
-                .Concat(Vinyls.ListDemo)
+                .Concat(Vinyls.List)
                 .Concat(Wheels.List)
                 .Concat(WheelsManufacturers.List)
                 .Concat(WindowTint.List)
-                .Concat(WindowTint.ListDemo)
                 );
 
             foreach (var lod in Lods.List)
             {
-                foreach (var beacon in Beacons.List)
-                {
-                    parts.Add(beacon + lod);
-                }
-
                 foreach (var brake in Brakes.List)
                 {
                     parts.Add(brake + lod);
