@@ -2,21 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NFSRaider.GeneratedStrings.PartsLists.UndercoverOldGen
+namespace NFSRaider.GeneratedStrings.PartsLists.World
 {
-    public class BuildUndercoverOldGenPartsList
+    public class BuildWorldPartsList
     {
-        public HashSet<string> GetAllUndercoverOldGenParts()
+        public HashSet<string> GetAllWorldParts()
         {
             var parts = new HashSet<string>(
                 Brakes.List
                 .Concat(ConcatenatedStrings.List)
                 .Concat(Decals.List)
+                .Concat(Effects.List)
+                .Concat(Enhancers.List)
+                .Concat(Neons.List)
                 .Concat(Paints.List)
                 .Concat(Plates.List)
+                .Concat(PlatesTextures.List)
                 .Concat(PrecompVinyls.List)
+                .Concat(RideHeightDrop.List)
                 .Concat(RoofScoops.List)
-                .Concat(VectorVinyls.List)
+                .Concat(VectorVinyls.ListAsianBeta)
                 .Concat(Vinyls.List)
                 .Concat(Wheels.List)
                 .Concat(WheelsManufacturers.List)
@@ -61,6 +66,12 @@ namespace NFSRaider.GeneratedStrings.PartsLists.UndercoverOldGen
                     parts.Add("AUTOSCULPTSPOILER" + "_" + spoiler + lod);
                     parts.Add("AUTOSCULPTSPOILER" + "_" + spoiler + "_CF" + lod);
                     foreach (var spoilerType in SpoilersType.List)
+                    {
+                        parts.Add("SPOILER" + "_" + spoiler + "_" + spoilerType + lod);
+                        parts.Add("SPOILER" + "_" + spoiler + "_" + spoilerType + "_CF" + lod);
+                    }
+
+                    foreach (var spoilerType in SpoilersType.ListAsianBeta)
                     {
                         parts.Add("SPOILER" + "_" + spoiler + "_" + spoilerType + lod);
                         parts.Add("SPOILER" + "_" + spoiler + "_" + spoilerType + "_CF" + lod);

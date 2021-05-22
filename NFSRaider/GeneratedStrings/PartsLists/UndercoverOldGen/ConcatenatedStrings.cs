@@ -21,6 +21,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.UndercoverOldGen
 "WHEELS6",
 "VINYL_SPECIFIC",
 "VINYL_GENERIC",
+"VECTORVINYL",
 "PLATES",
 "EXHAUST",
 "ROOF_SCOOP",

@@ -6,6 +6,7 @@ using NFSRaider.GeneratedStrings.PartsLists.Undercover;
 using NFSRaider.GeneratedStrings.PartsLists.UndercoverOldGen;
 using NFSRaider.GeneratedStrings.PartsLists.Underground1;
 using NFSRaider.GeneratedStrings.PartsLists.Underground2;
+using NFSRaider.GeneratedStrings.PartsLists.World;
 using NFSRaider.GeneratedStrings.Shared;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +39,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists
                 .Concat(new BuildProStreetPartsList().GetAllProStreetParts())
                 .Concat(new BuildUndercoverOldGenPartsList().GetAllUndercoverOldGenParts())
                 .Concat(new BuildUndercoverPartsList().GetAllUndercoverParts())
+                .Concat(new BuildWorldPartsList().GetAllWorldParts())
                 );
 
             foreach (var lod in Lods.List)
