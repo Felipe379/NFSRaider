@@ -907,5 +907,17 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
 "WILD_802B",
 "WILD_802C",
         };
+
+        public static readonly List<string> ListDemo = new List<string>() 
+        {
+            "MI_1",
+            "MI_2",
+            "MI_3",
+            "MI_4",
+            "MI_5",
+            "MI_6",
+            "MI_7",
+            "MI_8",
+        };
     }
 }

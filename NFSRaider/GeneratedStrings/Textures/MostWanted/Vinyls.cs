@@ -6,6 +6,8 @@ namespace NFSRaider.GeneratedStrings.Textures.MostWanted
     {
         public static readonly List<string> List = new List<string>
         {
+"_BMW_24",
+"_BMW_24_MASK",
 "_BODY01",
 "_BODY01_MASK",
 "_BODY02",
@@ -321,6 +323,15 @@ namespace NFSRaider.GeneratedStrings.Textures.MostWanted
 "_CROSS_MASK",
 "_CROSS_HENCHMEN",
 "_CROSS_HENCHMEN_MASK",
+        };
+
+        public static readonly List<string> ListDemo = new List<string>
+        {
+"_UINQUE01",
+"_UINQUE01_MASK",
+"_02TUROSATO",
+"_02TUROSATO_MASK",
+"_07KIRANAZAKATO_MASK",
         };
     }
 }

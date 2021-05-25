@@ -15,6 +15,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Undercover
                 .Concat(Plates.List)
                 .Concat(RoofScoop.List)
                 .Concat(Seat.List)
+                .Concat(SpoilersType.List)
                 .Concat(Wheels.List)
                 .Concat(Vinyls.List)
                 );

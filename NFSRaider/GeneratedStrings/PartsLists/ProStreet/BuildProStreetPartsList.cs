@@ -17,6 +17,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.ProStreet
                 .Concat(PaintSwatch.List)
                 .Concat(Plates.List)
                 .Concat(RoofScoop.List)
+                .Concat(SpoilersType.List)
                 .Concat(Seat.List)
                 .Concat(Wheels.List)
                 .Concat(Vinyls.List)

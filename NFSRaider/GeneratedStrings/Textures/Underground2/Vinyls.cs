@@ -1807,5 +1807,25 @@ namespace NFSRaider.GeneratedStrings.Textures.Underground2
 "_WILD_802C",
 "_WILD_802C_MASK",
         };
+
+        public static readonly List<string> ListDemo = new List<string>() 
+        {
+            "_MI_1",
+            "_MI_1_MASK",
+            "_MI_2",
+            "_MI_2_MASK",
+            "_MI_3",
+            "_MI_3_MASK",
+            "_MI_4",
+            "_MI_4_MASK",
+            "_MI_5",
+            "_MI_5_MASK",
+            "_MI_6",
+            "_MI_6_MASK",
+            "_MI_7",
+            "_MI_7_MASK",
+            "_MI_8",
+            "_MI_8_MASK",
+        };
     }
 }

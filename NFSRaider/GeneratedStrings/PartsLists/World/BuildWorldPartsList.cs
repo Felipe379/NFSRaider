@@ -23,6 +23,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.World
                 .Concat(RoofScoops.List)
                 .Concat(VectorVinyls.ListAsianBeta)
                 .Concat(Vinyls.List)
+                .Concat(Vinyls.ListRemoved)
                 .Concat(Wheels.List)
                 .Concat(WheelsManufacturers.List)
                 .Concat(WindowTint.List)

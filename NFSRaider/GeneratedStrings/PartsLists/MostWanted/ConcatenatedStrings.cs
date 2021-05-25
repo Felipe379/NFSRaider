@@ -32,6 +32,8 @@ namespace NFSRaider.GeneratedStrings.PartsLists.MostWanted
 "CALIPER",
 "MUFFLER",
 "HOSE",
+"DECAL_HOOD",
+"CV",
         };
     }
 }

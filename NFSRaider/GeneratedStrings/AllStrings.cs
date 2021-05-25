@@ -11,6 +11,7 @@ using NFSRaider.GeneratedStrings.Global;
 using NFSRaider.GeneratedStrings.LanguageLabels;
 using NFSRaider.GeneratedStrings.Materials;
 using NFSRaider.GeneratedStrings.PartsLists;
+using NFSRaider.GeneratedStrings.PartsListsOld;
 using NFSRaider.GeneratedStrings.Presets;
 using NFSRaider.GeneratedStrings.PresetSkins;
 using NFSRaider.GeneratedStrings.Tracks;
@@ -48,7 +49,7 @@ namespace NFSRaider.GeneratedStrings
                 hashSet.Add(i.ToString());
             }
 
-            hashSet.UnionWith(new BuildPartsList().GetAllParts()); // TODO: Rework this
+            hashSet.UnionWith(new BuildPartsList().GetAllParts());
 
             hashSet.UnionWith(new BuildAcidEffects().GetAllAcidEffects());
             hashSet.UnionWith(new BuildAcidEmitters().GetAllAcidEmitters());
@@ -67,6 +68,8 @@ namespace NFSRaider.GeneratedStrings
             hashSet.UnionWith(new BuildVlt().GetAllVlt());
 
             hashSet.UnionWith(new BuildFiles().GetAllFiles());
+
+            //hashSet.UnionWith(new BuildPartsListOld().GetAllParts());
 
             try
             {

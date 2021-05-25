@@ -33,12 +33,12 @@ namespace NFSRaider.GeneratedStrings.Textures
                     textures.Add(car + vinyl);
                 }
 
-                foreach (var vinyl in Underground2.Vinyls.List)
+                foreach (var vinyl in Underground2.Vinyls.List.Concat(Underground2.Vinyls.ListDemo))
                 {
                     textures.Add(car + vinyl);
                 }
 
-                foreach (var vinyl in MostWanted.Vinyls.List)
+                foreach (var vinyl in MostWanted.Vinyls.List.Concat(MostWanted.Vinyls.ListDemo))
                 {
                     textures.Add(car + vinyl);
                 }

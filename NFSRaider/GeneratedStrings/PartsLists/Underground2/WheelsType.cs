@@ -21,7 +21,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
             "20_32",
             "22_32",
             "24_32",
-            "26_32",
+            "26_34",
         };
     }
 }

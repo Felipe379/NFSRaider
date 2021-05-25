@@ -19,6 +19,8 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground1
 "WHEELS",
 "PLATES",
 "WHEEL_MANUFACTURERS",
+"DECAL_HOOD",
+"CV",
         };
     }
 }

@@ -28,6 +28,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
                 .Concat(RoofScoops.List)
                 .Concat(Spoilers.List)
                 .Concat(Vinyls.List)
+                .Concat(Vinyls.ListDemo)
                 .Concat(Wheels.List)
                 .Concat(WheelsManufacturers.List)
                 .Concat(WindowTint.List)

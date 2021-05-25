@@ -23,6 +23,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.MostWanted
                 .Concat(RoofScoops.List)
                 .Concat(Spoilers.List)
                 .Concat(Vinyls.List)
+                .Concat(Vinyls.ListDemo)
                 .Concat(Wheels.List)
                 .Concat(WheelsManufacturers.List)
                 .Concat(WindowTint.List)

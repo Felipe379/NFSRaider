@@ -44,6 +44,9 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
 "PEARL",
 "HOSE",
 "MUFFLER",
+"DECAL_HOOD",
+"NONE",
+"CV",
         };
     }
 }

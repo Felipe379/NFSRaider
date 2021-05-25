@@ -40,6 +40,8 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
             "GIANELLE_STYLE03",
             "GIANELLE_STYLE04",
             "GIANELLE_STYLE05",
+            "GIOVANNA_STYLE01",
+            "GIOVANNA_STYLE02",
             "KAIZER_STYLE01",
             "KONIG_STYLE01",
             "KONIG_STYLE02",

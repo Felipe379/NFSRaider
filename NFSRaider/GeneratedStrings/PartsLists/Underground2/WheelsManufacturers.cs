@@ -15,6 +15,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
 "ENKEI",
 "FOXX",
 "GIANELLE",
+"GIOVANNA",
 "KAIZER",
 "KONIG",
 "LEXANI",
