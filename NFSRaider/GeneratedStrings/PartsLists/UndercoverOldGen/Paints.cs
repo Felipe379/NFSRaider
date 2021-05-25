@@ -336,6 +336,10 @@ namespace NFSRaider.GeneratedStrings.PartsLists.UndercoverOldGen
 "CHROME",
 "CANDY",
 "IRIDESCENT",
+"COP",
+"TRAFFIC",
+"RIM",
+"VINYL",
         };
     }
 }

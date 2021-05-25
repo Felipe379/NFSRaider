@@ -13,6 +13,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.ProStreet
                 .Concat(Brakes.List)
                 .Concat(ConcatenatedStrings.List)
                 .Concat(Exhausts.List)
+                .Concat(Paints.List)
                 .Concat(PaintGroups.List)
                 .Concat(PaintSwatch.List)
                 .Concat(Plates.List)
@@ -67,6 +68,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.ProStreet
             {
                 foreach (var spoilerType in SpoilersType.List)
                 {
+                    parts.Add("SPOILER" + "_" + spoilerType);
                     parts.Add(spoiler + "_" + spoilerType);
                     foreach (var lod in Lods.List)
                     {

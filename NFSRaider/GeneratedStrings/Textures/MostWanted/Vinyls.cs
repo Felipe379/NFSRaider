@@ -331,6 +331,7 @@ namespace NFSRaider.GeneratedStrings.Textures.MostWanted
 "_UINQUE01_MASK",
 "_02TUROSATO",
 "_02TUROSATO_MASK",
+"_07KIRANAZAKATO",
 "_07KIRANAZAKATO_MASK",
         };
     }

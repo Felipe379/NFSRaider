@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using NFSRaider.GeneratedStrings.GCareers.Underground2;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace NFSRaider.GeneratedStrings.GCareers
@@ -8,7 +9,7 @@ namespace NFSRaider.GeneratedStrings.GCareers
         public HashSet<string> GetAllGCarrers()
         {
             var gCareers = new HashSet<string>(
-                Underground2.List);
+                new BuildUnderground2GCareers().GetAllUnderground2GCareers());
 
             return gCareers;
         }

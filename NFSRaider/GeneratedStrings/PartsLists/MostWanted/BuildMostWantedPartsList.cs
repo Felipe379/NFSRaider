@@ -62,6 +62,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.MostWanted
 
             foreach (var decal in Decals.List)
             {
+                parts.Add(decal + "_" + "WHITE");
                 foreach (var decalType in DecalsType.List)
                 {
                     parts.Add(decal + "_" + decalType);

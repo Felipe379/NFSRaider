@@ -182,7 +182,11 @@
     <Compile Include="Enum\CaseOptions.cs" />
     <Compile Include="Enum\OrderOptions.cs" />
     <Compile Include="Enum\HashType.cs" />
+    <Compile Include="GeneratedStrings\GCareers\Underground2\BuildUnderground2GCareers.cs" />
+    <Compile Include="GeneratedStrings\GCareers\Underground2\BankTriggers.cs" />
     <Compile Include="GeneratedStrings\PartsListOld\BuildPartsListOld.cs" />
+    <Compile Include="GeneratedStrings\PartsLists\ProStreet\Paints.cs" />
+    <Compile Include="GeneratedStrings\PartsLists\Undercover\Paints.cs" />
     <Compile Include="GeneratedStrings\PartsLists\World\Neons.cs" />
     <Compile Include="GeneratedStrings\PartsLists\World\Enhancers.cs" />
     <Compile Include="GeneratedStrings\PartsLists\World\Effects.cs" />
@@ -338,8 +342,8 @@
     <Compile Include="GeneratedStrings\Files\Localized\Languages.cs" />
     <Compile Include="GeneratedStrings\Fng\Undercover.cs" />
     <Compile Include="GeneratedStrings\Fng\UndercoverOldGen.cs" />
-    <Compile Include="GeneratedStrings\GCareers\BuildgCareers.cs" />
-    <Compile Include="GeneratedStrings\GCareers\Underground2.cs" />
+    <Compile Include="GeneratedStrings\GCareers\BuildGCareers.cs" />
+    <Compile Include="GeneratedStrings\GCareers\Underground2\PartPerformances.cs" />
     <Compile Include="GeneratedStrings\Materials\UndercoverOldGen.cs" />
     <Compile Include="GeneratedStrings\PartsLists\Undercover\BrakeRotor.cs" />
     <Compile Include="GeneratedStrings\PartsLists\Undercover\Brakes.cs" />

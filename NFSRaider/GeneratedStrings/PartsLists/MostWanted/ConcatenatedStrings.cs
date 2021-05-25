@@ -34,6 +34,8 @@ namespace NFSRaider.GeneratedStrings.PartsLists.MostWanted
 "HOSE",
 "DECAL_HOOD",
 "CV",
+"NUMBER_LEFT",
+"NUMBER_RIGHT",
         };
     }
 }

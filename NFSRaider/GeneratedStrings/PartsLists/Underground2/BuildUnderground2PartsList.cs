@@ -92,6 +92,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
 
             foreach (var decal in Decals.List)
             {
+                parts.Add(decal + "_" + "WHITE");
                 foreach (var decalType in DecalsType.List)
                 {
                     parts.Add(decal + "_" + decalType);

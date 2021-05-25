@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace NFSRaider.GeneratedStrings.GCareers
+namespace NFSRaider.GeneratedStrings.GCareers.Underground2
 {
-    public static class Underground2
+    public static class PartPerformances
     {
         public static readonly List<string> List = new List<string> 
         {

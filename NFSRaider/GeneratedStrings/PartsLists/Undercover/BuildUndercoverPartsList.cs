@@ -12,12 +12,15 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Undercover
                 BrakeRotor.List
                 .Concat(Brakes.List)
                 .Concat(ConcatenatedStrings.List)
+                .Concat(Paints.List)
                 .Concat(Plates.List)
                 .Concat(RoofScoop.List)
                 .Concat(Seat.List)
                 .Concat(SpoilersType.List)
                 .Concat(Wheels.List)
                 .Concat(Vinyls.List)
+                .Concat(Vinyls.ListA161)
+                .Concat(Vinyls.ListRemoved)
                 );
 
             foreach (var lod in Lods.List)
@@ -47,16 +50,18 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Undercover
             {
                 foreach (var lod in Lods.List)
                 {
-                    parts.Add(wheel + "_KIT00_WHEEL_TIRE_FRONT" + lod);
-                    parts.Add(wheel + "_KIT00_WHEEL_TIRE_REAR" + lod);
+                    parts.Add(wheel + "_" + "KIT00_WHEEL_TIRE_FRONT" + lod);
+                    parts.Add(wheel + "_" + "KIT00_WHEEL_TIRE_REAR" + lod);
                 }
-                parts.Add(wheel + "_00_KIT00_WHEEL");
+                parts.Add(wheel + "_" + "KIT00_WHEEL");
+                parts.Add(wheel + "_" + "KIT00");
             }
 
             foreach (var spoiler in Spoilers.List)
             {
                 foreach (var spoilerType in SpoilersType.List)
                 {
+                    parts.Add("SPOILER" + "_" + spoilerType);
                     parts.Add(spoiler + "_" + spoilerType);
                     foreach (var lod in Lods.List)
                     {
