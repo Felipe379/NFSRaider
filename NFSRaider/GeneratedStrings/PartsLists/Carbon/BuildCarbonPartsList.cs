@@ -17,6 +17,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
                 .Concat(Headlights.ListDemo)
                 .Concat(Huds.ListDemo)
                 .Concat(HudsPaint.ListDemo)
+                .Concat(Numbers.ListDemo)
                 .Concat(Paints.List)
                 .Concat(Paints.ListDemo)
                 .Concat(Plates.List)
@@ -74,12 +75,19 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
                     parts.Add("SPOILER" + "_" + spoiler + "_CF" + lod);
                     parts.Add("AUTOSCULPTSPOILER" + "_" + spoiler + lod);
                     parts.Add("AUTOSCULPTSPOILER" + "_" + spoiler + "_CF" + lod);
+
+                    parts.Add("SPOILER" + "_" + spoiler + "_" + "AUTOSCULPT" + lod); // from demo
+                    parts.Add("SPOILER" + "_" + spoiler + "_" + "AUTOSCULPT" + "_CF" + lod); //from demo
+
                     foreach (var spoilerType in SpoilersType.List)
                     {
                         parts.Add("SPOILER" + "_" + spoiler + "_" + spoilerType + lod);
                         parts.Add("SPOILER" + "_" + spoiler + "_" + spoilerType + "_CF" + lod);
                         parts.Add("AUTOSCULPTSPOILER" + "_" + spoiler + "_" + spoilerType + lod);
                         parts.Add("AUTOSCULPTSPOILER" + "_" + spoiler + "_" + spoilerType + "_CF" + lod);
+
+                        parts.Add("SPOILER" + "_" + spoiler + "_" + spoilerType + "_" + "AUTOSCULPT" + lod); // from demo
+                        parts.Add("SPOILER" + "_" + spoiler + "_" + spoilerType + "_" + "AUTOSCULPT" + "_CF" + lod); //from demo
                     }
                 }
             }

@@ -613,7 +613,6 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
 "DSL_EVO2",
 "DSL_GALLARDO",
 "RX8_COMICBOOK",
-"COMICBOOK",
 "HERO_CAR2",
 "CARRERA_AD",
 "COVER_CHALLENGERN",

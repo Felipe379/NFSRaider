@@ -185,6 +185,7 @@
     <Compile Include="GeneratedStrings\GCareers\Underground2\BuildUnderground2GCareers.cs" />
     <Compile Include="GeneratedStrings\GCareers\Underground2\BankTriggers.cs" />
     <Compile Include="GeneratedStrings\PartsListOld\BuildPartsListOld.cs" />
+    <Compile Include="GeneratedStrings\PartsLists\Carbon\Numbers.cs" />
     <Compile Include="GeneratedStrings\PartsLists\ProStreet\Paints.cs" />
     <Compile Include="GeneratedStrings\PartsLists\Undercover\Paints.cs" />
     <Compile Include="GeneratedStrings\PartsLists\World\Neons.cs" />

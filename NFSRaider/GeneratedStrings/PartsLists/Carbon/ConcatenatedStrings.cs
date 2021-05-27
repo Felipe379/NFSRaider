@@ -261,6 +261,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
 "EVO",
 "EVO2",
 "CAR2",
+"COMICBOOK",
 "AD",
 "KNOCKOUT",
 "FEVER",
@@ -362,6 +363,8 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
 "CAR2",
 "BUTTERFLY2",
 "ATOM2",
+"NUMBER_LEFT",
+"NUMBER_RIGHT",
         };
     }
 }
