@@ -22,6 +22,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.ProStreet
                 .Concat(Seat.List)
                 .Concat(Wheels.List)
                 .Concat(Vinyls.List)
+                .Concat(Vinyls.ListRemoved)
                 );
 
             foreach (var lod in Lods.List)
