@@ -16,6 +16,8 @@ namespace NFSRaider.GeneratedStrings.LanguageLabels
                 .Concat(Undercover.List)
                 .Concat(UndercoverOldGen.List)
                 .Concat(World.List)
+                .Concat(World.ListAsian)
+                .Concat(World.ListRemoved)
                 );
 
             languageLabels.UnionWith(new HashSet<string>(languageLabels.Select(c => c.ToUpperInvariant())));

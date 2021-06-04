@@ -159,6 +159,7 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                 EnglishName = new List<string>
                 {
                     "HUNGARIAN",
+                    "HUNGARY",
                 },
                 ThreeLettersCode = new List<string>
                 {

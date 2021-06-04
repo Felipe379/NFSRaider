@@ -417,6 +417,7 @@ namespace NFSRaider
                 {
                     LstUnhashed.ClearSelected();
                     LstUnhashed.SetSelected(i, true);
+                    LstUnhashed.Focus();
                     break;
                 }
             }
@@ -430,6 +431,7 @@ namespace NFSRaider
                 {
                     LstUnhashed.ClearSelected();
                     LstUnhashed.SetSelected(i, true);
+                    LstUnhashed.Focus();
                     break;
                 }
             }
@@ -452,6 +454,7 @@ namespace NFSRaider
                     LstUnhashed.SetSelected(i, true);
                 }
             }
+            LstUnhashed.Focus();
         }
 
         private bool ItemFound(int i)

@@ -321,6 +321,10 @@
     <Compile Include="GeneratedStrings\PartsLists\MostWanted\Wheels.cs" />
     <Compile Include="GeneratedStrings\PartsLists\ProStreet\Plates.cs" />
     <Compile Include="GeneratedStrings\PartsLists\Undercover\Plates.cs" />
+    <Compile Include="GeneratedStrings\Tracks\LightFlaresPack\BuildLightFlaresPack.cs" />
+    <Compile Include="GeneratedStrings\Tracks\LightFlaresPack\Underground2.cs" />
+    <Compile Include="GeneratedStrings\Tracks\PositionMarkers\BuildParameterSets.cs" />
+    <Compile Include="GeneratedStrings\Tracks\PositionMarkers\PositionMarkers.cs" />
     <Compile Include="Raider\Unhash.cs" />
     <Compile Include="Raider\File.cs" />
     <Compile Include="Raider\Model\Variation.cs" />

@@ -193,6 +193,9 @@ namespace NFSRaider.GeneratedStrings.Presets
 "TEMP_SHELBY",
 "TEMP_SHELBY2",
 "TUNER",
+"CE_CUDA",
+"CE_CARRERA",
+"CE_WRX",
         };
     }
 }
