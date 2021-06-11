@@ -4,10 +4,11 @@ using NFSRaider.Hash;
 using NFSRaider.Helpers;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace NFSRaider.Raider
-
 {
     public static class File
     {
@@ -37,6 +38,24 @@ namespace NFSRaider.Raider
             }
 
             return arrayFromFileWithHashesSkipped.ToArray();
+        }
+
+        public static string[] Open(string filePath)
+        {
+            var listString = new List<string>();
+
+            using (var fileStream = System.IO.File.OpenRead(filePath))
+            using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true))
+            {
+                var line = string.Empty;
+
+                while ((line = streamReader.ReadLine()) != null)
+                {
+                    listString.Add(line);
+                }
+            }
+
+            return listString.ToArray();
         }
 
         public static List<RaiderResult> UnhashFromFile(Endianness unhashingEndianness, HashFactory hashFactory, uint[] arrayFromFile, CaseOptions caseOption)
@@ -81,6 +100,18 @@ namespace NFSRaider.Raider
                 {
                     AddResult(hash.Reverse());
                 }
+            }
+
+            return listBox;
+        }
+
+        public static List<RaiderResult> HashFromFile(HashFactory hashFactory, string[] arrayFromFile)
+        {
+            var listBox = new List<RaiderResult>();
+
+            foreach (var hashString in arrayFromFile)
+            {
+                listBox.Add(new RaiderResult() { Hash = hashFactory.Hash(hashString), Value = hashString, IsKnown = true });
             }
 
             return listBox;

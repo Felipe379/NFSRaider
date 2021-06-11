@@ -40,8 +40,6 @@
             this.LblSkipHashes = new System.Windows.Forms.Label();
             this.LblEndOffset = new System.Windows.Forms.Label();
             this.LblStartOffset = new System.Windows.Forms.Label();
-            this.RdbLoadFromText = new System.Windows.Forms.RadioButton();
-            this.RdbLoadFile = new System.Windows.Forms.RadioButton();
             this.GrpHashingOptions = new System.Windows.Forms.GroupBox();
             this.CboHashTypes = new System.Windows.Forms.ComboBox();
             this.CboEndianness = new System.Windows.Forms.ComboBox();
@@ -94,6 +92,10 @@
             this.LblTimeElapsed = new System.Windows.Forms.Label();
             this.ToolTipNFSRaider = new System.Windows.Forms.ToolTip(this.components);
             this.BtnSearchAll = new System.Windows.Forms.Button();
+            this.TabLoadOptions = new System.Windows.Forms.TabControl();
+            this.TabPageFromFile = new System.Windows.Forms.TabPage();
+            this.TabPageFromText = new System.Windows.Forms.TabPage();
+            this.CboRaiderMode = new System.Windows.Forms.ComboBox();
             this.GrpLoadOptions.SuspendLayout();
             this.GrpHashingOptions.SuspendLayout();
             this.GrpExportOptions.SuspendLayout();
@@ -102,6 +104,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.NumericProcessorsCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericMaxVariations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericMinVariations)).BeginInit();
+            this.TabLoadOptions.SuspendLayout();
+            this.TabPageFromFile.SuspendLayout();
+            this.TabPageFromText.SuspendLayout();
             this.SuspendLayout();
             // 
             // LstUnhashed
@@ -117,7 +122,7 @@
             // 
             // BtnLoadFile
             // 
-            this.BtnLoadFile.Location = new System.Drawing.Point(157, 41);
+            this.BtnLoadFile.Location = new System.Drawing.Point(6, 6);
             this.BtnLoadFile.Name = "BtnLoadFile";
             this.BtnLoadFile.Size = new System.Drawing.Size(123, 23);
             this.BtnLoadFile.TabIndex = 18;
@@ -127,26 +132,17 @@
             // 
             // TxtLoadFromText
             // 
-            this.TxtLoadFromText.Location = new System.Drawing.Point(6, 41);
+            this.TxtLoadFromText.Location = new System.Drawing.Point(6, 6);
             this.TxtLoadFromText.MaxLength = 2147483647;
             this.TxtLoadFromText.Multiline = true;
             this.TxtLoadFromText.Name = "TxtLoadFromText";
             this.TxtLoadFromText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.TxtLoadFromText.Size = new System.Drawing.Size(133, 251);
+            this.TxtLoadFromText.Size = new System.Drawing.Size(254, 249);
             this.TxtLoadFromText.TabIndex = 17;
             // 
             // GrpLoadOptions
             // 
-            this.GrpLoadOptions.Controls.Add(this.TxtFileReadHashes);
-            this.GrpLoadOptions.Controls.Add(this.LblReadHashes);
-            this.GrpLoadOptions.Controls.Add(this.TxtFileSkipHashes);
-            this.GrpLoadOptions.Controls.Add(this.LblSkipHashes);
-            this.GrpLoadOptions.Controls.Add(this.LblEndOffset);
-            this.GrpLoadOptions.Controls.Add(this.LblStartOffset);
-            this.GrpLoadOptions.Controls.Add(this.BtnLoadFile);
-            this.GrpLoadOptions.Controls.Add(this.RdbLoadFromText);
-            this.GrpLoadOptions.Controls.Add(this.TxtLoadFromText);
-            this.GrpLoadOptions.Controls.Add(this.RdbLoadFile);
+            this.GrpLoadOptions.Controls.Add(this.TabLoadOptions);
             this.GrpLoadOptions.Location = new System.Drawing.Point(312, 232);
             this.GrpLoadOptions.Name = "GrpLoadOptions";
             this.GrpLoadOptions.Size = new System.Drawing.Size(286, 311);
@@ -156,7 +152,7 @@
             // 
             // TxtFileReadHashes
             // 
-            this.TxtFileReadHashes.Location = new System.Drawing.Point(157, 174);
+            this.TxtFileReadHashes.Location = new System.Drawing.Point(6, 128);
             this.TxtFileReadHashes.Name = "TxtFileReadHashes";
             this.TxtFileReadHashes.Size = new System.Drawing.Size(124, 20);
             this.TxtFileReadHashes.TabIndex = 24;
@@ -166,7 +162,7 @@
             // LblReadHashes
             // 
             this.LblReadHashes.AutoSize = true;
-            this.LblReadHashes.Location = new System.Drawing.Point(154, 158);
+            this.LblReadHashes.Location = new System.Drawing.Point(3, 112);
             this.LblReadHashes.Name = "LblReadHashes";
             this.LblReadHashes.Size = new System.Drawing.Size(70, 13);
             this.LblReadHashes.TabIndex = 23;
@@ -174,7 +170,7 @@
             // 
             // TxtFileSkipHashes
             // 
-            this.TxtFileSkipHashes.Location = new System.Drawing.Point(156, 215);
+            this.TxtFileSkipHashes.Location = new System.Drawing.Point(5, 169);
             this.TxtFileSkipHashes.Name = "TxtFileSkipHashes";
             this.TxtFileSkipHashes.Size = new System.Drawing.Size(124, 20);
             this.TxtFileSkipHashes.TabIndex = 26;
@@ -184,7 +180,7 @@
             // LblSkipHashes
             // 
             this.LblSkipHashes.AutoSize = true;
-            this.LblSkipHashes.Location = new System.Drawing.Point(154, 199);
+            this.LblSkipHashes.Location = new System.Drawing.Point(3, 153);
             this.LblSkipHashes.Name = "LblSkipHashes";
             this.LblSkipHashes.Size = new System.Drawing.Size(65, 13);
             this.LblSkipHashes.TabIndex = 25;
@@ -193,7 +189,7 @@
             // LblEndOffset
             // 
             this.LblEndOffset.AutoSize = true;
-            this.LblEndOffset.Location = new System.Drawing.Point(154, 119);
+            this.LblEndOffset.Location = new System.Drawing.Point(3, 73);
             this.LblEndOffset.Name = "LblEndOffset";
             this.LblEndOffset.Size = new System.Drawing.Size(55, 13);
             this.LblEndOffset.TabIndex = 21;
@@ -202,38 +198,11 @@
             // LblStartOffset
             // 
             this.LblStartOffset.AutoSize = true;
-            this.LblStartOffset.Location = new System.Drawing.Point(154, 78);
+            this.LblStartOffset.Location = new System.Drawing.Point(3, 32);
             this.LblStartOffset.Name = "LblStartOffset";
             this.LblStartOffset.Size = new System.Drawing.Size(58, 13);
             this.LblStartOffset.TabIndex = 19;
             this.LblStartOffset.Text = "Start offset";
-            // 
-            // RdbLoadFromText
-            // 
-            this.RdbLoadFromText.AutoSize = true;
-            this.RdbLoadFromText.Location = new System.Drawing.Point(6, 18);
-            this.RdbLoadFromText.Name = "RdbLoadFromText";
-            this.RdbLoadFromText.Size = new System.Drawing.Size(92, 17);
-            this.RdbLoadFromText.TabIndex = 15;
-            this.RdbLoadFromText.Text = "Load from text";
-            this.ToolTipNFSRaider.SetToolTip(this.RdbLoadFromText, "Load the set of hashes from the textbox.\r\nHashes must be separated by a new line." +
-        "");
-            this.RdbLoadFromText.UseVisualStyleBackColor = true;
-            this.RdbLoadFromText.CheckedChanged += new System.EventHandler(this.RdbLoadFromText_CheckedChanged);
-            // 
-            // RdbLoadFile
-            // 
-            this.RdbLoadFile.AutoSize = true;
-            this.RdbLoadFile.Checked = true;
-            this.RdbLoadFile.Location = new System.Drawing.Point(157, 17);
-            this.RdbLoadFile.Name = "RdbLoadFile";
-            this.RdbLoadFile.Size = new System.Drawing.Size(88, 17);
-            this.RdbLoadFile.TabIndex = 16;
-            this.RdbLoadFile.TabStop = true;
-            this.RdbLoadFile.Text = "Load from file";
-            this.ToolTipNFSRaider.SetToolTip(this.RdbLoadFile, "Load the set of hashes from binary files.");
-            this.RdbLoadFile.UseVisualStyleBackColor = true;
-            this.RdbLoadFile.CheckedChanged += new System.EventHandler(this.RdbLoadFile_CheckedChanged);
             // 
             // GrpHashingOptions
             // 
@@ -453,7 +422,7 @@
             // 
             // TxtFileStartOffset
             // 
-            this.TxtFileStartOffset.Location = new System.Drawing.Point(468, 329);
+            this.TxtFileStartOffset.Location = new System.Drawing.Point(6, 50);
             this.TxtFileStartOffset.Name = "TxtFileStartOffset";
             this.TxtFileStartOffset.Size = new System.Drawing.Size(124, 20);
             this.TxtFileStartOffset.TabIndex = 20;
@@ -462,7 +431,7 @@
             // 
             // TxtFileEndOffset
             // 
-            this.TxtFileEndOffset.Location = new System.Drawing.Point(468, 370);
+            this.TxtFileEndOffset.Location = new System.Drawing.Point(6, 89);
             this.TxtFileEndOffset.Name = "TxtFileEndOffset";
             this.TxtFileEndOffset.Size = new System.Drawing.Size(124, 20);
             this.TxtFileEndOffset.TabIndex = 22;
@@ -812,11 +781,66 @@
             this.BtnSearchAll.UseVisualStyleBackColor = true;
             this.BtnSearchAll.Click += new System.EventHandler(this.BtnSearchAll_Click);
             // 
+            // TabLoadOptions
+            // 
+            this.TabLoadOptions.Controls.Add(this.TabPageFromFile);
+            this.TabLoadOptions.Controls.Add(this.TabPageFromText);
+            this.TabLoadOptions.Location = new System.Drawing.Point(6, 19);
+            this.TabLoadOptions.Name = "TabLoadOptions";
+            this.TabLoadOptions.SelectedIndex = 0;
+            this.TabLoadOptions.Size = new System.Drawing.Size(274, 287);
+            this.TabLoadOptions.TabIndex = 67;
+            this.TabLoadOptions.SelectedIndexChanged += new System.EventHandler(this.TabLoadOptions_SelectedIndexChanged);
+            // 
+            // TabPageFromFile
+            // 
+            this.TabPageFromFile.Controls.Add(this.TxtFileReadHashes);
+            this.TabPageFromFile.Controls.Add(this.BtnLoadFile);
+            this.TabPageFromFile.Controls.Add(this.LblReadHashes);
+            this.TabPageFromFile.Controls.Add(this.LblStartOffset);
+            this.TabPageFromFile.Controls.Add(this.TxtFileSkipHashes);
+            this.TabPageFromFile.Controls.Add(this.LblEndOffset);
+            this.TabPageFromFile.Controls.Add(this.LblSkipHashes);
+            this.TabPageFromFile.Controls.Add(this.TxtFileStartOffset);
+            this.TabPageFromFile.Controls.Add(this.TxtFileEndOffset);
+            this.TabPageFromFile.Location = new System.Drawing.Point(4, 22);
+            this.TabPageFromFile.Name = "TabPageFromFile";
+            this.TabPageFromFile.Padding = new System.Windows.Forms.Padding(3);
+            this.TabPageFromFile.Size = new System.Drawing.Size(272, 261);
+            this.TabPageFromFile.TabIndex = 0;
+            this.TabPageFromFile.Text = "File";
+            this.TabPageFromFile.UseVisualStyleBackColor = true;
+            // 
+            // TabPageFromText
+            // 
+            this.TabPageFromText.Controls.Add(this.TxtLoadFromText);
+            this.TabPageFromText.Location = new System.Drawing.Point(4, 22);
+            this.TabPageFromText.Name = "TabPageFromText";
+            this.TabPageFromText.Padding = new System.Windows.Forms.Padding(3);
+            this.TabPageFromText.Size = new System.Drawing.Size(266, 261);
+            this.TabPageFromText.TabIndex = 1;
+            this.TabPageFromText.Text = "Text";
+            this.TabPageFromText.UseVisualStyleBackColor = true;
+            // 
+            // CboRaiderMode
+            // 
+            this.CboRaiderMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CboRaiderMode.FormattingEnabled = true;
+            this.CboRaiderMode.Items.AddRange(new object[] {
+            "Unhasher",
+            "Hasher"});
+            this.CboRaiderMode.Location = new System.Drawing.Point(312, 123);
+            this.CboRaiderMode.Name = "CboRaiderMode";
+            this.CboRaiderMode.Size = new System.Drawing.Size(92, 21);
+            this.CboRaiderMode.TabIndex = 67;
+            this.CboRaiderMode.SelectedIndexChanged += new System.EventHandler(this.CboRaiderMode_SelectedIndexChanged);
+            // 
             // NFSRaiderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.CboRaiderMode);
             this.Controls.Add(this.BtnSearchAll);
             this.Controls.Add(this.LblTimeElapsed);
             this.Controls.Add(this.CboForceHashListCase);
@@ -831,8 +855,6 @@
             this.Controls.Add(this.BtnClear);
             this.Controls.Add(this.BtnStop);
             this.Controls.Add(this.BtnStart);
-            this.Controls.Add(this.TxtFileEndOffset);
-            this.Controls.Add(this.TxtFileStartOffset);
             this.Controls.Add(this.GrpExportOptions);
             this.Controls.Add(this.LblVariations);
             this.Controls.Add(this.LblSuffixes);
@@ -848,7 +870,6 @@
             this.Name = "NFSRaiderForm";
             this.Text = "NFS-Raider";
             this.GrpLoadOptions.ResumeLayout(false);
-            this.GrpLoadOptions.PerformLayout();
             this.GrpHashingOptions.ResumeLayout(false);
             this.GrpExportOptions.ResumeLayout(false);
             this.GrpExportOptions.PerformLayout();
@@ -859,6 +880,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.NumericProcessorsCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericMaxVariations)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericMinVariations)).EndInit();
+            this.TabLoadOptions.ResumeLayout(false);
+            this.TabPageFromFile.ResumeLayout(false);
+            this.TabPageFromFile.PerformLayout();
+            this.TabPageFromText.ResumeLayout(false);
+            this.TabPageFromText.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -872,8 +898,6 @@
         private System.Windows.Forms.GroupBox GrpLoadOptions;
         private System.Windows.Forms.Label LblEndOffset;
         private System.Windows.Forms.Label LblStartOffset;
-        private System.Windows.Forms.RadioButton RdbLoadFromText;
-        private System.Windows.Forms.RadioButton RdbLoadFile;
         private System.Windows.Forms.GroupBox GrpHashingOptions;
         private System.Windows.Forms.TextBox TxtPrefixes;
         private System.Windows.Forms.TextBox TxtVariations;
@@ -930,6 +954,10 @@
         private System.Windows.Forms.Label LblBruteforceOptionsProcessors;
         private System.Windows.Forms.ToolTip ToolTipNFSRaider;
         private System.Windows.Forms.Button BtnSearchAll;
+        private System.Windows.Forms.TabControl TabLoadOptions;
+        private System.Windows.Forms.TabPage TabPageFromFile;
+        private System.Windows.Forms.TabPage TabPageFromText;
+        private System.Windows.Forms.ComboBox CboRaiderMode;
     }
 }
 

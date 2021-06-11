@@ -180,6 +180,7 @@
     <Compile Include="Case\UpperCase.cs" />
     <Compile Include="Enum\Endianess.cs" />
     <Compile Include="Enum\CaseOptions.cs" />
+    <Compile Include="Enum\RaiderMode.cs" />
     <Compile Include="Enum\OrderOptions.cs" />
     <Compile Include="Enum\HashType.cs" />
     <Compile Include="GeneratedStrings\GCareers\Underground2\BuildUnderground2GCareers.cs" />
@@ -325,6 +326,7 @@
     <Compile Include="GeneratedStrings\Tracks\LightFlaresPack\Underground2.cs" />
     <Compile Include="GeneratedStrings\Tracks\PositionMarkers\BuildParameterSets.cs" />
     <Compile Include="GeneratedStrings\Tracks\PositionMarkers\PositionMarkers.cs" />
+    <Compile Include="Raider\Hash.cs" />
     <Compile Include="Raider\Unhash.cs" />
     <Compile Include="Raider\File.cs" />
     <Compile Include="Raider\Model\Variation.cs" />
