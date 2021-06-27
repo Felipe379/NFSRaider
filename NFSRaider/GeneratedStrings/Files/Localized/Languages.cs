@@ -32,6 +32,7 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                     "CHINESE_SIMP",
                     "CHINESE_TRAD",
                     "SIMPLIFIED_CHINESE",
+                    "TRAD_CHINESE",
                     "TRADITIONAL_CHINESE",
                     "TCHINESE",
                 },
@@ -105,6 +106,21 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                 TwoLettersCode = new List<string>
                 {
                     "EN",
+                }
+            },
+            new Language
+            {
+                EnglishName = new List<string>
+                {
+                    "EUROPE", //PLACEHOLDER
+                },
+                ThreeLettersCode = new List<string>
+                {
+                    "EUR", //PLACEHOLDER
+                },
+                TwoLettersCode = new List<string>
+                {
+                    "EU",
                 }
             },
             new Language
@@ -214,7 +230,7 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
                 },
                 TwoLettersCode = new List<string>
                 {
-                    "KO", //PLACEHOLDER
+                    "KO",
                 }
             },
             new Language

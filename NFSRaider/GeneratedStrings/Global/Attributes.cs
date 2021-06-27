@@ -116,6 +116,7 @@ namespace NFSRaider.GeneratedStrings.Global
             "KITNOTPAINT18",
             "WARNONDELETE",
             "COMPLEXTARGET",
+            "LANGUAGEHASHABR",
         };
     }
 }

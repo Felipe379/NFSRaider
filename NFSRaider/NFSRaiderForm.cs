@@ -450,7 +450,7 @@ namespace NFSRaider
 
         private void CboForceHashListCase_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CboForceHashListCase.SelectedIndex >= 0 && CboOrderBy.SelectedIndex <= 2)
+            if (CboForceHashListCase.SelectedIndex >= 0 && CboForceHashListCase.SelectedIndex <= 2)
                 CaseOption = (CaseOptions)CboForceHashListCase.SelectedIndex;
             else
                 CaseOption = CaseOptions.None;

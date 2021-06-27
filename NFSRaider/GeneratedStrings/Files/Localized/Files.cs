@@ -2572,6 +2572,7 @@ namespace NFSRaider.GeneratedStrings.Files.Localized
 @"MOVIES\XSELL_SSX_(EnglishName)_PAL.MPV",
 @"MOVIES\XSELL_SSX_(EnglishName)_PAL.VP6",
 @"MOVIES\XSELL_SSX_(EnglishName)_PAL.WMV",
+@"ONLINE\DIRTYDNAS_(TwoLettersCode).ELF",
 @"NIS\PS_NIS_PC_(TwoLettersCode).RBK",
 @"NIS\PS_NIS_PC_(TwoLettersCode).SBK",
 @"NIS\PS_NIS_PSX2_(TwoLettersCode).RBK",

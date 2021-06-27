@@ -42,6 +42,16 @@ namespace NFSRaider.GeneratedStrings.PartsLists
                 }
             }
 
+            foreach (var partAnimation in PartsAnimations.List)
+            {
+                foreach (var car in CarList)
+                {
+                    parts.Add(car + partAnimation);
+                    parts.Add(car + partAnimation + "_" + "q");
+                    parts.Add(car + partAnimation + "_" + "t");
+                }
+            }
+
             return parts;
         }
     }
