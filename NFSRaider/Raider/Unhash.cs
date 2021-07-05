@@ -238,20 +238,20 @@ namespace NFSRaider.Raider
 
                 if (forceBreakPreventOutMemory)
                     Sender.GenericMessageBoxDuringBruteForce("Bruteforce info", $"Not all variations were generated. Generations stopped to prevent out of memory exception." +
-                        $"\r\nHashes identified: {Hashes.Count}" +
-                        $"\r\nLast word generated: {lastWordGenerated}" +
-                        $"\r\nTotal of strings to choose from: {variationModel.Variations.Count}");
+                        $"{Environment.NewLine}Hashes identified: {Hashes.Count}" +
+                        $"{Environment.NewLine}Last word generated: {lastWordGenerated}" +
+                        $"{Environment.NewLine}Total of strings to choose from: {variationModel.Variations.Count}");
                 else
                     Sender.GenericMessageBoxDuringBruteForce("Bruteforce info", $"Generated all variations from groups!" +
-                        $"\r\nHashes identified: {Hashes.Count}" +
-                        $"\r\nTotal of strings to choose from: {variationModel.Variations.Count}");
+                        $"{Environment.NewLine}Hashes identified: {Hashes.Count}" +
+                        $"{Environment.NewLine}Total of strings to choose from: {variationModel.Variations.Count}");
             }
             else
             {
                 variationModel.Variations = new List<string>(VariationModel.Variations);
                 Sender.GenericMessageBoxDuringBruteForce("Bruteforce info", $"No groups found to generate variations!" +
-                    $"\r\nHashes identified: {Hashes.Count}" +
-                    $"\r\nTotal of strings to choose from: {variationModel.Variations.Count}");
+                    $"{Environment.NewLine}Hashes identified: {Hashes.Count}" +
+                    $"{Environment.NewLine}Total of strings to choose from: {variationModel.Variations.Count}");
             }
 
             return variationModel;

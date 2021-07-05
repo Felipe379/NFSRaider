@@ -152,13 +152,13 @@ namespace NFSRaider
                         }
                         else
                         {
-                            var message = "Failed to raid:\r\n";
+                            var message = $"Failed to raid:{Environment.NewLine}";
                             if (string.IsNullOrWhiteSpace(TxtLoadFromText.Text))
-                                message += "- You must include hashes on the list.\r\n";
+                                message += $"- You must include hashes on the list.{Environment.NewLine}";
                             if (Convert.ToInt32(NumericMinVariations.Text) > Convert.ToInt32(NumericMaxVariations.Text))
-                                message += "- Minimum amount of variations cannot be bigger than the maximum amount of variations.\r\n";
+                                message += $"- Minimum amount of variations cannot be bigger than the maximum amount of variations.{Environment.NewLine}";
                             if (string.IsNullOrWhiteSpace(TxtPrefixes.Text) && string.IsNullOrWhiteSpace(TxtVariations.Text) && string.IsNullOrWhiteSpace(TxtSuffixes.Text))
-                                message += "- You must fill at least one of those: Prefixes, Variations or Suffixes.";
+                                message += $"- You must fill at least one of those: Prefixes, Variations or Suffixes.";
                             MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
@@ -182,9 +182,9 @@ namespace NFSRaider
                         }
                         else
                         {
-                            var message = "Failed to raid:\r\n";
+                            var message = $"Failed to raid:{Environment.NewLine}";
                             if (string.IsNullOrWhiteSpace(TxtLoadFromText.Text))
-                                message += "- You must include hashes on the list.\r\n";
+                                message += $"- You must include hashes on the list.{Environment.NewLine}";
                             MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
@@ -192,9 +192,9 @@ namespace NFSRaider
             }
             catch (Exception ex)
             {
-                if (MessageBox.Show("An exception has occurred! You can check the details below:\r\n\r\n" + 
+                if (MessageBox.Show($"An exception has occurred! You can check the details below:{Environment.NewLine}{Environment.NewLine}" + 
                     ex.ToString() +
-                    "\r\n\r\nDo you want to continue anyway? The application may not work properly.", "Exception", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.No)
+                    $"{Environment.NewLine}{Environment.NewLine}Do you want to continue anyway? The application may not work properly.", "Exception", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.No)
                 {
                     Application.Exit();
                 }
@@ -487,19 +487,27 @@ namespace NFSRaider
 
         private void BtnSearchAll_Click(object sender, EventArgs e)
         {
-            var cleared = false;
+            var listOfItems = new List<int>();
             for (int i = 0; i <= LstUnhashed.Items.Count - 1; i++)
             {
                 if (ItemFound(i))
                 {
-                    if (!cleared)
-                    {
-                        LstUnhashed.ClearSelected();
-                        cleared = true;
-                    }
-
-                    LstUnhashed.SetSelected(i, true);
+                    listOfItems.Add(i);
                 }
+            }
+
+            if (listOfItems.Any())
+            {
+                LstUnhashed.ClearSelected();
+
+                LstUnhashed.BeginUpdate();
+
+                foreach (var item in listOfItems)
+                {
+                    LstUnhashed.SetSelected(item, true);
+                }
+
+                LstUnhashed.EndUpdate();
             }
             LstUnhashed.Focus();
         }
@@ -523,7 +531,8 @@ namespace NFSRaider
                     {
                         File.WriteAllLines(saveFileDialog.FileName, (IList<string>)LstUnhashed.DataSource);
 
-                        if (MessageBox.Show($"List exported to file:\r\n{Path.GetFileName(saveFileDialog.FileName)}\r\nDo you want to open it?", "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                        if (MessageBox.Show($"List exported to file:{Environment.NewLine}{Path.GetFileName(saveFileDialog.FileName)}{Environment.NewLine}Do you want to open it?",
+                            "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                         {
                             Process.Start(saveFileDialog.FileName);
                         }
@@ -549,7 +558,7 @@ namespace NFSRaider
         {
             if (e.Control == true && e.KeyCode == Keys.C && LstUnhashed.SelectedItems.Count > 0)
             {
-                var items = string.Join("\r\n", LstUnhashed.SelectedItems.Cast<string>());
+                var items = string.Join(Environment.NewLine, LstUnhashed.SelectedItems.Cast<string>());
                 Clipboard.SetData(DataFormats.StringFormat, items);
             }
         }

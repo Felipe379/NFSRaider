@@ -75,6 +75,7 @@ namespace NFSRaider.GeneratedStrings.CarsPositionMarkers
 "ROOF_SCOOP_T1",
 "SPOILER",
 "SPOILER2",
-"TRUNK",        };
+"TRUNK", 
+        };
     }
 }

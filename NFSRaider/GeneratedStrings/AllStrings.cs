@@ -79,13 +79,13 @@ namespace NFSRaider.GeneratedStrings
                 {
                     foreach (var hashString in hashSet)
                     {
-                        writer.Write($"{hashString}\r\n");
+                        writer.Write($"{hashString}{Environment.NewLine}");
                     }
                 }
             }
             catch (Exception exp)
             {
-                MessageBox.Show($"Failed to write to Hashes.txt. Error:\r\n {exp.Message}");
+                MessageBox.Show($"Failed to write to Hashes.txt. Error:{Environment.NewLine}{exp.Message}");
             }
         }
 
