@@ -73,6 +73,8 @@ namespace NFSRaider.GeneratedStrings.CarsPositionMarkers
 "REAR_NEON_0_START",
 "REAR_NEON_1_END",
 "REAR_NEON_1_START",
+"REAR_NEON_2_END",
+"REAR_NEON_2_START",
 "REAR_WINDOW",
 "RIGHT_BRAKELIGHT",
 "RIGHT_EXHAUST",
@@ -84,6 +86,8 @@ namespace NFSRaider.GeneratedStrings.CarsPositionMarkers
 "SIDE_NEON_0_START",
 "SIDE_NEON_1_END",
 "SIDE_NEON_1_START",
+"SIDE_NEON_2_END",
+"SIDE_NEON_2_START",
 "SPOILER",
         };
     }

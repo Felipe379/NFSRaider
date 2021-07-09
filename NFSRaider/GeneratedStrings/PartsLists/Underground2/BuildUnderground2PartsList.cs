@@ -90,6 +90,16 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
             }
 
 
+            foreach (var audio in Audio.List)
+            {
+                parts.Add(audio + "_" + "PAINT");
+                foreach (var lod in Lods.List)
+                {
+                    parts.Add(audio + lod);
+                    parts.Add(audio + "_" + "PAINT" + lod);
+                }
+            }
+
             foreach (var decal in Decals.List)
             {
                 parts.Add(decal + "_" + "WHITE");

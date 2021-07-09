@@ -4,7 +4,9 @@ using NFSRaider.GeneratedStrings.AcidEffects;
 using NFSRaider.GeneratedStrings.AcidEmitters;
 using NFSRaider.GeneratedStrings.Brands;
 using NFSRaider.GeneratedStrings.Cars;
+using NFSRaider.GeneratedStrings.CarsPartGroups;
 using NFSRaider.GeneratedStrings.CarsPositionMarkers;
+using NFSRaider.GeneratedStrings.CarsSlotTypes;
 using NFSRaider.GeneratedStrings.Files;
 using NFSRaider.GeneratedStrings.Fng;
 using NFSRaider.GeneratedStrings.GCareers;
@@ -55,6 +57,8 @@ namespace NFSRaider.GeneratedStrings
             hashSet.UnionWith(new BuildAcidEffects().GetAllAcidEffects());
             hashSet.UnionWith(new BuildAcidEmitters().GetAllAcidEmitters());
             hashSet.UnionWith(new BuildBrands().GetAllBrands());
+            hashSet.UnionWith(new BuildCarsPartGroups().GetAllCarsPartGroups());
+            hashSet.UnionWith(new BuildCarsSlotTypes().GetAllCarsSlotTypes());
             hashSet.UnionWith(new BuildCars().GetAllCars());
             hashSet.UnionWith(new BuildCarsPositionMarkers().GetAllCarsPositionMarkers());
             hashSet.UnionWith(new BuildFng().GetAllFng());

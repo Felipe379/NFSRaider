@@ -9,6 +9,7 @@ namespace NFSRaider.GeneratedStrings.Textures.Shared
 "_BADGING",
 "_BADGING_EU",
 "_BADGING_N",
+"_CENTRE_BRAKELIGHT",
 "_CENTRE_BRAKELIGHT_OFF",
 "_CENTRE_BRAKELIGHT_ON",
 "_DOORLINE",

@@ -18,6 +18,7 @@ namespace NFSRaider.GeneratedStrings.Tracks.ParameterSets
 "Volumes",
 "Ambience",
 "Reverb",
+"Intersection",
         };
     }
 }
