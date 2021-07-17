@@ -25,5 +25,12 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
 "ROOF_STYLE16",
 "ROOF_STYLE17",
         };
+
+        public static readonly List<string> ListDemo = new List<string>()
+        {
+"ROOF_STYLE18",
+"ROOF_STYLE19",
+"ROOF_STYLE20",
+        };
     }
 }

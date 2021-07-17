@@ -209,6 +209,8 @@
     <Compile Include="GeneratedStrings\CarsPositionMarkers\Underground1.cs" />
     <Compile Include="GeneratedStrings\CarsPositionMarkers\Underground2.cs" />
     <Compile Include="GeneratedStrings\CarsPositionMarkers\World.cs" />
+    <Compile Include="GeneratedStrings\GCareers\Underground1\Magazine.cs" />
+    <Compile Include="GeneratedStrings\GCareers\Underground1\BuildUnderground1GCareers.cs" />
     <Compile Include="GeneratedStrings\GCareers\Underground2\BuildUnderground2GCareers.cs" />
     <Compile Include="GeneratedStrings\GCareers\Underground2\BankTriggers.cs" />
     <Compile Include="GeneratedStrings\PartsListOld\BuildPartsListOld.cs" />
@@ -349,6 +351,7 @@
     <Compile Include="GeneratedStrings\PartsLists\MostWanted\Wheels.cs" />
     <Compile Include="GeneratedStrings\PartsLists\ProStreet\Plates.cs" />
     <Compile Include="GeneratedStrings\PartsLists\Undercover\Plates.cs" />
+    <Compile Include="GeneratedStrings\Textures\Shared\ClassKeys.cs" />
     <Compile Include="GeneratedStrings\Tracks\LightFlaresPack\BuildLightFlaresPack.cs" />
     <Compile Include="GeneratedStrings\Tracks\LightFlaresPack\Underground2.cs" />
     <Compile Include="GeneratedStrings\Tracks\PositionMarkers\BuildParameterSets.cs" />

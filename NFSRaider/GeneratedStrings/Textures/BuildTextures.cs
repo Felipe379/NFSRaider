@@ -19,6 +19,7 @@ namespace NFSRaider.GeneratedStrings.Textures
                 .Concat(Undercover.GenericTextures.List)
                 .Concat(World.GenericTextures.List)
                 .Concat(Shared.Typos.List)
+                .Concat(Shared.ClassKeys.List)
                 );
 
             foreach (var car in CarList)

@@ -139,5 +139,10 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
             "VEILSIDE_STYLE01",
             "VERSUS_STYLE01",
         };
+
+        public static readonly List<string> ListDemo = new List<string>()
+        {
+            "SPINNER_STYLE01",
+        };
     }
 }

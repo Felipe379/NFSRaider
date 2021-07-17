@@ -13,7 +13,6 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
             "BBS",
             "CL",
             "ENKEI",
-            "FOOSE",
             "GIOVANNA",
             "KONIG",
             "HRE",
@@ -26,6 +25,11 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
             "TSW",
             "VOLK",
             "WORK",
+        };
+
+        public static readonly List<string> ListDemo = new List<string>()
+        {
+            "FOOSE",
         };
     }
 }

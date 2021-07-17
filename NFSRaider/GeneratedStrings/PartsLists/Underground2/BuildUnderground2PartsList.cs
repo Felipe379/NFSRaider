@@ -10,6 +10,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
         {
             var parts = new HashSet<string>(
                 Audio.List
+                .Concat(Audio.ListGeometry)
                 .Concat(Brakes.List)
                 .Concat(CarbonFibre.List)
                 .Concat(CabinNeonFrame.List)
@@ -26,10 +27,12 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
                 .Concat(Paints.List)
                 .Concat(Plates.List)
                 .Concat(RoofScoops.List)
+                .Concat(RoofScoops.ListDemo)
                 .Concat(Spoilers.List)
                 .Concat(Vinyls.List)
                 .Concat(Vinyls.ListDemo)
                 .Concat(Wheels.List)
+                .Concat(Wheels.ListDemo)
                 .Concat(WheelsManufacturers.List)
                 .Concat(WindowTint.List)
                 );
@@ -66,7 +69,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
                     }
                 }
 
-                foreach (var roofscoop in RoofScoops.List)
+                foreach (var roofscoop in RoofScoops.List.Concat(RoofScoops.ListDemo))
                 {
                     parts.Add(roofscoop + lod);
                     parts.Add(roofscoop + "_CF" + lod);
@@ -90,7 +93,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
             }
 
 
-            foreach (var audio in Audio.List)
+            foreach (var audio in Audio.List.Concat(Audio.ListGeometry))
             {
                 parts.Add(audio + "_" + "PAINT");
                 foreach (var lod in Lods.List)
@@ -116,6 +119,21 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
                     foreach (var wheelType in WheelsType.List)
                     {
                         parts.Add(wheel + "_" + wheelType + lod);
+                    }
+                }
+
+                parts.Add(wheel + "_WHEEL");
+                parts.Add(wheel + "_WHEEL_INNER_MASK");
+            }
+
+            foreach (var wheel in Wheels.ListDemo)
+            {
+                foreach (var lod in Lods.List)
+                {
+                    foreach (var wheelType in WheelsType.ListDemo)
+                    {
+                        parts.Add(wheel + "_" + wheelType + lod);
+                        parts.Add(wheel + "_" + wheelType + "_" + "SPIN" + lod);
                     }
                 }
 

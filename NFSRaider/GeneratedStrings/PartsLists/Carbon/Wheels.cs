@@ -43,9 +43,6 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
             "ENKEI_STYLE02",
             "ENKEI_STYLE03",
             "ENKEI_STYLE04",
-            "FOOSE_STYLE01",
-            "FOOSE_STYLE02",
-            "FOOSE_STYLE03",
             "GIOVANNA_STYLE01",
             "GIOVANNA_STYLE02",
             "GIOVANNA_STYLE03",
@@ -87,6 +84,13 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
             "WORK_STYLE02",
             "WORK_STYLE03",
             "WORK_STYLE04",
+        };
+
+        public static readonly List<string> ListDemo = new List<string>() 
+        {
+            "FOOSE_STYLE01",
+            "FOOSE_STYLE02",
+            "FOOSE_STYLE03",
         };
     }
 }

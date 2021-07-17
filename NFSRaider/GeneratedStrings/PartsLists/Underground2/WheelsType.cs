@@ -23,5 +23,10 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
             "24_32",
             "26_34",
         };
+
+        public static readonly List<string> ListDemo = new List<string>()
+        {
+            "16",
+        };
     }
 }

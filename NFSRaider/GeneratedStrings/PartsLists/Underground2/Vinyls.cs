@@ -918,6 +918,9 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Underground2
             "MI_6",
             "MI_7",
             "MI_8",
+            "ALGRAF",
+            "DANGRAF",
+            "OCTO",
         };
     }
 }

@@ -28,7 +28,9 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
                 .Concat(VectorVinyls.ListPrerelease)
                 .Concat(Vinyls.ListDemo)
                 .Concat(Wheels.List)
+                .Concat(Wheels.ListDemo)
                 .Concat(WheelsManufacturers.List)
+                .Concat(WheelsManufacturers.ListDemo)
                 .Concat(WindowTint.List)
                 .Concat(WindowTint.ListDemo)
                 );
@@ -101,7 +103,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
                 }
             }
 
-            foreach (var wheel in Wheels.List)
+            foreach (var wheel in Wheels.List.Concat(Wheels.ListDemo))
             {
                 foreach (var lod in Lods.List)
                 {
