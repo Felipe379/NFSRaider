@@ -6,6 +6,7 @@ using NFSRaider.GeneratedStrings.Tracks.LightFlaresPack;
 using NFSRaider.GeneratedStrings.Tracks.LightSourcesPack;
 using NFSRaider.GeneratedStrings.Tracks.ParameterSets;
 using NFSRaider.GeneratedStrings.Tracks.PositionMarkers;
+using NFSRaider.GeneratedStrings.Tracks.SceneryGroups;
 using NFSRaider.GeneratedStrings.Tracks.Smokeable;
 using NFSRaider.GeneratedStrings.Tracks.SolidInfos;
 using System.Collections.Generic;
@@ -26,6 +27,7 @@ namespace NFSRaider.GeneratedStrings.Tracks
                 .Concat(new BuildLightFlaresPack().GetAllLightFlaresPack())
                 .Concat(new BuildLightSourcesPack().GetAllLightSourcesPack())
                 .Concat(new BuildBarrierGroups().GetAllSceneryBarrierGroups())
+                .Concat(new BuildSceneryGroups().GetAllSceneryGroups())
                 .Concat(new BuildSolidInfos().GetAllSolidInfos())
                 .Concat(new BuildSmokeable().GetAllSmokeable())
                 );

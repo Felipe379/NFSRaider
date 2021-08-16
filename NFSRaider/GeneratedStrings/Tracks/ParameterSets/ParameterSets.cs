@@ -19,6 +19,14 @@ namespace NFSRaider.GeneratedStrings.Tracks.ParameterSets
 "Ambience",
 "Reverb",
 "Intersection",
+"Speech",
+"Screen Tint",
+"Flare OverRides",
+"Colour Cube Index",
+"Window Reflection Index",
+"Sun and Sky",
+"Clouds",
+"Rain Fog",
         };
     }
 }

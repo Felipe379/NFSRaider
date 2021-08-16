@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace NFSRaider.GeneratedStrings.Tracks.BarrierGroups
 {
@@ -6,7 +7,10 @@ namespace NFSRaider.GeneratedStrings.Tracks.BarrierGroups
     {
         public HashSet<string> GetAllSceneryBarrierGroups()
         {
-            var sceneryBarrierGroups = new HashSet<string>(Underground2.List);
+            var sceneryBarrierGroups = new HashSet<string>(
+                Underground2.List
+                .Concat(World.List)
+                );
 
             return sceneryBarrierGroups;
         }

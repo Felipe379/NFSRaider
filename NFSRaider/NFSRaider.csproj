@@ -416,6 +416,12 @@
     <Compile Include="GeneratedStrings\Tracks\ParameterSets\ParameterSets.cs" />
     <Compile Include="GeneratedStrings\Tracks\BarrierGroups\BuildBarrierGroups.cs" />
     <Compile Include="GeneratedStrings\Tracks\BarrierGroups\Underground2.cs" />
+    <Compile Include="GeneratedStrings\Tracks\BarrierGroups\World.cs" />
+    <Compile Include="GeneratedStrings\Tracks\SceneryGroups\BuildSceneryGroups.cs" />
+    <Compile Include="GeneratedStrings\Tracks\SceneryGroups\MostWanted.cs" />
+    <Compile Include="GeneratedStrings\Tracks\SceneryGroups\Carbon.cs" />
+    <Compile Include="GeneratedStrings\Tracks\SceneryGroups\ProStreet.cs" />
+    <Compile Include="GeneratedStrings\Tracks\SceneryGroups\World.cs" />
     <Compile Include="GeneratedStrings\SunInfos\BuildSunInfos.cs" />
     <Compile Include="GeneratedStrings\SunInfos\World.cs" />
     <Compile Include="GeneratedStrings\SunInfos\Undercover.cs" />

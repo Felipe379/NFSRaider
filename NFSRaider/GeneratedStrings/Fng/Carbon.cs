@@ -165,6 +165,7 @@ namespace NFSRaider.GeneratedStrings.Fng
 "FLASHERS.fng",
 "TESTSCREEN.FNG",
 "FEALIASMANAGER.FNG",
+"FeNGCWarning.fng",
         };
 
         public static readonly List<string> ListPrelease = new List<string>
@@ -197,6 +198,7 @@ namespace NFSRaider.GeneratedStrings.Fng
 "FeCrewManagement_hire.fng",
 "FeVisualHeadlight.fng",
 "CustomizeMain.fng",
+"UI_XENON_BLANK.fng"
         };
     }
 }

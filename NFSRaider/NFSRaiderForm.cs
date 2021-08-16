@@ -587,9 +587,9 @@ namespace NFSRaider
                 NumericMaxVariations.Enabled = false;
                 NumericProcessorsCount.Enabled = false;
                 TxtWordsBetweenVariations.Enabled = false;
-                ChkUseHashesFile.Enabled = false;
                 ChkTryToBruteforce.Enabled = false;
                 ChkBruteforceWithRepetition.Enabled = false;
+                ChkUseHashesFile.Enabled = false;
                 ChkUseHashesFile.Checked = true;
 
                 if (RaiderMode == RaiderMode.Unhasher)
@@ -599,7 +599,8 @@ namespace NFSRaider
                     TxtFileReadHashes.Enabled = true;
                     TxtFileSkipHashes.Enabled = true;
                     CboEndianness.Enabled = true;
-                    CboForceHashListCase.Enabled = true;
+
+                    CboForceHashListCase.Enabled = ChkUseHashesFile.Checked;
                 }
                 else
                 {
@@ -633,7 +634,8 @@ namespace NFSRaider
                     ChkUseHashesFile.Enabled = true;
                     ChkTryToBruteforce.Enabled = true;
                     CboEndianness.Enabled = true;
-                    CboForceHashListCase.Enabled = true;
+
+                    CboForceHashListCase.Enabled = ChkUseHashesFile.Checked;
 
                     BruteForceChecked();
                 }
@@ -654,28 +656,15 @@ namespace NFSRaider
 
         private void BruteForceChecked()
         {
-            if (ChkTryToBruteforce.Checked)
-            {
-                TxtPrefixes.Enabled = true;
-                TxtVariations.Enabled = true;
-                TxtSuffixes.Enabled = true;
-                NumericMinVariations.Enabled = true;
-                NumericMaxVariations.Enabled = true;
-                NumericProcessorsCount.Enabled = true;
-                TxtWordsBetweenVariations.Enabled = true;
-                ChkBruteforceWithRepetition.Enabled = true;
-            }
-            else
-            {
-                TxtPrefixes.Enabled = false;
-                TxtVariations.Enabled = false;
-                TxtSuffixes.Enabled = false;
-                NumericMinVariations.Enabled = false;
-                NumericMaxVariations.Enabled = false;
-                NumericProcessorsCount.Enabled = false;
-                TxtWordsBetweenVariations.Enabled = false;
-                ChkBruteforceWithRepetition.Enabled = false;
-            }
+            TxtPrefixes.Enabled = ChkTryToBruteforce.Checked;
+            TxtVariations.Enabled = ChkTryToBruteforce.Checked;
+            TxtSuffixes.Enabled = ChkTryToBruteforce.Checked;
+            NumericMinVariations.Enabled = ChkTryToBruteforce.Checked;
+            NumericMaxVariations.Enabled = ChkTryToBruteforce.Checked;
+            NumericProcessorsCount.Enabled = ChkTryToBruteforce.Checked;
+            TxtWordsBetweenVariations.Enabled = ChkTryToBruteforce.Checked;
+            ChkBruteforceWithRepetition.Enabled = ChkTryToBruteforce.Checked;
+
         }
 
         private void DisableComponentsDuringBruteforce()

@@ -261,6 +261,11 @@ namespace NFSRaider.GeneratedStrings.Fng
 "RapSheetOverview.fng",
 "InGameSpeedTrap.fng",
 "BlackList.fng",
+"WS_Loading_Tips.fng",
+"OL_GameRoom_Dialog.fng",
+"OL_ModeSelectList.fng",
+"OverlayUI_OLX_CreateGame_Start.fng",
+"UI_OLX_News.fng",
         };
     }
 }
