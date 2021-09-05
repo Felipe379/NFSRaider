@@ -11,7 +11,6 @@ namespace NFSRaider.GeneratedStrings.TruncatedStrings
 { 0x9F135643, "VISUAL_PART_REAR_QUARTE" },
 { 0xA172C631, "01_GPTIPS_PERFORMANCE_T" },
 { 0xF9C6AB14, "03_GPTIPS_PERFORMANCE_A" },
-            { 0xB5944610, "TRNS_GCGRASS_LE_ROUGH_C" }
         };
     }
 }
