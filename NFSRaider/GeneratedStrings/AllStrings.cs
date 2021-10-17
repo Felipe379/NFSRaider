@@ -27,6 +27,7 @@ using NFSRaider.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -34,8 +35,9 @@ namespace NFSRaider.GeneratedStrings
 {
     public class AllStrings
     {
-        public string FileName { get; set; } = "Hashes.txt";
-        public string UserFileName { get; set; } = "UserHashes.txt";
+        public static string FileName { get; set; } = "Hashes.txt";
+        public static string UserHashesDir { get; set; } = "UserHashes";
+        public static string UserFileName { get; set; } = $"{UserHashesDir}\\ExampleHashes.txt";
 
         public void GetStrings()
         {
@@ -97,9 +99,14 @@ namespace NFSRaider.GeneratedStrings
         {
             var hashes = new BuildTruncatedStrings().GetAllTruncatedStrings();
 
-            if (!File.Exists(UserFileName))
+            if (!Directory.Exists(UserHashesDir))
             {
-                File.Create(UserFileName).Close();
+                Directory.CreateDirectory(UserHashesDir);
+
+                if (!File.Exists(UserFileName))
+                {
+                    File.Create(UserFileName).Close();
+                }
             }
 
             if (!File.Exists(FileName))
@@ -108,7 +115,7 @@ namespace NFSRaider.GeneratedStrings
                 GC.Collect();
             }
 
-            var files = new List<string>() { UserFileName, FileName };
+            var files = new List<string>() { FileName }.Concat(Directory.GetFiles(UserHashesDir, "*.txt", SearchOption.TopDirectoryOnly)).ToArray();
             var caseFactory = CaseFactory.GetCaseType(caseOption);
 
             var collisions = new HashSet<string>();
