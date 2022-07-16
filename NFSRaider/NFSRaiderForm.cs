@@ -130,7 +130,6 @@ namespace NFSRaider
                 {
                     if (RaiderMode == RaiderMode.Unhasher)
                     {
-
                         if (!string.IsNullOrWhiteSpace(TxtLoadFromText.Text) &&
                             Convert.ToInt32(NumericMinVariations.Text) <= Convert.ToInt32(NumericMaxVariations.Text) &&
                             (!string.IsNullOrWhiteSpace(TxtPrefixes.Text) || !string.IsNullOrWhiteSpace(TxtVariations.Text) || !string.IsNullOrWhiteSpace(TxtSuffixes.Text)))
@@ -310,7 +309,7 @@ namespace NFSRaider
                 else
                     unknownHashes++;
 
-                dataSource.Add(format.Replace("(HASH)", item.Hash.ToString("X8")).Replace("(STRING)", item.Value));
+                dataSource.Add(format.Replace("(HASH)", item.Hash.ToString("X8")).Replace("(hash)", item.Hash.ToString("x8")).Replace("(STRING)", item.Value));
             }
 
             var listBoxDataSourceCount = knownHashes + unknownHashes;

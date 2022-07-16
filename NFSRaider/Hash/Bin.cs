@@ -7,7 +7,7 @@ namespace NFSRaider.Hash
     {
         public override uint Hash(string stringToHash)
         {
-            var ByteArrayToHash = Encoding.GetEncoding(1252).GetBytes(stringToHash);
+            var ByteArrayToHash = Encoding.GetEncoding("ISO-8859-1").GetBytes(stringToHash);
 
             return Hash(ByteArrayToHash);
         }

@@ -25,6 +25,7 @@ namespace NFSRaider.GeneratedStrings.Cars
 "CLIO",
 "CLK500",
 "COP911GT2",
+"COPEVO9",
 "COPGALLARDO",
 "COPGHOST",
 "COPHELI",
