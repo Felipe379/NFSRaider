@@ -351,7 +351,9 @@
     <Compile Include="GeneratedStrings\PartsLists\MostWanted\Wheels.cs" />
     <Compile Include="GeneratedStrings\PartsLists\ProStreet\Plates.cs" />
     <Compile Include="GeneratedStrings\PartsLists\Undercover\Plates.cs" />
+    <Compile Include="GeneratedStrings\Textures\Carbon\GenericTexturesArcade.cs" />
     <Compile Include="GeneratedStrings\Textures\Shared\ClassKeys.cs" />
+    <Compile Include="GeneratedStrings\Textures\Underground1\GenericTexturesArcade.cs" />
     <Compile Include="GeneratedStrings\Tracks\LightFlaresPack\BuildLightFlaresPack.cs" />
     <Compile Include="GeneratedStrings\Tracks\LightFlaresPack\Underground2.cs" />
     <Compile Include="GeneratedStrings\Tracks\PositionMarkers\BuildParameterSets.cs" />

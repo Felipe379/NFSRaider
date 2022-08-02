@@ -12,9 +12,11 @@ namespace NFSRaider.GeneratedStrings.Textures
         {
             var textures = new HashSet<string>(
                 Underground1.GenericTextures.List
+                .Concat(Underground1.GenericTexturesArcade.List)
                 .Concat(Underground2.GenericTextures.List)
                 .Concat(MostWanted.GenericTextures.List)
                 .Concat(Carbon.GenericTextures.List)
+                .Concat(Carbon.GenericTexturesArcade.List)
                 .Concat(ProStreet.GenericTextures.List)
                 .Concat(Undercover.GenericTextures.List)
                 .Concat(World.GenericTextures.List)
