@@ -13,14 +13,14 @@ namespace NFSRaider.Helpers
                 {
                     File.Delete(path);
                 }
-                if (File.Exists(path))
+                else if (!File.Exists(path))
                 {
                     throw new IOException(string.Format($"Failed to delete file: '{path}'."));
                 }
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw;
             }
         }
     }

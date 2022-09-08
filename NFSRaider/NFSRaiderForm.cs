@@ -1,17 +1,14 @@
 ﻿using Combinatorics.Collections;
-using NFSRaider.Enum;
+using NFSRaider.Enums;
 using NFSRaider.GeneratedStrings;
 using NFSRaider.Hash;
 using NFSRaider.Helpers;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,12 +20,13 @@ namespace NFSRaider
         public NFSRaiderForm()
         {
             InitializeComponent();
-            EnableComponents();
-            CboOrderBy.SelectedIndex = 0;
-            CboForceHashListCase.SelectedIndex = 0;
-            CboEndianness.SelectedIndex = 0;
-            CboHashTypes.SelectedIndex = 0;
-            CboRaiderMode.SelectedIndex = 0;
+            ComponentsChanged();
+            CboOrderBy.SelectedIndex = (int)OrderOptions.None;
+            ChkBruteforceWithRepetition.Checked = Convert.ToBoolean((int)GenerateOption.WithRepetition);
+            CboForceHashListCase.SelectedIndex = (int)CaseOptions.None;
+            CboEndianness.SelectedIndex = (int)Endianness.BigEndian;
+            CboHashTypes.SelectedIndex = (int)HashType.Bin;
+            CboRaiderMode.SelectedIndex = (int)RaiderMode.Unhasher;
             LblTimeElapsed.Text = string.Empty;
             NumericProcessorsCount.Maximum = Environment.ProcessorCount;
             NumericProcessorsCount.Value = Environment.ProcessorCount / 2;
@@ -36,17 +34,17 @@ namespace NFSRaider
 
         private List<RaiderResult> ListBoxDataSource { get; set; } = new List<RaiderResult>();
         private string FilePath { get; set; }
-        private GenerateOption GenerateOption { get; set; } = GenerateOption.WithRepetition;
-        private Endianness UnhashingEndianness { get; set; } = Endianness.BigEndian;
-        private HashType HashType { get; set; } = HashType.Bin;
-        private OrderOptions OrderOption { get; set; } = OrderOptions.None;
-        private CaseOptions CaseOption { get; set; } = CaseOptions.None;
-        private RaiderMode RaiderMode { get; set; } = RaiderMode.Unhasher;
-        private HashFactory HashFactory { get; set; } = HashFactory.GetHashType(HashType.Bin);
+        private GenerateOption GenerateOption { get; set; }
+        private Endianness UnhashingEndianness { get; set; }
+        private HashType HashType { get; set; }
+        private OrderOptions OrderOption { get; set; }
+        private CaseOptions CaseOption { get; set; }
+        private RaiderMode RaiderMode { get; set; }
+        private HashFactory HashFactory { get; set; }
 
-        private readonly Stopwatch Timer = new Stopwatch();
+        private readonly Stopwatch Timer = new();
 
-        private Thread BruteForceThread { get; set; }
+        private CancellationTokenSource CancellationTokenSource { get; set; }
         private bool BruteforceProcessStarted { get; set; } = false;
 
         private object LockObject { get; } = new object();
@@ -82,14 +80,12 @@ namespace NFSRaider
 
         private void BtnLoadFile_Click(object sender, EventArgs e)
         {
-            using (var fileDialog = new OpenFileDialog())
+            using var fileDialog = new OpenFileDialog();
+            if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                if (fileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    FilePath = fileDialog.FileName.ToString();
-                    var text = $"File loaded in {FilePath}";
-                    LblStatus.Text = text.Length > 150 ? text.Substring(0, 150) + "..." : text;
-                }
+                FilePath = fileDialog.FileName.ToString();
+                var text = $"File loaded in {FilePath}";
+                LblStatus.Text = text.Length > 150 ? string.Concat(text.AsSpan(0, 150), "...") : text;
             }
         }
 
@@ -134,6 +130,7 @@ namespace NFSRaider
                             Convert.ToInt32(NumericMinVariations.Text) <= Convert.ToInt32(NumericMaxVariations.Text) &&
                             (!string.IsNullOrWhiteSpace(TxtPrefixes.Text) || !string.IsNullOrWhiteSpace(TxtVariations.Text) || !string.IsNullOrWhiteSpace(TxtSuffixes.Text)))
                         {
+                            CancellationTokenSource = new CancellationTokenSource();
                             DisableComponentsDuringBruteforce();
 
                             var bruteForce = new Raider.Unhash(this, HashFactory, ChkUseHashesFile.Checked, ChkTryToBruteforce.Checked, TxtPrefixes.Text, TxtSuffixes.Text,
@@ -143,11 +140,11 @@ namespace NFSRaider
 
                             TimerRestart();
 
-                            BruteForceThread = new Thread(() => { bruteForce.BruteForceThread(); Invoke((MethodInvoker)(() => BruteforceFinished())); })
+                            Task.Run(() => 
                             {
-                                IsBackground = true
-                            };
-                            BruteForceThread.Start();
+                                bruteForce.BruteForceThread(CancellationTokenSource.Token);
+                                Invoke((MethodInvoker)(() => BruteforceFinished()));
+                            }, CancellationTokenSource.Token);
                         }
                         else
                         {
@@ -165,6 +162,7 @@ namespace NFSRaider
                     {
                         if (!string.IsNullOrWhiteSpace(TxtLoadFromText.Text))
                         {
+                            CancellationTokenSource = new CancellationTokenSource();
                             DisableComponentsDuringBruteforce();
 
                             var hashStrings = new Raider.Hash(this, HashFactory);
@@ -173,11 +171,11 @@ namespace NFSRaider
 
                             TimerRestart();
 
-                            BruteForceThread = new Thread(() => { hashStrings.BruteForceThread(); Invoke((MethodInvoker)(() => BruteforceFinished())); })
-                            {
-                                IsBackground = true
-                            };
-                            BruteForceThread.Start();
+                            Task.Run(() => 
+                            { 
+                                hashStrings.BruteForceThread(CancellationTokenSource.Token);
+                                Invoke((MethodInvoker)(() => BruteforceFinished()));
+                            }, CancellationTokenSource.Token);
                         }
                         else
                         {
@@ -204,8 +202,7 @@ namespace NFSRaider
         {
             if (BruteforceProcessStarted)
             {
-                // TODO: Replace abort with something else
-                BruteForceThread.Abort();
+                CancellationTokenSource.Cancel(true);
                 BruteforceFinished();
             }
         }
@@ -214,7 +211,7 @@ namespace NFSRaider
         {
             TimerStop();
             BruteforceProcessStarted = false;
-            EnableComponents();
+            ComponentsChanged();
             GC.Collect();
             MessageBox.Show("Raid completed!", "Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -335,17 +332,7 @@ namespace NFSRaider
 
         private void TabLoadOptions_SelectedIndexChanged(object sender, EventArgs e)
         {
-            EnableComponents();
-        }
-
-        private void CboRaiderMode_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (CboRaiderMode.SelectedIndex >= 0 && CboRaiderMode.SelectedIndex <= 1)
-                RaiderMode = (RaiderMode)CboRaiderMode.SelectedIndex;
-            else
-                RaiderMode = RaiderMode.Unhasher;
-
-            EnableComponents();
+            ComponentsChanged();
         }
 
         private void BtnGenerateListOfHashes_Click(object sender, EventArgs e)
@@ -417,9 +404,19 @@ namespace NFSRaider
                 CboForceHashListCase.Enabled = false;
         }
 
+        private void CboRaiderMode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Enum.IsDefined(typeof(RaiderMode), CboRaiderMode.SelectedIndex))
+                RaiderMode = (RaiderMode)CboRaiderMode.SelectedIndex;
+            else
+                RaiderMode = RaiderMode.Unhasher;
+
+            ComponentsChanged();
+        }
+
         private void CboEndianness_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CboEndianness.SelectedIndex >= 0 && CboEndianness.SelectedIndex <= 1)
+            if (Enum.IsDefined(typeof(Endianness), CboEndianness.SelectedIndex))
                 UnhashingEndianness = (Endianness)CboEndianness.SelectedIndex;
             else
                 UnhashingEndianness = Endianness.LittleEndian;
@@ -427,12 +424,8 @@ namespace NFSRaider
 
         private void CboHashTypes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CboHashTypes.SelectedIndex == 1)
-                HashType = HashType.Vlt;
-            else if (CboHashTypes.SelectedIndex == 2)
-                HashType = HashType.VltBin;
-            else if (CboHashTypes.SelectedIndex == 3)
-                HashType = HashType.VltVlt;
+            if (Enum.IsDefined(typeof(HashType), CboHashTypes.SelectedIndex))
+                HashType = (HashType)CboHashTypes.SelectedIndex;
             else
                 HashType = HashType.Bin;
 
@@ -441,7 +434,7 @@ namespace NFSRaider
 
         private void CboOrderBy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CboOrderBy.SelectedIndex >= 0 && CboOrderBy.SelectedIndex <= 4)
+            if (Enum.IsDefined(typeof(OrderOptions), CboOrderBy.SelectedIndex))
                 OrderOption = (OrderOptions)CboOrderBy.SelectedIndex;
             else
                 OrderOption = OrderOptions.None;
@@ -449,7 +442,7 @@ namespace NFSRaider
 
         private void CboForceHashListCase_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CboForceHashListCase.SelectedIndex >= 0 && CboForceHashListCase.SelectedIndex <= 2)
+            if (Enum.IsDefined(typeof(CaseOptions), CboForceHashListCase.SelectedIndex))
                 CaseOption = (CaseOptions)CboForceHashListCase.SelectedIndex;
             else
                 CaseOption = CaseOptions.None;
@@ -513,30 +506,28 @@ namespace NFSRaider
 
         private bool ItemFound(int i)
         {
-            return LstUnhashed.Items[i].ToString().ToUpperInvariant().Contains(TxtSearch.Text.ToUpperInvariant());
+            return LstUnhashed.Items[i].ToString().Contains(TxtSearch.Text, StringComparison.InvariantCultureIgnoreCase);
         }
 
         private void BtnExportHashes_Click(object sender, EventArgs e)
         {
             if (LstUnhashed.DataSource != null && ((IList<string>)LstUnhashed.DataSource).Count > 0)
             {
-                using (var saveFileDialog = new SaveFileDialog())
+                using var saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Text Files (*.txt)|*.txt";
+                saveFileDialog.DefaultExt = "txt";
+                saveFileDialog.AddExtension = true;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    saveFileDialog.Filter = "Text Files (*.txt)|*.txt";
-                    saveFileDialog.DefaultExt = "txt";
-                    saveFileDialog.AddExtension = true;
+                    File.WriteAllLines(saveFileDialog.FileName, (IList<string>)LstUnhashed.DataSource);
 
-                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    if (MessageBox.Show($"List exported to file:{Environment.NewLine}{Path.GetFileName(saveFileDialog.FileName)}{Environment.NewLine}Do you want to open it?",
+                        "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                     {
-                        File.WriteAllLines(saveFileDialog.FileName, (IList<string>)LstUnhashed.DataSource);
-
-                        if (MessageBox.Show($"List exported to file:{Environment.NewLine}{Path.GetFileName(saveFileDialog.FileName)}{Environment.NewLine}Do you want to open it?",
-                            "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-                        {
-                            Process.Start(saveFileDialog.FileName);
-                        }
-
+                        Process.Start(saveFileDialog.FileName);
                     }
+
                 }
             }
             else
@@ -562,7 +553,7 @@ namespace NFSRaider
             }
         }
 
-        private void EnableComponents()
+        private void ComponentsChanged()
         {
             if (BruteforceProcessStarted)
             {

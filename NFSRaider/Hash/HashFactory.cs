@@ -1,4 +1,4 @@
-﻿using NFSRaider.Enum;
+﻿using NFSRaider.Enums;
 using System;
 
 namespace NFSRaider.Hash
@@ -16,8 +16,8 @@ namespace NFSRaider.Hash
                     return new Bin();
                 case HashType.Vlt:
                     return new Vlt();
-                case HashType.Vlt64:
-                    throw new NotImplementedException();
+                //case HashType.Vlt64:
+                //    throw new NotImplementedException();
                 case HashType.VltBin:
                     return new VltBin();
                 case HashType.VltVlt:

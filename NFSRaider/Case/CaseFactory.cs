@@ -1,4 +1,4 @@
-﻿using NFSRaider.Enum;
+﻿using NFSRaider.Enums;
 
 namespace NFSRaider.Case
 {

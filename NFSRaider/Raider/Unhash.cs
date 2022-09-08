@@ -1,5 +1,5 @@
 ﻿using Combinatorics.Collections;
-using NFSRaider.Enum;
+using NFSRaider.Enums;
 using NFSRaider.Raider.Model;
 using NFSRaider.GeneratedStrings;
 using NFSRaider.Hash;
@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace NFSRaider.Raider
 {
@@ -159,7 +160,7 @@ namespace NFSRaider.Raider
             }
         }
 
-        public void BruteForceThread()
+        public void BruteForceThread(CancellationToken cancellationToken)
         {
             if (Hashes.Any())
             {
@@ -169,8 +170,8 @@ namespace NFSRaider.Raider
                 }
                 if (TryToBruteForce)
                 {
-                    var variationModel = GenerateAllWordsVariations();
-                    TryBruteforce(variationModel);
+                    var variationModel = GenerateAllWordsVariations(cancellationToken);
+                    TryBruteforce(variationModel, cancellationToken);
                 }
             }
         }
@@ -195,7 +196,7 @@ namespace NFSRaider.Raider
             Sender.UpdateFormDuringBruteforce(results);
         }
 
-        private Variation GenerateAllWordsVariations()
+        private Variation GenerateAllWordsVariations(CancellationToken cancellationToken)
         {
             var variationModel = new Variation()
             {
@@ -218,6 +219,8 @@ namespace NFSRaider.Raider
                         variations = new Variations<string>(wordVariation.Variations, variationsCount, wordVariation.GenerateOption);
                         foreach (var variation in variations)
                         {
+                            cancellationToken.ThrowIfCancellationRequested();
+
                             if (GC.GetTotalMemory(false) >= 1_500_000_000)
                             {
                                 lastWordGenerated = string.Join("", variation);
@@ -257,7 +260,7 @@ namespace NFSRaider.Raider
             return variationModel;
         }
 
-        private void TryBruteforce(Variation variationsModel)
+        private void TryBruteforce(Variation variationsModel, CancellationToken cancellationToken)
         {
             Variations<string> variations;
             OrderablePartitioner<IReadOnlyList<string>> rangePartitioner;
@@ -268,7 +271,8 @@ namespace NFSRaider.Raider
 
                 Parallel.ForEach(rangePartitioner, new ParallelOptions 
                 {
-                    MaxDegreeOfParallelism = ProcessorCount
+                    MaxDegreeOfParallelism = ProcessorCount,
+                    CancellationToken = cancellationToken
                 }, variation => CheckVariations(variation));
             }
         }

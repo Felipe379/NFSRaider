@@ -1,4 +1,4 @@
-﻿namespace NFSRaider.Enum
+﻿namespace NFSRaider.Enums
 {
     public enum CaseOptions
     {

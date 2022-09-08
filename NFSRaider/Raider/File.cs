@@ -1,4 +1,4 @@
-﻿using NFSRaider.Enum;
+﻿using NFSRaider.Enums;
 using NFSRaider.GeneratedStrings;
 using NFSRaider.Hash;
 using NFSRaider.Helpers;

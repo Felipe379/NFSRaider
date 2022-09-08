@@ -1,5 +1,5 @@
 ﻿using NFSRaider.Case;
-using NFSRaider.Enum;
+using NFSRaider.Enums;
 using NFSRaider.GeneratedStrings.AcidEffects;
 using NFSRaider.GeneratedStrings.AcidEmitters;
 using NFSRaider.GeneratedStrings.Brands;

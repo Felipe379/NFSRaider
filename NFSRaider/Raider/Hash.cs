@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 namespace NFSRaider.Raider
 {
@@ -24,12 +25,13 @@ namespace NFSRaider.Raider
             Strings = new HashSet<string>(strings);
         }
 
-        public void BruteForceThread()
+        public void BruteForceThread(CancellationToken cancellationToken)
         {
             var results = new List<RaiderResult>();
 
             foreach (var item in Strings)
             {
+                cancellationToken.ThrowIfCancellationRequested();
                 results.Add(new RaiderResult { Hash = HashFactory.Hash(item), Value = item, IsKnown = true });
             }
 

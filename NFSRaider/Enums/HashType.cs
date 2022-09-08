@@ -1,10 +1,10 @@
-﻿namespace NFSRaider.Enum
+﻿namespace NFSRaider.Enums
 {
     public enum HashType
     {
         Bin,
         Vlt,
-        Vlt64,
+        //Vlt64,
         VltBin,
         VltVlt,
     }
