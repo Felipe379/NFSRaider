@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace NFSRaider.GeneratedStrings.Tracks.SolidInfos
 {
@@ -6,7 +7,10 @@ namespace NFSRaider.GeneratedStrings.Tracks.SolidInfos
     {
         public HashSet<string> GetAllSolidInfos()
         {
-            var solidInfos = new HashSet<string>(Underground2.List);
+            var solidInfos = new HashSet<string>(
+                Underground2.List
+                .Concat(SolidNames.List)
+                );
 
             return solidInfos;
         }

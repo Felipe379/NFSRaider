@@ -29,6 +29,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace NFSRaider.GeneratedStrings
@@ -95,7 +96,7 @@ namespace NFSRaider.GeneratedStrings
             }
         }
 
-        public Dictionary<uint, string> ReadHashesFile(HashFactory hashFactory, CaseOptions caseOption)
+        public Dictionary<uint, string> ReadHashesFile(HashFactory hashFactory, CaseOptions caseOption, CancellationToken cancellationToken = default(CancellationToken))
         {
             var hashes = new BuildTruncatedStrings().GetAllTruncatedStrings();
 
@@ -123,33 +124,34 @@ namespace NFSRaider.GeneratedStrings
 
             foreach (var file in files)
             {
-                using (var fileStream = File.OpenRead(file))
-                using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true))
+                cancellationToken.ThrowIfCancellationRequested();
+
+                using var fileStream = File.OpenRead(file);
+                using var streamReader = new StreamReader(fileStream, Encoding.UTF8, true);
+                var line = string.Empty;
+
+                while ((line = streamReader.ReadLine()) != null)
                 {
-                    var line = string.Empty;
+                    line = caseFactory.ChangeCase(line);
+                    currentHexValue = hashFactory.Hash(line);
 
-                    while ((line = streamReader.ReadLine()) != null)
+                    if (hashes.ContainsKey(currentHexValue))
                     {
-                        line = caseFactory.ChangeCase(line);
-                        currentHexValue = hashFactory.Hash(line);
-
-                        if (hashes.ContainsKey(currentHexValue))
+                        if (hashes[currentHexValue] != line)
                         {
-                            if (hashes[currentHexValue] != line)
-                            {
-                                collisions.Add(line);
-                            }
+                            collisions.Add(line);
                         }
-                        else
-                        {
-                            hashes.Add(currentHexValue, line);
-                        }
+                    }
+                    else
+                    {
+                        hashes.Add(currentHexValue, line);
                     }
                 }
             }
 
             foreach (var collision in collisions)
             {
+                cancellationToken.ThrowIfCancellationRequested();
                 currentHexValue = hashFactory.Hash(collision);
                 hashes[currentHexValue] += " / " + collision;
             }

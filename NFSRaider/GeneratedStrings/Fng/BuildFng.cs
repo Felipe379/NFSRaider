@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using NFSRaider.GeneratedStrings.Fng.Misc;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace NFSRaider.GeneratedStrings.Fng
@@ -20,6 +21,8 @@ namespace NFSRaider.GeneratedStrings.Fng
                 .Concat(UndercoverOldGen.List)
                 .Concat(Undercover.List)
                 .Concat(Undercover.ListPrerelease)
+                .Concat(FngObjects.List)
+                .Concat(FngMesssages.List)
                 );
 
             fngs.UnionWith(new HashSet<string>(fngs.Select(c => c.ToUpperInvariant())));

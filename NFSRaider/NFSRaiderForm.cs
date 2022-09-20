@@ -45,7 +45,7 @@ namespace NFSRaider
         private readonly Stopwatch Timer = new();
 
         private CancellationTokenSource CancellationTokenSource { get; set; }
-        private bool BruteforceProcessStarted { get; set; } = false;
+        private Task BruteforceTask { get; set; }
 
         private object LockObject { get; } = new object();
 
@@ -93,6 +93,9 @@ namespace NFSRaider
         {
             try
             {
+                if (BruteforceTask?.Status != null && !new[] { TaskStatus.Faulted, TaskStatus.Canceled, TaskStatus.RanToCompletion }.Contains(BruteforceTask.Status))
+                    return;
+
                 if (TabLoadOptions.SelectedTab == TabLoadOptions.TabPages["TabPageFromFile"])
                 {
                     if (!string.IsNullOrWhiteSpace(FilePath) && File.Exists(FilePath))
@@ -122,7 +125,7 @@ namespace NFSRaider
                         MessageBox.Show("File not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else if (TabLoadOptions.SelectedTab == TabLoadOptions.TabPages["TabPageFromText"] && !BruteforceProcessStarted)
+                else if (TabLoadOptions.SelectedTab == TabLoadOptions.TabPages["TabPageFromText"])
                 {
                     if (RaiderMode == RaiderMode.Unhasher)
                     {
@@ -136,15 +139,13 @@ namespace NFSRaider
                             var bruteForce = new Raider.Unhash(this, HashFactory, ChkUseHashesFile.Checked, ChkTryToBruteforce.Checked, TxtPrefixes.Text, TxtSuffixes.Text,
                                 TxtVariations.Text, TxtWordsBetweenVariations.Text, NumericMinVariations.Text, NumericMaxVariations.Text, NumericProcessorsCount.Text, GenerateOption, UnhashingEndianness, CaseOption);
                             bruteForce.SplitHashes(TxtLoadFromText.Text);
-                            BruteforceProcessStarted = true;
 
                             TimerRestart();
 
-                            Task.Run(() => 
+                            BruteforceTask = Task.Run(() => 
                             {
                                 bruteForce.BruteForceThread(CancellationTokenSource.Token);
-                                Invoke((MethodInvoker)(() => BruteforceFinished()));
-                            }, CancellationTokenSource.Token);
+                            }, CancellationTokenSource.Token).ContinueWith(t => Invoke((MethodInvoker)(() => BruteforceFinished())));
                         }
                         else
                         {
@@ -167,15 +168,13 @@ namespace NFSRaider
 
                             var hashStrings = new Raider.Hash(this, HashFactory);
                             hashStrings.SplitStrings(TxtLoadFromText.Text);
-                            BruteforceProcessStarted = true;
 
                             TimerRestart();
 
-                            Task.Run(() => 
+                            BruteforceTask = Task.Run(() => 
                             { 
                                 hashStrings.BruteForceThread(CancellationTokenSource.Token);
-                                Invoke((MethodInvoker)(() => BruteforceFinished()));
-                            }, CancellationTokenSource.Token);
+                            }, CancellationTokenSource.Token).ContinueWith(t => Invoke((MethodInvoker)(() => BruteforceFinished())));
                         }
                         else
                         {
@@ -200,17 +199,13 @@ namespace NFSRaider
 
         private void BtnStop_Click(object sender, EventArgs e)
         {
-            if (BruteforceProcessStarted)
-            {
+            if (CancellationTokenSource != null)
                 CancellationTokenSource.Cancel(true);
-                BruteforceFinished();
-            }
         }
 
         private void BruteforceFinished()
         {
             TimerStop();
-            BruteforceProcessStarted = false;
             ComponentsChanged();
             GC.Collect();
             MessageBox.Show("Raid completed!", "Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -555,11 +550,7 @@ namespace NFSRaider
 
         private void ComponentsChanged()
         {
-            if (BruteforceProcessStarted)
-            {
-                return;
-            }
-
+            BtnStop.Enabled = false;
             BtnStart.Enabled = true;
             BtnClear.Enabled = true;
             BtnGenerateListOfHashes.Enabled = true;
@@ -659,6 +650,7 @@ namespace NFSRaider
 
         private void DisableComponentsDuringBruteforce()
         {
+            BtnStop.Enabled = true;
             TxtLoadFromText.Enabled = false;
             BtnClear.Enabled = false;
             BtnStart.Enabled = false;

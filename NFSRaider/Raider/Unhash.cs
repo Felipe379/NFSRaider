@@ -166,7 +166,7 @@ namespace NFSRaider.Raider
             {
                 if (CheckForHashesInFile)
                 {
-                    CheckFile();
+                    CheckFile(cancellationToken);
                 }
                 if (TryToBruteForce)
                 {
@@ -176,13 +176,14 @@ namespace NFSRaider.Raider
             }
         }
 
-        private void CheckFile()
+        private void CheckFile(CancellationToken cancellationToken)
         {
             Sender.GenericMessageBoxDuringBruteForce("Raid info", $"Hashes identified: {Hashes.Count}");
-            var allParts = new AllStrings().ReadHashesFile(HashFactory, CaseOption);
+            var allParts = new AllStrings().ReadHashesFile(HashFactory, CaseOption, cancellationToken);
             var results = new List<RaiderResult>();
             foreach (var hash in Hashes)
             {
+                cancellationToken.ThrowIfCancellationRequested();
                 if (allParts.TryGetValue(hash, out var result))
                 {
                     results.Add(new RaiderResult { Hash = hash, Value = result, IsKnown = true });
