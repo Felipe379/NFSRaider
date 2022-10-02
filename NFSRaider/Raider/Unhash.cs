@@ -138,7 +138,7 @@ namespace NFSRaider.Raider
 
         }
 
-        public void SplitHashes(string txtHashes)
+        public void SplitHashes(string txtHashes, int numericBase)
         {
             var hashes = txtHashes.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).Select(c => Regex.Replace(c, @"[^0-9A-Za-z]", "")).ToList();
 
@@ -146,16 +146,16 @@ namespace NFSRaider.Raider
             {
                 foreach (var hash in hashes)
                 {
-                    if (Helpers.Hashes.IsHash(hash))
-                        Hashes.Add(Helpers.Hashes.Reverse(Convert.ToUInt32(hash, 16)));
+                    if (Helpers.Hashes.IsHash(hash, numericBase))
+                        Hashes.Add(Helpers.Hashes.Reverse(Convert.ToUInt32(hash, numericBase)));
                 }
             }
             else
             {
                 foreach (var hash in hashes)
                 {
-                    if (Helpers.Hashes.IsHash(hash))
-                        Hashes.Add(Convert.ToUInt32(hash, 16));
+                    if (Helpers.Hashes.IsHash(hash, numericBase))
+                        Hashes.Add(Convert.ToUInt32(hash, numericBase));
                 }
             }
         }

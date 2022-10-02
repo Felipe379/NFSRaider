@@ -23,10 +23,13 @@ namespace NFSRaider
             ComponentsChanged();
             CboOrderBy.SelectedIndex = (int)OrderOptions.None;
             ChkBruteforceWithRepetition.Checked = Convert.ToBoolean((int)GenerateOption.WithRepetition);
+            ChkCaseSensitive.Checked = new[] { StringComparison.CurrentCulture, StringComparison.InvariantCulture, StringComparison.Ordinal }.Contains(StringComparison.InvariantCultureIgnoreCase);
             CboForceHashListCase.SelectedIndex = (int)CaseOptions.None;
             CboEndianness.SelectedIndex = (int)Endianness.BigEndian;
             CboHashTypes.SelectedIndex = (int)HashType.Bin;
             CboRaiderMode.SelectedIndex = (int)RaiderMode.Unhasher;
+            CboNumericBase.SelectedIndex = (int)NumericBase.Hexadecimal;
+            CboNumericBaseLst.SelectedIndex = (int)NumericBase.Hexadecimal;
             LblTimeElapsed.Text = string.Empty;
             NumericProcessorsCount.Maximum = Environment.ProcessorCount;
             NumericProcessorsCount.Value = Environment.ProcessorCount / 2;
@@ -40,9 +43,13 @@ namespace NFSRaider
         private OrderOptions OrderOption { get; set; }
         private CaseOptions CaseOption { get; set; }
         private RaiderMode RaiderMode { get; set; }
+        private NumericBase NumericBase { get; set; }
+        private NumericBase NumericBaseLst { get; set; }
         private HashFactory HashFactory { get; set; }
 
         private readonly Stopwatch Timer = new();
+
+        private StringComparison SearchOptionStringComparasion { get; set; } = StringComparison.InvariantCultureIgnoreCase;
 
         private CancellationTokenSource CancellationTokenSource { get; set; }
         private Task BruteforceTask { get; set; }
@@ -138,7 +145,7 @@ namespace NFSRaider
 
                             var bruteForce = new Raider.Unhash(this, HashFactory, ChkUseHashesFile.Checked, ChkTryToBruteforce.Checked, TxtPrefixes.Text, TxtSuffixes.Text,
                                 TxtVariations.Text, TxtWordsBetweenVariations.Text, NumericMinVariations.Text, NumericMaxVariations.Text, NumericProcessorsCount.Text, GenerateOption, UnhashingEndianness, CaseOption);
-                            bruteForce.SplitHashes(TxtLoadFromText.Text);
+                            bruteForce.SplitHashes(TxtLoadFromText.Text, Numeric.Bases[NumericBase]);
 
                             TimerRestart();
 
@@ -202,6 +209,7 @@ namespace NFSRaider
             if (CancellationTokenSource != null)
                 CancellationTokenSource.Cancel(true);
         }
+
 
         private void BruteforceFinished()
         {
@@ -293,6 +301,7 @@ namespace NFSRaider
             var unknownHashes = 0;
 
             var dataSource = new List<string>();
+            var currentString = string.Empty;
 
             foreach (var item in listBoxDataSource)
             {
@@ -301,7 +310,7 @@ namespace NFSRaider
                 else
                     unknownHashes++;
 
-                dataSource.Add(format.Replace("(HASH)", item.Hash.ToString("X8")).Replace("(hash)", item.Hash.ToString("x8")).Replace("(STRING)", item.Value));
+                dataSource.Add(format.Replace("(HASH)", Convert.ToString(item.Hash, Numeric.Bases[NumericBaseLst])).Replace("(STRING)", item.Value));
             }
 
             var listBoxDataSourceCount = knownHashes + unknownHashes;
@@ -399,6 +408,14 @@ namespace NFSRaider
                 CboForceHashListCase.Enabled = false;
         }
 
+        private void CboNumericBase_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Enum.IsDefined(typeof(NumericBase), CboNumericBase.SelectedIndex))
+                NumericBase = (NumericBase)CboNumericBase.SelectedIndex;
+            else
+                NumericBase = NumericBase.Hexadecimal;
+        }
+
         private void CboRaiderMode_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (Enum.IsDefined(typeof(RaiderMode), CboRaiderMode.SelectedIndex))
@@ -433,6 +450,15 @@ namespace NFSRaider
                 OrderOption = (OrderOptions)CboOrderBy.SelectedIndex;
             else
                 OrderOption = OrderOptions.None;
+        }
+
+
+        private void CboNumericBaseLst_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Enum.IsDefined(typeof(NumericBase), CboNumericBaseLst.SelectedIndex))
+                NumericBaseLst = (NumericBase)CboNumericBaseLst.SelectedIndex;
+            else
+                NumericBaseLst = NumericBase.Hexadecimal;
         }
 
         private void CboForceHashListCase_SelectedIndexChanged(object sender, EventArgs e)
@@ -501,12 +527,26 @@ namespace NFSRaider
 
         private bool ItemFound(int i)
         {
-            return LstUnhashed.Items[i].ToString().Contains(TxtSearch.Text, StringComparison.InvariantCultureIgnoreCase);
+            return LstUnhashed.Items[i].ToString().Contains(TxtSearch.Text, SearchOptionStringComparasion);
+        }
+
+        private void ChkCaseSensitive_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChkCaseSensitive.Checked)
+                SearchOptionStringComparasion = StringComparison.InvariantCulture;
+            else
+                SearchOptionStringComparasion = StringComparison.InvariantCultureIgnoreCase;
+        }
+
+        private void BtnResetFormat_Click(object sender, EventArgs e)
+        {
+            TxtExportFormat.Text = "0x(HASH) - (STRING)";
         }
 
         private void BtnExportHashes_Click(object sender, EventArgs e)
         {
-            if (LstUnhashed.DataSource != null && ((IList<string>)LstUnhashed.DataSource).Count > 0)
+            var dataToExport = ChkExportSelectedOnly.Checked ? LstUnhashed.SelectedItems.Cast<string>() : (IList<string>)LstUnhashed.DataSource;
+            if (dataToExport != null && dataToExport.Any())
             {
                 using var saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "Text Files (*.txt)|*.txt";
@@ -515,14 +555,13 @@ namespace NFSRaider
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    File.WriteAllLines(saveFileDialog.FileName, (IList<string>)LstUnhashed.DataSource);
+                    File.WriteAllLines(saveFileDialog.FileName, dataToExport);
 
                     if (MessageBox.Show($"List exported to file:{Environment.NewLine}{Path.GetFileName(saveFileDialog.FileName)}{Environment.NewLine}Do you want to open it?",
                         "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                     {
                         Process.Start(saveFileDialog.FileName);
                     }
-
                 }
             }
             else
@@ -572,6 +611,7 @@ namespace NFSRaider
                 ChkBruteforceWithRepetition.Enabled = false;
                 ChkUseHashesFile.Enabled = false;
                 ChkUseHashesFile.Checked = true;
+                CboNumericBase.Enabled = false;
 
                 if (RaiderMode == RaiderMode.Unhasher)
                 {
@@ -615,6 +655,7 @@ namespace NFSRaider
                     ChkUseHashesFile.Enabled = true;
                     ChkTryToBruteforce.Enabled = true;
                     CboEndianness.Enabled = true;
+                    CboNumericBase.Enabled = true;
 
                     CboForceHashListCase.Enabled = ChkUseHashesFile.Checked;
 
@@ -669,6 +710,7 @@ namespace NFSRaider
             CboEndianness.Enabled = false;
             CboForceHashListCase.Enabled = false;
             CboRaiderMode.Enabled = false;
+            CboNumericBase.Enabled = false;
         }
     }
 }

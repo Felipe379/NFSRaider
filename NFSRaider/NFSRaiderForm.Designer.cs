@@ -45,6 +45,7 @@
             this.TxtFileStartOffset = new System.Windows.Forms.TextBox();
             this.TxtFileEndOffset = new System.Windows.Forms.TextBox();
             this.TabPageFromText = new System.Windows.Forms.TabPage();
+            this.CboNumericBase = new System.Windows.Forms.ComboBox();
             this.GrpHashingOptions = new System.Windows.Forms.GroupBox();
             this.CboHashTypes = new System.Windows.Forms.ComboBox();
             this.CboEndianness = new System.Windows.Forms.ComboBox();
@@ -56,9 +57,11 @@
             this.LblVariations = new System.Windows.Forms.Label();
             this.LblExportOptionsExportFormat = new System.Windows.Forms.Label();
             this.TxtExportFormat = new System.Windows.Forms.TextBox();
-            this.GrpExportOptions = new System.Windows.Forms.GroupBox();
+            this.GrpListOptions = new System.Windows.Forms.GroupBox();
+            this.CboNumericBaseLst = new System.Windows.Forms.ComboBox();
+            this.BtnResetFormat = new System.Windows.Forms.Button();
+            this.ChkExportSelectedOnly = new System.Windows.Forms.CheckBox();
             this.ChkReverseHashes = new System.Windows.Forms.CheckBox();
-            this.LblExportOptionsOrderBy = new System.Windows.Forms.Label();
             this.CboOrderBy = new System.Windows.Forms.ComboBox();
             this.ChkIgnoreRepeatedStrings = new System.Windows.Forms.CheckBox();
             this.BtnUpdateList = new System.Windows.Forms.Button();
@@ -96,12 +99,13 @@
             this.ToolTipNFSRaider = new System.Windows.Forms.ToolTip(this.components);
             this.BtnSearchAll = new System.Windows.Forms.Button();
             this.CboRaiderMode = new System.Windows.Forms.ComboBox();
+            this.ChkCaseSensitive = new System.Windows.Forms.CheckBox();
             this.GrpLoadOptions.SuspendLayout();
             this.TabLoadOptions.SuspendLayout();
             this.TabPageFromFile.SuspendLayout();
             this.TabPageFromText.SuspendLayout();
             this.GrpHashingOptions.SuspendLayout();
-            this.GrpExportOptions.SuspendLayout();
+            this.GrpListOptions.SuspendLayout();
             this.GrpStats.SuspendLayout();
             this.GrpBruteforceOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumericProcessorsCount)).BeginInit();
@@ -118,8 +122,8 @@
             this.LstUnhashed.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.LstUnhashed.Name = "LstUnhashed";
             this.LstUnhashed.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.LstUnhashed.Size = new System.Drawing.Size(342, 409);
-            this.LstUnhashed.TabIndex = 5;
+            this.LstUnhashed.Size = new System.Drawing.Size(342, 379);
+            this.LstUnhashed.TabIndex = 6;
             this.LstUnhashed.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LstUnhashed_KeyDown);
             // 
             // BtnLoadFile
@@ -128,21 +132,21 @@
             this.BtnLoadFile.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnLoadFile.Name = "BtnLoadFile";
             this.BtnLoadFile.Size = new System.Drawing.Size(144, 27);
-            this.BtnLoadFile.TabIndex = 18;
+            this.BtnLoadFile.TabIndex = 0;
             this.BtnLoadFile.Text = "Load file";
             this.BtnLoadFile.UseVisualStyleBackColor = true;
             this.BtnLoadFile.Click += new System.EventHandler(this.BtnLoadFile_Click);
             // 
             // TxtLoadFromText
             // 
-            this.TxtLoadFromText.Location = new System.Drawing.Point(7, 7);
+            this.TxtLoadFromText.Location = new System.Drawing.Point(7, 35);
             this.TxtLoadFromText.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtLoadFromText.MaxLength = 2147483647;
             this.TxtLoadFromText.Multiline = true;
             this.TxtLoadFromText.Name = "TxtLoadFromText";
             this.TxtLoadFromText.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.TxtLoadFromText.Size = new System.Drawing.Size(296, 287);
-            this.TxtLoadFromText.TabIndex = 27;
+            this.TxtLoadFromText.Size = new System.Drawing.Size(296, 262);
+            this.TxtLoadFromText.TabIndex = 1;
             // 
             // GrpLoadOptions
             // 
@@ -152,7 +156,7 @@
             this.GrpLoadOptions.Name = "GrpLoadOptions";
             this.GrpLoadOptions.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.GrpLoadOptions.Size = new System.Drawing.Size(334, 359);
-            this.GrpLoadOptions.TabIndex = 16;
+            this.GrpLoadOptions.TabIndex = 17;
             this.GrpLoadOptions.TabStop = false;
             this.GrpLoadOptions.Text = "Load options";
             // 
@@ -165,7 +169,7 @@
             this.TabLoadOptions.Name = "TabLoadOptions";
             this.TabLoadOptions.SelectedIndex = 0;
             this.TabLoadOptions.Size = new System.Drawing.Size(320, 331);
-            this.TabLoadOptions.TabIndex = 17;
+            this.TabLoadOptions.TabIndex = 0;
             this.TabLoadOptions.SelectedIndexChanged += new System.EventHandler(this.TabLoadOptions_SelectedIndexChanged);
             // 
             // TabPageFromFile
@@ -194,7 +198,7 @@
             this.TxtFileReadHashes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtFileReadHashes.Name = "TxtFileReadHashes";
             this.TxtFileReadHashes.Size = new System.Drawing.Size(144, 23);
-            this.TxtFileReadHashes.TabIndex = 24;
+            this.TxtFileReadHashes.TabIndex = 6;
             this.TxtFileReadHashes.Text = "0";
             this.TxtFileReadHashes.Leave += new System.EventHandler(this.TxtFileReadHashes_Leave);
             // 
@@ -205,7 +209,7 @@
             this.LblReadHashes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblReadHashes.Name = "LblReadHashes";
             this.LblReadHashes.Size = new System.Drawing.Size(72, 15);
-            this.LblReadHashes.TabIndex = 23;
+            this.LblReadHashes.TabIndex = 5;
             this.LblReadHashes.Text = "Read hashes";
             // 
             // LblStartOffset
@@ -215,7 +219,7 @@
             this.LblStartOffset.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblStartOffset.Name = "LblStartOffset";
             this.LblStartOffset.Size = new System.Drawing.Size(64, 15);
-            this.LblStartOffset.TabIndex = 19;
+            this.LblStartOffset.TabIndex = 1;
             this.LblStartOffset.Text = "Start offset";
             // 
             // TxtFileSkipHashes
@@ -224,7 +228,7 @@
             this.TxtFileSkipHashes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtFileSkipHashes.Name = "TxtFileSkipHashes";
             this.TxtFileSkipHashes.Size = new System.Drawing.Size(144, 23);
-            this.TxtFileSkipHashes.TabIndex = 26;
+            this.TxtFileSkipHashes.TabIndex = 8;
             this.TxtFileSkipHashes.Text = "0";
             this.TxtFileSkipHashes.TextChanged += new System.EventHandler(this.TxtFileSkipHashes_TextChanged);
             // 
@@ -235,7 +239,7 @@
             this.LblEndOffset.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblEndOffset.Name = "LblEndOffset";
             this.LblEndOffset.Size = new System.Drawing.Size(60, 15);
-            this.LblEndOffset.TabIndex = 21;
+            this.LblEndOffset.TabIndex = 3;
             this.LblEndOffset.Text = "End offset";
             // 
             // LblSkipHashes
@@ -245,7 +249,7 @@
             this.LblSkipHashes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblSkipHashes.Name = "LblSkipHashes";
             this.LblSkipHashes.Size = new System.Drawing.Size(68, 15);
-            this.LblSkipHashes.TabIndex = 25;
+            this.LblSkipHashes.TabIndex = 7;
             this.LblSkipHashes.Text = "Skip hashes";
             // 
             // TxtFileStartOffset
@@ -254,7 +258,7 @@
             this.TxtFileStartOffset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtFileStartOffset.Name = "TxtFileStartOffset";
             this.TxtFileStartOffset.Size = new System.Drawing.Size(144, 23);
-            this.TxtFileStartOffset.TabIndex = 20;
+            this.TxtFileStartOffset.TabIndex = 2;
             this.TxtFileStartOffset.Text = "0";
             this.TxtFileStartOffset.Leave += new System.EventHandler(this.TxtFileStartOffset_Leave);
             // 
@@ -264,12 +268,13 @@
             this.TxtFileEndOffset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtFileEndOffset.Name = "TxtFileEndOffset";
             this.TxtFileEndOffset.Size = new System.Drawing.Size(144, 23);
-            this.TxtFileEndOffset.TabIndex = 22;
+            this.TxtFileEndOffset.TabIndex = 4;
             this.TxtFileEndOffset.Text = "0";
             this.TxtFileEndOffset.Leave += new System.EventHandler(this.TxtFileEndOffset_Leave);
             // 
             // TabPageFromText
             // 
+            this.TabPageFromText.Controls.Add(this.CboNumericBase);
             this.TabPageFromText.Controls.Add(this.TxtLoadFromText);
             this.TabPageFromText.Location = new System.Drawing.Point(4, 24);
             this.TabPageFromText.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -280,6 +285,22 @@
             this.TabPageFromText.Text = "Text";
             this.TabPageFromText.UseVisualStyleBackColor = true;
             // 
+            // CboNumericBase
+            // 
+            this.CboNumericBase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CboNumericBase.FormattingEnabled = true;
+            this.CboNumericBase.Items.AddRange(new object[] {
+            "Hexadecimal",
+            "Decimal",
+            "Octal",
+            "Binary"});
+            this.CboNumericBase.Location = new System.Drawing.Point(8, 6);
+            this.CboNumericBase.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.CboNumericBase.Name = "CboNumericBase";
+            this.CboNumericBase.Size = new System.Drawing.Size(295, 23);
+            this.CboNumericBase.TabIndex = 0;
+            this.CboNumericBase.SelectedIndexChanged += new System.EventHandler(this.CboNumericBase_SelectedIndexChanged);
+            // 
             // GrpHashingOptions
             // 
             this.GrpHashingOptions.Controls.Add(this.CboHashTypes);
@@ -289,7 +310,7 @@
             this.GrpHashingOptions.Name = "GrpHashingOptions";
             this.GrpHashingOptions.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.GrpHashingOptions.Size = new System.Drawing.Size(307, 62);
-            this.GrpHashingOptions.TabIndex = 42;
+            this.GrpHashingOptions.TabIndex = 23;
             this.GrpHashingOptions.TabStop = false;
             this.GrpHashingOptions.Text = "Hashing options";
             // 
@@ -306,7 +327,7 @@
             this.CboHashTypes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CboHashTypes.Name = "CboHashTypes";
             this.CboHashTypes.Size = new System.Drawing.Size(112, 23);
-            this.CboHashTypes.TabIndex = 44;
+            this.CboHashTypes.TabIndex = 1;
             this.CboHashTypes.SelectedIndexChanged += new System.EventHandler(this.CboHashTypes_SelectedIndexChanged);
             // 
             // CboEndianness
@@ -320,7 +341,7 @@
             this.CboEndianness.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CboEndianness.Name = "CboEndianness";
             this.CboEndianness.Size = new System.Drawing.Size(171, 23);
-            this.CboEndianness.TabIndex = 43;
+            this.CboEndianness.TabIndex = 0;
             this.CboEndianness.SelectedIndexChanged += new System.EventHandler(this.CboEndianness_SelectedIndexChanged);
             // 
             // TxtPrefixes
@@ -334,7 +355,7 @@
             this.TxtPrefixes.Name = "TxtPrefixes";
             this.TxtPrefixes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TxtPrefixes.Size = new System.Drawing.Size(174, 219);
-            this.TxtPrefixes.TabIndex = 11;
+            this.TxtPrefixes.TabIndex = 12;
             // 
             // TxtVariations
             // 
@@ -345,7 +366,7 @@
             this.TxtVariations.Name = "TxtVariations";
             this.TxtVariations.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TxtVariations.Size = new System.Drawing.Size(174, 219);
-            this.TxtVariations.TabIndex = 13;
+            this.TxtVariations.TabIndex = 14;
             this.TxtVariations.Text = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o" +
     ",p,q,r,s,t,u,v,w,x,y,z,0,1,2,3,4,5,6,7,8,9,_, ,!,\",#,$,%,&,\',(,),*,+,-,.,/,:,;,<" +
     ",=,>,?,@,[,\\\\,],^,`,{,|,},~,\\,";
@@ -359,7 +380,7 @@
             this.TxtSuffixes.Name = "TxtSuffixes";
             this.TxtSuffixes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TxtSuffixes.Size = new System.Drawing.Size(174, 219);
-            this.TxtSuffixes.TabIndex = 15;
+            this.TxtSuffixes.TabIndex = 16;
             // 
             // LblPrefixes
             // 
@@ -368,7 +389,7 @@
             this.LblPrefixes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblPrefixes.Name = "LblPrefixes";
             this.LblPrefixes.Size = new System.Drawing.Size(48, 15);
-            this.LblPrefixes.TabIndex = 10;
+            this.LblPrefixes.TabIndex = 11;
             this.LblPrefixes.Text = "Prefixes";
             this.ToolTipNFSRaider.SetToolTip(this.LblPrefixes, "Use comma (,) to separate each prefix.\r\nIf you want to use comma (,) you must esc" +
         "ape it (\\,). Same goes for backslash (\\), you must escape it (\\\\).");
@@ -380,7 +401,7 @@
             this.LblSuffixes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblSuffixes.Name = "LblSuffixes";
             this.LblSuffixes.Size = new System.Drawing.Size(48, 15);
-            this.LblSuffixes.TabIndex = 14;
+            this.LblSuffixes.TabIndex = 15;
             this.LblSuffixes.Text = "Suffixes";
             this.ToolTipNFSRaider.SetToolTip(this.LblSuffixes, "Use comma (,) to separate each suffix.\r\nIf you want to use comma (,) you must esc" +
         "ape it (\\,). Same goes for backslash (\\), you must escape it (\\\\).");
@@ -392,69 +413,99 @@
             this.LblVariations.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblVariations.Name = "LblVariations";
             this.LblVariations.Size = new System.Drawing.Size(58, 15);
-            this.LblVariations.TabIndex = 12;
+            this.LblVariations.TabIndex = 13;
             this.LblVariations.Text = "Variations";
             this.ToolTipNFSRaider.SetToolTip(this.LblVariations, resources.GetString("LblVariations.ToolTip"));
             // 
             // LblExportOptionsExportFormat
             // 
             this.LblExportOptionsExportFormat.AutoSize = true;
-            this.LblExportOptionsExportFormat.Location = new System.Drawing.Point(7, 110);
+            this.LblExportOptionsExportFormat.Location = new System.Drawing.Point(9, 103);
             this.LblExportOptionsExportFormat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblExportOptionsExportFormat.Name = "LblExportOptionsExportFormat";
             this.LblExportOptionsExportFormat.Size = new System.Drawing.Size(80, 15);
-            this.LblExportOptionsExportFormat.TabIndex = 52;
+            this.LblExportOptionsExportFormat.TabIndex = 6;
             this.LblExportOptionsExportFormat.Text = "Export format";
             // 
             // TxtExportFormat
             // 
-            this.TxtExportFormat.Location = new System.Drawing.Point(94, 106);
+            this.TxtExportFormat.Location = new System.Drawing.Point(94, 99);
             this.TxtExportFormat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtExportFormat.Name = "TxtExportFormat";
             this.TxtExportFormat.Size = new System.Drawing.Size(146, 23);
-            this.TxtExportFormat.TabIndex = 53;
+            this.TxtExportFormat.TabIndex = 7;
             this.TxtExportFormat.Text = "0x(HASH) - (STRING)";
             // 
-            // GrpExportOptions
+            // GrpListOptions
             // 
-            this.GrpExportOptions.Controls.Add(this.ChkReverseHashes);
-            this.GrpExportOptions.Controls.Add(this.LblExportOptionsOrderBy);
-            this.GrpExportOptions.Controls.Add(this.CboOrderBy);
-            this.GrpExportOptions.Controls.Add(this.ChkIgnoreRepeatedStrings);
-            this.GrpExportOptions.Controls.Add(this.BtnUpdateList);
-            this.GrpExportOptions.Controls.Add(this.BtnExportHashes);
-            this.GrpExportOptions.Controls.Add(this.ChkIgnoreRepeatedHashes);
-            this.GrpExportOptions.Controls.Add(this.TxtExportFormat);
-            this.GrpExportOptions.Controls.Add(this.LblExportOptionsExportFormat);
-            this.GrpExportOptions.Location = new System.Drawing.Point(14, 490);
-            this.GrpExportOptions.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.GrpExportOptions.Name = "GrpExportOptions";
-            this.GrpExportOptions.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.GrpExportOptions.Size = new System.Drawing.Size(343, 136);
-            this.GrpExportOptions.TabIndex = 45;
-            this.GrpExportOptions.TabStop = false;
-            this.GrpExportOptions.Text = "Export options";
+            this.GrpListOptions.Controls.Add(this.CboNumericBaseLst);
+            this.GrpListOptions.Controls.Add(this.BtnResetFormat);
+            this.GrpListOptions.Controls.Add(this.ChkExportSelectedOnly);
+            this.GrpListOptions.Controls.Add(this.ChkReverseHashes);
+            this.GrpListOptions.Controls.Add(this.CboOrderBy);
+            this.GrpListOptions.Controls.Add(this.ChkIgnoreRepeatedStrings);
+            this.GrpListOptions.Controls.Add(this.BtnUpdateList);
+            this.GrpListOptions.Controls.Add(this.BtnExportHashes);
+            this.GrpListOptions.Controls.Add(this.ChkIgnoreRepeatedHashes);
+            this.GrpListOptions.Controls.Add(this.TxtExportFormat);
+            this.GrpListOptions.Controls.Add(this.LblExportOptionsExportFormat);
+            this.GrpListOptions.Location = new System.Drawing.Point(14, 457);
+            this.GrpListOptions.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.GrpListOptions.Name = "GrpListOptions";
+            this.GrpListOptions.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.GrpListOptions.Size = new System.Drawing.Size(343, 170);
+            this.GrpListOptions.TabIndex = 25;
+            this.GrpListOptions.TabStop = false;
+            this.GrpListOptions.Text = "List options";
+            // 
+            // CboNumericBaseLst
+            // 
+            this.CboNumericBaseLst.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CboNumericBaseLst.FormattingEnabled = true;
+            this.CboNumericBaseLst.Items.AddRange(new object[] {
+            "Hexadecimal",
+            "Decimal",
+            "Octal",
+            "Binary"});
+            this.CboNumericBaseLst.Location = new System.Drawing.Point(175, 22);
+            this.CboNumericBaseLst.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.CboNumericBaseLst.Name = "CboNumericBaseLst";
+            this.CboNumericBaseLst.Size = new System.Drawing.Size(160, 23);
+            this.CboNumericBaseLst.TabIndex = 1;
+            this.CboNumericBaseLst.SelectedIndexChanged += new System.EventHandler(this.CboNumericBaseLst_SelectedIndexChanged);
+            // 
+            // BtnResetFormat
+            // 
+            this.BtnResetFormat.Location = new System.Drawing.Point(248, 97);
+            this.BtnResetFormat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.BtnResetFormat.Name = "BtnResetFormat";
+            this.BtnResetFormat.Size = new System.Drawing.Size(87, 26);
+            this.BtnResetFormat.TabIndex = 8;
+            this.BtnResetFormat.Text = "Reset format";
+            this.BtnResetFormat.UseVisualStyleBackColor = true;
+            this.BtnResetFormat.Click += new System.EventHandler(this.BtnResetFormat_Click);
+            // 
+            // ChkExportSelectedOnly
+            // 
+            this.ChkExportSelectedOnly.AutoSize = true;
+            this.ChkExportSelectedOnly.Location = new System.Drawing.Point(180, 75);
+            this.ChkExportSelectedOnly.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ChkExportSelectedOnly.Name = "ChkExportSelectedOnly";
+            this.ChkExportSelectedOnly.Size = new System.Drawing.Size(132, 19);
+            this.ChkExportSelectedOnly.TabIndex = 5;
+            this.ChkExportSelectedOnly.Text = "Export selected only";
+            this.ChkExportSelectedOnly.UseVisualStyleBackColor = true;
             // 
             // ChkReverseHashes
             // 
             this.ChkReverseHashes.AutoSize = true;
-            this.ChkReverseHashes.Location = new System.Drawing.Point(7, 77);
+            this.ChkReverseHashes.Location = new System.Drawing.Point(9, 75);
             this.ChkReverseHashes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ChkReverseHashes.Name = "ChkReverseHashes";
             this.ChkReverseHashes.Size = new System.Drawing.Size(105, 19);
-            this.ChkReverseHashes.TabIndex = 50;
+            this.ChkReverseHashes.TabIndex = 4;
             this.ChkReverseHashes.Text = "Reverse hashes";
             this.ChkReverseHashes.UseVisualStyleBackColor = true;
-            // 
-            // LblExportOptionsOrderBy
-            // 
-            this.LblExportOptionsOrderBy.AutoSize = true;
-            this.LblExportOptionsOrderBy.Location = new System.Drawing.Point(7, 25);
-            this.LblExportOptionsOrderBy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LblExportOptionsOrderBy.Name = "LblExportOptionsOrderBy";
-            this.LblExportOptionsOrderBy.Size = new System.Drawing.Size(53, 15);
-            this.LblExportOptionsOrderBy.TabIndex = 46;
-            this.LblExportOptionsOrderBy.Text = "Order by";
             // 
             // CboOrderBy
             // 
@@ -466,42 +517,42 @@
             "Hash descending",
             "String ascending",
             "String descending"});
-            this.CboOrderBy.Location = new System.Drawing.Point(69, 22);
+            this.CboOrderBy.Location = new System.Drawing.Point(8, 22);
             this.CboOrderBy.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CboOrderBy.Name = "CboOrderBy";
-            this.CboOrderBy.Size = new System.Drawing.Size(265, 23);
-            this.CboOrderBy.TabIndex = 47;
+            this.CboOrderBy.Size = new System.Drawing.Size(160, 23);
+            this.CboOrderBy.TabIndex = 0;
             this.CboOrderBy.SelectedIndexChanged += new System.EventHandler(this.CboOrderBy_SelectedIndexChanged);
             // 
             // ChkIgnoreRepeatedStrings
             // 
             this.ChkIgnoreRepeatedStrings.AutoSize = true;
-            this.ChkIgnoreRepeatedStrings.Location = new System.Drawing.Point(178, 53);
+            this.ChkIgnoreRepeatedStrings.Location = new System.Drawing.Point(180, 51);
             this.ChkIgnoreRepeatedStrings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ChkIgnoreRepeatedStrings.Name = "ChkIgnoreRepeatedStrings";
             this.ChkIgnoreRepeatedStrings.Size = new System.Drawing.Size(147, 19);
-            this.ChkIgnoreRepeatedStrings.TabIndex = 49;
+            this.ChkIgnoreRepeatedStrings.TabIndex = 3;
             this.ChkIgnoreRepeatedStrings.Text = "Ignore repeated strings";
             this.ChkIgnoreRepeatedStrings.UseVisualStyleBackColor = true;
             // 
             // BtnUpdateList
             // 
-            this.BtnUpdateList.Location = new System.Drawing.Point(248, 104);
+            this.BtnUpdateList.Location = new System.Drawing.Point(175, 133);
             this.BtnUpdateList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnUpdateList.Name = "BtnUpdateList";
-            this.BtnUpdateList.Size = new System.Drawing.Size(88, 27);
-            this.BtnUpdateList.TabIndex = 54;
+            this.BtnUpdateList.Size = new System.Drawing.Size(160, 27);
+            this.BtnUpdateList.TabIndex = 10;
             this.BtnUpdateList.Text = "Update list";
             this.BtnUpdateList.UseVisualStyleBackColor = true;
             this.BtnUpdateList.Click += new System.EventHandler(this.BtnUpdateList_Click);
             // 
             // BtnExportHashes
             // 
-            this.BtnExportHashes.Location = new System.Drawing.Point(200, 77);
+            this.BtnExportHashes.Location = new System.Drawing.Point(8, 133);
             this.BtnExportHashes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnExportHashes.Name = "BtnExportHashes";
-            this.BtnExportHashes.Size = new System.Drawing.Size(136, 23);
-            this.BtnExportHashes.TabIndex = 51;
+            this.BtnExportHashes.Size = new System.Drawing.Size(160, 27);
+            this.BtnExportHashes.TabIndex = 9;
             this.BtnExportHashes.Text = "Export hashes";
             this.BtnExportHashes.UseVisualStyleBackColor = true;
             this.BtnExportHashes.Click += new System.EventHandler(this.BtnExportHashes_Click);
@@ -509,11 +560,11 @@
             // ChkIgnoreRepeatedHashes
             // 
             this.ChkIgnoreRepeatedHashes.AutoSize = true;
-            this.ChkIgnoreRepeatedHashes.Location = new System.Drawing.Point(7, 53);
+            this.ChkIgnoreRepeatedHashes.Location = new System.Drawing.Point(9, 51);
             this.ChkIgnoreRepeatedHashes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ChkIgnoreRepeatedHashes.Name = "ChkIgnoreRepeatedHashes";
             this.ChkIgnoreRepeatedHashes.Size = new System.Drawing.Size(148, 19);
-            this.ChkIgnoreRepeatedHashes.TabIndex = 48;
+            this.ChkIgnoreRepeatedHashes.TabIndex = 2;
             this.ChkIgnoreRepeatedHashes.Text = "Ignore repeated hashes";
             this.ChkIgnoreRepeatedHashes.UseVisualStyleBackColor = true;
             // 
@@ -523,7 +574,7 @@
             this.BtnStart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnStart.Name = "BtnStart";
             this.BtnStart.Size = new System.Drawing.Size(107, 27);
-            this.BtnStart.TabIndex = 6;
+            this.BtnStart.TabIndex = 7;
             this.BtnStart.Text = "Start";
             this.BtnStart.UseVisualStyleBackColor = true;
             this.BtnStart.Click += new System.EventHandler(this.BtnStart_Click);
@@ -534,7 +585,7 @@
             this.BtnStop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnStop.Name = "BtnStop";
             this.BtnStop.Size = new System.Drawing.Size(107, 27);
-            this.BtnStop.TabIndex = 7;
+            this.BtnStop.TabIndex = 8;
             this.BtnStop.Text = "Stop";
             this.BtnStop.UseVisualStyleBackColor = true;
             this.BtnStop.Click += new System.EventHandler(this.BtnStop_Click);
@@ -545,7 +596,7 @@
             this.BtnClear.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnClear.Name = "BtnClear";
             this.BtnClear.Size = new System.Drawing.Size(107, 27);
-            this.BtnClear.TabIndex = 8;
+            this.BtnClear.TabIndex = 9;
             this.BtnClear.Text = "Clear";
             this.BtnClear.UseVisualStyleBackColor = true;
             this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
@@ -553,22 +604,22 @@
             // ChkUseHashesFile
             // 
             this.ChkUseHashesFile.AutoSize = true;
-            this.ChkUseHashesFile.Location = new System.Drawing.Point(897, 410);
+            this.ChkUseHashesFile.Location = new System.Drawing.Point(896, 409);
             this.ChkUseHashesFile.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ChkUseHashesFile.Name = "ChkUseHashesFile";
             this.ChkUseHashesFile.Size = new System.Drawing.Size(108, 19);
-            this.ChkUseHashesFile.TabIndex = 40;
+            this.ChkUseHashesFile.TabIndex = 20;
             this.ChkUseHashesFile.Text = "Use hashes files";
             this.ChkUseHashesFile.UseVisualStyleBackColor = true;
             this.ChkUseHashesFile.CheckedChanged += new System.EventHandler(this.ChkUseHashesFile_CheckedChanged);
             // 
             // BtnGenerateListOfHashes
             // 
-            this.BtnGenerateListOfHashes.Location = new System.Drawing.Point(712, 405);
+            this.BtnGenerateListOfHashes.Location = new System.Drawing.Point(718, 404);
             this.BtnGenerateListOfHashes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnGenerateListOfHashes.Name = "BtnGenerateListOfHashes";
-            this.BtnGenerateListOfHashes.Size = new System.Drawing.Size(177, 27);
-            this.BtnGenerateListOfHashes.TabIndex = 39;
+            this.BtnGenerateListOfHashes.Size = new System.Drawing.Size(171, 27);
+            this.BtnGenerateListOfHashes.TabIndex = 19;
             this.BtnGenerateListOfHashes.Text = "Generate list of hashes";
             this.BtnGenerateListOfHashes.UseVisualStyleBackColor = true;
             this.BtnGenerateListOfHashes.Click += new System.EventHandler(this.BtnGenerateListOfHashes_Click);
@@ -586,7 +637,7 @@
             this.GrpStats.Name = "GrpStats";
             this.GrpStats.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.GrpStats.Size = new System.Drawing.Size(306, 85);
-            this.GrpStats.TabIndex = 55;
+            this.GrpStats.TabIndex = 24;
             this.GrpStats.TabStop = false;
             this.GrpStats.Text = "Stats";
             // 
@@ -597,7 +648,7 @@
             this.LblTotalHashes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblTotalHashes.Name = "LblTotalHashes";
             this.LblTotalHashes.Size = new System.Drawing.Size(13, 15);
-            this.LblTotalHashes.TabIndex = 61;
+            this.LblTotalHashes.TabIndex = 5;
             this.LblTotalHashes.Text = "0";
             // 
             // LblUnknownHashes
@@ -607,7 +658,7 @@
             this.LblUnknownHashes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblUnknownHashes.Name = "LblUnknownHashes";
             this.LblUnknownHashes.Size = new System.Drawing.Size(13, 15);
-            this.LblUnknownHashes.TabIndex = 59;
+            this.LblUnknownHashes.TabIndex = 3;
             this.LblUnknownHashes.Text = "0";
             // 
             // LblKnownHashes
@@ -617,7 +668,7 @@
             this.LblKnownHashes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblKnownHashes.Name = "LblKnownHashes";
             this.LblKnownHashes.Size = new System.Drawing.Size(13, 15);
-            this.LblKnownHashes.TabIndex = 57;
+            this.LblKnownHashes.TabIndex = 1;
             this.LblKnownHashes.Text = "0";
             // 
             // LblTextKnownHashes
@@ -627,7 +678,7 @@
             this.LblTextKnownHashes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblTextKnownHashes.Name = "LblTextKnownHashes";
             this.LblTextKnownHashes.Size = new System.Drawing.Size(86, 15);
-            this.LblTextKnownHashes.TabIndex = 56;
+            this.LblTextKnownHashes.TabIndex = 0;
             this.LblTextKnownHashes.Text = "Known hashes:";
             // 
             // LblTextUnknownHashes
@@ -637,7 +688,7 @@
             this.LblTextUnknownHashes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblTextUnknownHashes.Name = "LblTextUnknownHashes";
             this.LblTextUnknownHashes.Size = new System.Drawing.Size(100, 15);
-            this.LblTextUnknownHashes.TabIndex = 58;
+            this.LblTextUnknownHashes.TabIndex = 2;
             this.LblTextUnknownHashes.Text = "Unknown hashes:";
             // 
             // LblTextTotalHashes
@@ -647,7 +698,7 @@
             this.LblTextTotalHashes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblTextTotalHashes.Name = "LblTextTotalHashes";
             this.LblTextTotalHashes.Size = new System.Drawing.Size(88, 15);
-            this.LblTextTotalHashes.TabIndex = 60;
+            this.LblTextTotalHashes.TabIndex = 4;
             this.LblTextTotalHashes.Text = "Total of hashes:";
             // 
             // GrpBruteforceOptions
@@ -667,7 +718,7 @@
             this.GrpBruteforceOptions.Name = "GrpBruteforceOptions";
             this.GrpBruteforceOptions.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.GrpBruteforceOptions.Size = new System.Drawing.Size(313, 130);
-            this.GrpBruteforceOptions.TabIndex = 28;
+            this.GrpBruteforceOptions.TabIndex = 18;
             this.GrpBruteforceOptions.TabStop = false;
             this.GrpBruteforceOptions.Text = "Bruteforce options";
             // 
@@ -687,7 +738,7 @@
             0});
             this.NumericProcessorsCount.Name = "NumericProcessorsCount";
             this.NumericProcessorsCount.Size = new System.Drawing.Size(48, 23);
-            this.NumericProcessorsCount.TabIndex = 36;
+            this.NumericProcessorsCount.TabIndex = 7;
             this.NumericProcessorsCount.Value = new decimal(new int[] {
             1,
             0,
@@ -702,7 +753,7 @@
             this.LblBruteforceOptionsProcessors.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblBruteforceOptionsProcessors.Name = "LblBruteforceOptionsProcessors";
             this.LblBruteforceOptionsProcessors.Size = new System.Drawing.Size(63, 15);
-            this.LblBruteforceOptionsProcessors.TabIndex = 35;
+            this.LblBruteforceOptionsProcessors.TabIndex = 6;
             this.LblBruteforceOptionsProcessors.Text = "Processors";
             // 
             // NumericMaxVariations
@@ -716,7 +767,7 @@
             0});
             this.NumericMaxVariations.Name = "NumericMaxVariations";
             this.NumericMaxVariations.Size = new System.Drawing.Size(48, 23);
-            this.NumericMaxVariations.TabIndex = 34;
+            this.NumericMaxVariations.TabIndex = 5;
             this.NumericMaxVariations.Value = new decimal(new int[] {
             6,
             0,
@@ -735,7 +786,7 @@
             0});
             this.NumericMinVariations.Name = "NumericMinVariations";
             this.NumericMinVariations.Size = new System.Drawing.Size(48, 23);
-            this.NumericMinVariations.TabIndex = 32;
+            this.NumericMinVariations.TabIndex = 3;
             this.NumericMinVariations.Value = new decimal(new int[] {
             1,
             0,
@@ -750,7 +801,7 @@
             this.ChkBruteforceWithRepetition.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ChkBruteforceWithRepetition.Name = "ChkBruteforceWithRepetition";
             this.ChkBruteforceWithRepetition.Size = new System.Drawing.Size(157, 19);
-            this.ChkBruteforceWithRepetition.TabIndex = 38;
+            this.ChkBruteforceWithRepetition.TabIndex = 9;
             this.ChkBruteforceWithRepetition.Text = "Variations with repetition";
             this.ChkBruteforceWithRepetition.UseVisualStyleBackColor = true;
             this.ChkBruteforceWithRepetition.CheckedChanged += new System.EventHandler(this.ChkBruteforceWithRepetition_CheckedChanged);
@@ -762,7 +813,7 @@
             this.ChkTryToBruteforce.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ChkTryToBruteforce.Name = "ChkTryToBruteforce";
             this.ChkTryToBruteforce.Size = new System.Drawing.Size(113, 19);
-            this.ChkTryToBruteforce.TabIndex = 37;
+            this.ChkTryToBruteforce.TabIndex = 8;
             this.ChkTryToBruteforce.Text = "Try to bruteforce";
             this.ChkTryToBruteforce.UseVisualStyleBackColor = true;
             this.ChkTryToBruteforce.CheckedChanged += new System.EventHandler(this.ChkTryToBruteforce_CheckedChanged);
@@ -774,7 +825,7 @@
             this.LblWordsBetweenVariations.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblWordsBetweenVariations.Name = "LblWordsBetweenVariations";
             this.LblWordsBetweenVariations.Size = new System.Drawing.Size(143, 15);
-            this.LblWordsBetweenVariations.TabIndex = 29;
+            this.LblWordsBetweenVariations.TabIndex = 0;
             this.LblWordsBetweenVariations.Text = "Words between variations";
             this.ToolTipNFSRaider.SetToolTip(this.LblWordsBetweenVariations, "Use comma (,) to separate each word between variations.\r\nIf you want to use comma" +
         " (,) you must escape it (\\,). Same goes for backslash (\\), you must escape it (\\" +
@@ -787,7 +838,7 @@
             this.LblBruteforceOptionsMax.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblBruteforceOptionsMax.Name = "LblBruteforceOptionsMax";
             this.LblBruteforceOptionsMax.Size = new System.Drawing.Size(30, 15);
-            this.LblBruteforceOptionsMax.TabIndex = 33;
+            this.LblBruteforceOptionsMax.TabIndex = 4;
             this.LblBruteforceOptionsMax.Text = "Max";
             // 
             // LblBruteforceOptionsMin
@@ -797,7 +848,7 @@
             this.LblBruteforceOptionsMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblBruteforceOptionsMin.Name = "LblBruteforceOptionsMin";
             this.LblBruteforceOptionsMin.Size = new System.Drawing.Size(28, 15);
-            this.LblBruteforceOptionsMin.TabIndex = 31;
+            this.LblBruteforceOptionsMin.TabIndex = 2;
             this.LblBruteforceOptionsMin.Text = "Min";
             // 
             // TxtWordsBetweenVariations
@@ -807,14 +858,14 @@
             this.TxtWordsBetweenVariations.MaxLength = 2147483647;
             this.TxtWordsBetweenVariations.Name = "TxtWordsBetweenVariations";
             this.TxtWordsBetweenVariations.Size = new System.Drawing.Size(294, 23);
-            this.TxtWordsBetweenVariations.TabIndex = 30;
+            this.TxtWordsBetweenVariations.TabIndex = 1;
             // 
             // TxtSearch
             // 
-            this.TxtSearch.Location = new System.Drawing.Point(14, 9);
+            this.TxtSearch.Location = new System.Drawing.Point(14, 12);
             this.TxtSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxtSearch.Name = "TxtSearch";
-            this.TxtSearch.Size = new System.Drawing.Size(342, 23);
+            this.TxtSearch.Size = new System.Drawing.Size(228, 23);
             this.TxtSearch.TabIndex = 1;
             // 
             // BtnSearchPrevious
@@ -823,7 +874,7 @@
             this.BtnSearchPrevious.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnSearchPrevious.Name = "BtnSearchPrevious";
             this.BtnSearchPrevious.Size = new System.Drawing.Size(110, 27);
-            this.BtnSearchPrevious.TabIndex = 2;
+            this.BtnSearchPrevious.TabIndex = 3;
             this.BtnSearchPrevious.Text = "Previous";
             this.BtnSearchPrevious.UseVisualStyleBackColor = true;
             this.BtnSearchPrevious.Click += new System.EventHandler(this.BtnSearchPrevious_Click);
@@ -834,7 +885,7 @@
             this.BtnSearchNext.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnSearchNext.Name = "BtnSearchNext";
             this.BtnSearchNext.Size = new System.Drawing.Size(112, 27);
-            this.BtnSearchNext.TabIndex = 3;
+            this.BtnSearchNext.TabIndex = 4;
             this.BtnSearchNext.Text = "Next";
             this.BtnSearchNext.UseVisualStyleBackColor = true;
             this.BtnSearchNext.Click += new System.EventHandler(this.BtnSearchNext_Click);
@@ -846,7 +897,7 @@
             this.LblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblStatus.Name = "LblStatus";
             this.LblStatus.Size = new System.Drawing.Size(84, 15);
-            this.LblStatus.TabIndex = 62;
+            this.LblStatus.TabIndex = 26;
             this.LblStatus.Text = "No file loaded.";
             // 
             // CboForceHashListCase
@@ -857,11 +908,11 @@
             "None",
             "Uppercase",
             "Lowercase"});
-            this.CboForceHashListCase.Location = new System.Drawing.Point(712, 441);
+            this.CboForceHashListCase.Location = new System.Drawing.Point(718, 438);
             this.CboForceHashListCase.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CboForceHashListCase.Name = "CboForceHashListCase";
-            this.CboForceHashListCase.Size = new System.Drawing.Size(177, 23);
-            this.CboForceHashListCase.TabIndex = 41;
+            this.CboForceHashListCase.Size = new System.Drawing.Size(171, 23);
+            this.CboForceHashListCase.TabIndex = 21;
             this.CboForceHashListCase.SelectedIndexChanged += new System.EventHandler(this.CboForceHashListCase_SelectedIndexChanged);
             // 
             // LblTimeElapsed
@@ -871,7 +922,7 @@
             this.LblTimeElapsed.Name = "LblTimeElapsed";
             this.LblTimeElapsed.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.LblTimeElapsed.Size = new System.Drawing.Size(233, 15);
-            this.LblTimeElapsed.TabIndex = 63;
+            this.LblTimeElapsed.TabIndex = 27;
             this.LblTimeElapsed.Text = "Time elapsed: HHHH:mm:ss.fff";
             // 
             // ToolTipNFSRaider
@@ -887,7 +938,7 @@
             this.BtnSearchAll.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.BtnSearchAll.Name = "BtnSearchAll";
             this.BtnSearchAll.Size = new System.Drawing.Size(110, 27);
-            this.BtnSearchAll.TabIndex = 4;
+            this.BtnSearchAll.TabIndex = 5;
             this.BtnSearchAll.Text = "All";
             this.BtnSearchAll.UseVisualStyleBackColor = true;
             this.BtnSearchAll.Click += new System.EventHandler(this.BtnSearchAll_Click);
@@ -903,8 +954,20 @@
             this.CboRaiderMode.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CboRaiderMode.Name = "CboRaiderMode";
             this.CboRaiderMode.Size = new System.Drawing.Size(107, 23);
-            this.CboRaiderMode.TabIndex = 9;
+            this.CboRaiderMode.TabIndex = 10;
             this.CboRaiderMode.SelectedIndexChanged += new System.EventHandler(this.CboRaiderMode_SelectedIndexChanged);
+            // 
+            // ChkCaseSensitive
+            // 
+            this.ChkCaseSensitive.AutoSize = true;
+            this.ChkCaseSensitive.Location = new System.Drawing.Point(250, 14);
+            this.ChkCaseSensitive.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ChkCaseSensitive.Name = "ChkCaseSensitive";
+            this.ChkCaseSensitive.Size = new System.Drawing.Size(99, 19);
+            this.ChkCaseSensitive.TabIndex = 2;
+            this.ChkCaseSensitive.Text = "Case sensitive";
+            this.ChkCaseSensitive.UseVisualStyleBackColor = true;
+            this.ChkCaseSensitive.CheckedChanged += new System.EventHandler(this.ChkCaseSensitive_CheckedChanged);
             // 
             // NFSRaiderForm
             // 
@@ -912,21 +975,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1031, 647);
             this.Controls.Add(this.CboRaiderMode);
-            this.Controls.Add(this.BtnSearchAll);
             this.Controls.Add(this.LblTimeElapsed);
+            this.Controls.Add(this.ChkCaseSensitive);
             this.Controls.Add(this.CboForceHashListCase);
             this.Controls.Add(this.LblStatus);
-            this.Controls.Add(this.BtnSearchNext);
-            this.Controls.Add(this.BtnSearchPrevious);
-            this.Controls.Add(this.TxtSearch);
             this.Controls.Add(this.GrpBruteforceOptions);
+            this.Controls.Add(this.BtnSearchAll);
             this.Controls.Add(this.GrpStats);
             this.Controls.Add(this.BtnGenerateListOfHashes);
             this.Controls.Add(this.ChkUseHashesFile);
+            this.Controls.Add(this.TxtSearch);
             this.Controls.Add(this.BtnClear);
             this.Controls.Add(this.BtnStop);
+            this.Controls.Add(this.BtnSearchNext);
             this.Controls.Add(this.BtnStart);
-            this.Controls.Add(this.GrpExportOptions);
+            this.Controls.Add(this.GrpListOptions);
+            this.Controls.Add(this.BtnSearchPrevious);
             this.Controls.Add(this.LblVariations);
             this.Controls.Add(this.LblSuffixes);
             this.Controls.Add(this.LblPrefixes);
@@ -948,8 +1012,8 @@
             this.TabPageFromText.ResumeLayout(false);
             this.TabPageFromText.PerformLayout();
             this.GrpHashingOptions.ResumeLayout(false);
-            this.GrpExportOptions.ResumeLayout(false);
-            this.GrpExportOptions.PerformLayout();
+            this.GrpListOptions.ResumeLayout(false);
+            this.GrpListOptions.PerformLayout();
             this.GrpStats.ResumeLayout(false);
             this.GrpStats.PerformLayout();
             this.GrpBruteforceOptions.ResumeLayout(false);
@@ -979,7 +1043,7 @@
         private System.Windows.Forms.Label LblVariations;
         private System.Windows.Forms.Label LblExportOptionsExportFormat;
         private System.Windows.Forms.TextBox TxtExportFormat;
-        private System.Windows.Forms.GroupBox GrpExportOptions;
+        private System.Windows.Forms.GroupBox GrpListOptions;
         private System.Windows.Forms.Button BtnExportHashes;
         private System.Windows.Forms.TextBox TxtFileStartOffset;
         private System.Windows.Forms.TextBox TxtFileEndOffset;
@@ -1013,7 +1077,6 @@
         private System.Windows.Forms.CheckBox ChkBruteforceWithRepetition;
         private System.Windows.Forms.CheckBox ChkIgnoreRepeatedStrings;
         private System.Windows.Forms.CheckBox ChkIgnoreRepeatedHashes;
-        private System.Windows.Forms.Label LblExportOptionsOrderBy;
         private System.Windows.Forms.ComboBox CboOrderBy;
         private System.Windows.Forms.ComboBox CboForceHashListCase;
         private System.Windows.Forms.NumericUpDown NumericMinVariations;
@@ -1030,6 +1093,11 @@
         private System.Windows.Forms.TabPage TabPageFromFile;
         private System.Windows.Forms.TabPage TabPageFromText;
         private System.Windows.Forms.ComboBox CboRaiderMode;
+        private System.Windows.Forms.CheckBox ChkCaseSensitive;
+        private System.Windows.Forms.Button BtnResetFormat;
+        private System.Windows.Forms.CheckBox ChkExportSelectedOnly;
+        private System.Windows.Forms.ComboBox CboNumericBase;
+        private System.Windows.Forms.ComboBox CboNumericBaseLst;
     }
 }
 
