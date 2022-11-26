@@ -29,9 +29,7 @@ namespace NFSRaider.GeneratedStrings.Cars
 "HATCHBACK",
 "HATCHBACK02",
 "HUMMER",
-"IMPREZA",
 "IMPREZAWRX",
-"INTEGRA",
 "IS300",
 "LANCER",
 "LANCEREVO8",
@@ -39,8 +37,6 @@ namespace NFSRaider.GeneratedStrings.Cars
 "MINIVAN",
 "MUSTANGGT",
 "NAVIGATOR",
-"NEON",
-"NSX",
 "PANELVAN",
 "PARCELVAN",
 "PEUGOT",
@@ -49,7 +45,6 @@ namespace NFSRaider.GeneratedStrings.Cars
 "RSX",
 "RX7",
 "RX8",
-"S2000",
 "SENTRA",
 "SKYLINE",
 "SUPRA",
@@ -58,6 +53,15 @@ namespace NFSRaider.GeneratedStrings.Cars
 "TAXI02",
 "TIBURON",
 "TT",
+        };
+
+        public static readonly List<string> ListCut = new List<string>
+        {
+"IMPREZA",
+"INTEGRA",
+"NEON",
+"NSX",
+"S2000",
         };
     }
 }

@@ -29,7 +29,6 @@ namespace NFSRaider.GeneratedStrings.Cars
 "COBALTSS",
 "COROLLA",
 "CORVETTE",
-"CORVETTEC6R",
 "CORVETTE67",
 "CORVETTEZ06",
 "COSWORTH",
@@ -43,7 +42,6 @@ namespace NFSRaider.GeneratedStrings.Cars
 "FOCUSST",
 "FORDGT",
 "G35",
-"GALLARDO",
 "GALLARDOS",
 "GTI",
 "GTO",
@@ -84,6 +82,12 @@ namespace NFSRaider.GeneratedStrings.Cars
 "VEYRON",
 "VIPER",
 "ZONDA",
+        };
+
+        public static readonly List<string> ListCut = new List<string>
+        {
+"CORVETTEC6R",
+"GALLARDO",
         };
     }
 }

@@ -9,6 +9,7 @@ namespace NFSRaider.GeneratedStrings.Cars
 "240SX",
 "300C",
 "350Z",
+"370Z",
 "911GT2",
 "997TT",
 "A4",
@@ -17,7 +18,6 @@ namespace NFSRaider.GeneratedStrings.Cars
 "CARRERAGT",
 "CAYMANS",
 "CCX",
-"CEMTR",
 "CHALLENGER71",
 "CHALLENGERN",
 "CHARGER06",
@@ -25,7 +25,6 @@ namespace NFSRaider.GeneratedStrings.Cars
 "CLIO",
 "CLK500",
 "COP911GT2",
-"COPEVO9",
 "COPGALLARDO",
 "COPGHOST",
 "COPHELI",
@@ -44,16 +43,12 @@ namespace NFSRaider.GeneratedStrings.Cars
 "FORDGT",
 "G35",
 "GALLARDO",
-"GARB",
 "GTI",
 "LANCEREVO9",
 "MAZDASPEED3",
-"MINIVAN",
 "MURCIELAGO640",
 "MUSTANGGT",
 "MUSTANGSHLBYO",
-"PICKUPA",
-"PIZZA",
 "PLR_COP911GT2",
 "PLR_COPGALL",
 "PLR_COPMUST",
@@ -65,13 +60,13 @@ namespace NFSRaider.GeneratedStrings.Cars
 "SL65",
 "SLR",
 "SUPRA",
-"TAXI",
 "TRAF4DSEDA",
 "TRAF4DSEDB",
 "TRAF4DSEDC",
 "TRAFAMB",
 "TRAFCAMPER",
 "TRAFCEMTR",
+"TRAFCOURT",
 "TRAFDMPTR",
 "TRAFFICCOUP",
 "TRAFFIRE",
@@ -94,8 +89,24 @@ namespace NFSRaider.GeneratedStrings.Cars
 "TRAILERCRATE",
 "TRAILERLOG",
 "VIPER",
-"VIPERTOP",
 "ZONDA",
+        };
+
+        public static readonly List<string> ListCut = new List<string>
+        {
+"COPEVO9",
+        };
+
+        public static readonly List<string> ListLeftovers = new List<string>
+        {
+"CEMTR",
+"COPSPORT",
+"GARB",
+"MINIVAN",
+"PICKUPA",
+"PIZZA",
+"TAXI",
+"VIPERTOP",
         };
     }
 }

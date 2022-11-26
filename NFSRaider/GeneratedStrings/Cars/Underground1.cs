@@ -25,7 +25,6 @@ namespace NFSRaider.GeneratedStrings.Cars
 "INTEGRA",
 "LANCER",
 "MIATA",
-"MINI",
 "MINIVAN",
 "NEON",
 "PANELVAN",
@@ -42,6 +41,43 @@ namespace NFSRaider.GeneratedStrings.Cars
 "TAXI",
 "TAXI02",
 "TIBURON",
+        };
+
+        public static readonly List<string> ListCut = new List<string>
+        {
+"MINI",
+        };
+
+        public static readonly List<string> ListLeftovers = new List<string>
+        {
+"911TURBO",
+"BARCHETTA",
+"BMWM5",
+"BMWM5COP",
+"BMWZ8",
+"CARRERAGT",
+"CHALLENGE",
+"CL55AMG",
+"CLK_GTR",
+"CORVETTE",
+"CORVETTECOP",
+"CROWNVIC",
+"DIABLO",
+"ELISE",
+"F50",
+"HOLDEN",
+"JAGUAR",
+"MCLAREN",
+"MCLARENLM",
+"MURCIELAGO",
+"MUSTANG",
+"MUSTANGCOP",
+"OPEL",
+"SPIDER",
+"TS50",
+"VANQUISH",
+"VAUXHALL",
+"VIPERGTS",
         };
     }
 }

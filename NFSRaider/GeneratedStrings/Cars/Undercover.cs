@@ -8,7 +8,6 @@ namespace NFSRaider.GeneratedStrings.Cars
         {
 "AAA_AAA_AAA_01",
 "AST_DB9_STK_06",
-"AST_DBS_V12_08",
 "AUD_R8_STK_08",
 "AUD_RS4_STK_08",
 "AUD_S5_STK_08",
@@ -30,7 +29,6 @@ namespace NFSRaider.GeneratedStrings.Cars
 "COP_CAR_MUS_08",
 "COP_CAR_SUV_04",
 "COP_HEL_FED_01",
-"COP_HEL_STA_05",
 "DOD_CHA_CON_06",
 "DOD_CHA_STK_71",
 "DOD_CHR_BEE_07",
@@ -46,7 +44,6 @@ namespace NFSRaider.GeneratedStrings.Cars
 "LAM_GAL_560_09",
 "LAM_GAL_SUP_08",
 "LAM_MUR_LP_06",
-"LAM_REV_STK_08",
 "LEX_IS_F_08",
 "LOT_ELI_111_06",
 "MAZ_RX7_STK_95",
@@ -54,7 +51,6 @@ namespace NFSRaider.GeneratedStrings.Cars
 "MAZ_SP3_STK_06",
 "MCL_F1_STK_94",
 "MER_CLS_55_08",
-"MER_CLS_63_08",
 "MER_SLR_722_07",
 "MER_SL_65_07",
 "MIT_EVO_IX_06",
@@ -70,15 +66,12 @@ namespace NFSRaider.GeneratedStrings.Cars
 "PON_GTO_STK_65",
 "PON_SOL_GXP_06",
 "POR_911_GT2_08",
-"POR_911_GT3RS_08",
 "POR_911_TUR_06",
 "POR_911_VTA_08",
 "POR_CAR_GT_05",
 "POR_CAY_S_07",
-"POR_CAY_S_09",
 "POR_GT3_RS_08",
 "REN_MEG_COU_08",
-"SAL_S7_STK_07",
 "SHL_GT_500_67",
 "SUB_WRX_STI_06",
 "TOY_SUP_STK_98",
@@ -100,6 +93,17 @@ namespace NFSRaider.GeneratedStrings.Cars
 "TRF_VAN_STD_84",
 "VOL_GOL_R32_06",
 "VOL_SCI_STK_08",
+        };
+
+        public static readonly List<string> ListCut = new List<string>
+        {
+"AST_DBS_V12_08",
+"COP_HEL_STA_05",
+"LAM_REV_STK_08",
+"MER_CLS_63_08",
+"POR_911_GT3RS_08",
+"POR_CAY_S_09",
+"SAL_S7_STK_07",
         };
     }
 }

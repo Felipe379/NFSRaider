@@ -96,7 +96,7 @@ namespace NFSRaider.GeneratedStrings
             }
         }
 
-        public Dictionary<uint, string> ReadHashesFile(HashFactory hashFactory, CaseOptions caseOption, CancellationToken cancellationToken = default(CancellationToken))
+        public Dictionary<uint, string> ReadHashesFile(HashFactory hashFactory, CaseOptions caseOption, CancellationToken cancellationToken = default)
         {
             var hashes = new BuildTruncatedStrings().GetAllTruncatedStrings();
 

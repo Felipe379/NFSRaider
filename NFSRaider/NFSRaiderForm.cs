@@ -145,7 +145,7 @@ namespace NFSRaider
 
                             var bruteForce = new Raider.Unhash(this, HashFactory, ChkUseHashesFile.Checked, ChkTryToBruteforce.Checked, TxtPrefixes.Text, TxtSuffixes.Text,
                                 TxtVariations.Text, TxtWordsBetweenVariations.Text, NumericMinVariations.Text, NumericMaxVariations.Text, NumericProcessorsCount.Text, GenerateOption, UnhashingEndianness, CaseOption);
-                            bruteForce.SplitHashes(TxtLoadFromText.Text, Numeric.Bases[NumericBase]);
+                            bruteForce.SplitHashes(TxtLoadFromText.Text, Numeric.Bases[NumericBase].Base);
 
                             TimerRestart();
 
@@ -310,7 +310,7 @@ namespace NFSRaider
                 else
                     unknownHashes++;
 
-                dataSource.Add(format.Replace("(HASH)", Convert.ToString(item.Hash, Numeric.Bases[NumericBaseLst])).Replace("(STRING)", item.Value));
+                dataSource.Add(format.Replace("(HASH)", Convert.ToString(item.Hash, Numeric.Bases[NumericBaseLst].Base).PadLeft(Numeric.Bases[NumericBaseLst].Chars, '0')).Replace("(STRING)", item.Value));
             }
 
             var listBoxDataSourceCount = knownHashes + unknownHashes;

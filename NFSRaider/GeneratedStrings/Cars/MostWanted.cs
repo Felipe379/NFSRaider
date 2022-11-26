@@ -4,18 +4,15 @@ namespace NFSRaider.GeneratedStrings.Cars
 {
     public static class MostWanted
     {
-        public static readonly List<string> List = new List<string> 
+        public static readonly List<string> List = new List<string>
         {
 "350Z",
-"4DR_SEDAN",
-"4DR_SEDAN02",
 "911GT2",
 "911TURBO",
 "997S",
 "A3",
 "A4",
 "BMWM3",
-"BMWM3CSL",
 "BMWM3GTR",
 "BMWM3GTRE46",
 "CAMARO",
@@ -25,7 +22,6 @@ namespace NFSRaider.GeneratedStrings.Cars
 "CLIO",
 "CLK500",
 "COBALTSS",
-"COPCOMPACT",
 "COPGHOST",
 "COPGTO",
 "COPGTOGHOST",
@@ -37,7 +33,6 @@ namespace NFSRaider.GeneratedStrings.Cars
 "COPSPORTHENCH",
 "COPSUV",
 "COPSUVL",
-"CORVETTE",
 "CORVETTEC6R",
 "CORVETTEZ06",
 "CTS",
@@ -65,7 +60,6 @@ namespace NFSRaider.GeneratedStrings.Cars
 "SEMI",
 "SKYLINE",
 "SL500",
-"SL55",
 "SL65",
 "SLR",
 "SUPRA",
@@ -99,6 +93,16 @@ namespace NFSRaider.GeneratedStrings.Cars
 "TRAILERLOG",
 "TT",
 "VIPER",
+        };
+
+        public static readonly List<string> ListCut = new List<string>
+        {
+"4DR_SEDAN",
+"4DR_SEDAN02",
+"BMWM3CSL",
+"COPCOMPACT",
+"CORVETTE",
+"SL55",
         };
     }
 }

@@ -22,6 +22,7 @@ namespace NFSRaider.GeneratedStrings.Materials
 "CHOME",
 "CRHOME",
 "CROME",
+"DUDULUPLASTIC",
 "DULLENGINE ",
 "DULLLPLASTIC",
 "DULLPALSTIC",
