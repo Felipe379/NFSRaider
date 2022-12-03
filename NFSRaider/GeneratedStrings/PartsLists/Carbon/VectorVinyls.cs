@@ -4,7 +4,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
 {
     public static class VectorVinyls
     {
-        public static readonly List<string> List = new List<string>() 
+        public static readonly List<string> List = new List<string>()
         {
 "FLAME01",
 "FLAME02",
@@ -667,7 +667,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
 "NIKKI",
         };
 
-        public static readonly List<string> ListDemo = new List<string>() 
+        public static readonly List<string> ListDemo = new List<string>()
         {
 "AFTERMARKET_WISECO",
 "AFTERMARKET_STREETGLOW",
@@ -693,7 +693,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
 "2T_IMPREZAWRX",
         };
 
-        public static readonly List<string> ListPrerelease = new List<string>() 
+        public static readonly List<string> ListPrerelease = new List<string>()
         {
 "LOGO_VIPER2",
 "LOGO_TORO2",
@@ -731,6 +731,59 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
 "LOGO_CAR2",
 "LOGO_BUTTERFLY2",
 "LOGO_ATOM2",
+        };
+
+        public static readonly List<string> ListPlayerLogos = new List<string>()
+        {
+"LOGO_ARROWS_LOGO",
+"LOGO_ASTRONAUT_LOGO",
+"LOGO_ATOM_LOGO",
+"LOGO_BUTTERFLY_LOGO",
+"LOGO_CAR_LOGO",
+"LOGO_COP_LOGO",
+"LOGO_CORAL_LOGO",
+"LOGO_CROSSBONES_LOGO",
+"LOGO_CUP_LOGO",
+"LOGO_DEVIL_LOGO",
+"LOGO_DRAGON_LOGO",
+"LOGO_DRAGON_CREST_LOGO",
+"LOGO_DUDE_LOGO",
+"LOGO_EAGLE_LOGO",
+"LOGO_EAGLE_CREST_LOGO",
+"LOGO_EIGHTBALL_LOGO",
+"LOGO_ENGINE_LOGO",
+"LOGO_FALCON_LOGO",
+"LOGO_FERRIS_WHEEL_LOGO",
+"LOGO_FIST_LOGO",
+"LOGO_FLAMING_WHEEL_LOGO",
+"LOGO_HEART_LOGO",
+"LOGO_HELMET_LOGO",
+"LOGO_LAURELS_LOGO",
+"LOGO_LIONANT_LOGO",
+"LOGO_MONKEY_LOGO",
+"LOGO_MUSCLE2_LOGO",
+"LOGO_NATIVE_BIRD_LOGO",
+"LOGO_ORCHID_LOGO",
+"LOGO_PHOENIX_LOGO",
+"LOGO_RAM_LOGO",
+"LOGO_REDSTAR_LOGO",
+"LOGO_ROBOT_LOGO",
+"LOGO_ROOSTER_LOGO",
+"LOGO_SAUCER_LOGO",
+"LOGO_SCORPION_LOGO",
+"LOGO_SHARK_LOGO",
+"LOGO_SHURIKEN_LOGO",
+"LOGO_SICKLE_LOGO",
+"LOGO_SKULL_LOGO",
+"LOGO_SPIDER_LOGO",
+"LOGO_STEERING_WHEEL_LOGO",
+"LOGO_SUMO_LOGO",
+"LOGO_TIGER_LOGO",
+"LOGO_TORCH_LOGO",
+"LOGO_TORO_LOGO",
+"LOGO_VINES_LOGO",
+"LOGO_VIPER_LOGO",
+"LOGO_WMD_LOGO",
         };
     }
 }

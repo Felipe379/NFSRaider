@@ -26,6 +26,7 @@ namespace NFSRaider.GeneratedStrings.PartsLists.Carbon
                 .Concat(VectorVinyls.List)
                 .Concat(VectorVinyls.ListDemo)
                 .Concat(VectorVinyls.ListPrerelease)
+                .Concat(VectorVinyls.ListPlayerLogos)
                 .Concat(Vinyls.ListDemo)
                 .Concat(Wheels.List)
                 .Concat(Wheels.ListDemo)

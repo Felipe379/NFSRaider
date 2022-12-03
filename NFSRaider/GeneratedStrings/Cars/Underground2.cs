@@ -31,7 +31,6 @@ namespace NFSRaider.GeneratedStrings.Cars
 "HUMMER",
 "IMPREZAWRX",
 "IS300",
-"LANCER",
 "LANCEREVO8",
 "MIATA",
 "MINIVAN",
@@ -59,6 +58,7 @@ namespace NFSRaider.GeneratedStrings.Cars
         {
 "IMPREZA",
 "INTEGRA",
+"LANCER",
 "NEON",
 "NSX",
 "S2000",

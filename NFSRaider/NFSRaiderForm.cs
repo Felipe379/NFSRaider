@@ -206,8 +206,7 @@ namespace NFSRaider
 
         private void BtnStop_Click(object sender, EventArgs e)
         {
-            if (CancellationTokenSource != null)
-                CancellationTokenSource.Cancel(true);
+            CancellationTokenSource?.Cancel(true);
         }
 
 
@@ -620,7 +619,6 @@ namespace NFSRaider
                     TxtFileReadHashes.Enabled = true;
                     TxtFileSkipHashes.Enabled = true;
                     CboEndianness.Enabled = true;
-
                     CboForceHashListCase.Enabled = ChkUseHashesFile.Checked;
                 }
                 else
@@ -656,7 +654,6 @@ namespace NFSRaider
                     ChkTryToBruteforce.Enabled = true;
                     CboEndianness.Enabled = true;
                     CboNumericBase.Enabled = true;
-
                     CboForceHashListCase.Enabled = ChkUseHashesFile.Checked;
 
                     BruteForceChecked();
@@ -666,6 +663,7 @@ namespace NFSRaider
                     ChkUseHashesFile.Enabled = false;
                     ChkTryToBruteforce.Enabled = false;
                     CboEndianness.Enabled = false;
+                    CboNumericBase.Enabled = false;
                     CboForceHashListCase.Enabled = false;
                 }
             }
