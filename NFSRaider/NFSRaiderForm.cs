@@ -53,6 +53,7 @@ namespace NFSRaider
 
         private CancellationTokenSource CancellationTokenSource { get; set; }
         private Task BruteforceTask { get; set; }
+        private bool BruteforceTaskNotFinished() => BruteforceTask?.Status != null && !new[] { TaskStatus.Faulted, TaskStatus.Canceled, TaskStatus.RanToCompletion }.Contains(BruteforceTask.Status);
 
         private object LockObject { get; } = new object();
 
@@ -96,11 +97,11 @@ namespace NFSRaider
             }
         }
 
-        private void BtnStart_Click(object sender, EventArgs e)
+        private async void BtnStart_Click(object sender, EventArgs e)
         {
             try
             {
-                if (BruteforceTask?.Status != null && !new[] { TaskStatus.Faulted, TaskStatus.Canceled, TaskStatus.RanToCompletion }.Contains(BruteforceTask.Status))
+                if (BruteforceTaskNotFinished())
                     return;
 
                 if (TabLoadOptions.SelectedTab == TabLoadOptions.TabPages["TabPageFromFile"])
@@ -153,6 +154,10 @@ namespace NFSRaider
                             {
                                 bruteForce.BruteForceThread(CancellationTokenSource.Token);
                             }, CancellationTokenSource.Token).ContinueWith(t => Invoke((MethodInvoker)(() => BruteforceFinished())));
+
+                            await BruteforceTask;
+
+                            ComponentsChanged();
                         }
                         else
                         {
@@ -182,6 +187,10 @@ namespace NFSRaider
                             { 
                                 hashStrings.BruteForceThread(CancellationTokenSource.Token);
                             }, CancellationTokenSource.Token).ContinueWith(t => Invoke((MethodInvoker)(() => BruteforceFinished())));
+
+                            await BruteforceTask;
+
+                            ComponentsChanged();
                         }
                         else
                         {
@@ -213,7 +222,6 @@ namespace NFSRaider
         private void BruteforceFinished()
         {
             TimerStop();
-            ComponentsChanged();
             GC.Collect();
             MessageBox.Show("Raid completed!", "Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -588,6 +596,9 @@ namespace NFSRaider
 
         private void ComponentsChanged()
         {
+            if (BruteforceTaskNotFinished())
+                return;
+
             BtnStop.Enabled = false;
             BtnStart.Enabled = true;
             BtnClear.Enabled = true;

@@ -9794,7 +9794,7 @@ namespace NFSRaider.GeneratedStrings.VltList
 @"CAR_WHINE.abk",
 @"CAR_WHINE_00.abk",
 @"car_zprepass",
-@"car_zprepass_deg_210",
+@"AutoActivateGPS",
 @"car1",
 @"Car1",
 @"car1002",
