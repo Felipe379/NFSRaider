@@ -13,6 +13,7 @@ using NFSRaider.GeneratedStrings.GCareers;
 using NFSRaider.GeneratedStrings.Global;
 using NFSRaider.GeneratedStrings.LanguageLabels;
 using NFSRaider.GeneratedStrings.Materials;
+using NFSRaider.GeneratedStrings.Nis;
 using NFSRaider.GeneratedStrings.PartsLists;
 using NFSRaider.GeneratedStrings.PartsListsOld;
 using NFSRaider.GeneratedStrings.Presets;
@@ -69,6 +70,7 @@ namespace NFSRaider.GeneratedStrings
             hashSet.UnionWith(new BuildGlobal().GetAllGlobal());
             hashSet.UnionWith(new BuildLanguageLabels().GetAllLabels());
             hashSet.UnionWith(new BuildMaterials().GetAllMaterials());
+            hashSet.UnionWith(new BuildNis().GetAllNis());
             hashSet.UnionWith(new BuildPresetSkins().GetAllPresetSkins());
             hashSet.UnionWith(new BuildPresets().GetAllPresets());
             hashSet.UnionWith(new BuildStreamFiles().GetAllStreamFiles());

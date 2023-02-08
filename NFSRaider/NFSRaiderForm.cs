@@ -116,7 +116,6 @@ namespace NFSRaider
                             var listBox = Raider.File.UnhashFromFile(UnhashingEndianness, HashFactory, file, CaseOption);
                             ListBoxDataSource = listBox;
                             ChangedListBoxDataSource();
-                            GC.Collect();
                         }
                         else if (RaiderMode == RaiderMode.Hasher)
                         {
@@ -126,7 +125,7 @@ namespace NFSRaider
                             ChangedListBoxDataSource();
                         }
 
-                        TimerStop();
+                        BruteforceFinished();
                     }
                     else
                     {
@@ -153,10 +152,11 @@ namespace NFSRaider
                             BruteforceTask = Task.Run(() => 
                             {
                                 bruteForce.BruteForceThread(CancellationTokenSource.Token);
-                            }, CancellationTokenSource.Token).ContinueWith(t => Invoke((MethodInvoker)(() => BruteforceFinished())));
+                            }, CancellationTokenSource.Token);
 
                             await BruteforceTask;
 
+                            BruteforceFinished();
                             ComponentsChanged();
                         }
                         else
@@ -186,17 +186,18 @@ namespace NFSRaider
                             BruteforceTask = Task.Run(() => 
                             { 
                                 hashStrings.BruteForceThread(CancellationTokenSource.Token);
-                            }, CancellationTokenSource.Token).ContinueWith(t => Invoke((MethodInvoker)(() => BruteforceFinished())));
+                            }, CancellationTokenSource.Token);
 
                             await BruteforceTask;
 
+                            BruteforceFinished();
                             ComponentsChanged();
                         }
                         else
                         {
                             var message = $"Failed to raid:{Environment.NewLine}";
-                            if (string.IsNullOrWhiteSpace(TxtLoadFromText.Text))
-                                message += $"- You must include hashes on the list.{Environment.NewLine}";
+                            if (string.IsNullOrEmpty(TxtLoadFromText.Text))
+                                message += $"- You must include strings on the list.{Environment.NewLine}";
                             MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
@@ -223,7 +224,7 @@ namespace NFSRaider
         {
             TimerStop();
             GC.Collect();
-            MessageBox.Show("Raid completed!", "Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Completed!", "Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void TimerStart()
