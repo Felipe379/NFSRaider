@@ -134,11 +134,23 @@ namespace NFSRaider
                 }
                 else if (TabLoadOptions.SelectedTab == TabLoadOptions.TabPages["TabPageFromText"])
                 {
+                    var message = string.Empty;
+
                     if (RaiderMode == RaiderMode.Unhasher)
                     {
-                        if (!string.IsNullOrWhiteSpace(TxtLoadFromText.Text) &&
-                            Convert.ToInt32(NumericMinVariations.Text) <= Convert.ToInt32(NumericMaxVariations.Text) &&
-                            (!string.IsNullOrWhiteSpace(TxtPrefixes.Text) || !string.IsNullOrWhiteSpace(TxtVariations.Text) || !string.IsNullOrWhiteSpace(TxtSuffixes.Text)))
+                        if (!ChkUseHashesFile.Checked && !ChkTryToBruteforce.Checked)
+                            message += $"- You must either use the hashes file or try to bruteforce.{Environment.NewLine}";
+                        if (string.IsNullOrWhiteSpace(TxtLoadFromText.Text))
+                            message += $"- You must include hashes on the list.{Environment.NewLine}";
+                        if (ChkTryToBruteforce.Checked)
+                        {
+                            if (Convert.ToInt32(NumericMinVariations.Text) > Convert.ToInt32(NumericMaxVariations.Text))
+                                message += $"- Minimum amount of variations cannot be bigger than the maximum amount of variations.{Environment.NewLine}";
+                            if (string.IsNullOrWhiteSpace(TxtPrefixes.Text) && string.IsNullOrWhiteSpace(TxtVariations.Text) && string.IsNullOrWhiteSpace(TxtSuffixes.Text))
+                                message += $"- You must fill at least one of those: Prefixes, Variations or Suffixes.";
+                        }
+
+                        if (string.IsNullOrWhiteSpace(message))
                         {
                             CancellationTokenSource = new CancellationTokenSource();
                             DisableComponentsDuringBruteforce();
@@ -152,28 +164,24 @@ namespace NFSRaider
                             BruteforceTask = Task.Run(() => 
                             {
                                 bruteForce.BruteForceThread(CancellationTokenSource.Token);
-                            }, CancellationTokenSource.Token);
+                            }, CancellationTokenSource.Token).ContinueWith(t => Invoke((MethodInvoker)(() => BruteforceFinished())));
 
                             await BruteforceTask;
 
-                            BruteforceFinished();
                             ComponentsChanged();
                         }
                         else
                         {
-                            var message = $"Failed to raid:{Environment.NewLine}";
-                            if (string.IsNullOrWhiteSpace(TxtLoadFromText.Text))
-                                message += $"- You must include hashes on the list.{Environment.NewLine}";
-                            if (Convert.ToInt32(NumericMinVariations.Text) > Convert.ToInt32(NumericMaxVariations.Text))
-                                message += $"- Minimum amount of variations cannot be bigger than the maximum amount of variations.{Environment.NewLine}";
-                            if (string.IsNullOrWhiteSpace(TxtPrefixes.Text) && string.IsNullOrWhiteSpace(TxtVariations.Text) && string.IsNullOrWhiteSpace(TxtSuffixes.Text))
-                                message += $"- You must fill at least one of those: Prefixes, Variations or Suffixes.";
+                            message = $"Failed to raid:{Environment.NewLine}{message}";
                             MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else if (RaiderMode == RaiderMode.Hasher)
                     {
-                        if (!string.IsNullOrWhiteSpace(TxtLoadFromText.Text))
+                        if (string.IsNullOrWhiteSpace(TxtLoadFromText.Text))
+                            message += $"- You must include hashes on the list.{Environment.NewLine}";
+
+                        if (!string.IsNullOrWhiteSpace(message))
                         {
                             CancellationTokenSource = new CancellationTokenSource();
                             DisableComponentsDuringBruteforce();
@@ -186,18 +194,15 @@ namespace NFSRaider
                             BruteforceTask = Task.Run(() => 
                             { 
                                 hashStrings.BruteForceThread(CancellationTokenSource.Token);
-                            }, CancellationTokenSource.Token);
+                            },CancellationTokenSource.Token).ContinueWith(t => Invoke((MethodInvoker)(() => BruteforceFinished())));
 
                             await BruteforceTask;
 
-                            BruteforceFinished();
                             ComponentsChanged();
                         }
                         else
                         {
-                            var message = $"Failed to raid:{Environment.NewLine}";
-                            if (string.IsNullOrEmpty(TxtLoadFromText.Text))
-                                message += $"- You must include strings on the list.{Environment.NewLine}";
+                            message = $"Failed to raid:{Environment.NewLine}{message}";
                             MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
