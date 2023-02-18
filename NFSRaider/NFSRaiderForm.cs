@@ -359,6 +359,7 @@ namespace NFSRaider
                 var getAllParts = new AllStrings();
                 getAllParts.GetStrings();
                 GC.Collect();
+                MessageBox.Show("Hashes file generated!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
