@@ -181,7 +181,7 @@ namespace NFSRaider
                         if (string.IsNullOrWhiteSpace(TxtLoadFromText.Text))
                             message += $"- You must include hashes on the list.{Environment.NewLine}";
 
-                        if (!string.IsNullOrWhiteSpace(message))
+                        if (string.IsNullOrWhiteSpace(message))
                         {
                             CancellationTokenSource = new CancellationTokenSource();
                             DisableComponentsDuringBruteforce();

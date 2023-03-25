@@ -9,6 +9,7 @@ namespace NFSRaider.GeneratedStrings.Nis
         {
             var nis = new HashSet<string>(
                 HotPursuit2.List.Concat(HotPursuit2.ListCut)
+                .Concat(Underground2.List)
                 .Concat(MostWanted.List).Concat(MostWanted.ListCut)
                 .Concat(Carbon.List).Concat(Carbon.ListCut)
                 .Concat(ProStreet.List).Concat(ProStreet.ListCut)
