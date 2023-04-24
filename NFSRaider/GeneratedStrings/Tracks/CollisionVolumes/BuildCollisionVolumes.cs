@@ -9,6 +9,8 @@ namespace NFSRaider.GeneratedStrings.Tracks.CollisionVolumes
         {
             var collisionVolumes = new HashSet<string>(
                 Underground2.List
+                .Concat(Carbon.List)
+                .Concat(World.List)
                 .Concat(CollisionKeys.List)
                 );
 

@@ -1461,7 +1461,6 @@ namespace NFSRaider.GeneratedStrings.Tracks.BarrierGroups
 "BARRIER_SPLINE_30316",
 "BARRIER_SPLINE_30188",
 "BARRIER_SPLINE_30189",
-"SMOKEABLE",
         };
     }
 }

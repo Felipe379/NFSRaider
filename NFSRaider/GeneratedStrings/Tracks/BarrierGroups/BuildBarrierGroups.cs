@@ -9,6 +9,7 @@ namespace NFSRaider.GeneratedStrings.Tracks.BarrierGroups
         {
             var sceneryBarrierGroups = new HashSet<string>(
                 Underground2.List
+                .Concat(Carbon.List)
                 .Concat(World.List)
                 );
 

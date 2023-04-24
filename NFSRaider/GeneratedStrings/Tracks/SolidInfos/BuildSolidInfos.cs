@@ -9,6 +9,8 @@ namespace NFSRaider.GeneratedStrings.Tracks.SolidInfos
         {
             var solidInfos = new HashSet<string>(
                 Underground2.List
+                .Concat(Carbon.List)
+                .Concat(World.List)
                 .Concat(SolidNames.List)
                 );
 

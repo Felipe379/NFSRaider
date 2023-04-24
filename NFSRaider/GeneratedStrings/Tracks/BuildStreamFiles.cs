@@ -9,6 +9,7 @@ using NFSRaider.GeneratedStrings.Tracks.PositionMarkers;
 using NFSRaider.GeneratedStrings.Tracks.SceneryGroups;
 using NFSRaider.GeneratedStrings.Tracks.Smokeable;
 using NFSRaider.GeneratedStrings.Tracks.SolidInfos;
+using NFSRaider.GeneratedStrings.Tracks.Textures;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -30,6 +31,7 @@ namespace NFSRaider.GeneratedStrings.Tracks
                 .Concat(new BuildSceneryGroups().GetAllSceneryGroups())
                 .Concat(new BuildSolidInfos().GetAllSolidInfos())
                 .Concat(new BuildSmokeable().GetAllSmokeable())
+                .Concat(new BuildTextures().GetAllTextures())
                 );
 
             return streamFiles;

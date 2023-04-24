@@ -6,6 +6,7 @@ namespace NFSRaider.GeneratedStrings.Tracks.SceneryGroups
     {
         public static readonly List<string> List = new List<string>
         {
+"SMOKEABLE",
 "SCENERY_GROUP_DOOR",
 "SCENERY_GROUP_CHRISTMAS",
 "SCENERY_GROUP_HALLOWEEN",

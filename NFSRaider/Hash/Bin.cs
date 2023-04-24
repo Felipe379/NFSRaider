@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Text.Unicode;
 
 namespace NFSRaider.Hash
 {
@@ -7,9 +8,9 @@ namespace NFSRaider.Hash
     {
         public override uint Hash(string stringToHash)
         {
-            var ByteArrayToHash = Encoding.GetEncoding("ISO-8859-1").GetBytes(stringToHash);
+            var byteArrayToHash = Encoding.GetEncoding("ISO-8859-1").GetBytes(stringToHash);
 
-            return Hash(ByteArrayToHash);
+            return HashPrefix(byteArrayToHash);
         }
 
         public override ulong Hash64(string stringToHash)
@@ -17,7 +18,7 @@ namespace NFSRaider.Hash
             throw new NotImplementedException();
         }
 
-        private uint Hash(byte[] byteArrayToHash)
+        private static uint Hash(byte[] byteArrayToHash)
         {
             var v1 = 0;
             var i = -1;
@@ -29,6 +30,21 @@ namespace NFSRaider.Hash
             }
 
             return (uint)i;
+        }
+
+        private static uint HashPrefix(byte[] byteArrayToHash, uint prefix = uint.MaxValue)
+        {
+            var len = 0;
+
+            while (len < byteArrayToHash.Length)
+            {
+
+                prefix *= 0x21;
+                prefix += byteArrayToHash[len++];
+
+            }
+
+            return prefix;
         }
     }
 }
