@@ -1,0 +1,21 @@
+﻿Horizon Fog Visibility
+Sunrise Screen Tint
+Night Screen Tint
+Rain
+Wind
+Normal Fog
+Night Normal Fog
+Night Raining Fog
+Fog Blend Distance
+Volumes
+Ambience
+Reverb
+Intersection
+Speech
+Screen Tint
+Flare OverRides
+Colour Cube Index
+Window Reflection Index
+Sun and Sky
+Clouds
+Rain Fog

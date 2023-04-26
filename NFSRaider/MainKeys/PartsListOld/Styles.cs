@@ -1,0 +1,61 @@
+﻿using System.Collections.Generic;
+
+namespace NFSRaider.MainKeys.PartsListsOld
+{
+    public static class Styles
+    {
+        public static readonly List<string> List = new List<string>()
+        {
+            "_STYLE00",
+            "_STYLE01",
+            "_STYLE02",
+            "_STYLE03",
+            "_STYLE04",
+            "_STYLE05",
+            "_STYLE06",
+            "_STYLE07",
+            "_STYLE08",
+            "_STYLE09",
+            "_STYLE10",
+            "_STYLE11",
+            "_STYLE12",
+            "_STYLE13",
+            "_STYLE14",
+            "_STYLE15",
+            "_STYLE16",
+            "_STYLE17",
+            "_STYLE18",
+            "_STYLE19",
+            "_STYLE20",
+            "_STYLE21",
+            "_STYLE22",
+            "_STYLE23",
+            "_STYLE24",
+            "_STYLE25",
+            "_STYLE26",
+            "_STYLE27",
+            "_STYLE28",
+            "_STYLE29",
+            "_STYLE30",
+            "_STYLE31",
+            "_STYLE32",
+            "_STYLE33",
+            "_STYLE34",
+            "_STYLE35",
+            "_STYLE36",
+            "_STYLE37",
+            "_STYLE38",
+            "_STYLE39",
+            "_STYLE40",
+            "_STYLE41",
+            "_STYLE42",
+            "_STYLE43",
+            "_STYLE44",
+            "_STYLE45",
+            "_STYLE46",
+            "_STYLE47",
+            "_STYLE48",
+            "_STYLE49",
+        };
+}
+}

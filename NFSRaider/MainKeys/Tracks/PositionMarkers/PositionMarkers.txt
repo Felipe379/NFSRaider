@@ -1,0 +1,9 @@
+﻿BackwardStartLine
+BackwardFinishLine
+BackwardStartingPosition
+ForwardStartLine
+ForwardFinishLine
+ForwardStartingPosition
+SplitTimeBoundary1
+SplitTimeBoundary2
+SplitTimeBoundary3

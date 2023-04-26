@@ -1,6 +1,6 @@
 ﻿using Combinatorics.Collections;
 using NFSRaider.Enums;
-using NFSRaider.GeneratedStrings;
+using NFSRaider.MainKeys;
 using NFSRaider.Hash;
 using NFSRaider.Helpers;
 using System;

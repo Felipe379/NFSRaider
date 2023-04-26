@@ -1,5 +1,5 @@
 ﻿using NFSRaider.Enums;
-using NFSRaider.GeneratedStrings;
+using NFSRaider.MainKeys;
 using NFSRaider.Hash;
 using NFSRaider.Helpers;
 using System;
@@ -19,7 +19,7 @@ namespace NFSRaider.Raider
             var readHashes = Convert.ToInt32(txtReadHashes);
             var skipHashes = Convert.ToInt32(txtSkipHashes);
 
-            var arrayFromFile = new FileRead().ReadFile(filePath, startOffset, endOffset);
+            var arrayFromFile = FileRead.ReadFile(filePath, startOffset, endOffset);
             var arrayFromFileWithHashesSkipped = new List<uint>();
 
             var countHashesRead = 1;

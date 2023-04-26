@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace NFSRaider.Helpers
 {
-    public class FileRead
+    public static class FileRead
     {
-        public uint[] ReadFile(string filePath, long startOffset, long endOffset)
+        public static uint[] ReadFile(string filePath, long startOffset, long endOffset)
         {
             var array = File.ReadAllBytes(filePath);
 
@@ -31,6 +31,19 @@ namespace NFSRaider.Helpers
             }
 
             return arrayOfInts;
+        }
+
+        public static HashSet<string> ReadFiles(IEnumerable<string> files)
+        {
+            var keys = new HashSet<string>();
+
+            foreach (var file in files)
+            {
+                var lines = File.ReadAllLines(file);
+                keys.UnionWith(lines);
+            }
+
+            return keys;
         }
     }
 }
