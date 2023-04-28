@@ -968,6 +968,8 @@ EF_StreetlightCb_925
 EF_StreetlightCb_926
 EF_StreetlightCb_927
 EF_XO_ShopBeam_GARAGE_01
+EF_XO__ShopBeam_GARAGE_01
+EF_XO__ShopBeam_GARAGE_02
 EF_XO_SecurityLiteA_10
 EF_XO_SecurityLiteA_48
 EF_XO_SecurityLiteA_51
@@ -1079,6 +1081,7 @@ EF_XO_ParkLampA_10
 EF_XO_ParkLampA_11
 EF_XO_ParkLampA_12
 EF_XO_ShopBeam_CARLOT_01
+EF_XO__ShopBeam_CARLOT_01
 EF_StreetlightC_122
 EF_StreetlightC_123
 EF_StreetlightC_124

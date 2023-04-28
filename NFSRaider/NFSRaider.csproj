@@ -29,6 +29,12 @@
     <None Update="MainKeys\Brands\MostWanted.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="MainKeys\Brands\Nitro.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MainKeys\Brands\UndercoverCG.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="MainKeys\Brands\Underground1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -461,6 +467,15 @@
     <None Update="MainKeys\Textures\World.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="MainKeys\Tracks\Animations\Carbon.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MainKeys\Tracks\Animations\Underground2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MainKeys\Tracks\Animations\World.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="MainKeys\Tracks\BarrierGroups\Carbon.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -480,9 +495,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="MainKeys\Tracks\CollisionVolumes\World.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="MainKeys\Tracks\EAGLAnimations\Underground2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="MainKeys\Tracks\EventTriggers\Underground2.txt">
@@ -542,13 +554,43 @@
     <None Update="MainKeys\Tracks\Textures\Carbon.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="MainKeys\Tracks\Textures\MostWanted.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MainKeys\Tracks\Textures\ProStreet.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="MainKeys\Tracks\Textures\Undercover.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="MainKeys\Tracks\Textures\Underground1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="MainKeys\Tracks\Textures\Underground2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="MainKeys\Tracks\Textures\World.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MainKeys\Tracks\TroughBoundaries\Carbon.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MainKeys\Tracks\TroughBoundaries\MostWanted.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MainKeys\Tracks\TroughBoundaries\Nitro.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MainKeys\Tracks\TroughBoundaries\ProStreet.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MainKeys\Tracks\TroughBoundaries\Undercover.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MainKeys\Tracks\TroughBoundaries\UndercoverCG.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MainKeys\Tracks\TroughBoundaries\World.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="MainKeys\VltList\Nitro.txt">

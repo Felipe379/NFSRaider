@@ -73,7 +73,7 @@ namespace NFSRaider.MainKeys
             hashSet.UnionWith(new BuildNis().GetKeys());
             hashSet.UnionWith(new BuildPresetSkins().GetKeys());
             hashSet.UnionWith(new BuildPresets().GetKeys());
-            hashSet.UnionWith(new BuildStreamFiles().GetAllStreamFiles());
+            hashSet.UnionWith(new BuildStreamFiles().GetKeys());
             hashSet.UnionWith(new BuildSunInfos().GetKeys());
             hashSet.UnionWith(new BuildTextures().GetKeys());
             hashSet.UnionWith(new BuildVlt().GetKeys());
