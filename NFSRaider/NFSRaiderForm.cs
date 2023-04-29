@@ -3,6 +3,7 @@ using NFSRaider.Enums;
 using NFSRaider.Hash;
 using NFSRaider.Helpers;
 using NFSRaider.Keys;
+using NFSRaider.Raider;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -47,7 +48,7 @@ namespace NFSRaider
         private NumericBase NumericBaseLst { get; set; }
         private HashFactory HashFactory { get; set; }
 
-        private readonly Stopwatch Timer = new();
+        private TimeElapsed _timer;
 
         private StringComparison SearchOptionStringComparasion { get; set; } = StringComparison.InvariantCultureIgnoreCase;
 
@@ -80,9 +81,10 @@ namespace NFSRaider
         {
             Invoke((MethodInvoker)(() =>
             {
+                _timer.Stop();
+                UpdateTimeEllapsed();
                 MessageBox.Show(text, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                TimerStop();
-                TimerStart();
+                _timer.Restart();
             }));
         }
 
@@ -116,19 +118,20 @@ namespace NFSRaider
 
                     if (string.IsNullOrWhiteSpace(message))
                     {
-                        TimerRestart();
+                        _timer = new TimeElapsed();
+                        _timer.Start();
 
                         if (RaiderMode == RaiderMode.Unhasher)
                         {
-                            var file = Raider.File.Open(TxtFileStartOffset.Text, TxtFileEndOffset.Text, TxtFileReadHashes.Text, TxtFileSkipHashes.Text, FilePath);
-                            var listBox = Raider.File.UnhashFromFile(UnhashingEndianness, HashFactory, file, CaseOption, NumericProcessorsCount.Value, ChkUseMainKeys.Checked, ChkUseUserKeys.Checked);
+                            var file = Raider.FileRaid.Open(TxtFileStartOffset.Text, TxtFileEndOffset.Text, TxtFileReadHashes.Text, TxtFileSkipHashes.Text, FilePath);
+                            var listBox = Raider.FileRaid.UnhashFromFile(UnhashingEndianness, HashFactory, file, CaseOption, NumericProcessorsCount.Value, ChkUseMainKeys.Checked, ChkUseUserKeys.Checked);
                             ListBoxDataSource = listBox;
                             ChangedListBoxDataSource();
                         }
                         else if (RaiderMode == RaiderMode.Hasher)
                         {
-                            var file = Raider.File.Open(FilePath);
-                            var listBox = Raider.File.HashFromFile(HashFactory, file);
+                            var file = Raider.FileRaid.Open(FilePath);
+                            var listBox = Raider.FileRaid.HashFromFile(HashFactory, file);
                             ListBoxDataSource = listBox;
                             ChangedListBoxDataSource();
                         }
@@ -166,7 +169,8 @@ namespace NFSRaider
                                 TxtVariations.Text, TxtWordsBetweenVariations.Text, NumericMinVariations.Text, NumericMaxVariations.Text, NumericProcessorsCount.Value, GenerateOption, UnhashingEndianness, CaseOption);
                             bruteForce.SplitHashes(TxtLoadFromText.Text, Numeric.Bases[NumericBase].Base);
 
-                            TimerRestart();
+                            _timer = new TimeElapsed(bruteForce.UpdateTimeElapsed, TimeSpan.FromSeconds(0.5));
+                            _timer.Start();
 
                             BruteforceTask = Task.Run(() =>
                             {
@@ -196,7 +200,8 @@ namespace NFSRaider
                             var hashStrings = new Raider.Hash(this, HashFactory);
                             hashStrings.SplitStrings(TxtLoadFromText.Text);
 
-                            TimerRestart();
+                            _timer = new TimeElapsed();
+                            _timer.Start();
 
                             BruteforceTask = Task.Run(() =>
                             {
@@ -234,25 +239,11 @@ namespace NFSRaider
 
         private void BruteforceFinished()
         {
-            TimerStop();
+            _timer.StopAndDispose();
+            UpdateTimeEllapsed();
+            _timer = null;
             GC.Collect();
             MessageBox.Show("Completed!", "Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void TimerStart()
-        {
-            Timer.Start();
-        }
-
-        private void TimerRestart()
-        {
-            Timer.Restart();
-        }
-
-        private void TimerStop()
-        {
-            Timer.Stop();
-            LblTimeElapsed.Text = $"Time elapsed: {(int)Math.Floor(Timer.Elapsed.TotalHours):D2}{Timer.Elapsed:\\:mm\\:ss\\.fff}";
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
@@ -362,9 +353,16 @@ namespace NFSRaider
             LstUnhashed.DataSource = dataSource;
             LstUnhashed.ClearSelected();
             LstUnhashed.SelectedIndex = currentSelectedItem;
-            LblTimeElapsed.Text = $"Time elapsed: {(int)Math.Floor(Timer.Elapsed.TotalHours):D2}{Timer.Elapsed:\\:mm\\:ss\\.fff}";
+
+            UpdateTimeEllapsed();
 
             LstUnhashed.EndUpdate();
+        }
+
+        private void UpdateTimeEllapsed()
+        {
+            if (_timer != null)
+                LblTimeElapsed.Text = $"Time elapsed: {_timer}";
         }
 
         private void TabLoadOptions_SelectedIndexChanged(object sender, EventArgs e)
@@ -372,7 +370,7 @@ namespace NFSRaider
             ComponentsChanged();
         }
 
-        private void BtnGenerateListOfHashes_Click(object sender, EventArgs e)
+        private void BtnGenerateKeyList_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("This will take a lot of time and will use a lot of RAM. Do you want to continue?", "Generate list of keys", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
@@ -448,7 +446,7 @@ namespace NFSRaider
         private void KeyListChanged()
         {
             CboForceHashListCase.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked;
-            BtnGenerateListOfHashes.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked;
+            BtnGenerateKeyList.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked;
         }
 
         private void CboNumericBase_SelectedIndexChanged(object sender, EventArgs e)
@@ -638,7 +636,7 @@ namespace NFSRaider
             BtnStop.Enabled = false;
             BtnStart.Enabled = true;
             BtnClear.Enabled = true;
-            BtnGenerateListOfHashes.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked;
+            BtnGenerateKeyList.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked;
             CboRaiderMode.Enabled = true;
             CboHashTypes.Enabled = true;
 
@@ -751,7 +749,7 @@ namespace NFSRaider
             NumericMaxVariations.Enabled = false;
             NumericProcessorsCount.Enabled = false;
             TxtWordsBetweenVariations.Enabled = false;
-            BtnGenerateListOfHashes.Enabled = false;
+            BtnGenerateKeyList.Enabled = false;
             ChkUseMainKeys.Enabled = false;
             ChkUseUserKeys.Enabled = false;
             ChkBruteforceWithRepetition.Enabled = false;

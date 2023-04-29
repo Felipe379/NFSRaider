@@ -10,7 +10,7 @@ using System.Text;
 
 namespace NFSRaider.Raider
 {
-    public static class File
+    public static class FileRaid
     {
         public static uint[] Open(string txtStartOffset, string txtEndOffset, string txtReadHashes, string txtSkipHashes, string filePath)
         {

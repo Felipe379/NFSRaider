@@ -71,7 +71,7 @@
             BtnStop = new System.Windows.Forms.Button();
             BtnClear = new System.Windows.Forms.Button();
             ChkUseMainKeys = new System.Windows.Forms.CheckBox();
-            BtnGenerateListOfHashes = new System.Windows.Forms.Button();
+            BtnGenerateKeyList = new System.Windows.Forms.Button();
             GrpStats = new System.Windows.Forms.GroupBox();
             LblTotalHashes = new System.Windows.Forms.Label();
             LblUnknownHashes = new System.Windows.Forms.Label();
@@ -593,16 +593,16 @@
             ChkUseMainKeys.UseVisualStyleBackColor = true;
             ChkUseMainKeys.CheckedChanged += ChkUseMainKeys_CheckedChanged;
             // 
-            // BtnGenerateListOfHashes
+            // BtnGenerateKeyList
             // 
-            BtnGenerateListOfHashes.Location = new System.Drawing.Point(718, 404);
-            BtnGenerateListOfHashes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            BtnGenerateListOfHashes.Name = "BtnGenerateListOfHashes";
-            BtnGenerateListOfHashes.Size = new System.Drawing.Size(171, 27);
-            BtnGenerateListOfHashes.TabIndex = 19;
-            BtnGenerateListOfHashes.Text = "Generate list of hashes";
-            BtnGenerateListOfHashes.UseVisualStyleBackColor = true;
-            BtnGenerateListOfHashes.Click += BtnGenerateListOfHashes_Click;
+            BtnGenerateKeyList.Location = new System.Drawing.Point(718, 404);
+            BtnGenerateKeyList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            BtnGenerateKeyList.Name = "BtnGenerateKeyList";
+            BtnGenerateKeyList.Size = new System.Drawing.Size(171, 27);
+            BtnGenerateKeyList.TabIndex = 19;
+            BtnGenerateKeyList.Text = "Generate list of keys";
+            BtnGenerateKeyList.UseVisualStyleBackColor = true;
+            BtnGenerateKeyList.Click += BtnGenerateKeyList_Click;
             // 
             // GrpStats
             // 
@@ -923,7 +923,7 @@
             ChkUseUserKeys.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             ChkUseUserKeys.Name = "ChkUseUserKeys";
             ChkUseUserKeys.Size = new System.Drawing.Size(119, 19);
-            ChkUseUserKeys.TabIndex = 28;
+            ChkUseUserKeys.TabIndex = 22;
             ChkUseUserKeys.Text = "Use UserKeys files";
             ChkUseUserKeys.UseVisualStyleBackColor = true;
             ChkUseUserKeys.CheckedChanged += ChkUseUserKeys_CheckedChanged;
@@ -942,7 +942,7 @@
             Controls.Add(GrpBruteforceOptions);
             Controls.Add(BtnSearchAll);
             Controls.Add(GrpStats);
-            Controls.Add(BtnGenerateListOfHashes);
+            Controls.Add(BtnGenerateKeyList);
             Controls.Add(ChkUseMainKeys);
             Controls.Add(TxtSearch);
             Controls.Add(BtnClear);
@@ -1010,7 +1010,7 @@
         private System.Windows.Forms.Button BtnStop;
         private System.Windows.Forms.Button BtnClear;
         private System.Windows.Forms.CheckBox ChkUseMainKeys;
-        private System.Windows.Forms.Button BtnGenerateListOfHashes;
+        private System.Windows.Forms.Button BtnGenerateKeyList;
         private System.Windows.Forms.GroupBox GrpStats;
         private System.Windows.Forms.Label LblTotalHashes;
         private System.Windows.Forms.Label LblUnknownHashes;

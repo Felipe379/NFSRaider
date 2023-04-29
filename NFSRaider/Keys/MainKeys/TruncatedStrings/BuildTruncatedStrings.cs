@@ -9,21 +9,31 @@ namespace NFSRaider.Keys.MainKeys.TruncatedStrings
 
         public Dictionary<uint, string> GetAllTruncatedStrings()
         {
-            void AddHashes(uint key, string value)
+            void AddHashes(uint key, string value, string type)
             {
                 if (_hashes.ContainsKey(key))
                 {
-                    _hashes[key].Add(value + " (TRUNCATED)");
+                    _hashes[key].Add($"{value} (TRUNCATED, {type})");
                 }
                 else
                 {
-                    _hashes.Add(key, new HashSet<string>() { value + " (TRUNCATED)" });
+                    _hashes.Add(key, new HashSet<string>() { $"{value} (TRUNCATED, {type})" });
                 }
             }
 
-            foreach (var hash in Underground2.BinHashesTextures)
+            foreach (var hash in Underground2.BinKeysTextures)
             {
-                AddHashes(hash.Key, hash.Value);
+                AddHashes(hash.Key, hash.Value, "BIN");
+            }
+
+            foreach (var hash in Carbon.VltKeysTrackCollision)
+            {
+                AddHashes(hash.Key, hash.Value, "VLT");
+            }
+
+            foreach (var hash in World.VltKeysTrackCollision)
+            {
+                AddHashes(hash.Key, hash.Value, "VLT");
             }
 
             return _hashes.ToDictionary(c => c.Key, c => string.Join(" / ", c.Value));

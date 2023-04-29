@@ -467,10 +467,16 @@
     <None Update="Keys\MainKeys\Textures\World.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Keys\MainKeys\Tracks\Animations\Carbon.Texture.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Keys\MainKeys\Tracks\Animations\Carbon.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Keys\MainKeys\Tracks\Animations\Underground2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Tracks\Animations\World.Texture.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Keys\MainKeys\Tracks\Animations\World.txt">
@@ -515,7 +521,13 @@
     <None Update="Keys\MainKeys\Tracks\ParameterSets\ParameterSets.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Keys\MainKeys\Tracks\PositionMarkers\PositionMarkers.txt">
+    <None Update="Keys\MainKeys\Tracks\PositionMarkers\Carbon.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Tracks\PositionMarkers\Underground2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Tracks\PositionMarkers\World.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Keys\MainKeys\Tracks\SceneryGroups\Carbon.txt">

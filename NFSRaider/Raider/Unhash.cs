@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 
 namespace NFSRaider.Raider
 {
@@ -35,7 +36,7 @@ namespace NFSRaider.Raider
 
         private bool LockObjectIsUpdating { get; set; } = false;
         private object LockResults { get; } = new object();
-        private Timer UpdateTimer { get; set; }
+
         private List<RaiderResult> Results { get; set; } = new List<RaiderResult>();
 
         public Unhash(
@@ -268,8 +269,6 @@ namespace NFSRaider.Raider
 
         private void TryBruteforce(Variation variationsModel, CancellationToken cancellationToken)
         {
-            UpdateTimer = new Timer(new TimerCallback(UpdateTimer_Elapsed), null, TimeSpan.FromSeconds(0.1), TimeSpan.FromSeconds(0.5));
-
             Variations<string> variations;
             OrderablePartitioner<IReadOnlyList<string>> rangePartitioner;
             for (int variationsCount = variationsModel.MinVariations; variationsCount <= variationsModel.MaxVariations; variationsCount++)
@@ -285,7 +284,6 @@ namespace NFSRaider.Raider
             }
 
             UpdateMainForm();
-            UpdateTimer.Dispose();
         }
 
         private void CheckVariations(IReadOnlyList<string> variation)
@@ -313,7 +311,7 @@ namespace NFSRaider.Raider
             }
         }
 
-        private void UpdateTimer_Elapsed(object state)
+        public void UpdateTimeElapsed(object sender, ElapsedEventArgs e)
         {
             if (!LockObjectIsUpdating)
             {

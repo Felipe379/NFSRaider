@@ -87,7 +87,7 @@ namespace NFSRaider.Keys
 
         public void WriteKeysToFile(Game? gameFilter = null, CancellationToken cancellationToken = default)
         {
-            var keys = new HashSet<string>(new BuildMainKeys(_processorCount).GetKeys(gameFilter, cancellationToken));
+            var keys = new HashSet<string>(GetKeys(gameFilter, cancellationToken));
             try
             {
                 using (var writer = new StreamWriter("Keys.txt"))
