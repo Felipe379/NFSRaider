@@ -1,7 +1,7 @@
 ﻿using NFSRaider.Enums;
-using NFSRaider.MainKeys;
 using NFSRaider.Hash;
 using NFSRaider.Helpers;
+using NFSRaider.Keys;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -58,15 +58,15 @@ namespace NFSRaider.Raider
             return listString.ToArray();
         }
 
-        public static List<RaiderResult> UnhashFromFile(Endianness unhashingEndianness, HashFactory hashFactory, uint[] arrayFromFile, CaseOptions caseOption)
+        public static List<RaiderResult> UnhashFromFile(Endianness unhashingEndianness, HashFactory hashFactory, uint[] arrayFromFile, CaseOptions caseOption, decimal processorCount, bool checkForMainKeys, bool checkForUserKeys)
         {
-            var allStrings = new AllStrings().ReadHashesFile(hashFactory, caseOption);
+            var allKeys = new BuildKeys(hashFactory, caseOption, checkForMainKeys, checkForUserKeys, processorCount).GetKeyValue();
             var listBox = new List<RaiderResult>();
             var isKnown = false;
 
             void AddResult(uint hash)
             {
-                if (allStrings.TryGetValue(hash, out var result))
+                if (allKeys.TryGetValue(hash, out var result))
                 {
                     isKnown = true;
                 }

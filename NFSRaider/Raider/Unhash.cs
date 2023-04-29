@@ -1,23 +1,23 @@
 ﻿using Combinatorics.Collections;
 using NFSRaider.Enums;
-using NFSRaider.Raider.Model;
-using NFSRaider.MainKeys;
 using NFSRaider.Hash;
 using NFSRaider.Helpers;
+using NFSRaider.Keys;
+using NFSRaider.Raider.Model;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace NFSRaider.Raider
 {
     public class Unhash
     {
         private int ProcessorCount { get; set; }
-        private HashSet<uint> Hashes { get; set; }
+        private HashSet<uint> Hashes { get; set; } = new HashSet<uint>();
         private HashSet<string> Prefixes { get; set; }
         private HashSet<string> Suffixes { get; set; }
         private HashSet<string> WordsBetweenVariations { get; set; }
@@ -25,27 +25,31 @@ namespace NFSRaider.Raider
         private CaseOptions CaseOption { get; set; }
         private HashFactory HashFactory { get; set; }
         private Variation VariationModel { get; set; }
-        private List<Variation> VariationsGroups { get; set; }
+        private List<Variation> VariationsGroups { get; set; } = new List<Variation>();
 
-        private bool CheckForHashesInFile { get; set; }
+        private bool CheckForMainKeys { get; set; }
+        private bool CheckForUserKeys { get; set; }
         private bool TryToBruteForce { get; set; }
 
         private NFSRaiderForm Sender { get; set; }
 
+        private bool LockObjectIsUpdating { get; set; } = false;
+        private object LockResults { get; } = new object();
+        private Timer UpdateTimer { get; set; }
+        private List<RaiderResult> Results { get; set; } = new List<RaiderResult>();
+
         public Unhash(
-            NFSRaiderForm sender, HashFactory hashFactory, bool checkForHashesInFile, bool tryToBruteForce, string txtPrefixes, string txtSuffixes, string txtVariations, 
-            string txtWordsBetweenVariations, string txtMinVariations, string txtMaxVariations, string processorCount, GenerateOption generateOption, Endianness unhashingEndianness, CaseOptions caseOption)
+            NFSRaiderForm sender, HashFactory hashFactory, bool checkForMainKeys, bool checkForUserKeys, bool tryToBruteForce, string txtPrefixes, string txtSuffixes, string txtVariations, 
+            string txtWordsBetweenVariations, string txtMinVariations, string txtMaxVariations, decimal processorCount, GenerateOption generateOption, Endianness unhashingEndianness, CaseOptions caseOption)
         {
             Sender = sender;
             HashFactory = hashFactory;
             CaseOption = caseOption;
 
-            Hashes = new HashSet<uint>();
             Prefixes = new HashSet<string>(txtPrefixes.SplitBy(new[] { ',' }, '\\'));
             Suffixes = new HashSet<string>(txtSuffixes.SplitBy(new[] { ',' }, '\\'));
             WordsBetweenVariations = new HashSet<string>(txtWordsBetweenVariations.SplitBy(new[] { ',' }, '\\'));
             ProcessorCount = Convert.ToInt32(processorCount);
-            VariationsGroups = new List<Variation>();
             VariationModel = new Variation
             {
                 MinVariations = Convert.ToInt32(txtMinVariations),
@@ -55,7 +59,8 @@ namespace NFSRaider.Raider
 
             UnhashingEndianness = unhashingEndianness;
 
-            CheckForHashesInFile = checkForHashesInFile;
+            CheckForMainKeys = checkForMainKeys;
+            CheckForUserKeys = checkForUserKeys;
             TryToBruteForce = tryToBruteForce;
 
             InitializeVariatons(txtVariations.SplitBy(new[] { ',' }, '\\'));
@@ -164,7 +169,7 @@ namespace NFSRaider.Raider
         {
             if (Hashes.Any())
             {
-                if (CheckForHashesInFile)
+                if (CheckForMainKeys || CheckForUserKeys)
                 {
                     CheckFile(cancellationToken);
                 }
@@ -179,7 +184,7 @@ namespace NFSRaider.Raider
         private void CheckFile(CancellationToken cancellationToken)
         {
             Sender.GenericMessageBoxDuringBruteForce("Raid info", $"Hashes identified: {Hashes.Count}");
-            var allParts = new AllStrings().ReadHashesFile(HashFactory, CaseOption, cancellationToken);
+            var allParts = new BuildKeys(HashFactory, CaseOption, CheckForMainKeys, CheckForUserKeys, ProcessorCount).GetKeyValue(cancellationToken: cancellationToken);
             var results = new List<RaiderResult>();
             foreach (var hash in Hashes)
             {
@@ -263,6 +268,8 @@ namespace NFSRaider.Raider
 
         private void TryBruteforce(Variation variationsModel, CancellationToken cancellationToken)
         {
+            UpdateTimer = new Timer(new TimerCallback(UpdateTimer_Elapsed), null, TimeSpan.FromSeconds(0.1), TimeSpan.FromSeconds(0.5));
+
             Variations<string> variations;
             OrderablePartitioner<IReadOnlyList<string>> rangePartitioner;
             for (int variationsCount = variationsModel.MinVariations; variationsCount <= variationsModel.MaxVariations; variationsCount++)
@@ -276,13 +283,15 @@ namespace NFSRaider.Raider
                     CancellationToken = cancellationToken
                 }, variation => CheckVariations(variation));
             }
+
+            UpdateMainForm();
+            UpdateTimer.Dispose();
         }
 
         private void CheckVariations(IReadOnlyList<string> variation)
         {
             string currentVariation;
             IEnumerable<string> generatedStrings;
-            var results = new List<RaiderResult>();
             uint currentHash;
 
             foreach (var word in WordsBetweenVariations)
@@ -295,15 +304,36 @@ namespace NFSRaider.Raider
                     currentHash = HashFactory.Hash(generatedString);
                     if (Hashes.Contains(currentHash))
                     {
-                        results.Add(new RaiderResult { Hash = currentHash, Value = generatedString, IsKnown = true });
+                        lock (LockResults)
+                        {
+                            Results.Add(new RaiderResult { Hash = currentHash, Value = generatedString, IsKnown = true });
+                        }
                     }
                 }
             }
+        }
 
-            if (results.Any())
+        private void UpdateTimer_Elapsed(object state)
+        {
+            if (!LockObjectIsUpdating)
             {
-                Sender.UpdateFormDuringBruteforce(results);
+                LockObjectIsUpdating = true;
+                UpdateMainForm();
             }
+        }
+
+        private void UpdateMainForm()
+        {
+            if (Results.Any())
+            {
+                lock (LockResults)
+                {
+                    Sender.UpdateFormDuringBruteforce(Results);
+                    Results.Clear();
+                }
+                GC.Collect();
+            }
+            LockObjectIsUpdating = false;
         }
 
         private IEnumerable<string> GenerateStringsToCheck(string currentString)

@@ -1,8 +1,8 @@
 ﻿using Combinatorics.Collections;
 using NFSRaider.Enums;
-using NFSRaider.MainKeys;
 using NFSRaider.Hash;
 using NFSRaider.Helpers;
+using NFSRaider.Keys;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -78,7 +78,7 @@ namespace NFSRaider
 
         public void GenericMessageBoxDuringBruteForce(string title, string text)
         {
-            Invoke((MethodInvoker)(() => 
+            Invoke((MethodInvoker)(() =>
             {
                 MessageBox.Show(text, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 TimerStop();
@@ -104,16 +104,24 @@ namespace NFSRaider
                 if (BruteforceTaskNotFinished())
                     return;
 
+                var message = string.Empty;
+
                 if (TabLoadOptions.SelectedTab == TabLoadOptions.TabPages["TabPageFromFile"])
                 {
-                    if (!string.IsNullOrWhiteSpace(FilePath) && File.Exists(FilePath))
+                    if (string.IsNullOrWhiteSpace(FilePath) && !File.Exists(FilePath))
+                        message += $"- File not found.{Environment.NewLine}";
+
+                    if (!(ChkUseMainKeys.Checked || ChkUseUserKeys.Checked))
+                        message += $"- You must either use the keys files or try to bruteforce.{Environment.NewLine}";
+
+                    if (string.IsNullOrWhiteSpace(message))
                     {
                         TimerRestart();
 
                         if (RaiderMode == RaiderMode.Unhasher)
                         {
                             var file = Raider.File.Open(TxtFileStartOffset.Text, TxtFileEndOffset.Text, TxtFileReadHashes.Text, TxtFileSkipHashes.Text, FilePath);
-                            var listBox = Raider.File.UnhashFromFile(UnhashingEndianness, HashFactory, file, CaseOption);
+                            var listBox = Raider.File.UnhashFromFile(UnhashingEndianness, HashFactory, file, CaseOption, NumericProcessorsCount.Value, ChkUseMainKeys.Checked, ChkUseUserKeys.Checked);
                             ListBoxDataSource = listBox;
                             ChangedListBoxDataSource();
                         }
@@ -129,17 +137,16 @@ namespace NFSRaider
                     }
                     else
                     {
-                        MessageBox.Show("File not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        message = $"Failed to raid:{Environment.NewLine}{message}";
+                        MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else if (TabLoadOptions.SelectedTab == TabLoadOptions.TabPages["TabPageFromText"])
                 {
-                    var message = string.Empty;
-
                     if (RaiderMode == RaiderMode.Unhasher)
                     {
-                        if (!ChkUseHashesFile.Checked && !ChkTryToBruteforce.Checked)
-                            message += $"- You must either use the hashes file or try to bruteforce.{Environment.NewLine}";
+                        if (!(ChkUseMainKeys.Checked || ChkUseUserKeys.Checked) && !ChkTryToBruteforce.Checked)
+                            message += $"- You must either use the keys files or try to bruteforce.{Environment.NewLine}";
                         if (string.IsNullOrWhiteSpace(TxtLoadFromText.Text))
                             message += $"- You must include hashes on the list.{Environment.NewLine}";
                         if (ChkTryToBruteforce.Checked)
@@ -155,13 +162,13 @@ namespace NFSRaider
                             CancellationTokenSource = new CancellationTokenSource();
                             DisableComponentsDuringBruteforce();
 
-                            var bruteForce = new Raider.Unhash(this, HashFactory, ChkUseHashesFile.Checked, ChkTryToBruteforce.Checked, TxtPrefixes.Text, TxtSuffixes.Text,
-                                TxtVariations.Text, TxtWordsBetweenVariations.Text, NumericMinVariations.Text, NumericMaxVariations.Text, NumericProcessorsCount.Text, GenerateOption, UnhashingEndianness, CaseOption);
+                            var bruteForce = new Raider.Unhash(this, HashFactory, ChkUseMainKeys.Checked, ChkUseUserKeys.Checked, ChkTryToBruteforce.Checked, TxtPrefixes.Text, TxtSuffixes.Text,
+                                TxtVariations.Text, TxtWordsBetweenVariations.Text, NumericMinVariations.Text, NumericMaxVariations.Text, NumericProcessorsCount.Value, GenerateOption, UnhashingEndianness, CaseOption);
                             bruteForce.SplitHashes(TxtLoadFromText.Text, Numeric.Bases[NumericBase].Base);
 
                             TimerRestart();
 
-                            BruteforceTask = Task.Run(() => 
+                            BruteforceTask = Task.Run(() =>
                             {
                                 bruteForce.BruteForceThread(CancellationTokenSource.Token);
                             }, CancellationTokenSource.Token).ContinueWith(t => Invoke((MethodInvoker)(() => BruteforceFinished())));
@@ -191,10 +198,10 @@ namespace NFSRaider
 
                             TimerRestart();
 
-                            BruteforceTask = Task.Run(() => 
-                            { 
+                            BruteforceTask = Task.Run(() =>
+                            {
                                 hashStrings.BruteForceThread(CancellationTokenSource.Token);
-                            },CancellationTokenSource.Token).ContinueWith(t => Invoke((MethodInvoker)(() => BruteforceFinished())));
+                            }, CancellationTokenSource.Token).ContinueWith(t => Invoke((MethodInvoker)(() => BruteforceFinished())));
 
                             await BruteforceTask;
 
@@ -210,7 +217,7 @@ namespace NFSRaider
             }
             catch (Exception ex)
             {
-                if (MessageBox.Show($"An exception has occurred! You can check the details below:{Environment.NewLine}{Environment.NewLine}" + 
+                if (MessageBox.Show($"An exception has occurred! You can check the details below:{Environment.NewLine}{Environment.NewLine}" +
                     ex.ToString() +
                     $"{Environment.NewLine}{Environment.NewLine}Do you want to continue anyway? The application may not work properly.", "Exception", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.No)
                 {
@@ -262,12 +269,16 @@ namespace NFSRaider
         {
             LstUnhashed.BeginUpdate();
 
-            var listBoxDataSource = ListBoxDataSource.AsEnumerable();
+            var listBoxDataSource = ListBoxDataSource
+                .Select(c => new RaiderResult { Hash = (c.Hash), IsKnown = c.IsKnown, Value = c.Value });
 
             if (ChkReverseHashes.Checked)
             {
-                listBoxDataSource = listBoxDataSource
-                    .Select(c => new RaiderResult { Hash = Hashes.Reverse(c.Hash), IsKnown = c.IsKnown, Value = c.Value });
+                listBoxDataSource = listBoxDataSource.Select(c =>
+                {
+                    c.Hash = Hashes.Reverse(c.Hash);
+                    return c;
+                });
             }
 
             switch (OrderOption)
@@ -303,7 +314,15 @@ namespace NFSRaider
             {
                 listBoxDataSource = listBoxDataSource
                     .GroupBy(c => c.Hash)
-                    .Select(c => new RaiderResult { Hash = c.Key, IsKnown = c.Any(d => d.IsKnown), Value = string.Join(" / ", c.Select(d => d.Value).Distinct()) });
+                    .Select(c =>
+                    {
+                        return c.Select(d =>
+                        {
+                            d.IsKnown = c.Any(e => e.IsKnown);
+                            d.Value = string.Join(" / ", c.Select(e => e.Value).Distinct());
+                            return d;
+                        }).First();
+                    });
             }
 
             var currentSelectedItem = LstUnhashed.SelectedIndex;
@@ -343,6 +362,7 @@ namespace NFSRaider
             LstUnhashed.DataSource = dataSource;
             LstUnhashed.ClearSelected();
             LstUnhashed.SelectedIndex = currentSelectedItem;
+            LblTimeElapsed.Text = $"Time elapsed: {(int)Math.Floor(Timer.Elapsed.TotalHours):D2}{Timer.Elapsed:\\:mm\\:ss\\.fff}";
 
             LstUnhashed.EndUpdate();
         }
@@ -354,12 +374,12 @@ namespace NFSRaider
 
         private void BtnGenerateListOfHashes_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("This will take a lot of time and will use a lot of RAM. Do you want to continue?", "Generate list of hashes", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("This will take a lot of time and will use a lot of RAM. Do you want to continue?", "Generate list of keys", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                var getAllParts = new AllStrings();
-                getAllParts.GetStrings();
+                var getAllKeys = new BuildKeys(HashFactory, CaseOption, ChkUseMainKeys.Checked, ChkUseUserKeys.Checked, NumericProcessorsCount.Value);
+                getAllKeys.WriteKeysToFile();
                 GC.Collect();
-                MessageBox.Show("Hashes file generated!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Keys file generated!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -414,12 +434,21 @@ namespace NFSRaider
                 GenerateOption = GenerateOption.WithoutRepetition;
         }
 
-        private void ChkUseHashesFile_CheckedChanged(object sender, EventArgs e)
+        private void ChkUseMainKeys_CheckedChanged(object sender, EventArgs e)
         {
-            if (ChkUseHashesFile.Checked)
-                CboForceHashListCase.Enabled = true;
-            else
-                CboForceHashListCase.Enabled = false;
+            KeyListChanged();
+        }
+
+
+        private void ChkUseUserKeys_CheckedChanged(object sender, EventArgs e)
+        {
+            KeyListChanged();
+        }
+
+        private void KeyListChanged()
+        {
+            CboForceHashListCase.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked;
+            BtnGenerateListOfHashes.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked;
         }
 
         private void CboNumericBase_SelectedIndexChanged(object sender, EventArgs e)
@@ -594,7 +623,7 @@ namespace NFSRaider
 
         private void LstUnhashed_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Control == true && e.KeyCode == Keys.C && LstUnhashed.SelectedItems.Count > 0)
+            if (e.Control == true && e.KeyCode == System.Windows.Forms.Keys.C && LstUnhashed.SelectedItems.Count > 0)
             {
                 var items = string.Join(Environment.NewLine, LstUnhashed.SelectedItems.Cast<string>());
                 Clipboard.SetData(DataFormats.StringFormat, items);
@@ -609,7 +638,7 @@ namespace NFSRaider
             BtnStop.Enabled = false;
             BtnStart.Enabled = true;
             BtnClear.Enabled = true;
-            BtnGenerateListOfHashes.Enabled = true;
+            BtnGenerateListOfHashes.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked;
             CboRaiderMode.Enabled = true;
             CboHashTypes.Enabled = true;
 
@@ -626,21 +655,23 @@ namespace NFSRaider
                 TxtWordsBetweenVariations.Enabled = false;
                 ChkTryToBruteforce.Enabled = false;
                 ChkBruteforceWithRepetition.Enabled = false;
-                ChkUseHashesFile.Enabled = false;
-                ChkUseHashesFile.Checked = true;
                 CboNumericBase.Enabled = false;
 
                 if (RaiderMode == RaiderMode.Unhasher)
                 {
+                    ChkUseMainKeys.Enabled = true;
+                    ChkUseUserKeys.Enabled = true;
                     TxtFileStartOffset.Enabled = true;
                     TxtFileEndOffset.Enabled = true;
                     TxtFileReadHashes.Enabled = true;
                     TxtFileSkipHashes.Enabled = true;
                     CboEndianness.Enabled = true;
-                    CboForceHashListCase.Enabled = ChkUseHashesFile.Checked;
+                    CboForceHashListCase.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked;
                 }
                 else
                 {
+                    ChkUseMainKeys.Enabled = false;
+                    ChkUseUserKeys.Enabled = false;
                     TxtFileStartOffset.Enabled = false;
                     TxtFileEndOffset.Enabled = false;
                     TxtFileReadHashes.Enabled = false;
@@ -668,17 +699,19 @@ namespace NFSRaider
 
                 if (RaiderMode == RaiderMode.Unhasher)
                 {
-                    ChkUseHashesFile.Enabled = true;
+                    ChkUseMainKeys.Enabled = true;
+                    ChkUseUserKeys.Enabled = true;
                     ChkTryToBruteforce.Enabled = true;
                     CboEndianness.Enabled = true;
                     CboNumericBase.Enabled = true;
-                    CboForceHashListCase.Enabled = ChkUseHashesFile.Checked;
+                    CboForceHashListCase.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked;
 
                     BruteForceChecked();
                 }
                 else
                 {
-                    ChkUseHashesFile.Enabled = false;
+                    ChkUseMainKeys.Enabled = false;
+                    ChkUseUserKeys.Enabled = false;
                     ChkTryToBruteforce.Enabled = false;
                     CboEndianness.Enabled = false;
                     CboNumericBase.Enabled = false;
@@ -719,7 +752,8 @@ namespace NFSRaider
             NumericProcessorsCount.Enabled = false;
             TxtWordsBetweenVariations.Enabled = false;
             BtnGenerateListOfHashes.Enabled = false;
-            ChkUseHashesFile.Enabled = false;
+            ChkUseMainKeys.Enabled = false;
+            ChkUseUserKeys.Enabled = false;
             ChkBruteforceWithRepetition.Enabled = false;
             ChkTryToBruteforce.Enabled = false;
             CboHashTypes.Enabled = false;
