@@ -20,10 +20,10 @@ namespace NFSRaider.Keys
         private readonly bool _useUserKeys;
         private readonly int _processorCount;
 
-        public BuildKeys(HashFactory hashFactory, CaseOptions caseOptions, bool useMainKeys, bool useUserKeys, decimal processorCount)
+        public BuildKeys(HashFactory hashFactory, CaseFactory caseFactory, bool useMainKeys, bool useUserKeys, decimal processorCount)
         {
             _hashFactory = hashFactory;
-            _caseFactory = CaseFactory.GetCaseType(caseOptions);
+            _caseFactory = caseFactory;
             _useMainKeys = useMainKeys;
             _useUserKeys = useUserKeys;
             _processorCount = Convert.ToInt32(processorCount);

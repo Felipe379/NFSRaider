@@ -1,5 +1,6 @@
 ﻿using NFSRaider.Keys.MainKeys.Cars;
 using NFSRaider.Keys.MainKeys.PartsLists.Carbon;
+using NFSRaider.Keys.MainKeys.PartsLists.HotPursuit2;
 using NFSRaider.Keys.MainKeys.PartsLists.MostWanted;
 using NFSRaider.Keys.MainKeys.PartsLists.ProStreet;
 using NFSRaider.Keys.MainKeys.PartsLists.Undercover;
@@ -18,7 +19,7 @@ namespace NFSRaider.Keys.MainKeys.PartsLists
 
         public HashSet<string> GetAllParts()
         {
-            var parts = new HashSet<string>(
+            var allParts = new HashSet<string>(
                 new BuildUnderground1PartsList().GetAllUnderground1Parts()
                 .Concat(new BuildUnderground2PartsList().GetAllUnderground2Parts())
                 .Concat(new BuildMostWantedPartsList().GetAllMostWantedParts())
@@ -33,13 +34,19 @@ namespace NFSRaider.Keys.MainKeys.PartsLists
             {
                 foreach (var car in CarList)
                 {
-                    parts.Add(car + lod);
+                    allParts.Add(car + lod);
                     foreach (var part in Parts.List)
                     {
-                        parts.Add(car + part + lod);
+                        allParts.Add(car + part + lod);
                     }
                 }
             }
+
+            var parts = new HashSet<string>(
+                new BuildHotPursuit2PartsList().GetAllHotPursuit2Parts()
+                );
+
+            parts.UnionWith(allParts);
 
             return parts;
         }

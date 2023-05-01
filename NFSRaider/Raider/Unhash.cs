@@ -1,4 +1,6 @@
 ﻿using Combinatorics.Collections;
+using Microsoft.VisualBasic;
+using NFSRaider.Case;
 using NFSRaider.Enums;
 using NFSRaider.Hash;
 using NFSRaider.Helpers;
@@ -12,112 +14,67 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
+using System.Xml.Linq;
 
 namespace NFSRaider.Raider
 {
     public class Unhash
     {
-        private int ProcessorCount { get; set; }
-        private HashSet<uint> Hashes { get; set; } = new HashSet<uint>();
-        private HashSet<string> Prefixes { get; set; }
-        private HashSet<string> Suffixes { get; set; }
-        private HashSet<string> WordsBetweenVariations { get; set; }
-        private Endianness UnhashingEndianness { get; set; }
-        private CaseOptions CaseOption { get; set; }
-        private HashFactory HashFactory { get; set; }
-        private Variation VariationModel { get; set; }
+        private readonly NFSRaiderForm _sender;
+        private readonly int _processorCount;
+        private readonly HashFactory _hashFactory;
+        private readonly CaseFactory _caseFactory;
+
+        private readonly HashSet<string> _prefixes;
+        private readonly HashSet<string> _suffixes;
+        private readonly HashSet<string> _wordsBetweenVariations;
+        private readonly Endianness _endianness;
+
+        private Variation Variation { get; set; }
         private List<Variation> VariationsGroups { get; set; } = new List<Variation>();
 
-        private bool CheckForMainKeys { get; set; }
-        private bool CheckForUserKeys { get; set; }
-        private bool TryToBruteForce { get; set; }
+        private readonly bool _checkMainKeys;
+        private readonly bool _checkUserKeys;
+        private readonly bool _tryBruteForce;
 
-        private NFSRaiderForm Sender { get; set; }
-
+        private HashSet<uint> Hashes { get; set; } = new HashSet<uint>();
+        private List<RaiderResult> Results { get; set; } = new List<RaiderResult>();
         private bool LockObjectIsUpdating { get; set; } = false;
         private object LockResults { get; } = new object();
 
-        private List<RaiderResult> Results { get; set; } = new List<RaiderResult>();
-
         public Unhash(
-            NFSRaiderForm sender, HashFactory hashFactory, bool checkForMainKeys, bool checkForUserKeys, bool tryToBruteForce, string txtPrefixes, string txtSuffixes, string txtVariations, 
-            string txtWordsBetweenVariations, string txtMinVariations, string txtMaxVariations, decimal processorCount, GenerateOption generateOption, Endianness unhashingEndianness, CaseOptions caseOption)
+            NFSRaiderForm sender, HashFactory hashFactory, CaseFactory caseFactory, GenerateOption generateOption, Endianness endianness,
+            bool checkMainKeys, bool checkUserKeys, bool tryBruteForce, string prefixes, string suffixes, string variations, string wordsBetweenVariations,
+            decimal minVariations, decimal maxVariations, decimal processorCount)
         {
-            Sender = sender;
-            HashFactory = hashFactory;
-            CaseOption = caseOption;
+            _sender = sender;
+            _hashFactory = hashFactory;
+            _caseFactory = caseFactory;
+            _endianness = endianness;
 
-            Prefixes = new HashSet<string>(txtPrefixes.SplitBy(new[] { ',' }, '\\'));
-            Suffixes = new HashSet<string>(txtSuffixes.SplitBy(new[] { ',' }, '\\'));
-            WordsBetweenVariations = new HashSet<string>(txtWordsBetweenVariations.SplitBy(new[] { ',' }, '\\'));
-            ProcessorCount = Convert.ToInt32(processorCount);
-            VariationModel = new Variation
+            _prefixes = new HashSet<string>(prefixes.SplitBy(new[] { ',' }, '\\'));
+            _suffixes = new HashSet<string>(suffixes.SplitBy(new[] { ',' }, '\\'));
+            _wordsBetweenVariations = new HashSet<string>(wordsBetweenVariations.SplitBy(new[] { ',' }, '\\'));
+            _processorCount = Convert.ToInt32(processorCount);
+            Variation = new Variation
             {
-                MinVariations = Convert.ToInt32(txtMinVariations),
-                MaxVariations = Convert.ToInt32(txtMaxVariations),
+                MinVariations = Convert.ToInt32(minVariations),
+                MaxVariations = Convert.ToInt32(maxVariations),
                 GenerateOption = generateOption,
             };
 
-            UnhashingEndianness = unhashingEndianness;
+            _checkMainKeys = checkMainKeys;
+            _checkUserKeys = checkUserKeys;
+            _tryBruteForce = tryBruteForce;
 
-            CheckForMainKeys = checkForMainKeys;
-            CheckForUserKeys = checkForUserKeys;
-            TryToBruteForce = tryToBruteForce;
-
-            InitializeVariatons(txtVariations.SplitBy(new[] { ',' }, '\\'));
+            InitializeVariatons(variations.SplitBy(new[] { ',' }, '\\'));
         }
 
         private void InitializeVariatons(IEnumerable<string> variations)
         {
-            var regexPattern = @"^\[" +                                            // Start
-                               @"(?<min>([\d]*))" +                                // MinVariations
-                               @"(?<separator1>\-)" +                              // Separator
-                               @"(?<max>([\d]*))" +                                // MaxVariations
-                               @"(?<separator2>\-)" +                              // Separator
-                               @"(?<generateOption>([0-1]))" +                     // GenerateOption
-                               @"\]$";                                             // End
+            GetVariationsGroups(variations);
 
-            var variationsGroups = variations.Where(c => c.StartsWith("{") && c.EndsWith("}"));
             var simpleVariations = variations.Where(c => !(c.StartsWith("{") && c.EndsWith("}")) && !(c.StartsWith("[") && c.EndsWith("]")));
-
-            if (variationsGroups.Any())
-            {
-                var variation = new List<string>();
-                Match regex;
-                var min = 0;
-                var max = 0;
-                var generateOption = GenerateOption.WithoutRepetition;
-                Variation variationModel;
-
-                foreach (var variationGroup in variationsGroups)
-                {
-                    variation = variationGroup.Trim(new[] { '{', '}' }).SplitBy(new[] { ';' }, '\\').ToList();
-
-                    regex = Regex.Match(variation.Last(), regexPattern);
-
-                    if (variation.Any() && regex.Success)
-                    {
-                        min = Convert.ToInt32(regex.Groups["min"].ToString());
-                        max = Convert.ToInt32(regex.Groups["max"].ToString());
-                        generateOption = (GenerateOption)Convert.ToInt32(regex.Groups["generateOption"].ToString());
-                        if (min > 0 && max > 0 && min <= max)
-                        {
-                            variation.RemoveAt(variation.Count - 1);
-                            variationModel = new Variation
-                            {
-                                MinVariations = min,
-                                MaxVariations = max,
-                                GenerateOption = generateOption,
-                            };
-                            if (generateOption == GenerateOption.WithoutRepetition)
-                                variationModel.Variations = variation;
-                            else
-                                variationModel.Variations = variation.ToHashSet();
-                            VariationsGroups.Add(variationModel);
-                        }
-                    }
-                }
-            }
 
             var simpleVariationsWithSubstring = variations.Where(c => c.StartsWith("[") && c.EndsWith("]")).Select(c => c.Trim(new[] { '[', ']' }));
             var allSimpleVariationsWithSubstring = new HashSet<string>();
@@ -133,22 +90,78 @@ namespace NFSRaider.Raider
                 }
             }
 
-            if (VariationsGroups.Any() || allSimpleVariationsWithSubstring.Any() || VariationModel.GenerateOption == GenerateOption.WithRepetition)
+            if (VariationsGroups.Any() || allSimpleVariationsWithSubstring.Any() || Variation.GenerateOption == GenerateOption.WithRepetition)
             {
-                VariationModel.Variations = simpleVariations.Concat(allSimpleVariationsWithSubstring).ToHashSet();
+                Variation.Variations = simpleVariations.Concat(allSimpleVariationsWithSubstring).ToHashSet();
             }
             else
             {
-                VariationModel.Variations = simpleVariations.ToList();
+                Variation.Variations = simpleVariations.ToList();
             }
 
+        }
+
+        private void GetVariationsGroups(IEnumerable<string> variations)
+        {
+            var regexPattern = @"^\[" +                                // Start
+                   @"(?<min>([\d]*))" +                                // MinVariations
+                   @"(?<separator1>\-)" +                              // Separator
+                   @"(?<max>([\d]*))" +                                // MaxVariations
+                   @"(?<separator2>\-)" +                              // Separator
+                   @"(?<generateOption>([0-1]))" +                     // GenerateOption
+                   @"\]$";                                             // End
+
+            var variationsGroups = variations.Where(c => c.StartsWith("{") && c.EndsWith("}"));
+
+            if (!variationsGroups.Any())
+            {
+                return;
+            }
+
+            var variation = new List<string>();
+            Match regex;
+            var min = 0;
+            var max = 0;
+            var generateOption = GenerateOption.WithoutRepetition;
+            Variation variationModel;
+
+            foreach (var variationGroup in variationsGroups)
+            {
+                variation = variationGroup.Trim(new[] { '{', '}' }).SplitBy(new[] { ';' }, '\\').ToList();
+
+                regex = Regex.Match(variation.Last(), regexPattern);
+
+                if (!(variation.Any() && regex.Success))
+                {
+                    continue;
+                }
+
+                min = Convert.ToInt32(regex.Groups["min"].ToString());
+                max = Convert.ToInt32(regex.Groups["max"].ToString());
+                generateOption = (GenerateOption)Convert.ToInt32(regex.Groups["generateOption"].ToString());
+                if (min > 0 && max > 0 && min <= max)
+                {
+                    variation.RemoveAt(variation.Count - 1);
+                    variationModel = new Variation
+                    {
+                        MinVariations = min,
+                        MaxVariations = max,
+                        GenerateOption = generateOption,
+                    };
+                    if (generateOption == GenerateOption.WithoutRepetition)
+                        variationModel.Variations = variation;
+                    else
+                        variationModel.Variations = variation.ToHashSet();
+                    VariationsGroups.Add(variationModel);
+                }
+            }
         }
 
         public void SplitHashes(string txtHashes, int numericBase)
         {
             var hashes = txtHashes.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).Select(c => Regex.Replace(c, @"[^0-9A-Za-z]", "")).ToList();
 
-            if (UnhashingEndianness == Endianness.BigEndian)
+            if (_endianness == Endianness.BigEndian)
             {
                 foreach (var hash in hashes)
                 {
@@ -164,17 +177,19 @@ namespace NFSRaider.Raider
                         Hashes.Add(Convert.ToUInt32(hash, numericBase));
                 }
             }
+
+            _sender.GenericMessageBoxDuringBruteForce("Info", $"{Hashes.Count} unique hashes identified");
         }
 
-        public void BruteForceThread(CancellationToken cancellationToken)
+        public void Raid(CancellationToken cancellationToken)
         {
             if (Hashes.Any())
             {
-                if (CheckForMainKeys || CheckForUserKeys)
+                if (_checkMainKeys || _checkUserKeys)
                 {
-                    CheckFile(cancellationToken);
+                    CheckKeysFiles(cancellationToken);
                 }
-                if (TryToBruteForce)
+                if (_tryBruteForce)
                 {
                     var variationModel = GenerateAllWordsVariations(cancellationToken);
                     TryBruteforce(variationModel, cancellationToken);
@@ -182,10 +197,9 @@ namespace NFSRaider.Raider
             }
         }
 
-        private void CheckFile(CancellationToken cancellationToken)
+        private void CheckKeysFiles(CancellationToken cancellationToken)
         {
-            Sender.GenericMessageBoxDuringBruteForce("Raid info", $"Hashes identified: {Hashes.Count}");
-            var allParts = new BuildKeys(HashFactory, CaseOption, CheckForMainKeys, CheckForUserKeys, ProcessorCount).GetKeyValue(cancellationToken: cancellationToken);
+            var allParts = new BuildKeys(_hashFactory, _caseFactory, _checkMainKeys, _checkUserKeys, _processorCount).GetKeyValue(cancellationToken: cancellationToken);
             var results = new List<RaiderResult>();
             foreach (var hash in Hashes)
             {
@@ -200,22 +214,22 @@ namespace NFSRaider.Raider
                 }
             }
 
-            Sender.UpdateFormDuringBruteforce(results);
+            _sender.UpdateFormDuringBruteforce(results);
         }
 
         private Variation GenerateAllWordsVariations(CancellationToken cancellationToken)
         {
-            var variationModel = new Variation()
+            var variatons = new Variation()
             {
-                MaxVariations = VariationModel.MaxVariations,
-                MinVariations = VariationModel.MinVariations,
-                GenerateOption = VariationModel.GenerateOption,
+                MaxVariations = Variation.MaxVariations,
+                MinVariations = Variation.MinVariations,
+                GenerateOption = Variation.GenerateOption,
             };
 
             if (VariationsGroups.Any())
             {
-                variationModel.Variations = new HashSet<string>(VariationModel.Variations);
-                Sender.GenericMessageBoxDuringBruteForce("Bruteforce info", $"Found {VariationsGroups.Count} groups to generate variations!");
+                variatons.Variations = new HashSet<string>(Variation.Variations);
+                _sender.GenericMessageBoxDuringBruteForce("Bruteforce info", $"{VariationsGroups.Count} variaton groups found");
                 var forceBreakPreventOutMemory = false;
                 Variations<string> variations;
                 var lastWordGenerated = string.Empty;
@@ -231,11 +245,11 @@ namespace NFSRaider.Raider
                             if (GC.GetTotalMemory(false) >= 1_500_000_000)
                             {
                                 lastWordGenerated = string.Join("", variation);
-                                variationModel.Variations.Add(lastWordGenerated);
+                                variatons.Variations.Add(lastWordGenerated);
                                 forceBreakPreventOutMemory = true;
                                 break;
                             }
-                            variationModel.Variations.Add(string.Join("", variation));
+                            variatons.Variations.Add(string.Join("", variation));
                         }
 
                         if (forceBreakPreventOutMemory)
@@ -247,24 +261,21 @@ namespace NFSRaider.Raider
                 }
 
                 if (forceBreakPreventOutMemory)
-                    Sender.GenericMessageBoxDuringBruteForce("Bruteforce info", $"Not all variations were generated. Generations stopped to prevent out of memory exception." +
-                        $"{Environment.NewLine}Hashes identified: {Hashes.Count}" +
+                    _sender.GenericMessageBoxDuringBruteForce("Info", $"Not all variations were generated. Generations stopped to prevent out of memory exception." +
                         $"{Environment.NewLine}Last word generated: {lastWordGenerated}" +
-                        $"{Environment.NewLine}Total of strings to choose from: {variationModel.Variations.Count}");
+                        $"{Environment.NewLine}Total of strings to choose from: {variatons.Variations.Count}");
                 else
-                    Sender.GenericMessageBoxDuringBruteForce("Bruteforce info", $"Generated all variations from groups!" +
-                        $"{Environment.NewLine}Hashes identified: {Hashes.Count}" +
-                        $"{Environment.NewLine}Total of strings to choose from: {variationModel.Variations.Count}");
+                    _sender.GenericMessageBoxDuringBruteForce("Info", $"Generated all variations from groups!" +
+                        $"{Environment.NewLine}Total of strings to choose from: {variatons.Variations.Count}");
             }
             else
             {
-                variationModel.Variations = new List<string>(VariationModel.Variations);
-                Sender.GenericMessageBoxDuringBruteForce("Bruteforce info", $"No groups found to generate variations!" +
-                    $"{Environment.NewLine}Hashes identified: {Hashes.Count}" +
-                    $"{Environment.NewLine}Total of strings to choose from: {variationModel.Variations.Count}");
+                variatons.Variations = new List<string>(Variation.Variations);
+                _sender.GenericMessageBoxDuringBruteForce("Info", $"No groups found to generate variations!" +
+                    $"{Environment.NewLine}Total of strings to choose from: {variatons.Variations.Count}");
             }
 
-            return variationModel;
+            return variatons;
         }
 
         private void TryBruteforce(Variation variationsModel, CancellationToken cancellationToken)
@@ -273,13 +284,13 @@ namespace NFSRaider.Raider
             OrderablePartitioner<IReadOnlyList<string>> rangePartitioner;
             for (int variationsCount = variationsModel.MinVariations; variationsCount <= variationsModel.MaxVariations; variationsCount++)
             {
-                variations = new Variations<string>(variationsModel.Variations, variationsCount, VariationModel.GenerateOption);
+                variations = new Variations<string>(variationsModel.Variations, variationsCount, Variation.GenerateOption);
                 rangePartitioner = Partitioner.Create(variations);
 
                 Parallel.ForEach(rangePartitioner, new ParallelOptions 
                 {
-                    MaxDegreeOfParallelism = ProcessorCount,
-                    CancellationToken = cancellationToken
+                    MaxDegreeOfParallelism = _processorCount,
+                    CancellationToken = cancellationToken,
                 }, variation => CheckVariations(variation));
             }
 
@@ -289,22 +300,26 @@ namespace NFSRaider.Raider
         private void CheckVariations(IReadOnlyList<string> variation)
         {
             string currentVariation;
-            IEnumerable<string> generatedStrings;
+            string generatedString;
             uint currentHash;
+            var currentBlock = new HashSet<string>();
 
-            foreach (var word in WordsBetweenVariations)
+            foreach (var word in _wordsBetweenVariations)
             {
                 currentVariation = string.Join(word, variation);
-                generatedStrings = GenerateStringsToCheck(currentVariation);
-
-                foreach (var generatedString in generatedStrings)
+                foreach (var prefix in _prefixes)
                 {
-                    currentHash = HashFactory.Hash(generatedString);
-                    if (Hashes.Contains(currentHash))
+                    foreach (var sufix in _suffixes)
                     {
-                        lock (LockResults)
+                        generatedString = $"{prefix}{currentVariation}{sufix}";
+                        currentHash = _hashFactory.Hash(generatedString);
+                        if (Hashes.Contains(currentHash))
                         {
-                            Results.Add(new RaiderResult { Hash = currentHash, Value = generatedString, IsKnown = true });
+                            currentBlock.Add(generatedString);
+                            lock (LockResults)
+                            {
+                                Results.Add(new RaiderResult { Hash = currentHash, Value = generatedString, IsKnown = true });
+                            }
                         }
                     }
                 }
@@ -326,23 +341,12 @@ namespace NFSRaider.Raider
             {
                 lock (LockResults)
                 {
-                    Sender.UpdateFormDuringBruteforce(Results);
+                    _sender.UpdateFormDuringBruteforce(Results);
                     Results.Clear();
                 }
                 GC.Collect();
             }
             LockObjectIsUpdating = false;
-        }
-
-        private IEnumerable<string> GenerateStringsToCheck(string currentString)
-        {
-            foreach (var prefix in Prefixes)
-            {
-                foreach (var sufix in Suffixes)
-                {
-                    yield return $"{prefix}{currentString}{sufix}";
-                }
-            }
         }
     }
 }

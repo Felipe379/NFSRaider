@@ -8,14 +8,15 @@ namespace NFSRaider.Raider
 {
     public class Hash
     {
-        private HashSet<string> Strings { get; set; }
-        private HashFactory HashFactory { get; set; }
-        private NFSRaiderForm Sender { get; set; }
+        private readonly HashFactory _hashFactory;
+        private readonly NFSRaiderForm _sender;
+
+        public HashSet<string> Strings { get; set; }
 
         public Hash(NFSRaiderForm sender, HashFactory hashFactory)
         {
-            Sender = sender;
-            HashFactory = hashFactory;
+            _sender = sender;
+            _hashFactory = hashFactory;
         }
 
         public void SplitStrings(string txtStrings)
@@ -23,21 +24,23 @@ namespace NFSRaider.Raider
             var strings = txtStrings.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).ToList();
 
             Strings = new HashSet<string>(strings);
+
+            _sender.GenericMessageBoxDuringBruteForce("Info", $"{Strings.Count} unique strings identified");
         }
 
-        public void BruteForceThread(CancellationToken cancellationToken)
+        public void HashStrings(CancellationToken cancellationToken)
         {
             var results = new List<RaiderResult>();
 
             foreach (var item in Strings)
             {
                 cancellationToken.ThrowIfCancellationRequested();
-                results.Add(new RaiderResult { Hash = HashFactory.Hash(item), Value = item, IsKnown = true });
+                results.Add(new RaiderResult { Hash = _hashFactory.Hash(item), Value = item, IsKnown = true });
             }
 
             if (results.Any())
             {
-                Sender.UpdateFormDuringBruteforce(results);
+                _sender.UpdateFormDuringBruteforce(results);
             }
         }
     }

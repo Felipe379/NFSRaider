@@ -1,4 +1,5 @@
 ﻿using Combinatorics.Collections;
+using NFSRaider.Case;
 using NFSRaider.Enums;
 using NFSRaider.Hash;
 using NFSRaider.Helpers;
@@ -36,17 +37,17 @@ namespace NFSRaider
             NumericProcessorsCount.Value = Environment.ProcessorCount / 2;
         }
 
+        private HashFactory HashFactory { get; set; }
+        private CaseFactory CaseFactory { get; set; }
+
         private List<RaiderResult> ListBoxDataSource { get; set; } = new List<RaiderResult>();
         private string FilePath { get; set; }
         private GenerateOption GenerateOption { get; set; }
         private Endianness UnhashingEndianness { get; set; }
-        private HashType HashType { get; set; }
         private OrderOptions OrderOption { get; set; }
-        private CaseOptions CaseOption { get; set; }
         private RaiderMode RaiderMode { get; set; }
         private NumericBase NumericBase { get; set; }
         private NumericBase NumericBaseLst { get; set; }
-        private HashFactory HashFactory { get; set; }
 
         private TimeElapsed _timer;
 
@@ -124,7 +125,7 @@ namespace NFSRaider
                         if (RaiderMode == RaiderMode.Unhasher)
                         {
                             var file = Raider.FileRaid.Open(TxtFileStartOffset.Text, TxtFileEndOffset.Text, TxtFileReadHashes.Text, TxtFileSkipHashes.Text, FilePath);
-                            var listBox = Raider.FileRaid.UnhashFromFile(UnhashingEndianness, HashFactory, file, CaseOption, NumericProcessorsCount.Value, ChkUseMainKeys.Checked, ChkUseUserKeys.Checked);
+                            var listBox = Raider.FileRaid.UnhashFromFile(UnhashingEndianness, HashFactory, file, CaseFactory, NumericProcessorsCount.Value, ChkUseMainKeys.Checked, ChkUseUserKeys.Checked);
                             ListBoxDataSource = listBox;
                             ChangedListBoxDataSource();
                         }
@@ -165,17 +166,19 @@ namespace NFSRaider
                             CancellationTokenSource = new CancellationTokenSource();
                             DisableComponentsDuringBruteforce();
 
-                            var bruteForce = new Raider.Unhash(this, HashFactory, ChkUseMainKeys.Checked, ChkUseUserKeys.Checked, ChkTryToBruteforce.Checked, TxtPrefixes.Text, TxtSuffixes.Text,
-                                TxtVariations.Text, TxtWordsBetweenVariations.Text, NumericMinVariations.Text, NumericMaxVariations.Text, NumericProcessorsCount.Value, GenerateOption, UnhashingEndianness, CaseOption);
-                            bruteForce.SplitHashes(TxtLoadFromText.Text, Numeric.Bases[NumericBase].Base);
+                            var bruteForce = new Unhash(this, HashFactory, CaseFactory, GenerateOption, UnhashingEndianness, ChkUseMainKeys.Checked, ChkUseUserKeys.Checked, ChkTryToBruteforce.Checked, TxtPrefixes.Text, TxtSuffixes.Text,
+                                TxtVariations.Text, TxtWordsBetweenVariations.Text, NumericMinVariations.Value, NumericMaxVariations.Value, NumericProcessorsCount.Value);
+                            _timer = new TimeElapsed(bruteForce.UpdateTimeElapsed, TimeSpan.FromSeconds(1));
 
-                            _timer = new TimeElapsed(bruteForce.UpdateTimeElapsed, TimeSpan.FromSeconds(0.5));
+                            bruteForce.SplitHashes(TxtLoadFromText.Text, Numeric.Bases[NumericBase].Base);
+                            
                             _timer.Start();
 
-                            BruteforceTask = Task.Run(() =>
+                            BruteforceTask = Task.Factory.StartNew(t =>
                             {
-                                bruteForce.BruteForceThread(CancellationTokenSource.Token);
-                            }, CancellationTokenSource.Token).ContinueWith(t => Invoke((MethodInvoker)(() => BruteforceFinished())));
+                                bruteForce.Raid(CancellationTokenSource.Token);
+                            }, default, CancellationTokenSource.Token, TaskCreationOptions.LongRunning, TaskScheduler.Default)
+                            .ContinueWith(t => Invoke((MethodInvoker)(() => BruteforceFinished())));
 
                             await BruteforceTask;
 
@@ -205,7 +208,7 @@ namespace NFSRaider
 
                             BruteforceTask = Task.Run(() =>
                             {
-                                hashStrings.BruteForceThread(CancellationTokenSource.Token);
+                                hashStrings.HashStrings(CancellationTokenSource.Token);
                             }, CancellationTokenSource.Token).ContinueWith(t => Invoke((MethodInvoker)(() => BruteforceFinished())));
 
                             await BruteforceTask;
@@ -374,7 +377,7 @@ namespace NFSRaider
         {
             if (MessageBox.Show("This will take a lot of time and will use a lot of RAM. Do you want to continue?", "Generate list of keys", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                var getAllKeys = new BuildKeys(HashFactory, CaseOption, ChkUseMainKeys.Checked, ChkUseUserKeys.Checked, NumericProcessorsCount.Value);
+                var getAllKeys = new BuildKeys(HashFactory, CaseFactory, ChkUseMainKeys.Checked, ChkUseUserKeys.Checked, NumericProcessorsCount.Value);
                 getAllKeys.WriteKeysToFile();
                 GC.Collect();
                 MessageBox.Show("Keys file generated!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -477,12 +480,11 @@ namespace NFSRaider
 
         private void CboHashTypes_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var hashType = HashType.Bin;
             if (Enum.IsDefined(typeof(HashType), CboHashTypes.SelectedIndex))
-                HashType = (HashType)CboHashTypes.SelectedIndex;
-            else
-                HashType = HashType.Bin;
+                hashType = (HashType)CboHashTypes.SelectedIndex;
 
-            HashFactory = HashFactory.GetHashType(HashType);
+            HashFactory = HashFactory.GetHashType(hashType);
         }
 
         private void CboOrderBy_SelectedIndexChanged(object sender, EventArgs e)
@@ -504,10 +506,11 @@ namespace NFSRaider
 
         private void CboForceHashListCase_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var caseOption = CaseOptions.None;
             if (Enum.IsDefined(typeof(CaseOptions), CboForceHashListCase.SelectedIndex))
-                CaseOption = (CaseOptions)CboForceHashListCase.SelectedIndex;
-            else
-                CaseOption = CaseOptions.None;
+                caseOption = (CaseOptions)CboForceHashListCase.SelectedIndex;
+
+            CaseFactory = CaseFactory.GetCaseType(caseOption);
         }
 
         private void BtnSearchPrevious_Click(object sender, EventArgs e)
