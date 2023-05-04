@@ -551,16 +551,16 @@
     <None Update="Keys\MainKeys\Tracks\Smokeable\Underground2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Keys\MainKeys\Tracks\SolidInfos\Carbon.txt">
+    <None Update="Keys\MainKeys\Tracks\Solids\Carbon.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Keys\MainKeys\Tracks\SolidInfos\TEMPSolidNames.txt">
+    <None Update="Keys\MainKeys\Tracks\Solids\TEMPSolidNames.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Keys\MainKeys\Tracks\SolidInfos\Underground2.txt">
+    <None Update="Keys\MainKeys\Tracks\Solids\Underground2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Keys\MainKeys\Tracks\SolidInfos\World.txt">
+    <None Update="Keys\MainKeys\Tracks\Solids\World.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Keys\MainKeys\Tracks\Textures\Carbon.txt">

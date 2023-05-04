@@ -1,5 +1,7 @@
-﻿using NFSRaider.Enums;
+﻿using Microsoft.VisualBasic.Logging;
+using NFSRaider.Enums;
 using NFSRaider.Keys.MainKeys.Cars;
+using NFSRaider.Keys.MainKeys.PartsLists.HotPursuit2;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -31,36 +33,58 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.MostWanted
                 .Concat(WindowTint.List)
                 );
 
-            foreach (var lod in Lods.List)
+            foreach (var brake in Brakes.List)
             {
-                foreach (var brake in Brakes.List)
+                parts.Add(brake);
+                foreach (var lod in Lods.List)
                 {
                     parts.Add(brake + lod);
                 }
+            }
 
-                foreach (var roofscoop in RoofScoops.List)
+            foreach (var roofscoop in RoofScoops.List)
+            {
+                parts.Add(roofscoop);
+                parts.Add(roofscoop);
+                foreach (var lod in Lods.List)
                 {
                     parts.Add(roofscoop + lod);
                     parts.Add(roofscoop + "_CF" + lod);
-                    foreach (var roofscoopType in RoofScoopsType.List)
+                }
+
+                foreach (var roofscoopType in RoofScoopsType.List)
+                {
+                    parts.Add(roofscoop + "_" + roofscoopType);
+                    parts.Add(roofscoop + "_" + roofscoopType + "_CF");
+                    foreach (var lod in Lods.List)
                     {
                         parts.Add(roofscoop + "_" + roofscoopType + lod);
                         parts.Add(roofscoop + "_" + roofscoopType + "_CF" + lod);
                     }
                 }
+            }
 
-                foreach (var spoiler in Spoilers.List)
+            foreach (var spoiler in Spoilers.List)
+            {
+                parts.Add(spoiler);
+                parts.Add(spoiler + "_CF");
+                foreach (var lod in Lods.List)
                 {
-                    parts.Add(spoiler + lod);
-                    parts.Add(spoiler + "_CF" + lod);
-                    foreach (var spoilerType in SpoilersType.List)
+                    parts.Add(spoiler + "_" + lod);
+                    parts.Add(spoiler + "_CF" + "_" + lod);
+                }
+
+                foreach (var spoilerType in SpoilersType.List)
+                {
+                    parts.Add(spoiler + "_" + spoilerType);
+                    parts.Add(spoiler + "_" + spoilerType + "_CF");
+                    foreach (var lod in Lods.List)
                     {
-                        parts.Add(spoiler + "_" + spoilerType + lod);
-                        parts.Add(spoiler + "_" + spoilerType + "_CF" + lod);
+                        parts.Add(spoiler + "_" + spoilerType + "_" + lod);
+                        parts.Add(spoiler + "_" + spoilerType + "_CF" + "_" + lod);
                     }
                 }
             }
-
 
             foreach (var decal in Decals.List)
             {
@@ -73,11 +97,13 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.MostWanted
 
             foreach (var wheel in Wheels.List)
             {
-                foreach (var lod in Lods.List)
+
+                foreach (var wheelType in WheelsType.List)
                 {
-                    foreach (var wheelType in WheelsType.List)
+                    parts.Add(wheel + "_" + wheelType);
+                    foreach (var lod in Lods.List)
                     {
-                        parts.Add(wheel + "_" + wheelType + lod);
+                        parts.Add(wheel + "_" + wheelType + "_" + lod);
                     }
                 }
 
@@ -85,17 +111,22 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.MostWanted
                 parts.Add(wheel + "_WHEEL_INNER_MASK");
             }
 
-            //foreach (var lod in Lods.List)
-            //{
-            //    foreach (var car in CarList)
-            //    {
-            //        parts.Add(car + lod);
-            //        foreach (var part in Parts.List)
-            //        {
-            //            parts.Add(car + part + lod);
-            //        }
-            //    }
-            //}
+
+            foreach (var car in CarList)
+            {
+                foreach (var partLabel in PartsLabels.List)
+                {
+                    parts.Add(car + "_" + partLabel);
+                }
+
+                foreach (var lod in Lods.List)
+                {
+                    foreach (var part in Parts.List)
+                    {
+                        parts.Add(car + "_" + part + "_" + lod);
+                    }
+                }
+            }
 
             return parts;
         }

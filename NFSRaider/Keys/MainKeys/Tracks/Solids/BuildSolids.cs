@@ -1,12 +1,11 @@
 ﻿using NFSRaider.Enums;
 using NFSRaider.Helpers;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 
-namespace NFSRaider.Keys.MainKeys.Tracks.SolidInfos
+namespace NFSRaider.Keys.MainKeys.Tracks.Solids
 {
-    public class BuildSolidInfos : Builder
+    public class BuildSolids : Builder
     {
         public override HashSet<string> GetKeys(Game? gameFilter = null, CancellationToken cancellationToken = default)
         {

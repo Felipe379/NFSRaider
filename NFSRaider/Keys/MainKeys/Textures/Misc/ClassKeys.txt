@@ -4,5 +4,7 @@ MultiPass Blend
 Bloom Alpha Mask
 Terrain Shadow
 CarSkin GlossMap
+CarSkin
 DEFAULTALPHA
 None
+GLOBAL

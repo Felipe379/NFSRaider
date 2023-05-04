@@ -1,4 +1,5 @@
 ﻿using NFSRaider.Enums;
+using NFSRaider.Helpers;
 using System.Collections.Generic;
 using System.Threading;
 
@@ -9,7 +10,7 @@ namespace NFSRaider.Keys.MainKeys.Brands
         public override HashSet<string> GetKeys(Game? gameFilter = null, CancellationToken cancellationToken = default)
         {
             var files = GetDirectoryFiles(GetDirectory(GetType()));
-            var brands = new HashSet<string>(files);
+            var brands = new HashSet<string>(FileRead.ReadFiles(files));
 
             return brands;
         }

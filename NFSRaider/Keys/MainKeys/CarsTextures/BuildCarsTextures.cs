@@ -19,11 +19,12 @@ namespace NFSRaider.Keys.MainKeys.CarsTextures
         public override HashSet<string> GetKeys(Game? gameFilter = null, CancellationToken cancellationToken = default)
         {
             var files = GetDirectoryFiles(GetDirectory(GetType()));
-            var carsTextures = new HashSet<string>(FileRead.ReadFiles(files));
+            var carsTextures = new HashSet<string>();
 
             var universal = files.Where(f => Path.GetFileNameWithoutExtension(f).StartsWith("Universal")).ToArray();
             var vinyls = files.Where(f => Path.GetFileNameWithoutExtension(f).EndsWith("Vinyls")).ToArray();
 
+            var universalCarsTextures = new HashSet<string>(FileRead.ReadFiles(universal));
             var vinylsUnderground1 = new HashSet<string>(FileRead.ReadFiles(vinyls.Where(f => Path.GetFileNameWithoutExtension(f).StartsWith("Underground1"))));
             var vinylsUnderground2 = new HashSet<string>(FileRead.ReadFiles(vinyls.Where(f => Path.GetFileNameWithoutExtension(f).StartsWith("Underground2"))));
             var vinylsMostWanted = new HashSet<string>(FileRead.ReadFiles(vinyls.Where(f => Path.GetFileNameWithoutExtension(f).StartsWith("MostWanted"))));
@@ -31,7 +32,7 @@ namespace NFSRaider.Keys.MainKeys.CarsTextures
 
             foreach (var car in CarListAll)
             {
-                foreach (var texture in universal)
+                foreach (var texture in universalCarsTextures)
                     carsTextures.Add(car + texture);
             }
 

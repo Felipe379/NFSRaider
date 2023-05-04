@@ -22,7 +22,6 @@ namespace NFSRaider.Keys.MainKeys.PartsLists
             var allParts = new HashSet<string>(
                 new BuildUnderground1PartsList().GetAllUnderground1Parts()
                 .Concat(new BuildUnderground2PartsList().GetAllUnderground2Parts())
-                .Concat(new BuildMostWantedPartsList().GetAllMostWantedParts())
                 .Concat(new BuildCarbonPartsList().GetAllCarbonParts())
                 .Concat(new BuildProStreetPartsList().GetAllProStreetParts())
                 .Concat(new BuildUndercoverCGPartsList().GetAllUndercoverCGParts())
@@ -44,6 +43,7 @@ namespace NFSRaider.Keys.MainKeys.PartsLists
 
             var parts = new HashSet<string>(
                 new BuildHotPursuit2PartsList().GetAllHotPursuit2Parts()
+                .Concat(new BuildMostWantedPartsList().GetAllMostWantedParts())
                 );
 
             parts.UnionWith(allParts);

@@ -9,7 +9,7 @@ using NFSRaider.Keys.MainKeys.Tracks.ParameterSets;
 using NFSRaider.Keys.MainKeys.Tracks.PositionMarkers;
 using NFSRaider.Keys.MainKeys.Tracks.SceneryGroups;
 using NFSRaider.Keys.MainKeys.Tracks.Smokeable;
-using NFSRaider.Keys.MainKeys.Tracks.SolidInfos;
+using NFSRaider.Keys.MainKeys.Tracks.Solids;
 using NFSRaider.Keys.MainKeys.Tracks.Textures;
 using NFSRaider.Keys.MainKeys.Tracks.TroughBoundaries;
 using System.Collections.Generic;
@@ -32,7 +32,7 @@ namespace NFSRaider.Keys.MainKeys.Tracks
                 .Concat(new BuildLightSourcesPack().GetKeys(gameFilter, cancellationToken))
                 .Concat(new BuildBarrierGroups().GetKeys(gameFilter, cancellationToken))
                 .Concat(new BuildSceneryGroups().GetKeys(gameFilter, cancellationToken))
-                .Concat(new BuildSolidInfos().GetKeys(gameFilter, cancellationToken))
+                .Concat(new BuildSolids().GetKeys(gameFilter, cancellationToken))
                 .Concat(new BuildSmokeable().GetKeys(gameFilter, cancellationToken))
                 .Concat(new BuildTextures().GetKeys(gameFilter, cancellationToken))
                 .Concat(new BuildTroughBoundaries().GetKeys(gameFilter, cancellationToken))
