@@ -200,11 +200,11 @@ namespace NFSRaider
                             CancellationTokenSource = new CancellationTokenSource();
                             DisableComponentsDuringBruteforce();
 
-                            var hashStrings = new Raider.Hash(this, HashFactory);
-                            hashStrings.SplitStrings(TxtLoadFromText.Text);
-
                             _timer = new TimeElapsed();
                             _timer.Start();
+
+                            var hashStrings = new Raider.Hash(this, HashFactory);
+                            hashStrings.SplitStrings(TxtLoadFromText.Text);
 
                             BruteforceTask = Task.Run(() =>
                             {
@@ -604,7 +604,11 @@ namespace NFSRaider
                     if (MessageBox.Show($"List exported to file:{Environment.NewLine}{Path.GetFileName(saveFileDialog.FileName)}{Environment.NewLine}Do you want to open it?",
                         "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                     {
-                        Process.Start(saveFileDialog.FileName);
+                        Process.Start(new ProcessStartInfo
+                        {
+                            FileName = saveFileDialog.FileName,
+                            UseShellExecute = true
+                        });
                     }
                 }
             }
