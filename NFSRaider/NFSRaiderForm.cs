@@ -171,7 +171,7 @@ namespace NFSRaider
                             _timer = new TimeElapsed(bruteForce.UpdateTimeElapsed, TimeSpan.FromSeconds(1));
 
                             bruteForce.SplitHashes(TxtLoadFromText.Text, Numeric.Bases[NumericBase].Base);
-                            
+
                             _timer.Start();
 
                             BruteforceTask = Task.Factory.StartNew(t =>
@@ -513,32 +513,53 @@ namespace NFSRaider
             CaseFactory = CaseFactory.GetCaseType(caseOption);
         }
 
+
+        private void Search(bool forward)
+        {
+            var selected = LstUnhashed.SelectedIndex;
+
+            var rowStart = selected < 0 ? 0 : selected;
+            var rowEnd = LstUnhashed.Items.Count - 1;
+            var rowStep = forward ? 1 : -1;
+
+            var found = false;
+            var doneFullLoop = false;
+
+            while (!found)
+            {
+                for (; rowStart <= rowEnd && rowStart >= 0; rowStart += rowStep)
+                {
+                    if (rowStart == selected)
+                    {
+                        if (doneFullLoop)
+                            return;
+
+                        continue;
+                    }
+
+                    if (ItemFound(rowStart))
+                    {
+                        found = true;
+                        LstUnhashed.ClearSelected();
+                        LstUnhashed.SetSelected(rowStart, true);
+                        LstUnhashed.Focus();
+                        break;
+                    }
+                }
+                rowStart = forward ? 0 : LstUnhashed.Items.Count - 1;
+                doneFullLoop = true;
+            }
+        }
+
+
         private void BtnSearchPrevious_Click(object sender, EventArgs e)
         {
-            for (int i = LstUnhashed.SelectedIndex - 1; i >= 0; i--)
-            {
-                if (ItemFound(i))
-                {
-                    LstUnhashed.ClearSelected();
-                    LstUnhashed.SetSelected(i, true);
-                    LstUnhashed.Focus();
-                    break;
-                }
-            }
+            Search(false);
         }
 
         private void BtnSearchNext_Click(object sender, EventArgs e)
         {
-            for (int i = LstUnhashed.SelectedIndex + 1; i <= LstUnhashed.Items.Count - 1; i++)
-            {
-                if (ItemFound(i))
-                {
-                    LstUnhashed.ClearSelected();
-                    LstUnhashed.SetSelected(i, true);
-                    LstUnhashed.Focus();
-                    break;
-                }
-            }
+            Search(true);
         }
 
 

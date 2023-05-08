@@ -503,7 +503,13 @@
     <None Update="Keys\MainKeys\Tracks\CollisionVolumes\World.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Keys\MainKeys\Tracks\EventTriggers\Carbon.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Keys\MainKeys\Tracks\EventTriggers\Underground2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Tracks\EventTriggers\World.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Keys\MainKeys\Tracks\LightFlaresPack\Underground2.txt">
@@ -606,6 +612,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Keys\MainKeys\VltList\Nitro.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\VltList\TheRun.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Keys\MainKeys\VltList\Vlt.txt">
