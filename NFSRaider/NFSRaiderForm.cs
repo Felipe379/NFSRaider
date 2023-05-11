@@ -35,6 +35,10 @@ namespace NFSRaider
             LblTimeElapsed.Text = string.Empty;
             NumericProcessorsCount.Maximum = Environment.ProcessorCount;
             NumericProcessorsCount.Value = Environment.ProcessorCount / 2;
+
+#if DEBUG
+            Text += " - Debug";
+#endif
         }
 
         private HashFactory HashFactory { get; set; }
@@ -516,9 +520,18 @@ namespace NFSRaider
 
         private void Search(bool forward)
         {
-            var selected = LstUnhashed.SelectedIndex;
+            if (LstUnhashed.Items.Count <= 0)
+                return;
 
-            var rowStart = selected < 0 ? 0 : selected;
+            if (string.IsNullOrWhiteSpace(TxtSearch.Text))
+            {
+                LstUnhashed.ClearSelected();
+                return;
+            }
+
+            var selected = LstUnhashed.SelectedIndex < 0 ? 0 : LstUnhashed.SelectedIndex;
+
+            var rowStart = selected;
             var rowEnd = LstUnhashed.Items.Count - 1;
             var rowStep = forward ? 1 : -1;
 
