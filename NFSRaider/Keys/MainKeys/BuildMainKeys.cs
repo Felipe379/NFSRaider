@@ -16,6 +16,7 @@ using NFSRaider.Keys.MainKeys.Nis;
 using NFSRaider.Keys.MainKeys.PartsLists;
 using NFSRaider.Keys.MainKeys.Presets;
 using NFSRaider.Keys.MainKeys.PresetSkins;
+using NFSRaider.Keys.MainKeys.Solids;
 using NFSRaider.Keys.MainKeys.SunInfos;
 using NFSRaider.Keys.MainKeys.Textures;
 using NFSRaider.Keys.MainKeys.Tracks;
@@ -67,6 +68,7 @@ namespace NFSRaider.Keys.MainKeys
                 new BuildNis(),
                 new BuildPresets(),
                 new BuildPresetSkins(),
+                new BuildSolids(),
                 new BuildSunInfos(),
                 new BuildTextures(),
                 new BuildTracks(),

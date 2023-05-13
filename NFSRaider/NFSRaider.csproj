@@ -323,6 +323,15 @@
     <None Update="Keys\MainKeys\Materials\World.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Keys\MainKeys\Solids\Underground1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Solids\Underground1.Deleted.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Solids\Underground2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Keys\MainKeys\Nis\Carbon.Deleted.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -455,10 +464,16 @@
     <None Update="Keys\MainKeys\Textures\Undercover.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Keys\MainKeys\Textures\Underground1.Deleted.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Keys\MainKeys\Textures\Underground1.Arcade.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Keys\MainKeys\Textures\Underground1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Textures\Underground2.Deleted.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Keys\MainKeys\Textures\Underground2.txt">
@@ -560,6 +575,12 @@
     <None Update="Keys\MainKeys\Tracks\Solids\Carbon.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Keys\MainKeys\Tracks\Solids\Underground2.Deleted.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Tracks\Solids\Underground1.DemoTemp.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Keys\MainKeys\Tracks\Solids\TEMPSolidNames.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -582,6 +603,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Keys\MainKeys\Tracks\Textures\Underground1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Tracks\Textures\Underground1.Deleted.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Tracks\Textures\Underground2.Deleted.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Keys\MainKeys\Tracks\Textures\Underground2.txt">
