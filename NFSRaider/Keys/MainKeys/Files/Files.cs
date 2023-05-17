@@ -9834,6 +9834,7 @@ namespace NFSRaider.Keys.MainKeys.Files
 @"UI\WORLDVIEW.BIG",
 @"UI\X360CONTROLLERUNPLUGGED.BIG",
 @"UI\_STDCTRL.BIG",
+@"PADFILE.BIN",
         };
     }
 }

@@ -323,6 +323,9 @@
     <None Update="Keys\MainKeys\Materials\World.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Keys\MainKeys\Solids\Carbon.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Keys\MainKeys\Solids\Underground1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
