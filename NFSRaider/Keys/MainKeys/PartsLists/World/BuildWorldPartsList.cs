@@ -31,58 +31,84 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.World
                 .Concat(WindowTint.List)
                 );
 
-            foreach (var lod in Lods.List)
-            {
+            
                 foreach (var brake in Brakes.List)
                 {
-                    parts.Add(brake + lod);
+                    parts.Add(brake);
+                    foreach (var lod in Lods.List)
+                    {
+                        parts.Add(brake + lod);
+                    }
                 }
 
                 foreach (var plate in Plates.List)
                 {
-                    parts.Add(plate + lod);
+                    parts.Add(plate);
+                    foreach (var lod in Lods.List)
+                    {
+                        parts.Add(plate + lod);
+                    }
                 }
 
                 foreach (var exhaust in Exhausts.List)
                 {
                     foreach (var exhaustType in ExhaustsType.List)
                     {
-                        parts.Add(exhaust + "_" + exhaustType + lod);
+                        parts.Add(exhaust + "_" + exhaustType);
+                        foreach (var lod in Lods.List)
+                        {
+                            parts.Add(exhaust + "_" + exhaustType + lod);
+                        }
                     }
                 }
 
                 foreach (var roofscoop in RoofScoops.List)
                 {
-                    parts.Add(roofscoop + lod);
-                    parts.Add(roofscoop + "_CF" + lod);
+                    parts.Add(roofscoop);
+                    parts.Add(roofscoop + "_CF");
+                    foreach (var lod in Lods.List)
+                    {
+                        parts.Add(roofscoop + lod);
+                        parts.Add(roofscoop + "_CF" + lod);
+                    }
+
                     foreach (var roofscoopType in RoofScoopsType.List)
                     {
-                        parts.Add(roofscoop + "_" + roofscoopType + lod);
-                        parts.Add(roofscoop + "_" + roofscoopType + "_CF" + lod);
+                        parts.Add(roofscoop + "_" + roofscoopType);
+                        parts.Add(roofscoop + "_" + roofscoopType + "_CF");
+                        foreach (var lod in Lods.List)
+                        {
+                            parts.Add(roofscoop + "_" + roofscoopType + lod);
+                            parts.Add(roofscoop + "_" + roofscoopType + "_CF" + lod);
+                        }
                     }
                 }
 
                 foreach (var spoiler in Spoilers.List)
                 {
-                    parts.Add("SPOILER" + "_" + spoiler + lod);
-                    parts.Add("SPOILER" + "_" + spoiler + "_CF" + lod);
-                    parts.Add("AUTOSCULPTSPOILER" + "_" + spoiler + lod);
-                    parts.Add("AUTOSCULPTSPOILER" + "_" + spoiler + "_CF" + lod);
-                    foreach (var spoilerType in SpoilersType.List)
+                    parts.Add("SPOILER" + "_" + spoiler);
+                    parts.Add("SPOILER" + "_" + spoiler + "_CF");
+                    parts.Add("AUTOSCULPTSPOILER" + "_" + spoiler);
+                    parts.Add("AUTOSCULPTSPOILER" + "_" + spoiler + "_CF");
+                    foreach (var lod in Lods.List)
                     {
-                        parts.Add("SPOILER" + "_" + spoiler + "_" + spoilerType + lod);
-                        parts.Add("SPOILER" + "_" + spoiler + "_" + spoilerType + "_CF" + lod);
+                        parts.Add("SPOILER" + "_" + spoiler + "_" + lod);
+                        parts.Add("SPOILER" + "_" + spoiler + "_CF" + "_" + lod);
                     }
 
-                    foreach (var spoilerType in SpoilersType.ListAsianBeta)
+                    foreach (var spoilerType in SpoilersType.List)
                     {
-                        parts.Add("SPOILER" + "_" + spoiler + "_" + spoilerType + lod);
-                        parts.Add("SPOILER" + "_" + spoiler + "_" + spoilerType + "_CF" + lod);
-                        parts.Add("AUTOSCULPTSPOILER" + "_" + spoiler + "_" + spoilerType + lod);
-                        parts.Add("AUTOSCULPTSPOILER" + "_" + spoiler + "_" + spoilerType + "_CF" + lod);
+                        parts.Add("SPOILER" + "_" + spoiler + "_" + spoilerType);
+                        parts.Add("SPOILER" + "_" + spoiler + "_" + spoilerType + "_CF");
+                        parts.Add("AUTOSCULPTSPOILER" + "_" + spoiler + "_" + spoilerType);
+                        parts.Add("AUTOSCULPTSPOILER" + "_" + spoiler + "_" + spoilerType + "_CF");
+                        foreach (var lod in Lods.List)
+                        {
+                            parts.Add("SPOILER" + "_" + spoiler + "_" + spoilerType + lod);
+                            parts.Add("SPOILER" + "_" + spoiler + "_" + spoilerType + "_CF" + lod);
+                        }
                     }
                 }
-            }
 
 
             foreach (var decal in Decals.List)
@@ -95,11 +121,12 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.World
 
             foreach (var wheel in Wheels.List)
             {
-                foreach (var lod in Lods.List)
+                foreach (var wheelType in WheelsType.List)
                 {
-                    foreach (var wheelType in WheelsType.List)
+                    parts.Add(wheel + "_" + wheelType);
+                    foreach (var lod in Lods.List)
                     {
-                        parts.Add(wheel + "_" + wheelType + lod);
+                        parts.Add(wheel + "_" + wheelType + "_" + lod);
                     }
                 }
 
@@ -107,17 +134,33 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.World
                 parts.Add(wheel + "_WHEEL_INNER_MASK");
             }
 
-            //foreach (var lod in Lods.List)
-            //{
-            //    foreach (var car in CarList)
-            //    {
-            //        parts.Add(car + lod);
-            //        foreach (var part in Parts.List)
-            //        {
-            //            parts.Add(car + part + lod);
-            //        }
-            //    }
-            //}
+
+
+            foreach (var car in CarList)
+            {
+                foreach (var partAttribute in PartsAttributes.List.Concat(PartsAttributes.ListCut))
+                {
+                    parts.Add(car + "_" + partAttribute);
+                }
+
+                foreach (var partAutosculpt in PartsAutosculpt.List.Concat(PartsAutosculpt.ListCut))
+                {
+                    parts.Add(car + "_" + partAutosculpt);
+
+                    foreach (var autosculpt in Autosculpt.List)
+                    {
+                        parts.Add(car + "_" + partAutosculpt + "_" + autosculpt);
+                    }
+                }
+
+                foreach (var lod in Lods.List)
+                {
+                    foreach (var part in Parts.List.Concat(Parts.ListCut))
+                    {
+                        parts.Add(car + "_" + part + "_" + lod);
+                    }
+                }
+            }
 
             return parts;
         }

@@ -49,6 +49,7 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Carbon
 "INFERNO",
 "INFERNOGENERIC",
 "IS300",
+"KENJI",
 "KINGSGENERIC",
 "LESAMURAI",
 "NEVILLE",

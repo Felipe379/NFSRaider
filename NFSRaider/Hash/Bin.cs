@@ -38,10 +38,8 @@ namespace NFSRaider.Hash
 
             while (len < byteArrayToHash.Length)
             {
-
                 prefix *= 0x21;
                 prefix += byteArrayToHash[len++];
-
             }
 
             return prefix;

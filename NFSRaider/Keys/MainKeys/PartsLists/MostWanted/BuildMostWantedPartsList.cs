@@ -1,7 +1,5 @@
-﻿using Microsoft.VisualBasic.Logging;
-using NFSRaider.Enums;
+﻿using NFSRaider.Enums;
 using NFSRaider.Keys.MainKeys.Cars;
-using NFSRaider.Keys.MainKeys.PartsLists.HotPursuit2;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -45,7 +43,7 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.MostWanted
             foreach (var roofscoop in RoofScoops.List)
             {
                 parts.Add(roofscoop);
-                parts.Add(roofscoop);
+                parts.Add(roofscoop + "_CF");
                 foreach (var lod in Lods.List)
                 {
                     parts.Add(roofscoop + lod);
@@ -97,7 +95,6 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.MostWanted
 
             foreach (var wheel in Wheels.List)
             {
-
                 foreach (var wheelType in WheelsType.List)
                 {
                     parts.Add(wheel + "_" + wheelType);
@@ -114,9 +111,9 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.MostWanted
 
             foreach (var car in CarList)
             {
-                foreach (var partLabel in PartsLabels.List)
+                foreach (var partAttributes in PartsAttributes.List)
                 {
-                    parts.Add(car + "_" + partLabel);
+                    parts.Add(car + "_" + partAttributes);
                 }
 
                 foreach (var lod in Lods.List)

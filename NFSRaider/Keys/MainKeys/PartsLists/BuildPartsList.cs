@@ -1,4 +1,5 @@
-﻿using NFSRaider.Keys.MainKeys.Cars;
+﻿using NFSRaider.Enums;
+using NFSRaider.Keys.MainKeys.Cars;
 using NFSRaider.Keys.MainKeys.PartsLists.Carbon;
 using NFSRaider.Keys.MainKeys.PartsLists.HotPursuit2;
 using NFSRaider.Keys.MainKeys.PartsLists.MostWanted;
@@ -15,7 +16,14 @@ namespace NFSRaider.Keys.MainKeys.PartsLists
 {
     public class BuildPartsList
     {
-        private readonly HashSet<string> CarList = new HashSet<string>(new BuildCars().GetKeys());
+        private readonly HashSet<string> CarList = new HashSet<string>(
+            new BuildCars().GetKeys(Game.Underground1)
+            .Concat(new BuildCars().GetKeys(Game.Underground2))
+            .Concat(new BuildCars().GetKeys(Game.Carbon))
+            .Concat(new BuildCars().GetKeys(Game.ProStreet))
+            .Concat(new BuildCars().GetKeys(Game.UndercoverCG))
+            .Concat(new BuildCars().GetKeys(Game.Undercover))
+            );
 
         public HashSet<string> GetAllParts()
         {
@@ -26,7 +34,6 @@ namespace NFSRaider.Keys.MainKeys.PartsLists
                 .Concat(new BuildProStreetPartsList().GetAllProStreetParts())
                 .Concat(new BuildUndercoverCGPartsList().GetAllUndercoverCGParts())
                 .Concat(new BuildUndercoverPartsList().GetAllUndercoverParts())
-                .Concat(new BuildWorldPartsList().GetAllWorldParts())
                 );
 
             foreach (var lod in Lods.List)
@@ -44,6 +51,7 @@ namespace NFSRaider.Keys.MainKeys.PartsLists
             var parts = new HashSet<string>(
                 new BuildHotPursuit2PartsList().GetAllHotPursuit2Parts()
                 .Concat(new BuildMostWantedPartsList().GetAllMostWantedParts())
+                .Concat(new BuildWorldPartsList().GetAllWorldParts())
                 );
 
             parts.UnionWith(allParts);

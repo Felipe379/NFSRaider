@@ -46,6 +46,7 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.UndercoverCG
 "INFERNO",
 "INFERNOGENERIC",
 "IS300",
+"KENJI",
 "KINGSGENERIC",
 "LESAMURAI",
 "NEVILLE",

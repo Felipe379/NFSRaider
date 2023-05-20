@@ -1,5 +1,4 @@
 ﻿using Combinatorics.Collections;
-using Microsoft.VisualBasic;
 using NFSRaider.Case;
 using NFSRaider.Enums;
 using NFSRaider.Hash;
@@ -14,7 +13,6 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
-using System.Xml.Linq;
 
 namespace NFSRaider.Raider
 {
@@ -299,19 +297,19 @@ namespace NFSRaider.Raider
 
         private void CheckVariations(IReadOnlyList<string> variation)
         {
-            string currentVariation;
-            string generatedString;
+            string currentVariation, generatedString;
             uint currentHash;
+            int wi, pi, si;
             var currentBlock = new HashSet<string>();
 
-            foreach (var word in _wordsBetweenVariations)
+            for (wi = 0; wi < _wordsBetweenVariations.Count; wi++)
             {
-                currentVariation = string.Join(word, variation);
-                foreach (var prefix in _prefixes)
+                currentVariation = string.Join(_wordsBetweenVariations.ElementAt(wi), variation);
+                for (pi = 0; pi < _prefixes.Count; pi++)
                 {
-                    foreach (var sufix in _suffixes)
+                    for (si = 0; si < _suffixes.Count; si++)
                     {
-                        generatedString = $"{prefix}{currentVariation}{sufix}";
+                        generatedString = $"{_prefixes.ElementAt(pi)}{currentVariation}{_suffixes.ElementAt(si)}";
                         currentHash = _hashFactory.Hash(generatedString);
                         if (Hashes.Contains(currentHash))
                         {

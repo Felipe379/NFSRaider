@@ -2,7 +2,7 @@
 
 namespace NFSRaider.Keys.MainKeys.PartsLists.MostWanted
 {
-    public static class PartsLabels
+    public static class PartsAttributes
     {
         public static readonly List<string> List = new List<string>()
         {
