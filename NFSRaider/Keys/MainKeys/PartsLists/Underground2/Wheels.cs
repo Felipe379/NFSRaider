@@ -72,15 +72,6 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Underground2
             "MOMO_STYLE03",
             "MOMO_STYLE04",
             "MOMO_STYLE05",
-            "NFSU_STYLE01",
-            "NFSU_STYLE02",
-            "NFSU_STYLE03",
-            "NFSU_STYLE04",
-            "NFSU_STYLE05",
-            "NFSU_STYLE06",
-            "NFSU_STYLE07",
-            "NFSU_STYLE08",
-            "NFSU_STYLE09",
             "OASIS_STYLE01",
             "OASIS_STYLE02",
             "OASIS_STYLE03",
@@ -128,7 +119,6 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Underground2
             "WELDWHEEL_STYLE01",
             "WORK_STYLE01",
             "WORK_STYLE02",
-            //NFSU Wheels
             "AUTOSTRADA_STYLE01",
             "LIMITEDALLOY_STYLE01",
             "PIAA_STYLE01",
@@ -138,6 +128,19 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Underground2
             "STARK_STYLE01",
             "VEILSIDE_STYLE01",
             "VERSUS_STYLE01",
+        };
+
+        public static readonly List<string> LabelsOnly = new List<string>()
+        {
+            "NFSU_STYLE01",
+            "NFSU_STYLE02",
+            "NFSU_STYLE03",
+            "NFSU_STYLE04",
+            "NFSU_STYLE05",
+            "NFSU_STYLE06",
+            "NFSU_STYLE07",
+            "NFSU_STYLE08",
+            "NFSU_STYLE09",
         };
 
         public static readonly List<string> ListDemo = new List<string>()

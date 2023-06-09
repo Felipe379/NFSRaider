@@ -34,19 +34,19 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.World
             
                 foreach (var brake in Brakes.List)
                 {
-                    parts.Add(brake);
+                    //parts.Add(brake);
                     foreach (var lod in Lods.List)
                     {
-                        parts.Add(brake + lod);
-                    }
+                    parts.Add(brake + "_" + lod);
+                }
                 }
 
                 foreach (var plate in Plates.List)
                 {
-                    parts.Add(plate);
+                    //parts.Add(plate);
                     foreach (var lod in Lods.List)
                     {
-                        parts.Add(plate + lod);
+                        parts.Add(plate + "_" + lod);
                     }
                 }
 
@@ -64,12 +64,12 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.World
 
                 foreach (var roofscoop in RoofScoops.List)
                 {
-                    parts.Add(roofscoop);
+                    //parts.Add(roofscoop);
                     parts.Add(roofscoop + "_CF");
                     foreach (var lod in Lods.List)
                     {
-                        parts.Add(roofscoop + lod);
-                        parts.Add(roofscoop + "_CF" + lod);
+                        parts.Add(roofscoop + "_" + lod);
+                        parts.Add(roofscoop + "_CF" + "_" + lod);
                     }
 
                     foreach (var roofscoopType in RoofScoopsType.List)
@@ -78,8 +78,8 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.World
                         parts.Add(roofscoop + "_" + roofscoopType + "_CF");
                         foreach (var lod in Lods.List)
                         {
-                            parts.Add(roofscoop + "_" + roofscoopType + lod);
-                            parts.Add(roofscoop + "_" + roofscoopType + "_CF" + lod);
+                            parts.Add(roofscoop + "_" + roofscoopType + "_" + lod);
+                            parts.Add(roofscoop + "_" + roofscoopType + "_CF" + "_" + lod);
                         }
                     }
                 }

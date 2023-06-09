@@ -34,74 +34,119 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Underground2
                 .Concat(Vinyls.List)
                 .Concat(Vinyls.ListDemo)
                 .Concat(Wheels.List)
+                .Concat(Wheels.LabelsOnly)
                 .Concat(Wheels.ListDemo)
                 .Concat(WheelsManufacturers.List)
                 .Concat(WindowTint.List)
                 );
 
-            foreach (var lod in Lods.List)
+            foreach (var brake in Brakes.List)
             {
-                foreach (var brake in Brakes.List)
+                //parts.Add(brake);
+                foreach (var lod in Lods.List)
                 {
-                    parts.Add(brake + lod);
+                    parts.Add(brake + "_" + lod);
                 }
+            }
 
-                foreach (var exhaust in Exhausts.List)
+            foreach (var exhaust in Exhausts.List)
+            {
+                //parts.Add(exhaust);
+                foreach (var lod in Lods.List)
                 {
-                    parts.Add(exhaust + lod);
+                    parts.Add(exhaust + "_" + lod);
                 }
+            }
 
-                foreach (var plate in Plates.List)
+            foreach (var exhaust in Exhausts.List)
+            {
+                //parts.Add(exhaust);
+                foreach (var lod in Lods.List)
                 {
-                    parts.Add(plate + lod);
+                    parts.Add(exhaust + "_" + lod);
                 }
+            }
 
-                foreach (var mirror in Mirrors.List)
+            foreach (var plate in Plates.List)
+            {
+                //parts.Add(plate);
+                foreach (var lod in Lods.List)
                 {
-                    parts.Add(mirror + "_" + "MIRROR" + lod);
-                    parts.Add(mirror + "_" + "MIRROR" + "_CF" + lod);
-                    foreach (var mirrorType in MirrorsType.List)
+                    parts.Add(plate + "_" + lod);
+                }
+            }
+
+            foreach (var mirror in Mirrors.List)
+            {
+                parts.Add(mirror + "_" + "MIRROR");
+                parts.Add(mirror + "_" + "MIRROR" + "_CF");
+                foreach (var mirrorType in MirrorsType.List)
+                {
+                    parts.Add(mirror + "_" + "MIRROR" + "_" + mirrorType);
+                    parts.Add(mirror + "_" + "MIRROR" + "_" + mirrorType + "_CF");
+                    foreach (var lod in Lods.List)
                     {
-                        parts.Add("MIRROR" + "_" + mirrorType + "_" + "LEFT" + "_" + mirror + lod);
-                        parts.Add("MIRROR" + "_" + mirrorType + "_" + "LEFT" + "_" + mirror + "_CF" + lod);
-                        parts.Add("MIRROR" + "_" + mirrorType + "_" + "RIGHT" + "_" + mirror + lod);
-                        parts.Add("MIRROR" + "_" + mirrorType + "_" + "RIGHT" + "_" + mirror + "_CF" + lod);
-                        parts.Add(mirror + "_" + "MIRROR" + "_" + mirrorType + lod);
-                        parts.Add(mirror + "_" + "MIRROR" + "_" + mirrorType + "_CF" + lod);
-                    }
-                }
-
-                foreach (var roofscoop in RoofScoops.List.Concat(RoofScoops.ListDemo))
-                {
-                    parts.Add(roofscoop + lod);
-                    parts.Add(roofscoop + "_CF" + lod);
-                    foreach (var roofscoopType in RoofScoopsType.List)
-                    {
-                        parts.Add(roofscoop + "_" + roofscoopType + lod);
-                        parts.Add(roofscoop + "_" + roofscoopType + "_CF" + lod);
-                    }
-                }
-
-                foreach (var spoiler in Spoilers.List)
-                {
-                    parts.Add(spoiler + lod);
-                    parts.Add(spoiler + "_CF" + lod);
-                    foreach (var spoilerType in SpoilersType.List)
-                    {
-                        parts.Add(spoiler + "_" + spoilerType + lod);
-                        parts.Add(spoiler + "_" + spoilerType + "_CF" + lod);
+                        parts.Add("MIRROR" + "_" + mirrorType + "_" + "LEFT" + "_" + mirror + "_" + lod);
+                        parts.Add("MIRROR" + "_" + mirrorType + "_" + "LEFT" + "_" + mirror + "_CF" + "_" + lod);
+                        parts.Add("MIRROR" + "_" + mirrorType + "_" + "RIGHT" + "_" + mirror + "_" + lod);
+                        parts.Add("MIRROR" + "_" + mirrorType + "_" + "RIGHT" + "_" + mirror + "_CF" + "_" + lod);
                     }
                 }
             }
 
+            foreach (var roofscoop in RoofScoops.List.Concat(RoofScoops.ListDemo))
+            {
+                //parts.Add(roofscoop);
+                parts.Add(roofscoop + "_CF");
+                foreach (var lod in Lods.List)
+                {
+                    parts.Add(roofscoop + "_" + lod);
+                    parts.Add(roofscoop + "_CF" + "_" + lod);
+                }
+
+                foreach (var roofscoopType in RoofScoopsType.List)
+                {
+                    parts.Add(roofscoop + "_" + roofscoopType);
+                    parts.Add(roofscoop + "_" + roofscoopType + "_CF");
+                    foreach (var lod in Lods.List)
+                    {
+                        parts.Add(roofscoop + "_" + roofscoopType + "_" + lod);
+                        parts.Add(roofscoop + "_" + roofscoopType + "_CF" + "_" + lod);
+                    }
+                }
+            }
+
+            foreach (var spoiler in Spoilers.List)
+            {
+                //parts.Add(spoiler);
+                parts.Add(spoiler + "_CF");
+                foreach (var lod in Lods.List)
+                {
+                    parts.Add(spoiler + "_" + lod);
+                    parts.Add(spoiler + "_CF" + "_" + lod);
+                }
+
+                foreach (var spoilerType in SpoilersType.List)
+                {
+                    parts.Add(spoiler + "_" + spoilerType);
+                    parts.Add(spoiler + "_" + spoilerType + "_CF");
+
+                    foreach (var lod in Lods.List)
+                    {
+                        parts.Add(spoiler + "_" + spoilerType + "_" + lod);
+                        parts.Add(spoiler + "_" + spoilerType + "_CF" + "_" + lod);
+                    }
+                }
+            }
 
             foreach (var audio in Audio.List.Concat(Audio.ListGeometry))
             {
+                //parts.Add(audio);
                 parts.Add(audio + "_" + "PAINT");
                 foreach (var lod in Lods.List)
                 {
-                    parts.Add(audio + lod);
-                    parts.Add(audio + "_" + "PAINT" + lod);
+                    parts.Add(audio + "_" + lod);
+                    parts.Add(audio + "_" + "PAINT" + "_" + lod);
                 }
             }
 
@@ -116,11 +161,12 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Underground2
 
             foreach (var wheel in Wheels.List)
             {
-                foreach (var lod in Lods.List)
+                foreach (var wheelType in WheelsType.List)
                 {
-                    foreach (var wheelType in WheelsType.List)
+                    parts.Add(wheel + "_" + wheelType);
+                    foreach (var lod in Lods.List)
                     {
-                        parts.Add(wheel + "_" + wheelType + lod);
+                        parts.Add(wheel + "_" + wheelType + "_" + lod);
                     }
                 }
 
@@ -128,14 +174,24 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Underground2
                 parts.Add(wheel + "_WHEEL_INNER_MASK");
             }
 
+            foreach (var wheel in Wheels.LabelsOnly)
+            {
+                foreach (var wheelType in WheelsType.List)
+                {
+                    parts.Add(wheel + "_" + wheelType);
+                }
+            }
+
             foreach (var wheel in Wheels.ListDemo)
             {
-                foreach (var lod in Lods.List)
+
+                foreach (var wheelType in WheelsType.ListDemo)
                 {
-                    foreach (var wheelType in WheelsType.ListDemo)
+                    parts.Add(wheel + "_" + wheelType);
+                    foreach (var lod in Lods.List)
                     {
-                        parts.Add(wheel + "_" + wheelType + lod);
-                        parts.Add(wheel + "_" + wheelType + "_" + "SPIN" + lod);
+                        parts.Add(wheel + "_" + wheelType + "_" + lod);
+                        parts.Add(wheel + "_" + wheelType + "_" + "SPIN" + "_" + lod);
                     }
                 }
 
@@ -153,17 +209,21 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Underground2
                 }
             }
 
-            //foreach (var lod in Lods.List)
-            //{
-            //    foreach (var car in CarList)
-            //    {
-            //        parts.Add(car + lod);
-            //        foreach (var part in Parts.List)
-            //        {
-            //            parts.Add(car + part + lod);
-            //        }
-            //    }
-            //}
+            foreach (var car in CarList)
+            {
+                foreach (var partAttributes in PartsAttributes.List.Concat(PartsAttributes.ListCut))
+                {
+                    parts.Add(car + "_" + partAttributes);
+                }
+
+                foreach (var lod in Lods.List)
+                {
+                    foreach (var part in Parts.List.Concat(Parts.ListCut))
+                    {
+                        parts.Add(car + "_" + part + "_" + lod);
+                    }
+                }
+            }
 
             return parts;
         }

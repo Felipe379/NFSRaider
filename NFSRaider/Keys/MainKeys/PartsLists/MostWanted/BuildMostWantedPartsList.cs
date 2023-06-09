@@ -33,16 +33,16 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.MostWanted
 
             foreach (var brake in Brakes.List)
             {
-                parts.Add(brake);
+                //parts.Add(brake);
                 foreach (var lod in Lods.List)
                 {
-                    parts.Add(brake + lod);
+                    parts.Add(brake + "_" + lod);
                 }
             }
 
             foreach (var roofscoop in RoofScoops.List)
             {
-                parts.Add(roofscoop);
+                //parts.Add(roofscoop);
                 parts.Add(roofscoop + "_CF");
                 foreach (var lod in Lods.List)
                 {
@@ -64,7 +64,7 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.MostWanted
 
             foreach (var spoiler in Spoilers.List)
             {
-                parts.Add(spoiler);
+                //parts.Add(spoiler);
                 parts.Add(spoiler + "_CF");
                 foreach (var lod in Lods.List)
                 {

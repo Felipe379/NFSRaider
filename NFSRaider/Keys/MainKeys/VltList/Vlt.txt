@@ -48319,6 +48319,10 @@ customize_0_fecustomizationmenu
 customize_0_fecarsblueprints
 cactus_brk
 mit_lanc_9_exh
+grasstype1
+grasstype2
+grasstype3
+watersea
 TRACTOR
 CHOPPER
 TANK
