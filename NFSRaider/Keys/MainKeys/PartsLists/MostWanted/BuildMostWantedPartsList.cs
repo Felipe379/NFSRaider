@@ -46,8 +46,8 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.MostWanted
                 parts.Add(roofscoop + "_CF");
                 foreach (var lod in Lods.List)
                 {
-                    parts.Add(roofscoop + lod);
-                    parts.Add(roofscoop + "_CF" + lod);
+                    parts.Add(roofscoop + "_" + lod);
+                    parts.Add(roofscoop + "_CF" + "_" + lod);
                 }
 
                 foreach (var roofscoopType in RoofScoopsType.List)
@@ -56,8 +56,8 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.MostWanted
                     parts.Add(roofscoop + "_" + roofscoopType + "_CF");
                     foreach (var lod in Lods.List)
                     {
-                        parts.Add(roofscoop + "_" + roofscoopType + lod);
-                        parts.Add(roofscoop + "_" + roofscoopType + "_CF" + lod);
+                        parts.Add(roofscoop + "_" + roofscoopType + "_" + lod);
+                        parts.Add(roofscoop + "_" + roofscoopType + "_CF" + "_" + lod);
                     }
                 }
             }

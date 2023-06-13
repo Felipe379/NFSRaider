@@ -47,9 +47,7 @@ namespace NFSRaider.Keys.MainKeys
                 mainKeys.Add(i.ToString());
             }
 
-            //hashSet.UnionWith(new BuildPartsListOld().GetAllParts());
             mainKeys.UnionWith(new BuildPartsList().GetAllParts());
-            mainKeys.UnionWith(new BuildFiles().GetAllFiles());
 
             var builders = new List<Builder>
             {
@@ -61,6 +59,7 @@ namespace NFSRaider.Keys.MainKeys
                 new BuildCarsSlotTypes(),
                 new BuildCarsTextures(),
                 new BuildFEng(),
+                new BuildFiles(),
                 new BuildGCareers(),
                 new BuildGlobal(),
                 new BuildLanguageLabels(),

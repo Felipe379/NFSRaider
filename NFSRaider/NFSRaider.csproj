@@ -245,6 +245,93 @@
     <None Update="Keys\MainKeys\FEng\Underground2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Keys\MainKeys\Files\Carbon.GC.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Carbon.PS2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Carbon.PS3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Carbon.Wii.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Carbon.X360.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Carbon.XBOX.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\MostWanted.GC.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\MostWanted.PS2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\MostWanted.X360.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\MostWanted.XBOX.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\ProStreet.PS2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\ProStreet.PS3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\ProStreet.Wii.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\ProStreet.X360.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Undercover.PS3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Undercover.X360.20081211.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Undercover.X360.A161.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Undercover.X360.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\UndercoverCG.PS2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\UndercoverCG.Wii.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Underground.Deleted.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Underground.GC.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Underground.PS2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Underground.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Underground.XBOX.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Underground2.Deleted.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Underground2.GC.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Underground2.PS2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Underground2.XBOX.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Keys\MainKeys\GCareers\Underground1.Magazine.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -321,6 +408,51 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Keys\MainKeys\Materials\World.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Carbon.Deleted.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Carbon.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\HotPursuit2.Deleted.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\HotPursuit2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\MostWanted.Deleted.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\MostWanted.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Nitro.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\ProStreet.Deleted.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\ProStreet.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Undercover.Deleted.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Undercover.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\UndercoverCG.Deleted.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\UndercoverCG.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\Underground2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Keys\MainKeys\Files\World.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Keys\MainKeys\Solids\Carbon.txt">
