@@ -4878,13 +4878,6 @@ Boss_Casinotown_Darius
 Boss_Exotic_Wolf
 Boss_Muscle_Angie
 Boss_Tuner_Kenji
-Brakes (Tier 1 - Stage 1)
-Brakes (Tier 1 - Stage 2)
-Brakes (Tier 2 - Stage 1)
-Brakes (Tier 2 - Stage 2)
-Brakes (Tier 3 - Stage 1)
-Brakes (Tier 3 - Stage 2)
-Brakes (Tier 3 - Stage 3)
 Brakes Level 1
 Burn
 Bushido
@@ -5026,13 +5019,6 @@ EXHAUST_STYLE14_CENTER_LEVEL1
 EXHAUST_STYLE15_CENTER_LEVEL1
 EXOTIC_2
 EndOfSectionEntry
-Engine (Tier 1 - Stage 1)
-Engine (Tier 1 - Stage 2)
-Engine (Tier 2 - Stage 1)
-Engine (Tier 2 - Stage 2)
-Engine (Tier 3 - Stage 1)
-Engine (Tier 3 - Stage 2)
-Engine (Tier 3 - Stage 3)
 EntrySMS
 Eric
 Eskuri_Plaza
@@ -5148,15 +5134,6 @@ Neville
 Newport_Industrial_Park
 Night Speed
 Nikki
-Nitrous (Tier 1 - Stage 1)
-Nitrous (Tier 1 - Stage 2)
-Nitrous (Tier 1 - Stage 3)
-Nitrous (Tier 2 - Stage 1)
-Nitrous (Tier 2 - Stage 2)
-Nitrous (Tier 2 - Stage 3)
-Nitrous (Tier 3 - Stage 1)
-Nitrous (Tier 3 - Stage 2)
-Nitrous (Tier 3 - Stage 3)
 None
 OPM_RX8_Version2
 Ocean_View
@@ -5524,13 +5501,6 @@ Starlight_Strip
 Stately homes
 Stately2 homes
 Stickler
-Suspension (Tier 1 - Stage 1)
-Suspension (Tier 1 - Stage 2)
-Suspension (Tier 2 - Stage 1)
-Suspension (Tier 2 - Stage 2)
-Suspension (Tier 3 - Stage 1)
-Suspension (Tier 3 - Stage 2)
-Suspension (Tier 3 - Stage 3)
 T.F.K.
 T1_COLIN
 T1_NIKKI
@@ -5555,28 +5525,7 @@ Tester3
 The Trust
 The_Projects
 TimeToDraft
-Tires (Tier 1 - Stage 1)
-Tires (Tier 1 - Stage 2)
-Tires (Tier 2 - Stage 1)
-Tires (Tier 2 - Stage 2)
-Tires (Tier 3 - Stage 1)
-Tires (Tier 3 - Stage 2)
-Tires (Tier 3 - Stage 3)
-Transmission (Tier 1 - Stage 1)
-Transmission (Tier 1 - Stage 2)
-Transmission (Tier 2 - Stage 1)
-Transmission (Tier 2 - Stage 2)
-Transmission (Tier 3 - Stage 1)
-Transmission (Tier 3 - Stage 2)
-Transmission (Tier 3 - Stage 3)
 Turbo Freak
-Turbo/SuperCharger (Tier 1 - Stage 1)
-Turbo/SuperCharger (Tier 1 - Stage 2)
-Turbo/SuperCharger (Tier 2 - Stage 1)
-Turbo/SuperCharger (Tier 2 - Stage 2)
-Turbo/SuperCharger (Tier 3 - Stage 1)
-Turbo/SuperCharger (Tier 3 - Stage 2)
-Turbo/SuperCharger (Tier 3 - Stage 3)
 TurnLeft180
 TurnLeft90
 Tyson
@@ -12813,3 +12762,287 @@ race_bin_tuner/3_4_1/gvrcheckpoint99
 race_bin_tuner/3_5_1/gvrcheckpoint73
 race_bin_tuner/3_5_3/gvrcheckpoint22
 sound\streams\nisaudio. big
+*BARRIER_SPLINE_1078
+*BARRIER_SPLINE_1112
+*BARRIER_SPLINE_3057
+*BARRIER_SPLINE_3061
+*BARRIER_SPLINE_3062
+*BARRIER_SPLINE_3063
+*BARRIER_SPLINE_3064
+*BARRIER_SPLINE_3065
+*BARRIER_SPLINE_3066
+*BARRIER_SPLINE_3067
+*BARRIER_SPLINE_3068
+*BARRIER_SPLINE_3069
+*BARRIER_SPLINE_3070
+*BARRIER_SPLINE_3071
+*BARRIER_SPLINE_3072
+*BARRIER_SPLINE_3073
+*BARRIER_SPLINE_3074
+*BARRIER_SPLINE_3075
+*BARRIER_SPLINE_3076
+*BARRIER_SPLINE_3077
+*BARRIER_SPLINE_3078
+*BARRIER_SPLINE_4038
+*BARRIER_SPLINE_4077
+*BARRIER_SPLINE_4078
+*BARRIER_SPLINE_4087
+*BARRIER_SPLINE_4092
+*BARRIER_SPLINE_4093
+*BARRIER_SPLINE_4094
+*BARRIER_SPLINE_4095
+*BARRIER_SPLINE_4096
+*BARRIER_SPLINE_4097
+*BARRIER_SPLINE_4098
+*BARRIER_SPLINE_4099
+*BARRIER_SPLINE_4100
+*BARRIER_SPLINE_4101
+*BARRIER_SPLINE_4102
+*BARRIER_SPLINE_4103
+*BARRIER_SPLINE_4104
+*BARRIER_SPLINE_4105
+*BARRIER_SPLINE_4106
+*BARRIER_SPLINE_8012
+*BARRIER_SPLINE_8013
+*BARRIER_SPLINE_8015
+*BARRIER_SPLINE_8020
+*BARRIER_SPLINE_8021
+*BARRIER_SPLINE_8025
+*BARRIER_SPLINE_8027
+*BARRIER_SPLINE_8031
+*BARRIER_SPLINE_8032
+Are Friends Electric
+ArrestM34b
+ArrestM38b
+ArrestM40b
+BARRIER_SPLINE_1100
+BARRIER_SPLINE_287
+BARRIER_SPLINE_288
+BARRIER_SPLINE_3061
+BARRIER_SPLINE_3062
+BARRIER_SPLINE_3063
+BARRIER_SPLINE_3064
+BARRIER_SPLINE_3065
+BARRIER_SPLINE_3067
+BARRIER_SPLINE_3068
+BARRIER_SPLINE_3069
+BARRIER_SPLINE_3070
+BARRIER_SPLINE_3071
+BARRIER_SPLINE_3072
+BARRIER_SPLINE_3073
+BARRIER_SPLINE_3074
+BARRIER_SPLINE_3075
+BARRIER_SPLINE_3076
+BARRIER_SPLINE_3077
+BARRIER_SPLINE_3078
+BARRIER_SPLINE_4087
+BARRIER_SPLINE_4090
+BARRIER_SPLINE_4091
+BARRIER_SPLINE_4094
+BARRIER_SPLINE_4095
+BARRIER_SPLINE_4096
+BARRIER_SPLINE_4097
+BARRIER_SPLINE_4098
+BARRIER_SPLINE_4099
+BARRIER_SPLINE_4100
+BARRIER_SPLINE_4101
+BARRIER_SPLINE_4102
+BARRIER_SPLINE_4103
+BARRIER_SPLINE_4104
+BARRIER_SPLINE_4105
+BARRIER_SPLINE_4106
+BARRIER_SPLINE_8011
+BARRIER_SPLINE_8024
+BARRIER_SPLINE_8028
+BARRIER_SPLINE_8030
+BOSS_21ST_STREET
+BOSS_787
+BOSS_BUSHIDO
+BOSS_COLIBRIS
+BOSS_FORTUNA
+BOSS_SCORPIONS
+BOSS_WOLF
+CAMOUFLAGE3
+CANDY
+CHROME
+EndingCareer22
+Exhaust Tips
+GIN_Mustang_Drag.gin
+INTRO13
+INTRO20F
+INTRO22
+IRIDESCENT
+MATTE
+METALLIC
+PART_BODY_05
+PART_WHEEL_FOOSE_1
+PART_WHEEL_FOOSE_3
+PART_WHEEL_HRE_1
+PEARL
+Paints (Level 1)
+Paints (Level 2)
+ROOF_STYLE04
+ROOF_STYLE04_CF
+ROOF_STYLE04_DUAL
+ROOF_STYLE04_DUAL_CF
+ROOF_STYLE04_OFFSET
+ROOF_STYLE04_OFFSET_CF
+ROOF_STYLE05_OFFSET
+ROOF_STYLE05_OFFSET_CF
+ROOF_STYLE06
+ROOF_STYLE06_CF
+ROOF_STYLE06_DUAL
+ROOF_STYLE07_DUAL
+ROOF_STYLE07_DUAL_CF
+ROOF_STYLE08_DUAL
+ROOF_STYLE10_OFFSET
+ROOF_STYLE11_OFFSET
+ROOF_STYLE12
+ROOF_STYLE12_CF
+ROOF_STYLE12_DUAL
+ROOF_STYLE12_DUAL_CF
+ROOF_STYLE12_OFFSET
+ROOF_STYLE13_OFFSET
+ROOF_STYLE_16
+ROOF_STYLE_16_CF
+ROOF_STYLE_16_DUAL
+ROOF_STYLE_16_DUAL_CF
+ROOF_STYLE_16_OFFSET
+ROOF_STYLE_16_OFFSET_CF
+ROOF_STYLE_17
+ROTOR4_01
+SPOILER_STYLE01
+SPOILER_STYLE01_CF
+SPOILER_STYLE02_AUTOSCULPT
+SPOILER_STYLE03_AUTOSCULPT
+SPOILER_STYLE04_AUTOSCULPT
+SPOILER_STYLE06_AUTOSCULPT
+SPOILER_STYLE07_AUTOSCULPT
+SPOILER_STYLE08_AUTOSCULPT
+SPOILER_STYLE09_AUTOSCULPT
+SPOILER_STYLE10_AUTOSCULPT
+SPOILER_STYLE11_AUTOSCULPT
+SPOILER_STYLE12_AUTOSCULPT
+SPOILER_STYLE13_AUTOSCULPT
+SPOILER_STYLE14_AUTOSCULPT
+SPOILER_STYLE15_AUTOSCULPT
+SPOILER_STYLE16_AUTOSCULPT
+SPOILER_STYLE17_AUTOSCULPT
+SPOILER_STYLE20_AUTOSCULPT
+SPOILER_STYLE21_AUTOSCULPT
+SPOILER_STYLE22_AUTOSCULPT
+SPOILER_STYLE23_AUTOSCULPT
+SPOILER_STYLE24_AUTOSCULPT
+SPOILER_STYLE25_AUTOSCULPT
+SPOILER_STYLE29_AUTOSCULPT
+SPOILER_STYLE30
+SPOILER_STYLE30_AUTOSCULPT
+SPOILER_STYLE30_CF
+SPOILER_STYLE31
+SPOILER_STYLE31_CF
+SPOILER_STYLE32
+SPOILER_STYLE32_CF
+SPOILER_STYLE34
+SPOILER_STYLE36
+SPOILER_STYLE36_CF
+SPOILER_STYLE38
+SPOILER_STYLE38_CF
+SPOILER_STYLE40
+SPOILER_STYLE40_CF
+SPOILER_STYLE41
+SPOILER_STYLE41_CF
+SPOILER_STYLE42
+SPOILER_STYLE42_CF
+SPOILER_STYLE43
+SPOILER_STYLE43_CF
+SPOILER_STYLE44
+SPOILER_STYLE44_CF
+Sound\Speech\UCAPaudio_en.big
+Sound\Speech\UCAPaudio_en.csi
+Sound\Speech\UCAPaudio_en.evt
+Sound\Speech\UCAPaudio_en.idx
+exhuast
+introcareer08
+introcareer25
+introcareer26
+introcareer27
+race_bin_santafe/1_drivetogps/zone_safehouse
+rewards/visual/roofscoops/roofscoops_1_1_offset_cf
+rewards/visual/roofscoops/roofscoops_1_2_offset_cf
+rewards/visual/roofscoops/roofscoops_1_6
+rewards/visual/vinyls/vinyls_rewardcard_4
+track_locations
+track_locations/5_duel_location
+track_records
+6_10_4
+6_4_2
+6_4_3
+6_5_3
+race_bin_challenge/6_5_3
+race_bin_challenge/6_4_2
+race_bin_challenge/6_4_3
+race_bin_challenge/6_10_4
+race_bin_challenge/6_14_1
+Brakes (Tier 1 - Stage 1)
+Brakes (Tier 1 - Stage 2)
+Brakes (Tier 1 - Stage 3)
+Brakes (Tier 2 - Stage 1)
+Brakes (Tier 2 - Stage 2)
+Brakes (Tier 2 - Stage 3)
+Brakes (Tier 3 - Stage 1)
+Brakes (Tier 3 - Stage 2)
+Brakes (Tier 3 - Stage 3)
+Engine (Tier 1 - Stage 1)
+Engine (Tier 1 - Stage 2)
+Engine (Tier 1 - Stage 3)
+Engine (Tier 2 - Stage 1)
+Engine (Tier 2 - Stage 2)
+Engine (Tier 2 - Stage 3)
+Engine (Tier 3 - Stage 1)
+Engine (Tier 3 - Stage 2)
+Engine (Tier 3 - Stage 3)
+Nitrous (Tier 1 - Stage 1)
+Nitrous (Tier 1 - Stage 2)
+Nitrous (Tier 1 - Stage 3)
+Nitrous (Tier 2 - Stage 1)
+Nitrous (Tier 2 - Stage 2)
+Nitrous (Tier 2 - Stage 3)
+Nitrous (Tier 3 - Stage 1)
+Nitrous (Tier 3 - Stage 2)
+Nitrous (Tier 3 - Stage 3)
+Suspension (Tier 1 - Stage 1)
+Suspension (Tier 1 - Stage 2)
+Suspension (Tier 1 - Stage 3)
+Suspension (Tier 2 - Stage 1)
+Suspension (Tier 2 - Stage 2)
+Suspension (Tier 2 - Stage 3)
+Suspension (Tier 3 - Stage 1)
+Suspension (Tier 3 - Stage 2)
+Suspension (Tier 3 - Stage 3)
+Tires (Tier 1 - Stage 1)
+Tires (Tier 1 - Stage 2)
+Tires (Tier 1 - Stage 3)
+Tires (Tier 2 - Stage 1)
+Tires (Tier 2 - Stage 2)
+Tires (Tier 2 - Stage 3)
+Tires (Tier 3 - Stage 1)
+Tires (Tier 3 - Stage 2)
+Tires (Tier 3 - Stage 3)
+Transmission (Tier 1 - Stage 1)
+Transmission (Tier 1 - Stage 2)
+Transmission (Tier 1 - Stage 3)
+Transmission (Tier 2 - Stage 1)
+Transmission (Tier 2 - Stage 2)
+Transmission (Tier 2 - Stage 3)
+Transmission (Tier 3 - Stage 1)
+Transmission (Tier 3 - Stage 2)
+Transmission (Tier 3 - Stage 3)
+Turbo/SuperCharger (Tier 1 - Stage 1)
+Turbo/SuperCharger (Tier 1 - Stage 2)
+Turbo/SuperCharger (Tier 1 - Stage 3)
+Turbo/SuperCharger (Tier 2 - Stage 1)
+Turbo/SuperCharger (Tier 2 - Stage 2)
+Turbo/SuperCharger (Tier 2 - Stage 3)
+Turbo/SuperCharger (Tier 3 - Stage 1)
+Turbo/SuperCharger (Tier 3 - Stage 2)
+Turbo/SuperCharger (Tier 3 - Stage 3)

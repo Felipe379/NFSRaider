@@ -11362,15 +11362,6 @@ main_0_demo_mazda_car_select
 main_0_demo_class_description
 main_0_demo_track_select
 autozone
-Are Friends Electric
-ArrestM34b
-ArrestM38b
-ArrestM40b
-INTRO13
-introcareer08
-introcareer25
-introcareer26
-introcareer27
 mazda3sport_hood
 4.cans
 qr.4.5
@@ -12272,29 +12263,8 @@ AIGoalWinDragRace
 AIGoalWinRoadRace
 AIGoalWingmanRacer
 AIGoals
-6_10_4
-6_5_3
-6_4_2
-6_4_3
-race_bin_challenge/6_5_3
-race_bin_challenge/6_4_2
-race_bin_challenge/6_4_3
-race_bin_challenge/6_10_4
-race_bin_challenge/6_14_1
 Arena
 Normal
-Brakes (Tier 1 - Stage 3)
-Brakes (Tier 2 - Stage 3)
-Suspension (Tier 1 - Stage 3)
-Suspension (Tier 2 - Stage 3)
-Engine (Tier 1 - Stage 3)
-Engine (Tier 2 - Stage 3)
-Turbo/SuperCharger (Tier 1 - Stage 3)
-Turbo/SuperCharger (Tier 2 - Stage 3)
-Tires (Tier 1 - Stage 3)
-Tires (Tier 2 - Stage 3)
-Transmission (Tier 1 - Stage 3)
-Transmission (Tier 2 - Stage 3)
 lumber_mill
 interstate_signs
 gas_station
@@ -12387,4 +12357,3 @@ Attrib::Gen::ClassRefSpec_powerup_fegroup
 GameCore::DriverSkill
 PowerUps::GameMode
 Attrib::Gen::ClassRefSpec_car_slots
-hoodskyliner35
