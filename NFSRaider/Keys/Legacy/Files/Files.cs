@@ -9838,6 +9838,8 @@ namespace NFSRaider.Keys.Legacy.Files
 @"EBOOT.BIN",
 @"CONFIG.BIN",
 @"NFSUNDER\IRX281N2.BUN",
+@"NFS.TAG",
+@"XBDEPLOY.TAG",
         };
     }
 }
