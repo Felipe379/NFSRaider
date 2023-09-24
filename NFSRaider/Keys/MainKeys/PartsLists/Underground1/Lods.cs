@@ -2,23 +2,14 @@
 
 namespace NFSRaider.Keys.MainKeys.PartsLists.Underground1
 {
-    public static class ConcatenatedStrings
+    public static class Lods
     {
         public static readonly List<string> List = new List<string>()
         {
-"ANY",
-"NEON",
-"SMALL",
-"RECT",
-"MEDIUM",
-"WIDE",
-"SQUARE",
-"WINDOW_TINTS",
-"WHEELS",
-"PLATES",
-"WHEEL_MANUFACTURERS",
-"DECAL_HOOD",
-"CV",
+            "A",
+            "B",
+            "C",
+            "D",
         };
     }
 }

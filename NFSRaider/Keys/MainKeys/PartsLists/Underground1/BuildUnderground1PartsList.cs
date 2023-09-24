@@ -12,6 +12,7 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Underground1
         {
             var parts = new HashSet<string>(
                 Brakes.List
+                .Concat(BrandLabels.List)
                 .Concat(ConcatenatedStrings.List)
                 .Concat(Decals.List)
                 .Concat(Exhausts.List)
@@ -24,11 +25,31 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Underground1
                 .Concat(WindowTint.List)
                 );
 
-            foreach (var lod in Lods.List)
+
+            foreach (var brake in Brakes.List)
             {
-                foreach (var brake in Brakes.List)
+                //parts.Add(brake);
+                foreach (var lod in Lods.List)
                 {
-                    parts.Add(brake + lod);
+                    parts.Add(brake + "_" + lod);
+                }
+            }
+
+            foreach (var exhaust in Exhausts.List)
+            {
+                //parts.Add(exhaust);
+                foreach (var lod in Lods.List)
+                {
+                    parts.Add(exhaust + "_" + lod);
+                }
+            }
+
+            foreach (var plate in Plates.List)
+            {
+                //parts.Add(plate);
+                foreach (var lod in Lods.List)
+                {
+                    parts.Add(plate + "_" + lod);
                 }
             }
 
@@ -41,13 +62,16 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Underground1
                 }
             }
 
+
             foreach (var wheel in Wheels.List)
             {
-                foreach (var lod in Lods.List)
+
+                foreach (var wheelType in WheelsType.List)
                 {
-                    foreach (var wheelType in WheelsType.List)
+                    parts.Add(wheel + "_" + wheelType);
+                    foreach (var lod in Lods.List)
                     {
-                        parts.Add(wheel + "_" + wheelType + lod);
+                        parts.Add(wheel + "_" + wheelType + "_" + lod);
                     }
                 }
 
@@ -55,17 +79,28 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Underground1
                 parts.Add(wheel + "_WHEEL_INNER_MASK");
             }
 
-            //foreach (var lod in Lods.List)
-            //{
-            //    foreach (var car in CarList)
-            //    {
-            //        parts.Add(car + lod);
-            //        foreach (var part in Parts.List)
-            //        {
-            //            parts.Add(car + part + lod);
-            //        }
-            //    }
-            //}
+
+            foreach (var car in CarList)
+            {
+                foreach (var partAttributes in PartsAttributes.List)
+                {
+                    parts.Add(car + "_" + partAttributes);
+                }
+
+                //NOTE: Yes, whitespace
+                foreach (var partAttributes in PartsAttributes.ListTraffic)
+                {
+                    parts.Add(car + " " + partAttributes);
+                }
+
+                foreach (var lod in Lods.List)
+                {
+                    foreach (var part in Parts.List.Concat(Parts.ListTraffic))
+                    {
+                        parts.Add(car + "_" + part + "_" + lod);
+                    }
+                }
+            }
 
             return parts;
         }

@@ -17,8 +17,7 @@ namespace NFSRaider.Keys.MainKeys.PartsLists
     public class BuildPartsList
     {
         private readonly HashSet<string> CarList = new HashSet<string>(
-            new BuildCars().GetKeys(Game.Underground1)
-            .Concat(new BuildCars().GetKeys(Game.Carbon))
+            new BuildCars().GetKeys(Game.Carbon)
             .Concat(new BuildCars().GetKeys(Game.ProStreet))
             .Concat(new BuildCars().GetKeys(Game.UndercoverCG))
             .Concat(new BuildCars().GetKeys(Game.Undercover))
@@ -27,8 +26,7 @@ namespace NFSRaider.Keys.MainKeys.PartsLists
         public HashSet<string> GetAllParts()
         {
             var allParts = new HashSet<string>(
-                new BuildUnderground1PartsList().GetAllUnderground1Parts()
-                .Concat(new BuildCarbonPartsList().GetAllCarbonParts())
+                new BuildCarbonPartsList().GetAllCarbonParts()
                 .Concat(new BuildProStreetPartsList().GetAllProStreetParts())
                 .Concat(new BuildUndercoverCGPartsList().GetAllUndercoverCGParts())
                 .Concat(new BuildUndercoverPartsList().GetAllUndercoverParts())
@@ -48,6 +46,7 @@ namespace NFSRaider.Keys.MainKeys.PartsLists
 
             var parts = new HashSet<string>(
                 new BuildHotPursuit2PartsList().GetAllHotPursuit2Parts()
+                .Concat(new BuildUnderground1PartsList().GetAllUnderground1Parts())
                 .Concat(new BuildUnderground2PartsList().GetAllUnderground2Parts())
                 .Concat(new BuildMostWantedPartsList().GetAllMostWantedParts())
                 .Concat(new BuildWorldPartsList().GetAllWorldParts())

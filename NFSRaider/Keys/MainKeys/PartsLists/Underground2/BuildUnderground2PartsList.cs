@@ -211,14 +211,20 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Underground2
 
             foreach (var car in CarList)
             {
-                foreach (var partAttributes in PartsAttributes.List.Concat(PartsAttributes.ListCut))
+                foreach (var partAttributes in PartsAttributes.List.Concat(PartsAttributes.ListCut).Concat(PartsAttributes.ListTraffic))
                 {
                     parts.Add(car + "_" + partAttributes);
                 }
 
+                //NOTE: Yes, whitespace
+                foreach (var partAttributes in PartsAttributes.ListTraffic)
+                {
+                    parts.Add(car + " " + partAttributes);
+                }
+
                 foreach (var lod in Lods.List)
                 {
-                    foreach (var part in Parts.List.Concat(Parts.ListCut))
+                    foreach (var part in Parts.List.Concat(Parts.ListCut).Concat(Parts.ListTraffic))
                     {
                         parts.Add(car + "_" + part + "_" + lod);
                     }

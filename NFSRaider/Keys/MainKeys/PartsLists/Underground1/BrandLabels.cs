@@ -2,10 +2,20 @@
 
 namespace NFSRaider.Keys.MainKeys.PartsLists.Underground1
 {
-    public static class Decals
+    public static class BrandLabels
     {
         public static readonly List<string> List = new List<string>()
         {
+"NOHATCHBACK",
+"ANYCARTYPE",
+"GLOSS",
+"METAL",
+"PEARL",
+"VINYL",
+"HOSE",
+"CALIPER",
+"RIM",
+"MUFFLER",
 "5ZIGEN",
 "ABS",
 "ACT",
@@ -26,7 +36,6 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Underground1
 "EIBACH",
 "ENKEI",
 "EUROLITE",
-"EXTRDIMENSION",
 "EXTREMEDIMENSION",
 "FORD",
 "GREDDY",
@@ -70,6 +79,12 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Underground1
 "VOLKSWAGEN",
 "WILWOOD",
 "YOKOHAMA",
+"NFSU",
+"STEELY",
+"AUTOSTRADA",
+"STARK",
+"VEILSIDE",
+"VERSUS",
         };
     }
 }

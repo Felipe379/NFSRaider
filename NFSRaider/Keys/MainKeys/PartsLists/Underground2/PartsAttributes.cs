@@ -568,5 +568,12 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Underground2
 "KIT30_FENDER",
 "KIT30_QUARTER",
         };
+
+        public static readonly List<string> ListTraffic = new List<string>()
+        {
+"BODY",
+"CV",
+"TIRE",
+        };
     }
 }
