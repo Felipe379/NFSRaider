@@ -1,6 +1,7 @@
 ﻿using NFSRaider.Enums;
 using NFSRaider.Helpers;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 
 namespace NFSRaider.Keys.MainKeys.Presets
@@ -11,6 +12,8 @@ namespace NFSRaider.Keys.MainKeys.Presets
         {
             var files = GetDirectoryFiles(GetDirectory(GetType()));
             var presets = new HashSet<string>(FileRead.ReadFiles(files));
+
+            presets.UnionWith(new HashSet<string>(presets.Select(c => c.ToUpperInvariant())));
 
             return presets;
         }

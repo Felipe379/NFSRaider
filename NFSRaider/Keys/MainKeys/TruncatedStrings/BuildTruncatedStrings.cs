@@ -21,11 +21,6 @@ namespace NFSRaider.Keys.MainKeys.TruncatedStrings
                 }
             }
 
-            foreach (var hash in Underground2.BinKeysTextures)
-            {
-                AddHashes(hash.Key, hash.Value, "BIN");
-            }
-
             foreach (var hash in Carbon.VltKeysTrackCollision)
             {
                 AddHashes(hash.Key, hash.Value, "VLT");
