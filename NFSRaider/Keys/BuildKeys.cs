@@ -7,6 +7,7 @@ using NFSRaider.Keys.UserKeys;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -54,24 +55,27 @@ namespace NFSRaider.Keys
             uint currentHexValue;
             GC.Collect();
 
-            var line = string.Empty;
+            IEnumerable<string> lines = null;
             foreach (var key in keys)
             {
-                cancellationToken.ThrowIfCancellationRequested();
-
-                line = _caseFactory.ChangeCase(key);
-                currentHexValue = _hashFactory.Hash(line);
-
-                if (keyValuePairs.ContainsKey(currentHexValue))
+                lines = _caseFactory.ChangeCase(key).Distinct();
+                foreach (var line in lines)
                 {
-                    if (keyValuePairs[currentHexValue] != line && !string.IsNullOrWhiteSpace(line))
+                    cancellationToken.ThrowIfCancellationRequested();
+
+                    currentHexValue = _hashFactory.Hash(line);
+
+                    if (keyValuePairs.ContainsKey(currentHexValue))
                     {
-                        collisions.Add(line);
+                        if (keyValuePairs[currentHexValue] != line && !string.IsNullOrWhiteSpace(line))
+                        {
+                            collisions.Add(line);
+                        }
                     }
-                }
-                else
-                {
-                    keyValuePairs.Add(currentHexValue, line);
+                    else
+                    {
+                        keyValuePairs.Add(currentHexValue, line);
+                    }
                 }
             }
 

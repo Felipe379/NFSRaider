@@ -4,6 +4,7 @@
     {
         None,
         Uppercase,
-        Lowercase
+        Lowercase,
+        All
     }
 }

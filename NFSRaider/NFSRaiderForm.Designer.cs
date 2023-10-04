@@ -854,7 +854,7 @@
             // 
             CboForceHashListCase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             CboForceHashListCase.FormattingEnabled = true;
-            CboForceHashListCase.Items.AddRange(new object[] { "None", "Uppercase", "Lowercase" });
+            CboForceHashListCase.Items.AddRange(new object[] { "None", "Uppercase", "Lowercase", "All" });
             CboForceHashListCase.Location = new System.Drawing.Point(718, 438);
             CboForceHashListCase.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             CboForceHashListCase.Name = "CboForceHashListCase";

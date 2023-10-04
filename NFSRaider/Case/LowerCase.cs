@@ -2,9 +2,9 @@
 {
     public class LowerCase : CaseFactory
     {
-        public override string ChangeCase(string value)
+        public override string[] ChangeCase(string value)
         {
-            return value.ToLowerInvariant();
+            return new[] { value.ToLowerInvariant() };
         }
     }
 }

@@ -2,9 +2,9 @@
 {
     public class KeepCase : CaseFactory
     {
-        public override string ChangeCase(string value)
+        public override string[] ChangeCase(string value)
         {
-            return value;
+            return new[] { value };
         }
     }
 }
