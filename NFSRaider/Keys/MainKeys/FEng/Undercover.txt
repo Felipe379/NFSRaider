@@ -19,3 +19,4 @@ HUD_Player1.fng
 HUD_Player2.fng
 HUD_SingleRace.fng
 Transition_01.fng
+HUD_SingleRace.fng

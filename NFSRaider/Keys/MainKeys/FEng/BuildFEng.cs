@@ -1,6 +1,7 @@
 ﻿using NFSRaider.Enums;
 using NFSRaider.Helpers;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading;
 
@@ -13,6 +14,7 @@ namespace NFSRaider.Keys.MainKeys.FEng
             var files = GetDirectoryFiles(GetDirectory(GetType()));
             var fngs = new HashSet<string>(FileRead.ReadFiles(files));
 
+            fngs.UnionWith(new HashSet<string>(fngs.Select(c => Path.GetFileNameWithoutExtension(c))));
             fngs.UnionWith(new HashSet<string>(fngs.Select(c => c.ToUpperInvariant())));
 
             return fngs;

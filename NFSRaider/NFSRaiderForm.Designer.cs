@@ -67,8 +67,7 @@
             BtnUpdateList = new System.Windows.Forms.Button();
             BtnExportHashes = new System.Windows.Forms.Button();
             ChkIgnoreRepeatedHashes = new System.Windows.Forms.CheckBox();
-            BtnStart = new System.Windows.Forms.Button();
-            BtnStop = new System.Windows.Forms.Button();
+            BtnStartStop = new System.Windows.Forms.Button();
             BtnClear = new System.Windows.Forms.Button();
             ChkUseMainKeys = new System.Windows.Forms.CheckBox();
             BtnGenerateKeyList = new System.Windows.Forms.Button();
@@ -546,31 +545,20 @@
             ChkIgnoreRepeatedHashes.Text = "Ignore repeated hashes";
             ChkIgnoreRepeatedHashes.UseVisualStyleBackColor = true;
             // 
-            // BtnStart
+            // BtnStartStop
             // 
-            BtnStart.Location = new System.Drawing.Point(364, 42);
-            BtnStart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            BtnStart.Name = "BtnStart";
-            BtnStart.Size = new System.Drawing.Size(107, 27);
-            BtnStart.TabIndex = 7;
-            BtnStart.Text = "Start";
-            BtnStart.UseVisualStyleBackColor = true;
-            BtnStart.Click += BtnStart_Click;
-            // 
-            // BtnStop
-            // 
-            BtnStop.Location = new System.Drawing.Point(364, 75);
-            BtnStop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            BtnStop.Name = "BtnStop";
-            BtnStop.Size = new System.Drawing.Size(107, 27);
-            BtnStop.TabIndex = 8;
-            BtnStop.Text = "Stop";
-            BtnStop.UseVisualStyleBackColor = true;
-            BtnStop.Click += BtnStop_Click;
+            BtnStartStop.Location = new System.Drawing.Point(364, 42);
+            BtnStartStop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            BtnStartStop.Name = "BtnStartStop";
+            BtnStartStop.Size = new System.Drawing.Size(107, 27);
+            BtnStartStop.TabIndex = 7;
+            BtnStartStop.Text = "Start/Stop";
+            BtnStartStop.UseVisualStyleBackColor = true;
+            BtnStartStop.Click += BtnStartStop_Click;
             // 
             // BtnClear
             // 
-            BtnClear.Location = new System.Drawing.Point(364, 108);
+            BtnClear.Location = new System.Drawing.Point(364, 75);
             BtnClear.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             BtnClear.Name = "BtnClear";
             BtnClear.Size = new System.Drawing.Size(107, 27);
@@ -895,10 +883,10 @@
             CboRaiderMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             CboRaiderMode.FormattingEnabled = true;
             CboRaiderMode.Items.AddRange(new object[] { "Unhasher", "Hasher" });
-            CboRaiderMode.Location = new System.Drawing.Point(364, 142);
+            CboRaiderMode.Location = new System.Drawing.Point(364, 108);
             CboRaiderMode.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             CboRaiderMode.Name = "CboRaiderMode";
-            CboRaiderMode.Size = new System.Drawing.Size(107, 23);
+            CboRaiderMode.Size = new System.Drawing.Size(106, 23);
             CboRaiderMode.TabIndex = 10;
             CboRaiderMode.SelectedIndexChanged += CboRaiderMode_SelectedIndexChanged;
             // 
@@ -946,9 +934,8 @@
             Controls.Add(ChkUseMainKeys);
             Controls.Add(TxtSearch);
             Controls.Add(BtnClear);
-            Controls.Add(BtnStop);
             Controls.Add(BtnSearchNext);
-            Controls.Add(BtnStart);
+            Controls.Add(BtnStartStop);
             Controls.Add(GrpListOptions);
             Controls.Add(BtnSearchPrevious);
             Controls.Add(LblVariations);
@@ -1006,8 +993,7 @@
         private System.Windows.Forms.Button BtnExportHashes;
         private System.Windows.Forms.TextBox TxtFileStartOffset;
         private System.Windows.Forms.TextBox TxtFileEndOffset;
-        private System.Windows.Forms.Button BtnStart;
-        private System.Windows.Forms.Button BtnStop;
+        private System.Windows.Forms.Button BtnStartStop;
         private System.Windows.Forms.Button BtnClear;
         private System.Windows.Forms.CheckBox ChkUseMainKeys;
         private System.Windows.Forms.Button BtnGenerateKeyList;

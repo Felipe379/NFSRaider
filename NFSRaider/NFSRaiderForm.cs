@@ -104,8 +104,15 @@ namespace NFSRaider
             }
         }
 
-        private async void BtnStart_Click(object sender, EventArgs e)
+        private async void BtnStartStop_Click(object sender, EventArgs e)
         {
+            if (BruteforceTaskNotFinished())
+            {
+                CancellationTokenSource?.Cancel(true);
+
+                return;
+            }
+
             try
             {
                 if (BruteforceTaskNotFinished())
@@ -237,12 +244,6 @@ namespace NFSRaider
                 }
             }
         }
-
-        private void BtnStop_Click(object sender, EventArgs e)
-        {
-            CancellationTokenSource?.Cancel(true);
-        }
-
 
         private void BruteforceFinished()
         {
@@ -674,8 +675,7 @@ namespace NFSRaider
             if (BruteforceTaskNotFinished())
                 return;
 
-            BtnStop.Enabled = false;
-            BtnStart.Enabled = true;
+            BtnStartStop.Text = "Start";
             BtnClear.Enabled = true;
             BtnGenerateKeyList.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked;
             CboRaiderMode.Enabled = true;
@@ -779,10 +779,10 @@ namespace NFSRaider
 
         private void DisableComponentsDuringBruteforce()
         {
-            BtnStop.Enabled = true;
+            BtnStartStop.Text = "Stop";
+
             TxtLoadFromText.Enabled = false;
             BtnClear.Enabled = false;
-            BtnStart.Enabled = false;
             TxtPrefixes.Enabled = false;
             TxtVariations.Enabled = false;
             TxtSuffixes.Enabled = false;

@@ -1,0 +1,4947 @@
+Button String
+1 / 4
+00:00
+Countdown
+MISSION FAILED
+Jaws
+Militek
+Info Item Text
+Continue
+Total Score
+<Score Str>
+<medal>
+<Req%>
+<ObjCompleted7>
+<Mission7>
+<ObjCompleted6>
+<Mission6>
+<ObjCompleted5>
+<Mission5>
+<ObjCompleted4>
+<Mission4>
+<ObjCompleted3>
+<Mission3>
+<ObjCompleted2>
+<Mission2>
+<Platinum obj unlocked message goes here>
+<UnlockItemsStr>
+Trophy Room Unlocked:
+<Needed For Gold>
+<ObjCompleted1>
+<Mission1>
+<ObjCompleted0>
+<MissionO>
+Objectives
+Mission
+Medal:
+<Chapter Name>
+Chapter:
+Pause
+Return to game.
+Restart the current mission.
+Select
+Change
+Quit this mission and exit the game.
+Quit
+Restart Mission
+Options
+Game
+Yes
+No
+Continue: Are you sure?
+Mission Select
+Quit: Are you sure?
+[DeviceSize3]
+[DeviceSize2]
+[DeviceSize1]
+[DeviceSize0]
+[Device3]
+[Device2]
+[Device1]
+[Device0]
+<MemCard Devices>
+Third Opt
+NO
+YES
+[Fileslot 6]
+[Fileslot 5]
+[Fileslot 4]
+[Fileslot 3]
+[Fileslot 2]
+[Fileslot 1]
+[Fileslot 0]
+<TRC Message>
+Save Game
+Chapter
+Difficulty
+Chapter 1: Location
+Easy
+Scoring Objectives
+Mission Objectives
+Secret Unlocks
+Enter secret codes to unlock hidden features.
+GameOptions
+Controller Options
+Game Options
+Set vibration, volume, subtitles and more.
+Configure your controller here.
+Back
+Select controller configuration.
+Select a configuration for the driving controller.
+Select a configuration for the character controller.
+Bond Sense
+Change Target
+Manual Aim
+Lock On Target
+Crouch
+Next Weapon
+Fire Weapon
+Low Punch
+High Punch
+Use/Action
+Move Camera
+Reset Camera
+Move
+Change Weapon
+Off
+On
+Adjust the volume of sound effects in the game
+Adjust the volume of the music playing during the game.
+Effects Volume
+Music Volume
+Subtitles
+Turn the subtitles on or off.
+HUD Always On
+Vibration
+Makes the Heads Up Display (HUD) show either
+all the time or only when in use.
+Turn the conroller vibration on or off.
+END
+DELETE
+SPACE
+A
+Y
+X
+W
+V
+U
+T
+S
+Z
+R
+Q
+P
+O
+N
+M
+L
+K
+J
+I
+H
+G
+F
+E
+D
+C
+B
+abc
+TEST STATS SCREEN
+<Hud Scoring Objective Pending Pulse Dest>
+<Hud Scoring Objective Pending>
+<Hud Scoringg Objective Disabled>
+<Hud Scoring Objective Failed>
+<Hud Scoring Objective Sucess>
+<Hud Mission Objective Pending Pulse Dest>
+<Default menu text>
+Subttile NIS Font
+Subtitle Chatter Font
+Subtitle Movie Font
+Standard Menu Selector Font (deselected)
+Standard Menu Selector Font
+<Hud Mission Objective Pending>
+<Hud Mission Objective Disabled>
+<Hud Mission Objective Failed>
+<Hud Mission Objective Sucess>
+<Hud Message Default Font>
+<Hud Message Large Font>
+Missing Font Default
+Quit this mission and restart the game from the beginning.
+Quit this mission and load a different saved game.
+Save your current game.
+EVENTS
+Leave Handler
+Are you sure you want to exit?
+EVENT RESPONSES
+Header Colour
+Event Handler
+DEFAULT STRING
+Create custom Tuner, Muscle and Exotic rides by spraying on custom paints types and colors, adding multiple layers of customizable vinyl's and decals. 
+You can even fabricating your own Autosculpt parts including body kits, wheels, hoods, spoilers, and roof scoops.  
+Customization doesn't stop there.  Looks mean nothing if you don't have the time slips to back them up, so upgrading the cars performance with engine upgrades, turbo chargers, suspension parts and more is a must.
+All of this will be available for use in the full version on NFS Carbon.
+Press To Continue
+Class Info
+Helpbar Handler
+Exit Demo
+OPTION MASTER
+CAR SELECT
+option_12
+option_11
+option_10
+option_9
+option_8
+option_7
+option_6
+option_5
+option_4
+option_3
+option_2
+option_1
+Text describing the car class.
+ACCELERATION
+HANDLING
+TOP SPEED
+TUNER
+EXOTIC
+Tuners rule the corners with tight, responsive handling. What 
+tuners give up in the straights, they more than make up for 
+in the turns. With all this grip, its best to keep the gas 
+planted through corners and leave your opponents in the wall.
+Muscle is all about straight line acceleration.  When you 
+leave the rest at the line, make sure you dont focus on the 
+rear view mirror for too long because its easy to get the tail 
+out so pay attention to the curves!
+CLASS TYPES
+Exotics are for the racing purists that live for top speed. The 
+weakest link in an exotic is the driver so if you think you 
+have what it takes to balance the gas and brakes through 
+a perfect apex then the car can do the rest.
+MUSCLE
+Rotate Camera
+Reset Camera Angle
+Zoom
+Zoom In
+Zoom Out
+Install
+Camera Controls
+Installieren
+Controlli telecamera
+Broken Art
+*EXHAUST TIPS*
+Option Data String 10
+Option Header 10
+100%
+Option Data String 4
+Option Header 4
+Option Data String 5
+Option Header 5
+Option Data String 6
+Option Header 6
+Option Data String 7
+Option Header 7
+Option Data String 8
+Option Header 8
+Option Data String 9
+Option Header 9
+Option Data String 2
+Option Header 2
+Option Data String 3
+Option Header 3
+Option Data String 1
+Option Header 1
+*FRONT BUMPER*
+*HOODS*
+*REAR BUMPER*
+*ROOF SCOOPS*
+*SKIRT*
+*SPOILERS*
+*CHOP TOP*
+*WHEELS*
+Purchase
+SUB OPTION MASTER
+option_text
+AUTOSCULPT
+Advance
+Autosculpt
+Automotive manufacturer legal screen placeholder
+Licensed Music 
+"Bounce" 
+Performed by Dynamite MC
+Written by D. Smith/D. Taylor
+Produced by Dave Taylor for Solid Groove Productions
+Published by Copyright Control/Haripa Music
+Recording courtesy of Strong Records
+"Dont Speak (I Came To Make A Bang!)"
+Performed by Eagles Of Death Metal
+Written by Jesse Hughes and Josh Homme
+Copyright Control
+Recording courtesy of Downtown Records
+"Sugar (Jagz Kooner Mix)"
+Performed by Ladytron 
+Written by Daniel Hunt
+Published by Universal-Polygram Int. Publishing, Inc. (ASCAP) obo Universal Music Publishing Ltd. 
+(p) &  2005 Ladytron 
+Recording courtesy of Rykodisc
+DOMINATE THE CITY
+RACE ON THE EDGE...
+Build your crew
+Own the city, block by block
+*
+Autosculpt (tm) Customization
+Survive the Canyon
+TIER 1
+No Cars In List
+Increase Strikes
+999,999
+Heat Reduction Cost:
+TIER
+000
+This demo is intended for promotional purposes only, and may not be sold, rented or reproduced by any party. Any unauthorized use of this demo is prohibited by applicable law.
+The moves that you and your crew do in the game are meant to stay in the game. In the real world drive safe, obey the laws of the road and always wear your seatbelt.
+events
+Coming fall 2006
+ESRB NOTICE: Game experience  may change during online play.
+Version1.0
+2005 Electronic Arts Inc. All Rights Reserved
+Licensed By Nintendo
+Loading...
+HD
+HD Compatible for optimal gaming
+Please press START to begin
+Race Info
+Exit Game
+S￩lectionner 
+SELECT RACE
+Circuit Race
+2
+Laps
+2.4 KM
+Length
+00:00:00
+Best Time
+Scorpions
+Controlled By:
+Canyon Duel
+2.8 KM
+High Score
+Drift Race
+The System is Down
+4 SEC
+More Human Than Human
+White Zombie
+Astro Creep: 2000
+MAIN MENU
+NEVILLE
+BLOCKER
+ORGANIZZATORE
+COLIN
+DRAFTER
+FABRICATOR
+NIKKI
+MECHANIC
+SAL
+SCOUT
+SAMSON
+FIXER
+YUMI
+KENJI
+DOWNTOWN
+DEFEATED
+CONQUERED
+WOLF
+FORTUNA
+DARIUS
+SILVERTON
+ANGIE
+KEMPTON
+First run: chase your opponent 
+CANYON
+The closer your follow, the more points you score 
+PRESENT DAY: CARBON CANYON
+Time stamp between the two determines how fast you made the run.
+asdf.com
+EVENT HANDLER
+ArrayScroller Template
+/
+12
+1
+You could put some kind of a description in here if you wanted to.
+Time Challenge
+Accept
+BONUS CARDS
+You can select 2 bonus cards from the boss
+Marker Header
+Marker Info
+Selections Left: 2
+You do not have enough money to pay your fines and your car has been impounded by the police, get a real job. You will have to use one of your other cars to continue your career.
+999,999,000
+5
+Get Out of Jail Free Cards:
+Player Cash:
+*YOU GOT BUSTED*
+Infractions
+option_data
+Cost
+Infractions This Pursuit
+Unserved Infractions
+Total Cost
+Option 1
+Option 2
+LOADING...
+Test Drive 
+Test Drive
+Seleccionar cocha para modo Carreara
+Select Car for Career
+Vendre une voiture
+Lefoglalsi lehetosgek nvelse
+Reducir la presin policial
+Lefoglal￡si lehetos￩gek n￶vel￩se
+Career Controls
+Reducir la presi￳n policial
+Cash: 999,999
+Car Value: 999,999
+MY CARS
+Player 1
+Showcase
+Leaderboard
+CHALLENGE SERIES
+Solo Challenge
+Sprint
+Race Type
+TRACK:
+Dynamic Text
+DESCRIPTION:
+LENGTH:
+CAR:
+Recompense
+Change Swatch
+Total Cash
+0
+COLOUR CHOOSER
+Paint Type
+COMING SOON M2
+COMING SOON M3
+WWWWWWWWWW
+START button
+Unused
+Enter Shop/
+Challenge Opponent
+World
+Map
+Blacklist
+SMS
+* CONTROLS *
+Standaardinstellingen
+Done
+STEER
+BRAKE/REVERSE
+ACCELERATE
+NITROUS
+PURSUIT BREAKER
+LOOK BACK
+GUIDE
+E-BRAKE
+Shift Up
+Shift Down
+Accelerate
+Not Used
+Brake/Reverse
+Configuration
+10
+Customize
+CREW CAR
+Set Colors
+LOGOS
+*YOUR CREW*
+Crew Member
+Adds Boost to your Nitrous
+Race Bonus
+Race Bonus:
+Career Bonus
+Career Bonus:
+Unlocks Autosculpt body kits, exhausts, hoods and roof scoops
+*SAL*
+Car:
+Skills:
+*FABRICATOR*
+Volkswagen Jetta
+Category
+Description
+Price
+Total Cost:
+Total Cash:
+$$$,$$$$
+Category Text
+Description Text
+$$$,$$$
+*PARTS INVOICE*
+Order Parts
+Remove
+Remove All
+Shopping Cart
+CUSTOMIZATION
+PARTS MENU
+OPTION_12
+OPTION_11
+OPTION_10
+OPTION_9
+OPTION_8
+OPTION_7
+OPTION_6
+OPTION_5
+OPTION_4
+OPTION_3
+OPTION_2
+OPTION_1
+Exhaust requires non-stock bumper
+Change Material
+Carbon Fibre
+Change Size
+Optimize Performance
+CUSTOMIZE PERFORMANCE
+CUSTOMIZE VISUALS
+ACCEPT
+CANCEL
+OPTION 3
+NAME
+LOAD
+EXIT TO MAIN MENU
+Game over description
+* GAME OVER *
+Game Mode:
+Any
+Bayside
+Track:
+Length:
+Max Players:
+Max Car Tier:
+NOS:
+Collision Detection:
+Race Settings
+Cancel
+EA Messenger
+Input Handler
+Game Tag Name
+Player XP
+Car Name
+*YOU WON*
+Thank you for playing Need For Speed: Carbon!
+IconScroller Template
+Option title
+Squential
+Electro
+Play Track
+EA TRAX
+Trax Title 2
+Trax Artist 2
+Trax Album 2
+Racing
+02
+Trax Artist 1
+Trax Title 1
+Trax Album 1
+01
+Trax Title 3
+Trax Artist 3
+Trax Album 3
+03
+Standaardinstellingen 
+Tillbaka
+Ajouter une couche
+Move Layer Up/Down
+Reteg szerkesztese
+Reteg eltavolitasa
+Remove Layer
+Move Layer Down
+Move Layer Up
+Add Layer
+Edit Layer
+LAYER MENU
+CAREER
+Cash
+Career Completion
+100 %
+MenuScreen Template
+*Add New Car*
+Add new car
+Add  
+Add
+Delete Car
+Customise
+Zroblone
+Match begins in:
+0:00
+PushPull Handler
+Generic Message
+<Leader GamerTag>
+<GamerTag>
+Leader
+View Profile
+Select Car
+View Gamer Card
+N2O:
+Edit Race
+*GAME ROOM*
+Ranked Single Player
+Start matchmaking
+<GamerTag> wussup?
+Kuljettajan tiedot
+S￩lectionner voiture
+Chat
+Keskustelu
+AUDIO
+Downloading Stats
+Player Stats
+LEADERBOARD
+option_13
+option_14
+option_15
+option_16
+option_17
+option_18
+option_19
+option_20
+option_21
+option_22
+option_23
+option_24
+option_25
+option_26
+option_27
+option_28
+option_29
+option_30
+option_31
+option_32
+option_33
+option_34
+option_35
+option_36
+option_37
+option_38
+option_39
+option_40
+option_41
+option_42
+option_43
+option_44
+option_45
+option_46
+option_47
+option_48
+option_49
+option_50
+Player Filter
+Time Period
+"Visit www.NeedForSpeed.com for more stats"
+Player Stat
+Mitsubishi EVOLUTION IX MR
+999.99 MPH
+NUMBER
+9999999 PTS
+NAME HERE
+1800
+50000
+NUM
+NU
+NAME H
+Gamertag
+Rank
+Rank Points
+Top Speed
+Najlepsze okra
+Best Move 
+Send Friend Request
+BEST WINNING STREAK
+SOLO WIN %
+LOSSES
+WINS
+TOTAL GAMES
+XP LEVEL 
+ONLINE CHALLENGE SERIES EVENTS WON
+TOTAL DISCONNECT %
+STATISTICS
+GAMER ID
+PLAYER'S STATISTICS
+DECLINE
+OK
+EA ONLINE TERMS & CONDITIONS
+Page Down
+Page Up
+TEXT UP
+TEXT DOWN
+LINE OF TEXT
+To connect to many online features of <game title> you must first have an EA Online account.  You may use an existing account created using another EA product by linking your EA Online Account to your Gamertag at www.EA.com or accept  the Terms and Conditions below and a create a new account now.
+20
+Advanced
+Scrolling text
+*PAUSE*
+Option Master
+*OPTIONS*
+Tilbage 
+Add to Cart
+Performance info
+PART NAME
+PART TYPE
+PART TYPE 
+ATTRIBUTE 2
+ATTRIBUTE 1
+Take Photo
+Pursuit Statistics
+PURSUIT REWARDS
+MILESTONE ACHIEVED
+REWARD CARD UNLOCKED!
+Milestone_name
+Reputation
+State Handler
+HelpBar Handler
+Cost: 
+Total Cash: 
+Restart
+Game Stats
+Save Ghost
+*WINNER*
+Time_Speed
+YOU CAME IN 1ST
+HURRY UP
+Reward Card Scrolling Text 2
+REWARD CARDS GAINED
+Reward_1
+Reward Unlocked
+Reward Card Scrolling Text
+Cash Rewards
+1 000 000 000
+New Car Unlocked!
+Hurry up timer:
+Data Handler
+* STAGES *
+Position
+Time
+player
+Stage
+Feedback
+Racer Profile
+Please Press START Button on second controller.
+START Button
+Please Press Start on 
+second controller.
+PLAYER 2
+View Shadow Info
+QUICK RACE OPTIONS
+0:00:00
+Shadow Time:
+Shadow Time
+Car Type
+Mitsubishi Lancer EVOLUTION IX MR
+*ACTIVE CREW MEMBER*
+SPRINT
+RACE STATISTICS
+Best Lap
+Average N20 Used
+No races of this type in this area
+Online Rewards
+REWARDS CARDS
+Win a single Career Race
+nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+Win 10 Free Roam Challenges
+Fill your Career Garage with only Exotic
+Complete this icon to unlock:
+Mitsubishi Eclipse 1999
+Making Your Name
+Medium
+AUDI A4 QUATTRO
+Slec
+SAVE GHOST?
+PREVIOUS GHOST:
+NEW GHOST:
+CAR MODEL
+Save
+Left/Right/Up/Down : rotate car
+Left/Right Triggers  : zoom
+Showcase (temp)
+MAILBOX
+Text
+Voice
+Mail Boxes
+Tips
+Debug, _SUBJECT string not in HAL
+Read
+Delete 
+Delete
+Replay
+MESSAGE
+From:
+Subject:
+subject_text
+from_text
+Message Text:
+STAT_HEADER_1
+STAT_HEADER_2
+STAT_HEADER_3
+STAT_HEADER_4
+STAT_HEADER_5
+STAT_HEADER_6
+STAT_HEADER_7
+STAT_HEADER_8
+STAT_HEADER_9
+STAT_HEADER_10
+STATISTICS  
+TextScroller Template
+Rock
+Heavy metal
+Art & Alternative
+Soft Rock
+Blues
+VINYL MENU
+Change Color
+BLACK
+WHITE
+Finished
+Change View
+Mirror Vinyl 
+Skift kameravinkel
+Mirror Vinyl
+SKEW
+ROTATE
+ZMENIT VELIKOST
+TRANSFORM
+Update Transformation
+Kaanna kuvakulmaa
+*RIDE HEIGHT*
+*WINDOW TINT*
+WidgetMenu Template
+Option 3
+75%
+Random Race
+80
+All Available Races
+*TERRITORY AQUISITIONS*
+Skip
+KONIG ANARCHY 19" RIMS
+*AREA CONQUERED*
+Reputation:
+Cash:
+Attacking Crew
+BUSHIDO
+Your territory is under attack!
+If you decide not to defend your turf, 
+the attacking Crew will take it over automatically.
+Decline
+Select Crew Member
+*ENGAGE EVENTS*
+*DEFENCE RACE*
+RANDOM ENCOUNTER
+World Info
+Control:
+Minor Crews
+Player
+1/15
+2/15
+12/15
+Tracks
+NEWPORT INDUSTRIAL PARK
+Reward: Porsche 911
+* FLASHER HEADER *
+00:00.00
+:
+4
+99:99.99
+LAP
+/2
+KM/H
++
+3
+SPEED BONUS
+x10
+WWWWWWWWWWW
+8
+7
+6
+99
+0:00.00
+COOLDOWN
+EVADE
+BUSTED
+global sound
+LEAVE SCREEN
+CALL KEYS
+Backspace
+WWWWWWWWWWWWWWWWWWWW
+*CHOOSE YOUR CREW NAME*
+*LOADING TIPS*
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam quam. Maecenas imperdiet rutrum eros. Duis at augue. Aenean tellus enim, volutpat ac, sagittis a, molestie ac, odio.
+ALIAS
+Temp Text
+Canyon Dual
+CREW MEMBER TIPS
+Model
+Car
+PartID
+Name
+Debug Car Customize
+Help
+Free Roam
+Uninstall Part In Slot
+Install Part
+Save to Memcard
+Dump Preset Data
+Zone Heat Level 5
+Event ID
+Quick List
+Legend
+Event
+Completed Event
+Car Lot
+Safehouse
+Boss Event
+Race War
+5,000
+Anderson Way
+Race Type:
+Controlled By
+7.1 KM
+Record
+1:35:28
+Online Event
+www.buynfs.com
+Tracciato
+Lunghezza
+SamoChoid
+NOS
+* FEEDBACK *
+SPEEDSTER
+LEAVE HANDLER
+Good Attitude
+Great Session
+Bad Name
+Cheating
+Screaming
+Threats/Harassment
+Cursing/Lewdness
+We only accept reports regarding the EA SPORTS Terms & Conditions. Please use this
+tool only for legitimate reports. Misuse may result in action being taken against your
+account.
+Modalit￠ di gioco
+D￩lka driftu
+Nombre maximal de joueurs
+Nivel mximo de coche
+N2O
+Deteccin de colisiones
+Online playing Madden 2007
+Jimmy Mango69
+PC ONLY FILTER
+*EA MESSENGER*
+Search
+Game begins in 5
+*CHAT*
+Reply
+Block
+Message_Text_1
+Message_Text_2
+Message_Text_3
+Message_Text_4
+Message_Text_5
+Message_Text_6
+Message_Text_7
+Message_Text_8
+Message_Text_9
+Message_Text_10
+Type your message... (Maximum of 40 characters)
+*INVITE*
+Speedster
+Number of Players:
+Game Type:
+Track Name:
+Number of Laps:
+--
+Entering a ranked game will automatically switch to the
+proper online ranked car for this game mode.
+Any active voice chat sessions will be also cancelled.
+Friend Request
+Mute
+Send Game Invite
+Recruit Player
+View Player Stats
+*KIRJAUDU SISAAN*
+SWp
+Dieser EA-Kontoname existiert bereits.
+\^Bitte anderen Namen eingeben und
+\^noch einmal versuchen.
+Terminer
+*CD KEY*
+You are on your way to creating a new EA Online account !  
+*******
+*********
+To connect to many Online features of Need for Speed Carbon you must first
+Option Data String 11
+Option Header 11
+In-/Uitzoomen
+K￤￤nn￤ kuvakulmaa
+Prendre la photo
+4.44.456
+RACE RESULTS
+Faites-vous arreter lors d'une poursuite
+GENERIC MESSAGE 
+CAN GO HERE FOR 
+STUFF AND I WILL 
+MAKE THIS VERY BIG 
+SO LOTS OF TEXT 
+CAN FIT IN HERE I HOPE
+QUIT GAME ?
+song info
+RESUME
+QUIT
+CONFIRM
+9,999,999
+GAP
+SHIFT NOW
+COMPLETE
+* GVR REMOVED*
+* GVR REMOVED *
++8.88
+km/h
+PLAYER_NAME
+P1_DRIFT_NAME
+P1_DRIFT_POINTS
+P2_DRIFT_NAME
+P2_DRIFT_POINTS
+P3_DRIFT_NAME
+P3_DRIFT_POINTS
+- 0.00
+S1
+00.000
+S2
+S3
+PLAYER VS. PLAYER
+000000 
+XXX GOAL/WIN XXX
+00
+*CONTROLLER CONFIGURATION*
+Click on a field to edit it
+Primary
+Secondary
+Keyboard Configuration
+Defaults
+Clear
+Rumblee: ON
+ROCKPORT POLICE
+VID CAM 01
+REC
+SUSPECT: WHITE MALE 185LBS. 20-25 YRS: APPREHENDED FOR EXCESSIVE SPEEDING
+CONTROLS
+EXHAUST TIPS
+FRONT BUMPER
+HOODS
+REAR BUMPER
+ROOF SCOOPS
+SKIRT
+SPOILERS
+CHOP TOP
+WHEELS
+Race
+Customize Car
+Sell Car
+Debug: Car Name
+Reduce Heat
+Heat Reduction Cost: 
+Press Start to Advance
+PAUSE
+* OPTIONS *
+CAMERA FUNCTIONS
+* SHOWCASE *
+Career Rep
+Unlock New Car
+YOU WON
+Hurry up countdown
+00:00 
+View Heat
+Tuner Class
+Heat
+Option 2B
+Option 1B
+Option 3B
+Option 4B
+Data 4B
+Data 3B
+Data 2B
+Data 1B
+Crew Info
+View Crew Video
+Tuner Area:
+Muscle Area:
+Exotic Area:
+Final Area:
+Car Class:
+Race Style:
+Crew Bio:
+STAT
+Leader Name Here
+Leader:
+Crew Name:
+Name Here
+CREW INFO
+DEFENCE RACE
+Crew Name Here
+Are you up for the challenge?
+ZONE 1
+AREA 2
+Tuner
+Heat: Medium
+2500
+250000
+Goes Here
+And Here
+Go!
+-
+100% 
+888
+Press
+To Continue
+No automatic shifting here! Time your shifts perfectly 
+to avoid blowing your engine.
+Default Text Default Text Default Text Default Text Default Text Default Text Default Text Default Text 
+Default Text Default Text Default Text Default Text Default Text Default Text 
+Default Text Default Text Default Text 
+Default Text Default Text Default Text Default Text Default Text Default Text Default Text Default Text Default Text 
+DEFAULT TEXT
+1.0
+CLICK to continue
+Press START button
+Licensed by Some Company
+(C) 2005 Electronic Arts Inc. All Rights Reserved
+*CONTROLS*
+*SHOWCASE*
+ENGAGE EVENTS
+If you decide not to defend your turf,
+*TIPS*
+250,000
+Area Heat: 1
+Crew Invite
+Saving...
+SHOWCASE
+Camera Control
+Reward Cards
+* TIPS *
+Muscle
+Drafters
+Exotic
+Casino
+0/22
+14/16
+3/16
+0/16
+*CREW INFO*
+Przejdz do zestawienia moich samochodw
+w glwnym menu, aby dodac samochody do tej listy.
+North America
+Career
+Funds:
+500,000
+Cost:
+40,000
+99999999
+999,999,999
+Release Cost:
+This Car is Locked
+Load Cars
+Exit
+Accepteren
+Show
+911 Turbo
+Debug:
+Visa instruktionsmaterial
+LEAVE
+Jimmy Mango
+challenge series
+HELLO, this is a really long string... Now for some filler text:
+asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdsa
+fasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfd
+asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfas
+EVENT ID
+Highest Bounty: X.XXX.XXX
+Completed XX of XX
+Unlock this challenge by completing challenge ## and ##.
+The controller has been unplugged.
+Please plug it back in and press the START button.
+Line 3
+credits
+View Cart
+cost
+funds:
+total:
+Trade in:
+custom hud
+Engine Markers:
+Backroom
+Markers:
+Max Performance
+performance
+Toevoegen aan bestellijst
+Bestellijst bekijken
+Utstallningslage
+rims
+Udstillingslokale
+Tarkastele ostosk￤rry￤
+Selecte
+customize main
+Yhteens￤:
+body kits
+engine packages
+Racing Pistons
+Package Details
+Racing Camshaft
+High flow Fuel injectors
+BackRoom
+White
+200
+DECAL_COLOR
+Toggle Colour
+select car
+1:00.00
+You Have
+DON'T GET BUSTED!
+YOU WON!!!
+Okay
+WINNER
+158 Mph
+1:20:50
+32.5 sec. @ 158 MPH
+150 mph
+1:00:00
+BONUS CHEAT CODE
+up, up, down, down, left, right, up, down
+congratulations!
+You proved youre fast but there are more people than me to race... haha... and you'll need to work on your car to beat them.  I'll hook you up with a freebie from the customization shop, you'll need it to go after the rest of the Blacklist.
+Press the following directions on the directional pad:
+To claim your reward enter this code on the
+title screen of Need for Speed: Most Wanted coming November 2005.
+populate me
+Button 2
+Button 1
+Button 3
+Re-Order
+Prev
+Preview
+Re-order
+EA trax
+Trax Artist 4
+Trax Album 4
+04
+Region
+Track Name Here
+Circuit
+ENGAGE EVENT
+Laps:
+Distance:
+Cop Probability:
+20 KM
+??
+MEDIUM
+Top Speed:
+Average Speed:
+Best Time:
+120 KM/H
+163 KM/H
+Cash Reward:
+1,000
+Beat
+Cash Reward
+tutorial
+tollbooth
+TUTORIAL
+Get time-stamped ticket at the start & finish of the race.
+Pass tollbooths along the way to earn extra time on the clock.
+XXXXXXXXXXXXXXXXX
+Memory Card
+Checking for memory card (PS2) in MEMORY CARD slot 1. 
+Do not remove memory card (PS2) or the controller, reset 
+or switch off the console.
+WWWWWWWWWWWW DISCONNECT
+9.99
+Wrong Way
+Perfect Shift!
+INFRACTIONS
+CODE: 404
+WWWWWWWWWWWW DISCONNECTED
+999
+BACKUP:
+00:59.99
+HIDING
+BOUNTY >
+9999999
+TOTAL BOUNTY:
+1000000
+CASH:
+TOTAL CTS:
+WWWWWWWWWWWWW
+10,000,000/10,000,000
+MILESTONES >
+Payment
+Pay with Cash
+Pay with Marker
+60,000
+Violation:
+#01AO692JM
+CITY OF ROCKPORT
+20,000
+80,000
+TOTAL COST:
+Infractions this Pursuit
+10000
+9
+RACE EVENTS
+Dodge %s roadblocks in a pursuit.  You must also lose the 
+cops to win the challenge.
+Use Marker
+Pay Infractions
+You been busted. Now pay up!
+INFO
+Bounty Reward:
+1,000,000
+150 MPH
+CLOCKED IN AT:
+CASH 1200
+1:20:50 @ 158 MPH
+Race Stats
+15000
+Best Lap:
+Avg Speed:
+187.999 MPH
+2.5km
+Challenge Rival
+Lorem ipsum dolor sit amet, 
+consectetuer adipiscing elit, sed 
+diam nonummy nibh euismod 
+tincidunt ut laoreet dolore magna 
+aliquam erat volutpat. Ut wisi enim 
+ad minim veniam, quis nostrud 
+Kamikaze
+BLACKLIST
+Option Title
+Milestone done
+Race wins
+Bounty
+Target
+Current
+ride:
+CLK 500
+strenght:
+Cost to State
+BIO:
+Crazy, crazy, crazy is how everyone describes
+her.  Kira is all about raw power.  She throws 
+caution to the wind and thinks speed can 
+over come any problem.  Her insane attitude 
+has got her to where she is.  Its only a matter
+of time before Kiras good luck runs out.  
+Shes an accident waiting to happen.
+Clarence Callahan 
+' Kamikaze '
+RIVAL CHALLENGE
+TRACK_NAME_HERE
+Toll Booth
+1:00:10
+Rival's Best Time:
+Enter Name:
+WWWWWWW
+CAREER01
+@
+.
+\
+?
+'
+Space
+Lowercase
+Special Characters
+HANDBRAKE
+Press A to Continue
+LOADING
+Drag racing is won or lost based on your ability to shift. Watch the shift indicator. When it turns Green, it is time to shift. If you get a perfect shift your car accelerates faster. Over revving your engine will cause it to blow. Watch the heat level of your motor to make sure you don't blow your engine.
+"The Keys to Life vs. 15 Minutes of Fame"
+Performed by Atmosphere
+Recording courtesy of Rhymesayers Entertainment LLC, under 
+license to Epitaph Records
+"Switch/Twitch"
+Performed by Fluke
+Recording courtesy of One Little Indian Records 
+"Notice of Eviction"
+Performed by The Bronx
+Recording courtesy of Ferret Music
+_Event_Handler_
+Mitsubishi, Eclipse, and Lancer Evolution names, emblems and body
+designs are trademarks and/or intellectual property rights of Mitsubishi
+Motors Corporation and used under license to Electronic Arts Inc.
+NISSAN, SKYLINE, 350Z, SENTRA and 240SX are trademarks and/or
+intellectual property rights of NISSAN MOTOR CO.,LTD.and are used 
+under license to Electronic Arts Inc.
+SUBARU, IMPREZA, WRX and STi names, emblems and body designs 
+are properties of Fuji Heavy Industries Ltd.  The names and logos of all 
+after market car part companies are trademarks of their respective owners 
+and are used by permission. 
+All trademarks are the property of their respective owners. 
+2004 Electronic Arts Inc. All rights reserved. 
+DEMO Marketing Screen
+Copy to be determined...
+Free-Roaming City 
+Races can happen anytime, anywhere 
+Fine-tune every aspect of your cars performance
+Races can happen anytime, anywhere  
+Performance Tuning
+New Gameplay Modes
+Hone your skills in a number of driving disciplines
+New personalization options and tons of new parts 
+Visual Customization
+Compete Online
+Challenging the worlds best racers in heated online action
+PUBLIC SERVICE ANNOUNCEMENT
+Street racing is an illegal and dangerous activity.
+Electronic Arts and its licensors do not condone or encourage the participation
+in illegal street street racing activities.  The racing depicted in Need for 
+Speed Underground 2 is home entertainment purposes only.  No attempts 
+should be made to duplicate the the driving sequences portrayed.  
+Need fo Speed Underground is the only safe place to street race.
+This demo is intended for promotional purposes only, and may not
+be sold, rented or reproduced by any party.  Any unauthorized use
+of this demo is prohibited by applicable law.
+language select
+little timmy
+main menu
+Career Completion:
+Rap Sheet:
+Challenge Series:
+XX/XX
+Game Completion:
+XXX XXX XXX
+Bounty:
+Career completed:
+title goes here
+View Tutorial
+Take the race online.
+Take advantage of the dynamic, open world to smoke rivals and cops.
+Tune your sleeper to beat any class of car.
+Customize the look of your ride to manage your heat.
+Earn your street rep to climb the Blacklist.
+Master the art of strategic cop evasion.
+info
+profile manager
+Abbrechen
+Billy Bathgate
+Doctor Gonzo
+Pete
+Perry Mason
+BillyBobThornton
+furiousgeorge666
+llarrythellama
+load
+TM
+DEMO
+YOU UNLOCKED THE NISSAN 350Z
+COMING NOVEMBER 2005
+Nieuwe wagen toevoegen
+Edit Car
+my car manager
+Add New Car
+Add a new car to your garage.
+Load Network Configuration
+network configuration
+Select Network Configuration
+( SCE/ETHERNET ADAPTER )
+<text>
+option 1
+Remove Numbers
+numbers
+Leave Screen
+keofk
+Create New Account
+Use Existing Account
+ea login
+ESRB NOTICE: GAME MAY CHANGE
+connecting to ea.com 
+Loading Gamertags.
+xbox live
+Gamertag1
+Gamertag2
+Gamertag3
+Gamertag4
+Gamertag5
+Gamertag6
+Gamertag7
+Gamertag8
+find results
+Feed
+Repl
+read messages
+>>chad: yo what's shaken y'all
+>>demon48: not much just watching the game having a bud
+>>dicky: WHAT'S UP!
+>>chad: WAZZZZUP!!!!
+>>demon48: WAZZZUP!
+>>dicky: not much playin the game havin a bud
+>>chad:true
+>>demon48: true
+>>dicky: true
+create new account
+create new
+option_name
+Angola
+Argentina
+Armania
+Australia
+Austria
+Bahamas
+Berma
+Bermuda
+Borneo
+Rechercher
+Group Flag
+This May
+Need To be
+three Lines
+DEBUG 
+group flag
+totill:
+199
+feedback
+Nexus
+The other player is a sportsman
+Honest Player
+Good Session
+Harassment
+Racist/Hate Speech
+Disruptive Behavior
+We only accept reports regarding the EA GAMES Terms & Conditions.
+Please use this tool only for legitimate reports.
+Misuse may result in action being taken against your account.
+Compl
+LEAVE DELAY
+Enter Email Address
+Email Adress
+Required
+Challenge
+Send Message
+Invite to Voice Chat
+Remove Friend
+View Career
+Change Car
+Edit Race Options
+Direction:
+Min Players:
+Performance:
+Ranked:
+Collision:
+Foreward
+Sidewinder
+Matched
+10KM
+60
+game room
+Don Knotts
+Hosty
+Race Begins in:
+Player Activity - master countdown resuming...
+This is a test
+Donee
+event handler
+Career Cars
+Audi A4
+Min Play:
+Don't Care
+View Track
+Mute Player
+Skill:
+100
+Report Abuse
+Send Private Message
+JimmyMango69
+Performance Matched
+Filter
+Join
+Lajittele
+Refresh
+online lobby
+cristianrock
+Host
+6/6
+Change Columns
+on
+Rookie
+Players Online:
+Total Games:
+85
+1001
+PC_RTRIGGER HACK
+PC_LTRIGGER HACK
+MESS_SEARCH HACK
+GROUP_FLAG HACK
+UNDIM_COMPLETE HACK
+Sign Out
+online main
+Do you accept Terms of Service?
+This is the ONLINE News regarding new issues, 
+Ok
+membership agreement
+quick race
+Blacklist 15
+1002
+Your Rank:
+Gamertag_00003
+Skill
+Gamertag_00001
+90
+Gamertag_00002
+Gamertag_00004
+Gamertag_00005
+Gamertag_00006
+Gamertag_00007
+Gamertag_00008
+70
+50
+40
+30
+Gamertag_00009
+Gamertag_00010
+Gamertag_00011
+Gamertag_00013
+11
+online rankings
+View
+Weekly
+View Stats
+999999
+15
+Longest Air Time (SEC)
+HEAD
+leaderboardee
+Sort
+personal stats
+Current Rank:
+1000
+Monthly Points:
+Disconnect Percentage:
+100,099,050
+20%
+2400 LBS
+24 LBS
+50%
+Total N20 Consumed:
+Average N20 Consumed:
+Win Percentage:
+Games Lost:
+Games Won:
+Games Played:
+Skill Rating:
+Total Wins:
+0%
+Total Lossey:
+Longest Air Time:
+8.01 SEC
+online persona
+Select an Online Persona:
+Delete Persona
+use existing account
+Inviting Nexus to voice chat.
+Waiting  for response
+invitation
+PURSUIT
+Bounty Won:
+Cost to State Achieved:
+Roadblocks Dodged:
+Cops Destroyed:
+Cops Damaged:
+select event
+Rep: 3500
+Car Select
+Quit Demo
+Events
+Sprint 
+100000
+SPRINT RACE
+Tollbooth Time Trial
+Rival Drag Race
+BLACKLIST RACE
+#16 Rog
+PLAYER 1
+Adjust your brightness control until you can clearly see two logos. Reduce your brightness control until you can still see both logos with no box around them.
+options
+Press new button to remap this function
+controller config
+Klar
+body paint
+Gloss
+Otion Title
+PAUSE MAIN
+OPTION TITLE
+SETUP 1
+PERFORMANCE
+TUNING
+Steering
+Handling
+Brake Bias
+Ride Height
+Aero Dynamics
+Turbo/Super Charger
+TUNING HELP
+Hide
+Random jubberish...
+Break your speed fool!
+PAUSE MAIN > TIPS
+This is a blurb about the Jack knifing Semi and how you can avoid
+it. When this happens you need to drive really really fast and steer
+over to the left while simultaniously using your hand brake while
+accelerating. Once you hit 88 miles per hour your flux capacitor
+should kick in and it will be smooth sailing from then on. 
+TIPS
+SECONDARY HANDLER
+10 Police Cars Destroyed
++ 5000 Bounty
+BOUNTY ACHIEVED
+MILESTONES ACHIEVED
+Milestones
+Total Bounty: 1000000
+GLOBAL SOUND
+Consecutive Pursuits Evaded
+Cost to State Achieved
+Roadblocks Dodged
+Cops Destroyed
+Cops Damaged
+Escape Within
+Pursuit
+Stats
+PLAYER
+Lap
+Pos.
+select player order
+Player 1 press START
+Players select which controller ports will be designated 
+as Player 1 and Player 2. 
+Whoever selects first will be designated as Player 1.
+Randomize
+quick play brief
+Unlock this car in CAREER by beating "MING"
+Difficulty:
+Hard
+Catch Up:
+Opponents:
+Circuit - K.O.
+Traffic:
+Random
+XXX
+NAME: PLAYER NAME
+BOUNTY: X.XXX.XXX
+OFFICER SALARIES
+GALLONS OF FUEL CONSUMED
+SPEED TRAPS DEPLOYED
+ROADBLOCKS DEPLOYED
+SPIKE STRIPS DELOYED
+INSURANCE CLAIMS
+EMERGENCY DISPATCH SALARIES
+HELICOPTER MINUTES
+DAMAGED POLICE VEHICLES
+CATEGORY
+XXXX
+QTY
+X.XXX.XXX
+COST
+TOTAL COST TO STATE: XXX.XXX.XXX
+CASE_FILE
+ROCKPORT PD
+COST TO STATE
+SIGN IN:
+PASSWORD:
+R O C K P O R T  P O L I C E  D E P A R T M E N T
+SIGNING IN
+--/
+CONNECTING TO ROCKPORT POLICE DEPARTMENT...
+RETRIEVING LIST
+SEARCHING DATABASE
+SELECTION MADE, RETRIEVING PROFILE . . .
+LOADING 8K . . .
+> ALLAN, WES
+> CALLAHAN, CLARENCE
+> DOMINGO, MING
+> MCREA, DONALD
+> PLAYER NAME
+> SATO, TORO
+> VEGA, JOE
+> RANKINGS
+> TOP EVADED PURSUITS
+> COST TO STATE
+> INFRACTIONS
+> VEHICLE DATABASE
+> SUMMARY
+MAIN MENU:
+PLAYER NAME
+BOUNTY: 21.032
+COST TO STATE: 1.235.356
+CARS IMPOUNDED: 6
+UNPAID FINES: 2.103
+EVADED CAPTURES: 1.235
+BUSTED: 0
+CARS MONITORED: 0
+RAP SHEET
+BOUNTY: XX.XXX.XXX
+PURSUIT ID: 56XK3
+PURSUIT DETAIL
+XX:XX:XX
+XX
+XXX.XXX
+PURSUIT LENGTH
+TOTAL COPS INVOLVED
+COPS DAMAGED
+COPS DESTROYED
+ROADBLOCKS DODGED
+SPIKE STRIPS DODGED
+INFRACTIONS RECORDED
+HELICOPTERS INVOLVED
+BOUNTY ACCUMULATED
+Switch View
+RANKINGS
+25/15
+UNRANKED
+> PURSUIT LENGTH
+> TOTAL COPS INVOLVED
+> COPS DAMAGED
+> COPS DESTROYED
+> ROADBLOCKS DODGED
+> SPIKE STRIPS DODGED
+> INFRACTIONS RECORDED
+> HELICOPTERS INVOLVED
+> BOUNTY ACCUMULATED
+SELECT A CATEGORY FOR MORE DETAIL:
+SINGLE PURSUIT
+Mitsubishi Lancer EVOLUTION III
+PORSCHE 911S
+RANKING DETAIL
+PURSUITS
+> TIMES EVADED:
+> TIMES BUSTED:
+> UN-SERVED: 0
+> SERVED: 0
+DANGEROUS DRIVER. APPREHEND AT REASONABLE COST. 
+SURVEILLANCE LEVEL HIGH.
+SUMMARY
+FINES
+> DUE: XX
+> PAID: XX
+POLICE VEHICLES
+> DAMAGED: XX
+> DEMOTED: XX
+LENGTH: XX:XX:XX
+BOUNTY: XXX.XXX
+ID: 56XK3
+CAR USED: PORSCHE 911S
+TOP EVADED PURSUITS
+UNSERVED INFRACTIONS: XXX
+UNPAID FINES OF: X.XXX.XXX
+EXCESSIVE SPEEDING
+RACING
+RECKLESS DRIVING
+ASSULTING POLICE OFFICER
+HIT AND RUN
+DAMAGE TO PROPERTY
+RESISTING ARREST
+DRIVING OFF ROADWAY
+UNSERVED
+TOTAL
+PREFERRED VEHICLE: PORSCHE 911S
+RECENT VEHICLE: MAZDA RX-8
+MAZDA RX-8
+< CONFIRMED TO DRIVE >
+> UNSERVED INFRACTIONS: 98
+> OUTSTANDING FINES: 3
+> BOUNTY: 23.400
+> TIMES EVADED: 12
+> TIMES BUSTED: 4
+VEHICLE DATABASE
+20"
+Help K
+123 mph
+2:10:00
+187 mph
+G/S/B
+Medal: 
+Tip
+bounty
+3:10:00
+3:00:00
+2:50:00
+1 000 000
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+sed diam nonummy nibh euismod tincidunt ut laoreet 
+dolore magna aliquam erat volutpat. Ut wisi enim 
+Bounty Header goes here
+TIP_HANDLER
+Race Events are the core of becoming the most wanted. 
+There are 5 types of Race Events: Sprint, Drag, Circuit,
+Knockout, and Tollbooth. You win money and earn rep by
+by winning races. You may return to other Blacklist
+levels to collect cash for uncompleted races.
+bounty tips
+Lopsom lad haddy maddy adl
+lopsom lad Lopsom lad lad 
+haddy maddy adl lopsom. 
+Lopsom lad haddy  lad maddy
+adl lopsom.  adl lopsom.
+Play Event
+Little Timmy
+speedtrap race
+Cred Awarded:
+600
+High
+Cop Probablilty:
+12 Miles, 4 Laps
+College Town Rush
+Fastest Lap:
+Position:
+Cost to State:
+99,999,999
+155 mph
+2nd
+01:34:22
+03:57:00
+Choose Markers
+marker selection
+marker selectionefefe
+Selections Remaining: X
+CONGRATULATIONS!
+Random Marker info goes here...
+...and more info goes here.
+You can now pick X markers from Kamikaze
+Unlocked
+Unlocked Items
+tip
+milestone
+Milstone event Header Here
+1,000,000,000
+Bounty reward:
+milestone tips
+blacklist race
+Probabilit￠ polizia:
+Track Name here that is long
+Velocit￠ media:
+Velocidad m￡xima:
+200,000/500,000
+MING
+Rival Challenge:
+Drag Specialist
+race event tips
+You Unlocked Region candy chocolate land!
+blacklist
+exerci
+07
+View Rival Car
+View Rival Movie
+overcome any problem.  Her insane attitude has
+got her to where she is.  Its only a matter of time 
+before Kiras good luck runs out.  Shes an 
+accident waiting to happen.
+over come any problem.  Her insane attitude has
+got her to where she is.  Its only a matter of 
+time before Kiras good luck runs out.  Shes an 
+bio:
+next rival
+rival challenge
+Clear All
+Selecteren
+Vai alla cassa
+Package
+shopping cart
+Checkout
+PreviousTrade In
+Previous Trade In
+Trade In Total
+Sub Total
+Player Funds Remaining
+- 5,000
+500
+21,500
+Cost of Items
+trade in
+part name
+price
+Visual markers remaining:
+Visual markers used:
+Pack
+Check
+Rotate
+View Car
+SIX DAYS LATER...
+...INCOMING
+MOBILE MESSAGE
+Mail Boxes >
+Let's make this as long as we can so that we can fill the string buffer
+Re-Play
+Debug, _FROM string not in HAL
+spoilers
+SPORT
+track options
+quick race track options
+Options_Event_Handler
+EVENT_ID
+25
+quick race track select
+Track 2000
+5:23:31
+This track is locked. To 
+unlock it progress through 
+Career Mode
+Month
+Day
+Year
+Accept date
+date entry
+0000
+Parental Permission
+Sorry, this registration is not intended for your age group. 
+Ask your parent or guardian about creating an account.
+parental notice
+dnas authentication
+DNAS Logotype is a trademark of Sony Computer Entertainment Inc. 
+Please write down the error code number, and contact 
+SCEA at 
+Error Message
+Authenticating DNAS Please wait
+ESRB NOTICE: GAME EXPERIENCE MAY CHANGE DURING ONLINE PLAY
+Debug * Press R1 to skip...
+net connect
+information sharing
+game filters
+Wagen zur￼cksetzen
+World Map
+data
+Toggle Icon Visibility
+ZOOM x 1.5
+WORLD MAP
+LOCATIONS
+Move Cursor
+Race Length
+Item Title
+Hide/Show Icon
+XXXXXXXXXXXX
+VISUAL_PART_SPOILER
+String 1
+VISUAL_PART_TAIL_LIGHT
+One Player
+news at 11
+LIVE!
+C5
+BREAKING NEWS !
+CHOPPER 5 NEWS
+unlock this stuff 
+Makers:
+Engine Makers:
+unique body kits
+unique engine package
+Yeah you're fast I'll give you that. But from here on
+in, you're gonna run up on drivers just as fast and
+just as good. To smoke 'em, you gotta work your ride.
+I'm gonna hook you up with a name and number...
+Take it to a customization shop...they'll score you
+upgrades...no charge.  Don't thank me, you'll
+need 'em...if you're gonna take on the Blacklist.
+title screen of Need for Speed   Most Wanted coming November 2005.
+120000
+BOUNTY
+INCOMING MOBILE MESSAGE...
+Message content goes here.
+To: Player Name
+From: Simon
+Subject: Event Type
+Gues Here
+BUSTED IN...
+HIDING...
++ 500
+METERS
+TOTAL COPS >
+Progress:
+Rep Reward:
+Completed
+MILESTONES
+Rival #12:
+21000/70000
+Locate the speedtrap in the
+downtown core, and clock a
+minimum speed of 110mph
+Challenge posted by:
+"TAZ"
+2.5km - 3 Laps
+$$15000
+REPUTATION
+Game Completed:
+Races:
+Milestones:
+Pursuits:
+Garage:
+CHALLENGE LOCKED
+Begin Challenge Series
+RIVAL
+Black List Rival #12 : Drag Specialist
+Overconfident, detail oriented, and a stickler for rules, Ming rains on
+everyone's parade. He has no time for cheating or bending the rules.
+It's all about honor for him. He's a better than average racer who is
+held back by his unwillingness to push the limits of his talents.
+SpeedTrap!
+2004 Electronic Arts Inc.
+RESET_CAR
+SHIFT DOWN
+XXXXX
+XZXXX
+Speedbreaker
+quickrace mode select
+memory card
+Continue Without Saving
+(C) 2005 Electronic Arts Inc. All Rights Reserved.
+Add Car
+esta conectado en Need For Speed Most Wanted
+All
+Please use this tool only for legitamate reports.
+who participates in the spirit of the
+game whether winning or losing
+Scroll Chat
+Start Race
+Host is updating race settings
+This string needs to cleared in code
+Career Online Stats:
+Stat 1
+Stat 2
+Stat 3
+100/870
+70%
+Select Game Mode
+yada yada yada
+Track XXX
+another track
+long name track xxxxxxxx
+short name
+stuff
+more of the same
+memebership agreement
+Sprint Race
+Blacklist Rival
+Changes to the Audio Mode setting do not take effect
+until you quit to Main Menu
+OPTIONS
+PERFORMANCE TUNING
+-10
+Gearing
+Increasing the setting results in more oversteer. Decreasing it results in more understeer. Upgrade performance parts to extend the range of tuning.
+Cop Pursuit Intensity:
+0/0
+No. of Collisions:
+NOS Used:
+Speed Breaker Used:
+Drafting Gain:
+200 MPH
+Power Slides:
+No. of Clean Sections:
+Restart Race
+Cash Won:
+Rival Challenge
+cred:
+Select Event
+5/16
+Event:
+500,266
+Required cred:
+Complete
+Status:
+rep sheet
+street cred
+15 - AKIRA WASHIO 
+Item
+###
+milestones
+Cost To State
+This is a blurb about the active milestone
+MING 
+<car>
+Perp Spotted in:
+<name>
+Last Reported By:
+XXX miles
+2 MCs and 1 DJ
+100,000
+Puruits:
+<cur>
+<rank>
+Rankings
+17 "
+race events
+Next Rival:
+Toggle Bio/Stats
+AKIRA WASHIO 
+Locked
+Challenge:
+NEXT RIVAL
+Here is a blurb about this rival.
+locked
+Trade In
+Total
+Player Funds Left
+$999 999 999
+Subject: Race going down at the waterfront...
+Mode:
+Moderate
+Cops:
+Date entry
+$JOY_EVENT_FENG_PAD_UP$
+$JOY_EVENT_FENG_SELECT$
+$JOY_EVENT_FENG_CANCEL$
+Cycle Numbers
+BACK
+dfgdfgfdgddfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfgfgdfgdfgdf
+dfgdfgfddsfsdfsdfsdfsdfsdfsdfsdfdsfsdfsdfdsfsdfsdfdfdfsdfdsfsddsfsdfsd
+dfgsdfsdfsdfsdfsdfdsfsdfsdfsdfsdfsdfsdfdsfsdfsdsdfsdfsdfsdfsdfsdfdsfsdf
+Parental Notice
+DEBUG *Press R1 to skip DNAS
+Please write down the error code number, and contact SCEA at 
+1-866-466-5333 or via SCEA's website.
+This is some sort or error message that comes up when any number
+of strange things occur due to some timeout or stuff like that. When
+this error message comes up follow these instructions to correct the
+problem or bring back you PS2 to your nearest dealer.
+Create Game
+WWWWWWWWWWWWWWWW
+Game Filters
+Client Options
+XXXXXXXXXXXXXXX
+View Track Map
+Mute VOIP
+Register Complaint
+Host Options
+$999999999
+$JOY_EVENT_FENG_HELP$
+$JOY_EVENT_FENG_RTRIGGER$ 
+$JOY_EVENT_FENG_LTRIGGER$ 
+WWWWWWWWWWWWWWW
+Honorable Mention:
+StreetX King:
+Drag King:
+Drift King:
+Monthly Online Rankings
+April Leaderboard
+Circuit King:
+Points To Next Class:
+999%
+9999
+9999+
+Points
+Disc. %
+Loss
+Wins
+Games
+Overall Rankings
+Street Cross
+Longest Slide
+Longest Jump
+Quickest Drag Finished
+Top Speed Acheived
+Accused by Player Cheats
+Accused by Server Cheats
+Win %
+Losses
+Personal Stats
+Games Played
+view track
+Xbox Live Sign In Error
+button3
+button2
+button1
+Error message
+GAMERTAG
+Find Results
+$JOY_EVENT_FENG_BUTTON3$
+OptiMatch Available Matches
+Games Created:
+Players Online: 
+Type
+Racers
+Connection
+Game Name 1
+Street cross
+Connecting to XBOX Live ...
+ABBERCHEN
+password
+Engage Race
+SMS Messages
+Something Else
+Activate GPS
+Hide Item
+Events View
+ZOOM LEVEL
+NAVIGATION VIEW
+Line 4
+Hdd to Cart
+track select
+Please insert Disc 2
+Select "Start New Career" or "Load" to resume the
+career from your last save
+All of your vehicles have been impounded and you have no way
+to get them out. You've failed to earn the reputation needed
+to become the Most Wanted.
+game over
+Rap Sheet Rankings
+You may have defeated all the Blacklist members; but you do 
+you hold all the records?  Check out the pursuit rankings in 
+your Rap sheet. If you make it to the top of all of rankings 
+you are one step closer to another reward.
+Challenge Series
+Test your driving and pursuit evasion skills in 60+ events.
+These events are not for the novice drivers or the faint of heart.
+As a reward you have unlocked some bonus cars that can 
+be used in Quickplay and online.  There is still more you can 
+do to prove you are the most notorious street racer.  
+you are the Most Wanted racer in Rockport City.
+congratulations
+Ramming a Police Vehicle
+BOUNTY: 99999
++0:00
+SPEED:
+Wagen:
+Mitsubishi Lancer EVOLUTION VIII
+' Become the most notorious street racer '
+www.needforspeed.com
+NOVEMBER 2005
+Remove Nums
+Sen
+Leave
+dialog
+Race Mode:
+---
+Maximum Players:
+Highest Players Level:
+Race Breaker:
+Entering a ranked game will automatically switch to the 
+proper online ranked car for this game mode. 
+Forward
+Gamer Card
+Race Positions established. Cancelling deactivated.
+Change Cloumns
+20 Race Minimum
+Rumble: ON
+00:00.00 / 00:00.00
+Feedbak
+Mute/Un
+> WARRANT
+SUBMIT
+DETAILS: 
+HIGHLY NOTORIOUS STREET RACER, SHOULD BE 
+APPREHENDED AT ALL COSTS.
+> NATIONAL
+> STATE
+> CITYWIDE
+ISSUE LEVEL:
+LAST SEEN: NORTH OUT OF ROCKPORT
+CURRENT VEHICLE: BLUE BMW M3 GTR
+NAME: LITTLE TIMMY
+ISSUES POLICE WARRANT
+NATIONAL WARRANT ISSUED.  
+RANKED ON NATIONAL MOST WANTED LIST
+NIET VOOR KLASSEMENT
+> TOTALT ANTAL INBLANDADE POLISFORENQ
+CASE_FILE : MW 5531-PLAY
+Poursuite Carreiere
+don
+Enter server name
+Create Server
+lan
+LAN Server Select
+Toggle
+Activate
+SAVING...
+CONTROLLER
+DISCONNECTED
+SPECIALFX_SCREENBLUR
+one
+two
+three
+four
+five
+six
+Licensed By
+2008 Electronic Arts Inc. All Rights Reserved
+Song:
+Artist: 
+Album:
+CUST_PARTS_REARBUMPER_TITLE
+Button Callout Master
+Enter Shop
+Blacklist XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+KLINKIE
+||CIRCLE...
+||TRIANGLE_||||||||||||
+||SQUARE_||||||||||||
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX||CROSS_||||||||||||
+||    L2    _||||||||||||
+||Left Paddle_||||||||
+||    R2    _||||||||||||
+||Right Paddle_||||||||||||
+Steer Left / Right
+Unused (L3?)
+||    R3    _||||||||||||
+SELECT button
+Enter shop/ Engage Event
+Go to the
+Data Management Screen
+No Pill
+Which pill will you take?
+Music
+SFX
+Units
+CATCH UP
+Driving Assist
+Btn Call 1
+Btn Call 2
+Btn Call 3
+Controller Type
+Steer
+Brake/Reverse/Drift
+Use power up
+Nitro
+Look back
+Look arround
+Option 5
+Option 4
+Button Callout 1
+Button Callout 2
+CALLBACK SETTER
+CALLBACK ANIM
+Visualizza statistiche
+P1_PTS
+TIME_P1
+PLAYER 8
+P8_PTS
+TIME_P8
+PLAYER 7
+P7_PTS
+TIME_P7
+PLAYER 6
+P6_PTS
+TIME_P6
+PLAYER 5
+P5_PTS
+TIME_P5
+PLAYER 4
+P4_PTS
+PLAYER 3
+P3_PTS
+P2_PTS
+POS.
+GESCHWINDIGKEIT
+Objective
+PLAYER 1 WINS
+FINISHED FIRST
+OWNED: 2234 yrds
+RECORD
+STYLE POINTS: 2054
+200000 pts
+5000 pts
+Button Callout 3
+STAGES
+note: if a Wiimote only controller config is being used, a SHOW_WIIMOTE message is received. this (1) makes the alternative wiimote only buttons appear, and (2) makes the red box on the left repeat those button events back to feng as C and Z (the nunchuck buttons that are unavailable on wiimote only)
+This screen has been hijacked to display the autosave message and icon. Thanks for your understanding. Crunch ! Crunch !
+Public Service Announcement
+SHIFT UP
+SHIFT UP 2
+REPAIR CAR
+REPAIR CAR2
+Drop Cash At Safehouse!
+FINAL LAP
+DRIFT
+Warm Up
+Your Tires
+rd
+/12
+00:00:00 best lap
+BEST LAP
+00:00:00 current lap
+CURRENT LAP
+Dangerous Driving+10
+MPH
+STYLE
+1200
+TARGET
+88888
+12000 target
+1200 style
+TOTAL SPEED
+12000
+1200 total speed
+TURN AROUND
+TURNAROUND2
+ALLEZ!
+BURN
+YOUR
+TIRES!
+126
+DANGEROUS DRIVING YOU CRAZY!
+GOOD
+Speed traps is the opportunit...blah blah blah.
+BOOST
+WARM YOUR TIRES
+TURN AROUND 2
+RD
+OWN IT!
+NFS09_RACE_GROUP
+999 speed
+DRAFT
+00000
+Pts draft
+0000 draft
+Pts drift
+0000 drift
+Pts nitro
+NITRO
+0000 nitro
+Pts air
+AIR
+0000 air
+OWN IT
+888 POINTS
+INCREDIBLE
+FINISHED 3rd
+Time: 1:40.09
+Best Lap 1:40.09
+ENTER NAME
+WWWWWWWW
+LOADING TIPS
+MODE
+TRACK NAME
+1st Place
+2nd Place
+3rd Place
+2500 STYLE POINTS
+3 OWNED ZONES
+2009 Electronic Arts Inc. All Rights Reserved
+Press the A button to continue
+Bounty Cur / Max
+Event Cur / Max
+Next Unlock
+Win Conditions Header
+Win Conditions Text
+Race Events
+Criminal Events
+New / Open /  Owned / Dominated
+Pursuit Breaker
+Hiding Spot 
+Road Block
+Tire Spikes
+Event Type:
+Wanted Event: Bounty
+Funk's Causeway
+10000m
+Rewards:
+1000 Cash
+10000 Bounty
+Career Completion: 100%
+Bounty Level: 3
+Cash: 300000000
+MITSUBISHI LANCER EVOLUTION MR X
+POWER
+TRACTION
+AREO
+LVL
+1/3
+SELECT A GRIP CAR
+Blueprint Summary
+Race is about to start...
+SELECT A DRIFT CAR
+The controller has been removed. Please re-insert a controller into controller port n and press the START button to continue.
+HEADER COLOUR
+COMING SOON!!!
+RACE COMPLETED
+1/12
+FINISHED
+START RACE
+NEVADA DESERT
+SPEED CHALLENGE
+Quit Race Day
+Boys Wanna Be Her (Tommie Sunshine's Brooklyn Fire Retouch)
+AUDIO NEEDS TO
+POPULATE THIS
+STREET KING
+ALL KINGS
+YOU ARE THE
+SHOWDOWN KING
+RYO WATANABE
+GRIP KING
+RAY KREIGER
+DRIFT KING
+AKI KIMURA
+DRAG KING
+KAROL MONROE
+SPEED KING
+NATE DENVER
+RACEDAY
+1CHOOSE YOUR WEAPON WWWW
+1WWWWWWWWWWWWWWWWW
+2CHOOSE YOUR WEAPON WWWW
+3CHOOSE YOUR WEAPON WWWW
+CAREER MAP
+DRAG
+GRIP
+3 
+SPEED
+CHALLENGE HUB
+PSA TEXT GOES HERE
+RAY KRIEGER
+UNLOCKED
+Indietro
+Shared Statistics
+super timeline
+MITSUBISHI LANCER EVOLUTION IX MR
+CREATOR
+Jimmymango
+Speed Challenge
+RACE MODE
+BLUEPRINT SUMMARY
+WEIGHT
+MAX TORQUE
+MAX POWER
+111.5 bhp @ 9999 rpm
+111.5 ft - lbs @ 9999 rpm
+FASTEST 1/4 MILE
+18.2 Secs
+TOTALED
+WINNING PERCENTAGE
+NUMBER OF RACES
+99999
+NUMBER OF WINS
+FASTEST REACTION TIME
+0.58 Secs
+LONGEST WHEELIE
+999 ft
+HIGHEST TRAP SPEED
+160 mph
+FASTEST 60 FT
+1.5 Secs
+CAREER OVERVIEW
+Career Overview
+LAMBORGHINI GALLARDO
+TRACCION EN LAS 4 RUEDAS
+CAR LOT
+DRIVETRAIN
+HORSEPOWER
+TORQUE
+ALL WHEEL DRIVE
+580 FT @ 7900 RPM
+999@9999 FT PER SEC
+0-60 MPH
+0-100 MPH
+270 MPH
+2.3 SEC
+4.8 SEC
+1/32
+25,000
+NO DRIFTING
+CASH
+GT Kit
+BLUEPRINT TYPE
+BLUEPRINT
+Change Mode
+GARAGE
+Set As Active
+Rename
+All Blueprint types
+Speed Blueprint 1
+CREATE NEW BLUEPRINT
+EMPTY
+1/10
+MITSUBISHI LANCER EVOLUTION IX mr
+There are no shared Blueprints
+POSKOZENI
+X5
+KONTROLLER
+Standardinstellingen
+Show/Hide Arrow Indicators
+Handbrake
+Nitrous
+Look Back
+"360 View"
+Shift DownWWWWWWWW
+Reset Car
+Brake / Reverse
+Clutch
+Best Line IndicatorsWWWWW
+Leader Board
+Minimap
+Arrow Indicators
+Vibration Onwwwwwwwwwwww
+Configuration 1
+Player 3
+Player 4
+Player 2
+ITEM DELAY TIMER
+SUB DELAY
+SUB OPTIONS DELAY
+ICON_HANDLER
+LIST OPTION 1
+OPTION GREY 1
+LIST OPTION 2
+OPTION GREY 2
+LIST OPTION 3
+OPTION GREY 3
+LIST OPTION 4
+OPTION GREY 4
+LIST OPTION 5
+OPTION GREY 5
+LIST OPTION 6
+OPTION GREY 6
+LIST OPTION 7
+OPTION GREY 7
+LIST OPTION 8
+OPTION GREY 8
+LIST OPTION 9
+OPTION GREY 9
+SELECT EVENT
+MITSUBISHI LANCER EVOLUTION IX
+Some blurb about all the drivetrain parts and how they are broken down into sub sections and how the main important parts are here and you can add more parts like this.
+View Details
+FRONT SHOCK COMPRESSION RATE
+FIRM
+SOFT
+FRONT TIRE PRESSURE
+REAR SHOCK COMPRESSION RATE
+REAR TIRE PRESSURE
+MITSUBISHI LANCER EVOLUTION IX MR - EDITION
++100
+BRAKES
+STAGE 1
+TURBO KIT 20000
+10,000
+TURBO KIT 30000
+TURBO KIT 40000
+INSTALLED
+Turbo Kit 10000
+ENGINE PARTS
+100,000,000
+MITSUBISHI LANCER EVOLUTION MR IX EDITION
+JESH IS A NUB
+REPAIR COST
+DON'T REPAIR
+MARKERS
+Your car is damaged, to continue to race you will have to repair your car, would you like to use your repair markers or pay for the damage with your earnings? DO you want to add more?
+Are you sure you want to wuit?
+9999 rpm
+7.2 seconds
+DYNO TEST
+9.8 seconds
+BEST EVENT
+3.6 seconds
+3.1 Gs
+View Tuner
+PORTLAND INTERNATIONAL RACEWAY
+Speed Challenge Top Speed Class
+Short Circuit Alternate A Reversed
+CONFIGURATION
+FASTEST TIME
+1:10:46
+FASTEST TIME TUNER
+JIMMYMANGO69
+FASTEST 0-60 MPH
+0:03:34
+FASTEST 0-100 MPH
+0:05:89
+TOP SPEED AT 1/4 MILE
+202 mph
+0:21:12
+TOP SPEED AT 1/8 MILE
+189 mph
+FASTEST 1/8 MILE
+0:10:10
+EVENT RECORDS
+repair your car
+totaled marker
+repair markers
+x 999
+X 999
+$12,000,000
+use repair marker
+use total marker
+use cash
+inventory
+Repair using cash
+Repair
+Repair using a Marker
+REPAIR CARS
+1500
+NISSAN ALTIMA
+2000
+Mitusbishi Lancer Evolution IX M1
+3000
+PORSCHE 911
+CHEVY NOVA
+X55
+Certaines de vos voitures sont endommag￩es. Vous devez les r￩parer avant de quitter le Jour de course, sans quoi elles resteront au garage jusqu'￠ ce qu'elles soient r￩par￩es.
+Repair Markers
+Total Repair Markers
+TO UNLOCK THIS SHOWDOWN
+DOMINATED! 
+BREAK RECORD
+10/20
+DOMINATE
+3/5
+WIN
+5/13
+RECOMPENSE
+MITSUBISHI LANCER EVOLUTION XI MR
+Show Messenger
+Show Leaderboard
+DEBUG_HUBNAME
+DEBUG_TRACKNAME
+Show Details
+Shift_Tier
+BATTLE MACHINE
+DOMINATE REWARD
+TRACK INFO
+3 LAPS - 3.2 MILES
+AVAILABLE RACES
+All Wheel Drive
+172 mph
+$ 999,999,999,999*reward*
+NOT ELIGIBLE TO RACE
+You are ineligible to participate at this race day. You are lacking the foll You are lacking theYou are lacking
+Message will be here.
+564,555
+not selectable
+TRANSMISSION
+Data 1
+CAR CAMERA
+Data 2
+TRACTION CONTROL SYSTEM
+Data 3
+CRASH PLAYBACK
+Data 5
+Data 6
+Data 7
+Data 8
+Data 9
+Automatic
+ELECTRONIC STABILITY CONTROL
+Data 4
+GRIP 1
+SECTOR SHOOTOUT 1
+GRIP 2
+DRIFT 1
+SECTOR SHOOTOUT 2
+FIRST
+View Settings
+Select Storage Device
+P2 DAMAGE
+P1 DAMAGE
+FESTIVAL CIRCUIT REVERSE
+LAPS
+YOUR BEST
+3,000
+TOP FRIEND
+LEADER
+Ken Sakurai
+888888
+CURRENT
+GP CIRCUIT
+Compare Score
+NOT COMPLETED
+8,000
+STATUS
+Wheelie Competition 1
+Settings Locked
+NEXT EVENT
+RACE BEGINS IN
+1:32:54
+GP Circuit
+150,000
+50,000
+000000
+Show Menus
+PLAYER 1 WINS!
+REMATCH
+EXIT
+21:32 12/06/08
+Time Stamp:
+More Info
+hub:
+75% COMPLETE
+Infineon Drift
+INFINEON
+SUPER PROMOTION
+Play
+MUSIC
+Prepare to face off against the GRIP KING in a series of head to head events in a true test of skill! Climb the ladder as you defeat the king in each race taking you one step closer to earning the crown and title of the king. Just remember, coming in first is your only option so fire up your engine and get ready for some of the most intense racing yet. WWWWWWWWWWWWWWWWWW
+Grip Multiclass A
+REWARDS
+CASH REWARD
+000,000
+CAR REWARD
+DRIFT INFANTRY
+FILE NAME
+marker management
+free car marker
+0  X $5000
+purchase
+0 X $5000
+NON PURCHASABLE
+PURCHASE TOTAL
+$700000
+CASH TOTAL
+$500000
+X 99
+X 20
+INVENTORY
+PURCHASE
+DOMINATED!
+Congratulations, you've dominated the Race Day! please choose a reward.
+Cash Reward: 5000
+View Car Info
+ONLINE ID
+OVERALL
+CLASS RACE
+[NFS]SnuggleBunny
+[NFS]ChristmasTurkey
+[EAX]SlimJim13
+[OS]Mystery_Guest_12
+[TAG]HexFish
+[NFS]YourNameGoesHere
+[TAG]BIGTONY666
+[NFS]American_Music
+[OS]SomeOneWicked
+[PET]Lolleygagger412
+6004
+6005
+6006
+6007
+6008
+6009
+6010
+6011
+6012
+856743
+843581
+824563
+811109
+800000
+798013
+788888
+788567
+787790
+25000
+19086
+23450
+18976
+21345
+24567
+22879
+20000
+19856
+18765
+14532
+12987
+11956
+10234
+18764
+CAR USED
+BLUEPRINT CREATOR
+MITSUBISHI LANCER EVOLUTION MX 1R
+JIMMY MANGO 69
+OVERALL SPEED CHALLENGE RECORDS
+Cette Semaine
+Alle og enhver
+visit www.needforspeed.com for more stats
+RACE DAY LEADERS
+BIGTONY666_02
+RACE DAY
+Speed Challenge Multiclass
+ONLINE PLAYING MADDEN 2007
+ONLINE PLAYING SOMETHING 
+ONLINE PLAYING WITH HIMSELF
+ONLINE PLAYING NHL 2007
+FRIENDS
+No friends in List
+Player is attempting to win by playing outside of the normal and accepted rules of the game.
+We only accept reports regarding the EA Terms & Conditions. Please use this tool only for legitimate reports. Misuse may result in action being taken against your account.
+jpodder
+CAREER COMPLETION
+22%
+RANKED WINS
+52
+105
+TOTAL RANKED RACES
+22/50
+ACHIEVEMENTS
+5%
+35000
+NET WORTH
+WIN %
+$ 999,999,999,999
+USERNAME
+GRIP 321 - JIMMYMANGO69
+There are no shared Blueprints available
+Share
+Text Up
+Text Down
+LINE OF TEXTgj
+To connect to many  online features of <game title> you must first have an EA Online 
+account.  You may use an existing account created using another EA product by linking 
+your EA Online Account to your Gamertag at www.EA.com or accept  the Terms and 
+Conditions below and a create a new account now.
+Apply Paint
+METALLIC
+APPLY PAINT
+defaults
+Show Controls
+ROTATE CAMERA
+ZOOM IN/OUT
+Pokracovat 
+Statistics
+888.888
+TITLE5
+TITLE4
+TITLE3
+TITLE2
+PLAYER LIST
+TITLE6
+Pokracovat
+Scigaj sie ponownie
+18russiancharacter
+Please Press START Button on second six-axisTM wireless controller.
+YOU LOST!
+POSITION POINTS:
+12/12
+TARGET TIME  POINTS:
+DAMAGE STATE POINTS:
+Light Damage
+-00:09:21
+3rd place
+Finish Time:
+13:20:01
+Target Time:
+2,000
+TOTAL SCORE
+1200000
+CASH REWARD:
+HIDE
+STANDINGS
+WIN : 3500
+TOTALED!
+STATISTICS 
+PLAYER1
+AVERAGE SPEED
+120 mph
+TIME
+START
+BOOT_FLOW_PSA
+PSA
+Hide Traffic
+28
+27
+26
+24
+23
+MY RACEDAY
+INFINEON RACEWAY
+30/50
+20/40
+REWARD
+FREESTYLE
+16
+17
+18
+19
+05
+06
+21
+08
+09
+22
+13
+14
+SAVE SHADOW?
+PREVIOUS SHADOW:
+NEW SHADOW:
+NEW TRACK RECORD
+YOU WON!
+$120,000
+Ruota telecamera
+Mirror On
+Mise a jour du vinyle
+MOVE
+SCALE
+MODIFY VINYL
+1/4
+Flames
+SELECT VINYL
+Right Door
+Decal Colour
+Delete Layer
+LAYER 6
+Australian Flag
+LAYER 5
+Red Stripe
+LAYER 4
+Flames 01
+LAYER 3
+Spade
+LAYER 2
+Circle
+LAYER 1
+Add New Layer
+Wind Tunnel Off
+ERRORZ: I FIND NO AUTOSCULPTABLE ZONEZ!!!111ONEONE
+DOWNFORCE
+LATERAL GRIP
+0.93 G
+178 MPH
+WINDTUNNEL DETAILS
+CENTER INTAKE
+BRAKE DUCTS
+CANARDS
+Front Bumper
+ENGINE
+PEAK HP
+60-0 MPH
+294 HP
+123 FT
+Secret Code Blurb
+ENTER SECRET CODE
+ENTER PRESELL CODE
+CHOOSE RACE MODE
+Choosing your race mode will determine which events
+this car can compete in.
+CHOOSE YOUR RACE DAY SETTINGS
+CHOOSE A RACE DAY SLOT
+CREATE RACE DAY
+SOLO
+Define Race Events
+FILLED
+SLOT 3
+LOCATION
+Nevada Speed Way
+DIFFICULTY
+REPAIR MARKERS
+Cannot Repair Car
+RACE DAY SETTINGS
+Super Drift Spinner
+MULTIPLAYER
+DEFINE RACE EVENTS
+This is a blurb about what slots are and why you are choosing one and how it will show 
+on the Map Screen.
+CHOOSE UP TO 8 EVENTS
+Delete Event
+INFINEON RACE WAY
+EASY
+4 REPAIR MARKERS
+TIMED ATTACK
+ADD EVENT
+SAVE RACE DAY
+TRACK CONFIGURATION
+8/8
+EVENT TYPE
+No events of this type at this location
+SETTINGS START
+SLOT START
+game type
+Ranked
+SELECT REWARD
+GO!
+READY
+99:99:99
+PRIMARY SCORE
+LAST LAP
+222
+LAP:
+123 MPH
+target time:
+-12:00:02
+--------------------------
+POSITION:
+/10
+CHECKpoints:
+Gameplay Debug Text 123.098
+Gameplay Debug
+CHECKPOINT:
+--:--.--
+Reaction Time:
+0 - 60 Time:
+--:--.-- / 55mph
+60 Feet Time:
+0 - 100 Time:
+1/8 Mile Time:
+1/4 Mile Time:
+caricamento in corso...
+Freestyle-Renntage sind Ranglisten-Renntage, die im Einzelspieler- bzw. Multiplayer-Modus oder am geteilten Bildschirm gespielt werden knnen.
+Wenn du einen einfachen Weg suchst, bei einem Multiplayer-Renntag mitzumachen, der genau die Renn-Events beinhaltet, die dir gefallen, und wenn du eine Menge Spa beim Onlinespielen gegen andere haben mchtest, dann sind die Freestyle-Renntage genau das Richtige fr dich.
+Die Renntag-Karte liefert dir alle wichtigen Informationen ber jeden Freestyle-Renntag und zeigt dir die jeweiligen Aktivitten dort an, damit du den Renntag whlen kannst, bei dem die meisten Leute mitspielen. WWWWWWWWWWWWWWWWWWWWWWgj
+LANGUAGE SELECT
+Version 2.0
+ESRB NOTICE: Game experience  may change during online play PLAY
+Congratulations, 
+you broke the game!
+The controller has been
+The BMW logo, wordmark and model designations are trademarks of BMW AG and are used under license.
+Chryslerﾮ is a registered trademark of DaimlerChrysler Company LLC. Plymouthﾮ Hemiﾮ Cuda and the trade dress are used under license from DaimlerChrysler.ﾩDaimlerChrysler Company LLC 2007
+Mazda, RX-7 and all other associated marks, emblems and designs are used under approval of Mazda Motor Corporation.
+Mitsubishi and Lancer Evolution names, emblems and body designs are trademarks and/or intellectual property rights of MITSUBISHI MOTORS CORPORATION and used under license to Electronic Arts Inc.
+Controls
+In Stores 11-14-07
+Compete at the Highest Level of 
+Street Racing
+Hans Brix
+"More (Junk O Rock Remix)" 
+Performed and produced by Junkie XL 
+Vocals by Lauren Rocket 
+Written by Tom Holkenborg and Lucas Banker 
+Published by BMG Songs, Inc. (ASCAP) 
+Recording courtesy of Artwerk Music, LLC 
+"Fancy Footwork (Guns 'N Bombs Remix)ﾔ 
+Performed by Chromeo 
+Written by Chromeo 
+Published by Macklovitch Music (SOCAN) and Ya Habibi Productions (BMI)
+administered by Nettwerk Management, LLC 
+Recording courtesy of Vice Music Inc. by arrangement with
+Warner Music Group Video Game Licensing 
+"Blackjack" 
+Performed by Airbourne 
+Written by Joel O'Keefe 
+Published by Artwerk Music, LLC 
+Recording courtesy of Roadrunner Records and EMI Music Australia 
+"Boys Wanna Be Her (Tommie Sunshine's Brooklyn Fire Retouch)" 
+Performed by Peaches 
+Written by Peaches 
+Published by PeachesRocks Music Inc. (ASCAP) administered by Bug Music, Inc. 
+Recording courtesy of XL Recordings Ltd. 
+"No Good (Chase & Status and Benni G Remix)" 
+Performed by Plan B 
+Written by B Drew/P Epworth/J E Bratton/K Charles 
+Published by Pure Groove Music/Universal Music Publishing Ltd/
+Copyright Control/Bratton & White Publishing/
+Godspeed Music/Warner Chappell Music Ltd. 
+Incorporating elements of 'You're No Good For Me' by James Edward Bratton and Kelly Charles. 
+Recording courtesy of Cordless Recordings/679 Recordings Ltd. by arrangement with 
+"Kiss Kiss" 
+Performed by Yeah Yeah Yeahs 
+Written by Karen Orzolek, Nick Zinner and Brian Chase 
+Published by Chrysalis Songs (BMI) 
+Recording courtesy of Interscope Records under license from Universal Music Enterprises  
+STABILITY CONTROL
+TRACTION CONTROL
+ABS
+MINI MAP
+BEST TURN LINE
+TURN INDICATOR
+MASTER VOLUME
+CAR VOLUME
+SPEECH VOLUME
+SOUND EFFECTS VOLUME
+AUDIO MODE
+Mono
+CONTINUE
+RESTART RACE
+QUIT TO RACE DAY
+Vibration On
+Best Line Indicators
+Click on a field to edit it and press ENTER to re-map this function
+PRIMARY
+SECONDARY
+CONTROLLER CONFIG
+Controller (XBOX 360 For Windows)
+RAPPORTO DI COMPRESSIONE SOSPENSIONI ANTERIORI
+RIGIDO
+MORBIDO
+You must install an aftermarket part to access tuning for this slider
+GRIP MODE
++5
+Repair using a marker
+DAMAGE
+1,500,000
+SHADOW FILE
+SHADOW 70GR1
+JIMMYMANGO69> This is a test
+JIMMYMANGO69> this is a test
+-13,000
+-28,000
+RACE DAY PROGRESS
+POINTS TO DOMINATE
+30,000
+CURRENT SCORE
+YOUR BEST SCORE
+TOP FRIEND SCORE
+COMPETING
+RACE DAY DOMINATED!
+RACE DAY WON!
+POINTS TO WIN
+15,000
+Kazutoshi Kawakami
+Photo Mode
+Start
+P1 - Back
+RACE DAY SELECT
+NEVADA HIGHWAY
+TOKYO DOCKYARDS
+GRIP RACE
+Video Options
+GOOD BURNOUT
+PREPARE TO
+HEAT YOUR TIRES
+TARGET TIME:
+11:12:31
+Long Player name
+CAR TYPE @ BHP
+32:32:32
+DRAG TIME
+DRIFT SCORE
+Round X Matchup
+Player Name 2
+CAR TYPE
+VS
+Player Name 1
+00:88:88
+1ST PLACE
+FINISHED IN:
+TOTALLED
+PLASSERING:
+player disconnected
+Free
+Energizer Lithium extender pack
+med den GRATIS booster-pakke fra Coca-Cola Zero
+FREE - Porsche Leipzip Test Track
+FREE - Japan's Shuto Expressway
+FREE - 1969 Plymouth Roadrunner
+FREE - 2007 SEAT Leon Cupra
+no thanks
+download now
+Grab this FREE download now for new tracks, new cars, and extended career mode and Race Day events!
+Additionally, 14 new cars including the Bugatti Veyron 16.4, and Porsche 911 GT3!  Visit NeedforSpeed.com for more details!
+The FREE Energizer Lithium Extender Pack is now available for download on Xbox LIVE Marketplace!
+Career Overviewﾣ
+GRIP PRESET
+DOWNLOADED BLUEPRINT
+Preset Blueprints can not be shared or modified. Create a new Blueprint to tune and customize this car from scratch.
+Press a button to re-map this function or press ESC to cancel
+aCCELERATE
+Race cars usually have their A/C removed to save weight, so roof scoops draw in cool fresh air from outside to help you keep your cool when racing with all your safety gear on
+livello 1
+Allerede kobt
+sobrecompresor jackson racing centrifugal
+LANCER EVOLUTION MR IX EDITION
++999
++10
+-100
+Katagoria Przelozen
+LAN CREATE ACCOUNT
+PASSWORD
+CONFIRM PASSWORD
+A.I. OPPONENTS
+RACE DAY 1
+RACE DAY NAME
+CREATE LAN RACE DAY
+LAN IP  ENTRY
+10.10.233.202
+IP ADDRESS
+PORT
+Create
+No Games Created
+LAN LOBBY
+PLAYERS
+NFS_Tourney_8
+Chicago Airfield
+1/8
+NFS_Tourney_7
+NFS_Tourney_6
+NFS_Tourney_5
+NFS_Tourney_4
+NFS_Tourney_3
+NFS_Tourney_2
+NFS_Tourney_1
+JIMMYMANGO1
+LOGIN
+LOGIN SELECTION
+use existing LAN account
+create new LAN account
+CD KEY
+Send Text Message
+Begin Typing
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+Press ENTER or Click in the Text Entry field to begin typing
+ACCOUNT NAME TAKEN
+The account name you have chosen has already been taken. Please type in a new account name or select from one of these variations.
+Option Header 7sdf
+REGISTRATION CODE
+CD Key
+CREATE ACCOUNT
+Canada
+COUNTRY OF RESIDENCE
+BIRTHDAY
+BIRTH MONTH
+1980
+BIRTH YEAR
+E-MAIL
+jimmymango69@hotmail.com
+********
+JIMMY MANGO
+USER NAME
+CREATE NEW ACCOUNT
+Forgot Account
+use existing ea account
+create new ea account
+Log in
+I forgot my password!
+I forgot my name!
+Log In
+AUTO LOG-IN ENABLED
+PASSOWRD
+CHOOSE YOUR DEVICE SETTINGS
+RESOLUTION
+1024 X 768
+Hide Controls
+ZONE 2
+ZONE 3
+tester
+WWWWWWWWWWWW
+2 / 5
+TIMER
+$ 1,000,000,000
+COP TAKEOUT
+12 / 15
+COPS
+13/15
+ROBBERS
+x
++1000
++ 1000 ft
+Text String for T-Mobile
+YOU ARE THE LEVEL UP EXPERIENCE NINJA
+TOTAL POINTS:
++999,999,999
+POINTS EARNED:
+XP12
+Presents
+CUST_PARTS_EXHAUST_TITLE
+MANUAL
+TRANSMISSION MODE
+CUST_PARTS_FRONTBUMPER_TITLE
+CUST_PARTS_HOODS_TITLE
+CUST_PARTS_ROOFSCOOPS_TITLE
+CUST_PARTS_SKIRT_TITLE
+CUST_PARTS_SPOILERS_TITLE
+CUST_PARTS_TOP_TITLE
+CUST_PARTS_WHEELS_TITLE
+TOTAL COST
+$2,500
+$28,000
+Acceleration
+(Button Callout Tester)
+SELECT CAR
+STOCK
+CUSTOM
+AUTOMATIC
+Transmission
+Mega
+Voiture
+PAINT SELECT
+P1
+P4
+P3
+P2
+<= These things are test scripts (chain script "Init" to another script to test fade in/out, the controller type, and which block is selected, respectively)
+* remember to chain all Init's to (none) when finished.  :)
+Press A Button on fourth player's controller.
+SHOPPING CART
+CUSTOMIZE CAR
+(as if there'll ever be a second line)
+PRO PACKAGE
+SUB OPTION TEXT
+MAIN OPTIONS
+MATERIAL
+VISUALS MENU
+Blue Pill
+Red Pill
+Spoon?
+Delayed Event Handler
+Random Event Select animation tester
+One escapes, one persues. Best 2 of 3
+2nd line
+3rd line
+Load
+Exit to Main Menu
+Game Over
+You Won
+SUNSET HILLS
+On/Off
+Trax Title 1 could be very long and may need its space
+| |  OPTIONS
+| |  QUICKRACE
+MULTIPLAYER     | |  OPTIONS    | |  QUICKRACE    | |  CHALLENGE SERIES    | |  CAREER    MULTIPLAYER     | |  OPTIONS    | |  QUICKRACE    | |  CHALLENGE SERIES    | |  CAREER
+123,456 / 200,000
+MEGA CHALLENGE SERIES
+Press Accept to select your car
+Car Name 1
+Car Name 2
+Car Name 3
+Car Name 4
+CAREER MENU
+Select number of players
+Bounty Trigger
+You Finished First!
+You have unlocked: Reward
+Reward
+Cash Bonus
+Bounty Rewards
+Total Bounty
+Bounty Bonus
+In the Zone Bonus
+888,888
+Busts (x2)
+Drops (x4)
+TEAM
+Cash Delivered
+Style Points
+123,456
+Style Master!
+New Tracks Unlocked
+The moves that you do in the game are meant to stay in the game.  In the real world, drive safe, obey the laws of the road and always wear your seatbelt.
+DEBUG_TRACK_ID
+All Races
+Text Message
+SELECT TEAM
+Team 2 >>
+<< Team 1
+VINYL TRANSFORM
+Dimostrazione
+RIDE HEIGHT
+WINDOW TINT
+Win Conditions
+mph
+Busted
+Power Slide +2150
+1234 SP
+x2.5
+CarBarInfo
+Evade
+Pick up Gmacﾒs runner; heﾒs got valuable intel on a shipment of cars
+Lt. Keller
+x1.0
+COMPLETE: 100%
+3/4
+-200m
++200m
+00.00.00
+x30
+Cooldown
+Pad Start Handler (only send accept to game and sound if wiimote start screen is being shown)
+To navigate the menus when using only the Wii Remote, hold the Wii Remote flat to the ground.
+To navigate the menus when using only the Wii Remote, hold the Wii Remote flat to the ground (Leaving room incase another language need more space).
+Need for Speed: Undercover for the Wii supports several controller types. To change controller configurations, plug in a Nunchuk, a Classic Controller, a GameCube Controller, a Steering Wheel or just use the Wii Remote on its own. (.. here's some more text in case that was written in another language)
+SELECT LANGUAGE
+ALL_SPECIAL_CHARACTERS
+ALL_CHARACTERS
+99/99
+$99,999 / $99,999
+TEAM 1
+TEAM 2
+700,000,000
+1:
+xx:xx:xx
+X2
++9999
+TOO SLOW!
+KONNICHIWA!
+st
+/4
+BURN OUT!
+xxx:xxx:xxx
+Current:
+/80
+X3
+Race Over Message 
+Lil Jon & the Eastside Boyz
+KSR ONE
+AlbumTitle
+TRAX
+0, 000
+Layer 2
+BASE COLOUR
+Color Heading
+$JOY_EVENT_FENG_BUTTON2$
+quit tag
+back tag
+display menubar 
+Roger Lee
+CREDITS
+Coustier
+USER QUIT ?
+0:34
+44
+RACE 1 OF 3
+Race 1 of 3
+HANG TIME!
++ 25
+STYLE POINTS:
+ND
+Finish
+_
+TURBO
+DEFAULT STRINGDEFAULT STRINGDEFAULT STRINGDEFAULT STRING
+Album
+Move Track
+SELECT BRAND
+RANDOM
+ON
+FEEL SO GOOD
+ROCKSTAR
+Pharrel ( N.E.R.D.)
+BODY ROCK
+Talib kweli
+SUPERSTAT PT 0
+K OS
+Jayou
+J5
+Jamiroquai
+STEP INTO A WORLD
+KRS ONE
+SUPERSTAR PT 0
+Loading 
+Style: 2,000,000,000
+Credz: 2,000,000,000
+X4
+X1
+Install this part now?
+Profiel aanmaken
+RETRY ?
+CREDITS 10.00 / 1.00
+OLYMPIC SQUARE
+123456_8
+123456_7
+123456_6
+123456_5
+123456_4
+123456_3
+123456_2
++ 33.333
+Time_8
+Time_7
+Time_6
+Time_5
+Time_4
+Time_3
+Time_2
+1.24.474
+Name_8
+Name_7
+Name_6
+Name_5
+Name_4
+Name_3
+Name_2
+XXXXXXXXXX
+DIFFERENCE
+POSITION
+FASTEST RACE:
+OVERALL LEADER:
+COUSTIER
+AFTER N OF M RACES...
+58.32.888
+BEST DRAG TIME
++ 3.289
+NAME_8
+NAME_7
+NAME_6
+NAME_5
+NAME_4
+NAME_3
+NAME_2
+8th
+7th
+6th
+5th
+4th
+3rd
+1st
+85000
+55
+STYLE POINTS
+4:
+3:
+2:
+12345678
+19:99.999
+BEST:
+ST
+GAIN X2 WITH
+88888888
+TOTAL:
+o
+Place
+LEADER:
+99.99.999
+00:99.999
+SECTIONS
+CHECKPOINT
+SHADOW:
+0123456789
+Gap
+Shift !
+4:44.444
++99:99.999
+CURRENT:
+P-CARD:
+288
+Player Name
+Car Used
+Direction
+TOP TEN TIMES FOR MAIN ST.
+ﾩ2003 Electronic Arts Inc. All Rights Reserved
+This Demo is intended for promotional purposes only,
+and may not be sold, rented or reproduced by any party. 
+Any unauthorized use of this demo 
+is prohibited by applicable law.
+Legal Text to follow
+The cars shown in this game may be different in appearance and
+performance than actual cars, and drivers shown
+in this game may not be following automobile safety rules.
+When driving a car in real life, please
+emember to be a safe driver by wearing a
+seat belt, using your turn signal and^using good judgement. 
+remember to be a safe driver by wearing a
+French
+EUROPE
+region :
+version no:
+Press enter to continue
+2003 Electronic Arts Inc. All Rights Reserved
+MEMORY CARD
+PRESET 
+save
+filename goes ehre here her and here
+GARAGE Rims Style
+Quick Race
+Level 001
+ok
+Race Options
+Some Text about how super fun it is to 
+customize the cars . Wee HOO!
+stock tag
+Change to stock
+next tag
+Parts/Paint/Vinyl/Decals
+CUSTOMIZE
+ACCESSORIES
+neon, headlights, taillights, muffler tips
+speakers/amp/deck
+DECALS
+Decals
+Decal color tag
+000 000 000
+White Decal
+DECAL BRAND
+CHOOSE DECAL
+DECAL LAYOUT
+DECAL SLOT
+DECAL ZONE
+VISUAL
+Casholas $$$
+Shop/Mod/Status/Map/Rankings
+PAINT
+Base/Finish/Parts
+UPGRADE BROWSER
+hood/rims/
+visual/perf/audio
+BODY
+Hood/Side/Window
+body/paint/decals
+Kit Content
+Performance Level(123)
+performance tag
+Performance Stats
+weight_red/susp/engine
+ecu
+break
+tires
+transmission
+nos
+turbo
+engine
+suspension
+weight reduction
+GARAGE PERFORMANCE
+Presets
+PRESETS
+BRAND BROWSER
+Brand
+Price: 
+RIMS BROWSER
+WWWWWWWWWWWWWWWWWWWWWWWWWWWW
+STYLE BROWSER
+Style
+Change Vinyl
+VINYL
+Vinyl Baby
+VINYL GROUP
+Color Vinyl
+vinyl color
+VINYL LAYER
+Layer order
+Vinyl Layer
+VINYL TYPE
+For Drag Tutorial
+PLAY ONLINE
+RACE MODE DESCRIPTION
+USER PROFILE
+GO UNDERGROUND
+QUICK RACE
+Estimated Minutes Wasted By User:
+Skill Level
+View Upgrades
+Reset Everything
+Overall
+Drift
+Drag
+Safety
+Tourney
+Car Show
+One Off
+Overall Rank:
+Sprint Rank:
+Drag Rank:
+Drift Rank:
+Circuit Rank:
+Total Rep:
+Upgrade Rep:
+Victory Rep:
+Current Cash:
+Cash Spent:
+Cash Earned:
+800
+Map Screen
+PLAYER 2 READY!
+PLAYER 1 READY!
+PLAYER 2 LOGIN
+8MB Memory Card Slot 2
+Current User ( WWWWWWWW )
+PLAYER 1 LOGIN
+8MB Memory Card Slot 1
+ControllerMessage
+Player 2 Car
+Player 1Car
+Player 2 Ready...
+Player 1 Ready...
+Player 2 Please Press Start
+Player 1 Please Press Start
+cancel
+OVERLAY EVENT HANDLER
+RYKTE
+Rep:
+WAGEN
+Connessione
+Connection:
+River Side
+GAME OPTIONS
+4 Player Created Game Details
+Commencer Partie
+Rep
+Wins/Losses:
+Win %:
+9999 / 9999
+Disconnection:
+Current Car:
+Overall Opp. Rep:
+Overall Opp. Rank:
+Olympic square reverse
+Refuse
+You have been Challenged!
+SELECT
+$JOY_EVENT_FENG_BUTTON0$
+create room tag
+ROOM NAME
+GAME MODE SELECT
+CIRCUIT
+West Side
+East Side
+UNRANK GAME
+create game tag
+EVENT_HANDLER
+WWWWWWWWWWWW - EAST SIDE
+REP
+RIDE
+CONNECTION
+DISCONNECTS
+CHALLENGE RATING
+WWW
+WWWWWWWWW
+Kopf-an-Kopf-Herausforderungen
+$JOY_EVENT_FENG_BUTTON1$
+Keyboard
+View Game Details
+Block Player
+Private Message
+View Ride
+Join Game
+PARTITA NON IN GRADUATORIA
+MAIN ONLINE MENU
+NEWS
+RANKED GAME
+CURRENT CAR
+Player Details
+WWWWWWWWWWWWWW
+Overall Win %
+Overall Win/Loss
+Overall Rank
+Overall Rep
+Avg. Opp Rep
+Avg. Opp Rank
+Disconnect
+9999/9999
+WWWW
+WW
+Sprint Rep
+Sprint Rank
+Sprint Win /Loss
+Sprint Win %
+will be e-mailed to you
+Another EA Account
+FORGOT MY PASSWORD
+FORGOT MY ACCOUNT NAME
+PASSWORD:                                                                                                
+EA ACCOUNT NAME:                                                                                  
+EA ACCOUNT
+DNAS is a trademark of Sony 
+Computer Entertainment Inc.
+Please write down the error code number, 
+and contact SCEA at 1-866-466-5333 or 
+via SCEA's website.
+Authenticating DNAS data AuWWthenticatingWW 
+Authenticating DNAS data
+NETWORK LOG-IN
+PREF RIDE
+204SX
+GTI
+Neon
+Supra
+FORWARD
+BACKWARDS
+Celica
+WEEKS TOP PERFORMERS
+RANK
+LAP TIME
+RIDE USED
+DIRECTION
+14th and Vine Wegopbreking
+NEW ACCOUNT
+Create New EA Account - Step 1
+Enter User Name:                                                                                    
+Enter Password:                                                                                      
+Confirm Password:                                                                                 
+Enter E-mail Address:                                                                            
+Share my info with premium EA partners                                      
+Inform me about EA products, news, and events?                        
+Share my info with premium EA partners
+Inform me about EA products, news, and events?
+agreement tag
+Read Membership Agreement
+Read Memebership Agreement
+Birth Day:
+Birth Month:
+Create New EA Account - Step 2
+January
+Male
+Birth Year:
+Gender:
+Do you accept the Membership Agreement:                                     
+o you accept the
+Attempting to connect to your ISP please wait ....
+CONNECTING TO ISP
+There is a problem communicating with 
+the Network adapter/modem
+WARNING!
+FITS 40 Ws - WWWWWWWW
+MEMEBERSHIP AGREEMENT
+Do you Accept the Membership Agreement, 
+Privacy Policy and AOL Name Agreement?
+CREATE NEW EA ACCOUNT
+USE ANOTHER EA ACCOUNT
+USE WWWWWWWWWWWW
+ACCOUNT LOGIN
+1 - NFSUTEST-41
+SCE/Ethernet Network Adapter
+Please select Your Network Configuration File. This is where 
+your Internet Service Provider and hardware settings stored 
+and set.
+Network Configuration
+NETWORK CONFIGURATION
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+NOTICIAS DEL SERVIDOR
+Defualt String
+ACCOUNT
+Age Verification
+Since you have indicated that you are 13-17 years old, it is our policy
+to notify your parent or guardian that you have registered for the EA 
+GAMEStm Online Service.  To continue your registration, please 
+provide a current e-mail address for your parent or guardian who is 
+over 18.  We will send an e-mail message to the address you provide,
+letting your parent or guardian know that you have registered for the 
+EA GAMEStm Online Service.
+Parental E-mail Address:
+WWWWWWWWWWWWWWWWWWWWWWWWWWW
+delete persona tag
+LOGIN PERSONA
+Delete P{ersona
+LES 100 MEJORES CORREDORES DE LA TABLA
+OVERALL REP
+AVG OPP REP
+ACCELERAZIONE
+RANKING SELECT
+WEEK'S TOP PERFORMERS
+TOP 100 RANKED RACERS
+Thank you for your interest in EA GAMEStm.  Were sorry, but you have 
+to be at least 13 years old to register for this online service.  Please 
+continue to enjoy all of the other great features of your EA GAMEStm 
+product.  The information you have submitted to us will be deleted 
+immediately from our systems, and will not be used by us in any way 
+or provided to anyone else.
+Enter E-mail address:
+Account Not Found
+OptionName_6
+OptionName_7
+OptionName_8
+OptionName_9
+OptionName_10
+OptionData_10
+OptionData_9
+OptionData_8
+OptionData_7
+OptionData_6
+OptionData_1WWWW
+OptionData_2
+OptionData_3
+OptionData_4
+OptionData_5
+OptionName_5
+OptionName_4
+OptionName_3
+OptionName_2
+OptionName_1
+MENU TITLE
+CONTROLLER OPTIONS
+Type_1
+Score:
+HUD DISPLAY
+Title
+OptionData_1
+Split Time:
+Lap Info
+Gauges:
+TRAILERS
+DISPLAY
+SAVING OPTIONS
+CAR
+CAMERA
+PROFILE DESCRIPTION
+Default String
+Confirm: Quit Race ?
+OptionTitle
+Hud
+Display
+DEBUG
+Controller
+Camera
+Audio
+Installed
+Owned
+Not Owned
+HEADING
+ASDFSAD
+FASDFAS
+SDAFASDF
+ASDFASD
+FDSAFASD
+DSFASD
+DSFASDF
+FSDAFAS
+LOG-IN
+Fente pour MEMORY CARD (carte m￩moire) Nﾰ1
+Button2
+Button1
+customize tag
+to customize
+Selected Track:
+Selected Car:
+Race Confirmation
+Option1:
+Option1Data
+Option2Data
+Option2:
+Option3Data
+Option3:
+Option4Data
+Option4:
+Option5Data
+Option5:
+Option6Data
+Option6:
+Option7Data
+Option7:
+Option8Data
+Option8:
+Option9Data
+Option9:
+Selected Car
+Race!
+Selected Track
+Selected Race Type
+1/4 Mile
+accept
+Vinyl
+Paint
+Parts
+SPLIT SCREEN
+MODE 7
+MODE 6
+MODE 5
+FREE RUN
+DRAG RACE
+SINGLE RACE
+QUICK RACE MODE
+For Drift Tutorial
+Add Tracks
+MultiTrack
+Best Lap Time: 0000000000
+SELECT LOCATION
+Extreme
+Currently Selected Track
+10 Miles
+2.30 min
+If you can see the UNDERGROUND logo
+in the black box above, you need to lower 
+the brightness of your television.
+COLOR CALIBRATION
+WELCOME
+Jumps, powerslides and other wild moves earn you 
+Style Points during your races. Style points get you 
+special unlocks.
+Next
+Choose Career Car
+CHOOSE CAREER CAR
+Track Name
+???????
+Event Description:
+250
+Messenger:
+Chad
+HARD
+Text about Underground mode.
+to be written....
+to be added to the localization database...
+$JOY_EVENT_FENG_BACK$
+You ever hear of Drifting? Nah, didn't thinkso.
+You're so 1999! Drifting is about sliding through 
+corners with style.  Speed counts but there's 
+more to it than that.  You gotta' hang your tail 
+out or go home!
+VIDCON MESSENGER
+Junkman Giveth blurb
+Junkman Giveth
+View Magazine
+MagazineBlurb
+Hot Off The Press
+Featured on August cover
+for beating Racer X
+Turbo & High Tech
+Proformance
+MAGAZINE
+50.0 Complete
+Laps: 10
+Accept Message...
+Event Type
+EVENT MAP
+Event Title
+Incoming Message...
+Sub Titles
+SubTitles
+Delete Profile
+USER LOG-IN
+Create Profile
+Load Profile
+Save Profile
+LOAD USER PROFILE
+NEW USER PROFILE
+deleteprofile tag
+WWWWWgWW
+Driver
+Sam Giveth blurb
+Choose Unique
+SAMANTHA GIVETH
+STATS
+Trade In Cost: %d
+CHOOSE TRADE CAR
+RACE MAP
+SAVE
+CUSTOMIZE RIDE
+MAGAZINES
+UNDERGROUND MODE
+Speakers:
+Receiver/LCD:
+Amplifiers:
+Vinyl:
+Decals:
+Paint:
+ECU:
+Turbo:
+Suspension:
+Tires:
+Transmission:
+Exhaust:
+Brakes:
+Weight Reduction:
+Wide Body:
+Taillights:
+Neon:
+Roof:
+Hood:
+Rear Valance:
+Front Valance:
+Spoilers:
+Headlights:
+Side Skirt:
+Window Tint:
+Rims:
+Muffler Tips:
+Track Info
+Slot 4
+Slot 3
+Slot 2
+Slot 1
+Waiting For Players...
+changecolor tag
+Default Settings
+high
+medium
+low
+1280 x 1024
+1280 x 960
+1024 x 768
+800 x 600
+640 x 480
+Customize Display Settings
+Details
+Resolution
+GRAPHICS
+default tag
+Device 6
+Device 5
+Device 4
+Pause Game
+Reset car
+Hud Hotkey
+Camera change
+Nitrous Boost
+E-brake
+Throttle
+Steering (right)
+Steering (left)
+Joypad
+Wheel
+JOYPAD CONFIGURATION
+KEYBOARD CONFIGURATION
+Date_08
+Identifier_08
+Date_07
+Identifier_07
+Date_06
+Identifier_06
+Date_05
+Identifier_05
+Date_04
+Identifier_04
+Date_03
+Identifier_03
+Date_02
+Identifier_02
+Date_01
+Identifier_01
+Date
+Black Decal
+Create Room
+Mode Options
+WHEEL CONFIGURATION
+Nitrous Oxide
+Suspension
+Brakes
+Tire
+Engine/Exhaust
+ECU
+Turbo
+Weight Reduction
+Quit to CarSelect
+Restart Tournament
+Integra
+xx:yy:zzz
+Driver Name_1
+Driver Name_2
+Driver Name_3
+Driver Name_4
+33
+BestLap
+Points Earned:
+Total Points:
+FINISH TIME
+WW:WW:WW
+PERFECTSHIFT RATIO
+PERFECT SHIFT %
+1/4 MILE SPEED
+LAPS LEAD
+1/4 MILE TIME
+TRIP  ODOMETER
+TIME BEHIND
+POS
+ALL LAP TIMES
+WWWWWWWWWWWW - WWWWWWWW
+REP. PERDUE
+Car Model
+Race victory reward
+font_arial_7
+font_arial_6
+ConduitMdITC_TT21i_7
+ConduitMdITC_TT21i_6
+ConduitMdITC_TT14i_7
+ConduitMdITC_TT14i_6
+SF_Automaton14_7
+SF_Automaton14_6
+SF_Automaton36_7
+SF_Automaton36_6
+SF_Automaton36_5
+SF_Automaton36_4
+SF_Automaton14_5
+SF_Automaton14_4
+ConduitMdITC_TT21i_5
+ConduitMdITC_TT21i_4
+font_arial_5
+font_arial_4
+ConduitMdITC_TT14i_5
+ConduitMdITC_TT14i_4
+font_arial_3
+ConduitMdITC_TT21i_3
+ConduitMdITC_TT14i_3
+SF_Automaton36_3
+SF_Automaton14_3
+ConduitMdITC_TT21i_2
+ConduitMdITC_TT21i_1
+ConduitMdITC_TT14i_2
+ConduitMdITC_TT14i_1
+SF_Automaton36_2
+SF_Automaton14_2
+font_arial_2
+font_arial_1
+SF_Automaton36_1
+SF_Automaton14_1
+Race Style Points
+HEAD_START
+Style points gauge
+Style Event
+x 2
+12344567
+Total:
+Best:
+PSI
+StandardButton
+My First Library Object
+Artist Name
+'Track Title'
+EA GAMES TM TRAX
+Base Colour
+Credits
+Race Over Message goes
+here
+nd
+Casholas 12456789
+Loading Vinyl...
+Casholas 123456789
+DRAG TIPS:
+to avoid blowing your engine. Change lanes to avoid 
+traffic and construction. Use nitrous oxide for a boost!
+TAUNT/SIDE BET BLURB
+Side Bet Title
+$$250
+SelectedBet
+Time Left:
+88.8
+This demo is intended for promotional purposes only, and may not be sold, 
+rented or reproduced by any party.  
+Any unauthorized use of this demo is prohibited by applicable law.
+Copyright 2003 Electronic Arts Inc. All Rights Reserved
+Slot 5
+Which rimz
+VINYL BRAND
+Club Layer
+Choose layer
+Layer 1
+Layer 3
+VINYL OPERATION
+System check OK
+Brake check OK
+CPU check OK
+Fluid check OK
+Transcheck OK
+NOS check OK
+Data entered 
+Admin Check  
+Accepted _
+EA VidCon
+CarPort 3
+CarPort 2
+CarPort 1
+data entered 
+Trasmission check OK
+system check OK
+Trasmission 
+check OK
+Avail. Profiles Card 2
+Avail. Profiles Card 1
+Player 2 Profile:
+Player 1 Profile:
+Import Car
+Infortmative message goes here 
+Please Plug in a controller TEXT
+ButtonConfig_1
+Horn
+EA Trax
+MODE 8
+Select Track
+Info to come...
+Color Calibration
+$ 1000
+$ 500
+$ 250
+MagCover08 here
+MagCover07 here
+MagCover06 here
+MagCover05 here
+MagCover04 here
+MagCover03 here
+MagCover02 here
+MagCover01 here
+help
+Entry Fee: 00,000
+PLAY
+NEW
+Circuit Rank
+Text to go here...
+STATUS SCREEN
+MovieThumb08
+MovieThumb07
+MovieThumb06
+MovieThumb05
+MovieThumb04
+MovieThumb03
+MovieThumb02
+MovieThumb01
+THEATRE
+To be deleted
+MAP SCREEN
+Rep Earned
+You won 1,000,000.00 dollars
+reward blurb goes here
+REWARDS SCREEN
+RACER -X
+Feel speed like never before  power shift, hit the nitrous and blow 
+away the competition Highly-detailed environments crackle with life 
+and push your gaming hardware to the limit Choose from 20 elite 
+licensed tuner cars from Nissan, Toyota, Mitsubishi, Honda and more.
+Trick out your ride with tons of high-performance aftermarket parts 
+from licensed top-name manufacturers Own the Underground 
+by out-driving and out-styling all challengers in the fuel-injected drift, 
+drag and circuit racing modes. 
+Online exclusive game modes including 4 player simultaneous 
+drifting and PS2 vs PC capabilities 
+For more information visit: www.needforspeed.com
+Highly Tuned for Intense Speed
+Style Points:
+Konnichiwa!
+$JOY_EVENT_FENG_RTRIGGER$
+$JOY_EVENT_FENG_LTRIGGER$
+CAPS
+SPECIAL
+KEYBOARD
+Junkman
+,
+<
+>
+DONE
+`
+=
+[
+]
+;
+SHIFT
+off
+World Geometry Detail
+Car Geometry Detail
+Low
+Reflection Quality
+World Environment Map
+Light Glow
+Light Trails
+Crowds
+Car Environment Map
+Motion Blur
+Particle System
+Animated Texture
+Fog
+Car Headlight
+Car Shadow
+Esc
+Insert
+Shift
+Down
+Up
+Right
+Left
+SP:
+45
+DEFAULT STRING DEFAULT STRING DEFAULT STRING DEFAULT STRING
+points
+SP
+wwwwwww
+ONLINE CAR SELECT
+UNRANK - CIRCUIT - EAST SIDE
+HEAD TO HEAD CHALLENGE LIST
+- Empty -
+Ride:
+Drift Rep:
+Disconnects:
+MAD VALD
+Drift Record:
+Rankings:
+Pref Ride:
+Engines Blown:
+Times Totaled:
+350Z
+RX-7
+WWWWW
+PLAY ONLINE GAME
+Player Details - WWWWWWWWWW
+Players:
+025
+012
+RANKED GAME SELECT
+UNRANKED GAME
+PASSWORD:********
+EA ACCOUNT NAME: WWWWWWWWWW
+NETWORK LOGIN
+Enter User Name:
+Enter Password:
+Confirm Password:
+Enter E-mail Address:
+Do you accept the Memebership Agreement:                                  
+Terms of Service:                                                                                 
+ELECTRONIC ARTS ONLINE SERVICE MEMBERSHIP AGREEMENT
+FOR THE PLAYSTATION 2 CONSOLE
+Welcome to the Electronic Arts online service for the 
+PlayStation2 computer entertainment system.  By registering for 
+USE UserName
+Please select your Network Configuration File.
+This is where your Internet Service Provider and 
+hardware settings stored and set.
+Your Network Configuration
+NETWORK CONFIG
+Dummy text
+SERVER NEWS
+billg@microsoft.com
+1/4 Mile: 3.5 sec.
+0 - 60: 1.2 sec.
+HP: 7000
+Upgrade 1
+Engine / Exhaust
+Weight Reduction - - 
+raceoptions tag
+AUGUST 16/2003
+01 ImportTuner
+GUEST
+First meeting the lovely
+Melissa.
+01 " Rev it up "
+Depth of Field
+Car Damage
+Car Lighting
+Unlocked message goes here
+You UNLOCKED a Unqiue Vinyl 
+BLUEGIRL is unlocked!
+Level 2 Stripe "Glaze" unlocked
+New Score
+Previous Score
+5X
+Points Earned
+CURRENT SCORE:
+Def Jam
+Mos Def
+"the Keys to Life vs. 15 Minutes of Fame"
+Jam on It
+EA GAMESﾙ TRAX
+Short Track
+Your Car
+Graphics Shop
+Performance Shop
+Body Shop
+Interiors and Car 
+Specialties Shop
+Opponent's Car
+Mini Map Legend
+manual
+auto
+wwwwwwwwwww
+/8
+Time:
+321_Go
+You've entered " The Hills "
+You've Started a Race!
+LAPY TIMER
+HANGY TIMEY!
+Meters
+Forhanosgranska
+// note i am animating on INIT on button2 //
+dialog window
+2004 Electronic Arts Inc. All Rights Reserved
+Welcome to Underground 2, 
+a wide open world with the best racers.
+Torque
+Horsepower
+Weight
+25 - lbs
+5/10
+HEAT DOWN CARD
+Car Stats
+Filter type goes here
+The Crib
+Car Shop
+Header Text
+Shops
+Performance Header
+Performance Individual Parts
+$300
+Purchased
+$2500
+Package Contents
+Performance Parts
+Choose Vinyl Layer
+Career Mode Car Lot
+Incoming Mobile Message
+Subject: Event type
+message1
+## Unread Messages
+Incoming SMS Message
+Shop Type
+Resume Race
+Wolf
+$3000
+Main Menu
+EA Login
+Memebership Agreement
+Text to be provided from Sue Garfield
+Leave Room
+Ready to Race!
+Race Countdown:   ##
+Created Game Room
+Host Name
+Nesto's Momma
+Chat here
+Game Status
+Challenging
+WRX-STi
+Really long ass name reverse
+Street X
+Connecting to ISP
+DEBUG* Press R1 to skip...
+Online Lobby
+Online Main
+Select Network Config
+style_data
+$JOY_EVENT_FENG_BACKT$
+$JOY_EVENT_FENG_NEXT$
+online results
+Select An Online Persona
+View Terms of Service
+News
+server downtimes, etc...
+If you can see this logo then you are A-OK!
+Paint Shop
+Pause Menu
+Pause Options Menu
+Select Brand
+Post Race
+You unlocked 5 cards
+Post Race Replay
+45 sec
+Event Results
+Escalade
+1:09:01
+Continuer
+Congratulations!
+You get a reward, if the 
+reward system was finished.
+Race Time
+Post Race Stats
+01: Little Timmy - 240 SX
+Map Goes Here
+Quick Race Car Select
+Quick Race Mode Options
+Quick Race Mode Select
+Comments:
+Previous Time:
+Quick Race Track Select
+WorldMapMain
+99999999999
+HURRY
+Time as Leader:
+Spelare 1, tryck pa START-knapp (startkanpp)
+Siren Song of the Counter Culture
+"We Want your Soul (Ed Rush and Optical Remix)"
+"We Want your Soul 
+Queens of the Stoneage
+Preview 
+Grab
+Miss Apendeges LP
+Eddie & The Springboks
+Swimming with the Sharks
+Game Nerd
+Jason Timberace
+The Dr. Mario Boogie
+Bling, Bling, Bling
+Dead-Lee
+" We Want Your Soul (Ed Rush and Optical Remix )
+Need for Speed: Underground 2 Exclusive
+Eddie & The Springbok Nude Girls
+Disconnect in 15s
+Tuning Message
+Drag Stats
+Burnout:
+0-60:
+1/4 Mile:
+Drift Stats
+Best Drift:
+Longest Drift:
+Circuit Stats
+Current G's:
+Maximum G's:
+Bank Cash
+Cash Reward: 333
+x3
+Searching 
+1000000000
+Bank:
+// note i am animating on INIT on button_Text_2 //
+music legal
+- Races can happen anytime, anywhere 
+- Fine-tune every aspect of your cars performance 
+- Hone your skills in a number of driving disciplines
+- New personalization options and tons of new parts 
+- Challenging the worlds best racers in heated online action
+Compete Online 
+Keep your eyes open and your foot down.
+Discover the living, breathing world of tuner culture in Need for Speed Underground 2.  
+Taking place in a massive, free-roaming city featuring five distinct interconnected 
+neighborhoods, Need for Speed Underground 2 delivers an immersive game world 
+where the streets are your menus.
+Performance Tuning  
+Coming November 2004
+Save / Load
+Chat Here
+Welcome to your Private
+Game Room.
+To begin you must use your
+EA Messenger to 
+invite other players
+to join your game...
+Player Status:
+Level:
+Reverse
+Available in Retail Only 
+Mullholland Drive Street Reverse
+125ms
+Course
+Games Running:
+Ping
+Open for sponsor / Locked
+Slot 001
+Trade - In Cost/ Reimburse:
+XXXXX Miles
+01:30:04
+Race Status:
+Region 1
+Paint Appropreate Layer
+Cancel Changes
+Discount:
+RIMS
+PAINT_SPINNER
+Reorder Layers
+Custom HUD Name
+$4000
+Custom Neon
+DECAL SHOP
+Decal Color
+Profile
+Advance to gameplay
+Go to Inbox
+Yo brother, I'm looking to get me a new set of 
+wheels and i need some donations.  I've got two 
+others lined up ready to give a little to the cause.  
+Hows bout you ante up and I'll be sure not to 
+embarrass you
+too much.
+Purse:
+ICE SHOP
+Open/Close Doors
+Full Map
+Opponent Car
+Data_10
+Data_01
+Data_02
+Data_03
+Data_04
+Data_05
+Data_06
+Data_07
+Data_08
+Data_09
+Data_11
+Data_12
+Data_13
+Data_14
+blah
+blah 1
+Magazines
+mag body
+mag name
+0.0
+Visual Rating
+Neon Part Name
+DNAS Logotype is a trademark of Sony Computer Entertainment Inc.
+DNAS ERROR STRING
+Online Car Lot
+Friends
+Messagerie EA
+esta conectado en Need For Speed Underground 
+Underground 2
+Joueur(s) en ligne:
+Password
+Ready
+XXXXXX
+Monthly Rankings
+Mode Leader:
+Current Month's Leaderboard
+View Player
+Client Disconnect %
+Host Disconnect %
+999 mph
+999.99
+Longest  Powerslide
+Biggest Drift Points
+Information Sharing
+Read Messages
+Checking for memory card (PS2) in MEMORY CARD slot 1. Do not remove memory 
+card (PS2) or the controller, reset or switch off the console.
+Herausgefordert von: 
+Elite
+Bayview Heights
+Racist / Hate Speech
+Cursing / Lewdness
+Feedback:
+The other player is a sportsman 
+who participates in the spirit of
+the game whether winning or
+losing.
+robinxbox
+Inviting nexus to voice chat.
+Waiting for Response
+Voice Chat Invitation
+Player Select
+Instructions go here.
+Capa Del Polvo
+Pause Options Main
+LAN
+Change Brand
+$JOY_EVENT_FENG_PAD_LEFT$
+Change Selection
+Maximale Drehkraft:
+280 HP
+@7000 rpm
+Maximale Pferdestrke:
+400
+300
+RPM
+Torque       
+SAE Horse Power
+Dyno Chart
+Dyno Shop
+210
+180
+150
+120
+Gear Ratios
+Slutligt korningsforhallande
+Maxium
+Min
+Torque N-M
+X 1000 RPM
+Duration
+Power
+Duration in seconds
+tip_text
+00.00
+Lancer EVO VIII
+Opgeblazen motor
+Abandonar carrera
+Reputation Points Won:
+Successive
+Waiting for Server Authentication...
+Course Suivante
+45 Sec
+Overtime!
+Profile Manager
+$JOY_EVENT_FENG_ACCEPT$
+Track Number DEBUG
+$JOY_EVENT_FENG_START$
+01:24.50
+Vuelta
+Sponsorships
+1. CONTRACT TERMS
+- -
+Sponsor Race Purse:
+URL Victory:
+Signing Bonus:
+3. REQUIRED RACES
+2. BONUSES
+Required race descriptions
+Rim Styles
+Take Picture
+Cycle Cameras
+Show Off
+Control Car
+ShowCase
+Subject: Performance Shop has new split hoods
+Return to Gameplay
+Delete Message
+Unread Messages
+Read Message
+CHOOSE A SPONSOR!
+Career Status
+Required Race Descriptions:
+Hidden shop discovered
+Region 2
+STATUS CAREER
+World Event Wins:
+120.00%
+Sponsor Event Wins
+URL Event Wins:
+DVD Covers Reguired:
+Status for gennemfￃﾸrelse af region: 
+kdja;ldkfao;difhad;lkfjadl;kfjlsdjflsdfjslfjldkfjk
+Caps
+Special
+Wheel Options
+Quit Game
+Repaint
+$JOY_EVENT_FENG_PAD_RIGHT$
+Apply Filter
+TIP
+Reset to default
+ADJUST
+Disqualified
+back

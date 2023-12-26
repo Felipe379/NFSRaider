@@ -20,7 +20,7 @@ namespace NFSRaider.Helpers
 
                 if (hashes.ContainsKey(truncatedHash.Key))
                 {
-                    hashes[truncatedHash.Key].Concat(resolved).ToHashSet();
+                    hashes[truncatedHash.Key].Concat(resolved);
                 }
                 else
                 {
@@ -34,7 +34,7 @@ namespace NFSRaider.Helpers
         public static Dictionary<uint, HashSet<string>> MergeWithHashList(IEnumerable<(uint hash, string value)> hashesToMerge)
         {
             var hashes = hashesToMerge
-                .GroupBy(c => c.Item1)
+                .GroupBy(c => c.hash)
                 .ToDictionary(c => c.Key, c => new HashSet<string>(c.Select(d => d.value)));
 
             return hashes;

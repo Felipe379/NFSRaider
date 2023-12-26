@@ -1,6 +1,7 @@
 ﻿using NFSRaider.Enums;
 using NFSRaider.Helpers;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 
 namespace NFSRaider.Keys.MainKeys.Materials
@@ -11,6 +12,8 @@ namespace NFSRaider.Keys.MainKeys.Materials
         {
             var files = GetDirectoryFiles(GetDirectory(GetType()));
             var materials = new HashSet<string>(FileRead.ReadFiles(files));
+
+            materials.UnionWith(new HashSet<string>(materials.Select(c => c.ToUpperInvariant())));
 
             return materials;
         }
