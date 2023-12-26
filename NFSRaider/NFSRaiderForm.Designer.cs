@@ -100,6 +100,10 @@
             CboRaiderMode = new System.Windows.Forms.ComboBox();
             ChkCaseSensitive = new System.Windows.Forms.CheckBox();
             ChkUseUserKeys = new System.Windows.Forms.CheckBox();
+            menuStrip1 = new System.Windows.Forms.MenuStrip();
+            fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            MenuExportBruteforceConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            ImportBruteforceConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             GrpLoadOptions.SuspendLayout();
             TabLoadOptions.SuspendLayout();
             TabPageFromFile.SuspendLayout();
@@ -111,6 +115,7 @@
             ((System.ComponentModel.ISupportInitialize)NumericProcessorsCount).BeginInit();
             ((System.ComponentModel.ISupportInitialize)NumericMaxVariations).BeginInit();
             ((System.ComponentModel.ISupportInitialize)NumericMinVariations).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // LstUnhashed
@@ -118,11 +123,11 @@
             LstUnhashed.FormattingEnabled = true;
             LstUnhashed.HorizontalScrollbar = true;
             LstUnhashed.ItemHeight = 15;
-            LstUnhashed.Location = new System.Drawing.Point(14, 74);
+            LstUnhashed.Location = new System.Drawing.Point(14, 89);
             LstUnhashed.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             LstUnhashed.Name = "LstUnhashed";
             LstUnhashed.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            LstUnhashed.Size = new System.Drawing.Size(342, 379);
+            LstUnhashed.Size = new System.Drawing.Size(342, 364);
             LstUnhashed.TabIndex = 6;
             LstUnhashed.KeyDown += LstUnhashed_KeyDown;
             // 
@@ -338,42 +343,42 @@
             // 
             TxtPrefixes.AccessibleDescription = "";
             TxtPrefixes.AccessibleName = "";
-            TxtPrefixes.Location = new System.Drawing.Point(478, 42);
+            TxtPrefixes.Location = new System.Drawing.Point(478, 57);
             TxtPrefixes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TxtPrefixes.MaxLength = 2147483646;
             TxtPrefixes.Multiline = true;
             TxtPrefixes.Name = "TxtPrefixes";
             TxtPrefixes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            TxtPrefixes.Size = new System.Drawing.Size(174, 219);
+            TxtPrefixes.Size = new System.Drawing.Size(174, 204);
             TxtPrefixes.TabIndex = 12;
             // 
             // TxtVariations
             // 
-            TxtVariations.Location = new System.Drawing.Point(660, 42);
+            TxtVariations.Location = new System.Drawing.Point(660, 57);
             TxtVariations.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TxtVariations.MaxLength = 2147483646;
             TxtVariations.Multiline = true;
             TxtVariations.Name = "TxtVariations";
             TxtVariations.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            TxtVariations.Size = new System.Drawing.Size(174, 219);
+            TxtVariations.Size = new System.Drawing.Size(174, 204);
             TxtVariations.TabIndex = 14;
             TxtVariations.Text = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,0,1,2,3,4,5,6,7,8,9,_, ,!,\",#,$,%,&,',(,),*,+,-,.,/,:,;,<,=,>,?,@,[,\\\\,],^,`,{,|,},~,\\,";
             // 
             // TxtSuffixes
             // 
-            TxtSuffixes.Location = new System.Drawing.Point(842, 42);
+            TxtSuffixes.Location = new System.Drawing.Point(842, 57);
             TxtSuffixes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TxtSuffixes.MaxLength = 2147483646;
             TxtSuffixes.Multiline = true;
             TxtSuffixes.Name = "TxtSuffixes";
             TxtSuffixes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            TxtSuffixes.Size = new System.Drawing.Size(174, 219);
+            TxtSuffixes.Size = new System.Drawing.Size(174, 204);
             TxtSuffixes.TabIndex = 16;
             // 
             // LblPrefixes
             // 
             LblPrefixes.AutoSize = true;
-            LblPrefixes.Location = new System.Drawing.Point(475, 23);
+            LblPrefixes.Location = new System.Drawing.Point(477, 35);
             LblPrefixes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             LblPrefixes.Name = "LblPrefixes";
             LblPrefixes.Size = new System.Drawing.Size(48, 15);
@@ -384,7 +389,7 @@
             // LblSuffixes
             // 
             LblSuffixes.AutoSize = true;
-            LblSuffixes.Location = new System.Drawing.Point(839, 23);
+            LblSuffixes.Location = new System.Drawing.Point(841, 35);
             LblSuffixes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             LblSuffixes.Name = "LblSuffixes";
             LblSuffixes.Size = new System.Drawing.Size(48, 15);
@@ -395,7 +400,7 @@
             // LblVariations
             // 
             LblVariations.AutoSize = true;
-            LblVariations.Location = new System.Drawing.Point(657, 23);
+            LblVariations.Location = new System.Drawing.Point(659, 35);
             LblVariations.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             LblVariations.Name = "LblVariations";
             LblVariations.Size = new System.Drawing.Size(58, 15);
@@ -547,7 +552,7 @@
             // 
             // BtnStartStop
             // 
-            BtnStartStop.Location = new System.Drawing.Point(364, 42);
+            BtnStartStop.Location = new System.Drawing.Point(364, 57);
             BtnStartStop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             BtnStartStop.Name = "BtnStartStop";
             BtnStartStop.Size = new System.Drawing.Size(107, 27);
@@ -558,7 +563,7 @@
             // 
             // BtnClear
             // 
-            BtnClear.Location = new System.Drawing.Point(364, 75);
+            BtnClear.Location = new System.Drawing.Point(364, 90);
             BtnClear.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             BtnClear.Name = "BtnClear";
             BtnClear.Size = new System.Drawing.Size(107, 27);
@@ -800,7 +805,7 @@
             // 
             // TxtSearch
             // 
-            TxtSearch.Location = new System.Drawing.Point(14, 12);
+            TxtSearch.Location = new System.Drawing.Point(14, 27);
             TxtSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TxtSearch.Name = "TxtSearch";
             TxtSearch.Size = new System.Drawing.Size(228, 23);
@@ -808,7 +813,7 @@
             // 
             // BtnSearchPrevious
             // 
-            BtnSearchPrevious.Location = new System.Drawing.Point(14, 42);
+            BtnSearchPrevious.Location = new System.Drawing.Point(14, 57);
             BtnSearchPrevious.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             BtnSearchPrevious.Name = "BtnSearchPrevious";
             BtnSearchPrevious.Size = new System.Drawing.Size(110, 27);
@@ -819,7 +824,7 @@
             // 
             // BtnSearchNext
             // 
-            BtnSearchNext.Location = new System.Drawing.Point(130, 42);
+            BtnSearchNext.Location = new System.Drawing.Point(130, 57);
             BtnSearchNext.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             BtnSearchNext.Name = "BtnSearchNext";
             BtnSearchNext.Size = new System.Drawing.Size(112, 27);
@@ -869,7 +874,7 @@
             // 
             // BtnSearchAll
             // 
-            BtnSearchAll.Location = new System.Drawing.Point(247, 42);
+            BtnSearchAll.Location = new System.Drawing.Point(247, 57);
             BtnSearchAll.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             BtnSearchAll.Name = "BtnSearchAll";
             BtnSearchAll.Size = new System.Drawing.Size(110, 27);
@@ -883,7 +888,7 @@
             CboRaiderMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             CboRaiderMode.FormattingEnabled = true;
             CboRaiderMode.Items.AddRange(new object[] { "Unhasher", "Hasher" });
-            CboRaiderMode.Location = new System.Drawing.Point(364, 108);
+            CboRaiderMode.Location = new System.Drawing.Point(364, 123);
             CboRaiderMode.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             CboRaiderMode.Name = "CboRaiderMode";
             CboRaiderMode.Size = new System.Drawing.Size(106, 23);
@@ -893,7 +898,7 @@
             // ChkCaseSensitive
             // 
             ChkCaseSensitive.AutoSize = true;
-            ChkCaseSensitive.Location = new System.Drawing.Point(250, 14);
+            ChkCaseSensitive.Location = new System.Drawing.Point(250, 29);
             ChkCaseSensitive.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             ChkCaseSensitive.Name = "ChkCaseSensitive";
             ChkCaseSensitive.Size = new System.Drawing.Size(99, 19);
@@ -915,6 +920,36 @@
             ChkUseUserKeys.Text = "Use UserKeys files";
             ChkUseUserKeys.UseVisualStyleBackColor = true;
             ChkUseUserKeys.CheckedChanged += ChkUseUserKeys_CheckedChanged;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem });
+            menuStrip1.Location = new System.Drawing.Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new System.Drawing.Size(1031, 24);
+            menuStrip1.TabIndex = 28;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { ImportBruteforceConfigurationToolStripMenuItem, MenuExportBruteforceConfigurationToolStripMenuItem });
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            fileToolStripMenuItem.Text = "File";
+            // 
+            // MenuExportBruteforceConfigurationToolStripMenuItem
+            // 
+            MenuExportBruteforceConfigurationToolStripMenuItem.Name = "MenuExportBruteforceConfigurationToolStripMenuItem";
+            MenuExportBruteforceConfigurationToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            MenuExportBruteforceConfigurationToolStripMenuItem.Text = "Export bruteforce configuration";
+            MenuExportBruteforceConfigurationToolStripMenuItem.Click += MenuExportBruteforceConfigurationToolStripMenuItem_Click;
+            // 
+            // ImportBruteforceConfigurationToolStripMenuItem
+            // 
+            ImportBruteforceConfigurationToolStripMenuItem.Name = "ImportBruteforceConfigurationToolStripMenuItem";
+            ImportBruteforceConfigurationToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            ImportBruteforceConfigurationToolStripMenuItem.Text = "Import bruteforce configuration";
+            ImportBruteforceConfigurationToolStripMenuItem.Click += ImportBruteforceConfigurationToolStripMenuItem_Click;
             // 
             // NFSRaiderForm
             // 
@@ -947,7 +982,9 @@
             Controls.Add(GrpHashingOptions);
             Controls.Add(LstUnhashed);
             Controls.Add(GrpLoadOptions);
+            Controls.Add(menuStrip1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            MainMenuStrip = menuStrip1;
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             MaximizeBox = false;
             Name = "NFSRaiderForm";
@@ -968,6 +1005,8 @@
             ((System.ComponentModel.ISupportInitialize)NumericProcessorsCount).EndInit();
             ((System.ComponentModel.ISupportInitialize)NumericMaxVariations).EndInit();
             ((System.ComponentModel.ISupportInitialize)NumericMinVariations).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1044,6 +1083,10 @@
         private System.Windows.Forms.ComboBox CboNumericBase;
         private System.Windows.Forms.ComboBox CboNumericBaseLst;
         private System.Windows.Forms.CheckBox ChkUseUserKeys;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuExportBruteforceConfigurationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ImportBruteforceConfigurationToolStripMenuItem;
     }
 }
 

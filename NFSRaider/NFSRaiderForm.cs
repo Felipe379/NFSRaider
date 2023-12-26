@@ -5,12 +5,14 @@ using NFSRaider.Hash;
 using NFSRaider.Helpers;
 using NFSRaider.Keys;
 using NFSRaider.Raider;
+using NFSRaider.Raider.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -98,7 +100,7 @@ namespace NFSRaider
             using var fileDialog = new OpenFileDialog();
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                FilePath = fileDialog.FileName.ToString();
+                FilePath = fileDialog.FileName;
                 var text = $"File loaded in {FilePath}";
                 LblStatus.Text = text.Length > 150 ? string.Concat(text.AsSpan(0, 150), "...") : text;
             }
@@ -676,6 +678,7 @@ namespace NFSRaider
                 return;
 
             BtnStartStop.Text = "Start";
+            ImportBruteforceConfigurationToolStripMenuItem.Enabled = true;
             BtnClear.Enabled = true;
             BtnGenerateKeyList.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked;
             CboRaiderMode.Enabled = true;
@@ -781,6 +784,7 @@ namespace NFSRaider
         {
             BtnStartStop.Text = "Stop";
 
+            ImportBruteforceConfigurationToolStripMenuItem.Enabled = false;
             TxtLoadFromText.Enabled = false;
             BtnClear.Enabled = false;
             TxtPrefixes.Enabled = false;
@@ -800,6 +804,97 @@ namespace NFSRaider
             CboForceHashListCase.Enabled = false;
             CboRaiderMode.Enabled = false;
             CboNumericBase.Enabled = false;
+        }
+
+        private void ImportBruteforceConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using var fileDialog = new OpenFileDialog();
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (var r = new StreamReader(fileDialog.FileName))
+                {
+                    var json = r.ReadToEnd();
+                    var importedData = JsonSerializer.Deserialize<RaiderConfiguration>(json, new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+
+                    if (importedData == null)
+                        return;
+
+                    NumericMinVariations.Value = importedData.MinVariations ?? NumericMinVariations.Value;
+                    NumericMaxVariations.Value = importedData.MaxVariations ?? NumericMaxVariations.Value;
+                    NumericProcessorsCount.Value = importedData.ProcessorsCount ?? NumericProcessorsCount.Value;
+                    CboNumericBase.SelectedIndex = importedData.NumericBase ?? CboNumericBase.SelectedIndex;
+                    ChkBruteforceWithRepetition.Checked = importedData.WithRepetition ?? ChkBruteforceWithRepetition.Checked;
+                    CboEndianness.SelectedIndex = importedData.Endianess ?? CboEndianness.SelectedIndex;
+                    CboHashTypes.SelectedIndex = importedData.HashType ?? CboHashTypes.SelectedIndex;
+
+                    if (!string.IsNullOrWhiteSpace(importedData.Prefixes))
+                        TxtPrefixes.Text = importedData.Prefixes;
+
+                    if (!string.IsNullOrWhiteSpace(importedData.Suffixes))
+                        TxtSuffixes.Text = importedData.Suffixes;
+
+                    if (!string.IsNullOrWhiteSpace(importedData.WordsBetweenVariations))
+                        TxtWordsBetweenVariations.Text = importedData.WordsBetweenVariations;
+
+                    if (!string.IsNullOrWhiteSpace(importedData.Variations))
+                        TxtVariations.Text = importedData.Variations;
+
+                    if (!string.IsNullOrWhiteSpace(importedData.LoadedFromText))
+                        TxtLoadFromText.Text = importedData.LoadedFromText;
+                }
+            }
+        }
+
+        private void MenuExportBruteforceConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var fields = new string[] { TxtPrefixes.Text, TxtSuffixes.Text, TxtWordsBetweenVariations.Text, TxtVariations.Text, TxtLoadFromText.Text };
+            if (!fields.All(t => string.IsNullOrEmpty(t)))
+            {
+                var dataToExport = new RaiderConfiguration
+                {
+                    Prefixes = TxtPrefixes.Text,
+                    Suffixes = TxtSuffixes.Text,
+                    WordsBetweenVariations = TxtWordsBetweenVariations.Text,
+                    Variations = TxtVariations.Text,
+                    LoadedFromText = TxtLoadFromText.Text,
+                    MinVariations = NumericMinVariations.Value,
+                    MaxVariations = NumericMaxVariations.Value,
+                    ProcessorsCount = NumericProcessorsCount.Value,
+                    NumericBase = CboNumericBase.SelectedIndex,
+                    WithRepetition = ChkBruteforceWithRepetition.Checked,
+                    Endianess = CboEndianness.SelectedIndex,
+                    HashType = CboHashTypes.SelectedIndex,
+                };
+
+                var dataToExportJson = JsonSerializer.Serialize(dataToExport);
+
+                using var saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Text Files (*.json)|*.json";
+                saveFileDialog.DefaultExt = "json";
+                saveFileDialog.AddExtension = true;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    File.WriteAllText(saveFileDialog.FileName, dataToExportJson);
+
+                    if (MessageBox.Show($"List exported to file:{Environment.NewLine}{Path.GetFileName(saveFileDialog.FileName)}{Environment.NewLine}Do you want to open it?",
+                        "Success", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    {
+                        Process.Start(new ProcessStartInfo
+                        {
+                            FileName = saveFileDialog.FileName,
+                            UseShellExecute = true
+                        });
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No configuration to export.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
