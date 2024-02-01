@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using NFSRaider.Keys.Legacy.Files.Localized;
+using System.IO;
 
 namespace NFSRaider.Keys.Legacy.Files
 {
@@ -26,6 +27,8 @@ namespace NFSRaider.Keys.Legacy.Files
                 .SelectMany(c => Cars.Files.List
                     .Select(d => d.Replace("(Car)", c)))
                 ));
+
+            files.UnionWith(new HashSet<string>(files.Select(f => Path.GetFileName(f))));
 
             return files;
         }
