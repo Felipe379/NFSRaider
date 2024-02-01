@@ -4,7 +4,7 @@ using NFSRaider.Keys.Legacy.PartsList;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace NFSRaider.Keys.UserKeys
+namespace NFSRaider.Keys.Legacy
 {
     public class BuildLegacyKeys : Builder
     {
