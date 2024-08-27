@@ -33,6 +33,7 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Underground2
                 .Concat(Spoilers.List)
                 .Concat(Vinyls.List)
                 .Concat(Vinyls.ListDemo)
+                .Concat(Vinyls.ListDeleted)
                 .Concat(Wheels.List)
                 .Concat(Wheels.LabelsOnly)
                 .Concat(Wheels.ListDemo)

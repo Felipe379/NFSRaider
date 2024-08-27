@@ -22,7 +22,7 @@ namespace NFSRaider.Keys.MainKeys.CarsTextures
             var carsTextures = new HashSet<string>();
 
             var universal = files.Where(f => Path.GetFileNameWithoutExtension(f).StartsWith("Universal")).ToArray();
-            var vinyls = files.Where(f => Path.GetFileNameWithoutExtension(f).EndsWith("Vinyls")).ToArray();
+            var vinyls = files.Where(f => Path.GetFileNameWithoutExtension(f).Contains("Vinyls")).ToArray();
 
             var universalCarsTextures = new HashSet<string>(FileRead.ReadFiles(universal));
             var vinylsUnderground1 = new HashSet<string>(FileRead.ReadFiles(vinyls.Where(f => Path.GetFileNameWithoutExtension(f).StartsWith("Underground1"))));

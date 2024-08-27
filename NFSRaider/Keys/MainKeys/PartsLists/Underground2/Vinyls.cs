@@ -920,7 +920,15 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Underground2
             "MI_8",
             "ALGRAF",
             "DANGRAF",
+            "SKULL",
             "OCTO",
+        };
+
+        public static readonly List<string> ListDeleted = new List<string>()
+        {
+            "TESTA",
+            "TESTB",
+            "TESTC",
         };
     }
 }

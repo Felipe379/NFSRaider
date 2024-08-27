@@ -12242,6 +12242,11 @@ TriggerAudioFeature
 emergencyevade_pursuitmeter
 shield_powerupimmunity
 team_slingshot_camerapullback
+RaceWarAudio
+CoplightFlashPattern
+RideHeightDrop_Min
+RideHeightDrop_Max
+GameModePowerupConfig
 TANK
 HOVER
 BOAT
