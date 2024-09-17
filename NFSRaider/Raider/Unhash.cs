@@ -33,6 +33,7 @@ namespace NFSRaider.Raider
 
         private readonly bool _checkMainKeys;
         private readonly bool _checkUserKeys;
+        private readonly bool _checkMergedKeys;
         private readonly bool _tryBruteForce;
 
         private HashSet<uint> Hashes { get; set; } = new HashSet<uint>();
@@ -42,7 +43,7 @@ namespace NFSRaider.Raider
 
         public Unhash(
             NFSRaiderForm sender, HashFactory hashFactory, CaseFactory caseFactory, GenerateOption generateOption, Endianness endianness,
-            bool checkMainKeys, bool checkUserKeys, bool tryBruteForce, string prefixes, string suffixes, string variations, string wordsBetweenVariations,
+            bool checkMainKeys, bool checkUserKeys, bool checkMergedKeys, bool tryBruteForce, string prefixes, string suffixes, string variations, string wordsBetweenVariations,
             decimal minVariations, decimal maxVariations, decimal processorCount)
         {
             _sender = sender;
@@ -63,6 +64,7 @@ namespace NFSRaider.Raider
 
             _checkMainKeys = checkMainKeys;
             _checkUserKeys = checkUserKeys;
+            _checkMergedKeys = checkMergedKeys;
             _tryBruteForce = tryBruteForce;
 
             InitializeVariatons(variations.SplitBy(new[] { ',' }, '\\'));
@@ -183,7 +185,7 @@ namespace NFSRaider.Raider
         {
             if (Hashes.Any())
             {
-                if (_checkMainKeys || _checkUserKeys)
+                if (_checkMainKeys || _checkUserKeys || _checkMergedKeys)
                 {
                     CheckKeysFiles(cancellationToken);
                 }
@@ -197,7 +199,7 @@ namespace NFSRaider.Raider
 
         private void CheckKeysFiles(CancellationToken cancellationToken)
         {
-            var allParts = new BuildKeys(_hashFactory, _caseFactory, _checkMainKeys, _checkUserKeys, _processorCount).GetKeyValue(cancellationToken: cancellationToken);
+            var allParts = new BuildKeys(_hashFactory, _caseFactory, _checkMainKeys, _checkUserKeys, _checkMergedKeys, _processorCount).GetKeyValue(cancellationToken: cancellationToken);
             var results = new List<RaiderResult>();
             foreach (var hash in Hashes)
             {

@@ -20,9 +20,6 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Carbon
 "COLIBRISGENERIC",
 "COLIN",
 "COROLLA",
-"CREW03",
-"CREW04",
-"CREW05",
 "CROSS",
 "CS_300C",
 "CS_350Z",
@@ -73,5 +70,17 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Carbon
 "WOLF",
 "YUMI",
         };
+		
+		public static readonly List<string> ListDemo = new List<string>()
+		{
+"CREW03",
+"CREW04",
+"CREW05",
+"DEMO_LANCER",
+"DEMO_CAMARO",
+"DEMO_GALLARDO",
+"BOSS_BUSHIDO",
+"BUSHIDO_WINGMAN",
+		};
     }
 }

@@ -25,6 +25,7 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Carbon
                 .Concat(Paints.ListDemo)
                 .Concat(Plates.List)
                 .Concat(PrecompVinyls.List)
+                .Concat(PrecompVinyls.ListDemo)
                 .Concat(RoofScoops.List)
                 .Concat(VectorVinyls.List)
                 .Concat(VectorVinyls.ListDemo)

@@ -70,7 +70,6 @@
             BtnStartStop = new System.Windows.Forms.Button();
             BtnClear = new System.Windows.Forms.Button();
             ChkUseMainKeys = new System.Windows.Forms.CheckBox();
-            BtnGenerateKeyList = new System.Windows.Forms.Button();
             GrpStats = new System.Windows.Forms.GroupBox();
             LblTotalHashes = new System.Windows.Forms.Label();
             LblUnknownHashes = new System.Windows.Forms.Label();
@@ -96,14 +95,17 @@
             CboForceHashListCase = new System.Windows.Forms.ComboBox();
             LblTimeElapsed = new System.Windows.Forms.Label();
             ToolTipNFSRaider = new System.Windows.Forms.ToolTip(components);
+            ChkUseUserKeys = new System.Windows.Forms.CheckBox();
+            ChkUseMergedKeys = new System.Windows.Forms.CheckBox();
             BtnSearchAll = new System.Windows.Forms.Button();
             CboRaiderMode = new System.Windows.Forms.ComboBox();
             ChkCaseSensitive = new System.Windows.Forms.CheckBox();
-            ChkUseUserKeys = new System.Windows.Forms.CheckBox();
             menuStrip1 = new System.Windows.Forms.MenuStrip();
             fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            MenuExportBruteforceConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            CreateMergedKeysFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            FileToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             ImportBruteforceConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            MenuExportBruteforceConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             GrpLoadOptions.SuspendLayout();
             TabLoadOptions.SuspendLayout();
             TabPageFromFile.SuspendLayout();
@@ -583,19 +585,9 @@
             ChkUseMainKeys.Size = new System.Drawing.Size(123, 19);
             ChkUseMainKeys.TabIndex = 20;
             ChkUseMainKeys.Text = "Use MainKeys files";
+            ToolTipNFSRaider.SetToolTip(ChkUseMainKeys, "Use all the files under \"Key\\MainKeys\" folder");
             ChkUseMainKeys.UseVisualStyleBackColor = true;
             ChkUseMainKeys.CheckedChanged += ChkUseMainKeys_CheckedChanged;
-            // 
-            // BtnGenerateKeyList
-            // 
-            BtnGenerateKeyList.Location = new System.Drawing.Point(718, 404);
-            BtnGenerateKeyList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            BtnGenerateKeyList.Name = "BtnGenerateKeyList";
-            BtnGenerateKeyList.Size = new System.Drawing.Size(171, 27);
-            BtnGenerateKeyList.TabIndex = 19;
-            BtnGenerateKeyList.Text = "Generate list of keys";
-            BtnGenerateKeyList.UseVisualStyleBackColor = true;
-            BtnGenerateKeyList.Click += BtnGenerateKeyList_Click;
             // 
             // GrpStats
             // 
@@ -872,6 +864,34 @@
             ToolTipNFSRaider.ReshowDelay = 100;
             ToolTipNFSRaider.ToolTipTitle = "Info";
             // 
+            // ChkUseUserKeys
+            // 
+            ChkUseUserKeys.AutoSize = true;
+            ChkUseUserKeys.Checked = true;
+            ChkUseUserKeys.CheckState = System.Windows.Forms.CheckState.Checked;
+            ChkUseUserKeys.Location = new System.Drawing.Point(896, 440);
+            ChkUseUserKeys.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            ChkUseUserKeys.Name = "ChkUseUserKeys";
+            ChkUseUserKeys.Size = new System.Drawing.Size(119, 19);
+            ChkUseUserKeys.TabIndex = 22;
+            ChkUseUserKeys.Text = "Use UserKeys files";
+            ToolTipNFSRaider.SetToolTip(ChkUseUserKeys, "Use all the files under \"Key\\UserKeys\" folder");
+            ChkUseUserKeys.UseVisualStyleBackColor = true;
+            ChkUseUserKeys.CheckedChanged += ChkUseUserKeys_CheckedChanged;
+            // 
+            // ChkUseMergedKeys
+            // 
+            ChkUseMergedKeys.AutoSize = true;
+            ChkUseMergedKeys.Location = new System.Drawing.Point(718, 409);
+            ChkUseMergedKeys.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            ChkUseMergedKeys.Name = "ChkUseMergedKeys";
+            ChkUseMergedKeys.Size = new System.Drawing.Size(140, 19);
+            ChkUseMergedKeys.TabIndex = 19;
+            ChkUseMergedKeys.Text = "Use merged Keys files";
+            ToolTipNFSRaider.SetToolTip(ChkUseMergedKeys, "Use the merged keys file in \"Keys\\Keys.txt\" for faster results");
+            ChkUseMergedKeys.UseVisualStyleBackColor = true;
+            ChkUseMergedKeys.CheckedChanged += ChkUseMergedKeys_CheckedChanged;
+            // 
             // BtnSearchAll
             // 
             BtnSearchAll.Location = new System.Drawing.Point(247, 57);
@@ -907,20 +927,6 @@
             ChkCaseSensitive.UseVisualStyleBackColor = true;
             ChkCaseSensitive.CheckedChanged += ChkCaseSensitive_CheckedChanged;
             // 
-            // ChkUseUserKeys
-            // 
-            ChkUseUserKeys.AutoSize = true;
-            ChkUseUserKeys.Checked = true;
-            ChkUseUserKeys.CheckState = System.Windows.Forms.CheckState.Checked;
-            ChkUseUserKeys.Location = new System.Drawing.Point(896, 440);
-            ChkUseUserKeys.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            ChkUseUserKeys.Name = "ChkUseUserKeys";
-            ChkUseUserKeys.Size = new System.Drawing.Size(119, 19);
-            ChkUseUserKeys.TabIndex = 22;
-            ChkUseUserKeys.Text = "Use UserKeys files";
-            ChkUseUserKeys.UseVisualStyleBackColor = true;
-            ChkUseUserKeys.CheckedChanged += ChkUseUserKeys_CheckedChanged;
-            // 
             // menuStrip1
             // 
             menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem });
@@ -932,17 +938,23 @@
             // 
             // fileToolStripMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { ImportBruteforceConfigurationToolStripMenuItem, MenuExportBruteforceConfigurationToolStripMenuItem });
+            fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { CreateMergedKeysFileToolStripMenuItem, FileToolStripSeparator1, ImportBruteforceConfigurationToolStripMenuItem, MenuExportBruteforceConfigurationToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             fileToolStripMenuItem.Text = "File";
             // 
-            // MenuExportBruteforceConfigurationToolStripMenuItem
+            // CreateMergedKeysFileToolStripMenuItem
             // 
-            MenuExportBruteforceConfigurationToolStripMenuItem.Name = "MenuExportBruteforceConfigurationToolStripMenuItem";
-            MenuExportBruteforceConfigurationToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            MenuExportBruteforceConfigurationToolStripMenuItem.Text = "Export bruteforce configuration";
-            MenuExportBruteforceConfigurationToolStripMenuItem.Click += MenuExportBruteforceConfigurationToolStripMenuItem_Click;
+            CreateMergedKeysFileToolStripMenuItem.Name = "CreateMergedKeysFileToolStripMenuItem";
+            CreateMergedKeysFileToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            CreateMergedKeysFileToolStripMenuItem.Text = "Create merged keys file";
+            CreateMergedKeysFileToolStripMenuItem.ToolTipText = "Create a merged Keys.txt file under the \"Keys\" folder";
+            CreateMergedKeysFileToolStripMenuItem.Click += CreateMergedKeysFileToolStripMenuItem_Click;
+            // 
+            // FileToolStripSeparator1
+            // 
+            FileToolStripSeparator1.Name = "FileToolStripSeparator1";
+            FileToolStripSeparator1.Size = new System.Drawing.Size(240, 6);
             // 
             // ImportBruteforceConfigurationToolStripMenuItem
             // 
@@ -951,11 +963,19 @@
             ImportBruteforceConfigurationToolStripMenuItem.Text = "Import bruteforce configuration";
             ImportBruteforceConfigurationToolStripMenuItem.Click += ImportBruteforceConfigurationToolStripMenuItem_Click;
             // 
+            // MenuExportBruteforceConfigurationToolStripMenuItem
+            // 
+            MenuExportBruteforceConfigurationToolStripMenuItem.Name = "MenuExportBruteforceConfigurationToolStripMenuItem";
+            MenuExportBruteforceConfigurationToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            MenuExportBruteforceConfigurationToolStripMenuItem.Text = "Export bruteforce configuration";
+            MenuExportBruteforceConfigurationToolStripMenuItem.Click += MenuExportBruteforceConfigurationToolStripMenuItem_Click;
+            // 
             // NFSRaiderForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1031, 647);
+            Controls.Add(ChkUseMergedKeys);
             Controls.Add(ChkUseUserKeys);
             Controls.Add(CboRaiderMode);
             Controls.Add(LblTimeElapsed);
@@ -965,7 +985,6 @@
             Controls.Add(GrpBruteforceOptions);
             Controls.Add(BtnSearchAll);
             Controls.Add(GrpStats);
-            Controls.Add(BtnGenerateKeyList);
             Controls.Add(ChkUseMainKeys);
             Controls.Add(TxtSearch);
             Controls.Add(BtnClear);
@@ -1035,7 +1054,6 @@
         private System.Windows.Forms.Button BtnStartStop;
         private System.Windows.Forms.Button BtnClear;
         private System.Windows.Forms.CheckBox ChkUseMainKeys;
-        private System.Windows.Forms.Button BtnGenerateKeyList;
         private System.Windows.Forms.GroupBox GrpStats;
         private System.Windows.Forms.Label LblTotalHashes;
         private System.Windows.Forms.Label LblUnknownHashes;
@@ -1087,6 +1105,9 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuExportBruteforceConfigurationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ImportBruteforceConfigurationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CreateMergedKeysFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator FileToolStripSeparator1;
+        private System.Windows.Forms.CheckBox ChkUseMergedKeys;
     }
 }
 

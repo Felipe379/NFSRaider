@@ -127,7 +127,7 @@ namespace NFSRaider
                     if (string.IsNullOrWhiteSpace(FilePath) && !File.Exists(FilePath))
                         message += $"- File not found.{Environment.NewLine}";
 
-                    if (!(ChkUseMainKeys.Checked || ChkUseUserKeys.Checked))
+                    if (!(ChkUseMainKeys.Checked || ChkUseUserKeys.Checked || ChkUseMergedKeys.Checked))
                         message += $"- You must either use the keys files or try to bruteforce.{Environment.NewLine}";
 
                     if (string.IsNullOrWhiteSpace(message))
@@ -138,7 +138,7 @@ namespace NFSRaider
                         if (RaiderMode == RaiderMode.Unhasher)
                         {
                             var file = Raider.FileRaid.Open(TxtFileStartOffset.Text, TxtFileEndOffset.Text, TxtFileReadHashes.Text, TxtFileSkipHashes.Text, FilePath);
-                            var listBox = Raider.FileRaid.UnhashFromFile(UnhashingEndianness, HashFactory, file, CaseFactory, NumericProcessorsCount.Value, ChkUseMainKeys.Checked, ChkUseUserKeys.Checked);
+                            var listBox = Raider.FileRaid.UnhashFromFile(UnhashingEndianness, HashFactory, file, CaseFactory, NumericProcessorsCount.Value, ChkUseMainKeys.Checked, ChkUseUserKeys.Checked, ChkUseMergedKeys.Checked);
                             ListBoxDataSource = listBox;
                             ChangedListBoxDataSource();
                         }
@@ -162,7 +162,7 @@ namespace NFSRaider
                 {
                     if (RaiderMode == RaiderMode.Unhasher)
                     {
-                        if (!(ChkUseMainKeys.Checked || ChkUseUserKeys.Checked) && !ChkTryToBruteforce.Checked)
+                        if (!(ChkUseMainKeys.Checked || ChkUseUserKeys.Checked || ChkUseMergedKeys.Checked) && !ChkTryToBruteforce.Checked)
                             message += $"- You must either use the keys files or try to bruteforce.{Environment.NewLine}";
                         if (string.IsNullOrWhiteSpace(TxtLoadFromText.Text))
                             message += $"- You must include hashes on the list.{Environment.NewLine}";
@@ -179,8 +179,8 @@ namespace NFSRaider
                             CancellationTokenSource = new CancellationTokenSource();
                             DisableComponentsDuringBruteforce();
 
-                            var bruteForce = new Unhash(this, HashFactory, CaseFactory, GenerateOption, UnhashingEndianness, ChkUseMainKeys.Checked, ChkUseUserKeys.Checked, ChkTryToBruteforce.Checked, TxtPrefixes.Text, TxtSuffixes.Text,
-                                TxtVariations.Text, TxtWordsBetweenVariations.Text, NumericMinVariations.Value, NumericMaxVariations.Value, NumericProcessorsCount.Value);
+                            var bruteForce = new Unhash(this, HashFactory, CaseFactory, GenerateOption, UnhashingEndianness, ChkUseMainKeys.Checked, ChkUseUserKeys.Checked, ChkUseMergedKeys.Checked, ChkTryToBruteforce.Checked,
+                                TxtPrefixes.Text, TxtSuffixes.Text, TxtVariations.Text, TxtWordsBetweenVariations.Text, NumericMinVariations.Value, NumericMaxVariations.Value, NumericProcessorsCount.Value);
                             _timer = new TimeElapsed(bruteForce.UpdateTimeElapsed, TimeSpan.FromSeconds(1));
 
                             bruteForce.SplitHashes(TxtLoadFromText.Text, Numeric.Bases[NumericBase].Base);
@@ -380,14 +380,22 @@ namespace NFSRaider
             ComponentsChanged();
         }
 
-        private void BtnGenerateKeyList_Click(object sender, EventArgs e)
+        private void CreateMergedKeysFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("This will take a lot of time and will use a lot of RAM. Do you want to continue?", "Generate list of keys", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            var keysToCombine = new List<string>();
+
+            if (ChkUseMainKeys.Checked)
+                keysToCombine.Add("\"Keys\\MainKeys\"");
+
+            if (ChkUseUserKeys.Checked)
+                keysToCombine.Add("\"Keys\\UserKeys\"");
+
+            if (MessageBox.Show($"This will merge all the files in the folders {string.Join(" and ", keysToCombine)} into a single file, may take some time and can use a lot of RAM memory if there are a lot of .txt files.{Environment.NewLine}Do you want to continue?", "Create merged list of keys", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                var getAllKeys = new BuildKeys(HashFactory, CaseFactory, ChkUseMainKeys.Checked, ChkUseUserKeys.Checked, NumericProcessorsCount.Value);
+                var getAllKeys = new BuildKeys(HashFactory, CaseFactory, ChkUseMainKeys.Checked, ChkUseUserKeys.Checked, ChkUseMergedKeys.Checked, NumericProcessorsCount.Value);
                 getAllKeys.WriteKeysToFile();
                 GC.Collect();
-                MessageBox.Show("Keys file generated!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Keys file created!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -453,10 +461,18 @@ namespace NFSRaider
             KeyListChanged();
         }
 
+        private void ChkUseMergedKeys_CheckedChanged(object sender, EventArgs e)
+        {
+            KeyListChanged();
+        }
+
         private void KeyListChanged()
         {
-            CboForceHashListCase.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked;
-            BtnGenerateKeyList.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked;
+            CboForceHashListCase.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked || ChkUseMergedKeys.Checked;
+            CreateMergedKeysFileToolStripMenuItem.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked;
+
+            ChkUseMainKeys.Enabled = !ChkUseMergedKeys.Checked;
+            ChkUseUserKeys.Enabled = !ChkUseMergedKeys.Checked;
         }
 
         private void CboNumericBase_SelectedIndexChanged(object sender, EventArgs e)
@@ -680,7 +696,7 @@ namespace NFSRaider
             BtnStartStop.Text = "Start";
             ImportBruteforceConfigurationToolStripMenuItem.Enabled = true;
             BtnClear.Enabled = true;
-            BtnGenerateKeyList.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked;
+            CreateMergedKeysFileToolStripMenuItem.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked;
             CboRaiderMode.Enabled = true;
             CboHashTypes.Enabled = true;
 
@@ -701,19 +717,21 @@ namespace NFSRaider
 
                 if (RaiderMode == RaiderMode.Unhasher)
                 {
-                    ChkUseMainKeys.Enabled = true;
-                    ChkUseUserKeys.Enabled = true;
+                    ChkUseMainKeys.Enabled = !ChkUseMergedKeys.Checked;
+                    ChkUseUserKeys.Enabled = !ChkUseMergedKeys.Checked;
+                    ChkUseMergedKeys.Enabled = true;
                     TxtFileStartOffset.Enabled = true;
                     TxtFileEndOffset.Enabled = true;
                     TxtFileReadHashes.Enabled = true;
                     TxtFileSkipHashes.Enabled = true;
                     CboEndianness.Enabled = true;
-                    CboForceHashListCase.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked;
+                    CboForceHashListCase.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked || ChkUseMergedKeys.Checked;
                 }
                 else
                 {
                     ChkUseMainKeys.Enabled = false;
                     ChkUseUserKeys.Enabled = false;
+                    ChkUseMergedKeys.Enabled = false;
                     TxtFileStartOffset.Enabled = false;
                     TxtFileEndOffset.Enabled = false;
                     TxtFileReadHashes.Enabled = false;
@@ -741,12 +759,13 @@ namespace NFSRaider
 
                 if (RaiderMode == RaiderMode.Unhasher)
                 {
-                    ChkUseMainKeys.Enabled = true;
-                    ChkUseUserKeys.Enabled = true;
+                    ChkUseMainKeys.Enabled = !ChkUseMergedKeys.Checked;
+                    ChkUseUserKeys.Enabled = !ChkUseMergedKeys.Checked;
+                    ChkUseMergedKeys.Enabled = true;
                     ChkTryToBruteforce.Enabled = true;
                     CboEndianness.Enabled = true;
                     CboNumericBase.Enabled = true;
-                    CboForceHashListCase.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked;
+                    CboForceHashListCase.Enabled = ChkUseMainKeys.Checked || ChkUseUserKeys.Checked || ChkUseMergedKeys.Checked;
 
                     BruteForceChecked();
                 }
@@ -754,6 +773,7 @@ namespace NFSRaider
                 {
                     ChkUseMainKeys.Enabled = false;
                     ChkUseUserKeys.Enabled = false;
+                    ChkUseMergedKeys.Enabled = false;
                     ChkTryToBruteforce.Enabled = false;
                     CboEndianness.Enabled = false;
                     CboNumericBase.Enabled = false;
@@ -794,9 +814,10 @@ namespace NFSRaider
             NumericMaxVariations.Enabled = false;
             NumericProcessorsCount.Enabled = false;
             TxtWordsBetweenVariations.Enabled = false;
-            BtnGenerateKeyList.Enabled = false;
+            CreateMergedKeysFileToolStripMenuItem.Enabled = false;
             ChkUseMainKeys.Enabled = false;
             ChkUseUserKeys.Enabled = false;
+            ChkUseMergedKeys.Enabled = false;
             ChkBruteforceWithRepetition.Enabled = false;
             ChkTryToBruteforce.Enabled = false;
             CboHashTypes.Enabled = false;

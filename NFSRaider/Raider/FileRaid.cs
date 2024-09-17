@@ -59,9 +59,9 @@ namespace NFSRaider.Raider
             return listString.ToArray();
         }
 
-        public static List<RaiderResult> UnhashFromFile(Endianness unhashingEndianness, HashFactory hashFactory, uint[] arrayFromFile, CaseFactory caseFactory, decimal processorCount, bool checkForMainKeys, bool checkForUserKeys)
+        public static List<RaiderResult> UnhashFromFile(Endianness unhashingEndianness, HashFactory hashFactory, uint[] arrayFromFile, CaseFactory caseFactory, decimal processorCount, bool checkForMainKeys, bool checkForUserKeys, bool checkMergedKeys)
         {
-            var allKeys = new BuildKeys(hashFactory, caseFactory, checkForMainKeys, checkForUserKeys, processorCount).GetKeyValue();
+            var allKeys = new BuildKeys(hashFactory, caseFactory, checkForMainKeys, checkForUserKeys, checkMergedKeys, processorCount).GetKeyValue();
             var listBox = new List<RaiderResult>();
             var isKnown = false;
 
