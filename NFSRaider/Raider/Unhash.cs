@@ -159,7 +159,7 @@ namespace NFSRaider.Raider
 
         public void SplitHashes(string txtHashes, int numericBase)
         {
-            var hashes = txtHashes.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries).Select(c => Regex.Replace(c, @"[^0-9A-Za-z]", "")).ToList();
+            var hashes = txtHashes.Split(new[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).Select(c => Regex.Replace(c, @"[^0-9A-Za-z]", "")).ToList();
 
             if (_endianness == Endianness.BigEndian)
             {
