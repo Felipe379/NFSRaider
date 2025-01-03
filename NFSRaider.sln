@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NFSRaider", "NFSRaider\NFSRaider.csproj", "{CAADB47E-EC33-4B7C-9E3E-517B3583B927}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F745E228-F3F2-4A9D-B762-EAF04A4AA68F} = {F745E228-F3F2-4A9D-B762-EAF04A4AA68F}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PreBuildTask", "PreBuildTask\PreBuildTask.csproj", "{F745E228-F3F2-4A9D-B762-EAF04A4AA68F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{CAADB47E-EC33-4B7C-9E3E-517B3583B927}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAADB47E-EC33-4B7C-9E3E-517B3583B927}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAADB47E-EC33-4B7C-9E3E-517B3583B927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F745E228-F3F2-4A9D-B762-EAF04A4AA68F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F745E228-F3F2-4A9D-B762-EAF04A4AA68F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F745E228-F3F2-4A9D-B762-EAF04A4AA68F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F745E228-F3F2-4A9D-B762-EAF04A4AA68F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
