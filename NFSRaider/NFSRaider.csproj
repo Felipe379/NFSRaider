@@ -12,4 +12,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="&quot;$(SolutionDir)\PreBuildTask\bin\$(Configuration)\net6.0\PreBuildTask.exe&quot;" />
+  </Target>
 </Project>

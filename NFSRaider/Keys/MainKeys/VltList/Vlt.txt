@@ -12879,6 +12879,9 @@ ttn_draghpfall
 turbocharger_lvl_1_kit00
 viper_draghpfall
 zonda_draghpfall
+stock_car_error
+car_count_07_to_12
+car_count_03_to_06
 TANK
 HOVER
 BOAT
