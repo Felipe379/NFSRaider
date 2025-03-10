@@ -50,6 +50,7 @@ _Array_TireSlipEffects
 _Array_WALL_FRICTION
 _default
 _delete
+_material_id
 _MaterialGroup
 _oldnfs
 _Pad_TireOffsets
@@ -6082,6 +6083,7 @@ AI::GlueCurve
 AIAccelBias
 AIAccelMax
 AIAccelMin
+aiaction
 AIC_BOND_LGADGET
 AIC_BOND_RGADGET
 AICollisionReactionRecord
@@ -9256,6 +9258,7 @@ autopolis_drift_6
 autopolis_grip_1_gp
 autopolis_grip_2_lakeside
 autopolis_grip_3_short
+AutoReset
 AUTOSCLPT
 AUTOSCLPT_STYLE01_17_25
 AUTOSCLPT_STYLE02_17_25
@@ -13422,6 +13425,7 @@ Camden & Seaside
 Camden Hills
 Camden Tunnel
 camera
+Camera
 camera_assembly
 CAMERA_AVOIDABLE
 Camera_Bumper
@@ -13480,6 +13484,10 @@ camera9_back
 camera9_back_widescreen
 camera9_widescreen
 CAMERAACTION_360
+CAMERAACTION_ANALOG_LOOK_BACK
+CAMERAACTION_ANALOG_LOOK_FORWARD
+CAMERAACTION_ANALOG_LOOK_LEFT
+CAMERAACTION_ANALOG_LOOK_RIGHT
 CAMERAACTION_CHANGE
 CAMERAACTION_CHANGE_CAR
 CAMERAACTION_CRANE_DOWN
@@ -16881,6 +16889,7 @@ CarsVelDiffMin
 cartest
 CarTier
 CarTotaled
+cartype
 carType
 CarType
 CarTypeLowMem
@@ -16908,6 +16917,7 @@ cashgrab/stategraph_cashgrab_prerace/stategraph_cashgrab_prerace_handler_stateen
 cashgrab/stategraph_cashgrab_racing
 cashgrab/stategraph_cashgrab_racing/stategraph_cashgrab_racing_handler_triggerenter_2
 CASHING OUT
+cashmultiplier
 cashMultiplier
 CashReward
 cashreward_explore_01_a
@@ -18935,6 +18945,7 @@ che_vet_z06_06_m26
 che_vet_z06_06_track
 che_vet_z06_10_adsale
 CheatMeister
+Cheats
 CheatVsSkill
 check
 CHECK_PLAYER_BEHIND_TRAFFIC
@@ -22328,6 +22339,8 @@ darius_player_pass_boss_left
 darius_player_pass_boss_right
 DARK
 Dark X
+DarkenEnvmapAmount
+DarkenReflectionMapAmount
 DAT_BigPath
 data
 Data Rock
@@ -26885,6 +26898,7 @@ ENKEI_STYLE04_21_25
 enmisc_leaves1
 enter_corner_trigger
 enter_highway
+EnterHighway
 EnterMessage
 entourage
 entourage_drag
@@ -28694,6 +28708,7 @@ EXISTING_DRIVER
 exit
 exit_corner_trigger
 exit_highway
+ExitHighway
 ExitMessage
 ExitTarget
 ExitWhenDominated
@@ -31458,6 +31473,7 @@ GAMEACTION_SHIFTSECOND
 GAMEACTION_SHIFTSIXTH
 GAMEACTION_SHIFTTHIRD
 GAMEACTION_SHIFTUP
+GAMEACTION_SIREN
 GAMEACTION_STEERLEFT
 GAMEACTION_STEERLEFT_STICK
 GAMEACTION_STEERRIGHT
@@ -35421,6 +35437,7 @@ hitdust1_togue_rail_2_wrld
 hitgrass
 hitleaves
 HitpointDamageLimit
+hitpoints
 HitpointThreshold
 HM_100LOVE
 HM_ATOM
@@ -38136,6 +38153,7 @@ IsHood
 isLicensed
 IsLoadedTrack
 isLooping
+IsLooping
 IsLoopingRace
 IsMarkerRace
 IsMember
@@ -39561,7 +39579,10 @@ LengthStart
 Lennox & Camden
 lensflare
 lensflare_fade
+LensFlareCol
 LensFlareIndex
+LensFlareRat
+LensFlareSize
 LensFlareTexture
 leon
 leoncupra
@@ -40240,6 +40261,7 @@ lighttraffic
 lightwoodendetach
 lightwoodenobject
 lightwoodenpost
+Limit
 LIMITED_VIPER_LEFT
 LIMITED_VIPER_RIGHT
 LIMITED_VIPER_SRT
@@ -43441,6 +43463,7 @@ milestones/spikebelts_top
 milestones/total_infractions_1
 MilestoneType
 milestonetypes
+MilestoneValue
 milk_crate
 mimprezawrxsti
 MIMPREZAWRXSTI
@@ -43466,6 +43489,7 @@ MinHealthForCommentary
 MinHeat
 MinHeightAirborne
 mini_map_route
+mini_map_side_route
 mini_turbo
 minigames
 MINIMAP_1040216039
@@ -51644,6 +51668,9 @@ PHOTOFINISH_DRAG
 PHOTOFINISH_SPRINT
 PhotoFinish_Sprint.tga
 PHOTOFINISH_TOOBOOTH
+PhotoFinishBarHeight
+PhotoFinishFlashMax
+PhotoFinishFlashTime
 physics
 Physics
 physics_equipments
@@ -55068,6 +55095,7 @@ prototype_tracks/portland/portland_drag_2
 prototype_tracks/portland/portland_drag_2/checkpoint1
 prototype_tracks/portland/portland_drag_2/finishline1
 prototype_tracks/portland/portland_drag_2/startgrid1
+Proximity
 ProximityGraphFrequency
 ProximityGraphMagnitude
 ProximityVolumeGraphMagnitude
@@ -70600,6 +70628,7 @@ reinitpursuit
 RelativeAngle
 release_car_from_impound
 ReleaseTime
+ReleaseTrigger
 remote_player_busted
 remote_player_escaped
 RemoteEntitlementTag
@@ -78508,6 +78537,7 @@ SkyDomeModel
 SkyDomeModelStruct
 SkyDomeRotation
 SkyDomeStyle
+SkyLight
 skyline
 SKYLINE
 skyline_1
@@ -79799,6 +79829,7 @@ SpeedTier
 SpeedToFullBlending
 SpeedToStartBlending
 speedtrap
+SpeedTrap
 Speedtrap Bowen Avenue
 Speedtrap Canmore Road
 Speedtrap Eskuri Way
@@ -81473,6 +81504,7 @@ SunHazeSize
 Suni Clay
 SunIntensity
 SunLatitude
+SunLightIntensity
 SunLongitude
 sunny
 SunOcclusionResponseRate
@@ -85812,10 +85844,12 @@ TargetPathfindingRequired
 TargetReached
 TargetReached_Opponent
 TargetRole
+Targets
 TargetSilver
 TargetTime
 TargetTimeOverrides
 TargetTrigger
+TargetValue
 tarstrip
 Tattoo_Vudu
 taxi
@@ -86138,6 +86172,7 @@ threattable
 ThreshholdSpeed
 ThreshholdValue
 threshold
+ThresholdValue
 THROTTLE_CONTROL_CURVE
 throttle_control_safe
 throttle_cut_ratio
@@ -100614,8 +100649,10 @@ Tribal_Inkee
 Tribal_Nomad
 tricky
 trigger
+Trigger
 TriggerAudioFeature
 TriggerDistance
+Triggers
 TriggerStimulus
 triggerThreshold
 trk_log_eng
