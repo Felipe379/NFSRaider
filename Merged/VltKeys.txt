@@ -5732,7 +5732,9 @@ acu_nsx_b
 acu_nsx_b_eng
 acura
 ad_sales
+AdaptDownByLevel
 adaptivedifficulty
+AdaptUpByLevel
 add
 Add a description
 add_alpha_blended
@@ -12652,6 +12654,7 @@ bumperhood
 bureminder
 BURemindTime
 Burn
+burnout_time_multiplier
 BURROWS
 bus_mtl_peices
 bus_sign
@@ -22283,6 +22286,7 @@ damagedcar
 DamagedLimitReached
 DamagedVehicleName
 DamageEffect
+DamageEffectThreshold
 DamageFilter::Control
 DamageFilter::eType
 DamageHeli
@@ -23594,6 +23598,7 @@ drafter_lesson
 drafter_success
 drafter_waiting
 draftercontrail
+drafting_time_multiplier
 DraftingGraphMagnitude
 DraftLineEffects
 DraftProximity
@@ -48957,6 +48962,7 @@ nos_demo_cuda
 nos_demo_e92
 nos_demo_gtrproto
 NOS_DISENGAGE
+nos_drift_time_multiplier
 nos_duration
 nos_grip
 NOS_GRIP_INCREASE
@@ -52601,6 +52607,7 @@ power_slide
 powerlinestand
 powerlinestand_seq
 powerslide
+powerslide_time_multiplier
 powerup
 PowerUp
 POWERUP_BUNDEL
@@ -72888,6 +72895,7 @@ RTRX69_WHEEL
 rubber
 RUBBER
 rubbertire
+rubout
 RugosityAmplitude
 RugosityFrequency
 rumble
@@ -76132,6 +76140,7 @@ skill_terminator
 skill_traffic_cop
 skill_tycoon
 skill_untouchable
+SkillDownModifire
 SkillID
 SkillLevel
 skillmod_category
@@ -77859,6 +77868,7 @@ skills/untouchable/rank2
 skills/untouchable/rank3
 skills/untouchable/rank4
 skills/untouchable/rank5
+SkillUpModifire
 skin
 skinl
 SKINL
@@ -101023,11 +101033,18 @@ turbosfx
 turbosfx_old
 TurboSND
 turn_180
+turn_180_burnout
 turn_360
 turn_360_burnout
+turn_540
+turn_720
 TURN_BOOST_SPEED
 turn_reverse_180
+turn_reverse_180_burnout
 turn_reverse_360
+turn_reverse_360_burnout
+turn_reverse_540
+turn_reverse_720
 turned_around
 TurnIndicatorDirection
 TurnIndicatorType
