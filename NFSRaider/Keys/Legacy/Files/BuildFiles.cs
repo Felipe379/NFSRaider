@@ -1,8 +1,8 @@
-﻿using NFSRaider.Keys.MainKeys.Cars;
+﻿using NFSRaider.Keys.Legacy.Files.Localized;
+using NFSRaider.Keys.MainKeys.Cars;
 using System.Collections.Generic;
-using System.Linq;
-using NFSRaider.Keys.Legacy.Files.Localized;
 using System.IO;
+using System.Linq;
 
 namespace NFSRaider.Keys.Legacy.Files
 {

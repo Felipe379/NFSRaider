@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text;
-using System.Text.Unicode;
 
 namespace NFSRaider.Hash
 {

@@ -80,7 +80,7 @@ namespace NFSRaider.Raider
             var allSimpleVariationsWithSubstring = new HashSet<string>();
 
             foreach (var simpleVariation in simpleVariationsWithSubstring)
-            { 
+            {
                 for (int i = 0; i < simpleVariation.Length; i++)
                 {
                     for (int j = i; j < simpleVariation.Length; j++)
@@ -287,7 +287,7 @@ namespace NFSRaider.Raider
                 variations = new Variations<string>(variationsModel.Variations, variationsCount, Variation.GenerateOption);
                 rangePartitioner = Partitioner.Create(variations);
 
-                Parallel.ForEach(rangePartitioner, new ParallelOptions 
+                Parallel.ForEach(rangePartitioner, new ParallelOptions
                 {
                     MaxDegreeOfParallelism = _processorCount,
                     CancellationToken = cancellationToken,

@@ -1,6 +1,4 @@
-﻿using NFSRaider.Enums;
-using NFSRaider.Hash;
-using System;
+﻿using System;
 using System.Text.RegularExpressions;
 
 namespace NFSRaider.Helpers

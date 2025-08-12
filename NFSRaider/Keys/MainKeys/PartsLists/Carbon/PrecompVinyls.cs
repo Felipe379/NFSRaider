@@ -70,9 +70,9 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Carbon
 "WOLF",
 "YUMI",
         };
-		
-		public static readonly List<string> ListDemo = new List<string>()
-		{
+
+        public static readonly List<string> ListDemo = new List<string>()
+        {
 "CREW03",
 "CREW04",
 "CREW05",
@@ -81,6 +81,6 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Carbon
 "DEMO_GALLARDO",
 "BOSS_BUSHIDO",
 "BUSHIDO_WINGMAN",
-		};
+        };
     }
 }

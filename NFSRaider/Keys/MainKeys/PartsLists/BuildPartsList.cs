@@ -16,7 +16,7 @@ namespace NFSRaider.Keys.MainKeys.PartsLists
 {
     public class BuildPartsList
     {
-        private readonly HashSet<string> CarList = new HashSet<string>(
+        private readonly HashSet<string> CarList = new(
             new BuildCars().GetKeys(Game.Carbon)
             .Concat(new BuildCars().GetKeys(Game.ProStreet))
             .Concat(new BuildCars().GetKeys(Game.UndercoverCG))

@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace NFSRaider.Case
+﻿namespace NFSRaider.Case
 {
     public class AllCase : CaseFactory
     {
