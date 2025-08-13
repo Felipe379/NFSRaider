@@ -1,7 +1,6 @@
 ﻿using NFSRaider.Enums;
 using NFSRaider.Helpers;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading;
 
@@ -14,7 +13,7 @@ namespace NFSRaider.Keys.MainKeys.Cars
             var files = GetDirectoryFiles(GetDirectory(GetType()));
 
             if (gameFilter != null)
-                files = files.Where(f => Path.GetFileNameWithoutExtension(f).StartsWith(gameFilter.ToString())).ToArray();
+                files = FilterPerGame(files, gameFilter.Value).Select(d => d.file).ToArray();
 
             var cars = new HashSet<string>(FileRead.ReadFiles(files));
 

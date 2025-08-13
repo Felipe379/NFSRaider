@@ -6,4 +6,14 @@
     <Nullable>disable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Enums\" />
+    <Compile Include="..\NFSRaider\Enums\Game.cs" Link="Enums\Game.cs" />
+    <Folder Include="Helpers\" />
+    <Compile Include="..\NFSRaider\Helpers\FileRead.cs" Link="Helpers\FileRead.cs" />
+    <Folder Include="Keys\" />
+    <Compile Include="..\NFSRaider\Keys\Builder.cs" Link="Keys\Builder.cs" />
+    <Compile Include="..\NFSRaider\Keys\MainKeys\**\*.cs" Link="Keys\%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+
 </Project>

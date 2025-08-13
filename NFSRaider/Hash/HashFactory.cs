@@ -10,21 +10,15 @@ namespace NFSRaider.Hash
 
         public static HashFactory GetHashType(HashType hashType)
         {
-            switch (hashType)
+            return hashType switch
             {
-                case HashType.Bin:
-                    return new Bin();
-                case HashType.Vlt:
-                    return new Vlt();
-                //case HashType.Vlt64:
-                //    throw new NotImplementedException();
-                case HashType.VltBin:
-                    return new VltBin();
-                case HashType.VltVlt:
-                    return new VltVlt();
-                default:
-                    throw new NotImplementedException();
-            }
+                HashType.Bin => new Bin(),
+                HashType.Vlt => new Vlt(),
+                //HashType.Vlt64 => throw new NotImplementedException(),
+                HashType.VltBin => new VltBin(),
+                HashType.VltVlt => new VltVlt(),
+                _ => throw new NotImplementedException(),
+            };
         }
     }
 }

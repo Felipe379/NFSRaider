@@ -5,7 +5,6 @@ namespace NFSRaider.Enums
     [Flags]
     public enum Game
     {
-        None = 0,
         HotPursuit2 = 1 << 0,  // 1
         Underground1 = 1 << 1,  // 2
         Underground2 = 1 << 2,  // 4
@@ -16,6 +15,8 @@ namespace NFSRaider.Enums
         UndercoverCG = 1 << 7,  // 128
         Nitro = 1 << 8,  // 256
         World = 1 << 9,  // 512
-        TheRun = 1 << 10  // 1024
+        TheRun = 1 << 10,  // 1024
+
+        Shared = 1 << 11  // 2048
     }
 }

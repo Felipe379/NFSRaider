@@ -21,79 +21,43 @@ namespace PreBuildTask
             if (!Directory.Exists(mergedFilesFolder))
                 Directory.CreateDirectory(mergedFilesFolder);
 
-            CreateMergedFile(new[] { Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "VltList") }, Path.Combine(mergedFilesFolder, "VltKeys.txt"));
-            CreateMergedFile(new[] { Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "Files") }, Path.Combine(mergedFilesFolder, "DisculatorKeys.txt"));
+            CreateMergedFile(new[] { new NFSRaider.Keys.MainKeys.VltList.BuildVlt().GetKeys() }, Path.Combine(mergedFilesFolder, "VltKeys.txt"));
+            CreateMergedFile(new[] { new NFSRaider.Keys.MainKeys.Files.BuildFiles().GetKeys() }, Path.Combine(mergedFilesFolder, "DisculatorKeys.txt"));
             CreateMergedFile(new[]
             {
-                // TODO : CarsTextures and PartsLists
-
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "Global", "Attributes.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "Global", "DataTables.txt"),
-
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "Brands", "Underground1.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "Cars", "Underground1.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "Cars", "Underground1.Deleted.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "Cars", "Underground1.Leftovers.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "CarsPartGroups", "Underground1.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "CarsPositionMarkers", "Underground1.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "CarsSlotTypes", "Underground1.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "FEng", "Underground1.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "FEng", "Underground1.Arcade.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "FEng", "Underground1.Deleted.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "GCareers", "Underground1.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "LanguageLabels", "Underground1.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "Materials", "Underground1.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "Materials", "Underground1.Deleted.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "Presets", "Underground1.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "Presets", "Underground1.Deleted.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "SunInfos", "Underground1.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "Textures", "Underground1.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "Textures", "Underground1.Arcade.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "Textures", "Underground1.Deleted.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "Tracks", "Textures", "Underground1.txt"),
-                Path.Combine(nfsRaiderPath, "NFSRaider", "Keys", "MainKeys", "Tracks", "Textures", "Underground1.Deleted.txt"),
+                // TODO : PartsLists
+                new NFSRaider.Keys.MainKeys.Global.BuildGlobal().GetKeys(),
+                new NFSRaider.Keys.MainKeys.Brands.BuildBrands().GetKeys(NFSRaider.Enums.Game.Underground1),
+                new NFSRaider.Keys.MainKeys.Cars.BuildCars().GetKeys(NFSRaider.Enums.Game.Underground1),
+                new NFSRaider.Keys.MainKeys.CarsPartGroups.BuildCarsPartGroups().GetKeys(NFSRaider.Enums.Game.Underground1),
+                new NFSRaider.Keys.MainKeys.CarsPositionMarkers.BuildCarsPositionMarkers().GetKeys(NFSRaider.Enums.Game.Underground1),
+                new NFSRaider.Keys.MainKeys.CarsSlotTypes.BuildCarsSlotTypes().GetKeys(NFSRaider.Enums.Game.Underground1),
+                new NFSRaider.Keys.MainKeys.CarsTextures.BuildCarsTextures().GetKeys(NFSRaider.Enums.Game.Underground1 | NFSRaider.Enums.Game.Shared),
+                new NFSRaider.Keys.MainKeys.FEng.BuildFEng().GetKeys(NFSRaider.Enums.Game.Underground1),
+                new NFSRaider.Keys.MainKeys.GCareers.BuildGCareers().GetKeys(NFSRaider.Enums.Game.Underground1),
+                new NFSRaider.Keys.MainKeys.LanguageLabels.BuildLanguageLabels().GetKeys(NFSRaider.Enums.Game.Underground1),
+                new NFSRaider.Keys.MainKeys.Materials.BuildMaterials().GetKeys(NFSRaider.Enums.Game.Underground1),
+                new NFSRaider.Keys.MainKeys.Presets.BuildPresets().GetKeys(NFSRaider.Enums.Game.Underground1),
+                new NFSRaider.Keys.MainKeys.SunInfos.BuildSunInfos().GetKeys(NFSRaider.Enums.Game.Underground1),
+                new NFSRaider.Keys.MainKeys.Textures.BuildTextures().GetKeys(NFSRaider.Enums.Game.Underground1),
+                new NFSRaider.Keys.MainKeys.Tracks.Textures.BuildTextures().GetKeys(NFSRaider.Enums.Game.Underground1),
             }, Path.Combine(mergedFilesFolder, "BinaryMainKeysUnderground1.txt"));
         }
 
-        private static void CreateMergedFile(string[] directoriesPath, string outputFile)
+        private static void CreateMergedFile(HashSet<string>[] keys, string outputFile)
         {
             try
             {
-                var keys = new HashSet<string>();
+                var keysMerged = new HashSet<string>();
 
-                foreach (var directoryPath in directoriesPath)
+                foreach (var key in keys)
                 {
-                    var files = new List<string>();
-                    if (File.Exists(directoryPath))
-                    {
-                        files.Add(directoryPath);
-                    }
-                    else if (Directory.Exists(directoryPath))
-                    {
-                        files.AddRange(Directory.GetFiles(directoryPath, "*.txt", SearchOption.AllDirectories));
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Error: The directory or file '{directoryPath}' does not exist.");
-                        continue;
-                    }
-
-                    if (!files.Any())
-                    {
-                        Console.Error.WriteLine($"Error: No .txt files found in '{directoryPath}'.");
-                        continue;
-                    }
-
-                    foreach (var file in files)
-                    {
-                        var lines = File.ReadAllLines(file);
-                        keys.UnionWith(lines);
-                    }
+                    keysMerged.UnionWith(key);
                 }
 
-                keys = keys.OrderBy(x => x).ToHashSet();
+                keysMerged = keysMerged.OrderBy(x => x).ToHashSet();
 
-                File.WriteAllLines(outputFile, keys);
+                File.WriteAllLines(outputFile, keysMerged);
 
                 Console.WriteLine($"{outputFile} created successfully.");
             }

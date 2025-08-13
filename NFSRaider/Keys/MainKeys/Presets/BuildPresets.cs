@@ -11,6 +11,10 @@ namespace NFSRaider.Keys.MainKeys.Presets
         public override HashSet<string> GetKeys(Game? gameFilter = null, CancellationToken cancellationToken = default)
         {
             var files = GetDirectoryFiles(GetDirectory(GetType()));
+
+            if (gameFilter != null)
+                files = FilterPerGame(files, gameFilter.Value).Select(d => d.file).ToArray();
+
             var presets = new HashSet<string>(FileRead.ReadFiles(files));
 
             presets.UnionWith(new HashSet<string>(presets.Select(c => c.ToUpperInvariant())));
