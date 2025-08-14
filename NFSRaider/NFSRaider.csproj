@@ -12,6 +12,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Keys\MainKeys\CarsTextures\HotPursuit2.Deleted.txt" />
+    <None Remove="Keys\MainKeys\CarsTextures\Nitro.txt" />
+    <None Remove="keys\mainkeys\cars\Nitro.txt" />
+  </ItemGroup>
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="&quot;$(SolutionDir)\PreBuildTask\bin\$(Configuration)\net6.0\PreBuildTask.exe&quot;" />
   </Target>

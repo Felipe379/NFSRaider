@@ -6,6 +6,7 @@ using NFSRaider.Keys.MainKeys.CarsPartGroups;
 using NFSRaider.Keys.MainKeys.CarsPositionMarkers;
 using NFSRaider.Keys.MainKeys.CarsSlotTypes;
 using NFSRaider.Keys.MainKeys.CarsTextures;
+using NFSRaider.Keys.MainKeys.CarsVinyls;
 using NFSRaider.Keys.MainKeys.FEng;
 using NFSRaider.Keys.MainKeys.Files;
 using NFSRaider.Keys.MainKeys.GCareers;
@@ -58,6 +59,7 @@ namespace NFSRaider.Keys.MainKeys
                 new BuildCarsPositionMarkers(),
                 new BuildCarsSlotTypes(),
                 new BuildCarsTextures(),
+                new BuildCarsVinyls(),
                 new BuildFEng(),
                 new BuildFiles(),
                 new BuildGCareers(),
