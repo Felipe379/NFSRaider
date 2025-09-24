@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PreBuildTask.ListsMerge;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -20,6 +21,14 @@ namespace PreBuildTask
 
             if (!Directory.Exists(mergedFilesFolder))
                 Directory.CreateDirectory(mergedFilesFolder);
+
+            var generateMergedLists = false;
+
+            if (generateMergedLists)
+            {
+                Merge.Run(mergedFilesFolder);
+                return;
+            }
 
             CreateMergedFile(new[] { new NFSRaider.Keys.MainKeys.VltList.BuildVlt().GetKeys() }, Path.Combine(mergedFilesFolder, "VltKeys.txt"));
             CreateMergedFile(new[] { new NFSRaider.Keys.MainKeys.Files.BuildFiles().GetKeys() }, Path.Combine(mergedFilesFolder, "DisculatorKeys.txt"));

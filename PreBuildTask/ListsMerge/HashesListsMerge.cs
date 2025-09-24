@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace NFSRaider.Helpers
+namespace PreBuildTask.ListsMerge
 {
     public static class HashesListsMerge
     {
