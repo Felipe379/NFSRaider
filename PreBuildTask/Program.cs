@@ -32,26 +32,47 @@ namespace PreBuildTask
 
             CreateMergedFile(new[] { new NFSRaider.Keys.MainKeys.VltList.BuildVlt().GetKeys() }, Path.Combine(mergedFilesFolder, "VltKeys.txt"));
             CreateMergedFile(new[] { new NFSRaider.Keys.MainKeys.Files.BuildFiles().GetKeys() }, Path.Combine(mergedFilesFolder, "DisculatorKeys.txt"));
-            CreateMergedFile(new[]
+
+            var games = new[]
             {
-                // TODO : PartsLists
-                new NFSRaider.Keys.MainKeys.Global.BuildGlobal().GetKeys(),
-                new NFSRaider.Keys.MainKeys.Brands.BuildBrands().GetKeys(NFSRaider.Enums.Game.Underground1),
-                new NFSRaider.Keys.MainKeys.Cars.BuildCars().GetKeys(NFSRaider.Enums.Game.Underground1),
-                new NFSRaider.Keys.MainKeys.CarsPartGroups.BuildCarsPartGroups().GetKeys(NFSRaider.Enums.Game.Underground1),
-                new NFSRaider.Keys.MainKeys.CarsPositionMarkers.BuildCarsPositionMarkers().GetKeys(NFSRaider.Enums.Game.Underground1),
-                new NFSRaider.Keys.MainKeys.CarsSlotTypes.BuildCarsSlotTypes().GetKeys(NFSRaider.Enums.Game.Underground1),
-                new NFSRaider.Keys.MainKeys.CarsTextures.BuildCarsTextures().GetKeys(NFSRaider.Enums.Game.Underground1),
-                new NFSRaider.Keys.MainKeys.CarsVinyls.BuildCarsVinyls().GetKeys(NFSRaider.Enums.Game.Underground1),
-                new NFSRaider.Keys.MainKeys.FEng.BuildFEng().GetKeys(NFSRaider.Enums.Game.Underground1),
-                new NFSRaider.Keys.MainKeys.GCareers.BuildGCareers().GetKeys(NFSRaider.Enums.Game.Underground1),
-                new NFSRaider.Keys.MainKeys.LanguageLabels.BuildLanguageLabels().GetKeys(NFSRaider.Enums.Game.Underground1),
-                new NFSRaider.Keys.MainKeys.Materials.BuildMaterials().GetKeys(NFSRaider.Enums.Game.Underground1),
-                new NFSRaider.Keys.MainKeys.Presets.BuildPresets().GetKeys(NFSRaider.Enums.Game.Underground1),
-                new NFSRaider.Keys.MainKeys.SunInfos.BuildSunInfos().GetKeys(NFSRaider.Enums.Game.Underground1),
-                new NFSRaider.Keys.MainKeys.Textures.BuildTextures().GetKeys(NFSRaider.Enums.Game.Underground1),
-                new NFSRaider.Keys.MainKeys.Tracks.Textures.BuildTextures().GetKeys(NFSRaider.Enums.Game.Underground1),
-            }, Path.Combine(mergedFilesFolder, "BinaryMainKeysUnderground1.txt"));
+                NFSRaider.Enums.Game.Shared,
+                NFSRaider.Enums.Game.HotPursuit2,
+                NFSRaider.Enums.Game.Underground1,
+                NFSRaider.Enums.Game.Underground2,
+                NFSRaider.Enums.Game.MostWanted,
+                NFSRaider.Enums.Game.Carbon,
+                NFSRaider.Enums.Game.ProStreet,
+                NFSRaider.Enums.Game.Undercover,
+                NFSRaider.Enums.Game.UndercoverCG,
+                NFSRaider.Enums.Game.World
+            };
+
+            foreach (var game in games)
+            {
+                CreateMergedFile(new[]
+                {
+                    // TODO : PartsLists
+                    new NFSRaider.Keys.MainKeys.Global.BuildGlobal().GetKeys(),
+                    new NFSRaider.Keys.MainKeys.AcidEffects.BuildAcidEffects().GetKeys(game),
+                    new NFSRaider.Keys.MainKeys.Brands.BuildBrands().GetKeys(game),
+                    new NFSRaider.Keys.MainKeys.Cars.BuildCars().GetKeys(game),
+                    new NFSRaider.Keys.MainKeys.CarsPartGroups.BuildCarsPartGroups().GetKeys(game),
+                    new NFSRaider.Keys.MainKeys.CarsPositionMarkers.BuildCarsPositionMarkers().GetKeys(game),
+                    new NFSRaider.Keys.MainKeys.CarsSlotTypes.BuildCarsSlotTypes().GetKeys(game),
+                    new NFSRaider.Keys.MainKeys.CarsTextures.BuildCarsTextures().GetKeys(game),
+                    new NFSRaider.Keys.MainKeys.CarsVinyls.BuildCarsVinyls().GetKeys(game),
+                    new NFSRaider.Keys.MainKeys.FEng.BuildFEng().GetKeys(game),
+                    new NFSRaider.Keys.MainKeys.GCareers.BuildGCareers().GetKeys(game),
+                    new NFSRaider.Keys.MainKeys.LanguageLabels.BuildLanguageLabels().GetKeys(game),
+                    new NFSRaider.Keys.MainKeys.Materials.BuildMaterials().GetKeys(game),
+                    new NFSRaider.Keys.MainKeys.Nis.BuildNis().GetKeys(game),
+                    new NFSRaider.Keys.MainKeys.Presets.BuildPresets().GetKeys(game),
+                    new NFSRaider.Keys.MainKeys.PresetSkins.BuildPresetSkins().GetKeys(game),
+                    new NFSRaider.Keys.MainKeys.SunInfos.BuildSunInfos().GetKeys(game),
+                    new NFSRaider.Keys.MainKeys.Textures.BuildTextures().GetKeys(game),
+                    new NFSRaider.Keys.MainKeys.Tracks.Textures.BuildTextures().GetKeys(game),
+                }, Path.Combine(mergedFilesFolder, $"BinaryMainKeys{game.ToString()}.txt"));
+            }
         }
 
         private static void CreateMergedFile(HashSet<string>[] keys, string outputFile)
