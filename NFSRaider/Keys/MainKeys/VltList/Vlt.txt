@@ -13029,6 +13029,7 @@ PLANE
 TRAIN
 RC
 TRANSPORT
+RESET_DAMAGE
 AIGoal
 AIGoalAutoDrive
 AIGoalBeAmbientTrafficCar

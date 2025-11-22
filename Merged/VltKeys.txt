@@ -70800,6 +70800,7 @@ rescue_outro_win
 resellprice
 reservoir
 reset
+RESET_DAMAGE
 reset_trigger
 ResetCar
 ResetCops
