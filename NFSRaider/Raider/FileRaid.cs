@@ -1,4 +1,5 @@
 ﻿using NFSRaider.Case;
+using NFSRaider.Consts;
 using NFSRaider.Enums;
 using NFSRaider.Hash;
 using NFSRaider.Helpers;
@@ -73,16 +74,8 @@ namespace NFSRaider.Raider
                 }
                 else
                 {
-                    if (hash == 0 || hash == uint.MaxValue)
-                    {
-                        result = "--------";
-                        isKnown = true;
-                    }
-                    else
-                    {
-                        result = "HASH_UNKNOWN";
-                        isKnown = false;
-                    }
+                    result = RaiderConsts.HashUnknown;
+                    isKnown = false;
                 }
 
                 listBox.Add(new RaiderResult() { Hash = hash, Value = result, IsKnown = isKnown });

@@ -1,5 +1,6 @@
 ﻿using Combinatorics.Collections;
 using NFSRaider.Case;
+using NFSRaider.Consts;
 using NFSRaider.Enums;
 using NFSRaider.Hash;
 using NFSRaider.Helpers;
@@ -210,7 +211,7 @@ namespace NFSRaider.Raider
                 }
                 else
                 {
-                    results.Add(new RaiderResult { Hash = hash, Value = "HASH_UNKNOWN", IsKnown = false });
+                    results.Add(new RaiderResult { Hash = hash, Value = RaiderConsts.HashUnknown, IsKnown = false });
                 }
             }
 

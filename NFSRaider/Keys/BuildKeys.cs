@@ -1,9 +1,10 @@
 ﻿using NFSRaider.Case;
+using NFSRaider.Consts;
 using NFSRaider.Enums;
 using NFSRaider.Hash;
 using NFSRaider.Helpers;
 using NFSRaider.Keys.MainKeys;
-using NFSRaider.Keys.MainKeys.TruncatedStrings;
+using NFSRaider.Keys.UnresolvedKeys;
 using NFSRaider.Keys.UserKeys;
 using System;
 using System.Collections.Generic;
@@ -52,9 +53,106 @@ namespace NFSRaider.Keys
             return keys;
         }
 
+        public Dictionary<uint, string> GetUnresolvedKeys(Game? gameFilter = null, CancellationToken cancellationToken = default)
+        {
+            var truncatedKeys = new BuildUnresolvedKeys().GetKeys(gameFilter, cancellationToken);
+            const int defaultNumericBase = 16;
+
+            var hashes = new Dictionary<uint, HashSet<string>>(truncatedKeys.Count);
+
+            string hash, metadata, key;
+            int len, i, start, fieldIndex;
+            uint hashKey;
+
+            void AddHashes(string keyString, string valueString, string metadataString)
+            {
+                hashKey = Convert.ToUInt32(keyString, defaultNumericBase);
+
+                if (string.IsNullOrEmpty(valueString))
+                    valueString = RaiderConsts.HashUnresolved;
+
+                if (string.IsNullOrWhiteSpace(metadataString))
+                    metadataString = RaiderConsts.HashUnresolvedEmptyMetadata;
+
+                valueString = $"{valueString} ({metadataString})";
+
+                if (!hashes.TryGetValue(hashKey, out var set))
+                {
+                    set = new HashSet<string>();
+                    hashes.Add(hashKey, set);
+                }
+
+                set.Add(valueString);
+            }
+
+            foreach (var truncatedKey in truncatedKeys)
+            {
+                hash = metadata = key = string.Empty;
+                if (Hashes.IsHash(truncatedKey, defaultNumericBase))
+                {
+                    hash = truncatedKey;
+                }
+                else
+                {
+                    if (string.IsNullOrWhiteSpace(truncatedKey))
+                        continue;
+
+                    len = truncatedKey.Length;
+                    hash = metadata = key = string.Empty;
+
+                    fieldIndex = 0;
+                    start = 0;
+
+                    for (i = 0; i < len; i++)
+                    {
+                        if (truncatedKey[i] == '\t')
+                        {
+                            switch (fieldIndex)
+                            {
+                                case 0:
+                                    hash = truncatedKey[start..i];
+                                    break;
+                                case 1:
+                                    metadata = truncatedKey[start..i];
+                                    break;
+                                case 2:
+                                    key = truncatedKey[start..i];
+                                    break;
+                            }
+
+                            fieldIndex++;
+
+                            if (fieldIndex > 2)
+                                break;
+
+                            start = i + 1;
+                        }
+                    }
+
+                    if (fieldIndex == 0 || !Hashes.IsHash(hash, defaultNumericBase))
+                        continue;
+
+                    if (fieldIndex == 1)
+                    {
+                        metadata = truncatedKey[start..];
+                        key = RaiderConsts.HashUnresolved;
+                    }
+                    else if (fieldIndex == 2)
+                    {
+                        key = truncatedKey[start..];
+                    }
+                }
+
+                AddHashes(hash, key, metadata);
+            }
+
+            return hashes.ToDictionary(c => c.Key, c => string.Join(" / ", c.Value));
+        }
+
+
         public Dictionary<uint, string> GetKeyValue(Game? gameFilter = null, CancellationToken cancellationToken = default)
         {
-            var keyValuePairs = new BuildTruncatedStrings().GetAllTruncatedStrings();
+            var keyValuePairs = GetUnresolvedKeys(gameFilter, cancellationToken);
             var keys = _useMergedKeysFile
                 ? UseMergedKeysFile()
                 : GetKeys(gameFilter, cancellationToken);

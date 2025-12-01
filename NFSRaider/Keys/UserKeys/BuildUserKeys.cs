@@ -2,6 +2,7 @@
 using NFSRaider.Helpers;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading;
 
 namespace NFSRaider.Keys.UserKeys
@@ -20,6 +21,9 @@ namespace NFSRaider.Keys.UserKeys
             }
 
             var files = GetDirectoryFiles(directory);
+
+            if (gameFilter != null)
+                files = FilterPerGame(files, gameFilter.Value).Select(d => d.file).ToArray();
 
             var userKeys = new HashSet<string>(FileRead.ReadFiles(files));
 

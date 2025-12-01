@@ -1,0 +1,2 @@
+0x00000000	INVALID	--------
+0xFFFFFFFF	INVALID	--------
