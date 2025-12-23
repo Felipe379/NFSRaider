@@ -20,7 +20,7 @@ namespace PreBuildTask.ListsMerge
 
                 if (hashes.ContainsKey(truncatedHash.Key))
                 {
-                    hashes[truncatedHash.Key].Concat(resolved);
+                    hashes[truncatedHash.Key].UnionWith(resolved);
                 }
                 else
                 {

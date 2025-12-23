@@ -53,7 +53,7 @@ namespace NFSRaider.Keys
             return keys;
         }
 
-        public Dictionary<uint, string> GetUnresolvedKeys(Game? gameFilter = null, CancellationToken cancellationToken = default)
+        public static Dictionary<uint, string> GetUnresolvedKeys(Game? gameFilter = null, CancellationToken cancellationToken = default)
         {
             var truncatedKeys = new BuildUnresolvedKeys().GetKeys(gameFilter, cancellationToken);
             const int defaultNumericBase = 16;

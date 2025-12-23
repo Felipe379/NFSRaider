@@ -917,5 +917,22 @@ namespace NFSRaider
                 MessageBox.Show("No configuration to export.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void MenuLoadUnresolvedHashesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var defaultValues = new List<uint> { 0x00000000, 0xFFFFFFFF };
+            var defaultNumericBase = NumericBase.Hexadecimal;
+            var defaultEndianness = Endianness.LittleEndian;
+
+            var unresolvedKeys = BuildKeys.GetUnresolvedKeys()
+                .Where(k => !defaultValues.Contains(k.Key))
+                .Select(k => "0x" + Convert.ToString(k.Key, Numeric.Bases[defaultNumericBase].Base).PadLeft(Numeric.Bases[defaultNumericBase].Chars, '0'))
+                .Distinct();
+
+            TxtLoadFromText.Text = string.Join(Environment.NewLine, unresolvedKeys);
+            CboEndianness.SelectedIndex = (int)defaultEndianness;
+            CboNumericBase.SelectedIndex = (int)defaultNumericBase;
+            TabLoadOptions.SelectedIndex = 1;
+        }
     }
 }

@@ -36,7 +36,7 @@ namespace NFSRaider.Keys.MainKeys.CarsTextures
 
                 var filesToProcess = group.Select(f => f.file).Concat(sharedFiles.Select(f => f.file));
 
-                var carList = new HashSet<string>(new BuildCars().GetKeys(filter));
+                var carList = new HashSet<string>(new BuildCars().GetKeys(filter, cancellationToken));
                 var textures = new HashSet<string>(FileRead.ReadFiles(filesToProcess));
 
                 foreach (var car in carList)

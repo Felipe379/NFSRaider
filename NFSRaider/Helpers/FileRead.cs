@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace NFSRaider.Helpers
@@ -9,7 +10,7 @@ namespace NFSRaider.Helpers
         {
             var array = File.ReadAllBytes(filePath);
 
-            var arrayOfInts = new uint[] { };
+            var arrayOfInts = Array.Empty<uint>();
 
             using (var ms = new MemoryStream(array))
             {

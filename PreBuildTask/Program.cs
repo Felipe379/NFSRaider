@@ -71,7 +71,7 @@ namespace PreBuildTask
                     new NFSRaider.Keys.MainKeys.SunInfos.BuildSunInfos().GetKeys(game),
                     new NFSRaider.Keys.MainKeys.Textures.BuildTextures().GetKeys(game),
                     new NFSRaider.Keys.MainKeys.Tracks.Textures.BuildTextures().GetKeys(game),
-                }, Path.Combine(mergedFilesFolder, $"BinaryMainKeys{game.ToString()}.txt"));
+                }, Path.Combine(mergedFilesFolder, $"BinaryMainKeys{game}.txt"));
             }
         }
 

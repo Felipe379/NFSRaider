@@ -106,6 +106,7 @@
             FileToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             ImportBruteforceConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             MenuExportBruteforceConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            MenuLoadUnresolvedHashesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             GrpLoadOptions.SuspendLayout();
             TabLoadOptions.SuspendLayout();
             TabPageFromFile.SuspendLayout();
@@ -938,7 +939,7 @@
             // 
             // fileToolStripMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { CreateMergedKeysFileToolStripMenuItem, FileToolStripSeparator1, ImportBruteforceConfigurationToolStripMenuItem, MenuExportBruteforceConfigurationToolStripMenuItem });
+            fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { CreateMergedKeysFileToolStripMenuItem, FileToolStripSeparator1, ImportBruteforceConfigurationToolStripMenuItem, MenuExportBruteforceConfigurationToolStripMenuItem, MenuLoadUnresolvedHashesToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             fileToolStripMenuItem.Text = "File";
@@ -969,6 +970,13 @@
             MenuExportBruteforceConfigurationToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             MenuExportBruteforceConfigurationToolStripMenuItem.Text = "Export bruteforce configuration";
             MenuExportBruteforceConfigurationToolStripMenuItem.Click += MenuExportBruteforceConfigurationToolStripMenuItem_Click;
+            // 
+            // MenuLoadUnresolvedHashesToolStripMenuItem
+            // 
+            MenuLoadUnresolvedHashesToolStripMenuItem.Name = "MenuLoadUnresolvedHashesToolStripMenuItem";
+            MenuLoadUnresolvedHashesToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            MenuLoadUnresolvedHashesToolStripMenuItem.Text = "Load unresolved hashes";
+            MenuLoadUnresolvedHashesToolStripMenuItem.Click += MenuLoadUnresolvedHashesToolStripMenuItem_Click;
             // 
             // NFSRaiderForm
             // 
@@ -1108,6 +1116,7 @@
         private System.Windows.Forms.ToolStripMenuItem CreateMergedKeysFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator FileToolStripSeparator1;
         private System.Windows.Forms.CheckBox ChkUseMergedKeys;
+        private System.Windows.Forms.ToolStripMenuItem MenuLoadUnresolvedHashesToolStripMenuItem;
     }
 }
 
