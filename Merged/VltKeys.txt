@@ -8232,6 +8232,7 @@ arrest_disparrestreply
 arrest_ng
 arrest_singleplayer
 arrest_strike
+arrest_trigger_group
 ARRESTDEFAULT
 arrestf02
 arrestf02b
@@ -20079,6 +20080,7 @@ config1
 config1_clutch
 config2
 config2_clutch
+conquer_all_area_2_tracks
 conss10
 CONSS10
 conss10_1
@@ -21472,6 +21474,7 @@ cross_crossmultistrategy
 cross_crosspursuitesc
 cross_crossrbfailreply
 cross_crossselfstrategy
+cross_finishline_in_reverse
 crossbailoutdeny_sub
 crossbureply
 crossfade_time
@@ -26398,6 +26401,7 @@ encounters/engage
 encounters/engage/encountertrigger
 encountertarget
 end_boost
+end_race_trigger_group
 End01
 end01hd
 End02
@@ -29214,6 +29218,7 @@ fill_garage_with_exotics
 fill_garage_with_muscle
 fill_garage_with_tuners
 fill_nitro
+fill_safe_house
 FILTER0
 FilterBlocks
 filterColourMap
@@ -32588,6 +32593,7 @@ german
 get_20000_fine
 get_50000_fine
 get_busted
+get_heat_level_1
 get_heat_level_2
 get_heat_level_4
 get_heat_level_5
@@ -35415,6 +35421,7 @@ hints_hud
 hints_online
 hints_pursuits
 hints_quickrace
+hire_6_crewmembers
 HiringCost
 hit
 hit_and_run
@@ -37466,6 +37473,7 @@ intro_message
 intro_movie
 intro_movie2
 intro_nis
+intro_race_trigger_group
 intro01
 intro01hdk1a
 Intro01HDK1A
@@ -48322,6 +48330,7 @@ nis_trigger_pip_ucap
 nis_trigger_race_end
 nis_trigger_race_start
 nis_trigger_ucap
+nis_triggers
 nis_yellow
 NIS::AudioOptions
 NIS::eBOSS_ID
@@ -49579,6 +49588,7 @@ online_rep_4
 online_rep_42
 online_rep_50
 online_rep_6
+online_rep_8
 online_rep_9
 online_reward_1
 online_reward_10
@@ -51829,6 +51839,7 @@ pip_light_2
 pip_light_3
 pip_light_4
 pip_trigger
+pip_trigger_group
 pipangie
 PIPAngie
 pipdarius
@@ -51910,6 +51921,8 @@ play_5_sprint_races
 play_50_games_online
 play_50_quick_races
 play_75_online_games
+play_8_player_online_game
+played_a_game_online
 player
 player_car
 Player_car_occlusion_ratio
@@ -100661,6 +100674,7 @@ Tribal_Nomad
 tricky
 trigger
 Trigger
+trigger_race_breaker
 TriggerAudioFeature
 TriggerDistance
 Triggers
@@ -102543,11 +102557,14 @@ win_1_canyon_duel
 win_1_free_roam_challenge
 win_10_canyon_duels
 win_10_free_roam_challenges
+win_10_pursuit_knockouts
 win_100_career_races
 win_15_career_races
 win_20_defensive_races
 win_25_career_races
 win_25_online_duels
+win_25_online_speed_traps
+win_25_online_sprints
 win_5_canyon_duels
 win_5_drift_races
 win_5_free_roam_challenges
@@ -102751,6 +102768,10 @@ wolf_player_pass_boss_right
 wolf_player_pass_boss_right_2
 wolfmother
 Wolfmother
+won_10_online_pursuit_tags
+won_10_online_sprints
+won_10_speedtraps
+won_8_player_online_game
 wood
 wood_2_car
 wood_2_world
