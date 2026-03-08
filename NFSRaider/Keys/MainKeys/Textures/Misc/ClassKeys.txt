@@ -5,6 +5,8 @@ Bloom Alpha Mask
 Terrain Shadow
 CarSkin GlossMap
 CarSkin
-DEFAULTALPHA
+Cubic Environment Map
+Barrier Mask
 None
+DEFAULTALPHA
 GLOBAL

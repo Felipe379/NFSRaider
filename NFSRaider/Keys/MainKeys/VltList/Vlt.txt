@@ -13040,6 +13040,9 @@ pip_trigger_group
 intro_race_trigger_group
 arrest_trigger_group
 nis_triggers
+tandersson
+linfordremix1
+linfordremix2
 TANK
 HOVER
 BOAT
