@@ -2,6 +2,7 @@
 using NFSRaider.Keys.MainKeys.AcidEffects;
 using NFSRaider.Keys.MainKeys.Brands;
 using NFSRaider.Keys.MainKeys.Cars;
+using NFSRaider.Keys.MainKeys.CarsCollisionBounds;
 using NFSRaider.Keys.MainKeys.CarsPartGroups;
 using NFSRaider.Keys.MainKeys.CarsPositionMarkers;
 using NFSRaider.Keys.MainKeys.CarsSlotTypes;
@@ -55,6 +56,7 @@ namespace NFSRaider.Keys.MainKeys
                 new BuildAcidEffects(),
                 new BuildBrands(),
                 new BuildCars(),
+                new BuildCarCollisionBounds(),
                 new BuildCarsPartGroups(),
                 new BuildCarsPositionMarkers(),
                 new BuildCarsSlotTypes(),

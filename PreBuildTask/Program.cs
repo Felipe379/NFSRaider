@@ -53,6 +53,7 @@ namespace PreBuildTask
                 {
                     // TODO : PartsLists
                     new NFSRaider.Keys.MainKeys.Global.BuildGlobal().GetKeys(),
+                    new NFSRaider.Keys.MainKeys.CarsCollisionBounds.BuildCarCollisionBounds().GetKeys(game),
                     new NFSRaider.Keys.MainKeys.AcidEffects.BuildAcidEffects().GetKeys(game),
                     new NFSRaider.Keys.MainKeys.Brands.BuildBrands().GetKeys(game),
                     new NFSRaider.Keys.MainKeys.Cars.BuildCars().GetKeys(game),

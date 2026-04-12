@@ -1,0 +1,7 @@
+﻿carbody
+metal
+glass
+stone
+wood
+car
+plastic
