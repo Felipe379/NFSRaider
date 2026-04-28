@@ -2556,6 +2556,15 @@ $SLOW02
 19.sd.1
 19.ss.1
 19.td.1
+1st
+1st_easy
+1st_hard
+1st_medium
+1st_veryeasy
+1st_veryhard
+1stdrag_easy
+1stdrag_hard
+1stdrag_medium
 2
 2_1_1
 2_1_1_circuit
@@ -2773,7 +2782,28 @@ $SLOW02
 200SX_STYLE01_HOOD
 200SX_STYLE02_HOOD
 200SX_WHEEL
+2011
+2012
+2013
+2014
+2015
+2016
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+2024
+2025
 2025drag
+2026
+2027
+2028
+2029
+2030
+2031
 21
 21_1_1_circuit
 21_2_1_sprint
@@ -3231,6 +3261,15 @@ $SLOW02
 296
 298
 299
+2nd
+2nd_easy
+2nd_hard
+2nd_medium
+2nd_veryeasy
+2nd_veryhard
+2nddrag_easy
+2nddrag_hard
+2nddrag_medium
 2T_CAYMANS
 2T_CCX
 2T_CHALLENGER71
@@ -4073,6 +4112,15 @@ $SLOW02
 39.ss.1
 39.ta.1
 39.td.1
+3rd
+3rd_easy
+3rd_hard
+3rd_medium
+3rd_veryeasy
+3rd_veryhard
+3rddrag_easy
+3rddrag_hard
+3rddrag_medium
 4
 4_1_1
 4_1_1_circuit
@@ -4392,6 +4440,12 @@ $SLOW02
 49.td.1
 49.td.2
 49.td.3
+4th
+4th_easy
+4th_hard
+4th_medium
+4th_veryeasy
+4th_veryhard
 5
 5_0_1_drag_test
 5_0_1_drag_test/call_911_trigger
@@ -4634,6 +4688,12 @@ $SLOW02
 59.ta.2
 59.td.1
 59.wc.1
+5th
+5th_easy
+5th_hard
+5th_medium
+5th_veryeasy
+5th_veryhard
 5ZIGEN
 5ZIGEN_STYLE01_17_25
 5ZIGEN_STYLE01_18_25
@@ -4758,6 +4818,12 @@ $SLOW02
 69roadrunner_bumper
 69roadrunner_h
 69roadrunner_t
+6th
+6th_easy
+6th_hard
+6th_medium
+6th_veryeasy
+6th_veryhard
 7
 7_1_1
 7_1_1_circuit
@@ -4909,6 +4975,12 @@ $SLOW02
 79.ss.1
 79.ta.1
 79.ts.1
+7th
+7th_easy
+7th_hard
+7th_medium
+7th_veryeasy
+7th_veryhard
 8
 8_1_1
 8_1_2
@@ -5006,6 +5078,7 @@ $SLOW02
 84.ss.1
 84.ta.1
 85
+8players
 9
 9_1_1_circuit
 9_1_1_r_circuit
@@ -5734,6 +5807,7 @@ acura
 ad_sales
 AdaptDownByLevel
 adaptivedifficulty
+adaptivepidvalues
 AdaptUpByLevel
 add
 Add a description
@@ -6046,6 +6120,7 @@ AFTERMIX_MUSTANGGT_RR
 AFTERMIX_MUSTANGGT_RREAR
 AFTERMIX_MUSTANGGT_SNAKE
 afterparty
+afterrace
 Age
 aggression
 Agostini_Heights
@@ -6091,6 +6166,7 @@ AIC_BOND_RGADGET
 AICollisionReactionRecord
 AICopManager
 aicurves
+aidraft
 AIDriverSubclass
 AIElementController
 aiglue
@@ -6402,6 +6478,7 @@ Amazon_Silver_Vinyl
 amber_traffic
 AmberTraffic_Frag_seq
 AmberTraffic_seq
+ambience
 ambience_mapping
 ambience.sbr
 ambience2.sbr
@@ -8582,6 +8659,8 @@ asphalt_drift
 asphalt_no_leaves
 asphalt_stripe_yellow
 assault
+assetmanager
+assets
 ASSIST_TRACK_CENTER_DIR_APM
 ASSIST_TRACK_CENTER_DIR_APM_CTRL
 ASSIST_TRACK_CENTER_DIR_PERC
@@ -9170,6 +9249,7 @@ audio_freeroam
 audio_global_tuning
 audio_initial
 audio_loading
+audio_lod
 audio_matchmaking
 audio_moment_vo
 audio_moments
@@ -9182,6 +9262,7 @@ audio_object
 audio_object_dummy
 audio_offroad_map
 audio_offroad_region
+audio_pickup
 audio_pursuit
 audio_pursuit_post
 audio_revlimiter
@@ -14916,6 +14997,7 @@ CAR_SLOT_ID
 car_slots
 car_special_event_effect
 car_spoiler
+car_state
 car_t
 car_t_a
 car_t_nm
@@ -16521,6 +16603,7 @@ CAREERMAP_CE_BACKING
 careermap_popup
 CareerMapLocation
 careermovie
+careffect
 carerragt_power_package_lvl_3
 carexhaustbmw
 carexhaustbmw2
@@ -19978,9 +20061,12 @@ COLOR_CORRECTION_GARAGE
 COLOR_CORRECTION_RIO
 COLOR_CORRECTION_SINGAPORE
 color_palette
+color0
 COLOR0
+color1
 Color1
 COLOR1
+color2
 Color2
 COLOR2
 Color3
@@ -20417,6 +20503,7 @@ CopScaler
 CopsEnabled_Local
 CopsEnabled_Remote
 CopsInRace
+copsiren
 copspawn_time_trigger
 copspawn_time_trigger2
 copspawner_trigger
@@ -20424,6 +20511,7 @@ CopSpawnLocation
 CopSpawnPoints
 copspawntrigger
 CopSpawnType
+copspeech
 copsport
 COPSPORT
 COPSPORT_DRIVER
@@ -20475,6 +20563,9 @@ copsuvpatrol
 coptakeout
 copter
 COPTER
+coptier1
+coptier2
+coptier3
 copviper
 COPVIPER
 cor_c5_a
@@ -20978,11 +21069,16 @@ Countdown
 countdown_
 countdown_0
 countdown_1
+countdown_10
 countdown_2
 countdown_3
 countdown_321
 countdown_4
 countdown_5
+countdown_6
+countdown_7
+countdown_8
+countdown_9
 countdown_go
 countdown_ready
 Countdown1
@@ -21460,6 +21556,7 @@ crews/minor/minor_crew_rotor4
 crews/minor/minor_crew_scorpios
 crews/minor/minor_crew_the_trust
 crews/newfoo
+criminal_damage
 criminal_dammage
 CriticalDamage
 CriticalPriority
@@ -21980,6 +22077,7 @@ CurveTolerance
 cusotmize_main
 cust_performance
 cust_slot_stats
+custom
 CUSTOM
 custom_allwheel
 custom_allwheel_4_3
@@ -22072,7 +22170,16 @@ customize_0_fecarsblueprints
 customize_0_fecolourchooser
 customize_0_fecustomizationmenu
 customize_0_fecustomizeautozone
+customize_0_fecustomizebodyshop_level1
+customize_0_fecustomizebodyshop_level2
+customize_0_fecustomizebodyshop_level3
+customize_0_fecustomizegarage
+customize_0_fecustomizeinitial
+customize_0_fecustomizeiyw
 customize_0_fecustomizemain
+customize_0_fecustomizepaintshop
+customize_0_fecustomizepaintshop_level2
+customize_0_fecustomizepaintshop_level3
 customize_0_fecustomizeperformance
 customize_0_fecustomizevisuals
 customize_0_fedialog
@@ -22282,6 +22389,7 @@ damageColor26_45
 damageColor46_70
 damageColor71_99
 DamageCopCar
+damaged
 damaged_chain_link
 damaged_gate
 damaged_trailer
@@ -22516,6 +22624,7 @@ debug_gray_specular_tex
 debug_normal_scale
 debug_presets
 debug_rce_list
+debug_settings
 DEBUG_SPHERE
 debug_stuff
 debug_stuff/lap_time_list
@@ -23483,6 +23592,7 @@ DominateLevel2RewardProbability
 DominateLevel3RewardProbability
 DominateLevel4RewardProbability
 DominateThreshold
+Domination
 DominationPoints
 DominationTime
 Don't Speak (I Came To Make A Bang!)
@@ -23601,6 +23711,7 @@ drafter_lesson
 drafter_success
 drafter_waiting
 draftercontrail
+drafting
 drafting_time_multiplier
 DraftingGraphMagnitude
 DraftLineEffects
@@ -24469,6 +24580,7 @@ dubai/2031/woosh_marker7
 dubai/2031/woosh_marker8
 dubai/2031/woosh_marker9
 dubaidragheavy
+dud
 Dude `N Nem
 duel
 duel_intro
@@ -26147,6 +26259,7 @@ emnis_leaves4
 emnis_steamjet1
 emnis_steamjet2
 eMomentAudio_en_index
+emp
 empart_ember1
 empart_ember2
 empart_ember3
@@ -28979,10 +29092,15 @@ far
 far_suv
 FarClip
 Farhad
+fast
 fast_increment
 fast_score_time_limit
+fastdrag
 fastdubai
+fastfriendly
 fastmadrid
+fastneutral
+fastrival
 fastsingapore
 fastsingaporedelay
 fastspawningmadrid
@@ -29105,6 +29223,8 @@ feCarPartName
 FECompressions
 fecooling
 FECUBE
+fecust_colormatrice_color
+fecust_colormatrice_color_saturation
 fed_alley_01
 fed_alley_01_pl2
 fed_city_01
@@ -30203,6 +30323,7 @@ foundation
 fountain
 fountain_big
 fountain1
+four
 four_car
 fourth_gear_ratio
 Fov
@@ -31695,6 +31816,7 @@ GEAR_SML_Base.abk
 GEAR_SML_Lev1.abk
 GEAR_SML_Lev2.abk
 GEAR_SML_Lev3.abk
+gearchange
 GearChange
 Gearhead
 GEARHEAD
@@ -35187,6 +35309,7 @@ HeatLevel
 HeatLevelOverride
 heatlevels
 HeatOpponent
+heatopponents
 Heatseeker
 heattable
 heattrigger
@@ -35326,6 +35449,7 @@ helispotter
 heliswarming
 heliwash
 Hello Master
+help_messages
 helpbar
 helpbar_globals
 HelpBarButtonGroup
@@ -38287,6 +38411,7 @@ Jenny
 Jesse
 JewelsandGems
 Jim Bob
+jitterer
 JitterParams
 Joey
 Johan
@@ -39243,6 +39368,7 @@ lancerevox_track
 lancerevox_track_highend
 LANCEREVOX_WHEEL
 lancia
+landing
 LANGUAGE_ON_ALERT_MSG_CITY_A
 LANGUAGE_ON_ALERT_MSG_CITY_B
 LANGUAGE_ON_ALERT_MSG_FINISHED_CAREER
@@ -40633,6 +40759,8 @@ LONG_FORCE_SCALE
 Long_Front
 Long_Rear
 longdescription
+longrange
+longrangerocket
 LongRangeRocket
 LOOK_FORWARD
 LOOK_HEIGHT
@@ -40650,6 +40778,7 @@ lose_cops_vo
 lose_heat_gather
 lose_heat_trigger
 lose_heat_used
+loseheat
 LoseHeat
 losing_opponent
 LossBonus
@@ -41652,6 +41781,7 @@ MapArea
 MapCurve
 MapCurvePoint
 MapCurveRef
+mapping
 MapRegion
 MapRegionInfo
 MapRegionTemplate
@@ -42535,6 +42665,7 @@ mcamaro67_madrid
 mcamaro67_rio_01
 mcamaro67_rio_02
 mcamaro67_singapore
+mcamaross
 mcayenne
 MCAYENNE
 mcayenne_ai
@@ -42766,6 +42897,9 @@ mcorvette68_default_04
 mcorvette68_rio_01
 mcorvette68_rio_02
 mcorvette68_singapore
+mcorvettec3
+mcube
+mcutie
 MeasuredPerformance
 med
 med_sign
@@ -42807,15 +42941,27 @@ medium6_lc
 medium7_lc
 mediumconcreteobject
 mediumdetach
+mediumdrag
+mediumfast
+mediumfastfriendly
+mediumfastneutral
+mediumfastrival
+mediumfriendly
 mediummadrid
 mediummadridchild
 mediummetaldetach
 mediummetalfrag
 mediummetalobject
 mediummetalpost
+mediumneutral
 mediumobject
 mediumplasticobject
+mediumrival
 MediumSensitivitySteeringParameters
+mediumslow
+mediumslowfriendly
+mediumslowneutral
+mediumslowrival
 mediumwoodendetach
 mediumwoodenobject
 mediumwoodenpost
@@ -42882,6 +43028,7 @@ MEGANERS10_STYLE01_HOOD
 MEGANERS10_STYLE02_HOOD
 meganers10_t
 MEGANERS10_WHEEL
+melectric
 melody
 Melody
 melody.
@@ -43114,6 +43261,7 @@ mevo_dubai
 mevo_madrid
 mevox
 mevox_ai
+mexotic
 mexplorer
 mfordf150
 mfordgt
@@ -43151,10 +43299,12 @@ mgtr_default_04
 mgtr_dubai
 mgtr_madrid
 mgtr_singapore
+mgtr35
 mgtr3rs
 mgtr3rs_ai
 mgtrr35
 mgtrr35_ai
+mheavy
 mhum_h1
 mhum_h1_ai
 mhummer
@@ -43164,6 +43314,7 @@ mhummer_default_02
 mhummer_default_03
 mhummer_default_04
 mhummer_dubai
+mhummer_h2
 mhummer_madrid
 mhummer_singapore
 Michelle Jacksonne
@@ -43977,6 +44128,7 @@ mktnissanprotojuly2
 mktparkingjune26
 mkttest
 mmini
+mmuscle
 mmustang2010
 MMUSTANG2010
 mmustang2010_ai
@@ -44007,8 +44159,10 @@ mmustanggshlbyo_singapore
 mmustanggt500
 mmustangshlbybo67
 mmustangshlbybo67_ai
+mmustangshlbyo
 mnis_cube
 mnis_cube_ai
+mnissan_cube
 mnissan370z
 MNISSAN370Z
 mnissan370z_ai
@@ -44344,6 +44498,7 @@ MUFFLER_03
 MUFFLER_04
 MUFFLER_05
 mufflers
+multi_player
 multiclass_group
 MulticlassShift
 MultiplayerPursuitHUD
@@ -49460,6 +49615,7 @@ OffroadMomentID
 Offset
 OffTrackDistanceThreshold
 OffworldCheat
+oil
 Oil Refinery
 oil_drum
 oil_drum_seq
@@ -49471,6 +49627,7 @@ Ok Cowboy
 Oktoberfest
 Old Quarter
 Old Quarter - Tutorial
+old_nfs
 Old_Quarter
 old_terrain_effects
 Omega
@@ -50115,6 +50272,7 @@ OverRevMagnitude
 OverrideBossCarIndex
 overrides
 Overrides
+overtake
 OvertimePenaltyPerSec
 OwnershipPoints
 OyeVaya
@@ -51719,6 +51877,7 @@ picket_fence
 picket_hit_car
 Pickles
 pickup
+pickup_already_gathered
 Pickup_already_gathered
 pickup_circuit
 pickup_emp_trigger
@@ -52566,6 +52725,13 @@ portpotty_hit_car
 portpotty_hit_world
 position
 Position
+position_2
+position_3
+position_4
+position_5
+position_6
+position_7
+position_8
 position_change
 PositionDuration
 PositionMove
@@ -53905,6 +54071,7 @@ PRO
 Pro Shop
 pro_cycles
 pro_street_sliders
+probability_settings
 procedural
 ProcedureData
 prodigy
@@ -55082,6 +55249,7 @@ prostreet_quickgame/hubs
 prostreet_quickgame/hubs/custom
 PROSTREET_ROGUESPEED_VINYL
 PROSTREET_SUPERPROMOTION_VINYL
+protectiveshell
 ProtectiveShell
 proto
 proto for escape
@@ -70386,6 +70554,7 @@ rally_02
 ram_100_cops
 ram_25_cops
 ram_50_cops
+random
 Random
 random_range_variation
 RandomOpponent
@@ -70860,6 +71029,7 @@ reventon
 reventon_1
 REVENTON_BANNER
 REVENTON_STRIPE
+reverb
 reverb_left_delay_feedback
 reverb_left_delay_lfo_depth
 reverb_left_delay_lfo_frequency
@@ -70950,6 +71120,12 @@ REWARD_BLACK_HEARTS
 reward_body
 reward_brakes
 reward_brakes_boost
+reward_bronze_allbronze
+reward_bronze_allcairo
+reward_bronze_alldubai
+reward_bronze_allmadrid
+reward_bronze_allrio
+reward_bronze_allsingapore
 reward_bronze_gp1st
 reward_bronze_gp2nd
 reward_bronze_gp3rd
@@ -70970,6 +71146,12 @@ reward_engine
 reward_engine_boost
 reward_firetruck
 REWARD_FORTUNA
+reward_gold_allcairo
+reward_gold_alldubai
+reward_gold_allgold
+reward_gold_allmadrid
+reward_gold_allrio
+reward_gold_allsingapore
 reward_gold_gp1st
 reward_gold_gp2nd
 reward_gold_gp3rd
@@ -70996,6 +71178,12 @@ reward_rims
 reward_roofscoop
 REWARD_ROTOR4
 REWARD_SCORPIONS
+reward_silver_allcairo
+reward_silver_alldubai
+reward_silver_allmadrid
+reward_silver_allrio
+reward_silver_allsilver
+reward_silver_allsingapore
 reward_silver_gp1st
 reward_silver_gp2nd
 reward_silver_gp3rd
@@ -72527,7 +72715,11 @@ rock_specular_intensity
 rock_specular_power
 rock_support
 rock_wall
+rocket
 Rocket
+rocket_blast
+rocket_blast_wall
+rocket_shoot
 rocket_target
 RockFall_seq
 rockport
@@ -75217,6 +75409,7 @@ setsgoup
 setting_exotic
 setting_muscle
 setting_tuner
+settings
 setup
 setup_attmptvehstp
 setup_bullhorn
@@ -76099,6 +76292,7 @@ singapore/2025/woosh_marker8
 singapore/2025/woosh_marker9
 singaporedragheavy
 SINGLE
+single_player
 SIREN_Cairo.abk
 SIREN_Dubai.abk
 SIREN_Madrid.abk
@@ -78899,9 +79093,14 @@ slot_stats
 slotcar
 SLOTCAR_PIN_FORWARDOFFSET
 SlotStats
+slow
 slow_increment
 SlowdownVsSkill
+slowdrag
+slowfriendly
 slowmadrid
+slowneutral
+slowrival
 slr
 SLR
 slr_1
@@ -79038,6 +79237,7 @@ Smokeshow
 SMOKESHOW
 smoketrail1
 smoketrail2
+smokevision
 Smoothie
 Smoothness
 sms
@@ -80415,6 +80615,7 @@ stairs
 stand
 standard
 standardeffect
+standardshader
 Starlight_Strip
 STAROUTRO_1
 STAROUTRO_2
@@ -86196,6 +86397,7 @@ ThreatEscalationPattern
 ThreatRangeMax
 ThreatRangeMin
 threattable
+three
 ThreshholdSpeed
 ThreshholdValue
 threshold
@@ -86281,9 +86483,12 @@ tier/stategraph_tier_initial_handler_stateenter
 tier/stategraph_tier_monitor_handler_hubnotifyprogress
 tier/stategraph_tier_monitor_handler_stateenter
 tier/stategraph_tier_queue_movie_handler_stateenter
+tier1
 tier1.1
 tier1.2
+tier2
 tier2.1
+tier3
 tier3.1
 TierBoundaries
 tiga
@@ -101104,6 +101309,7 @@ twinscrew_04
 TwinScrew_04.abk
 twinscrew_19
 TwinScrew_19.abk
+two
 Two Fingers feat. Sway - "Jewels And Gems"
 two_car
 TWO_CAR
@@ -101580,6 +101786,9 @@ VerticalSpreadAngleStart
 VerticalSpreadMaxSpeed
 VerticalSpreadScaleAtZeroSpeed
 VerticesPerStreak
+veryfastfriendly
+veryfastneutral
+veryfastrival
 verylongcycle_length
 verylongcycle_probability
 veyron
@@ -101797,6 +102006,7 @@ vipertop_hood
 virtual_alignment
 virtual_world_fx
 virtualitem
+virus
 VIRUS_CANYON_CRAZE
 VIRUS_CARBON_PLAGUE
 VIRUS_KNOCKOUT_FEVER
@@ -102118,6 +102328,7 @@ wait
 wait_limit
 WaitForLoadedMessage
 WalkBackDistance
+wall
 WALL
 WALL_ELASTICITY
 WALL_FRICTION
@@ -102138,6 +102349,7 @@ wall_reverb_13
 wall_reverb_14
 wall_reverb_15
 wall_reverb_mapping
+wallracer
 wanted_01
 wanted_02
 wanted_events
@@ -102189,6 +102401,7 @@ WarningLevel
 warningZone
 warnondelete
 warp
+warpspeed
 Warrent & Forest
 warrior_statue
 warriorbody
@@ -102212,6 +102425,7 @@ Waterfront
 Waterfront & Bristol
 Waterfront & Hwy 99
 watersea
+waterseashader
 watersplash
 watertower
 watertower_seq
