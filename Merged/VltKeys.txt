@@ -4440,6 +4440,7 @@ $SLOW02
 49.td.1
 49.td.2
 49.td.3
+4players
 4th
 4th_easy
 4th_hard
@@ -4818,6 +4819,7 @@ $SLOW02
 69roadrunner_bumper
 69roadrunner_h
 69roadrunner_t
+6players
 6th
 6th_easy
 6th_hard
@@ -5287,6 +5289,7 @@ $SLOW02
 911TURBO_TB_D
 911turbo_top
 911TURBO_WHEEL
+911turbospecial
 918rsr
 918rsr_1
 959
@@ -5859,15 +5862,30 @@ AEM_WORLD_GARAGE
 AEMS_AUDIO_CG.csi
 AEMS_AUDIO_NG.csi
 AEMS_BLOWER.csi
+AEMS_Cairo_Bank
+AEMS_Cairo_Drag_Bank
 AEMS_CROWDS.csi
 AEMS_DAMAGE.csi
+AEMS_Dubai_Bank
+AEMS_Dubai_Drag_Bank
+AEMS_EnvBank
 AEMS_EnvBanks
+AEMS_FEBank
 AEMS_FEBanks
 AEMS_Id
+AEMS_Madrid_Bank
+AEMS_Madrid_Drag_Bank
+AEMS_MiscBank
 AEMS_MiscBanks
+AEMS_NOSBank
 AEMS_NOSBanks
+AEMS_PickupsStream
 AEMS_POLICE_SPEECH.csi
+AEMS_Rio_Bank
+AEMS_Rio_Drag_Bank
 AEMS_RNBanks
+AEMS_Singapore_Bank
+AEMS_Singapore_Drag_Bank
 AEMS_SkidBanks
 AEMS_SparkBanks
 AEMS_StitchBanks
@@ -8449,6 +8467,7 @@ arrests
 arrow_sign
 arrowsign
 art
+art_cinema
 art_kit_to_game_kit_mapping
 ArtDirector_64x64
 Artist
@@ -11073,6 +11092,7 @@ bin_race_engage/stategraph_bin_race_engage_wait_handler_triggerenter
 bin_race_engage/stategraph_bin_race_engage_wait_handler_triggerinside
 bin_race_engage/stategraph_bin_race_engage_wait/stategraph_bin_race_engage_wait_handler_triggerenter
 BinIndex
+BinRewards
 bl10
 BL10
 bl11
@@ -12325,6 +12345,7 @@ boss_prostreet
 boss_rose
 BOSS_SCORPIONS
 Boss_Tuner_Kenji
+boss_veryhard
 BOSS_WOLF
 boss_zack
 BOSS302_BRONZE01_UPGRADE
@@ -12836,9 +12857,14 @@ c3_pipe_seq
 C4
 c6corvette
 c6corvette_1
+c6corvette_draghpfall
 c6corvette_drifthigh
+c6corvette_driftlow
 c6corvette_highend
+c6corvette_highendscgrip
 c6corvette_slipgrip
+c6corvette_track
+c6corvette_track_highend
 ca_0_1_gr_1
 ca_1_1_gr_1
 ca_1_1_gr_2
@@ -13318,10 +13344,16 @@ cam_gears
 cam_lookat_x
 cam_lookat_y
 cam_lookat_z
+cam_orbit_h_max
+cam_orbit_h_min
 cam_orbit_horizontal
 cam_orbit_horizontal_max
 cam_orbit_horizontal_min
+cam_orbit_r_max
+cam_orbit_r_min
 cam_orbit_radius
+cam_orbit_v_max
+cam_orbit_v_min
 cam_orbit_vertical
 cam_orbit_vertical_max
 cam_orbit_vertical_min
@@ -16665,6 +16697,7 @@ carhitsmackable
 carhitwall
 carhitwood
 carhitworld
+carhitworld_threshold
 CarID
 carlandingimpact
 carlighting
@@ -18760,6 +18793,7 @@ ChargeTime
 charging_lesson
 charging_success
 Charlie
+charstuff
 charview
 chase
 Chase & Bristol
@@ -18769,6 +18803,7 @@ CHASE_001
 CHASE_002
 chase_boss_pld
 chase_damageable
+chase_down
 chase_down_a
 chase_down_b
 chase_down_c
@@ -18779,6 +18814,7 @@ chase/stategraph_basicrace_racing_handler_notifyracetimeexpired
 chase/stategraph_basicrace_racing_handler_notifytimer
 chase/stategraph_basicrace_racing_handler_stateenter
 chase/stategraph_basicrace_racing_handler_stateexit
+chaseaitype
 chasecars
 chasedown
 chasedown_races
@@ -20041,6 +20077,7 @@ collegenorth
 collegesouth
 collision
 COLLISION_BOX_PAD
+collision_cars
 collision_damage
 COLLISION_MASS
 collision_mass_01_a
@@ -20068,6 +20105,7 @@ collision_mass_05_c
 collision_mass_05_d
 collision_mass_05_e
 collision_mass_05_f
+collision_smackables
 CollisionMinClosingVelSq
 CollisionPriority
 CollisionPriorityOverride
@@ -20264,6 +20302,7 @@ construction_barrier_detach
 construction_crane_crates
 construction_crane_fighter_jet
 construction_crane_pipes
+construction_dense
 construction_scaffolding
 construction_sign_detach
 construction_sign_detach_seq
@@ -20344,6 +20383,13 @@ coopheat_03
 coopheat_04
 coopheat_05
 cooppursuit
+coopsupport
+coopsupport01
+coopsupport02
+coopsupport03
+coopsupport04
+coopsupport05
+cooptable
 cop
 Cop
 cop_001-engine.tmx
@@ -22115,6 +22161,7 @@ cuda70_t
 CullDist
 CullingRange
 CullPixelSize
+cupRequirement
 Curve
 curve_tags
 curvebased_cameratunings
@@ -22348,6 +22395,8 @@ customize_decals_backroom_1283
 customize_decals_backroom_1284
 customize_decals_backroom_1285
 customize_decals_backroom_1286
+customize_garage
+customize_initial
 customize_main
 customize_master
 customize_mycarsmanager
@@ -22376,6 +22425,7 @@ customize_showcase
 customize_spoilers
 customize_spoilers_backroom_258
 customize_ui_debugcarcustomize
+customize_visual
 customshop
 cut_off
 cut_off1
@@ -23201,6 +23251,7 @@ distance_warning1
 DistanceLimit
 DistanceRangeEnter
 DistanceRangeExit
+DistanceToPlayer
 DistanceToTarget
 DISTORTION_BASIS
 Disturbed
@@ -24923,6 +24974,7 @@ E295
 E296
 E297
 E298
+e3
 e3_cuda_grip_1
 e3_cuda_grip_2
 e3_cuda_speed_1
@@ -26346,9 +26398,11 @@ empart_ember5
 empart_magicon
 empart_slingpart1
 empart_slingpartt
+EMPDuration
 empickup_oilfume
 empickup_poof
 empickup_poof_smoke_01
+EMPSpeed
 empty56
 empty57
 empty58
@@ -26386,6 +26440,7 @@ emsprk_mddir_sprk2
 emsprk_mdtrail_core
 emsprk_mdtrail_sprk1
 emsprk_mdtrail_sprk2
+emsprk_up
 emtd_br_ashaltsmall1
 emtd_cgscrapegrassdeb
 emtd_dr_asphalt_smk
@@ -26665,6 +26720,7 @@ EndTimeInSeconds
 EndU
 EndV
 Eneko
+enemy_actions
 energizer_viper
 energy
 EnforceDeadAir
@@ -29180,7 +29236,10 @@ far_suv
 FarClip
 Farhad
 fast
+fast_friendly
 fast_increment
+fast_neutral
+fast_rival
 fast_score_time_limit
 fastdrag
 fastdubai
@@ -29331,6 +29390,7 @@ fedhwy02
 FedHwy02_Perp
 Feed The Addiction
 Feedback
+feedback_table
 feedmyaddiction
 Feel The Rush (Junkie XL Remix)
 FEEL THE RUSH (Junkie XL Remix)
@@ -29557,6 +29617,7 @@ FLIXFX_KING_SHOWDOWN
 FLIXFX_SP_HEX
 FLIXFX_STAR_SPOKES
 FLIXFX_TV
+floow_thirteen
 Floral_Florcore
 Florence_Gardens
 FLOW_RATE
@@ -30193,6 +30254,7 @@ forced_induction_stock
 forced_induction_street
 forced_induction_valve
 ForcedInduction
+ForcedPitch
 ForceHeatLevel
 forceMultiplier
 ForcePath
@@ -31230,6 +31292,8 @@ fxsprk_line1
 fxsprk_md_dir
 fxsprk_md_trail
 fxsprk_nis_line
+fxsprk_trail
+fxsprk_up
 fxtd_br_asphalt
 fxtd_dirt_dr_burnout
 fxtd_dr_ashpalt_drift
@@ -31612,6 +31676,7 @@ GALLARDOVB_SILVER01_UPGRADE
 GALLARDOVB_SILVER02_UPGRADE
 GALLARDOVB_SILVER03_UPGRADE
 GALLARDOVB_SILVER04_UPGRADE
+game_action
 GAME_ACTION_BRAKE
 GAME_ACTION_CHAT_SHORTCUT
 GAME_ACTION_CLUTCH
@@ -31949,6 +32014,7 @@ gearratio_enhancement_5_a
 gearratio_enhancement_5_b
 Gears
 general_common
+general_countdown
 general_countdown_0
 general_countdown_1
 general_countdown_10
@@ -31963,6 +32029,7 @@ general_countdown_9
 general_countdown_parent
 general_max_heat_level
 general_motors
+general_settings
 generate_20000_bounty
 generate_50000_bounty
 GenerateFarclip
@@ -31981,6 +32048,7 @@ generic_badging_fender_rear_right
 generic_badging_hood
 generic_badging_trunk
 generic_base
+generic_blower
 generic_blowoff_valve
 generic_body
 generic_body_as
@@ -35404,6 +35472,7 @@ heat_07
 heat_08
 heat_09
 heat_10
+HEAT_AMOUNT
 heat_freeroam
 heat_level
 heat_level_1
@@ -35422,6 +35491,8 @@ heat_opponent_gather
 heat_opponent_used_fail
 heat_opponent_used_success
 heat_opponent_victim
+heat_pickup
+HEAT_TIME
 HeatDecPerTurn
 HeatDelay
 HeatIncPerPursuit
@@ -35645,6 +35716,7 @@ highway_havoc/stategraph_basicrace_racing_handler_stateenter
 highway_havoc/stategraph_basicrace_racing_handler_triggerenter
 highway_pattern
 highway_pattern_sequence
+highway_sign
 highway_wars_dlc
 highway_wars_restart
 highway01
@@ -36992,6 +37064,7 @@ ICE_ACTION_WEST
 ICE_ACTION_WEST_PRESS
 ice_box
 ICE_Context
+ice_cream
 ICEACTION_ALT_1
 ICEACTION_BUBBLE_BACK
 ICEACTION_BUBBLE_DOWN
@@ -37451,6 +37524,7 @@ Industrial & Green
 Industrial & Lennox
 Industrial & Omega
 Industrial Front
+industrial_dense
 Inez
 inf_drag_1
 inf_drift_1
@@ -39507,6 +39581,7 @@ lancerevox_t
 lancerevox_track
 lancerevox_track_highend
 LANCEREVOX_WHEEL
+lancerwrx
 lancia
 landing
 LANGUAGE_ON_ALERT_MSG_CITY_A
@@ -42455,6 +42530,7 @@ MaxTier
 MaxTime
 MaxTimeFor180
 MaxTireSteer
+MaxTrafficCars
 MaxWheeliePoints
 MaxWindSpeedMPH
 MaybeV8
@@ -43069,6 +43145,7 @@ medium_concrete_obj
 medium_detach
 medium_device_box
 MEDIUM_DROP
+medium_friendly
 medium_glass
 medium_metal
 medium_metal_bar
@@ -43077,8 +43154,10 @@ medium_metal_detach
 medium_metal_frame
 medium_metal_obj
 medium_metal_panel
+medium_neutral
 medium_obj
 medium_plastic
+medium_rival
 medium_rubber
 medium_wind_trigger
 medium_wood
@@ -43097,6 +43176,9 @@ mediumconcreteobject
 mediumdetach
 mediumdrag
 mediumfast
+mediumfast_friendly
+mediumfast_neutral
+mediumfast_rival
 mediumfastfriendly
 mediumfastneutral
 mediumfastrival
@@ -43113,6 +43195,9 @@ mediumplasticobject
 mediumrival
 MediumSensitivitySteeringParameters
 mediumslow
+mediumslow_friendly
+mediumslow_neutral
+mediumslow_rival
 mediumslowfriendly
 mediumslowneutral
 mediumslowrival
@@ -43481,6 +43566,7 @@ MIddle Driver Job
 midnis
 MidNIS
 midnis2
+MidNIS2
 midrace
 milestone
 milestone_challenge
@@ -44427,6 +44513,7 @@ moteltop_seq
 MotionInherit
 MotionInheritVariance
 MotionLive
+mouse_steering
 MouseSensitivity
 movie_clip_name
 movie_player
@@ -44990,6 +45077,7 @@ mustangshlbyo_power_package_lvl_3
 mustangshlbyo_top
 mustangshlbyo_track
 mustangshlbyo_track_highend
+MustEscape
 MuteAICars
 MuteAudio
 MutePlayerCar
@@ -47821,6 +47909,7 @@ nfs::Audio::PooledVoice
 nfs::Audio::StatesLimit
 nfs::Audio::TrafficCarSfx
 nfs::Audio::TruckSfx
+nfs09_1
 nfs09_car
 nfs09_config1
 nfs09_config2
@@ -47860,7 +47949,9 @@ nfs09_fmv5
 nfs09_fmv6
 nfs09_fmv7
 nfs09_fmv8
+nfs09_main
 nfs09_nis
+nfs09_options
 nfs09_smackable_scrapes
 nfs09_smackables
 NFS09CD.mpf
@@ -49297,6 +49388,7 @@ NOS_audio
 nos_base
 nos_boost
 NOS_CAPACITY
+nos_cop
 nos_current
 nos_demo_cuda
 nos_demo_e92
@@ -49304,9 +49396,11 @@ nos_demo_gtrproto
 NOS_DISENGAGE
 nos_drift_time_multiplier
 nos_duration
+nos_electric
 NOS_feedback
 nos_grip
 NOS_GRIP_INCREASE
+nos_heavy
 nos_lvl_1_kit00
 nos_lvl_1_kit01
 nos_lvl_1_kit02
@@ -49322,6 +49416,8 @@ nos_lvl_4_kit02
 NOS_NUM_STAGES
 nos_options
 nos_package
+nos_petrol
+nos_powerslide
 nos_radialblur
 NOS_scale
 nos_shot
@@ -49329,6 +49425,7 @@ nos_stock
 nos_strength
 nos_top
 nos_upgrades
+nos_warpspeed
 NOSEffect
 nosfx
 NosRamSkill
@@ -49788,8 +49885,10 @@ OffCycle
 OffCycleVariance
 offerid
 offline
+offroad_tire
 offroadmoment
 OffroadMomentID
+offroadtires
 Offset
 OffTrackDistanceThreshold
 OffworldCheat
@@ -49801,6 +49900,7 @@ oil_stand
 oil_stand_seq
 oilslick
 OilStick
+ojos_de_brijo
 Ok Cowboy
 Oktoberfest
 Old Quarter
@@ -49808,6 +49908,7 @@ Old Quarter - Tutorial
 old_nfs
 Old_Quarter
 old_terrain_effects
+oldmw
 Omega
 Omega Industries
 omitBumpers
@@ -51606,6 +51707,7 @@ PAUSETREATMENT
 pawn
 pawn_frag
 pawn_seq
+pawn_shop
 payback
 payback_intro
 payback_leg1
@@ -52063,6 +52165,7 @@ Pickles
 pickup
 pickup_already_gathered
 Pickup_already_gathered
+pickup_assets
 pickup_circuit
 pickup_emp_trigger
 pickup_emp_trigger_common
@@ -52084,6 +52187,7 @@ pickup_random
 pickup_repair
 pickup_rocket
 pickup_smokevision
+pickup_types
 pickup_virus
 pickup_warpspeed
 pickupa
@@ -52202,6 +52306,7 @@ pipes_trigger
 pipeStand_seq
 pipesTrigger_seq
 pipeTruck_seq
+PIPIndex
 pipkenji
 PIPKenji
 pipneville
@@ -52985,6 +53090,12 @@ powerlinestand
 powerlinestand_seq
 powerslide
 Powerslide
+powerslide_cutie
+powerslide_electric
+powerslide_heavy
+powerslide_petrol_exotic
+powerslide_petrol_muscle
+powerslide_petrol_tuner
 powerslide_time_multiplier
 powerup
 PowerUp
@@ -55888,6 +55999,10 @@ QRACE_YPOS
 QRACE_ZNEG
 QRACE_ZPOS
 quad
+quad_height
+quad_orbit
+quad_rotation
+quad_width
 quadrentforming
 quadrentmoving
 quads
@@ -70041,6 +70156,7 @@ race_folder_copsandrobbers/copsandrobbers8/pickup2
 race_folder_copsandrobbers/copsandrobbers8/pickup3
 race_folder_copsandrobbers/copsandrobbers8/spawn1
 race_folder_copsandrobbers/copsandrobbers8/spawn2
+race_information
 race_intros
 race_lap_complete
 race_last_lap
@@ -71202,6 +71318,8 @@ RequiredRacesWon
 RequiredSkill
 RequiredSkillRank
 RequiredXP
+RequirementName
+RequirementOutcome
 RequiresEnhancerWorldMap
 rescue
 rescue_intro
@@ -73188,6 +73306,7 @@ rotor4
 ROTOR4
 ROTOR4_01
 rotors
+RoundDuration
 RoundLength
 roundover
 roundresults
@@ -76537,6 +76656,7 @@ singapore/2025/woosh_marker9
 singaporedragheavy
 SINGLE
 single_player
+siren_assets
 SIREN_Cairo.abk
 SIREN_Dubai.abk
 SIREN_Madrid.abk
@@ -79343,7 +79463,10 @@ slotcar
 SLOTCAR_PIN_FORWARDOFFSET
 SlotStats
 slow
+slow_friendly
 slow_increment
+slow_neutral
+slow_rival
 SlowdownVsSkill
 slowdrag
 slowfriendly
@@ -80877,6 +81000,7 @@ STAROUTRO_1
 STAROUTRO_2
 STAROUTRO_3
 STAROUTRO_5
+starsRequirement
 start
 Start
 Start A War
@@ -81973,6 +82097,7 @@ suggestivesalesset
 sun
 SUN_DEFAULT
 sun_flare
+sun_glare
 sun00
 sun01
 sun02
@@ -86314,6 +86439,7 @@ takedown/stategraph_takedown_takedown_handler_restartrace
 takedown/stategraph_takedown_takedown_handler_stateenter
 takedown/stategraph_takedown_takedown_handler_stateexit
 takedown/stategraph_takedown_takedown_handler_triggerenter
+takehitpoints
 Taking Back Sunday - "Lonely Lonely"
 TakingTooLong
 tandersson
@@ -86501,6 +86627,7 @@ test_normals
 test_package
 test_paint_car
 TEST_PRESET_SKIN
+test_settings
 test_sphere_car_1
 test_variation_emit_01
 test_variation_emit_02
@@ -86756,13 +86883,32 @@ tier/stategraph_tier_monitor_handler_hubnotifyprogress
 tier/stategraph_tier_monitor_handler_stateenter
 tier/stategraph_tier_queue_movie_handler_stateenter
 tier1
+tier1_1st
+tier1_2nd
+tier1_3rd
+tier1_4th
+tier1_5th
+tier1_7th
 tier1.1
 tier1.2
 Tier1Enabled
 tier2
+tier2_1st
+tier2_2nd
+tier2_3rd
+tier2_4th
+tier2_5th
+tier2_7th
 tier2.1
 Tier2Enabled
 tier3
+tier3_1st
+tier3_2nd
+tier3_3rd
+tier3_4th
+tier3_5th
+tier3_6th
+tier3_7th
 tier3.1
 Tier3Enabled
 TierBoundaries
@@ -87035,6 +87181,7 @@ tollbooth_seq
 tollbooth_tutorial
 tollbooth2way_seq
 tollboothrace
+Tollbooths
 tollboothtwoway
 Tomas Andersson
 TOMPKO
@@ -100884,6 +101031,7 @@ Tranny
 TrannyBank
 TRANSFORMERS
 transition
+transitional
 TransitionInTime
 transitionlist
 transmission
@@ -101204,6 +101352,7 @@ troughThicknessScale
 truck
 truck_frag
 truck_hood
+truck_stop
 truckhood
 TruckSfx
 trucksign
@@ -101213,6 +101362,7 @@ TruckSndFX
 true
 trunk
 TRUNK
+trunk_loose
 TRUNK911
 Tsf_2_1_demo01
 Tsf_2_1_demo02
@@ -102037,6 +102187,7 @@ VC_WINGS
 VECTORVINYL
 vehicle
 vehicle_award
+vehicle_awarded
 VEHICLE_SLOTS_AVAIL
 vehicle_unlock
 vehicleInfoPlusButton
@@ -102083,6 +102234,10 @@ VerticalSpreadAngleStart
 VerticalSpreadMaxSpeed
 VerticalSpreadScaleAtZeroSpeed
 VerticesPerStreak
+veryfast
+veryfast_friendly
+veryfast_neutral
+veryfast_rival
 veryfastfriendly
 veryfastneutral
 veryfastrival
@@ -102732,6 +102887,31 @@ watertowercontainer
 watertowersupport
 watertowersupport_frag
 watertowersupport_seq
+wave_1_01
+wave_1_02
+wave_1_03
+wave_1_04
+wave_1_05
+wave_2_01
+wave_2_02
+wave_2_03
+wave_2_04
+wave_2_05
+wave_3_01
+wave_3_02
+wave_3_03
+wave_3_04
+wave_3_05
+wave_4_01
+wave_4_02
+wave_4_03
+wave_4_04
+wave_4_05
+wave_5_01
+wave_5_02
+wave_5_03
+wave_5_04
+wave_5_05
 wd_fence_2_car
 wd_furn_brk
 wd_roadblk_brk
@@ -103642,6 +103822,7 @@ wtr_lake
 wtr_ocean
 WTR_OCEAN
 wtr_river
+wtr_splash
 wtr_tower_crash
 wtr_waterfall
 X

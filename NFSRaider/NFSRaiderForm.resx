@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="TxtVariations.Text" xml:space="preserve">
+    <value>A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,0,1,2,3,4,5,6,7,8,9,_, ,!,",#,$,%,&amp;,',(,),*,+,-,.,/,:,;,&lt;,=,&gt;,?,@,[,\\,],^,´,`,¨,{,|,},~,\,€,£,¥,¢,§,°,ª,º,Ç,Á,À,Â,Ã,Ä,É,Ê,È,Ë,Í,Ì,Î,Ï,Ó,Ò,Ô,Õ,Ö,Ú,Ù,Û,Ü,Ñ,ç,á,à,â,ã,ä,é,ê,è,ë,í,ì,î,ï,ó,ò,ô,õ,ö,ú,ù,û,ü,ñ</value>
+  </data>
   <metadata name="ToolTipNFSRaider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
