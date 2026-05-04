@@ -36,4 +36,5 @@ TorusRoofMoment
 TrailerParkMoment
 WaterTowerMoment
 ForwardStartingPosition
+ParkingSpot
 PRF_CarPosition

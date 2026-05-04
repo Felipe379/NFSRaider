@@ -13787,6 +13787,9 @@ emsprk_line1_multi
 emsprk_line1_smal
 front_angle_1_start
 fxsprk_line_smal
+voice_management
+Drifting
+Endurance
 TANK
 HOVER
 BOAT

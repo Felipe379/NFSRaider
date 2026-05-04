@@ -24047,6 +24047,7 @@ driftchallenge
 DriftDecel
 DriftEasyFactor
 DriftHardFactor
+Drifting
 DriftInsaneFactor
 driftkinghub
 DriftKingHub
@@ -26738,6 +26739,7 @@ EndOfRaceBoostDistance
 EndOfSectionEntry
 EndTimeInSeconds
 EndU
+Endurance
 EndV
 Eneko
 enemy_actions
@@ -102554,6 +102556,7 @@ vo_f
 VO_Name
 VODAFONE_LOGO_LOADSCREEN
 VODAFONEFR_LOGO_LOADSCREEN
+voice_management
 VoicePool
 voip
 VOIPACTION_PUSHTOTALK
