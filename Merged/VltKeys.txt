@@ -6836,6 +6836,7 @@ applied_hashes
 AR
 ar_concrete
 AR_CONCRETE
+ar_concrete_no_n
 ar_constant
 ar_ct_11
 ar_ct_12
@@ -6867,6 +6868,7 @@ AR_GLASS
 ar_glass_concrete
 ar_glass_reflective
 AR_GLASS_REFLECTIVE
+ar_glass_reflective_no_n
 ar_glass_steel
 ar_matte
 ar_matte_opacity
@@ -6882,6 +6884,7 @@ ar_rock_reflective
 AR_ROCK_REFLECTIVE
 ar_steel
 AR_STEEL
+ar_steel_no_n
 ar_steel_smackable
 AR_STYLE01_17_25
 AR_STYLE01_18_25
@@ -9281,6 +9284,7 @@ audio_event_christmas
 audio_event_drag
 audio_event_meetingplace
 audio_event_meetingplace_vday
+audio_event_post
 audio_event_tutorial
 audio_eventcountdown
 audio_eventpost
@@ -10637,11 +10641,13 @@ BaseMaterial
 basenormal_sampler
 BaseOpenWorldHeat
 basic
+basicalpham
 basicl
 BASICL
 basicm
 basicm1
 basicm2
+basicnocullm
 basicrace
 basicrace/stategraph_basicrace_abandoned
 basicrace/stategraph_basicrace_abandoned_handler_stateenter
@@ -10839,12 +10845,19 @@ basicrace/stategraph_basicrace_warmup_handler_restartrace
 basicrace/stategraph_basicrace_warmup_handler_stateenter
 basicrefbotl
 BASICREFBOTL
+basicrefbotm
 basicrefgearl
 BASICREFGEARL
+basicrefgearm
+basicrefhatalpham
 basicrefhatl
 BASICREFHATL
+basicrefhatm
+basicrefsuvalpham
+basicrefsuvm
 basicreftopl
 BASICREFTOPL
+basicreftopm
 Basis
 battlefield1
 BATTLEFIELD1
@@ -11158,6 +11171,7 @@ BleacherEmitterRadius
 bleachflash
 blend
 Blend
+blend_alpha_test
 BlendComponent
 BlendTime
 Blinded In Chains
@@ -13299,6 +13313,7 @@ CAM_ACTION_CHANGE
 CAM_ACTION_LOOKBACK
 CAM_ACTION_PULLBACK
 cam_angle
+cam_angle_start
 cam_anim_speed
 cam_auto_rotate_speed
 cam_blur
@@ -22416,6 +22431,7 @@ customize_paint_backroom_1027
 customize_paint_backroom_1028
 customize_paint_backroom_1029
 customize_paint_backroom_1031
+customize_paintshop
 customize_part_list
 customize_rims
 customize_rims_backroom_1801
@@ -26431,6 +26447,10 @@ emsprk_lgdir_sprk2
 emsprk_lgdir_sprk3
 emsprk_line_core1
 emsprk_line1
+emsprk_line1_2
+emsprk_line1_2_smal
+emsprk_line1_multi
+emsprk_line1_smal
 emsprk_line2
 emsprk_line3
 emsprk_linesprk1
@@ -29598,6 +29618,7 @@ FlareSpacing
 flashColor
 FlasherActor
 FlasherEnabled
+FlasherFormat
 FlasherHalId
 FlasherHALId
 FlasherTarget
@@ -30540,6 +30561,7 @@ from_first_to_last
 front
 FRONT
 front_angle_1
+front_angle_1_start
 front_angle_2
 front_angle_3
 front_angle_fov_normal
@@ -30742,6 +30764,7 @@ FX_BEAN_BLEND
 FX_BIRD01_BLEND_ANIM
 FX_BLOBS
 FX_Camera.abk
+fx_car_debris
 FX_DAMAGE_00.abk
 FX_DAMAGE_01.abk
 FX_DAMAGE_02.abk
@@ -31288,6 +31311,7 @@ fxsmk_md_trail
 fxsmk_md_trail02
 fxsprk_lg_dir
 fxsprk_line
+fxsprk_line_smal
 fxsprk_line1
 fxsprk_md_dir
 fxsprk_md_trail
@@ -35257,6 +35281,7 @@ GXP_SILVER02_UPGRADE
 H1_TE_BLUE
 H1_TE_RED
 hair
+hairalpham
 hairl
 HAIRL
 hairm
@@ -38282,6 +38307,7 @@ ironpole
 ironpole_frag
 ironpole_seq
 Is Is EP
+is_ai
 is_canyon
 is_fullscreen
 is_one_shot
@@ -47910,6 +47936,9 @@ nfs::Audio::StatesLimit
 nfs::Audio::TrafficCarSfx
 nfs::Audio::TruckSfx
 nfs09_1
+nfs09_1_start
+nfs09_1_start_wide
+nfs09_1_wide
 nfs09_car
 nfs09_config1
 nfs09_config2
@@ -47950,8 +47979,18 @@ nfs09_fmv6
 nfs09_fmv7
 nfs09_fmv8
 nfs09_main
+nfs09_main_career
+nfs09_main_career_wide
+nfs09_main_start
+nfs09_main_start_wide
+nfs09_main_wide
 nfs09_nis
 nfs09_options
+nfs09_options_controls
+nfs09_options_new
+nfs09_options_wide
+nfs09_quickrace_options
+nfs09_quickrace_options_wide
 nfs09_smackable_scrapes
 nfs09_smackables
 NFS09CD.mpf
@@ -49801,6 +49840,7 @@ OBJ_ELASTICITY
 OBJ_FRICTION
 obj_metal_gate
 OBJ_MOMENT_SCALE
+OBJ_MOMENT_SCALE_COPS
 obj_mtl_sign
 obj_oil_drum
 obj_part
@@ -70984,6 +71024,7 @@ rd_asphalt
 RD_ASPHALT
 rd_asphalt_lite
 rd_asphalt_overlay
+rd_asphalt_refl_tile
 rd_asphalt_reflective
 RD_ASPHALT_REFLECTIVE
 rd_asphalt_reflective_overlay
@@ -70994,6 +71035,7 @@ RD_CONCRETE
 rd_concrete_car_heaven
 rd_concrete_lite
 rd_concrete_overlay
+rd_concrete_refl_lite
 rd_concrete_reflective
 RD_CONCRETE_REFLECTIVE
 rd_concrete_reflective_overlay
@@ -86888,6 +86930,7 @@ tier1_2nd
 tier1_3rd
 tier1_4th
 tier1_5th
+tier1_6th
 tier1_7th
 tier1.1
 tier1.2
@@ -86898,6 +86941,7 @@ tier2_2nd
 tier2_3rd
 tier2_4th
 tier2_5th
+tier2_6th
 tier2_7th
 tier2.1
 Tier2Enabled
@@ -101834,6 +101878,7 @@ Tyson
 uber
 Uber
 UBER
+uberblend
 ubereffect
 ubereffectblend
 ucap
