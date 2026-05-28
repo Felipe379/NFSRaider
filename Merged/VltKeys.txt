@@ -21627,6 +21627,7 @@ CrewMember
 crewmember_exotic
 crewmember_muscle
 crewmember_tuner
+CrewProxThreshold
 crews
 crews/boss
 crews/casino_unlock
@@ -24051,7 +24052,9 @@ Drifting
 DriftInsaneFactor
 driftkinghub
 DriftKingHub
+DriftMaxSlipAngle
 DriftMaxSpeed
+DriftMinSlipAngle
 DriftNormalFactor
 driftrace
 driftrace_aggressive
@@ -37206,6 +37209,8 @@ idle
 IDLE
 idle_speed
 idle_time
+IdleCameraEyeOffset
+IdleCameraLookOffset
 IDXPath
 IFORGED
 IFORGED_STYLE01_17_25
@@ -40656,6 +40661,7 @@ lineapprch
 LINEAR_TRACK
 linemeshstyle
 LineNumber
+LineProxThreshold
 linfordremix1
 linfordremix2
 linked_countdown_camera
@@ -42544,6 +42550,7 @@ MaxRangeFor180
 MaxRangeForPrimaryBranch
 MaxRideHeight
 MaxRPM
+MaxSampleSize
 Maxscale
 MaxScore
 MaxScore2
@@ -44104,6 +44111,7 @@ MinTimePlayerAtHighSpeed
 MinTimePlayerStoppedHeroTrack
 MinValueForTermToTuneCoefficient
 MinWindSpeedMPH
+MinWingmanDistForPack
 mipmapbias
 Mira
 Miranda
@@ -50740,6 +50748,8 @@ pa3_y_offset
 package
 Package
 packageData
+PackReqdCrewAvgDist
+PackReqdPlrAvgDist
 PAD_BUTTON_0
 PAD_BUTTON_1
 PAD_BUTTON_10
@@ -72989,6 +72999,8 @@ rival_locked
 rival_unlocked
 RivalAppearanceChance
 RivalBestTime
+RivalProxPassingThresh
+RivalProxThreshold
 RivalStringID
 Riverfront
 Riverfront & Green
@@ -79638,6 +79650,7 @@ smallwoodroof_seq
 smallwoodroofsupport
 smallwoodroofsupport_seq
 SmashSpeedRangeCops
+SmashSpeedRangeCrew
 Smith
 smk_brickwood_fall
 smk_concrete_fall
