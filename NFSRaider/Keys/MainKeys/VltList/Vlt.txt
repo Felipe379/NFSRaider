@@ -13803,6 +13803,8 @@ DriftMaxSlipAngle
 DriftMinSlipAngle
 IdleCameraLookOffset
 IdleCameraEyeOffset
+hud_sound_map
+UseTorqueCurve
 TANK
 HOVER
 BOAT
