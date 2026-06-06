@@ -14551,12 +14551,16 @@ CAR_19_EXH_MB_SPU.abk
 car_2_car
 car_2_car_front
 car_2_car_side
+car_2_fence
 car_2_ground
 car_2_ground_bottomout
 car_2_ground_roll
+car_2_metal
 car_2_smackable
 car_2_wall
+car_2_wall_fence
 car_2_wall_front
+car_2_wall_metal
 car_2_wall_side
 CAR_20_ENG_MB_EE.abk
 CAR_20_ENG_MB_SPU.abk
@@ -87039,6 +87043,7 @@ TimeOffTrack
 timeout
 TimeOut
 TimePerHeatLevel
+TimePerWave
 TimePlayerStoppedHeroTrackThreshold
 Timer
 timer_90

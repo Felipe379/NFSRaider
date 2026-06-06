@@ -13805,6 +13805,11 @@ IdleCameraLookOffset
 IdleCameraEyeOffset
 hud_sound_map
 UseTorqueCurve
+car_2_fence
+car_2_metal
+car_2_wall_fence
+car_2_wall_metal
+TimePerWave
 TANK
 HOVER
 BOAT

@@ -1285,7 +1285,6 @@
 0x441CFF40	VLT - NFSW (build 34) - FIELD FROM CLASS powerup_fegroup
 0xC02D3634	VLT - NFSW (build 34) - FIELD FROM CLASS powerup_fegroup
 0x61E9258D	VLT - NFSW (build 34) - FIELD FROM CLASS powerup_fegroup
-0x02A367FC	VLT - NFSW (build 34) - FIELD FROM CLASS pursuitwaves
 0x437FA217	VLT - NFSW (build 396) - FIELD FROM CLASS blackboard
 0x6F00FA98	VLT - NFSW (build 396) - FIELD FROM CLASS pursuitlevels
 0xA2CB2024	VLT - NFSMW A124 - NODE FROM acceltrans
@@ -1849,11 +1848,7 @@
 0xCE44C3F0	VLT - NFSN - NODE FROM audio_pickup
 0xCE6BF46C	VLT - NFSN - NODE FROM audio_pickup
 0xF4BD0E4A	VLT - NFSN - NODE FROM audio_pickup
-0x21559CFA	VLT - NFSN - NODE FROM audioimpact
-0x4343BFCF	VLT - NFSN - NODE FROM audioimpact
 0x084F4575	VLT - NFSN - NODE FROM audioscrape
-0x9A39DD53	VLT - NFSN - NODE FROM audioscrape
-0xD04B991F	VLT - NFSN - NODE FROM audioscrape
 0x2434246D	VLT - NFSN - NODE FROM audiosystem
 0x2B3EFEE5	VLT - NFSN - NODE FROM audiosystem
 0xB223DFF5	VLT - NFSN - NODE FROM audiosystem
