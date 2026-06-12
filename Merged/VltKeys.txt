@@ -6631,6 +6631,7 @@ angie_player_crashes
 angie_player_crashes_2
 angie_player_hit_boss
 angie_player_hit_boss_2
+angie_player_hit_boss_dio
 angie_player_near_finish
 angie_player_pass_boss_left
 angie_player_pass_boss_left_2
@@ -16664,6 +16665,7 @@ career_start
 career_start_l2ra
 career_start_l5ra
 career_start_l8r_mw2
+career_sub_menu
 career_territory_settings
 career_vo_a
 career_vo_b
@@ -17782,6 +17784,7 @@ CFC_STAR
 CFC_YELL
 CFIBER_Z
 CG
+cg_career_countdowns
 CH_BASICBODY05
 CH_BODY1
 CH_BODY2
@@ -20617,6 +20620,7 @@ CopsEnabled
 CopsEnabled_Local
 CopsEnabled_Remote
 CopsInRace
+CopsInRaceProbability
 copsiren
 copspawn_time_trigger
 copspawn_time_trigger2
@@ -21418,6 +21422,7 @@ CREW_LOGO_21ST_CENTURY
 CREW_LOGO_BLACK_HEARTS
 CREW_LOGO_BUSHIDO
 CREW_LOGO_COLIBRIS
+crew_logo_colour_chooser
 CREW_LOGO_FORTUNA
 CREW_LOGO_INFERNO
 CREW_LOGO_PLAYER
@@ -21427,6 +21432,7 @@ CREW_LOGO_STACKED_DECK
 CREW_LOGO_TFK
 CREW_LOS_COLIBRIS
 CREW_LOS_COLIBRIS_BOSS
+crew_management
 crew_marker
 Crew_Neville
 Crew_Nikki
@@ -32502,6 +32508,8 @@ generic_side_mirror_right
 generic_skirt
 generic_skirt_left
 generic_skirt_right
+generic_smak_2_car
+generic_smak_2_world
 generic_spoiler
 generic_spoiler_as
 generic_spoiler_drag
@@ -34980,6 +34988,8 @@ GravityStart
 Gray Point
 Gray_64x64
 Gray_Point
+grbgbag_2_car
+grbgbag_2_world
 grease_monkey
 grease_monkey_intro
 grease_monkey_leg1
@@ -38783,23 +38793,57 @@ KENJI
 kenji_blocker_hits_boss
 kenji_boss_cross_finish
 kenji_boss_hit_player
+kenji_boss_hit_player_asm12
 kenji_boss_nears_finish
+kenji_boss_nears_finish_asm14
+kenji_boss_nears_finish_asm15
 kenji_canyon_boss_broke_guardrail
+kenji_canyon_boss_broke_guardrail_asm29
 kenji_canyon_boss_off_cliff
+kenji_canyon_boss_off_cliff_asm38
+kenji_canyon_player_fallbehin_asm24
 kenji_canyon_player_fallbehind
+kenji_canyon_player_fallbehind_asm22
+kenji_canyon_player_fallbehind_asm23
 kenji_canyon_player_fast_score
+kenji_canyon_player_fast_score_asm33
+kenji_canyon_player_fastscore_asm34
 kenji_canyon_player_high_score
+kenji_canyon_player_high_score_asm35
+kenji_canyon_player_highscore_asm36
+kenji_canyon_player_lowscore_asm30
+kenji_canyon_player_lowscore_asm31
+kenji_canyon_player_lowscore_asm32
 kenji_canyon_player_pullahead
+kenji_canyon_player_pullahead_asm25
+kenji_canyon_player_pullahead_asm26
+kenji_canyon_player_pullahead_asm27
 kenji_casino
 KENJI_CASINO
 kenji_crashes
+kenji_crashes_asm40
+kenji_crashes_asm41
 kenji_pass_player_left
+kenji_pass_player_left_asm17
+kenji_pass_player_left_asm18
 kenji_pass_player_right
+kenji_pass_player_right_asm20
+kenji_pass_player_right_asm21
 kenji_player_crashes
+kenji_player_crashes_asm03
+kenji_player_crashes_asm04
 kenji_player_hit_boss
+kenji_player_hit_boss_asm00
+kenji_player_hit_boss_asm02
+kenji_player_hit_boss_dio
 kenji_player_nears_finish
 kenji_player_pass_boss_left
+kenji_player_pass_boss_left_asm05
+kenji_player_pass_boss_left_asm06
+kenji_player_pass_boss_left_asm07
 kenji_player_pass_boss_right
+kenji_player_pass_boss_right_asm09
+kenji_player_pass_boss_right_asm10
 kestrel
 key
 keyboard
@@ -41382,6 +41426,7 @@ m28
 m28_inhotel02
 m29
 m3
+m3_e3_drag
 m3_e46
 m3_e92
 m3_gtr
@@ -52122,6 +52167,7 @@ perp_hit_cop_indirect
 perp, 3 cops, 3 cop cars, 1 player car
 perp, 3 state cops, 5 vehicles
 Perp, 3SUV COPs, Perp Car, 1 Helicopter, 3 SUV COP CARS
+Persistence
 Persistent
 PersistentAllowed
 PersistentCar
@@ -56106,6 +56152,7 @@ quickrace_showcase
 quickrace_track_options
 quickrace_track_select
 quickrace_wingman
+quickrace_worldmapmain_angle
 quickracemain_challengeseries
 quickracemain_mainmenu_sub
 quickracemain_quick_race_brief
@@ -80980,6 +81027,7 @@ Sprint Verona Tunnel
 Sprint Verona Tunnel DEMO
 Sprint Waterfront Road
 Sprint York Road
+sprinter
 sprkdir_lg1
 sprkdir_md1
 sprkline_lg1
@@ -86861,6 +86909,7 @@ ThreatRangeMax
 ThreatRangeMin
 threattable
 three
+three_or_four_car
 ThreshholdSpeed
 ThreshholdValue
 threshold
