@@ -42,6 +42,9 @@ namespace NFSRaider.Raider
         private bool LockObjectIsUpdating { get; set; } = false;
         private object LockResults { get; } = new object();
 
+        private static readonly char[] SubstringTrimChars = new[] { '[', ']' };
+        private static readonly char[] CaseTrimChars = new[] { '<', '>' };
+
         public Unhash(
             NFSRaiderForm sender, HashFactory hashFactory, CaseFactory caseFactory, GenerateOption generateOption, Endianness endianness,
             bool checkMainKeys, bool checkUserKeys, bool checkMergedKeys, bool tryBruteForce, string prefixes, string suffixes, string variations, string wordsBetweenVariations,
@@ -73,27 +76,19 @@ namespace NFSRaider.Raider
 
         private void InitializeVariatons(IEnumerable<string> variations)
         {
-            GetVariationsGroups(variations);
+            InitalizeVariationsGroups(variations);
 
-            var simpleVariations = variations.Where(c => !(c.StartsWith("{") && c.EndsWith("}")) && !(c.StartsWith("[") && c.EndsWith("]")));
+            var simpleVariations = variations
+                .Where(c => !(c.StartsWith('{') && c.EndsWith('}')))
+                .Where(c => !(c.StartsWith('[') && c.EndsWith(']')))
+                .Where(c => !(c.StartsWith('<') && c.EndsWith('>')));
 
-            var simpleVariationsWithSubstring = variations.Where(c => c.StartsWith("[") && c.EndsWith("]")).Select(c => c.Trim(new[] { '[', ']' }));
-            var allSimpleVariationsWithSubstring = new HashSet<string>();
+            var allSimpleVariations = GenerateCaseVariations(variations)
+                .Concat(GenerateSubstringVariations(variations));
 
-            foreach (var simpleVariation in simpleVariationsWithSubstring)
+            if (VariationsGroups.Any() || allSimpleVariations.Any() || Variation.GenerateOption == GenerateOption.WithRepetition)
             {
-                for (int i = 0; i < simpleVariation.Length; i++)
-                {
-                    for (int j = i; j < simpleVariation.Length; j++)
-                    {
-                        allSimpleVariationsWithSubstring.Add(simpleVariation.Substring(i, j - i + 1));
-                    }
-                }
-            }
-
-            if (VariationsGroups.Any() || allSimpleVariationsWithSubstring.Any() || Variation.GenerateOption == GenerateOption.WithRepetition)
-            {
-                Variation.Variations = simpleVariations.Concat(allSimpleVariationsWithSubstring).ToHashSet();
+                Variation.Variations = simpleVariations.Concat(allSimpleVariations).ToHashSet();
             }
             else
             {
@@ -102,7 +97,7 @@ namespace NFSRaider.Raider
 
         }
 
-        private void GetVariationsGroups(IEnumerable<string> variations)
+        private void InitalizeVariationsGroups(IEnumerable<string> variations)
         {
             var regexPattern = @"^\[" +                                // Start
                    @"(?<min>([\d]*))" +                                // MinVariations
@@ -112,7 +107,7 @@ namespace NFSRaider.Raider
                    @"(?<generateOption>([0-1]))" +                     // GenerateOption
                    @"\]$";                                             // End
 
-            var variationsGroups = variations.Where(c => c.StartsWith("{") && c.EndsWith("}"));
+            var variationsGroups = variations.Where(c => c.StartsWith('{') && c.EndsWith('}'));
 
             if (!variationsGroups.Any())
             {
@@ -125,10 +120,11 @@ namespace NFSRaider.Raider
             var max = 0;
             var generateOption = GenerateOption.WithoutRepetition;
             Variation variationModel;
+            var valuesToTrim = new[] { '{', '}' };
 
             foreach (var variationGroup in variationsGroups)
             {
-                variation = variationGroup.Trim(new[] { '{', '}' }).SplitBy(new[] { ';' }, '\\').ToList();
+                variation = variationGroup.Trim(valuesToTrim).SplitBy(new[] { ';' }, '\\').ToList();
 
                 regex = Regex.Match(variation.Last(), regexPattern);
 
@@ -156,6 +152,85 @@ namespace NFSRaider.Raider
                     VariationsGroups.Add(variationModel);
                 }
             }
+        }
+
+        private static HashSet<string> GenerateSubstringVariations(IEnumerable<string> variations)
+        {
+            var allSimpleVariationsWithSubstring = new HashSet<string>();
+            var simpleVariationsWithSubstring = variations
+                .Where(c => c.StartsWith('[') && c.EndsWith(']'))
+                .Where(c => !HasInvalidNesting(c))
+                .Select(c => c.Trim(SubstringTrimChars))
+                .Where(c => !string.IsNullOrWhiteSpace(c));
+
+            foreach (var simpleVariation in simpleVariationsWithSubstring)
+            {
+                if (simpleVariation.StartsWith('<') && simpleVariation.EndsWith('>'))
+                {
+                    foreach (var caseVariation in GenerateCaseVariations(new[] { simpleVariation }))
+                    {
+                        AddSubstrings(caseVariation, allSimpleVariationsWithSubstring);
+                    }
+                }
+                else
+                {
+                    AddSubstrings(simpleVariation, allSimpleVariationsWithSubstring);
+                }
+            }
+
+            return allSimpleVariationsWithSubstring;
+
+            static void AddSubstrings(string value, HashSet<string> output)
+            {
+                for (int i = 0; i < value.Length; i++)
+                {
+                    for (int j = i; j < value.Length; j++)
+                    {
+                        output.Add(value.Substring(i, j - i + 1));
+                    }
+                }
+            }
+        }
+
+        private static HashSet<string> GenerateCaseVariations(IEnumerable<string> variations)
+        {
+            var allSimpleVariationsWithCase = new HashSet<string>();
+            var simpleVariationsWithCase = variations
+                .Where(c => c.StartsWith('<') && c.EndsWith('>'))
+                .Where(c => !HasInvalidNesting(c))
+                .Select(c => c.Trim(CaseTrimChars))
+                .Where(c => !string.IsNullOrWhiteSpace(c));
+
+            foreach (var simpleVariation in simpleVariationsWithCase)
+            {
+                if (simpleVariation.StartsWith('[') && simpleVariation.EndsWith(']'))
+                {
+                    var substringVariations = GenerateSubstringVariations(new[]
+                    {
+                        simpleVariation,
+                        simpleVariation.ToUpperInvariant(),
+                        simpleVariation.ToLowerInvariant()
+                    });
+
+                    allSimpleVariationsWithCase.UnionWith(substringVariations);
+                }
+                else
+                {
+                    allSimpleVariationsWithCase.Add(simpleVariation);
+                    allSimpleVariationsWithCase.Add(simpleVariation.ToUpperInvariant());
+                    allSimpleVariationsWithCase.Add(simpleVariation.ToLowerInvariant());
+                }
+            }
+
+            return allSimpleVariationsWithCase;
+        }
+
+        private static bool HasInvalidNesting(string value)
+        {
+            return value.Count(c => c == '[') > 1 ||
+                   value.Count(c => c == ']') > 1 ||
+                   value.Count(c => c == '<') > 1 ||
+                   value.Count(c => c == '>') > 1;
         }
 
         public void SplitHashes(string txtHashes, int numericBase)
