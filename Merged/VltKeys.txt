@@ -6163,10 +6163,28 @@ acar_029_westfalia-exhaustLight-player.tmx
 acar_030_renault4l-exhaust-player.tmx
 acar_030_renault4l-exhaustAI-player.tmx
 acar_030_renault4l-exhaustLight-player.tmx
+accel_beetle63
+accel_corv_c3
+accel_dodge_charger69
+accel_ford_gt
 accel_from_idle_00
 accel_from_idle_auto
+accel_from_idle_lambo
 accel_from_idle_race
 accel_from_idle_race_01
+accel_from_idle_semi_00
+accel_from_idle_sport_01
+accel_from_idle_sport_02
+accel_from_idle_truck_00
+accel_from_idle_truck_01
+accel_from_idle_truck_02
+accel_lamb_reventon
+accel_nis_cube
+accel_transition_exotic
+accel_transition_muscle
+accel_transition_sport
+accel_transition_suv
+accel_transition_tuner
 AccelDelta
 AccelDeltaRPMThreshold
 accelerated
@@ -11391,8 +11409,10 @@ basicrefhatalpham
 basicrefhatl
 BASICREFHATL
 basicrefhatm
+basicrefsuv
 basicrefsuvalpham
 basicrefsuvm
+basicreftop
 basicreftopl
 BASICREFTOPL
 basicreftopm
@@ -15142,6 +15162,7 @@ CAR_19_EXH_MB_SPU.abk
 car_2_car
 car_2_car_front
 car_2_car_side
+car_2_concrete
 car_2_fence
 car_2_ground
 car_2_ground_bottomout
@@ -30940,6 +30961,7 @@ forced_induction_package_997gt3rs
 forced_induction_package_997tt
 forced_induction_package_bmwm3
 forced_induction_package_bmwm3e92
+forced_induction_package_bmwz4m
 forced_induction_package_camaro
 forced_induction_package_camaron
 forced_induction_package_carreragt
@@ -72019,6 +72041,7 @@ rd_asphalt
 RD_ASPHALT
 rd_asphalt_lite
 rd_asphalt_overlay
+rd_asphalt_refl_lite
 rd_asphalt_refl_tile
 rd_asphalt_reflective
 RD_ASPHALT_REFLECTIVE
@@ -72031,6 +72054,7 @@ rd_concrete_car_heaven
 rd_concrete_lite
 rd_concrete_overlay
 rd_concrete_refl_lite
+rd_concrete_refl_tile
 rd_concrete_reflective
 RD_CONCRETE_REFLECTIVE
 rd_concrete_reflective_overlay
@@ -72113,6 +72137,7 @@ rear_shock_ext_stiffness
 rear_shock_rebound_rate
 rear_shock_stiffness
 rear_spring_rate
+rear_sway_stiffness
 rear_tire_pressure
 Rear_View_Eng_Vol_Percent
 RearBumpBias
@@ -80729,6 +80754,7 @@ smackablehitworld_large
 smackables
 SmackableScale
 SmackableSpec
+smacknoworld
 smacksimple
 SMALL
 small_cracks
@@ -102511,6 +102537,7 @@ trk_log_eng
 TRN
 trn_dirt
 TRN_DIRT
+trn_dirt_grass_rock
 trn_dirt_overlay
 trn_dirt_rock
 trn_grass
@@ -102719,6 +102746,7 @@ TuningPresets
 tunings
 Tunings
 Tunnel
+tunnel_default_world
 tunneltag
 tunneltag_start
 tunneltag_stop

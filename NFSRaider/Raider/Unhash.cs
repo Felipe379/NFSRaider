@@ -356,50 +356,38 @@ namespace NFSRaider.Raider
 
         private void TryBruteforce(Variation variationsModel, CancellationToken cancellationToken)
         {
-            Variations<string> variations;
-            OrderablePartitioner<IReadOnlyList<string>> rangePartitioner;
-            for (int variationsCount = variationsModel.MinVariations; variationsCount <= variationsModel.MaxVariations; variationsCount++)
+            for (int count = variationsModel.MinVariations; count <= variationsModel.MaxVariations; count++)
             {
-                variations = new Variations<string>(variationsModel.Variations, variationsCount, Variation.GenerateOption);
-                rangePartitioner = Partitioner.Create(variations);
+                var variations = new Variations<string>(variationsModel.Variations, count, Variation.GenerateOption);
 
-                Parallel.ForEach(rangePartitioner, new ParallelOptions
+                Parallel.ForEach(Partitioner.Create(variations), new ParallelOptions
                 {
                     MaxDegreeOfParallelism = _processorCount,
                     CancellationToken = cancellationToken,
-                }, variation => CheckVariations(variation));
-            }
-
-            UpdateMainForm();
-        }
-
-        private void CheckVariations(IReadOnlyList<string> variation)
-        {
-            string currentVariation, generatedString;
-            uint currentHash;
-            int wi, pi, si;
-            var currentBlock = new HashSet<string>();
-
-            for (wi = 0; wi < _wordsBetweenVariations.Count; wi++)
-            {
-                currentVariation = string.Join(_wordsBetweenVariations.ElementAt(wi), variation);
-                for (pi = 0; pi < _prefixes.Count; pi++)
+                }, variation =>
                 {
-                    for (si = 0; si < _suffixes.Count; si++)
+                    foreach (var sep in _wordsBetweenVariations)
                     {
-                        generatedString = $"{_prefixes.ElementAt(pi)}{currentVariation}{_suffixes.ElementAt(si)}";
-                        currentHash = _hashFactory.Hash(generatedString);
-                        if (Hashes.Contains(currentHash))
+                        var middle = string.Join(sep, variation);
+                        foreach (var pre in _prefixes)
                         {
-                            currentBlock.Add(generatedString);
-                            lock (LockResults)
+                            foreach (var suf in _suffixes)
                             {
-                                Results.Add(new RaiderResult { Hash = currentHash, Value = generatedString, IsKnown = true });
+                                var final = pre + middle + suf;
+                                var hash = _hashFactory.Hash(final);
+                                if (Hashes.Contains(hash))
+                                {
+                                    lock (LockResults)
+                                    {
+                                        Results.Add(new RaiderResult { Hash = hash, Value = final, IsKnown = true });
+                                    }
+                                }
                             }
                         }
                     }
-                }
+                });
             }
+            UpdateMainForm();
         }
 
         public void UpdateTimeElapsed(object sender, ElapsedEventArgs e)
