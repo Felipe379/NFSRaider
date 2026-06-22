@@ -4,7 +4,7 @@
     {
         Bin,
         Vlt,
-        //Vlt64,
+        Vlt64,
         VltBin,
         VltVlt,
     }

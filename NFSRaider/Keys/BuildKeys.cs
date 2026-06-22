@@ -53,20 +53,20 @@ namespace NFSRaider.Keys
             return keys;
         }
 
-        public static Dictionary<uint, string> GetUnresolvedKeys(Game? gameFilter = null, CancellationToken cancellationToken = default)
+        public Dictionary<ulong, string> GetUnresolvedKeys(Game? gameFilter = null, CancellationToken cancellationToken = default)
         {
             var truncatedKeys = new BuildUnresolvedKeys().GetKeys(gameFilter, cancellationToken);
             const int defaultNumericBase = 16;
 
-            var hashes = new Dictionary<uint, HashSet<string>>(truncatedKeys.Count);
+            var hashes = new Dictionary<ulong, HashSet<string>>(truncatedKeys.Count);
 
             string hash, metadata, key;
             int len, i, start, fieldIndex;
-            uint hashKey;
+            ulong hashKey;
 
             void AddHashes(string keyString, string valueString, string metadataString)
             {
-                hashKey = Convert.ToUInt32(keyString, defaultNumericBase);
+                hashKey = Convert.ToUInt64(keyString, defaultNumericBase);
 
                 if (string.IsNullOrEmpty(valueString))
                     valueString = RaiderConsts.HashUnresolved;
@@ -88,18 +88,13 @@ namespace NFSRaider.Keys
             foreach (var truncatedKey in truncatedKeys)
             {
                 hash = metadata = key = string.Empty;
-                if (Hashes.IsHash(truncatedKey, defaultNumericBase))
+                if (Hashes.IsValidHash(truncatedKey, _hashFactory.IsHash64, defaultNumericBase))
                 {
                     hash = truncatedKey;
                 }
                 else
                 {
-                    if (string.IsNullOrWhiteSpace(truncatedKey))
-                        continue;
-
                     len = truncatedKey.Length;
-                    hash = metadata = key = string.Empty;
-
                     fieldIndex = 0;
                     start = 0;
 
@@ -129,7 +124,13 @@ namespace NFSRaider.Keys
                         }
                     }
 
-                    if (fieldIndex == 0 || !Hashes.IsHash(hash, defaultNumericBase))
+                    var isHash64 = Hashes.IsHash64(hash, defaultNumericBase);
+                    var isHash32 = Hashes.IsHash32(hash, defaultNumericBase);
+
+                    if (fieldIndex == 0 || (!isHash64 && !isHash32))
+                        continue;
+
+                    if ((_hashFactory.IsHash64 && !isHash64) || (!_hashFactory.IsHash64 && !isHash32))
                         continue;
 
                     if (fieldIndex == 1)
@@ -150,14 +151,14 @@ namespace NFSRaider.Keys
         }
 
 
-        public Dictionary<uint, string> GetKeyValue(Game? gameFilter = null, CancellationToken cancellationToken = default)
+        public Dictionary<ulong, string> GetKeyValue(Game? gameFilter = null, CancellationToken cancellationToken = default)
         {
             var keyValuePairs = GetUnresolvedKeys(gameFilter, cancellationToken);
             var keys = _useMergedKeysFile
                 ? UseMergedKeysFile()
                 : GetKeys(gameFilter, cancellationToken);
             var collisions = new HashSet<string>();
-            uint currentHexValue;
+            ulong currentHexValue;
             GC.Collect();
 
             IEnumerable<string> lines = null;

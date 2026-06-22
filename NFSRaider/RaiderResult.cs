@@ -2,8 +2,9 @@
 {
     public class RaiderResult
     {
-        public uint Hash { get; set; }
+        public ulong Hash { get; set; }
         public string Value { get; set; }
         public bool IsKnown { get; set; }
+        public bool IsHash64 { get; set; }
     }
 }

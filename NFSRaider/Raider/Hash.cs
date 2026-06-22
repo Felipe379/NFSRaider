@@ -35,7 +35,7 @@ namespace NFSRaider.Raider
             foreach (var item in Strings)
             {
                 cancellationToken.ThrowIfCancellationRequested();
-                results.Add(new RaiderResult { Hash = _hashFactory.Hash(item), Value = item, IsKnown = true });
+                results.Add(new RaiderResult { Hash = _hashFactory.Hash(item), Value = item, IsKnown = true, IsHash64 = _hashFactory.IsHash64 });
             }
 
             if (results.Any())

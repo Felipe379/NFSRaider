@@ -1,34 +1,21 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 
 namespace NFSRaider.Hash
 {
     public class Bin : HashFactory
     {
-        public override uint Hash(string stringToHash)
+        public override bool IsHash64 => false;
+
+        public override ulong Hash(string stringToHash)
+        {
+            return Hash32(stringToHash);
+        }
+
+        public static uint Hash32(string stringToHash)
         {
             var byteArrayToHash = Encoding.GetEncoding("ISO-8859-1").GetBytes(stringToHash);
 
             return HashPrefix(byteArrayToHash);
-        }
-
-        public override ulong Hash64(string stringToHash)
-        {
-            throw new NotImplementedException();
-        }
-
-        private static uint Hash(byte[] byteArrayToHash)
-        {
-            var v1 = 0;
-            var i = -1;
-
-            while (v1 < byteArrayToHash.Length)
-            {
-                i = byteArrayToHash[v1] + 33 * i;
-                v1++;
-            }
-
-            return (uint)i;
         }
 
         private static uint HashPrefix(byte[] byteArrayToHash, uint prefix = uint.MaxValue)

@@ -9759,6 +9759,7 @@ aud_s5_stk_08_m17
 aud_s5_stk_08_track
 aud_s5_stk_highend
 aud_s5_stk_track
+Aud_Skid_Type
 aud_stitch_loop
 AUD_TT_2T_1
 AUD_TT_2T_2
@@ -18224,6 +18225,7 @@ CCXWORLD100_WHEEL
 cd_a
 cd_b
 cd_c
+cd13
 ce_240sx
 CE_240SX
 ce_350z
@@ -23959,6 +23961,7 @@ DJ_SL65
 dj_viper
 dj_z06
 dj02_draw
+djspookynchuckd
 dlc_fmv01_grip
 dlc_fmv02_drag
 dlc_fmv03_speed
@@ -37798,6 +37801,7 @@ HurryUpSMSID
 HurryUpSMSID2
 HurryUpTimeLimit
 HurryUpTimeoutInMilliseconds
+hush
 Hush
 hvy_traffic_hit_player
 HW_Voices
@@ -48543,6 +48547,8 @@ mwestfalia_default_04
 mwestfalia_rio_01
 mwestfalia_rio_02
 mwestfalia_singapore
+mwfespeech
+mwingamespeech
 mwlicensedmusic
 mwnissfxstreams
 Mx_0001
@@ -52994,6 +53000,7 @@ People Always Talk About The Weather (Junkie XL Remix)
 percent_complete
 PercentChanceToCatch
 PercentWidth
+perceptionists
 PERF_PART_ZONE
 perf_tuning
 perfect_launch
@@ -75756,6 +75763,7 @@ SCENERY_GROUP_WS_GRIP_6_HORSE_SS
 SCENERY_GROUP_WS_GRIP_7_GP
 SCENERY_GROUP_WS_GRIP_7_GP_SS
 SceneryModel
+sch
 sciontc
 SCIONTC
 sciontc_1
@@ -87675,6 +87683,7 @@ Tattoo_Vudu
 taxi
 TAXI
 taxi_hood
+tb
 tb_test
 Tchasehb1
 Tchaseor1
@@ -101959,6 +101968,7 @@ TRAFFIC_4DRSEDC_3
 TRAFFIC_4DRSEDC_4
 TRAFFIC_4DRSEDC_5
 TRAFFIC_4DRSEDC_6
+traffic_brakelight_inner
 traffic_cable
 traffic_car
 traffic_car_bus_87
@@ -102870,6 +102880,9 @@ turbo_sml2_01
 turbo_sml2_02
 TURBO_SML2_1_MB.abk
 TURBO_SML2_2_MB.abk
+turbo_truck_00
+turbo_truck_01
+turbo_truck_02
 TURBO_TUN_MED_0_MB.abk
 TURBO_TUN_MED_1_MB.abk
 TURBO_TUN_MED_2_MB.abk
@@ -103226,6 +103239,7 @@ uves_radialblur
 uves_transition
 VACUUM
 Vale_Causeway
+valentine_handofblood
 valentines_licenseplate
 valentines_neon
 Valient Thorr
@@ -104613,6 +104627,7 @@ WinLevel4RewardProbability
 winningZone
 WinThreshold
 Witching Hour
+wmd
 WNGC_A
 WNGC_B
 WNGC_DPAD_D

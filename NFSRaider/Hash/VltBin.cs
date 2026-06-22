@@ -1,20 +1,20 @@
-﻿using System;
-
-namespace NFSRaider.Hash
+﻿namespace NFSRaider.Hash
 {
     public class VltBin : HashFactory
     {
-        public override uint Hash(string stringToHash)
-        {
-            var binHashString = "0x" + new Bin().Hash(stringToHash).ToString("x8");
-            var vltHash = new Vlt().Hash(binHashString);
+        public override bool IsHash64 => false;
 
-            return vltHash;
+        public override ulong Hash(string stringToHash)
+        {
+            return Hash32(stringToHash);
         }
 
-        public override ulong Hash64(string stringToHash)
+        public static uint Hash32(string stringToHash)
         {
-            throw new NotImplementedException();
+            var binHashString = "0x" + Bin.Hash32(stringToHash).ToString("x8");
+            var vltHash = Vlt.Hash32(binHashString);
+
+            return vltHash;
         }
     }
 }

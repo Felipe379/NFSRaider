@@ -1,21 +1,20 @@
-﻿using System;
-
-namespace NFSRaider.Hash
+﻿namespace NFSRaider.Hash
 {
     public class VltVlt : HashFactory
     {
-        public override uint Hash(string StringToHash)
-        {
-            var vlt = new Vlt();
-            var vltHashString = "0x" + vlt.Hash(StringToHash).ToString("x8");
-            var vltHash = vlt.Hash(vltHashString);
+        public override bool IsHash64 => false;
 
-            return vltHash;
+        public override ulong Hash(string stringToHash)
+        {
+            return Hash32(stringToHash);
         }
 
-        public override ulong Hash64(string StringToHash)
+        public static uint Hash32(string StringToHash)
         {
-            throw new NotImplementedException();
+            var vltHashString = "0x" + Vlt.Hash32(StringToHash).ToString("x8");
+            var vltHash = Vlt.Hash32(vltHashString);
+
+            return vltHash;
         }
     }
 }

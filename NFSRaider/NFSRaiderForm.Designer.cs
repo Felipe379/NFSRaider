@@ -322,7 +322,7 @@
             // 
             CboHashTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             CboHashTypes.FormattingEnabled = true;
-            CboHashTypes.Items.AddRange(new object[] { "BinHash", "VltHash", "VltBinHash", "VltVltHash" });
+            CboHashTypes.Items.AddRange(new object[] { "BinHash", "VltHash", "VltHash64", "VltBinHash", "VltVltHash" });
             CboHashTypes.Location = new System.Drawing.Point(187, 22);
             CboHashTypes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             CboHashTypes.Name = "CboHashTypes";

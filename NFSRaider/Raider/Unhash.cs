@@ -37,7 +37,7 @@ namespace NFSRaider.Raider
         private readonly bool _checkMergedKeys;
         private readonly bool _tryBruteForce;
 
-        private HashSet<uint> Hashes { get; set; } = new HashSet<uint>();
+        private HashSet<ulong> Hashes { get; set; } = new HashSet<ulong>();
         private List<RaiderResult> Results { get; set; } = new List<RaiderResult>();
         private bool LockObjectIsUpdating { get; set; } = false;
         private object LockResults { get; } = new object();
@@ -241,16 +241,16 @@ namespace NFSRaider.Raider
             {
                 foreach (var hash in hashes)
                 {
-                    if (Helpers.Hashes.IsHash(hash, numericBase))
-                        Hashes.Add(Helpers.Hashes.Reverse(Convert.ToUInt32(hash, numericBase)));
+                    if (Helpers.Hashes.IsValidHash(hash, _hashFactory.IsHash64, numericBase))
+                        Hashes.Add(Helpers.Hashes.Reverse(hash, _hashFactory.IsHash64, numericBase));
                 }
             }
             else
             {
                 foreach (var hash in hashes)
                 {
-                    if (Helpers.Hashes.IsHash(hash, numericBase))
-                        Hashes.Add(Convert.ToUInt32(hash, numericBase));
+                    if (Helpers.Hashes.IsValidHash(hash, _hashFactory.IsHash64, numericBase))
+                        Hashes.Add(Convert.ToUInt64(hash, numericBase));
                 }
             }
 
@@ -282,11 +282,11 @@ namespace NFSRaider.Raider
                 cancellationToken.ThrowIfCancellationRequested();
                 if (allParts.TryGetValue(hash, out var result))
                 {
-                    results.Add(new RaiderResult { Hash = hash, Value = result, IsKnown = true });
+                    results.Add(new RaiderResult { Hash = hash, Value = result, IsKnown = true, IsHash64 = _hashFactory.IsHash64 });
                 }
                 else
                 {
-                    results.Add(new RaiderResult { Hash = hash, Value = RaiderConsts.HashUnknown, IsKnown = false });
+                    results.Add(new RaiderResult { Hash = hash, Value = RaiderConsts.HashUnknown, IsKnown = false, IsHash64 = _hashFactory.IsHash64 });
                 }
             }
 
@@ -379,7 +379,7 @@ namespace NFSRaider.Raider
                                 {
                                     lock (LockResults)
                                     {
-                                        Results.Add(new RaiderResult { Hash = hash, Value = final, IsKnown = true });
+                                        Results.Add(new RaiderResult { Hash = hash, Value = final, IsKnown = true, IsHash64 = _hashFactory.IsHash64 });
                                     }
                                 }
                             }

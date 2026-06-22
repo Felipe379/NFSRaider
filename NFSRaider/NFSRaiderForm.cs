@@ -271,13 +271,13 @@ namespace NFSRaider
             LstUnhashed.BeginUpdate();
 
             var listBoxDataSource = ListBoxDataSource
-                .Select(c => new RaiderResult { Hash = (c.Hash), IsKnown = c.IsKnown, Value = c.Value });
+                .Select(c => new RaiderResult { Hash = (c.Hash), IsKnown = c.IsKnown, Value = c.Value, IsHash64 = c.IsHash64 });
 
             if (ChkReverseHashes.Checked)
             {
                 listBoxDataSource = listBoxDataSource.Select(c =>
                 {
-                    c.Hash = Hashes.Reverse(c.Hash);
+                    c.Hash = Hashes.Reverse(c.Hash, c.IsHash64);
                     return c;
                 });
             }
@@ -335,6 +335,7 @@ namespace NFSRaider
 
             var dataSource = new List<string>();
             var currentString = string.Empty;
+            var numericBase = Numeric.Bases[NumericBaseLst];
 
             foreach (var item in listBoxDataSource)
             {
@@ -343,7 +344,7 @@ namespace NFSRaider
                 else
                     unknownHashes++;
 
-                dataSource.Add(format.Replace("(HASH)", Convert.ToString(item.Hash, Numeric.Bases[NumericBaseLst].Base).PadLeft(Numeric.Bases[NumericBaseLst].Chars, '0')).Replace("(STRING)", item.Value));
+                dataSource.Add(format.Replace("(HASH)", item.Hash.ToBaseString(numericBase.Base).PadLeft(item.IsHash64 ? numericBase.L64 : numericBase.L32, '0')).Replace("(STRING)", item.Value));
             }
 
             var listBoxDataSourceCount = knownHashes + unknownHashes;
@@ -920,13 +921,17 @@ namespace NFSRaider
 
         private void MenuLoadUnresolvedHashesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var defaultValues = new List<uint> { 0x00000000, 0xFFFFFFFF };
+            var defaultValues = HashFactory.IsHash64 ? new List<ulong> { 0x0, 0xFFFFFFFFFFFFFFFF } : new List<ulong> { 0x0, 0xFFFFFFFF };
+            //item.Hash.ToBaseString(numericBase.Base).PadLeft(item.IsHash64 ? numericBase.L64 : numericBase.L32, '0'))
             var defaultNumericBase = NumericBase.Hexadecimal;
             var defaultEndianness = Endianness.LittleEndian;
+            var defaultNumericBaseValues = Numeric.Bases[defaultNumericBase];
+            var leadingZeroes = HashFactory.IsHash64 ? defaultNumericBaseValues.L64 : defaultNumericBaseValues.L32;
 
-            var unresolvedKeys = BuildKeys.GetUnresolvedKeys()
+            var buildKeys = new BuildKeys(HashFactory, CaseFactory, ChkUseMainKeys.Checked, ChkUseUserKeys.Checked, ChkUseMergedKeys.Checked, NumericProcessorsCount.Value);
+            var unresolvedKeys = buildKeys.GetUnresolvedKeys()
                 .Where(k => !defaultValues.Contains(k.Key))
-                .Select(k => "0x" + Convert.ToString(k.Key, Numeric.Bases[defaultNumericBase].Base).PadLeft(Numeric.Bases[defaultNumericBase].Chars, '0'))
+                .Select(k => "0x" + k.Key.ToBaseString(defaultNumericBaseValues.Base).PadLeft(leadingZeroes, '0'))
                 .Distinct();
 
             TxtLoadFromText.Text = string.Join(Environment.NewLine, unresolvedKeys);
