@@ -13990,6 +13990,10 @@ traffic_brakelight_inner
 mwfespeech
 mwingamespeech
 Aud_Skid_Type
+spoiler_stock_hatch
+bodykit_stock_corvettec6
+ReputationAward
+MilestoneLevels
 TANK
 HOVER
 BOAT

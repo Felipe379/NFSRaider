@@ -12619,6 +12619,7 @@ bodykit_stock_civicsi
 bodykit_stock_cobaltss
 bodykit_stock_corolla
 bodykit_stock_corvette
+bodykit_stock_corvettec6
 bodykit_stock_corvettez06
 bodykit_stock_cosworth
 bodykit_stock_ctsv
@@ -44606,6 +44607,7 @@ MilestoneChallenge
 MilestoneCompleteHeatAdjust
 MilestoneCount
 milestonejump
+MilestoneLevels
 MilestoneName
 milestonerace
 milestonerace/stategraph_basicrace_prerace_handler_stateenter_9
@@ -72391,6 +72393,7 @@ reputation_unlock/stategraph_reputation_unlock_initial/stategraph_reputation_unl
 reputation_unlock/stategraph_reputation_unlock_monitor
 reputation_unlock/stategraph_reputation_unlock_monitor_handler_notifyplayerrep
 reputation_unlock/stategraph_reputation_unlock_monitor/stategraph_reputation_unlock_monitor_handler_notifyplayerrep
+ReputationAward
 ReputationRequired
 reqLOS
 RequiredBounty
@@ -81887,6 +81890,7 @@ SPOILER_PORSCHES_AS2
 SPOILER_SMALL
 spoiler_stock
 spoiler_stock_evo
+spoiler_stock_hatch
 spoiler_stock_lip
 SPOILER_STYLE00_HATCH
 SPOILER_STYLE00_HATCH_CF
