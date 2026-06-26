@@ -13994,6 +13994,14 @@ spoiler_stock_hatch
 bodykit_stock_corvettec6
 ReputationAward
 MilestoneLevels
+HavocFor911
+nos_cute
+PostRaceDelay
+HotAreaChance
+HotAreaTime
+RUMBLE_AMPLITUDE
+soundfx_index
+basicreftopperp
 TANK
 HOVER
 BOAT

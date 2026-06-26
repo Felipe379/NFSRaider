@@ -11417,6 +11417,7 @@ basicreftop
 basicreftopl
 BASICREFTOPL
 basicreftopm
+basicreftopperp
 Basis
 battlefield1
 BATTLEFIELD1
@@ -36138,6 +36139,7 @@ hat_bonus
 hat_cop
 HAT_COP
 HATCH
+HavocFor911
 hay
 haybale
 hb_a_01
@@ -36923,6 +36925,8 @@ hospital_drvthru
 HOT_PURSUIT_R8
 hotarea
 HotArea
+HotAreaChance
+HotAreaTime
 hotcar
 hotcar_human
 hotcar_test
@@ -50412,6 +50416,7 @@ nos_boost
 NOS_CAPACITY
 nos_cop
 nos_current
+nos_cute
 nos_demo_cuda
 nos_demo_e92
 nos_demo_gtrproto
@@ -54120,6 +54125,7 @@ postRaceAmbMusic_2
 postRaceAmbMusic_3
 postracebar_rewards_multiplayer
 postracebars_hiding
+PostRaceDelay
 postRacePlayerFirst
 postracerewards065
 PostRaceScreenTexture
@@ -74596,6 +74602,7 @@ rubout
 RugosityAmplitude
 RugosityFrequency
 rumble
+RUMBLE_AMPLITUDE
 rumble_rough
 rumble_smooth
 rumble_stepped
@@ -81330,6 +81337,7 @@ sound\streams\nisaudio.sth
 sound\streams\SFXAudio_Psx2_en.sbk
 sound\streams\SFXAudio_revo_en.sbk
 SoundCop
+soundfx_index
 SoundHeli
 SoundHelicopter
 SoundMapping
