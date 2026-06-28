@@ -1,10 +1,24 @@
-﻿namespace NFSRaider.Case
+﻿using System.Collections.Generic;
+
+namespace NFSRaider.Case
 {
     public class AllCase : CaseFactory
     {
-        public override string[] ChangeCase(string value)
+        public override IEnumerable<string> ChangeCase(string value)
         {
-            return new[] { value, value.ToLowerInvariant(), value.ToUpperInvariant() };
+            yield return value;
+
+            var low = value.ToLowerInvariant();
+            if (low != value)
+            {
+                yield return low;
+            }
+
+            var up = value.ToUpperInvariant();
+            if (up != value && up != low)
+            {
+                yield return up;
+            }
         }
     }
 }

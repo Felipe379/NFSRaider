@@ -1,10 +1,11 @@
 ﻿using NFSRaider.Enums;
+using System.Collections.Generic;
 
 namespace NFSRaider.Case
 {
     public abstract class CaseFactory
     {
-        public abstract string[] ChangeCase(string value);
+        public abstract IEnumerable<string> ChangeCase(string value);
 
         public static CaseFactory GetCaseType(CaseOptions caseOption)
         {

@@ -1,10 +1,12 @@
-﻿namespace NFSRaider.Case
+﻿using System.Collections.Generic;
+
+namespace NFSRaider.Case
 {
     public class UpperCase : CaseFactory
     {
-        public override string[] ChangeCase(string value)
+        public override IEnumerable<string> ChangeCase(string value)
         {
-            return new[] { value.ToUpperInvariant() };
+            yield return value.ToUpperInvariant();
         }
     }
 }

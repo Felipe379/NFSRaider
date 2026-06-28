@@ -314,7 +314,7 @@ namespace NFSRaider
             if (ChkIgnoreRepeatedHashes.Checked)
             {
                 listBoxDataSource = listBoxDataSource
-                    .GroupBy(c => c.Hash)
+                    .GroupBy(c => (c.Hash, c.IsHash64))
                     .Select(c =>
                     {
                         return c.Select(d =>

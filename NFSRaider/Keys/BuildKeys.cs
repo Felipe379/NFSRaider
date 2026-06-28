@@ -164,7 +164,7 @@ namespace NFSRaider.Keys
             IEnumerable<string> lines = null;
             foreach (var key in keys)
             {
-                lines = _caseFactory.ChangeCase(key).Distinct();
+                lines = _caseFactory.ChangeCase(key);
                 foreach (var line in lines)
                 {
                     cancellationToken.ThrowIfCancellationRequested();
