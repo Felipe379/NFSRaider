@@ -14026,6 +14026,9 @@ AEMS_Singapore_Child_Bank
 AEMS_Singapore_Parent_Bank
 AEMS_Madrid_Child_Bank
 AEMS_Madrid_Parent_Bank
+TORQUE_BOOST_LEVEL1
+TORQUE_BOOST_LEVEL2
+TORQUE_BOOST_LEVEL3
 TANK
 HOVER
 BOAT
