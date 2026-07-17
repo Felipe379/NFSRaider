@@ -13,6 +13,7 @@ using NFSRaider.Keys.MainKeys.Files;
 using NFSRaider.Keys.MainKeys.GCareers;
 using NFSRaider.Keys.MainKeys.Global;
 using NFSRaider.Keys.MainKeys.LanguageLabels;
+using NFSRaider.Keys.MainKeys.Macros;
 using NFSRaider.Keys.MainKeys.Materials;
 using NFSRaider.Keys.MainKeys.Nis;
 using NFSRaider.Keys.MainKeys.PartsLists;
@@ -68,6 +69,7 @@ namespace NFSRaider.Keys.MainKeys
                 new BuildGlobal(),
                 new BuildLanguageLabels(),
                 new BuildMaterials(),
+                new BuildMacros(),
                 new BuildNis(),
                 new BuildPresets(),
                 new BuildPresetSkins(),
