@@ -55,10 +55,10 @@ namespace NFSRaider.Keys
 
         public Dictionary<ulong, string> GetUnresolvedKeys(Game? gameFilter = null, CancellationToken cancellationToken = default)
         {
-            var truncatedKeys = new BuildUnresolvedKeys().GetKeys(gameFilter, cancellationToken);
+            var unresolvedKeys = new BuildUnresolvedKeys().GetKeys(gameFilter, cancellationToken);
             const int defaultNumericBase = 16;
 
-            var hashes = new Dictionary<ulong, HashSet<string>>(truncatedKeys.Count);
+            var hashes = new Dictionary<ulong, HashSet<string>>(unresolvedKeys.Count);
 
             string hash, metadata, key;
             int len, i, start, fieldIndex;
@@ -85,33 +85,33 @@ namespace NFSRaider.Keys
                 set.Add(valueString);
             }
 
-            foreach (var truncatedKey in truncatedKeys)
+            foreach (var unresolvedKey in unresolvedKeys)
             {
                 hash = metadata = key = string.Empty;
-                if (Hashes.IsValidHash(truncatedKey, _hashFactory.IsHash64, defaultNumericBase))
+                if (Hashes.IsValidHash(unresolvedKey, _hashFactory.IsHash64, defaultNumericBase))
                 {
-                    hash = truncatedKey;
+                    hash = unresolvedKey;
                 }
                 else
                 {
-                    len = truncatedKey.Length;
+                    len = unresolvedKey.Length;
                     fieldIndex = 0;
                     start = 0;
 
                     for (i = 0; i < len; i++)
                     {
-                        if (truncatedKey[i] == '\t')
+                        if (unresolvedKey[i] == '\t')
                         {
                             switch (fieldIndex)
                             {
                                 case 0:
-                                    hash = truncatedKey[start..i];
+                                    hash = unresolvedKey[start..i];
                                     break;
                                 case 1:
-                                    metadata = truncatedKey[start..i];
+                                    metadata = unresolvedKey[start..i];
                                     break;
                                 case 2:
-                                    key = truncatedKey[start..i];
+                                    key = unresolvedKey[start..i];
                                     break;
                             }
 
@@ -135,12 +135,12 @@ namespace NFSRaider.Keys
 
                     if (fieldIndex == 1)
                     {
-                        metadata = truncatedKey[start..];
+                        metadata = unresolvedKey[start..];
                         key = RaiderConsts.HashUnresolved;
                     }
                     else if (fieldIndex == 2)
                     {
-                        key = truncatedKey[start..];
+                        key = unresolvedKey[start..];
                     }
                 }
 

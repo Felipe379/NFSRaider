@@ -922,7 +922,6 @@ namespace NFSRaider
         private void MenuLoadUnresolvedHashesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var defaultValues = HashFactory.IsHash64 ? new List<ulong> { 0x0, 0xFFFFFFFFFFFFFFFF } : new List<ulong> { 0x0, 0xFFFFFFFF };
-            //item.Hash.ToBaseString(numericBase.Base).PadLeft(item.IsHash64 ? numericBase.L64 : numericBase.L32, '0'))
             var defaultNumericBase = NumericBase.Hexadecimal;
             var defaultEndianness = Endianness.LittleEndian;
             var defaultNumericBaseValues = Numeric.Bases[defaultNumericBase];
