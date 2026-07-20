@@ -5006,7 +5006,7 @@ generic_body_paint_group_iridescent
 generic_body_paint_group_matte
 generic_body_paint_group_metallic
 generic_body_paint_group_pearl
-generic_body_unruled
+lancerevox_draghpfall
 generic_brake_caliper_front
 generic_brake_caliper_front_universal
 generic_brake_caliper_rear
@@ -7292,7 +7292,7 @@ PriorityWeight
 prison_jump
 prkg_mtr_2_car
 prkg_mtr_2_world
-pro_cycles
+s08elem02
 procedural
 ProcedureData
 ProductIdConfig
@@ -7408,7 +7408,7 @@ race07
 RaceActivity
 RaceBehaviour
 RaceCar
-RACECOURSE_MINI_NOS
+RumbleFX_ID
 racefinish
 RaceLength
 RaceList
@@ -7854,7 +7854,7 @@ scirocco_a
 scirocco_h
 scirocco_r3
 scirocco_t
-score_creator
+s01elem04
 ScoringMethod
 scrape
 DeathEffectThreshold
@@ -10561,7 +10561,6 @@ TopSpeedMultiplier
 RepPointsForDestroying
 CostToStateForDestroying
 FixedFunctionSkyColor
-RSNMCHUNK_FERESNAMES
 StockPresetSkin
 FXAngularDeviation
 art_kit_to_game_kit_mapping
@@ -10775,7 +10774,6 @@ SLOT_CHANGE_SPEED
 SLOTCAR_PIN_FORWARDOFFSET
 isStandardDef
 sony_categoryID
-padhighperformance
 beat_all_challenges
 EventWinHeatAdjust
 HighSensitivitySteeringParameters
