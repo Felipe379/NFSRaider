@@ -11198,6 +11198,7 @@ BarrierExemptions
 Barriers
 BARRIERS_LOCKED_01
 BarriersExtra
+BarriersHotArea
 Barry
 base
 BASE
@@ -17799,6 +17800,7 @@ CashRewardForRepeatRace
 CashRewards
 CashValue
 CashValueDominate
+CashWinAmount
 casiddas
 casino
 casino_monorail
@@ -19534,10 +19536,12 @@ chasedownoutro07
 chasehighwaybattle
 chasehitpoints
 chaseoutrun
+chaseperception
 CHASES_CAR001
 CHASES_CAR002
 chaseskill
 chasetakedown
+chasetimelimits
 chassis
 CHASSIS
 chassis_current
@@ -21327,6 +21331,7 @@ copsrobbers/stategraph_arena_roundover_handler_stateenter
 copsrobbers/stategraph_arena_roundstart_handler_stateenter
 CopsSpawner
 CopsSpawners
+CopsStickAround
 CopsTakenOut
 CopStart
 CopsTrigger2
@@ -25006,6 +25011,7 @@ drone
 drop_shadow
 Dropkick The Punks
 dropoff
+DropOffPoints
 DropOffs
 dropofftrigger
 DROPOUT
@@ -27505,6 +27511,7 @@ endingcareercg20
 EndingNis01
 EndingNis02
 EndingNis03
+EndOfPath
 endofrace_flash
 EndOfRaceBoostDistance
 EndOfSectionEntry
@@ -30392,6 +30399,7 @@ Fisher & Interchange
 Fisher Road
 fishmarketsign
 Fishtown_Market
+FixedBagSpawn
 FixedFunctionSkyColor
 FixedRotation
 FLAKE_1
@@ -31064,6 +31072,7 @@ ForcedInduction
 ForcedPitch
 ForceHeatLevel
 forceMultiplier
+ForceOpponentStart
 ForcePath
 ForcePlayerAtGridPosition
 ForcePostRaceActivity
@@ -38472,6 +38481,7 @@ InitiallyUnlocked
 InitialPlayerSpeed
 InitialRotation
 InitialSpeed
+InitialThreatLevel
 InitialZoneHeat
 initpursuit
 initstrategy
@@ -38517,6 +38527,7 @@ INSTANCE_COLLISIONS_3D
 instant
 instant_cooldown
 instantcooldown
+InstructionString
 InstrumentCluster
 insunset01
 insunset02
@@ -44590,6 +44601,8 @@ midnis
 MidNIS
 midnis2
 MidNIS2
+MidNIS2CameraTrack
+MidNISCameraTrack
 midrace
 milestone
 milestone_challenge
@@ -44630,6 +44643,7 @@ milestone_top
 milestone_total_infractions
 MilestoneBiggerIsBetter
 MilestoneChallenge
+MilestoneComparator
 MilestoneCompleteHeatAdjust
 MilestoneCount
 milestonejump
@@ -50384,6 +50398,7 @@ NO_WORLD_COLLISIONS
 no_ztest
 no_zwrite
 no_zwrite_test
+NoCollisionTime
 NoiseMipMapBias
 NoiseSpace
 NoKillAtAlpha
@@ -50831,6 +50846,8 @@ NumCopsToTriggerBackup
 NumEvents
 NumHeats
 NumLaps
+NumMoneyBags
+numofopponents
 NumParticles
 NumParticlesVariance
 NumPatrolCars
@@ -50978,6 +50995,7 @@ one_bit_alpha
 one_car
 one_more_lap
 ONE_NAME
+OneDropForAll
 oneFlashInterval
 onegoodreason
 onemorelap
@@ -53522,6 +53540,7 @@ PlayerLost
 Players Crew
 PlayerScaler
 PlayerSmashSpeedRange
+PlayerSpawns
 playersready
 PlayerTakingDamage
 PlayerUnderAIControl
@@ -53583,6 +53602,8 @@ pointofinterest
 PointOfInterest
 PointOfInterestBehavior
 PointOfInterestType
+PointsPerBust
+PointsPerDrop
 PointsPerSecond
 poker
 pole_device_box
@@ -54112,6 +54133,7 @@ position_8
 position_change
 PositionDuration
 PositionMove
+PositionScores
 PositiveClip
 PosOffset
 PosReverb
@@ -71348,6 +71370,7 @@ raceonline01
 raceonline02
 raceonline03
 raceover
+RaceOverAsOutro
 RaceOverNISLose
 RaceOverNISWin
 racer
@@ -81473,6 +81496,8 @@ SpawnCopsTrigger
 SpawnCopsTrigger2
 SpawnCopsTrigger3
 SpawnDist
+SpawnDistanceMax
+SpawnDistanceMin
 SpawnFeds
 SpawnFedsSUV
 spawnheavy_seq
@@ -87707,6 +87732,7 @@ TargetReached_Opponent
 TargetRole
 Targets
 TargetSilver
+TargetThreatLevel
 TargetTime
 TargetTimeOverrides
 TargetTrigger
@@ -104096,6 +104122,7 @@ wantedevent/stategraph_basicrace_racing_handler_perpbusted
 wantedevent/stategraph_basicrace_racing_handler_perpescaped
 wantedevent/stategraph_basicrace_racing_handler_stateenter
 WantedEventCopTakeout01
+WantedEventRequirements
 War Stories
 warmup
 warmup_launch
