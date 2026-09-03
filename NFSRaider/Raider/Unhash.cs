@@ -235,23 +235,34 @@ namespace NFSRaider.Raider
 
         public void SplitHashes(string txtHashes, int numericBase)
         {
-            var hashes = txtHashes.Split(new[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).Select(c => Regex.Replace(c, @"[^0-9A-Za-z]", "")).ToList();
+            var hashesText = txtHashes.Split(new[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).Select(c => Regex.Replace(c, @"[^0-9A-Za-z]", "")).ToArray();
 
-            if (_endianness == Endianness.BigEndian)
+            var reversedHashes = hashesText
+                .Where(h => Helpers.Hashes.IsValidHash(h, _hashFactory.IsHash64, numericBase))
+                .Select(h => Helpers.Hashes.Reverse(h, _hashFactory.IsHash64, numericBase));
+
+            var hashes = hashesText
+                .Where(h => Helpers.Hashes.IsValidHash(h, _hashFactory.IsHash64, numericBase))
+                .Select(h => Convert.ToUInt64(h, numericBase));
+
+            switch (_endianness)
             {
-                foreach (var hash in hashes)
-                {
-                    if (Helpers.Hashes.IsValidHash(hash, _hashFactory.IsHash64, numericBase))
-                        Hashes.Add(Helpers.Hashes.Reverse(hash, _hashFactory.IsHash64, numericBase));
-                }
+                case Endianness.BigEndian:
+                    hashes = reversedHashes;
+                    break;
+                case Endianness.LittleEndian:
+                    // Do nothing
+                    break;
+                case Endianness.Both:
+                    hashes = hashes.Concat(reversedHashes);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(_endianness), _endianness, null);
             }
-            else
+
+            foreach (var hash in hashes)
             {
-                foreach (var hash in hashes)
-                {
-                    if (Helpers.Hashes.IsValidHash(hash, _hashFactory.IsHash64, numericBase))
-                        Hashes.Add(Convert.ToUInt64(hash, numericBase));
-                }
+                Hashes.Add(hash);
             }
 
             _sender.GenericMessageBoxDuringBruteForce("Info", $"{Hashes.Count} unique hashes identified");

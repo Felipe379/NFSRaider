@@ -7,6 +7,7 @@ using NFSRaider.Keys;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace NFSRaider.Raider
@@ -80,19 +81,27 @@ namespace NFSRaider.Raider
                 listBox.Add(new RaiderResult() { Hash = hash, Value = result, IsKnown = isKnown, IsHash64 = hashFactory.IsHash64 });
             }
 
-            if (unhashingEndianness == Endianness.BigEndian)
+            var arrayFromFileReversed = arrayFromFile.Select(h => Hashes.Reverse(h, hashFactory.IsHash64));
+            IEnumerable<ulong> hashes;
+
+            switch (unhashingEndianness)
             {
-                foreach (var hash in arrayFromFile)
-                {
-                    AddResult(hash);
-                }
+                case Endianness.BigEndian:
+                    hashes = arrayFromFile;
+                    break;
+                case Endianness.LittleEndian:
+                    hashes = arrayFromFileReversed;
+                    break;
+                case Endianness.Both:
+                    hashes = arrayFromFile.Concat(arrayFromFileReversed);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(unhashingEndianness), unhashingEndianness, "Invalid endianness.");
             }
-            else
+
+            foreach (var hash in hashes)
             {
-                foreach (var hash in arrayFromFile)
-                {
-                    AddResult(Hashes.Reverse(hash, hashFactory.IsHash64));
-                }
+                AddResult(hash);
             }
 
             return listBox;

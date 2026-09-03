@@ -4,5 +4,6 @@
     {
         BigEndian,
         LittleEndian,
+        Both
     }
 }

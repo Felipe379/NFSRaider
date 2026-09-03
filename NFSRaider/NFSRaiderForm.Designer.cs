@@ -334,7 +334,7 @@
             // 
             CboEndianness.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             CboEndianness.FormattingEnabled = true;
-            CboEndianness.Items.AddRange(new object[] { "Big-endian (file)", "Little-endian (memory)" });
+            CboEndianness.Items.AddRange(new object[] { "Big-endian (file)", "Little-endian (memory)", "Both" });
             CboEndianness.Location = new System.Drawing.Point(8, 22);
             CboEndianness.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             CboEndianness.Name = "CboEndianness";
