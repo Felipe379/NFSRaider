@@ -8921,6 +8921,8 @@ arrest_bullhornarrest
 arrest_cg
 arrest_default
 arrest_disparrestreply
+arrest_list
+arrest_name
 arrest_ng
 arrest_singleplayer
 arrest_strike
@@ -12920,6 +12922,7 @@ boss_cars
 Boss_Casinotown_Darius
 boss_chase
 BOSS_COLIBRIS
+boss_crash
 boss_crashes
 boss_cross_finish
 BOSS_DARIUS
@@ -23663,6 +23666,7 @@ demo_engine_package
 demo_hubselect
 Demo_intro
 demo_master
+demo_menu
 demo_nitrous
 DEMO_OPP_CAYMAN
 DEMO_OPP_GTI
@@ -26273,6 +26277,7 @@ ed_wood_splinter_medm
 ed_wood_splinter_sml
 eDecalType
 eDEPTH_REVERB
+edges
 edIT feat. Wale and Tre' - "Freaxxx"
 edl_test
 EDL_test
@@ -39394,6 +39399,7 @@ IsSpectating
 isStandardDef
 IsStartLine
 isTransparent
+IsUsingSections
 isWidebody
 IsWooshable
 italian
@@ -41542,6 +41548,7 @@ LineNumber
 LineProxThreshold
 linfordremix1
 linfordremix2
+linked_countdown
 linked_countdown_camera
 Lion's Challenge
 liquid
@@ -53382,6 +53389,7 @@ pip_light_1
 pip_light_2
 pip_light_3
 pip_light_4
+pip_list
 pip_trigger
 pip_trigger_group
 pipangie
@@ -71191,6 +71199,7 @@ race_car_gen-exhaust-player.tmx
 race_christmas
 race_day_events
 race_day_events/race_runner
+race_end_list
 race_folder_copsandrobbers
 race_folder_copsandrobbers/copsandrobbers2
 race_folder_copsandrobbers/copsandrobbers2/dropoff1
@@ -71291,6 +71300,7 @@ race_online_robbers01_car_04
 race_pursuit_lose
 race_pursuit_win
 RACE_SCORING
+race_start_list
 race_track
 race_type
 race_win
@@ -76035,6 +76045,7 @@ ScriptAction
 scriptedcar
 scriptedcar_trigger
 ScriptedCars
+ScriptedCarToTrigger
 ScriptedCopsInRace
 scriptname
 scrolling_texture
@@ -76162,6 +76173,7 @@ seats_2_world
 seats_hit_car
 seats_hit_world
 second_gear_ratio
+second_leg
 SecondaryRole
 SecondaryRoleLevel
 SecondBossTrack
@@ -82243,6 +82255,7 @@ Stadium Arcadium
 stage
 Stage
 stage_name
+stagger_test
 StaggerFormationTime
 staging
 Staging
@@ -104682,6 +104695,7 @@ windshield_tint_l3_yellow
 WindTrigger
 windtunnel
 WINDTUNNEL
+wingman_crash
 WingmanShortcutTriggerHint
 WinLevel1RewardProbability
 WinLevel2RewardProbability
