@@ -10264,6 +10264,7 @@ RewardsForDominate
 RecommendedCarTier
 RankPlayersByPoints
 RankPlayersByDistance
+RankPlayersByCash
 RaceOverNISWin
 RaceOverNISLose
 PlayerCarPerformance

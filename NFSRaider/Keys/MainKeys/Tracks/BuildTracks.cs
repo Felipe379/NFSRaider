@@ -2,6 +2,7 @@
 using NFSRaider.Keys.MainKeys.Tracks.Animations;
 using NFSRaider.Keys.MainKeys.Tracks.BarrierGroups;
 using NFSRaider.Keys.MainKeys.Tracks.CollisionVolumes;
+using NFSRaider.Keys.MainKeys.Tracks.EventSequencers;
 using NFSRaider.Keys.MainKeys.Tracks.EventTriggers;
 using NFSRaider.Keys.MainKeys.Tracks.LightFlaresPack;
 using NFSRaider.Keys.MainKeys.Tracks.LightSourcesPack;
@@ -28,6 +29,7 @@ namespace NFSRaider.Keys.MainKeys.Tracks
                 .Concat(new BuildCollisionVolumes().GetKeys(gameFilter, cancellationToken))
                 .Concat(new BuildAnimations().GetKeys(gameFilter, cancellationToken))
                 .Concat(new BuildEventTriggers().GetKeys(gameFilter, cancellationToken))
+                .Concat(new BuildEventSequencers().GetKeys(gameFilter, cancellationToken))
                 .Concat(new BuildLightFlaresPack().GetKeys(gameFilter, cancellationToken))
                 .Concat(new BuildLightSourcesPack().GetKeys(gameFilter, cancellationToken))
                 .Concat(new BuildBarrierGroups().GetKeys(gameFilter, cancellationToken))

@@ -72025,6 +72025,7 @@ RangeForSpotterBranch
 RankingHUDCircuit
 RankingHUDSprint
 RankingScore
+RankPlayersByCash
 RankPlayersByDistance
 RankPlayersByPoints
 rapsheet
