@@ -19,6 +19,7 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.UndercoverCG
                 .Concat(PrecompVinyls.List)
                 .Concat(RoofScoops.List)
                 .Concat(VectorVinyls.List)
+                .Concat(VectorVinyls.ListRemoved)
                 .Concat(Vinyls.List)
                 .Concat(Wheels.List)
                 .Concat(WheelsManufacturers.List)

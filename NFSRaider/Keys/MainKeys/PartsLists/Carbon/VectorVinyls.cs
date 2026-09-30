@@ -579,6 +579,7 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Carbon
 "COLIN_CARRERAGT",
 "YUMI_IMPREZA",
 "YUMI_RX8",
+"CROSS",
 "SAMSON_CAMARO",
 "SAMSON_CUDA",
 "NEVILLE_2",
@@ -784,6 +785,13 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.Carbon
 "LOGO_VINES_LOGO",
 "LOGO_VIPER_LOGO",
 "LOGO_WMD_LOGO",
+        };
+
+        public static readonly List<string> ListRemoved = new List<string>()
+        {
+"AFTERMARKET_KZR",
+"RACEFLAG16",
+"RACEFLAG17",
         };
     }
 }

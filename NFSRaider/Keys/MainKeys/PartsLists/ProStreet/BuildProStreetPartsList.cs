@@ -24,6 +24,7 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.ProStreet
                 .Concat(Seat.List)
                 .Concat(Wheels.List)
                 .Concat(Vinyls.List)
+                .Concat(Vinyls.ListPrerelease)
                 .Concat(Vinyls.ListRemoved)
                 );
 

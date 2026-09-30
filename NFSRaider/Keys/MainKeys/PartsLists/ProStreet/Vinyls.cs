@@ -1481,7 +1481,7 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.ProStreet
 "ZONDA_WINDOW",
         };
 
-        public static readonly List<string> ListRemoved = new List<string>()
+        public static readonly List<string> ListPrerelease = new List<string>()
         {
 "AFTERMARKET_AA",
 "AFTERMARKET_APE",
@@ -1503,12 +1503,15 @@ namespace NFSRaider.Keys.MainKeys.PartsLists.ProStreet
 "AFTERMARKET_ZEAL",
 "ST_997GT3RS_1",
 "TEAM_THROTTLEBODY_02",
+        };
+
+        public static readonly List<string> ListRemoved = new List<string>()
+        {
 "2T_MURCIELAGO",
 "AFTERMARKET_AUTOZONE",
 "AFTERMARKET_COOPER",
 "AFTERMARKET_DONZ",
 "AFTERMARKET_GFG",
-"AFTERMARKET_I_FORGED",
 "B_BOY",
 "B_BOY2",
 "MANUFACTURER_ALFA_ROMEO",
