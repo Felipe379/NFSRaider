@@ -2,12 +2,9 @@
 0x07E2FCFC	VLT - CollisionBound NameHash
 0x9D1A5D19	VLT - CollisionBound NameHash
 0x3089B766	VLT - CollisionBound NameHash
-0x778AEEE7	VLT - CollisionBound NameHash
-0x4057CE63	VLT - CollisionBound NameHash
 0xAFB0F836	VLT - CollisionBound NameHash
 0x1F3675E9	VLT - CollisionBound NameHash
 0x97F2E377	VLT - CollisionBound NameHash
-0x3C74D344	VLT - CollisionBound NameHash
 0xD70E1A7A	VLT - CollisionBound NameHash
 0xACB2DAA6	VLT - CollisionBound NameHash
 0xD523B97B	VLT - CollisionBound NameHash
