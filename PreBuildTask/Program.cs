@@ -44,6 +44,7 @@ namespace PreBuildTask
                 NFSRaider.Enums.Game.ProStreet,
                 NFSRaider.Enums.Game.Undercover,
                 NFSRaider.Enums.Game.UndercoverCG,
+                NFSRaider.Enums.Game.Nitro,
                 NFSRaider.Enums.Game.World
             };
 
